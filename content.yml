@@ -8,3 +8,6 @@ book:
           content:  "preambule.md"
         - number:   "2"
           content:  "introduction.md"
+        - number:   "3"
+          content:  "introduction_dynacase.md"
+

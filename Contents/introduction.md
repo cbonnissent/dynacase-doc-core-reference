@@ -1,3 +1,5 @@
+#Introduction
+
 Dynacase est une plate-forme de développement d'application métier. Elle s'articule autour des composants suivants :
 
 * un concept de *document* permettant à la fois la persistance des données et la génération de formulaire,

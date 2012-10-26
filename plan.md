@@ -14,19 +14,31 @@ Les points a aborder :
 
 Cette partie est une partie théorique présentant les concepts et les techniques de DC sans rentrer dans leur implémentation. Elle se doit d'être suffisament simple, abordable et courte pour être parcourue en une 10aine de minutes et lue en 2/3 heures.
 
-### Présentation des notions Dynacase, objets, organisation
-
-#### Famille et document et attribut
-#### Cycle de vies
-#### Application / action
-#### Compte / groupe / etc...
-#### Sécurité ACL Profil etc...
-#### Internationalisation
+### Famille et document et attribut
+### Cycle de vies
+### Application / action
+### Compte / groupe / etc...
+### Sécurité ACL Profil etc...
+### Internationalisation
 ### Les modules Dynacase
-#### Logique de build / d'architecture
+### Logique de build / d'architecture
 ### Moteur de template
 
     to be completed....
+
+## Élément pour le paramétrages
+
+Ce chapitre liste l'ensemble des options de paramétrage des objets métiers de Dynacase.
+
+### Familles
+
+Liste des propriétés et de leurs options
+
+### Objets métier
+
+Liste des propriété des profils, mails and co.
+
+### Paramètres applicatifs de CORE
 
 ## API Manuel de référence
 
@@ -68,6 +80,11 @@ Les éléments seront abordés dans l'ordre suivant :
 1. Application/Action
 
 ## Index des fonctions
+
+
+### Actions et Zones
+
+### Préambule
 
 ## Techniques avancées avec Dynacase
 
