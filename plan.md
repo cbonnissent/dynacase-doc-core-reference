@@ -25,7 +25,7 @@ Cette partie est une partie théorique présentant les concepts et les technique
 
     to be completed....
 
-## Installation des applications Dynacase <titre à revoir>
+## Matthieu s'en fout
 
 ## Élément pour le paramétrages
 
