@@ -28,7 +28,7 @@ une structure
     
     les attributs
     :   ils sont de différent types (texte, date, énuméré, lien entre documents, etc.) et définissent le contenu de chaque document.  
-        Par exemple, un compte-rendu de réunion est composé d' un titre de type *texte*, d'une date de réunion de type *date*, d'une liste de participants de type *utilisateur*,
+        Par exemple, un compte-rendu de réunion est composé d' un titre de type *texte*, d'une date de réunion de type *date*, des annexes de type *fichier*,
     
     les paramètres
     :   ils définissent des éléments de même valeur pour tous les documents d'une même famille.  
@@ -43,7 +43,7 @@ des représentations
     * etc.
 
 des contrôles de vues
-:   ces éléments permettent d'indiquer à quel type d'utilisateur correspond quelle vue.  
+:   ces éléments permettent d'indiquer à quel type d'utilisateur correspond quelle représentation.
     Par exemple, un manager peut voir plus d'éléments sur un compte-rendu qu'un simple participant.
 
 des règles métiers
@@ -51,7 +51,7 @@ des règles métiers
     Elles s'implémentent de deux manières :
     
     * via une classe associée à la famille : celle-ci permet de surcharger les comportements par défaut de Dynacase lors des étapes de la vie du document (création, sauvegarde, édition, etc.),
-    * via un fichier PHP tiers : celui-ci liste des méthodes permettant de guider la saisie des utilisateurs (par exemple ne sélectionner que les utilisateurs admissible pour une réunion de type marketing et pas l'ensemble des utilisateurs de la base).
+    * via un fichier PHP tiers : celui-ci liste des méthodes permettant de guider la saisie des utilisateurs (par exemple rechercher uniquement les salles disponibles).
 
 ## Le document
 
@@ -91,7 +91,7 @@ Structurant
     Ces attributs permettent de définir des ensembles sémantiques. Par exemple, dans le compte-rendu, le cadre Description regroupe le titre, la date et le lieu de la réunion.
 
 Tableau
-:   ce type d'attribut permet de créer un représentation tabulaire d'un ensemble d'attributs non-structurants. Ceux-ci deviennent alors les colonnes d'un tableau pouvant avoir plusieurs lignes.
+:   ce type d'attribut permet de créer une représentation tabulaire d'un ensemble d'attributs non-structurants. Ceux-ci deviennent alors les colonnes d'un tableau pouvant avoir plusieurs lignes.
 
 Donnée
 :   Ces attributs permettent de structurer les données récoltées au sein d'un formulaire. Ils permettent d'indiquer qu'une famille est composée d'un champ texte, d'un champ date, etc. Leur présence permet à la plate-forme de générer à la fois les formulaires et la structure en base de données permettant de stocker les documents.
