@@ -98,9 +98,7 @@ Donnée
 
 ## Les attributs
 
-Un attribut correspond à un champ de données dans la définition d'une famille.
-
-De plus, lors de la définition d'un attribut au sein d'une famille, on lui adjoint des propriétés parmi les suivantes :
+Un attribut correspond à un champ de données dans la définition d'une famille.Lors de sa définition au sein d'une famille, on lui adjoint des propriétés parmi les suivantes :
 
 Type d'attribut
 :   Il permet d'indiquer de quel type est l'attribut (texte, date, numérique, etc.),
