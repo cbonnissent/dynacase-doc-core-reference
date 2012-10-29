@@ -12,5 +12,7 @@ book:
           content:  "introduction_dynacase.md"
         - number:   "3.1"
           content:  "introduction_dynacase/famille_document_attribut.md"
+        - number:   "3.2"
+          content:  "introduction_dynacase/cycle_de_vie.md"
         - number:   "4"
           content:  "Param/family-properties.md"

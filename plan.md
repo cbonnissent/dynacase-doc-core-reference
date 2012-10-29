@@ -12,7 +12,7 @@ Les points a aborder :
 
 ## Introduction à Dynacase
 
-Cette partie est une partie théorique présentant les concepts et les techniques de DC sans rentrer dans leur implémentation. Elle se doit d'être suffisament simple, abordable et courte pour être parcourue en une 10aine de minutes et lue en 2/3 heures.
+Cette partie est une partie théorique présentant les concepts et les techniques de DC sans rentrer dans leur implémentation. Elle se doit d'être suffisamment simple, abordable et courte pour être parcourue en une 10aine de minutes et lue en 2/3 heures.
 
 ### Famille et document et attribut
 ### Cycle de vies
