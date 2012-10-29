@@ -21,10 +21,11 @@ Cette partie est une partie théorique présentant les concepts et les technique
 ### Sécurité ACL Profil etc...
 ### Internationalisation
 ### Les modules Dynacase
-### Logique de build / d'architecture
 ### Moteur de template
 
     to be completed....
+
+## Matthieu s'en fout
 
 ## Élément pour le paramétrages
 
