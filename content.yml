@@ -15,12 +15,28 @@ book:
           content:  "Introduction_dynacase/famille_document_attribut.md"
         - level:   2
           content:  "Introduction_dynacase/cycle_de_vie.md"
+        - level:   2
+          content:  "Introduction_dynacase/application_action.md"
+        - level:   2
+          content:  "Introduction_dynacase/account_groupe_role.md"
+        - level:   2
+          content:  "Introduction_dynacase/security.md"
+        - level:   2
+          content:  "Introduction_dynacase/internationalisation.md"
+        - level:   2
+          content:  "Introduction_dynacase/template.md"
+        - level:   1
+          content:  "Archi/intro.md"
         - level:   1
           content:  "Param/intro.md"
+        - level:   2
+          content:  "Param/formats.md"
         - level:   2
           content:  "Param/family-properties.md"
         - level:   2
           content:  "Param/attr-properties.md"
+        - level:   2
+          content:  "Param/core-parameters.md"
         - level:   1
           content:  "API/intro.md"
         - level:   2
@@ -479,3 +495,57 @@ book:
         - level:   3
           element:  "api"
           content:  "API/SearchDoc/useCollection.md"
+        - level:   1
+          content:  "Actions/intro.md"
+        - level:   1
+          content:  "Advanced/intro.md"
+        - level:   2
+          content:  "Advanced/Cinematique/intro.md"
+        - level:   2
+          content:  "Advanced/Database/intro.md"
+        - level:   2
+          content:  "Advanced/Persistance/intro.md"
+        - level:   3
+          content:  "Advanced/Persistance/dbobj.md"
+        - level:   3
+          content:  "Advanced/Persistance/doc.md"
+        - level:   3
+          content:  "Advanced/Persistance/querydb.md"
+        - level:   3
+          content:  "Advanced/Persistance/params.md"
+        - level:   3
+          content:  "Advanced/Persistance/famille.md"
+        - level:   3
+          content:  "Advanced/Persistance/user.md"
+        - level:   3
+          content:  "Advanced/Persistance/acl.md"
+        - level:   3
+          content:  "Advanced/Persistance/application-action.md"
+        - level:   3
+          content:  "Advanced/Persistance/permission.md"
+        - level:   2
+          content:  "Advanced/Recherche/intro.md"
+        - level:   3
+          content:  "Advanced/Recherche/searchdoc.md"
+        - level:   3
+          content:  "Advanced/Recherche/dsearch.md"
+        - level:   3
+          content:  "Advanced/Recherche/rapport.md"
+        - level:   3
+          content:  "Advanced/Recherche/ssearch.md"
+        - level:   2
+          content:  "Advanced/Authent/intro.md"
+        - level:   3
+          content:  "Advanced/Authent/provider.md"
+        - level:   3
+          content:  "Advanced/Authent/session.md"
+        - level:   2
+          content:  "Advanced/Security/intro.md"
+        - level:   3
+          content:  "Advanced/Security/profils.md"
+        - level:   2
+          content:  "Advanced/Template/intro.md"
+        - level:   3
+          content:  "Advanced/Template/texte.md"
+        - level:   3
+          content:  "Advanced/Template/odt.md"
