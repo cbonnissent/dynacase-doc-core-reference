@@ -1,3 +1,3 @@
-# Part title
+# Paramétrage
 
-part content
+Ce chapitre décrit les éléments de paramétrage de Dynacase

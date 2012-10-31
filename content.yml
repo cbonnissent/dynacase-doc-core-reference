@@ -19,6 +19,8 @@ book:
         - level:   2
           content:  "Param/family-properties.md"
         - level:   2
+          content:  "Param/attr-properties.md"
+        - level:   2
           content:  "API/Application/introduction.md"
         - level:   3
           content:  "API/Application/addCssCode.md"

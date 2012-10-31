@@ -176,7 +176,7 @@ METHOD
     Si la valeur est vide les méthodes associées seront enlevées.
 
 PROFID
-:   identifiant du document profil de famille pour cette famille.
+:   identifiant du document profil de famille pour cette famille.  
     Lors de l'import, les vérifications suivantes sont effectuées :
     
     *   Ce document doit être de la famille 'profil de famille'.
