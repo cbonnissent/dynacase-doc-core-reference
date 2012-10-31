@@ -10,7 +10,7 @@ book:
         - level:   1
           content:  "introduction.md"
         - level:   1
-          content:  "introduction_dynacase.md"
+          content:  "Introduction_dynacase/intro.md"
         - level:   2
           content:  "Introduction_dynacase/famille_document_attribut.md"
         - level:   2
