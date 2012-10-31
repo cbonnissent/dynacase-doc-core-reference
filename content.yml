@@ -1,8 +1,9 @@
 book:
-    title: "Documentation de référence de dynacase-core"
-    module: "dynacase-core"
-    version: "1.0"
-    edition: 1
+    title: "Manuel de référence"
+    module: "Core"
+    version: "3.2"
+    edition: "1"
+    githubsrc: "https://github.com/Anakeen/dynacase-doc-platform-operating-manual"
     chapters:
         - level:   1
           content:  "preambule.md"
