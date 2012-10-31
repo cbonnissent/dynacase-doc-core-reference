@@ -1,0 +1,551 @@
+book:
+    title: "Manuel de référence"
+    module: "Core"
+    version: "3.2"
+    edition: "1"
+    githubsrc: "https://github.com/Anakeen/dynacase-doc-platform-operating-manual"
+    chapters:
+        - level:   1
+          content:  "preambule.md"
+        - level:   1
+          content:  "introduction.md"
+        - level:   1
+          content:  "Introduction_dynacase/intro.md"
+        - level:   2
+          content:  "Introduction_dynacase/famille_document_attribut.md"
+        - level:   2
+          content:  "Introduction_dynacase/cycle_de_vie.md"
+        - level:   2
+          content:  "Introduction_dynacase/application_action.md"
+        - level:   2
+          content:  "Introduction_dynacase/account_groupe_role.md"
+        - level:   2
+          content:  "Introduction_dynacase/security.md"
+        - level:   2
+          content:  "Introduction_dynacase/internationalisation.md"
+        - level:   2
+          content:  "Introduction_dynacase/template.md"
+        - level:   1
+          content:  "Archi/intro.md"
+        - level:   1
+          content:  "Param/intro.md"
+        - level:   2
+          content:  "Param/formats.md"
+        - level:   2
+          content:  "Param/family-properties.md"
+        - level:   2
+          content:  "Param/attr-properties.md"
+        - level:   2
+          content:  "Param/core-parameters.md"
+        - level:   1
+          content:  "API/intro.md"
+        - level:   2
+          content:  "API/Application/introduction.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Application/addCssCode.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Application/addCssRef.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Application/addJsCode.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Application/addJsRef.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Application/getCSSLink.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Application/getJSLink.md"
+        - level:   2
+          content:  "API/createTmpDoc/introduction.md"
+        - level:   3
+          element:  "api"
+          content:  "API/createTmpDoc/createTmpDoc.md"
+        - level:   2
+          content:  "API/Doc/introduction.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/Doc.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/addArrayRow.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/addRevision.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/attachTimer.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/canEdit.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/canLock.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/canUnLock.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/control.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/convert.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/convertVaultFile.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/delete.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/deleteArray.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/deleteValue.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/disableEditControl.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/editattr.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/enableEditControl.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/formatString.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/getAttachedTimers.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/getAttribute.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/getAttributes.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/getAValues.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/getCurSequence.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/getDate.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/getDocProp.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/getDocValue.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/getFamDoc.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/getFileInfo.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/getFileLink.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/getFromDoc.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/getHisto.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/getHtmlAttrValue.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/getHTMLTitle.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/getHtmlValue.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/getLabel.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/getOldValue.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/getOldValues.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/getOooValue.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/getParentFolderIds.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/getProperty.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/getRevisions.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/getRevisionState.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/getRValue.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/getSpecTitle.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/getState.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/getStatelabel.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/getSystemUserId.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/getTimeDate.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/getTitle.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/getTValue.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/getUserName.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/getValue.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/getValues.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/getVersion.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/hasUTag.md"
+        - level:   2
+          content:  "API/DocHisto/introduction.md"
+        - level:   3
+          element:  "api"
+          content:  "API/DocHisto/INFO.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/isAlive.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/isChanged.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/isConfidential.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/isFixed.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/isLocked.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/isRevisable.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/latestId.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/lock.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/postConstructor.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/postCopy.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/PostCreated.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/postImport.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/PostModify.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/postRevive.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/preConsultation.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/preCopy.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/PreCreated.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/preEdition.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/preImport.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/preRevive.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/ReallyDelete.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/Refresh.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/regenerateTemplates.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/removeArrayRow.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/setFile.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/setLogicalName.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/setTitle.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/SpecRefresh.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/store.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/unattachTimer.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/unLock.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/userDocId.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/_val2array.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/viewattr.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/viewdefaultcard.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/viewDoc.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Doc/viewprop.md"
+        - level:   2
+          content:  "API/_IGROUPUSER/introduction.md"
+        - level:   3
+          element:  "api"
+          content:  "API/_IGROUPUSER/getAccount.md"
+        - level:   2
+          content:  "API/Layout/introduction.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Layout/__construct.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Layout/gen.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Layout/get.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Layout/getBlockData.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Layout/set.md"
+        - level:   3
+          element:  "api"
+          content:  "API/Layout/setBlockData.md"
+        - level:   2
+          content:  "API/ParameterManager/introduction.md"
+        - level:   3
+          element:  "api"
+          content:  "API/ParameterManager/getApplicationParameter.md"
+        - level:   3
+          element:  "api"
+          content:  "API/ParameterManager/getParameter.md"
+        - level:   3
+          element:  "api"
+          content:  "API/ParameterManager/setApplicationParameter.md"
+        - level:   3
+          element:  "api"
+          content:  "API/ParameterManager/setGlobalParameter.md"
+        - level:   3
+          element:  "api"
+          content:  "API/ParameterManager/setGlobalUserParameter.md"
+        - level:   3
+          element:  "api"
+          content:  "API/ParameterManager/setUserApplicationParameter.md"
+        - level:   2
+          content:  "API/SearchAccount/introduction.md"
+        - level:   3
+          element:  "api"
+          content:  "API/SearchAccount/addFilter.md"
+        - level:   3
+          element:  "api"
+          content:  "API/SearchAccount/addGroupFilter.md"
+        - level:   3
+          element:  "api"
+          content:  "API/SearchAccount/addRoleFilter.md"
+        - level:   3
+          element:  "api"
+          content:  "API/SearchAccount/docName2login.md"
+        - level:   3
+          element:  "api"
+          content:  "API/SearchAccount/search.md"
+        - level:   3
+          element:  "api"
+          content:  "API/SearchAccount/setObjectReturn.md"
+        - level:   3
+          element:  "api"
+          content:  "API/SearchAccount/setOrder.md"
+        - level:   3
+          element:  "api"
+          content:  "API/SearchAccount/setSlice.md"
+        - level:   3
+          element:  "api"
+          content:  "API/SearchAccount/setStart.md"
+        - level:   3
+          element:  "api"
+          content:  "API/SearchAccount/setTypeFilter.md"
+        - level:   3
+          element:  "api"
+          content:  "API/SearchAccount/useViewControl.md"
+        - level:   2
+          content:  "API/SearchDoc/introduction.md"
+        - level:   3
+          element:  "api"
+          content:  "API/SearchDoc/addGeneralFilter.md"
+        - level:   3
+          element:  "api"
+          content:  "API/SearchDoc/__construct.md"
+        - level:   3
+          element:  "api"
+          content:  "API/SearchDoc/count.md"
+        - level:   3
+          element:  "api"
+          content:  "API/SearchDoc/excludeConfidential.md"
+        - level:   3
+          element:  "api"
+          content:  "API/SearchDoc/getDocumentList.md"
+        - level:   3
+          element:  "api"
+          content:  "API/SearchDoc/getError.md"
+        - level:   3
+          element:  "api"
+          content:  "API/SearchDoc/getFilters.md"
+        - level:   3
+          element:  "api"
+          content:  "API/SearchDoc/getIds.md"
+        - level:   3
+          element:  "api"
+          content:  "API/SearchDoc/getOriginalQuery.md"
+        - level:   3
+          element:  "api"
+          content:  "API/SearchDoc/getSearchInfo.md"
+        - level:   3
+          element:  "api"
+          content:  "API/SearchDoc/isExecuted.md"
+        - level:   3
+          element:  "api"
+          content:  "API/SearchDoc/join.md"
+        - level:   3
+          element:  "api"
+          content:  "API/SearchDoc/nextDoc.md"
+        - level:   3
+          element:  "api"
+          content:  "API/SearchDoc/noViewControl.md"
+        - level:   3
+          element:  "api"
+          content:  "API/SearchDoc/reset.md"
+        - level:   3
+          element:  "api"
+          content:  "API/SearchDoc/rewind.md"
+        - level:   3
+          element:  "api"
+          content:  "API/SearchDoc/setObjectReturn.md"
+        - level:   3
+          element:  "api"
+          content:  "API/SearchDoc/setOrder.md"
+        - level:   3
+          element:  "api"
+          content:  "API/SearchDoc/setPertinenceOrder.md"
+        - level:   3
+          element:  "api"
+          content:  "API/SearchDoc/setRecursiveSearch.md"
+        - level:   3
+          element:  "api"
+          content:  "API/SearchDoc/setSlice.md"
+        - level:   3
+          element:  "api"
+          content:  "API/SearchDoc/setStart.md"
+        - level:   3
+          element:  "api"
+          content:  "API/SearchDoc/useCollection.md"
+        - level:   1
+          content:  "Actions/intro.md"
+        - level:   1
+          content:  "Advanced/intro.md"
+        - level:   2
+          content:  "Advanced/Cinematique/intro.md"
+        - level:   2
+          content:  "Advanced/Database/intro.md"
+        - level:   2
+          content:  "Advanced/Persistance/intro.md"
+        - level:   3
+          content:  "Advanced/Persistance/dbobj.md"
+        - level:   3
+          content:  "Advanced/Persistance/doc.md"
+        - level:   3
+          content:  "Advanced/Persistance/querydb.md"
+        - level:   3
+          content:  "Advanced/Persistance/params.md"
+        - level:   3
+          content:  "Advanced/Persistance/famille.md"
+        - level:   3
+          content:  "Advanced/Persistance/user.md"
+        - level:   3
+          content:  "Advanced/Persistance/acl.md"
+        - level:   3
+          content:  "Advanced/Persistance/application-action.md"
+        - level:   3
+          content:  "Advanced/Persistance/permission.md"
+        - level:   2
+          content:  "Advanced/Recherche/intro.md"
+        - level:   3
+          content:  "Advanced/Recherche/searchdoc.md"
+        - level:   3
+          content:  "Advanced/Recherche/dsearch.md"
+        - level:   3
+          content:  "Advanced/Recherche/rapport.md"
+        - level:   3
+          content:  "Advanced/Recherche/ssearch.md"
+        - level:   2
+          content:  "Advanced/Authent/intro.md"
+        - level:   3
+          content:  "Advanced/Authent/provider.md"
+        - level:   3
+          content:  "Advanced/Authent/session.md"
+        - level:   2
+          content:  "Advanced/Security/intro.md"
+        - level:   3
+          content:  "Advanced/Security/profils.md"
+        - level:   2
+          content:  "Advanced/Template/intro.md"
+        - level:   3
+          content:  "Advanced/Template/texte.md"
+        - level:   3
+          content:  "Advanced/Template/odt.md"
