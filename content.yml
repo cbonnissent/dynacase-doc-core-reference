@@ -20,6 +20,8 @@ book:
           content:  "Param/family-properties.md"
         - level:   2
           content:  "Param/attr-properties.md"
+        - level:   1
+          content:  "API/intro.md"
         - level:   2
           content:  "API/Application/introduction.md"
         - level:   3
@@ -330,4 +332,3 @@ book:
           content:  "API/SearchDoc/setStart.md"
         - level:   3
           content:  "API/SearchDoc/useCollection.md"
-
