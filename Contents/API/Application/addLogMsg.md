@@ -1,0 +1,4 @@
+# Application/addLogMsg
+ 
+...some content... 
+ 

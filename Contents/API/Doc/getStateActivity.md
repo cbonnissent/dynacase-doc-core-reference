@@ -1,0 +1,4 @@
+# Doc/getStateActivity
+ 
+...some content... 
+ 

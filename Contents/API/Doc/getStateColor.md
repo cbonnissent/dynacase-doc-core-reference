@@ -1,0 +1,4 @@
+# Doc/getStateColor
+ 
+...some content... 
+ 

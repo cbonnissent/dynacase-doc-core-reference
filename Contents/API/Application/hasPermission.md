@@ -1,0 +1,4 @@
+# Application/hasPermission
+ 
+...some content... 
+ 

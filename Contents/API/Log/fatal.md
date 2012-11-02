@@ -1,0 +1,4 @@
+# Log/fatal
+ 
+...some content... 
+ 

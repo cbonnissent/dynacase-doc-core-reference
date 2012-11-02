@@ -1,0 +1,4 @@
+# Doc/getSearchMethods
+ 
+...some content... 
+ 
