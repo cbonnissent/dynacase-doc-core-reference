@@ -57,7 +57,7 @@ for line in `cat $INPUT | sort `; do
    [ "$fil" = "" ] && fil=$cat
    if [ ! -d $OUTPUT/"$cat" ]; then
        echo "        - level:   2" >> $YMLCONTENT
-       echo "          element: \"api\"" >> $YMLCONTENT
+       echo "          element: \"chapter\"" >> $YMLCONTENT
        echo "          content:  \"$OUTPUT/$cat/introduction.md\"" >> $YMLCONTENT
        mkNewDir $OUTPUT/"$cat"
        mkNewFile "$cat" "introduction.md" $OUTPUT/"$cat""/introduction.md" 

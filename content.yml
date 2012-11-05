@@ -44,7 +44,7 @@ book:
 #
 #  Build date : vendredi 2 novembre 2012, 15:22:24 (UTC+0100)
         - level:   2
-          element: "api"
+          element: "chapter"
           content:  "API/Action/introduction.md"
         - level:   3
           element: "api"
@@ -98,7 +98,7 @@ book:
           element: "api"
           content: "API/Action/warning.md"
         - level:   2
-          element: "api"
+          element: "chapter"
           content:  "API/Application/introduction.md"
         - level:   3
           element: "api"
@@ -140,19 +140,19 @@ book:
           element: "api"
           content: "API/Application/text.md"
         - level:   2
-          element: "api"
+          element: "chapter"
           content:  "API/createDoc/introduction.md"
         - level:   3
           element: "api"
           content: "API/createDoc/createDoc.md"
         - level:   2
-          element: "api"
+          element: "chapter"
           content:  "API/createTmpDoc/introduction.md"
         - level:   3
           element: "api"
           content: "API/createTmpDoc/createTmpDoc.md"
         - level:   2
-          element: "api"
+          element: "chapter"
           content:  "API/DbObj/introduction.md"
         - level:   3
           element: "api"
@@ -212,7 +212,7 @@ book:
           element: "api"
           content: "API/DbObj/Select.md"
         - level:   2
-          element: "api"
+          element: "chapter"
           content:  "API/Doc/introduction.md"
         - level:   3
           element: "api"
@@ -410,7 +410,7 @@ book:
           element: "api"
           content: "API/Doc/hasUTag.md"
         - level:   2
-          element: "api"
+          element: "chapter"
           content:  "API/DocHisto/introduction.md"
         - level:   3
           element: "api"
@@ -539,13 +539,13 @@ book:
           element: "api"
           content: "API/Doc/viewprop.md"
         - level:   2
-          element: "api"
+          element: "chapter"
           content:  "API/_IGROUPUSER/introduction.md"
         - level:   3
           element: "api"
           content: "API/_IGROUPUSER/getAccount.md"
         - level:   2
-          element: "api"
+          element: "chapter"
           content:  "API/Layout/introduction.md"
         - level:   3
           element: "api"
@@ -566,7 +566,7 @@ book:
           element: "api"
           content: "API/Layout/setBlockData.md"
         - level:   2
-          element: "api"
+          element: "chapter"
           content:  "API/Log/introduction.md"
         - level:   3
           element: "api"
@@ -587,19 +587,19 @@ book:
           element: "api"
           content: "API/Log/warning.md"
         - level:   2
-          element: "api"
+          element: "chapter"
           content:  "API/new_Doc/introduction.md"
         - level:   3
           element: "api"
           content: "API/new_Doc/new_Doc.md"
         - level:   2
-          element: "api"
+          element: "chapter"
           content:  "API/NormalAttribute/introduction.md"
         - level:   3
           element: "api"
           content: "API/NormalAttribute/NormalAttribute.md"
         - level:   2
-          element: "api"
+          element: "chapter"
           content:  "API/ParameterManager/introduction.md"
         - level:   3
           element: "api"
@@ -620,7 +620,7 @@ book:
           element: "api"
           content: "API/ParameterManager/setUserApplicationParameter.md"
         - level:   2
-          element: "api"
+          element: "chapter"
           content:  "API/SearchAccount/introduction.md"
         - level:   3
           element: "api"
@@ -656,7 +656,7 @@ book:
           element: "api"
           content: "API/SearchAccount/useViewControl.md"
         - level:   2
-          element: "api"
+          element: "chapter"
           content:  "API/SearchDoc/introduction.md"
         - level:   3
           element: "api"
