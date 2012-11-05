@@ -26,6 +26,6 @@ Il est dédié à tous les collaborateurs d'Anakeen, qui n'ont jamais baissé le
 F. Levieux[^2].
 
 
-[^1]: Le Case Management est une évloutions des stratégies comme le BPM ou le travail collaboratif . Elle s'adapte de façon transverse à l'évolution des besoins de l'organisation, tout en permettant un contrôle et une traçabilité complète des opérations. Les outils de Case Management permettent de mettre en œuvre un très grand nombre de procédures comme le traitement des réclamations, l'ouverture de comptes, la gestion de projets, suivi des faits techniques...
+[^1]: Le Case Management est une évolutions des stratégies comme le BPM ou le travail collaboratif . Elle s'adapte de façon transverse à l'évolution des besoins de l'organisation, tout en permettant un contrôle et une traçabilité complète des opérations. Les outils de Case Management permettent de mettre en œuvre un très grand nombre de procédures comme le traitement des réclamations, l'ouverture de comptes, la gestion de projets, suivi des faits techniques...
 
 [^2]:François Levieux is former VP of Processes at Thalès, Head of R&D at Thalès Air, François has a deep experience in software, from its conception when he was a researcher at INRIA to industrial practice. François holds a PhD from University Paris 6 and graduated from Ecole Polytechnique. For his career, he was awarded Legion d’Honneur.
