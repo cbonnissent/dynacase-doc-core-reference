@@ -10,7 +10,7 @@ book:
         - level:   1
           content:  "introduction.md"
         - level:   1
-          content:  "Introduction_dynacase/intro.md"
+          content:  "Introduction_dynacase/introduction.md"
         - level:   2
           content:  "Introduction_dynacase/famille_document_attribut.md"
         - level:   2
@@ -26,9 +26,9 @@ book:
         - level:   2
           content:  "Introduction_dynacase/template.md"
         - level:   1
-          content:  "Archi/intro.md"
+          content:  "Archi/introduction.md"
         - level:   1
-          content:  "Param/intro.md"
+          content:  "Param/introduction.md"
         - level:   2
           content:  "Param/formats.md"
         - level:   2
@@ -38,7 +38,7 @@ book:
         - level:   2
           content:  "Param/core-parameters.md"
         - level:   1
-          content:  "API/intro.md"
+          content:  "API/introduction.md"
 #
 # START of API Content
 #
@@ -737,15 +737,15 @@ book:
 # END of API Content
 #
         - level:   1
-          content:  "Actions/intro.md"
+          content:  "Actions/introduction.md"
         - level:   1
-          content:  "Advanced/intro.md"
+          content:  "Advanced/introduction.md"
         - level:   2
-          content:  "Advanced/Cinematique/intro.md"
+          content:  "Advanced/Cinematique/introduction.md"
         - level:   2
-          content:  "Advanced/Database/intro.md"
+          content:  "Advanced/Database/introduction.md"
         - level:   2
-          content:  "Advanced/Persistance/intro.md"
+          content:  "Advanced/Persistance/introduction.md"
         - level:   3
           content:  "Advanced/Persistance/dbobj.md"
         - level:   3
@@ -765,7 +765,7 @@ book:
         - level:   3
           content:  "Advanced/Persistance/permission.md"
         - level:   2
-          content:  "Advanced/Recherche/intro.md"
+          content:  "Advanced/Recherche/introduction.md"
         - level:   3
           content:  "Advanced/Recherche/searchdoc.md"
         - level:   3
@@ -775,17 +775,17 @@ book:
         - level:   3
           content:  "Advanced/Recherche/ssearch.md"
         - level:   2
-          content:  "Advanced/Authent/intro.md"
+          content:  "Advanced/Authent/introduction.md"
         - level:   3
           content:  "Advanced/Authent/provider.md"
         - level:   3
           content:  "Advanced/Authent/session.md"
         - level:   2
-          content:  "Advanced/Security/intro.md"
+          content:  "Advanced/Security/introduction.md"
         - level:   3
           content:  "Advanced/Security/profils.md"
         - level:   2
-          content:  "Advanced/Template/intro.md"
+          content:  "Advanced/Template/introduction.md"
         - level:   3
           content:  "Advanced/Template/texte.md"
         - level:   3
