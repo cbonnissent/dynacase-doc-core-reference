@@ -10,6 +10,20 @@ la famille
 le document
 :   il correspond à une instance d'un élément de famille (par exemple : le compte-rendu de la réunion marketing du 12 mai 2012 ayant pour invité Mickaël, Jean et Paul).
 
+Les documents possèdent deux sous-catégories systèmes mises à disposition par core :
+
+Les familles systèmes
+:   il existe un certain nombre de familles mises à disposition par Dynacase-core par défaut. Ces familles sont utilisées par la plate-forme pour créer des documents utiles à son paramétrage interne et ne sont pas accessibles aux utilisateurs via les recherches et les interfaces par défaut.
+
+les collections
+:   les collections sont un type de document particulier qui a pour but de réunir des documents. Il en existe plusieurs types :
+    
+    Directory/Dossier
+    :   Une dossier est une collection où l'ensemble des documents contenu est ajouté de manière volontaire par le code. Par exemple, le dossier *Mes éléments préférés* est généré par un morceau de code qui ajoute les documents à ce dossier
+    
+    Recherche
+    :   Une recherche est une collection qui est définie par des critères de recherches. Le contenu de cette collection est donc re-calculé à chaque consultation. Par exemple, la recherche *Les documents dont je suis rédacteur* sera exprimé sous la forme d'une recherche permettant de trouver l'ensemble des documents où l'utilisateur en cours est cité comme rédacteur.
+
 ## La famille
 
 Une famille est un objet de Dynacase permettant de décrire la structure et le comportement de documents.  
@@ -78,7 +92,7 @@ Un type d'attribut est une typologie de données. Il est utilisé dans les famil
 Il existe trois catégories d'attributs :
 
 Structurant
-:   Ces attributs permettent de structurer les familles, il en existe trois catégories :
+:   Ces attributs permettent de structurer les familles. Il en existe deux catégories :
     
     Onglet
     :   ce type d'attribut permet de regrouper des attributs de type *frame*.  
@@ -122,4 +136,26 @@ Vue particulière (facultatif)
 :   Si cette propriété est présente la représentation de l'attribut peut-être totalement ou partiellement surchargée (présentation d'un graphique dans le formulaire par exemple),
 
 Options (facultatif)
-:   Des options peuvent être adjointes à l'attribut pour modifier son comportement. Celles-ci sont propres à chaque type d'attribut et listée dans le chapitre <span class="fixme">Insérer le lien</span>.
+:   Des options peuvent être adjointes à l'attribut pour modifier son comportement. Celles-ci sont propres à chaque type d'attribut et permettent d'en modifier soit le comportement ou l'affichage.
+
+## Famille système
+
+Une famille système a pour but créer de document utile au paramétrage de Dynacase mais dont le contenu n'est pas exploitable par les utilisateurs de base via les interfaces de recherche. C'est notamment utilisé dans Dynacase par les familles de base suivantes :
+
+* contrôle de vue : ce document permet de définir la représentation d'un document,
+* modèle de mail : qui permet de définir un modèle d'envoi par mail pour un type de document,
+* etc.
+
+Ces documents n'ayant pas de sens particulier pour les utilisateurs, ils ne sont pas accessibles aux utilisateurs via les recherches par défaut pour ne pas surcharger celle-ci avec des documents non pertinents.
+
+NB : il est possible dans le cadre d'un développement Dynacase de définir ses propres familles systèmes
+
+## Collection
+
+Une collection est un document qui permet de stocker un ensemble de documents. Une collection est utilisée par Dynacase comme base pour des recherches particulières ou comme moyen de permettre à un utilisateur de faire des requêtes au niveau de Dynacase. Il existe notamment les types de collections suivants :
+
+Dossier
+:   Un dossier permet à un utilisateur ou à des règles métier d'ajouter et d'enlever des documents à l'intérieur de ce dossier.
+
+Recherche
+:   Une recherche permet à un utilisateur ou un intégrateur de paramétrer des règles permettant de regrouper un ensemble de document (par exemple : l'ensemble des *compte rendu* de réunion entre le 01/01/2042 et 31/12/2042).
