@@ -5,10 +5,13 @@ book:
     edition: "1"
     githubsrc: "https://github.com/Anakeen/dynacase-doc-platform-operating-manual"
     chapters:
+#
         - level:   1
           content:  "preambule.md"
+#
         - level:   1
           content:  "introduction.md"
+#
         - level:   1
           content:  "Introduction_dynacase/introduction.md"
         - level:   2
@@ -25,20 +28,115 @@ book:
           content:  "Introduction_dynacase/internationalisation.md"
         - level:   2
           content:  "Introduction_dynacase/template.md"
+#
         - level:   1
           content:  "Archi/introduction.md"
+#
         - level:   1
-          content:  "Param/introduction.md"
+          content:  "ClassDoc/introduction.md"
         - level:   2
-          content:  "Param/formats.md"
+          content:  "ClassDoc/definition.md"
         - level:   2
-          content:  "Param/family-properties.md"
+          content:  "ClassDoc/proprietes.md"
         - level:   2
-          content:  "Param/attr-properties.md"
-        - level:   2
-          content:  "Param/core-parameters.md"
+          content:  "ClassDoc/methodes.md"
+#
         - level:   1
-          content:  "API/introduction.md"
+          content:  "ClassDocFam/introduction.md"
+        - level:   2
+          content:  "ClassDocFam/definition.md"
+        - level:   2
+          content:  "ClassDocFam/proprietes.md"
+        - level:   2
+          content:  "ClassDocFam/methodes.md"
+#
+        - level:   1
+          content:  "famille/introduction.md"
+        - level:   2
+          content:  "famille/attributs.md"
+        - level:   2
+          content:  "famille/parametres.md"
+        - level:   2
+          content:  "famille/attributs_calcules.md"
+        - level:   2
+          content:  "famille/contraintes.md"
+        - level:   2
+          content:  "famille/aides_a_la_saisie.md"
+        - level:   2
+          content:  "famille/hamecons.md"
+        - level:   2
+          content:  "famille/parametrage_de_core.md"
+#
+        - level:   1
+          content:  "documents_systemes/introduction.md"
+        - level:   2
+          content:  "documents_systemes/recherches.md"
+        - level:   3
+          content:  "documents_systemes/class_searchDoc.md"
+        - level:   3
+          content:  "documents_systemes/Search.md"
+        - level:   3
+          content:  "documents_systemes/DSearch.md"
+        - level:   3
+          content:  "documents_systemes/DSearch.md"
+        - level:   3
+          content:  "documents_systemes/report.md"
+        - level:   2
+          content:  "documents_systemes/masques.md"
+        - level:   2
+          content:  "documents_systemes/controles_de_vues.md"
+        - level:   2
+          content:  "documents_systemes/modeles_de_mail.md"
+        - level:   2
+          content:  "documents_systemes/minuteurs.md"
+        - level:   2
+          content:  "documents_systemes/processus.md"
+#
+        - level:   1
+          content:  "representations/introduction.md"
+        - level:   2
+          content:  "representations/classe_layout.md"
+        - level:   2
+          content:  "representations/vue_de_documents.md"
+        - level:   2
+          content:  "representations/vue_d_attributs.md"
+        - level:   2
+          content:  "representations/interface_edition.md"
+        - level:   2
+          content:  "representations/range_tableau.md"
+        - level:   2
+          content:  "representations/pied_de_page.md"
+        - level:   2
+          content:  "representations/ooo_layout.md"
+#
+        - level:   1
+          content:  "importation_exportation_documents/introduction.md"
+        - level:   2
+          content:  "importation_exportation_documents/importations.md"
+        - level:   2
+          content:  "importation_exportation_documents/exportations.md"
+#
+        - level:   1
+          content:  "comptes_groupes_roles/introduction.md"
+#
+        - level:   1
+          content:  "securite/introduction.md"
+#
+        - level:   1
+          content:  "cycles/introduction.md"
+        - level:   2
+          content:  "cycles/parametrage_importation.md"
+#
+        - level:   1
+          content:  "applications_actions/introduction.md"
+        - level:   2
+          content:  "applications_actions/api_usage.md"
+        - level:   2
+          content:  "applications_actions/action_usage.md"
+        - level:   2
+          content:  "applications_actions/parametres_applicatifs.md"
+        - level:   2
+          content:  "applications_actions/droits_applicatifs.md"
 #
 # START of API Content
 #
