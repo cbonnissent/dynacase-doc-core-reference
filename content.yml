@@ -138,6 +138,9 @@ book:
         - level:   2
           content:  "applications_actions/droits_applicatifs.md"
 #
+        - level:   1
+          content:  "API/introduction.md"
+#
 # START of API Content
 #
 #  Build date : vendredi 2 novembre 2012, 15:22:24 (UTC+0100)
