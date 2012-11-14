@@ -73,7 +73,7 @@ forumid
 fromid
 :   id de la famille d'appartenance.
 
-    Pour une famille, fromid référence la famille mère.<span class="fixme MCO">à déplacer dans les propriété de DocFam</span>
+    Pour une famille, fromid référence la famille mère.
 
 icon
 :   référence au fichier d'icone du document.
@@ -116,7 +116,6 @@ locked
 :   Indique si le document est verrouillé :
 
     *   Chiffre négatif (inférieur à -1) : Identifiant de l'utilisateur ayant verrouillé le document automatiquement.
-
         Ce verrou est posé lorsqu'un utilisateur clique sur le bouton de modification d'un document, et est supprimé automatiquement lors de la fin de l'édition, à la fermeture du navigateur (au moyen de l'événement `onBeforeUnload`), ainsi que par le script `freedom_clean` (normalement lancé toute les nuits).
     *   Chiffre positif : Identifiant de l'utilisateur ayant verrouillé le document manuellement.
     *   0 = Pas de verrou.

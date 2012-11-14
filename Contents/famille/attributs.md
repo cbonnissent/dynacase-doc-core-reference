@@ -39,7 +39,6 @@ sortable
 
     Les valeurs possibles sont :
 
-    *   **`no` (valeur par défaut)**<span class="fixme MCO">c'est valable?NON, NDLR: reset d'options</span>
     *   `asc` : Dans ce cas
         *   l'attribut sera présenté dans le menu de tri de *ONEFAM* et dans les rapports
         *   l'ordre de tri par défaut sera ascendant
@@ -683,7 +682,6 @@ esort
     *   `key` : Dans ce cas, les propositions sont triées par ordre alphabétique des clés ;
     *   `label` : Dans ce cas, les propositions sont triées par ordre alphabétique des traductions des libellés.
 
-
 etype
 :   Indique si la valeur est restreinte aux valeurs de la liste.
 
@@ -704,7 +702,6 @@ eunset
 
     *   `yes`
     *   **`no` (par défaut)** : Dans ce cas, la valeur par défaut est la première des valeurs de l'énuméré selon sa définition.
-
 
 mselectsize
 :   Indique le nombre d'items présentés pour les énumérés multiples.
@@ -766,7 +763,7 @@ Lors de l'upload du fichier, il est enregistré dans le *vault*.
 
 ### format de stockage
 
-La valeur stockée est l'identfiant vault du fichier (sous la forme *&lt;type-mime>|&lt;vaultid>|&lt;file-title>*).
+La valeur stockée est l'identifiant vault du fichier (sous la forme *&lt;type-mime>|&lt;vaultid>|&lt;file-title>*).
 
 ### options
 
@@ -1460,7 +1457,6 @@ firstopen
 
     *    `yes`
     *    **`no` (valeur par défaut)**
-
 
 ## text
 
