@@ -4,6 +4,10 @@
 
 La classe DocFam dispose, en plus des propriétés héritées de Doc, de plusieurs propriétés intéressantes.
 
+fromid
+:   (hérité de la classe `Doc`)
+    id de la famille mère.
+
 schar
 :   Indique les modalités de révision des documents de cette famille :
 

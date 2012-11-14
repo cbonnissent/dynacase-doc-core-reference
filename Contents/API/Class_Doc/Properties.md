@@ -2,7 +2,7 @@
 
 La classe Doc dispose de plusieurs propriétés intéressantes.
 
-Ces propriétés peuvent être récupérées au moyen de la méthode Doc::getProperty.
+Ces propriétés peuvent être récupérées au moyen de la méthode `Doc::getProperty`.
 
 De façon générale, bien que ces propriétés ne soient pas marquées comme *private*, leur affectation ne devrait passer que par les setters appropriés.
 Les propriétés n'ayant pas de setter spécifiques sont modifiées par effet de bord d'autres méthodes du document
@@ -40,7 +40,7 @@ comment
 confidential
 :   Indique si le document est confidentiel.
 
-    Dans ce cas, confidential vaut 1.
+    Dans ce cas, *confidential* vaut 1.
 
 cvid
 :   identifiant du document contrôle de vue associé à ce document.
@@ -50,14 +50,14 @@ doctype
 
     Utilisé en interne pour des optimisations de performance et des contrôles.
 
-    *   *F* : Document normal (historiquement, *Freedom Document*),
-    *   *D* : Dossier (D pour Dir),
-    *   *S* : Recherche (S pour Search),
+    *   *F* : Document normal (historiquement, F pour *Freedom Document*),
+    *   *D* : Dossier (D pour *Dir*),
+    *   *S* : Recherche (S pour *Search*),
     *   *P* : Profil,
     *   *T* : Temporaire,
     *   *Z* : Zombie,
-    *   *W* : Cycle de vie (W pour Workflow),
-    *   *C* : Famille (C pour Class)
+    *   *W* : Cycle de vie (W pour *Workflow*),
+    *   *C* : Famille (C pour *Class*)
 
 domainid
 :   voir la documentation de l'application offline.
@@ -73,12 +73,10 @@ forumid
 fromid
 :   id de la famille d'appartenance.
 
-    Pour une famille, fromid référence la famille mère.
-
 icon
 :   référence au fichier d'icone du document.
 
-    La valeur est
+    La valeur est :
 
     *   le nom de l'icone
     *   ou la référence d'un fichier du vault (sous la forme *&lt;type-mime>|&lt;vaultid>|&lt;file-title>*).
@@ -172,9 +170,9 @@ title
 usefor
 :   type d'utilisation du document
 
-    *   `S` : La famille est Système : elle n'apparaîtra pas par défaut dans la liste des familles pour les recherches, recherches détaillées ou rapport.
+    *   `S` : La famille est Système : elle n'apparaîtra pas par défaut dans la liste des familles pour les *recherches*, *recherches détaillées* ou *rapports*.
 
-        Le caractère 'S' peut aussi être placé devant les autres caractères décrit ci-dessous pour masquer par défaut la famille dans les recherches.
+        Le caractère 'S' peut aussi être placé devant les autres caractères décrits ci-dessous pour masquer par défaut la famille dans les recherches.
     *   `W` : Le document est un cycle de vie (*W* pour *Workflow*) ;
     *   `G` : Le document est un intercalaire de chemise (*G* pour *Guide*) ;
     *   `P` : Le document est un profil (*P* pour *Profile*).
@@ -185,4 +183,4 @@ version
     La version est affichée à coté de l'état sur les documents, et dans l'historique.
 
 wid
-:   identifiant du document cycle de vie associé à ce document.
+:   identifiant du document *cycle de vie* associé à ce document.
