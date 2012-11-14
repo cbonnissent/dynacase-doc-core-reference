@@ -65,7 +65,7 @@ domainid
 dprofid
 :   identifiant du profil dynamique associé à ce document.<span class="fixme MCO">ajouter un lien vers le chapitre associé.</span>
 
-    Lorsque le document est soumis à un profil dynamique, ce profil dynamique lui permet de calculer le profil qui lui sera appliqué, lequel est stocké sur le document lui-même. Ainsi, lorsque la propriété drpofid est renseignée, la propriété profid est égale à l'id du document (ce qui correspond à un profil dédié).
+    Lorsque le document est soumis à un profil dynamique, ce profil dynamique lui permet de calculer le profil qui lui sera appliqué, lequel est stocké sur le document lui-même. Ainsi, lorsque la propriété *dprofid* est renseignée, la propriété *profid* est égale à l'*id du document* (ce qui correspond à un profil dédié).
 
 forumid
 :   **Obsolète**
