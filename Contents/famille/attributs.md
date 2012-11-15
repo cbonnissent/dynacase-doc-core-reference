@@ -1,17 +1,31 @@
 # les attributs
 
-## généralités
+## présentation
 
-<span class="fixme MCO">Introduction</span>
+Les attributs correspondent à des *champs* du document.
 
-### options communes à tous les types d'attributs
+techniquement, ils correspondent à :
+
+*   un champ de saisie en modification ;
+*   une représentation textuelle en consultation ;
+*   une colonne en base de données pour stocker la donnée.
+
+Les attributs sont typés, et disposent d'options permettant de modifier leur comportement, leur représentation, etc.
+
+Cette partie présente chaque type d'attribut, décrit son usage, ses représentations, et liste les options disponibles pour chacun de ces types.
+
+Note sur les options : Dans Dynacase, les options sont *libres*, ce qui veut dire que vous pouvez utiliser vos propres options pour rajouter des informations sur certains attributs (par exemple, vous pourriez rajouter une option *inSpecialView* pour lister les attributs à afficher dans votre vue spéciale).
+De par leur nature extensible, les options n'ont pas de valeur par défaut ;
+aussi, dans leur description, nous indiquerons par *(comportement par défaut)* le comportement de l'option en l'absence de valeur.
+
+### options communes à tous les types d'attributs {options-communes}
 
 searchcriteria
 :   Indique quelle sera l'utilisation de l'attribut dans les recherches.
 
     Les valeurs possibles sont :
 
-    *   **`visible` (valeur par défaut)** : Dans ce cas
+    *   **`visible` (comportement par défaut)** : Dans ce cas
 
         *   l'attribut *est indexé* pour la recherche plein texte
         *   l'attribut *est présenté* dans les critères des recherches détaillées et des rapports
@@ -29,6 +43,8 @@ searchcriteria
 showempty
 :   Indique que l'attribut doit être présenté en consultation, même si sa valeur est vide.
 
+    Cela modifie le comportement par défaut, qui consiste à n'afficher en consultation que les attributs valués.
+
     Les valeurs possibles sont :
 
     *   `` (une chaîne vide) : Dans ce cas, le libellé sera présenté, et aucune valeur ne sera affichée
@@ -36,6 +52,8 @@ showempty
 
 sortable
 :   Indique les modalités de tri de l'attribut.
+
+    Par défaut, les attributs sont considérés comme non sortable.
 
     Les valeurs possibles sont :
 
@@ -48,11 +66,12 @@ sortable
 
 version
 :   Indique que l'attribut est utilisé pour la composition de la *version*.
+    Se reporter aux [propriétés de la classe Doc](#Core:9aa8edfa-2f2a-11e2-aaec-838a12b40353) pour plus de détails.
 
     Les valeurs possibles sont :
 
     *   `yes`
-    *   **`no` (valeur par défaut)**
+    *   **`no` (comportement par défaut)**
 
 vlabel
 :   Indique la position du libellé de l'attribut.
@@ -61,7 +80,7 @@ vlabel
 
     *   pour les attributs de type frame et onglet :
 
-        *   **`up` (valeur par défaut)**
+        *   **`up` (comportement par défaut)**
         *   `none`
 
     *   pour les attributs de type array :
@@ -72,7 +91,7 @@ vlabel
 
     *   pour les autres attributs :
 
-        *   **`left` (valeur par défaut)**
+        *   **`left` (comportement par défaut)**
         *   `up`
         *   `none`
 
@@ -91,20 +110,18 @@ vlabel
 batchfolder
 :   Indique si l'action définie doit être appliquée sur tous les éléments du dossier.
 
-    <span class="fixme MCO">à décrire</span>
+    <span class="fixme MCO">EBR: décrire le fonctionnement de batchfolder</span>
 
     Les valeurs possibles sont :
 
     *   `yes`
-    *   **`no` (valeur par défaut)**
+    *   **`no` (comportement par défaut)**
 
 ## account
 
 ### description
 
-Les attributs de type *account* permettent de faire un lien vers un compte utilisateur.
-
-Ils peuvent être de type *simple*, n'acceptant qu'une seule valeur, ou *multiple*, et acceptent plusieurs valeurs dans ce cas.
+Les attributs de type *account* permettent de faire un lien vers un compte (utilisateur, groupe, ou rôle).
 
 ### représentation
 
@@ -112,23 +129,25 @@ Ils peuvent être de type *simple*, n'acceptant qu'une seule valeur, ou *multipl
 
     Un hyperlien vers l'utilisateur cible, avec comme label le titre l'utilisateur cible, et son icone.
 
-    ![ account simple - consultation html ](account-simple-consultation.png "account simple - Consultation html")
+    ![ account simple - consultation html ](famille/attributs/account-simple-consultation.png) "account simple - Consultation html")
 
 *   modification :
 
-    Une aide à la saisie simple vers les comptes.
+    Une aide à la saisie vers les comptes.
 
-    ![ account simple - Modification html ](account-simple-modification.png "account simple - Modification html")
+    ![ account simple - Modification html ](famille/attributs/account-simple-modification.png) "account simple - Modification html")
 
 *   odt :
 
     Le titre du document cible.
 
-    ![ account simple - consultation odt ](account-simple-odt.png "account simple - Consultation odt")
+    ![ account simple - consultation odt ](famille/attributs/account-simple-odt.png) "account simple - Consultation odt")
 
 ### comportement
 
-Lors du rendu d'un docid, dynacase récupère dynamiquement le titre des documents cibles. Pour chaque document cible, si l'utilisateur n'a pas le droit de voir le document cible, le titre est remplacé par le texte Information non disponible (se reporter à l'option noaccesstext pour personnaliser ce texte).
+Lors du rendu d'un account, dynacase récupère dynamiquement le titre des documents cibles.
+Pour chaque document cible, si l'utilisateur n'a pas le droit de voir le document cible,
+le titre est remplacé par le texte *Information non disponible* (se reporter à l'option noaccesstext pour personnaliser ce texte).
 
 ### format de stockage
 
@@ -156,7 +175,7 @@ match
 
     Les valeurs possibles sont :
 
-    *   **`user` (valeur par défaut)**
+    *   **`user` (comportement par défaut)**
     *   `group`
     *   `role`
     *   `all`
@@ -167,7 +186,7 @@ multiple
     Les valeurs possibles sont :
 
     *   `yes`
-    *   **`no` (valeur par défaut)**
+    *   **`no` (comportement par défaut)**
 
 noaccesstext
 :   Indique le texte qui est affiché lorsque le document cible n'est pas visible.
@@ -192,21 +211,48 @@ role
 ### description
 
 Les attributs de type *array* permettent de définir des tableaux.
-Chacun des attributs contenu dans un *array* sera alors dit *multiple*, et correspondra à une colonne du dit *array*.
+
+Chacun des attributs contenu dans un *array* est alors dit *multiple*, et correspond à une colonne du dit *array*.
 
 ### représentation
 
-<span class="fixme MCO">fixme</span>
+Les array sont représentés au moyen d'une `table`.
+
+Chaque colonne correspond à un attribut contenu dans l'array.
+Le libellé de la colonne est le libellé de l'attribut correspondant.
+
+*   consultation :
+
+    Un tableau.
+
+    ![ array - consultation html ](famille/attributs/array-consultation.png) "array - Consultation html")
+
+*   modification :
+
+    La première colonne contient les outils permettant la sélection, suppression, et le déplacement d'une colonne,
+    alors que la dernière ligne contient les outils permettant de rajouter une ligne ou de dupliquer une ligne existante.
+
+    ![ array - Modification html ](famille/attributs/array-modification.png) "array - Modification html")
+
+*   odt :
+
+    Un tableau
+
+    ![ array - consultation odt ](famille/attributs/array-odt.png) "array - Consultation odt")
 
 ### comportement
 
-<span class="fixme MCO">fixme</span>
+Aucun comportement particulier.
 
 ### format de stockage
 
-<span class="fixme MCO">fixme</span>
+Le tableau en lui même n'est pas stocké, mais modifie la façon dont les attributs qu'il contient sont stockés.
+En effet, une fois dans un tableau, un attribut est multiple, et nécessite donc le stockage de plusieurs valeurs.
+Pour rester simple, la valeur stockée sera une suite des valeurs de stockage simples séparées par un séparateur interne.
 
-### options
+Pour plus de précisions, se reporter au chapitre avancé sur les formats de stockage.
+
+### options applicables à l'array
 
 cellbodystyle
 :   Indique le style css appliqué sur les cellules du corps de tableau.
@@ -215,16 +261,12 @@ cellbodystyle
 
     *   toute définition css valide.
 
-    Il n'y a pas de valeur par défaut.
-
 cellheadstyle
 :   Indique le style css appliqué sur les cellules de l'entête de tableau.
 
     Les valeurs possibles sont :
 
     *   toute définition css valide.
-
-    Il n'y a pas de valeur par défaut.
 
 classname
 :   Indique une classe css à appliquer aux cellules du corps tableau en consultation.
@@ -233,20 +275,20 @@ classname
 
     *   tout nom de classe valide.
 
-    Il n'y a pas de valeur par défaut.
-
 empty
 :   Indique que le tableau, s'il est vide ne doit pas afficher la première rangée en modification.
+    Dans le cas contraire, en modification, le tableau est initialisé avec une rangée vide.
 
     Les valeurs possibles sont :
 
     *   `yes`
-    *   **`no` (valeur par défaut)**
+    *   **`no` (comportement par défaut)**
 
 height
-:   Indique la hauteur du corps du tableau. Si le corps du tableau dépasse la hauteur spécifiée, un ascenseur vertical apparaîtra.
+:   Indique la hauteur du corps du tableau.
+    Si le corps du tableau dépasse la hauteur spécifiée, un ascenseur vertical apparaîtra.
 
-    Ne fonctionne qu'avec firefox.
+    Ne fonctionne qu'avec les navigateurs récents.
 
     Les valeurs possibles sont:
 
@@ -256,17 +298,18 @@ sorttable
 :   Indique que le tableau est triable.
     L'utilisateur peut cliquer sur un en-tête de colonne pour trier cette colonne.
 
-    Le tri est effectué au moyen du script [sorttable.js](http://www.kryogenix.org/code/browser/sorttable/)
+    Le tri est effectué au moyen du script [sorttable.js][SORTTABLEJS_home].
 
-    L'utilisation avancée de sorttable.js sort du scope de cette documentation, et est à charge et de la responsabilité du développeur.
+    L'utilisation avancée de sorttable.js sort du sujet de cette documentation, et est à charge et de la responsabilité du développeur.
 
     Les valeurs possibles sont :
 
     *   `yes`
-    *   **`no` (valeur par défaut)**
+    *   **`no` (comportement par défaut)**
 
 twidth
 :   Indique la largeur du tableau.
+    Si le corps du tableau dépasse la largeur spécifiée, un ascenseur horizontal apparaîtra.
 
     Les valeurs possibles sont :
 
@@ -279,12 +322,12 @@ userowadd
 :   Indique si l'utilisateur est autorisé à ajouter des rangées au tableau.
     Dans ce cas, le bouton correspondant est affiché.
 
-    Cela permet de ne pas être en conflit si le tableau doit être rempli par un code spécifique sur l'interface.
+    Cela permet de ne pas être en conflit si le tableau doit être rempli par un code spécifique sur l'interface, mais pas par l'utilisateur.
 
     Les valeurs possibles sont :
 
-    *   **`yes` (valeur par défaut)**
-    *   `no` (valeur par défaut)
+    *   **`yes` (comportement par défaut)**
+    *   `no`
 
 ### options applicables aux attributs contenus dans un array
 
@@ -298,8 +341,6 @@ align
     *   `center`,
     *   `justify`
 
-    Il n'y a pas de valeur par défaut.
-
 bgcolor
 :   Indique la couleur de fond des cellules de la colonne.
 
@@ -307,8 +348,6 @@ bgcolor
 
     *   toute [couleur css valide][MDN_css_color_value]
         (exemple : `yellow`, `#FF335A`, etc.)
-
-    Il n'y a pas de valeur par défaut.
 
 color
 :   Indique la couleur du texte pour les cellules de la colonne.
@@ -318,8 +357,6 @@ color
     *   toute [couleur css valide][MDN_css_color_value]
         (exemple : `yellow`, `#FF335A`, etc.)
 
-    Il n'y a pas de valeur par défaut.
-
 cwidth
 :   Indique la largeur de la colonne.
 
@@ -327,7 +364,7 @@ cwidth
 
     *   une valeur absolue en pixel (par exemple `100px`),
     *   une largeur relative en pourcentage (par exemple `30%`)
-    *   **`auto` (valeur par défaut)**
+    *   **`auto` (comportement par défaut)**
 
 ## color
 
@@ -341,13 +378,13 @@ Les attributs de type *color* permettent d'insérer une couleur.
 
     Un `span` contenant le code html de la couleur, et la couleur comme background.
 
-    ![ color - consultation html ](color-consultation.png "color - Consultation html")
+    ![ color - consultation html ](famille/attributs/color-consultation.png) "color - Consultation html")
 
 *   modification :
 
-    Un color picker basé sur [JSColor](http://jscolor.com/).
+    Un color picker basé sur [JSColor][JSCOLOR_home].
 
-    ![ color - Modification html ](color-modification.png "color - Modification html")
+    ![ color - Modification html ](famille/attributs/color-modification.png) "color - Modification html")
 
 *   odt :
 
@@ -375,19 +412,19 @@ Les attributs de type *date* permettent d'insérer une date.
 
     La date formatée en accord avec la locale de l'utilisateur.
 
-    ![ date - consultation html ](date-consultation.png "date - Consultation html")
+    ![ date - consultation html ](famille/attributs/date-consultation.png) "date - Consultation html")
 
 *   modification :
 
-    Un date picker (basé sur [JSCalendar](http://www.dynarch.com/projects/calendar/old/)).
+    Un date picker (basé sur [JSCalendar][JSCALENDAR_HOME]).
 
-    ![ date - Modification html ](date-modification.png "date - Modification html")
+    ![ date - Modification html ](famille/attributs/date-modification.png) "date - Modification html")
 
 *   odt :
 
     La date formatée en accord avec la locale de l'utilisateur.
 
-    ![ date - consultation odt ](date-odt.png "date - Consultation odt")
+    ![ date - consultation odt ](famille/attributs/date-odt.png) "date - Consultation odt")
 
 ### comportement
 
@@ -409,9 +446,8 @@ La date est stockée au format ISO8601 (yyyy-mm-dd).
 
 Les attributs de type *docid* permettent de faire un lien vers un ou plusieurs documents. Ils sont appelés *relations*.
 
-Ils peuvent être de type *simple*, n'acceptant qu'une seule valeur, ou *multiple*, et acceptent plusieurs valeurs dans ce cas.
-
-Les attributs de type *docid* sont *typés*, c'est à dire qu'on précise de quelle famille doivent être les documents cible. Cela se fait au moyen de la syntaxe *docid("&lt;family>")* (Dans ce cas, les documents doivent être de la famille *&lt;family>* ou d'une de ses sous-familles).
+Les attributs de type *docid* sont *typés*, c'est à dire qu'on précise de quelle famille doivent être les documents cible.
+Cela se fait au moyen de la syntaxe *docid("&lt;family>")* (Dans ce cas, les documents doivent être de la famille *&lt;family>* ou d'une de ses sous-familles).
 
 ### représentation
 
@@ -419,21 +455,23 @@ Les attributs de type *docid* sont *typés*, c'est à dire qu'on précise de que
 
     Un hyperlien vers le document cible, avec comme label le titre du document cible, et l'icône du document
 
-    ![ docid simple - consultation html ](docid-simple-consultation.png "docid simple - Consultation html")
+    ![ docid simple - consultation html ](famille/attributs/docid-simple-consultation.png) "docid simple - Consultation html")
 
 *   modification :
 
     une aide à la saisie vers les documents de la famille cible (et de ses sous-familles). L'aide à la saisie porte sur le titre uniquement, avec le filtre *contient, insensible à la casse*
 
-    ![ docid simple - Modification html ](docid-simple-modification.png "docid simple - Modification html")
+    ![ docid simple - Modification html ](famille/attributs/docid-simple-modification.png) "docid simple - Modification html")
 
 *   odt :
 
-    ![ docid simple - consultation odt ](docid-simple-odt.png "docid simple - Modification odt")
+    ![ docid simple - consultation odt ](famille/attributs/docid-simple-odt.png) "docid simple - Modification odt")
 
 ### comportement
 
-Lors du rendu d'un docid, dynacase récupère dynamiquement le titre des documents cibles. Pour chaque document cible, si l'utilisateur n'a pas le droit de voir le document cible, le titre est remplacé par le texte *Information non disponible* (se reporter à l'option *noaccesstext* pour personnaliser ce texte).
+Lors du rendu d'un docid, dynacase récupère le titre des documents cibles.
+Pour chaque document cible, si l'utilisateur n'a pas le droit de voir le document cible,
+le titre est remplacé par le texte *Information non disponible* (se reporter à l'option *noaccesstext* pour personnaliser ce texte).
 
 ### format de stockage
 
@@ -451,14 +489,14 @@ creation
     Pour les relations multiples, le nouveau document sera inséré dans la liste des documents.
 
     Lorsque la relation est déjà renseignée, le bouton permet de modifier le document cible au lieu d'en créer un nouveau.
-    Si le document lié n'est pas accessible en écriture, il sera alors affiché en lecture.
+    Si le document lié n'est pas accessible en modification, il sera alors affiché en consultation.
     De même, le bouton n’apparaîtra que si l'utilisateur a le droit en création sur la famille liée.
 
     Les valeurs possibles sont :
 
     *   `yes`
     *   un *objet (Attention: bien que cela y ressemble, ce n'est pas du JSON)* construit de la manière suivante :
-        *   Pour définir la valeur d'un attribut du document cible : `attrid_document_cible: valeur` (si la valeur est fixe),
+        *   Pour définir la valeur d'un attribut du document cible : `attrid_document_cible: "valeur"` (si la valeur est fixe),
             ou `attrid_document_cible: attrid_document_source` si la valeur est à recopier depuis le document source.
         *   Pour fermer la fenêtre de création lors de la sauvegarde : `autoclose: "yes"`
         *   Pour appeler de nouveau l'aide à la saisie lors de l'insertion de la valeur dans le document source : `recallhelper: "yes"`
@@ -477,7 +515,7 @@ docrev
 
     Les valeurs possibles sont :
 
-    *   **`latest` (valeur par défaut)** : Dans ce cas, la relation pointe vers la dernière révision de la lignée documentaire ;
+    *   **`latest` (comportement par défaut)** : Dans ce cas, la relation pointe vers la dernière révision de la lignée documentaire ;
     *   `fixed` : Dans ce cas, la relation pointe vers la révision ayant l'id référencé ;
     *   `state(step)`, où *step* est une étape : Dans ce cas, la relation pointe vers le dernier document à l'étape *step*.
 
@@ -485,7 +523,8 @@ docrev
 
     *   lorsque l'option a la valeur *latest*, c'est l'initid du document qui est retourné ;
     *   lorsque l'option a la valeur *fixed*, c'est le docid de la dernière révision au moment de l'appel qui est retourné ;
-    *   lorsque l'option a la valeur *state(step)*, seuls les documents à l'étape *step* sont listés, et c'est le docid de la dernière révision à l'étape step au moment de l'appel qui est retourné.
+    *   lorsque l'option a la valeur *state(step)*, seuls les documents à l'étape *step* sont listés,
+        et c'est le docid de la dernière révision à l'étape step au moment de l'appel qui est retourné.
 
 doctitle
 :   Indique qu'un attribut contenant le titre du document cible doit être automatiquement renseigné.
@@ -494,7 +533,7 @@ doctitle
 
     Les valeurs possibles sont :
 
-    *   **`no` (valeur par défaut)** ;
+    *   **`no` (comportement par défaut)** ;
     *   tout id d'attribut existant : Dans ce cas, l'attribut référencé contient le titre du document cible ;
     *   `auto` : Dans ce cas, un attribut est généré (son id est *&lt;id_de_la_relation>_title* et son titre est *&lt;titre_de_la_relation> (titre)* )
 
@@ -514,8 +553,9 @@ multiple
 :   Indique que plusieurs documents peuvent être référencés par la relation.
 
     Les valeurs possibles sont :
+
     *   `yes`
-    *   **`no` (valeur par défaut)**
+    *   **`no` (comportement par défaut)**
 
 noaccesstext
 :   Indique le texte qui est affiché lorsque le document cible n'est pas visible.
@@ -524,13 +564,15 @@ noaccesstext
 
     Les valeurs possibles sont :
 
-    *   toute valeur alphanumérique.
+    *   toute chaîne de caractères.
+
+    En l'absence de l'option, le texte affiché est *Information non disponible*
 
 ## double
 
 ### description
 
-Les attributs de type *double* permettent d'insérer un nombre à virgule.
+Les attributs de type *double* permettent d'insérer un nombre avec décimales.
 
 ### représentation
 
@@ -538,19 +580,19 @@ Les attributs de type *double* permettent d'insérer un nombre à virgule.
 
     Le nombre, sans formatage
 
-    ![ double - consultation html ](double-consultation.png "double - Consultation html")
+    ![ double - consultation html ](famille/attributs/double-consultation.png) "double - Consultation html")
 
 *   modification :
 
     un `input` de type `texte` permettant de saisir le nombre.
 
-    ![ double - Modification html ](double-modification.png "double - Modification html")
+    ![ double - Modification html ](famille/attributs/double-modification.png) "double - Modification html")
 
 *   odt :
 
     Le nombre, sans formatage
 
-    ![ double - consultation odt ](double-odt.png "double - Consultation odt")
+    ![ double - consultation odt ](famille/attributs/double-odt.png) "double - Consultation odt")
 
 ### comportement
 
@@ -559,7 +601,7 @@ Lors de l'enregistrement, le nettoyage suivant est effectué :
 *   remplacement des `,` par `.`
 *   suppression des espaces
 
-La valeur nettoyée est validée au moyen de la fonction [is_numeric](php.net/manual/function.is-numeric.php "documentation sur php.net").
+La valeur nettoyée est validée au moyen de la fonction [is_numeric][PHP_is_numeric].
 
 ### format de stockage
 
@@ -571,7 +613,7 @@ La valeur stockée est la valeur nettoyée.
 
 ### description
 
-Les attributs de type *enum* permettent d'insérer des listes de choix, sous la forme clé - libellé.
+Les attributs de type *enum* permettent d'insérer des listes de choix, sous la forme *clé|libellé*.
 
 ### représentation
 
@@ -579,19 +621,19 @@ Les attributs de type *enum* permettent d'insérer des listes de choix, sous la 
 
     Le libellé, traduit le cas échéant.
 
-    ![ enum - consultation html ](enum-consultation.png "enum - Consultation html")
+    ![ enum - consultation html ](famille/attributs/enum-consultation.png) "enum - Consultation html")
 
 *   modification :
 
     Un input de type select présentant les libellés traduits le cas échéant.
 
-    ![ enum - Modification html ](enum-modification.png "enum - Modification html")
+    ![ enum - Modification html ](famille/attributs/enum-modification.png) "enum - Modification html")
 
 *   odt :
 
     Le libellé, traduit le cas échéant.
 
-    ![ enum - consultation odt ](enum-odt.png "enum - Consultation odt")
+    ![ enum - consultation odt ](famille/attributs/enum-odt.png) "enum - Consultation odt")
 
 ### comportement
 
@@ -608,7 +650,7 @@ bmenu
 
     Les valeurs possibles sont :
 
-    *   **`yes` (valeur par défaut)**
+    *   **`yes` (comportement par défaut)**
     *   `no`
 
 boolcolor
@@ -617,46 +659,40 @@ boolcolor
     Les valeurs possibles sont :
 
     *   Un couple de [couleurs css valides][MDN_css_color_value] séparées par une virgule (par exemple `blue,#FF0000`).
-        La première couleur indique la couleur de la première clé, et la seconde couleur celle de le seconde clé.
+        La première couleur indique la couleur de la première clé, et la seconde couleur celle de la seconde clé.
 
 eformat
 :   Indique le mode d'affichage de l'énuméré.
 
     Les valeurs possibles sont :
 
-    *   **`list` (valeur par défaut)**
+    *   **`list` (comportement par défaut)**
 
         *   Dans le cas d'un énuméré simple, il sera représenté
-
             *   en modification sous la forme d'un select traditionnel,
             *   en consultation sous la forme d'une chaîne contenant le label
 
         *   Dans le cas d'un énuméré multiple, il sera représenté
-
             *   en modification sous la forme d'un select traditionnel (avec utilisation de la touche ctrl pour sélectionner plusieurs valeurs,
             *   en consultation sous la forme d'une liste de chaînes contenant le label alignées verticalement
 
     *   `vcheck`
 
         *   Dans le cas d'un énuméré simple, il sera représenté
-
             *   en modification sous la forme de boutons radio alignés verticalement
             *   en consultation sous la forme d'une chaîne contenant le label
 
         *   Dans le cas d'un énuméré multiple, il sera représenté
-
             *   en modification sous la forme de checkbox alignées verticalement
             *   en consultation sous la forme d'une liste de valeurs alignées verticalement
 
     *   `hcheck`
 
         *   Dans le cas d'un énuméré simple, il sera représenté
-
             *   en modification sous la forme de boutons radio alignés horizontalement
             *   en consultation sous la forme d'une chaîne contenant le label
 
         *   Dans le cas d'un énuméré multiple, il sera représenté
-
             *   en modification sous la forme de checkbox alignées horizontalement
             *   en consultation sous la forme d'une liste de valeurs alignées horizontalement
 
@@ -678,7 +714,7 @@ esort
 
     Les valeurs possibles sont :
 
-    *   **`none` (valeur par défaut)** ;
+    *   **`none` (comportement par défaut)** ;
     *   `key` : Dans ce cas, les propositions sont triées par ordre alphabétique des clés ;
     *   `label` : Dans ce cas, les propositions sont triées par ordre alphabétique des traductions des libellés.
 
@@ -691,12 +727,10 @@ etype
     *   `open` : Dans ce cas, l'utilisateur peut également saisir une valeur libre.
         Cette valeur sera alors ajoutée à la liste des valeurs possibles pour les choix ultérieurs.
 
-    Il n'y a pas de valeur par défaut.
-
 eunset
 :   Indiquer que l'énuméré sera vide par défaut.
 
-    S'il y a une valeur par défaut explicite, l'option eunset est inopérante.
+    S'il y a une valeur par défaut explicite pour l'attribut, l'option eunset est inopérante.
 
     Les valeurs possibles sont :
 
@@ -720,16 +754,17 @@ multiple
     Les valeurs possibles sont :
 
     *   `yes`
-    *   **`no` (valeur par défaut)**
+    *   **`no` (comportement par défaut)**
 
 system
 :   Indique que la gestion de l'énuméré ne peut pas être faite par l'IHM d'administration.
+
     Dans ce cas, la définition est écrasée à chaque import.
 
     Les valeurs possibles sont :
 
     *   `yes`
-    *   **`no` (valeur par défaut)**
+    *   **`no` (comportement par défaut)**
 
 ## file
 
@@ -743,19 +778,19 @@ Les attributs de type *file* permettent d'insérer un fichier.
 
     Un lien permettant de télécharger le fichier
 
-    ![ file - consultation html ](file-consultation.png "file - Consultation html")
+    ![ file - consultation html ](famille/attributs/file-consultation.png) "file - Consultation html")
 
 *   modification :
 
     Un `input` de type `file`, avec le lien vers l'ancien fichier au dessus
 
-    ![ file - Modification html ](file-modification.png "file - Modification html")
+    ![ file - Modification html ](famille/attributs/file-modification.png) "file - Modification html")
 
 *   odt :
 
     Le titre du fichier
 
-    ![ file - consultation odt ](file-odt.png "file - Consultation odt")
+    ![ file - consultation odt ](famille/attributs/file-odt.png) "file - Consultation odt")
 
 ### comportement
 
@@ -768,11 +803,11 @@ La valeur stockée est l'identifiant vault du fichier (sous la forme *&lt;type-m
 ### options
 
 hideindav
-:   Indique si le fichier apparait lors de l'utilisation du module dav.
+:   Indique si le fichier apparaît lors de l'accès au moyen du protocole webdav.
 
     Les valeurs possibles sont :
 
-    *   **`yes` (valeur par défaut)**
+    *   **`yes` (comportement par défaut)**
     *   `no`
 
 inline
@@ -782,7 +817,7 @@ inline
     Les valeurs possibles sont :
 
     *   `yes`
-    *   **`no`(valeur par défaut)**
+    *   **`no`(comportement par défaut)**
 
 pdffile
 :   Utilisé conjointement avec l'option *viewfiletype*, indique l'attribut contenant le fichier pdf à afficher.
@@ -791,22 +826,20 @@ pdffile
 
     *   tout id d'attribut de la famille en cours.
 
-    Il n'y a pas de valeur par défaut.
-
 preventfilechange
 :   Ajoute une contrainte pour que le fichier à remplacer provienne de la dernière version du serveur.
 
     Cela ne bloque pas un changement de fichier mais avertit l'utilisateur dans le cas où le fichier ne correspond pas à cette dernière version.
 
     Lors du téléchargement du fichier un code identifiant la version est ajouté dans le nom du fichier (exemple foo{i47307-56}.ods pour le fichier foo.ods).
-    Lorsque l'utilisateur uploade à nouveau le fichier, le serveur vérifie ce numéro de version. Si le numéro correspond à la dernière version, alors le fichier est accepté. Dans le cas contraire, une confirmation est demandée à l'utilisateur.
+    Lorsque l'utilisateur envoie à nouveau le fichier, le serveur vérifie ce numéro de version. Si le numéro correspond à la dernière version, alors le fichier est accepté. Dans le cas contraire, une confirmation est demandée à l'utilisateur.
 
     Attention: si l'utilisateur renomme le fichier, la vérification échoue, et le serveur demande la confirmation.
 
     Les valeurs possibles sont :
 
     *   `yes`
-    *   **`no` (valeur par défaut)**
+    *   **`no` (comportement par défaut)**
 
 rn
 :   Indique que le fichier sera renommé sur le serveur.
@@ -816,8 +849,6 @@ rn
     *   un nom de méthode de la famille courante (par exemple `::myNewName()`).
         La méthode prend en entrée le nom du fichier et doit retourner le nouveau nom sous la forme d'une chaîne de caractères.
 
-    Il n'y a pas de valeur par défaut.
-
     Note: Il est recommandé que la méthode fournisse une extension compatible avec le type mime pour l'utilisation ultérieure sur le poste client et les transformations.
     Pour récupérer l'extension d'un nom de fichier vous pouvez utiliser la fonction `getFileExtension` de la librairie `Lib.FileMime.php`
 
@@ -826,13 +857,13 @@ search
 
     Les valeurs possibles sont :
 
-    *   **`yes` (valeur par défaut)**
+    *   **`yes` (comportement par défaut)**
     *   `no`
 
 template
 :   Indique si l'attribut file est un template.
 
-    se reporter à la documentation des <span class="fixme MCO">templates</span> pour les explications
+    se reporter à la documentation des templates OOO pour les explications
 
     Les valeurs possibles sont :
 
@@ -857,8 +888,6 @@ viewfiletype
     *   `pdf` : Dans ce cas, l'attribut indiqué par l'option *pdffile* sera utilisé comme prévisualisation ;
     *   `image` : Dans ce cas, le moteur de transformation génère une visualisation sous forme d'images avec tourne pages du pdf référencé par l'option *pdffile*.
 
-    Il n'y a pas de valeur par défaut.
-
 ## frame
 
 ### description
@@ -870,15 +899,15 @@ Ce regroupement sera le plus souvent sémantique.
 
 *   consultation :
 
-    un fieldset entourant les attributs contenus dans cette frame. Le titre du cadre est dans une balise legend.
+    un `fieldset` entourant les attributs contenus dans cette frame. Le titre du cadre est dans une balise `legend`.
 
-    ![ frame - consultation html ](frame-consultation.png "frame - Consultation html")
+    ![ frame - consultation html ](famille/attributs/frame-consultation.png) "frame - Consultation html")
 
 *   modification :
 
-    un fieldset entourant les attributs contenus dans cette frame. Le titre du cadre est dans une balise legend.
+    un `fieldset` entourant les attributs contenus dans cette frame. Le titre du cadre est dans une balise `legend`.
 
-    ![ frame - Modification html ](frame-modification.png "frame - Modification html")
+    ![ frame - Modification html ](famille/attributs/frame-modification.png) "frame - Modification html")
 
 *   odt :
 
@@ -886,7 +915,7 @@ Ce regroupement sera le plus souvent sémantique.
 
 ### comportement
 
-Une frame est collapsible en cliquant sur son libellé.
+Une frame est *collapsible* en cliquant sur son libellé.
 
 ### format de stockage
 
@@ -895,7 +924,7 @@ Cet attribut n'est pas stocké.
 ### options
 
 bgcolor
-:   Indique si la couleur de fond du cadre.
+:   Indique la couleur de fond du cadre.
 
     Les valeurs possibles sont :
 
@@ -908,29 +937,29 @@ bgcolor
 
 Les attributs de type *htmltext* permettent d'insérer du texte avec mise en forme.
 
-Le langage de mise en forme est le html, et un éditeur WYSIWYG permet d'en simplifier la saisie.
+Le langage de mise en forme est le html, et un éditeur WYSIWYG (basé sur [CKEditor][CKEDITOR_home]) permet d'en simplifier la saisie.
 
 ### représentation
 
 *   consultation :
 
-    une div contenant la valeur.
+    une `div` contenant la valeur.
 
-    ![ htmltext - consultation html ](htmltext-consultation.png "htmltext - Consultation html")
+    ![ htmltext - consultation html ](famille/attributs/htmltext-consultation.png "htmltext - Consultation html")
 
 *   modification :
 
-    une iframe dans laquelle est initialisé une instance de CKEditor.
+    une `iframe` dans laquelle est initialisé une instance de CKEditor.
 
-    ![ htmltext - Modification html ](htmltext-modification.png "htmltext - Modification html")
+    ![ htmltext - Modification html ](famille/attributs/htmltext-modification.png "htmltext - Modification html")
 
 *   odt :
 
-    la mise en forme est conservée. <span class="fixme MCO">capture + détails</span>
+    la mise en forme est conservée. <span class="fixme MCO">capture + détails suite à correction de [#3283](http://dev.dynacase.org/issues/3283)</span>
 
 ### comportement
 
-<span class="fixme MCO">décrire le nettoyage</span>
+<span class="fixme MCO">EBR: décrire le nettoyage des attributs de type htmltext</span>
 
 ### format de stockage
 
@@ -960,27 +989,30 @@ editheight
     La valeur par défaut est `150px`.
 
 htmlclean
-:   Indique que le serveur nettoiera le contenu en supprimant toutes les balises de style <span class="fixme MCO">à préciser</span>généralement issues d'un copier/coller.
+:   Indique que le serveur nettoiera le contenu en supprimant toutes les balises de style, généralement issues d'un copier/coller.
+    <span class="fixme MCO">EBR: préciser le nettoyage des balises de style avec l'option htmlclean</span>
 
     Les valeurs possibles sont :
 
     *   `yes`
-    *   **`no` (valeur par défaut)**
+    *   **`no` (comportement par défaut)**
 
 jsonconf
-:   Cette option permet de configurer soit même l'éditeur de texte.
+:   Cette option permet de configurer finement l'éditeur de texte WYSIWYG.
 
     Elle permet notamment de fixer finement le comportement de l'éditeur et le contenu des toolbar.
-    Les options de configuration sont celle de [ckeditor](http://docs.cksource.com/ckeditor_api/symbols/CKEDITOR.config.html "options de CKEDITOR"), et l'objet de configuration doit être présenté en JSON valide.
+    Les options de configuration sont [celles de CKEditor][CKEDITOR_option], et l'objet de configuration doit être présenté en JSON valide.
 
-    Les options propres à ckeditor (resize, correction orthographique, etc) ne sont pas maintenues par Anakeen et leur bon fonctionnement n'est pas garanti par Anakeen.
+    Les options propres à CKEditor (*resize*, *correction orthographique*, etc) ne sont pas maintenues par Anakeen
+    et leur bon fonctionnement n'est pas garanti par Anakeen.
 
     Aux options de CKEDITOR, dynacase ajoute les options suivantes :
 
-    *   addPlugin : qui doit contenir un tableau (JSON) de nom logique de plugin jsonconf={"addPlugins": ["docattr"]}
+    *   addPlugin : permet de charger un plugin additionnel.
 
-        Permet de charger un plugin additionnel.
-        Dans ce cas, le plugin doit posséder une commande ayant le même nom que le nom logique du plugin. Cette commande est alors ajoutée en fin de toolbar.
+        La valeur doit être un tableau (JSON) de noms logiques de plugins (par exemple: `"addPlugins": ["docattr"]`).
+        Dans ce cas, le plugin doit posséder une commande ayant le même nom que le nom logique du plugin.
+        Cette commande est alors ajoutée en fin de toolbar.
 
     Exemple de configuration permettant d'activer le plugin docattr et le plugin doclink et avec un menu basique et l'activation du mode resize :
     `jsonconf={"addPlugins" : ["docattr"], "doclink" :   {"famId" : "DIR"}, "toolbar" : "basic", "resize_enabled" : "true"}`
@@ -992,24 +1024,36 @@ jsonconf
     *   editheight
     *   doclink
 
-    Il est par contre possible de construire un jsonconf qui a le même effet que les options précédentes.
+    Il est par contre possible de construire une option *jsonconf* qui a le même effet que les options précédentes.
 
 toolbar
 :   Indique le template à utiliser pour la barre de menu.
 
     Les valeurs possibles sont :
 
-    *   **`Simple` (valeur par défaut)** : ![toolbar Simple](htmltext-toolbar-simple.png),
-    *   `Basic` : ![toolbar Basic](htmltext-toolbar-basic.png),
-    *   `Default` :  ![toolbar Default](htmltext-toolbar-default.png),
-    *   `Full` :  ![toolbar Full](htmltext-toolbar-full.png).
+    *   **`Simple` (comportement par défaut)** :
+
+        ![toolbar Simple](famille/attributs/htmltext-toolbar-simple.png)
+
+    *   `Basic` :
+
+        ![toolbar Basic](famille/attributs/htmltext-toolbar-basic.png)
+
+    *   `Default` :
+
+        ![toolbar Default](famille/attributs/htmltext-toolbar-default.png)
+
+    *   `Full` :
+
+        ![toolbar Full](famille/attributs/htmltext-toolbar-full.png)
 
 toolbarexpand
-:   Indique si la barre de menu doit être dépliée. Dans le cas contraire, un petit bouton permet de la déplier.
+:   Indique si la barre de menu doit être dépliée lors de l'affichage de l'éditeur.
+    Dans le cas contraire, un petit bouton permet de la déplier.
 
     Les valeurs possibles sont :
 
-    *   **`yes` (valeur par défaut)**
+    *   **`yes` (comportement par défaut)**
     *   `no`
 
 ## idoc
@@ -1035,19 +1079,19 @@ Les attributs de type *image* permettent d'insérer une image.
 
     une balise `img` alignée à droite.
 
-    ![ image - consultation html ](image-consultation.png "image - Consultation html")
+    ![ image - consultation html ](famille/attributs/image-consultation.png) "image - Consultation html")
 
 *   modification :
 
     un `input` de type `file`, avec le lien vers l'ancienne image au dessus.
 
-    ![ image - Modification html ](image-modification.png "image - Modification html")
+    ![ image - Modification html ](famille/attributs/image-modification.png) "image - Modification html")
 
 *   odt :
 
     Une image.
 
-    ![ image - consultation odt ](image-odt.png "image - Consultation odt")
+    ![ image - consultation odt ](famille/attributs/image-odt.png) "image - Consultation odt")
 
 ### comportement
 
@@ -1060,11 +1104,11 @@ La valeur stockée est l’identifiant vault du fichier (sous la forme *&lt;type
 ### options
 
 hideindav
-:   Indique si le fichier apparait lors de l'utilisation du module dav.
+:   Indique si le fichier apparaît lors de l'accès au moyen du protocole webdav.
 
     Les valeurs possibles sont :
 
-    *   **`yes` (valeur par défaut)**
+    *   **`yes` (comportement par défaut)**
     *   `no`
 
 inline
@@ -1074,7 +1118,7 @@ inline
     Les valeurs possibles sont :
 
     *   `yes`
-    *   **`no`(valeur par défaut)**
+    *   **`no`(comportement par défaut)**
 
 iwidth
 :   Indique la largeur de l'image.
@@ -1094,14 +1138,16 @@ preventfilechange
     Cela ne bloque pas un changement de fichier mais avertit l'utilisateur dans le cas où le fichier ne correspond pas à cette dernière version.
 
     Lors du téléchargement du fichier un code identifiant la version est ajouté dans le nom du fichier (exemple foo{i47307-56}.ods pour le fichier foo.ods).
-    Lorsque l'utilisateur uploade à nouveau le fichier, le serveur vérifie ce numéro de version. Si le numéro correspond à la dernière version, alors le fichier est accepté. Dans le cas contraire, une confirmation est demandée à l'utilisateur.
+    Lorsque l'utilisateur uploade à nouveau le fichier, le serveur vérifie ce numéro de version.
+    Si le numéro correspond à la dernière version, alors le fichier est accepté.
+    Dans le cas contraire, une confirmation est demandée à l'utilisateur.
 
     Attention: si l'utilisateur renomme le fichier, la vérification échoue, et le serveur demande la confirmation.
 
     Les valeurs possibles sont :
 
     *   `yes`
-    *   **`no` (valeur par défaut)**
+    *   **`no` (comportement par défaut)**
 
 rn
 :   Indique que le fichier sera renommé sur le serveur.
@@ -1110,8 +1156,6 @@ rn
 
     *   un nom de méthode de la famille courante (par exemple `::myNewName()`).
         La méthode prend en entrée le nom du fichier et doit retourner le nouveau nom sous la forme d'une chaîne de caractères.
-
-    Il n'y a pas de valeur par défaut.
 
     Note: Il est recommandé que la méthode fournisse une extension compatible avec le type mime pour l'utilisation ultérieure sur le poste client et les transformations.
     Pour récupérer l'extension d'un nom de fichier vous pouvez utiliser la fonction `getFileExtension` de la librairie `Lib.FileMime.php`
@@ -1128,19 +1172,19 @@ Les attributs de type *integer* permettent d'insérer un nombre entier.
 
     Le nombre, sans formatage.
 
-    ![ integer - consultation html ](integer-consultation.png "integer - Consultation html")
+    ![ integer - consultation html ](famille/attributs/integer-consultation.png) "integer - Consultation html")
 
 *   modification :
 
     Un input de type texte permettant de saisir le nombre.
 
-    ![ integer - Modification html ](integer-modification.png "integer - Modification html")
+    ![ integer - Modification html ](famille/attributs/integer-modification.png) "integer - Modification html")
 
 *   odt :
 
     Le nombre, sans formatage
 
-    ![ integer - consultation odt ](integer-odt.png "integer - Consultation odt")
+    ![ integer - consultation odt ](famille/attributs/integer-odt.png) "integer - Consultation odt")
 
 ### comportement
 
@@ -1158,7 +1202,7 @@ La valeur stockée est la valeur brute du nombre.
 
 ### description
 
-Les attributs de type *longtext* permettent de saisir du texte multiligne, sans mise en forme.
+Les attributs de type *longtext* permettent de saisir du texte multilignes, sans mise en forme.
 
 ### représentation
 
@@ -1166,19 +1210,19 @@ Les attributs de type *longtext* permettent de saisir du texte multiligne, sans 
 
     La valeur brute.
 
-    ![ longtext - consultation html ](longtext-consultation.png "longtext - Consultation html")
+    ![ longtext - consultation html ](famille/attributs/longtext-consultation.png) "longtext - Consultation html")
 
 *   modification :
 
     Un textarea.
 
-    ![ longtext - Modification html ](longtext-modification.png "longtext - Modification html")
+    ![ longtext - Modification html ](famille/attributs/longtext-modification.png) "longtext - Modification html")
 
 *   odt :
 
     La valeur brute.
 
-    ![ longtext - consultation odt ](longtext-odt.png "longtext - Consultation odt")
+    ![ longtext - consultation odt ](famille/attributs/longtext-odt.png) "longtext - Consultation odt")
 
 ### comportement
 
@@ -1191,7 +1235,7 @@ La valeur stockée est la valeur brute.
 ### options
 
 editheight
-:   Indique la hauteur du textarea correspondant.
+:   Indique la hauteur du `textarea` correspondant.
 
     Les valeurs possibles sont :
 
@@ -1200,7 +1244,7 @@ editheight
     La valeur par défaut est `2em`
 
 elabel
-:   Valeur de l'attribut `@title` du textarea correspondant.
+:   Valeur de l'attribut `@title` du `textarea` correspondant.
 
     Les valeurs possibles sont :
 
@@ -1220,7 +1264,7 @@ Ces menus permettent d'accéder à des urls, et ainsi de déclencher des actions
 
     Une entrée de menu supplémentaire.
 
-    ![ menu - consultation html ](menu-consultation.png "menu - Consultation html")
+    ![ menu - consultation html ](famille/attributs/menu-consultation.png) "menu - Consultation html")
 
 *   modification :
 
@@ -1234,7 +1278,7 @@ Ces menus permettent d'accéder à des urls, et ainsi de déclencher des actions
 
 Le menu n'est pas représenté dans les cas suivants:
 
-*   link est vide
+*   *link* est vide
 *   le menu référence des attributs au moyen de la syntaxe *&lt;attrid>* et un de ces attributs est vide (cela peut être contourné par l'utilisation de la syntaxe ?&lt;attrid>).
 
 ### format de stockage
@@ -1249,7 +1293,7 @@ barmenu
     Les valeurs possibles sont :
 
     *   `yes`
-    *   **`no` (valeur par défaut)**
+    *   **`no` (comportement par défaut)**
 
 global
 :   Indique que l'action effectuée par le menu n'est pas liée à un document en particulier.
@@ -1259,7 +1303,7 @@ global
     Les valeurs possibles sont :
 
     *   `yes`
-    *   **`no` (valeur par défaut)**
+    *   **`no` (comportement par défaut)**
 
 lconfirm
 :   Indique qu'une confirmation doit être demandée avant activation du lien.
@@ -1269,7 +1313,7 @@ lconfirm
     Les valeurs possibles sont :
 
     *   `yes`
-    *   **`no` (valeur par défaut)**
+    *   **`no` (comportement par défaut)**
 
 mheight
 :   Indique la hauteur de la popup.
@@ -1283,9 +1327,9 @@ mheight
 mtarget
 :   Indique le *name* de la fenêtre cible de l'hyperlien.
 
-    Les valeurs possibles sont :<span class="fixme MCO">reformuler</span>
+    Les valeurs possibles sont :
 
-    *   **`_blank` (valeur par défaut)** : Dans ce cas, la fenêtre cible est une nouvelle fenêtre ;
+    *   **`_blank` (comportement par défaut)** : Dans ce cas, la fenêtre cible est une nouvelle fenêtre ;
     *   `_self` : Dans ce cas, la fenêtre cible est la fenêtre en cours ;
     *   `fhidden` : Dans ce cas, la fenêtre cible est une fenêtre cachée ;
     *   `fdoc` : Dans l'application *ONEFAM*, la fenêtre cible est la fenêtre dans laquelle est affiché le document (utile pour les menus avec l'option *global*) ;
@@ -1306,7 +1350,7 @@ onlyglobal
     Les valeurs possibles sont :
 
     *   `yes`
-    *   **`no` (valeur par défaut)**
+    *   **`no` (comportement par défaut)**
 
 submenu
 :   Indique que le menu doit avoir un menu parent.
@@ -1314,8 +1358,6 @@ submenu
     Les valeurs possibles sont :
 
     *   toute chaîne alphanumérique.
-
-    Il n'y a pas de valeur par défaut.
 
 tconfirm
 :   Indique la question apparaissant pour la confirmation (ce doit être une question fermée).
@@ -1338,21 +1380,21 @@ Permet de représenter un format monétaire.
 
 *   consultation :
 
-    Le nombre, formaté selon la locale de l'utilisateur au moyen de la fonction [`money_format`](http://php.net/manual/fr/function.money-format.php "documentation de money_format sur php.net").
+    Le nombre, formaté au moyen de la fonction [`money_format('%!.2n', …)`][PHP_money_format].
 
-    ![ money - consultation html ](money-consultation.png "money - Consultation html")
+    ![ money - consultation html ](famille/attributs/money-consultation.png) "money - Consultation html")
 
 *   modification :
 
     un input de type texte permettant de saisir le nombre.
 
-    ![ money - Modification html ](money-modification.png "money - Modification html")
+    ![ money - Modification html ](famille/attributs/money-modification.png) "money - Modification html")
 
 *   odt :
 
-    Le nombre, formaté selon la locale de l'utilisateur.
+    Le nombre, formaté au moyen de la fonction [`money_format('%!.2n', )`][PHP_money_format].
 
-    ![ money - consultation odt ](money-odt.png "money - Consultation odt")
+    ![ money - consultation odt ](famille/attributs/money-odt.png) "money - Consultation odt")
 
 ### comportement
 
@@ -1361,7 +1403,7 @@ Lors de l'enregistrement, le nettoyage suivant est effectué :
 *   remplacement des `,` par `.`
 *   suppression des espaces
 
-La valeur nettoyée est validée au moyen de la fonction [is_numeric](php.net/manual/function.is-numeric.php "documentation sur php.net").
+La valeur nettoyée est validée au moyen de la fonction [is_numeric][PHP_is_numeric].
 
 ### format de stockage
 
@@ -1381,13 +1423,13 @@ Les attributs de type *password* permettent d'insérer des valeurs sans en dévo
 
     La valeur avec les caractères remplacés par des étoiles.
 
-    ![ password - consultation html ](password-consultation.png "password - Consultation html")
+    ![ password - consultation html ](famille/attributs/password-consultation.png) "password - Consultation html")
 
 *   modification :
 
     Un `input` de type `password`.
 
-    ![ password - Modification html ](password-modification.png "password - Modification html")
+    ![ password - Modification html ](famille/attributs/password-modification.png) "password - Modification html")
 
 *   odt :
 
@@ -1415,13 +1457,13 @@ Les attributs de type *tab* permettent de créer des onglets.
 
     Un onglet.
 
-    ![ tab - consultation html ](tab-consultation.png "tab - Consultation html")
+    ![ tab - consultation html ](famille/attributs/tab-consultation.png) "tab - Consultation html")
 
 *   modification :
 
     Un onglet.
 
-    ![ tab - Modification html ](tab-modification.png "tab - Modification html")
+    ![ tab - Modification html ](famille/attributs/tab-modification.png) "tab - Modification html")
 
 *   odt :
 
@@ -1438,25 +1480,27 @@ Cet attribut n'est pas stocké.
 ### options
 
 viewonfly
-:   Indique que les attributs qui sont contenus dans le tab ne seront chargés sur une interface web que si l'utilisateur clique sur l'onglet.
+:   Indique que le contenu du tab est chargé en ajax lorsque l'utilisateur clique sur l'onglet.
     Cela réduit le temps de réponse pour les documents ayant de très nombreux attributs (plusieurs centaines).
 
-    Cela n'est applicable que pour la vue standard de Dynacase (consultation uniquement) <span class="fixme MCO">Liste des actions et vues</span>.
+    Cela n'est applicable que pour la vue standard de Dynacase, et en consultation uniquement.
+    <span class="fixme MCO">EBR: Liste des actions et vues compatibles avec viewonfly</span>.
 
     Les valeurs possibles sont :
 
     *    `yes`
-    *    **`no` (valeur par défaut)**
+    *    **`no` (comportement par défaut)**
 
 firstopen
 :   Indique que cet onglet doit être sélectionné à l'ouverture du document.
 
-    Cela ne s'applique que pour les vues standard de Dynacase (consultation et rédaction) <span class="fixme MCO">Liste des actions et vues</span>.
+    Cela ne s'applique que pour les vues standard de Dynacase (consultation et rédaction).
+    <span class="fixme MCO">EBR: Liste des actions et vues compatibles avec firstopen</span>.
 
     Les valeurs possibles sont :
 
     *    `yes`
-    *    **`no` (valeur par défaut)**
+    *    **`no` (comportement par défaut)**
 
 ## text
 
@@ -1470,19 +1514,19 @@ Les attributs de type *text* permettent d'insérer du texte simple, sur une seul
 
     La valeur brute.
 
-    ![ text - consultation html ](text-consultation.png "text - Consultation html")
+    ![ text - consultation html ](famille/attributs/text-consultation.png) "text - Consultation html")
 
 *   modification :
 
     un `input` de type `text`.
 
-    ![ text - Modification html ](text-modification.png "text - Modification html")
+    ![ text - Modification html ](famille/attributs/text-modification.png) "text - Modification html")
 
 *   odt :
 
     La valeur brute.
 
-    ![ text - consultation odt ](text-odt.png "text - Consultation odt")
+    ![ text - consultation odt ](famille/attributs/text-odt.png) "text - Consultation odt")
 
 ### comportement
 
@@ -1497,14 +1541,14 @@ La valeur stockée est la valeur nettoyée.
 ### options
 
 elabel
-:   Valeur de l'attribut `@title` de l'input correspondant.
+:   Valeur de l'attribut `@title` de l'`input` correspondant.
 
     Les valeurs possibles sont :
 
     *   Toute chaîne de caractères. Attention, la plupart des navigateurs n'acceptent pas de retour chariot.
 
 esize
-:   Valeur de l'attribut `@size` de l'input correspondant.
+:   Valeur de l'attribut `@size` de l'`input` correspondant.
 
     Les valeurs possibles sont :
 
@@ -1522,19 +1566,21 @@ Les attributs de type *time* permettent d'insérer une heure.
 
     La valeur brute.
 
-    ![ time - consultation html ](time-consultation.png "time - Consultation html")
+    ![ time - consultation html ](famille/attributs/time-consultation.png) "time - Consultation html")
 
 *   modification :
 
-    2 inputs de type text, séparés par le symbole *:*. Du javascript transforme les entrées pour en faire des heures valides (les nombres sont remplacés par leur modulo respectif avec 24 et 60, et les autres valeurs sont remplacées par 00).
+    2 inputs de type text, séparés par le symbole *:*.
+    Du javascript transforme les entrées pour en faire des heures valides
+    (les nombres sont remplacés par leur modulo respectif avec 24 et 60, et les autres valeurs sont remplacées par 00).
 
-    ![ time - modification time ](time-modification.png "time - Modification html")
+    ![ time - modification time ](famille/attributs/time-modification.png) "time - Modification html")
 
 *   odt :
 
     La valeur brute.
 
-    ![ time - consultation odt ](time-odt.png "time - Consultation odt")
+    ![ time - consultation odt ](famille/attributs/time-odt.png) "time - Consultation odt")
 
 ### comportement
 
@@ -1567,19 +1613,19 @@ Les attributs de type *timestamp* permettent d'insérer une date et heure.
 
     La date et heure formatée en accord avec la locale de l'utilisateur.
 
-    ![ timestamp - consultation html ](timestamp-consultation.png "timestamp - Consultation html")
+    ![ timestamp - consultation html ](famille/attributs/timestamp-consultation.png) "timestamp - Consultation html")
 
 *   modification :
 
     date picker avec possibilité de définir l'heure.
 
-    ![ timestamp - Modification html ](timestamp-modification.png "timestamp - Modification html")
+    ![ timestamp - Modification html ](famille/attributs/timestamp-modification.png) "timestamp - Modification html")
 
 *   odt :
 
     La date et heure formatée en accord avec la locale de l'utilisateur.
 
-    ![ timestamp - consultation odt ](timestamp-odt.png "timestamp - Consultation odt")
+    ![ timestamp - consultation odt ](famille/attributs/timestamp-odt.png) "timestamp - Consultation odt")
 
 ### comportement
 
@@ -1599,7 +1645,7 @@ La date est stockée au format ISO8601 « sans T » (yyyy-mm-dd hh:mm:ss).
 
 ### description
 
-<div class="fixme MCO">description</div>
+<div class="fixme MCO">EBR: description du type d'attribut XML</div>
 
 ### représentation
 
@@ -1608,3 +1654,10 @@ La date est stockée au format ISO8601 « sans T » (yyyy-mm-dd hh:mm:ss).
 <!-- links -->
 [MDN_css_color_value]: https://developer.mozilla.org/en-US/docs/CSS/color_value "description du type css color sur MDN"
 [MDN_css_length_value]: https://developer.mozilla.org/en-US/docs/CSS/length "description du type css length sur MDN"
+[PHP_money_format]: http://php.net/manual/fr/function.money-format.php "documentation de money_format sur php.net"
+[PHP_is_numeric]: php.net/manual/function.is-numeric.php "documentation sur php.net"
+[CKEDITOR_home]: http://ckeditor.com/ "Site officiel de CKEditor"
+[CKEDITOR_option]: http://docs.cksource.com/ckeditor_api/symbols/CKEDITOR.config.html "options de CKEDITOR"
+[SORTTABLEJS_home]: http://www.kryogenix.org/code/browser/sorttable/ "site officiel de sorttable.js"
+[JSCOLOR_home]: http://jscolor.com/ "site officiel de JSColor"
+[JSCALENDAR_HOME]: http://www.dynarch.com/projects/calendar/old/ "site officiel de JSCalendar"
