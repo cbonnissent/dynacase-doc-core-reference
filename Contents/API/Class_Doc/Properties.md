@@ -1,4 +1,4 @@
-# Propriétés de la classe Doc
+# Propriétés de la classe Doc {#Core:9aa8edfa-2f2a-11e2-aaec-838a12b40353}
 
 La classe Doc dispose de plusieurs propriétés intéressantes.
 
