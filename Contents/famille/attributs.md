@@ -18,7 +18,7 @@ Note sur les options : Dans Dynacase, les options sont *libres*, ce qui veut di
 De par leur nature extensible, les options n'ont pas de valeur par défaut ;
 aussi, dans leur description, nous indiquerons par *(comportement par défaut)* le comportement de l'option en l'absence de valeur.
 
-### options communes à tous les types d'attributs {options-communes}
+### options communes à tous les types d'attributs {#core:16e19c90-3233-11e2-a58f-6b135c3a2496}
 
 searchcriteria
 :   Indique quelle sera l'utilisation de l'attribut dans les recherches.
@@ -107,10 +107,13 @@ vlabel
 
 ### options
 
+En plus des [options communes à tous les types d'attributs](#core:16e19c90-3233-11e2-a58f-6b135c3a2496), ce type d'attribut dispose des options suivantes :
+
 batchfolder
 :   Indique si l'action définie doit être appliquée sur tous les éléments du dossier.
 
-    <span class="fixme MCO">EBR: décrire le fonctionnement de batchfolder</span>
+    Option utilisable uniquement dans les familles dérivées de la famille *EXEC* (Traitement).
+    Se reporter à la documentation de la famille *Traitement* pour plus de détails.
 
     Les valeurs possibles sont :
 
@@ -126,7 +129,6 @@ Les attributs de type *account* permettent de faire un lien vers un compte (util
 ### représentation
 
 *   consultation :
-
     Un hyperlien vers l'utilisateur cible, avec comme label le titre l'utilisateur cible, et son icone.
 
     ![ account simple - consultation html ](famille/attributs/account-simple-consultation.png) "account simple - Consultation html")
@@ -154,6 +156,8 @@ le titre est remplacé par le texte *Information non disponible* (se reporter à
 La valeur stockée est l'id du document associé.
 
 ### options
+
+En plus des [options communes à tous les types d'attributs](#core:16e19c90-3233-11e2-a58f-6b135c3a2496), ce type d'attribut dispose des options suivantes :
 
 group
 :   Indique une restriction sur les comptes qui peuvent être référencés par la relation.
@@ -400,6 +404,8 @@ La valeur stockée est le code html de la couleur.
 
 ### options
 
+En plus des [options communes à tous les types d'attributs](#core:16e19c90-3233-11e2-a58f-6b135c3a2496), ce type d'attribut dispose des options suivantes :
+
 ## date
 
 ### description
@@ -440,6 +446,8 @@ La date est stockée au format ISO8601 (yyyy-mm-dd).
 
 ### options
 
+En plus des [options communes à tous les types d'attributs](#core:16e19c90-3233-11e2-a58f-6b135c3a2496), ce type d'attribut dispose des options suivantes :
+
 ## docid
 
 ### description
@@ -478,6 +486,8 @@ le titre est remplacé par le texte *Information non disponible* (se reporter à
 La valeur stockée est l'id du document cible
 
 ### options
+
+En plus des [options communes à tous les types d'attributs](#core:16e19c90-3233-11e2-a58f-6b135c3a2496), ce type d'attribut dispose des options suivantes :
 
 creation
 :   Indique qu'un document de la famille de la relation pourra être créé depuis le formulaire.
@@ -609,6 +619,8 @@ La valeur stockée est la valeur nettoyée.
 
 ### options
 
+En plus des [options communes à tous les types d'attributs](#core:16e19c90-3233-11e2-a58f-6b135c3a2496), ce type d'attribut dispose des options suivantes :
+
 ## enum
 
 ### description
@@ -644,6 +656,8 @@ Aucun comportement particulier.
 La valeur stockée est la clé.
 
 ### options
+
+En plus des [options communes à tous les types d'attributs](#core:16e19c90-3233-11e2-a58f-6b135c3a2496), ce type d'attribut dispose des options suivantes :
 
 bmenu
 :   Indique si l'énuméré doit apparaître en tant que filtre dans les interfaces de l'application *GENERIC*
@@ -802,6 +816,8 @@ La valeur stockée est l'identifiant vault du fichier (sous la forme *&lt;type-m
 
 ### options
 
+En plus des [options communes à tous les types d'attributs](#core:16e19c90-3233-11e2-a58f-6b135c3a2496), ce type d'attribut dispose des options suivantes :
+
 hideindav
 :   Indique si le fichier apparaît lors de l'accès au moyen du protocole webdav.
 
@@ -923,6 +939,8 @@ Cet attribut n'est pas stocké.
 
 ### options
 
+En plus des [options communes à tous les types d'attributs](#core:16e19c90-3233-11e2-a58f-6b135c3a2496), ce type d'attribut dispose des options suivantes :
+
 bgcolor
 :   Indique la couleur de fond du cadre.
 
@@ -959,13 +977,19 @@ Le langage de mise en forme est le html, et un éditeur WYSIWYG (basé sur [CKEd
 
 ### comportement
 
-<span class="fixme MCO">EBR: décrire le nettoyage des attributs de type htmltext</span>
+Lors de l'enregistrement, le nettoyage suivant est effectué :
+
+*   Les balises `script` et `noscript` sont remplacées par des balises `pre` ;
+*   Les entités UTF-8 sont décodées ;
+*   Les commentaires sont supprimés.
 
 ### format de stockage
 
 La valeur stockée est le html *nettoyé* selon les règles précédentes.
 
 ### options
+
+En plus des [options communes à tous les types d'attributs](#core:16e19c90-3233-11e2-a58f-6b135c3a2496), ce type d'attribut dispose des options suivantes :
 
 doclink
 :   Cette option nécessite l'installation du module dynacase-ckeditor-plugins.
@@ -989,8 +1013,11 @@ editheight
     La valeur par défaut est `150px`.
 
 htmlclean
-:   Indique que le serveur nettoiera le contenu en supprimant toutes les balises de style, généralement issues d'un copier/coller.
-    <span class="fixme MCO">EBR: préciser le nettoyage des balises de style avec l'option htmlclean</span>
+:   Indique que le serveur nettoiera le contenu en supprimant toutes les balises de style, généralement issues d'un copier/coller :
+
+    *   les attribut des balises `span` et `font` sont supprimés ;
+    *   les attributs `@class` et `@style` sont supprimés ;
+    *   les balises `style` sont supprimés.
 
     Les valeurs possibles sont :
 
@@ -1103,6 +1130,8 @@ La valeur stockée est l’identifiant vault du fichier (sous la forme *&lt;type
 
 ### options
 
+En plus des [options communes à tous les types d'attributs](#core:16e19c90-3233-11e2-a58f-6b135c3a2496), ce type d'attribut dispose des options suivantes :
+
 hideindav
 :   Indique si le fichier apparaît lors de l'accès au moyen du protocole webdav.
 
@@ -1198,6 +1227,8 @@ La valeur stockée est la valeur brute du nombre.
 
 ### options
 
+En plus des [options communes à tous les types d'attributs](#core:16e19c90-3233-11e2-a58f-6b135c3a2496), ce type d'attribut dispose des options suivantes :
+
 ## longtext
 
 ### description
@@ -1233,6 +1264,8 @@ Aucun comportement particulier
 La valeur stockée est la valeur brute.
 
 ### options
+
+En plus des [options communes à tous les types d'attributs](#core:16e19c90-3233-11e2-a58f-6b135c3a2496), ce type d'attribut dispose des options suivantes :
 
 editheight
 :   Indique la hauteur du `textarea` correspondant.
@@ -1286,6 +1319,8 @@ Le menu n'est pas représenté dans les cas suivants:
 Cet attribut n'est pas stocké.
 
 ### options
+
+En plus des [options communes à tous les types d'attributs](#core:16e19c90-3233-11e2-a58f-6b135c3a2496), ce type d'attribut dispose des options suivantes :
 
 barmenu
 :   Indique que la popup doit s'ouvrir avec la barre de menus du navigateur.
@@ -1411,6 +1446,8 @@ La valeur stockée est la valeur nettoyée.
 
 ### options
 
+En plus des [options communes à tous les types d'attributs](#core:16e19c90-3233-11e2-a58f-6b135c3a2496), ce type d'attribut dispose des options suivantes :
+
 ## password
 
 ### description
@@ -1444,6 +1481,8 @@ En édition, le champ password est sytématiquement présenté vide. Lors de la 
 La valeur stockée est la valeur brute.
 
 ### options
+
+En plus des [options communes à tous les types d'attributs](#core:16e19c90-3233-11e2-a58f-6b135c3a2496), ce type d'attribut dispose des options suivantes :
 
 ## tab
 
@@ -1479,12 +1518,19 @@ Cet attribut n'est pas stocké.
 
 ### options
 
+En plus des [options communes à tous les types d'attributs](#core:16e19c90-3233-11e2-a58f-6b135c3a2496), ce type d'attribut dispose des options suivantes :
+
 viewonfly
 :   Indique que le contenu du tab est chargé en ajax lorsque l'utilisateur clique sur l'onglet.
     Cela réduit le temps de réponse pour les documents ayant de très nombreux attributs (plusieurs centaines).
 
-    Cela n'est applicable que pour la vue standard de Dynacase, et en consultation uniquement.
-    <span class="fixme MCO">EBR: Liste des actions et vues compatibles avec viewonfly</span>.
+    Cela n'est applicable que pour les vues utilisant la zone *FDL:VIEWBODYCARD*.
+    Les actions utilisant cette zone sont :
+
+    *   *FDL:FDL_CARD*,
+    *   *FDL:IMPCARD*,
+    *   *FDL:OPENDOC*,
+    *   *FDL:VIEWEXTDOC*.
 
     Les valeurs possibles sont :
 
@@ -1494,8 +1540,14 @@ viewonfly
 firstopen
 :   Indique que cet onglet doit être sélectionné à l'ouverture du document.
 
-    Cela ne s'applique que pour les vues standard de Dynacase (consultation et rédaction).
-    <span class="fixme MCO">EBR: Liste des actions et vues compatibles avec firstopen</span>.
+    Cela n'est applicable que pour les vues utilisant les zones *FDL:VIEWBODYCARD* et *FDL:EDITBODYCARD*.
+    Les actions utilisant cette zone sont :
+
+    *   *FDL:FDL_CARD*,
+    *   *FDL:IMPCARD*,
+    *   *FDL:OPENDOC*,
+    *   *FDL:VIEWEXTDOC*,
+    *   *GENERIC:GENER
 
     Les valeurs possibles sont :
 
@@ -1539,6 +1591,8 @@ Lors de la sauvegarde, la valeur est nettoyée :
 La valeur stockée est la valeur nettoyée.
 
 ### options
+
+En plus des [options communes à tous les types d'attributs](#core:16e19c90-3233-11e2-a58f-6b135c3a2496), ce type d'attribut dispose des options suivantes :
 
 elabel
 :   Valeur de l'attribut `@title` de l'`input` correspondant.
@@ -1601,6 +1655,8 @@ La valeur stockée est la valeur nettoyée.
 
 ### options
 
+En plus des [options communes à tous les types d'attributs](#core:16e19c90-3233-11e2-a58f-6b135c3a2496), ce type d'attribut dispose des options suivantes :
+
 ## timestamp
 
 ### description
@@ -1641,15 +1697,21 @@ La date est stockée au format ISO8601 « sans T » (yyyy-mm-dd hh:mm:ss).
 
 ### options
 
+En plus des [options communes à tous les types d'attributs](#core:16e19c90-3233-11e2-a58f-6b135c3a2496), ce type d'attribut dispose des options suivantes :
+
 ## xml
 
 ### description
 
-<div class="fixme MCO">EBR: description du type d'attribut XML</div>
+Le type *XML n'est utilisable que pour des besoins internes de core. Seule la famille "SEARCH" l'utilise.
 
 ### représentation
 
+Les attributs de type *xml* sont représentés comme du texte simple.
+
 ### options
+
+En plus des [options communes à tous les types d'attributs](#core:16e19c90-3233-11e2-a58f-6b135c3a2496), ce type d'attribut dispose des options suivantes :
 
 <!-- links -->
 [MDN_css_color_value]: https://developer.mozilla.org/en-US/docs/CSS/color_value "description du type css color sur MDN"
