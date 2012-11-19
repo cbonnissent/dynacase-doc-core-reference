@@ -2,6 +2,67 @@
  
 <span class="fixme template"> template for famille/parametrage_de_core.md.</span>
 
+## introduction
+
+Pour paramétrer une application Dynacase, on va utiliser divers formats de fichier :
+
+*   Les familles seront définies dans des fichiers csv
+*   Le code php sera à déployer dans des fichiers php, à intégrer à la plate-forme.
+*   Les documents systèmes seront importés au moyen de fichiers csv ou xml.
+
+## Définition de familles
+
+Les familles sont définies dans un fichier csv respectant le format suivant:
+
+*   Encodage : UTF-8,
+*   Délimiteur de texte : `` (vide),
+*   séparateur de colonnes : `;`.
+
+La définition d'une famille commence toujours par une ligne de la forme :
+
+    BEGIN;[fromid];[title];[id];[className];[logicalName]
+
+avec les correspondances suivantes:
+
+BEGIN
+:   Obligatoire, signale le début d'une définition de famille
+
+[fromid]
+:   Identifiant logique (nom logique ou id) de la famille de laquelle cette famille hérite.
+    Mettre vide s'il n'y a pas d'héritage.
+
+    L'utilisation d'un id à la place d'un nom logique est à réserver aux familles de core.
+
+[title]
+:   Titre de la famille.
+
+    Ce titre est utilisé sur les interfaces pour désigner la famille.
+
+    Il est automatiquement ajouté au catalogue de traduction, et peut ainsi être traduit.
+
+[id]
+:   Identifiant numérique de la famille.
+
+    Le laisser à vide pour utiliser un identifiant logique.
+    S'il est valué il faut que cet identifiant ne soit pas déjà pris par un autre document.
+    Les valeurs entre 900 et 999 peuvent être utilisée pour vos besoins spécifiques.
+    L'usage de valeurs numériques fixe est fortement déconseillée.
+
+[className]
+:   Nom de la classe PHP de cette famille. Cette classe doit être présente sur le serveur dans un fichier appelé `/FDL/Class.[CLASSNAME].php`.
+
+    Le laisser à vide pour que Dynacase génère la classe automatiquement.
+
+    Permet un héritage autre que celui prévu par défaut par les classes documentaire.
+
+[logicalName]
+:   Nom logique de la famille.
+
+    Doit commencer par une lettre.
+    Il ne peut ensuite contenir que des caractères alphanumériques ainsi que les caractères _ et - (pas d'espace, ni de ponctuation).
+
+---
+
 Lors de l'import d'une famille, on peut initialiser ses propriétés au moyen des mots-clé suivants :
 
 CPROFID
