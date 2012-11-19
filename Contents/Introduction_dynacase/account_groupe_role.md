@@ -5,7 +5,7 @@
 La gestion des droits et de la sécurité dans Dynacase repose sur la notion de compte. Le compte est lui divisé en trois notions :
 
 Utilisateur
-:   Un utilisateur représente une personne (physique ou morale) ayant la capacité de se connecter à la plate-forme, il possède donc a minima un login.
+:   Un utilisateur représente une personne (physique ou morale) ayant la capacité de se connecter à la plate-forme, il possède donc à minima un login.
 
 Groupe
 :   Un groupe est un ensemble d'utilisateurs et de groupes.  
@@ -13,9 +13,9 @@ Les groupes peuvent s'imbriquer et dans ce cas le groupe de plus haut niveau con
 
 Rôle
 :   Un rôle marque une fonction. La notion de rôle est utilisée dans le cadre du profilage, il a deux usages complémentaires :
-
-    * au niveau d'un groupe, il indique que l'ensemble des utilisateurs (directement dans le groupe ou hérités de groupes fils) possède ce rôle,
-    * au niveau d'un profil, il indique que seul les utilisateurs ayant ce rôle peuvent effectuer un certain type d'action (par exemple : uniquement les gens ayant le rôle *rédacteur* peuvent modifier le document).
+    
+    * au niveau d'un groupe, il indique que l'ensemble des utilisateurs (directement dans le groupe ou hérités de groupes fils) possèdent ce rôle,
+    * au niveau d'un profil, il indique que seul les utilisateurs ayant ce rôle peuvent effectuer un certain type d'action (par exemple : uniquement les utilisateurs ayant le rôle *rédacteur* peuvent modifier le document).
 
 ## Utilisateur
 
@@ -31,20 +31,20 @@ Mot de passe (optionnel)
 :   Le mot de passe est utilisé lors de la phase de login, il est stocké sous la forme d'une empreinte cryptographique (hash) en base de données.
 
 Adresse e-mail (optionnel)
-:   L'adresse e-mail de utilisateur est utilisée lors d'un envoi de mail à un utilisateur ou à un groupe d'utilisateurs, ce mail est alors automatiquement récupéré par la plate-forme lors de la mise en forme du mail.
+:   L'adresse e-mail de l'utilisateur est utilisée lors d'un envoi de mail à un utilisateur ou à un groupe d'utilisateurs, cette adresse e-mail est alors automatiquement récupéré par la plate-forme lors de la mise en forme d'un courriel.
 
 Date d'expiration du compte
-:   Cette date permet d'indiquer qu'un compte ne sera plus actif passé une certaine date. Lorsque le compte est inactif, l'utilisateur ne peut plus se connecter mais n'est pas non plus supprimé ce permet de éventuellement le réactiver.
+:   Cette date permet d'indiquer qu'un compte ne sera plus actif passé une certaine date. Lorsque le compte est inactif, l'utilisateur ne peut plus se connecter mais le compte n'est pas supprimé et peut-être réactivé par la suite.
 
 Il est de plus possible de désactiver un compte et de gérer les groupes via les interfaces d'administration et l'API de Dynacase.
 
 ## Groupe
 
-Un groupe est un ensemble d'utilisateurs, il permet d'effectuer les actions suivantes :
+Un groupe est un ensemble d'utilisateurs et/ou de groupes, il permet d'effectuer les actions suivantes :
 
 * envoi d'un mail aux membres d'un groupe,
-* association d'un ou plusieurs rôles à l'ensemble des membres du groupe,
-* association d'ACL à l'ensemble des membres du groupe
+* affectation d'un ou plusieurs rôles à l'ensemble des membres du groupe,
+* affectation d'ACL à l'ensemble des membres du groupe.
 
 Les groupes possèdent les caractéristiques suivantes :
 
