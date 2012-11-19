@@ -45,7 +45,7 @@ Il est de plus possible de créer ses propres backend et frontend d'authentifica
 
 ## Sécurité applicative
 
-La sécurité applicative fonctionne avec un mécanisme d'ACL. Chaque action peut-être associée a une ACL et seul les utilisateurs possédant cette ACL peuvent exécuter cette action.  
+La sécurité applicative fonctionne avec un mécanisme d'ACL. Chaque action peut-être associée à une ACL et seuls les utilisateurs possédant cette ACL peuvent exécuter cette action.  
 
 NB : une action n'ayant pas d'ACL est accessible à tout utilisateur même si celui-ci n'est pas connecté mais les droits documentaires continuent de s'appliquer (dans le cas d'un utilisateur non connecté c'est l'utilisateur *anonymous guest* qui est utilisé pour le calcul des droits).
 
@@ -55,7 +55,7 @@ La sécurité documentaire est le mécanisme permettant de définir qui peut eff
 
 ### Droits par défaut
 
-Les droits par défaut sont les suivants :
+Les droits par défaut sont les suivants : 
 
 Consulter
 :   Permet de consulter et trouver le document.
@@ -65,7 +65,7 @@ Modifier
     Si ce droit n'est pas présent les modifications ne peuvent être enregistrées.
 
 Supprimer
-:   Permet de supprimer le document que ça soit via l'IHM ou via l'API.
+:   Permet de supprimer le document que ce soit via l'IHM ou via l'API.
 
 De plus, il existe au niveau d'une famille documentaire les droits suivants:
 
@@ -86,7 +86,7 @@ Le système d'attribution des droits à des utilisateurs repose sur la notion de
 On différencie deux usages de profil :
 
 Statique
-:   la liste des utilisateurs ayant droit ne varie pas suivant le contenu du document (par exemple : les utilisateurs ayant le profil *Rédacteur* peuvent modifier ce document),
+:   la liste des utilisateurs ayant droit ne varie pas suivant le contenu du document (par exemple : les utilisateurs ayant le rôle *Rédacteur* peuvent modifier ce document),
 
 Dynamique
 :   la liste des utilisateurs ayant droit varie alors suivant l'étape et/ou le contenu du document (par exemple : seul l'utilisateur cité dans l'attribut *validateur* de document peut le modifier lors de l'étape *validation*)
@@ -100,7 +100,7 @@ Famille
 :   Il concerne une définition de famille documentaire et indique les droits de base et les droits de création (via l'IHM par défaut, via le code).
 
 Les autres types de profil
-:   Il en existe tout un ensemble qui couvrent les documents systèmes spécialisés de Dynacase (Dossier, Recherche, Rapport, etc.).
+:   Les documents systèmes spécialisés de Dynacase possèdent des profils contenant des droits spécifiques (Dossier, Recherche, Rapport, etc.).
 
 Une fois le profil créé, celui-ci doit être associé à un document. Pour ce faire, il existe plusieurs moyens :
 
