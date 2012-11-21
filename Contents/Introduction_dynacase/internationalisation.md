@@ -5,11 +5,7 @@
 Dynacase comprend un mécanisme permettant la traduction de l'ensemble des labels et quelques formats de données pour s'adapter à la langue de l'utilisateur.  
 Par défaut, il y a deux langues qui sont mises à disposition : le français et l'anglais.
 
-En plus des labels, les formats de données suivant sont présentés différemment suivant la langue de l'utilisateur :
-
-* date : le format suit la langue de l'utilisateur en cours (format anglais ou format français),
-* nombre : les séparateurs de milliers et de décimal <span class="fixme"> Comment on fixe d'autres formats ?? Est ce que les autres formats que le money sont pris en compte </span>
-* <span class="fixme">d'autres chose ???</span>
+En plus des labels, le format de la date est présenté différemment suivant la locale de l'utilisateur.
 
 ## Mécanisme de traduction
 
@@ -28,7 +24,7 @@ Le mise en place des traduction lors du développement d'une application passe d
     * pour le code javascript, la fonction `_` de l'api DATA.
 2. Extraction des clefs du code et construction des catalogues. Cette partie est soit manuelle, soit instrumentée à l'aide des outils de build des modules Dynacase.
 3. Déploiement du catalogue sur le serveur. Lors de la mise à jour du serveur applicatif, il faut fusionner les nouvelles définitions provenant du catalogue avec celles déjà en place.
-4. Lors de l'exécution du programme, lorsque le code passe par une méthode utilisée lors de l'étape 1, il va chercher dans les définitions définies sur la plate-forme pour afficher la traduction pour la locale en cours
+4. Lors de l'exécution du programme, lorsque le code passe par une méthode utilisée lors de l'étape 1, il va chercher dans les définitions définies sur la plate-forme pour afficher la traduction pour la locale en cours.
 
 ## Mécanisme de mise à jour des paramètres régionaux
 
