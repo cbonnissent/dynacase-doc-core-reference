@@ -2,21 +2,20 @@
 
 ## Résumé
 
-Après avoir abordé la famille et le document, nous allons nous intéresser à un autre élément fondamental d'un projet Dynacase : **le cycle de vie**.
+Ce chapitre décrit un élément fondamental d'un projet Dynacase : **le cycle de vie**.
 
-Le cycle de vie est un objet interne à Dynacase qui permet de faire évoluer un document au sein d'un processus. Durant, ce processus différentes actions peuvent être appliquées au document :
+Le cycle de vie est un objet interne à Dynacase qui permet de faire évoluer un document au sein d'un processus. Lors de ce processus, différentes actions peuvent être appliquées au document :
 
 * changement/calcul de valeurs (le numéro chrono n'est affecté que après la validation du document),
-* changement de visibilités (un document en brouillon ne peut-être visible que par son rédacteur),
+* changement des droits associés à un document (un document en brouillon ne peut-être modifiable que par son rédacteur),
 * évolution du formulaire (l'onglet validation n'apparaît que lors de l'étape validation),
 * envoi de mail (le validateur d'un document reçoit un mail lorsque son avis est nécessaire),
-* déclenchement d'un timer (si après 1 mois le document est toujours en validation, le validateur est relancé),
+* déclenchement d'un minuteur (si après 1 mois le document est toujours en validation, le validateur est relancé),
 * plus généralement du code PHP peut-être déclenché (envoi à un autre élément du SI de l'ordre de paiement après validation finale du document).
 
 Les cycles de vie de Dynacase peuvent être représentés par des graphiques orientés (ceux-ci sont automatiquement générés par la plate-forme).
 
-![ Exemple de de schéma de cycle de vie ](cycle_de_vie.png)
-
+![ Exemple de schéma de cycle de vie ](cycle_de_vie.png)
 
 ## Composants d'un cycle de vie
 
@@ -25,7 +24,7 @@ Les cycles de vie de Dynacase peuvent être représentés par des graphiques ori
 Un cycle de vie est composé des éléments suivants :
 
 Propriétés
-:   elles facilitent le paramétrage et l'export (famille associée, nom logique, etc.).
+:   Elles facilitent le paramétrage et l'export (famille associée, nom logique, etc.).
 
 Structure
 :   La structure est composée d'étapes et de transitions reliant les étapes. Elle constitue la base du cycle et indique comment le document peut évoluer.
@@ -35,15 +34,15 @@ Profil dédié
 
 ## Étapes
 
-Les étapes marquent une étape clef dans la vie du document. Une étape est constituée de :
+Les étapes marquent un moment clef dans la vie du document. Une étape est constituée de :
 
 État
-:   L'état est le statut du document à un moment donné (brouillon, rédigé, validé, historique). Les états sont décrits sous la forme de constantes PHP utilisés pour construire le tableau du cycle.
+:   L'état est le statut du document à un moment donné (brouillon, rédigé, validé, historique).
 
-Activité (facultatif)
-:   l'activité est la tâche en cours de réalisation sur un document donné (par exemple : en rédaction, en validation). Elles sont décrites sous la forme d'un tableau PHP associant les étapes avec les activités (et leurs traductions).
+Activité
+:   L'activité est la tâche en cours de réalisation sur un document donné (par exemple : en rédaction, en validation).
 
-A une étape, on peut rattacher les éléments suivants :
+À une étape, on peut rattacher les éléments suivants :
 
 Mail (un ou plusieurs)
 :   Ils sont alors envoyé à chaque passage dans cette étape,
@@ -55,13 +54,10 @@ Un contrôle de vue ou/un masque
 Couleur
 :   Celle-ci est reprise dans l'IHM et permet aux utilisateurs d'avoir un moyen mémo-technique simple pour identifier rapidement les documents.
 
-Accord
-:   ces éléments sont utilisables pour demander de valider un accord <span class="fixme">A compléter, A déprécier ?</span>
-
 Affectation
 :   L'affectation d'un utilisateur a une étape permet de réserver le document à cet utilisateur et d'éventuellement verrouiller le document à l'intention de cet utilisateur et de lui envoyer un mail.
 
-NB : on considère qu'une étape sans activité doit être terminale (c'est à dire qu'il n'existe pas de transition permettant de sortir de cette étape), car c'est uniquement durant ces étapes que le document n'évolue plus et que donc aucune activité ne s'y applique. Par exemple, un document **gardé pour historique** n'évolue plus et aucune activité ne s'y applique.
+NB : On considère qu'une étape sans activité doit être terminale (c'est à dire qu'il n'existe pas de transition permettant de sortir de cette étape), car c'est uniquement durant ces étapes que le document n'évolue plus et que donc aucune activité ne s'y applique. Par exemple, un document **gardé pour historique** n'évolue plus et aucune activité ne s'y applique.
 
 ## Transition
 
@@ -72,7 +68,7 @@ Une transition se déroule de la manière suivante :
 ![ Déroulement d'une transition ](cycle_transition.png)
 
 M0 (ou Pré-condition)
-:   la pré-condition ou M0 est une fonction PHP qui est systématiquement exécutée en début de transition, ce qui correspond aux cas suivants :
+:   La pré-condition ou M0 est une fonction PHP qui est systématiquement exécutée en début de transition, ce qui correspond aux cas suivants :
     
     * lors de l'affichage de la liste des transitions possibles à un état donné,
     * avant le déclenchement des ASK (voir entrée suivante),
@@ -81,27 +77,24 @@ M0 (ou Pré-condition)
     Si la précondition n'est pas remplie alors elle renvoie un message qui est affiché à l'utilisateur et ne permet pas d'effectuer la transition
 
 ASK
-:   Les ASK sont un ensemble d'attributs utilisés pour poser une question à l'utilisateur avant d'effectuer le changement d'état. Ils peuvent servir à valider une valeur, demander un commentaire, etc. Les valeurs récupérées peuvent être utilisée dans lors des M1, M2, M3
+:   Les ASK sont un ensemble d'attributs utilisés pour poser une question à l'utilisateur avant d'effectuer la transition. Ils peuvent servir à valider une valeur, demander un commentaire, etc. Les valeurs récupérées peuvent être utilisées dans lors des M1, M2, M3.
 
 M1
-:   le M1 est une méthode PHP qui est appelée après les ASK et le M0 mais avant le passage de la transition. On peut l'utiliser pour vérifier un ensemble d'éléments et annuler le passage d'une transition si besoin. Par exemple, on peut vérifier la présence d'un élément dans le document en cours de transition et annuler le passage de la transition si celui-ci n'est pas présent,
+:   Le M1 est une méthode PHP qui est appelée après les ASK et le M0 mais avant le passage de la transition. On peut l'utiliser pour vérifier un ensemble d'éléments et annuler le passage d'une transition si besoin. Par exemple, on peut vérifier la présence d'un élément dans le document en cours de transition et annuler le passage de la transition si celui-ci n'est pas présent.
 
 M2
-:   le M2 est une méthode PHP qui est appelée après le passage de la transition. Elle est utilisée pour modifier le document une fois la transition effectuée mais avant l'envoi des mails et des minuteurs, elle est utilisée pour modifier le contenu du document avant l'envoie de données via les mails,
+:   Le M2 est une méthode PHP qui est appelée après le passage de le changement d'état. Elle est utilisée pour modifier le document une fois la transition effectuée mais avant les mails et les minuteurs, elle est utilisée pour modifier le contenu du document avant l'envoi les mails.
 
 Mails
-:   il est possible d'attacher des mails au passage d'une transition. Ceux-ci sont alors envoyés à chaque passage de cette transition, le contenu et les destinataires peuvent être composé à l'aide du contenu du document en cours de transition,
+:   Il est possible d'attacher des mails au passage d'une transition. Ceux-ci sont alors envoyés à chaque passage de cette transition, le contenu et les destinataires peuvent être composés à l'aide du contenu du document en cours de transition.
 
 Minuteur
-:   il est possible d'attacher des minuteurs au passage d'une transition. Ceux-ci servent à déclencher une action de manière asynchrone (au bout d'un certain temps). Un des usages les plus typiques et la relance par mail (par exemple, si jamais le document est toujours à l'état relecture au bout de 15 jours le relecteur reçoit à nouveau un mail l'invitant à relire le document). Il existe deux types de minuteurs :
-    
-    * les persistants : ceux-ci sont attachés au document jusqu'à leur expiration ou qu'il soit explicitement détachés,
-    * les non-persistants : ceux-ci sont détachés lors du prochain changement d'état.
+:   Il est possible d'attacher des minuteurs au passage d'une transition. Ceux-ci servent à déclencher une action de manière asynchrone (au bout d'un certain temps). Un des usages les plus typiques et la relance par mail (par exemple, si jamais le document est toujours à l'état relecture au bout de 15 jours le relecteur reçoit à nouveau un mail l'invitant à relire le document).
 
 M3
-:   le M3 est une méthode PHP qui est appelée en tout dernier lors d'une transition. Elle est utilisée pour effectuer une action après le passage de la transition, l'envoi des mails et les minuteurs.
+:   Le M3 est une méthode PHP qui est appelée en tout dernier lors d'une transition. Elle est utilisée pour effectuer une action après le passage de la transition, l'envoi des mails et les minuteurs.
 
-NB : M2 et M3 peuvent retourner un message, contrairement à celui de M0 et M1 il n'empêchera pas le passage de la transition mais sera présenté à l'utilisateur (si les deux méthodes renvoie )
+NB : M2 et M3 peuvent retourner un message, contrairement à celui de M0 et M1 il n'empêchera pas le passage de la transition mais sera présenté à l'utilisateur.
 
 ## Cycle de vie, famille et document
 
@@ -109,10 +102,10 @@ Le cycle de vie se matérialise sous la forme d'un document Dynacase.
 
 Ce document est ensuite lié à une ou plusieurs familles : tous les nouveaux document de cette ou ces famille(s) :
 
-* sont affectés à ce cycle de vie,
-* sont automatiquement affecté à la première étape de ce cycle après leur création,
+* sont affectés à ce cycle de vie;
+* sont automatiquement affecté à la première étape de ce cycle après leur création;
 * utilisent ce cycle pour définir :
     * leur représentation,
-    * leur accessibilité (qui a le droit de voir, modifier, supprimer)
+    * leur accessibilité (qui a le droit de voir, modifier, supprimer).
 
 NB : il est aussi possible d'affecter un cycle de vie à un document via de la programmation.
