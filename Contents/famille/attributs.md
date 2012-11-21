@@ -1,4 +1,4 @@
-# les attributs
+# les attributs {#core:4e167170-33ed-11e2-8134-a7f43955d6f3}
 
 ## présentation
 
