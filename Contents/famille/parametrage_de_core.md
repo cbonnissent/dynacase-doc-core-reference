@@ -154,8 +154,8 @@ Entre ces 2 lignes, chacune des lignes correspond à :
 *   un [paramètre de propriété](#core:40d229c4-33c4-11e2-9147-a3eaf356c37c)
 *   une [propriété de famille](#core:6f013eb8-33c7-11e2-be43-373b9514dea3)
 *   un [attribut](#core:bc3fad86-33cc-11e2-9a69-1bbd9c32b0f2)
-*   un paramètre
-*   une valeur par défaut
+*   un [paramètre de famille](#core:c28824e2-3486-11e2-be3b-337d2321d8ee)
+*   une [valeur par défaut](#core:94fa51e2-3488-11e2-9e34-1f7c912168cf)
 *   une valeur initiale de paramètre
 
 ### Définition de paramètres de propriété {#core:40d229c4-33c4-11e2-9147-a3eaf356c37c}
@@ -195,7 +195,18 @@ sort
 
 ### Définition de propriétés de famille {#core:6f013eb8-33c7-11e2-be43-373b9514dea3}
 
-Lors de l'import d'une famille, on peut initialiser ses propriétés au moyen des mots-clé suivants :
+Les propriétés de famille permettent, selon les cas, de définir un comportement particulier pour la famille,
+ou de définir les valeurs par défaut des propriétés des nouveaux documents de cette famille.
+
+Leur syntaxe est toujours de la forme `[propid];[value]`, avec les correspondances suivantes :
+
+[propid]
+:   Identifiant de la propriété
+
+[value]
+:   Valeur de la propriété
+
+Les différents identifiants de propriété sont les suivants :
 
 CPROFID
 :   Valeur par défaut de la propriété *profid*.
@@ -283,7 +294,7 @@ avec les correspondances suivantes :
 
 ATTR
 :   **Obligatoire**
-    Signale le début d'une définition d'attribut.
+    Signale que la ligne est une définition d'attribut.
 
 [id_attribut]
 :   **Obligatoire**
@@ -511,8 +522,70 @@ ATTR
 
     Par exemple: `esize=3|elabel=saisissez votre prénom`
 
+### Définition de paramètres de famille {#core:c28824e2-3486-11e2-be3b-337d2321d8ee}
+
+Un paramètre de famille est une valeur stockée sur la famille directement, et accessible depuis tous les documents de cette famille.
+
+Cela est assimilable à une propriété de classe (ou propriété statique) en programmation orientée objet, même si l'implémentation en diffère.
+
+Un paramètre de famille est défini par la syntaxe suivante :
+
+    PARAM;[id_attribut];[id_conteneur];[label];[in_title];[in_abstract];[type];[ordre];[visibility];[required];[link];[phpfile];[phpfunc];[elink];[constraint];[options]
+
+avec les mêmes correspondances que pour [les attributs](#core:bc3fad86-33cc-11e2-9a69-1bbd9c32b0f2), aux exceptions suivantes :
+
+<span class="fixme MCO">différences entre PARAM et ATTR</span>
+
+### Définition de valeurs par défaut {#core:94fa51e2-3488-11e2-9e34-1f7c912168cf}
+
+Les valeurs par défaut s'appliquent aux attributs comme aux paramètres.
+
+Appliquées aux attributs, elles déterminent la valeur de l'attribut lors de la création d'un nouveau document,
+alors qu'appliquées aux paramètres, elles déterminent la valeur du paramètre lorsque l'utilisateur n'a saisi aucune valeur.
+
+Une valeur par défaut est définie par la syntaxe suivante :
+
+    DEFAULT;[attrid|paramid];[value];force=yes
+
+avec les correspondances suivantes :
+
+DEFAULT
+:   **Obligatoire**
+    Signale que la ligne est une définition valeur par défaut.
+
+[attrid|paramid]
+:   **Obligatoire**
+    identifiant de l'attribut ou du paramètre auquel s'applique la valeur par défaut.
+
+[value]
+:   la valeur par défaut, statique, ou la méthode de calcul.
+
+    Dans le cas d'une méthode de calcul, sa syntaxe est identique à celle d'un
+    [attribut calculé][attribut_calcule]
+
+    Par exemple, `DEFAULT;SGATE_RED;::getTitle(SGATE_IDRED)`
+    pré-remplit l'attribut  avec le titre de l'attribut *SGATE_IDRED*,
+    alors que `DEFAULT;SGATE_ACTION;GATE_WEATHER`
+    pré-remplit l'attribut SGATE_RED avec la chaîne *GATE_WEATHER*
+
+    Cas particulier des *array*:
+
+    *   Pour les attributs contenus dans un array, la valeur par défaut définit
+        la valeur de la cellule lors de l'ajout d'une nouvelle ligne. De fait,
+        la valeur par défaut d'un attribut contenu dans un *array* doit être simple.
+
+    *   Pour définir quelles seront les lignes présentes dans le tableau lors de la
+        création du document, il faut définir
+
+
+[force=yes]
+:   Indique, lors de la surcharge de valeur par défaut, que la nouvelle valeur par défaut écrase l'ancienne.
+
+    Dans le cas contraire, la nouvelle valeur par défaut n'est pas prise en compte
+
 <!-- links -->
 [PHP_sprintf]: http://php.net/manual/fr/function.sprintf.php "Documentation de la fonction sprintf sur php.net"
 [PHP_strftime]: http://php.net/manual/fr/function.strftime.php "Documentation de la fonction strftime sur php.net"
 [RFC_3986]: http://www.ietf.org/rfc/rfc3986.txt
 [type_attribut]: #core:4e167170-33ed-11e2-8134-a7f43955d6f3
+[attribut_calcule]: #core:cda30832-348c-11e2-8b26-4be7b60b998d
