@@ -61,6 +61,24 @@ Des règles métiers
     * via une classe associée à la famille : celle-ci permet de surcharger les comportements par défaut de Dynacase lors des étapes de la vie du document (création, sauvegarde, édition, etc.);
     * via un fichier PHP : celui-ci liste des méthodes permettant de guider la saisie des utilisateurs (par exemple rechercher uniquement les salles disponibles).
 
+### Famille système et fonctionnelles
+
+On distingue deux types de familles.
+
+Famille fonctionnelle
+:   Une famille fonctionnelle a un sens fonctionnellement et elle porte les documents des utilisateurs (une famille de compte rendu, de gestion de contrat, etc.).
+
+Famille système
+:   Une famille système permet de créer des documents utilisés par le paramétrage de Dynacase, dont le contenu est recherchable uniquement pour les administrateurs. C'est le cas pour les familles suivantes :
+    
+    * contrôle de vue : ce document permet de définir la représentation d'un document;
+    * modèle de mail : qui permet de définir un modèle d'envoi par mail pour un type de document;
+    * etc.
+    
+    Ces documents n'ayant pas de sens particulier pour les utilisateurs non administrateurs, ils ne sont pas accessibles via les recherches par défaut pour ne pas surcharger celles-ci avec des informations non pertinentes.
+
+NB : il est possible dans le cadre d'un développement Dynacase de définir ses propres familles systèmes et fonctionnelles
+
 ## Le document
 
 Un document est un objet de Dynacase. Il contient de l'information structurée et est persistant. Il est principalement présenté aux utilisateurs sous la forme de formulaires web à compléter ou de pages web.  
@@ -137,7 +155,7 @@ Options (facultatif)
 Une famille système permet de créer des documents utilisés par le paramétrage de Dynacase, dont le contenu est recherchable uniquement pour les administrateurs. C'est le cas pour les familles suivantes :
 
 * contrôle de vue : ce document permet de définir la représentation d'un document;
-* modèle de mail : qui permet de définir un modèle d'envoi de courriel pour un type de document;
+* modèle de mail : qui permet de définir un modèle d'envoi par mail pour un type de document;
 * etc.
 
 Ces documents n'ayant pas de sens particulier pour les utilisateurs non administrateurs, ils ne sont pas accessibles via les recherches par défaut pour ne pas surcharger celles-ci avec des informations non pertinentes.
