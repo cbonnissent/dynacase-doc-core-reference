@@ -1,4 +1,0 @@
-# DbObj/savePoint
- 
-...some content... 
- 

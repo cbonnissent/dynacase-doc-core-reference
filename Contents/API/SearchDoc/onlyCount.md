@@ -1,4 +1,0 @@
-# SearchDoc/onlyCount
- 
-...some content... 
- 

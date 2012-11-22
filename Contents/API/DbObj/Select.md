@@ -1,4 +1,0 @@
-# DbObj/Select
- 
-...some content... 
- 

@@ -1,4 +1,0 @@
-# Doc/getEmblem
- 
-...some content... 
- 

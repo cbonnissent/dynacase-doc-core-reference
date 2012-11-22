@@ -1,4 +1,0 @@
-# DbObj/preUpdate
- 
-...some content... 
- 

@@ -1,4 +1,0 @@
-# DbObj/postInsert
- 
-...some content... 
- 

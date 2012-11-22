@@ -1,4 +1,0 @@
-# DbObj/preSelect
- 
-...some content... 
- 

@@ -1,4 +1,0 @@
-# DbObj/preInsert
- 
-...some content... 
- 

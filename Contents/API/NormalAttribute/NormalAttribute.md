@@ -1,4 +1,0 @@
-# NormalAttribute/NormalAttribute
- 
-...some content... 
- 

@@ -1,4 +1,0 @@
-# Action/getImageUrl
- 
-...some content... 
- 

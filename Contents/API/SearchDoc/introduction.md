@@ -1,1 +1,0 @@
-# SearchDoc, introduction 

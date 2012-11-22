@@ -1,4 +1,0 @@
-# Doc/getAbstractAttributes
- 
-...some content... 
- 

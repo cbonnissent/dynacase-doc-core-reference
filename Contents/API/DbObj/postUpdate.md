@@ -1,4 +1,0 @@
-# DbObj/postUpdate
- 
-...some content... 
- 

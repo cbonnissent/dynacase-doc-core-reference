@@ -1,4 +1,0 @@
-# DbObj/rollbackPoint
- 
-...some content... 
- 

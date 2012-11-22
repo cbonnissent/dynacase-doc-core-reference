@@ -1,4 +1,0 @@
-# Action/getParam
- 
-...some content... 
- 

@@ -1,4 +1,0 @@
-# Application/addWarningMsg
- 
-...some content... 
- 

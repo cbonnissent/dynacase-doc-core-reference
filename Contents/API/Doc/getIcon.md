@@ -1,4 +1,0 @@
-# Doc/getIcon
- 
-...some content... 
- 

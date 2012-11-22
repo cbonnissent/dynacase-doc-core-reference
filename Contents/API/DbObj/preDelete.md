@@ -1,4 +1,0 @@
-# DbObj/preDelete
- 
-...some content... 
- 

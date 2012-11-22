@@ -1,4 +1,0 @@
-# Doc/getNeededAttributes
- 
-...some content... 
- 

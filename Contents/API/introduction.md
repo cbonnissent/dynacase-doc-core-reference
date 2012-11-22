@@ -1,3 +1,3 @@
-# API
+# Les essentiels de l'API
 
-Ce chapitre détailles les méthodes supportées de l'API Dynacase (Dans le code, ce sont les méthodes taguées avec la phpdoc `@api`).
+<span class="fixme tremplate">Les essentiels de l'API</span>

@@ -1,4 +1,0 @@
-# Doc/getTitleAttributes
- 
-...some content... 
- 

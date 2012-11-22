@@ -1,4 +1,0 @@
-# Application/hasPermission
- 
-...some content... 
- 

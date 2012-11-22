@@ -1,4 +1,0 @@
-# Application/setVolatileParam
- 
-...some content... 
- 

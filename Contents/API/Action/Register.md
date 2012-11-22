@@ -1,4 +1,0 @@
-# Action/Register
- 
-...some content... 
- 

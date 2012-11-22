@@ -1,4 +1,0 @@
-# DbObj/delete
- 
-...some content... 
- 

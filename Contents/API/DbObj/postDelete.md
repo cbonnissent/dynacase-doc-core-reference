@@ -1,4 +1,0 @@
-# DbObj/postDelete
- 
-...some content... 
- 

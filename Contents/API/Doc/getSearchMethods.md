@@ -1,4 +1,0 @@
-# Doc/getSearchMethods
- 
-...some content... 
- 

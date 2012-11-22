@@ -1,4 +1,0 @@
-# Doc/getParamValue
- 
-...some content... 
- 

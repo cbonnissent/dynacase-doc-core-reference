@@ -1,4 +1,0 @@
-# Doc/renameFile
- 
-...some content... 
- 

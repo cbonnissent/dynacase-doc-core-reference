@@ -1,4 +1,0 @@
-# DbObj/Affect
- 
-...some content... 
- 

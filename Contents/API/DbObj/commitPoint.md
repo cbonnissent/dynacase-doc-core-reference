@@ -1,4 +1,0 @@
-# DbObj/commitPoint
- 
-...some content... 
- 

@@ -1,4 +1,0 @@
-# Doc/revive
- 
-...some content... 
- 

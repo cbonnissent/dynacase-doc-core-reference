@@ -1,4 +1,0 @@
-# Action/fatal
- 
-...some content... 
- 

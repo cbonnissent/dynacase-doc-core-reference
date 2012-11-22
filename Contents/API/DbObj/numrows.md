@@ -1,4 +1,0 @@
-# DbObj/numrows
- 
-...some content... 
- 

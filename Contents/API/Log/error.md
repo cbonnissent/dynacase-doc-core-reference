@@ -1,4 +1,0 @@
-# Log/error
- 
-...some content... 
- 

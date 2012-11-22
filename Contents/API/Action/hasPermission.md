@@ -1,4 +1,0 @@
-# Action/hasPermission
- 
-...some content... 
- 

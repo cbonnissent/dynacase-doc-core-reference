@@ -1,4 +1,0 @@
-# Application/text
- 
-...some content... 
- 

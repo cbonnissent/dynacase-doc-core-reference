@@ -1,1 +1,0 @@
-# createTmpDoc, introduction 

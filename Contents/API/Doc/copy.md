@@ -1,4 +1,0 @@
-# Doc/copy
- 
-...some content... 
- 

@@ -1,4 +1,0 @@
-# SearchDoc/search
- 
-...some content... 
- 

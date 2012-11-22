@@ -1,4 +1,0 @@
-# Action/info
- 
-...some content... 
- 

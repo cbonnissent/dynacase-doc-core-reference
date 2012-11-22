@@ -1,4 +1,0 @@
-# Log/deprecated
- 
-...some content... 
- 
