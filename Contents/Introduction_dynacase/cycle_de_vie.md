@@ -19,8 +19,6 @@ Les cycles de vie de Dynacase peuvent être représentés par des graphiques ori
 
 ## Composants d'un cycle de vie
 
-![ Composants du cycle vie ](cycle_de_vie_composant.png)
-
 Un cycle de vie est composé des éléments suivants :
 
 Propriétés
@@ -29,8 +27,8 @@ Propriétés
 Structure
 :   La structure est composée d'étapes et de transitions reliant les étapes. Elle constitue la base du cycle et indique comment le document peut évoluer.
 
-Profil dédié
-:   Un profil dédié est ajouté au cycle, il permet de définir qui pourra effectuer quelle transition.
+Profil du cycle de vie
+:   Un profil est associé au cycle, il permet de définir qui pourra effectuer quelle transition.
 
 ## Étapes
 
@@ -63,7 +61,7 @@ NB : On considère qu'une étape sans activité doit être terminale (c'est à d
 
 ## Transition
 
-Les transitions indiquent la possibilité de passage entre une étape et une autre. Une même transition peut-être utilisée entre plusieurs étapes différentes (par exemple, la transition **Contrôle** pourrait être utilisée pour passer de l'étape **validation N+1** à **rédaction** et de l'étape **validation N+2** à **rédaction**).
+Les transitions indiquent la possibilité de passage entre une étape et une autre.
 
 Une transition se déroule de la manière suivante :
 
