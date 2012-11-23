@@ -614,3 +614,29 @@ book:
           content:  "Advanced/Template/texte.md"
         - level:   3
           content:  "Advanced/Template/odt.md"
+        - level:   1
+          content:  "Trash/introduction.md"
+        - level:   2
+          element: "api"
+          content:  "Trash/API/Application/getImageUrl.md"
+        - level:   2
+          element: "api"
+          content:  "Trash/API/Action/warning.md"
+        - level:   2
+          element: "api"
+          content:  "Trash/API/Action/info.md"
+        - level:   2
+          element: "api"
+          content:  "Trash/API/Action/hasPermission.md"
+        - level:   2
+          element: "api"
+          content:  "Trash/API/Action/fatal.md"
+        - level:   2
+          element: "api"
+          content:  "Trash/API/Action/execute.md"
+        - level:   2
+          element: "api"
+          content:  "Trash/API/Action/error.md"
+        - level:   2
+          element: "api"
+          content:  "Trash/API/Action/debug.md"
