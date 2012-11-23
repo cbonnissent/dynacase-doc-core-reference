@@ -156,7 +156,7 @@ Entre ces 2 lignes, chacune des lignes correspond à :
 *   un [attribut](#core:bc3fad86-33cc-11e2-9a69-1bbd9c32b0f2)
 *   un [paramètre de famille](#core:c28824e2-3486-11e2-be3b-337d2321d8ee)
 *   une [valeur par défaut](#core:94fa51e2-3488-11e2-9e34-1f7c912168cf)
-*   une valeur initiale de paramètre
+*   une [valeur initiale de paramètre](#core:da804e2e-3573-11e2-8974-4ba96567fbf9)
 
 ### Définition de paramètres de propriété {#core:40d229c4-33c4-11e2-9147-a3eaf356c37c}
 Des paramètres permettent de modifier le comportement des propriétés du document.
@@ -551,7 +551,7 @@ avec les correspondances suivantes :
 
 DEFAULT
 :   **Obligatoire**
-    Signale que la ligne est une définition valeur par défaut.
+    Signale que la ligne est une définition de valeur par défaut.
 
 [attrid|paramid]
 :   **Obligatoire**
@@ -569,19 +569,85 @@ DEFAULT
     pré-remplit l'attribut SGATE_RED avec la chaîne *GATE_WEATHER*
 
     Cas particulier des *array*:
-
-    *   Pour les attributs contenus dans un array, la valeur par défaut définit
-        la valeur de la cellule lors de l'ajout d'une nouvelle ligne. De fait,
-        la valeur par défaut d'un attribut contenu dans un *array* doit être simple.
-
-    *   Pour définir quelles seront les lignes présentes dans le tableau lors de la
-        création du document, il faut définir
-
+    
+    *   Pour définir quelles lignes seront présentes par défaut dans le tableau, on
+        spécifie la valeur par défaut de l'attribut *array*.
+        
+        Cette valeur par défaut est une structure JSON sous la forme d'un tableau d'objets.
+        
+        Par exemple,`DEFAULT;ATTR_ARRAY;[{"c1":"1.1", "c2":"1.2"},{"c1":"2.1", "c2":"2.2"}]`
+        indique que le tableau *ATTR_ARRAY* sera pré-rempli avec 2 lignes.
+        
+        *   La première ligne aura comme valeurs
+            *   *1.1* dans la colonne correspondant à l'attribut *c1*
+            *   *1.2* dans la colonne correspondant à l'attribut *c2*
+        *   La seconde ligne aura comme valeurs
+            *   *2.1* dans la colonne correspondant à l'attribut *c1*
+            *   *2.2* dans la colonne correspondant à l'attribut *c2*
+        
+        Si l'on souhaite utiliser une méthode de calcul pour cette valeur par défaut,
+        la méthode doit retourner le tableau à 2 dimensions qui, une fois json_encodé,
+        donne la structure précédente.
+        
+        Par exemple, la méthode correspondant à la valeur par défaut précédente sera
+        `DEFAULT;ATTR_ARRAY;::defaultArrayValue()`
+        
+            [code php]
+            public function defaultArrayValue(){
+                return array(
+                    array(
+                        "c1" => "1.1",
+                        "c2" => "1.2"
+                    ),
+                    array(
+                        "c1" => "2.1",
+                        "c2" => "2.2"
+                    )
+                );
+            }
+    
+    *   Pour définir les valeurs par défaut de chaque cellule lors de
+        l'ajout d'une nouvelle ligne, on spécifie la valeur par défaut de l'attribut
+        correspondant à cette colonne.  
+        De fait, la valeur par défaut d'un attribut contenu dans un *array* doit être simple.
 
 [force=yes]
 :   Indique, lors de la surcharge de valeur par défaut, que la nouvelle valeur par défaut écrase l'ancienne.
 
-    Dans le cas contraire, la nouvelle valeur par défaut n'est pas prise en compte
+    Dans le cas contraire, la nouvelle valeur par défaut n'est pas prise en compte.
+
+### Définition de valeur initiale de paramètre {#core:da804e2e-3573-11e2-8974-4ba96567fbf9}
+
+Les paramètres de familles peuvent avoir des valeurs par défaut, utilisées lorsque ces paramètres n'ont
+pas de valeur explicite. mais il est parfois nécessaire de définir la valeur initiale du paramètre en plus
+de sa valeur par défaut.
+
+Une valeur initiale de paramètre est définie par la syntaxe suivante :
+
+    INITIAL;[paramid];[value];force=yes
+
+avec les correspondances suivantes :
+
+INITIAL
+:   **Obligatoire**
+    Signale que la ligne est une définition de valeur initiale de paramètre.
+
+[paramid]
+:   **Obligatoire**
+    identifiant du paramètre auquel s'applique la valeur initiale.
+
+[value]
+:   la valeur initiale, statique, ou la méthode de calcul.
+    
+    Dans le cas d'une méthode de calcul, sa syntaxe est identique à celle d'un
+    [attribut calculé][attribut_calcule]
+
+[force=yes]
+:   Indique, lors de la surcharge de valeur initiale, que la nouvelle valeur initiale écrase l'ancienne.
+
+    Dans le cas contraire, la nouvelle valeur initiale n'est pas prise en compte.
+
+## Surcharge de définition de famille
 
 <!-- links -->
 [PHP_sprintf]: http://php.net/manual/fr/function.sprintf.php "Documentation de la fonction sprintf sur php.net"
