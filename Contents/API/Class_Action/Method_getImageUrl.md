@@ -14,11 +14,10 @@ Applicable
     [php]
     string getImageUrl ( string $name [, bool $detectstyle = true [, int $size = null]] )
 
-Si la détection de style n'est pas désactivée, l'image est recherchée dans le répertoire "*Images*" du répertoire du style *société* (nom provenant du paramètre application "*CORE_SOCSTYLE*"). Si l'image n'est pas présente, le répertoire du style utilisateur (paramètre applicatif "*STYLE*") est utilisé. De même, l'image est recherchée dans le sous-répertoire "*Images*" du répertoire de style.
+L'image demandée doit être une image fournie par l'application associée à l'action ou une autre application.
 
-Si l'image n'est pas redéfinie par un style, elle est recherchée dans le sous-répertoire "*Images*" du répertoire d'installation de l'application.
 
-Si l'image n'est pas trouvée, elle est recherchée en dernier recourt dans le répertoire "*Images*" général du répertoire d'installation de Dynacase.
+
 
 ### Avertissements
 
@@ -31,24 +30,41 @@ N/A
 :   nom du fichier image (*basename*).
 
 (bool) `detectstyle`
-:   indique si le style doit être pris en compte.
-   valeur par défaut : **`true`**
+:   indique si la détection de style doit être pris en compte.
+    
+    valeur par défaut : **`true`**
+   
+    Si la détection de style est activée, l'image sera recherchée dans différents répertoires dans l'ordre suivant :
+
+    1. L'image est recherchée dans le répertoire "*`Images`*" du répertoire du style *société* (nom provenant du paramètre application "*`CORE_SOCSTYLE`*"). 
+
+    2. L'image est recherchée dans le répertoire du style utilisateur (paramètre applicatif "*`STYLE`*"). De même, l'image est recherchée dans le sous-répertoire "*Images*" du répertoire de style.
+
+    3.  L'image est recherchée dans le sous-répertoire "*`Images`*" du répertoire d'installation de l'application associée à l'action instanciée.
+
+    4. Si l'image n'est pas trouvée, elle est recherchée en dernier recourt dans le répertoire "*`Images`*" général du répertoire d'installation de Dynacase. Ce répertoire général d'images contient un lien vers toutes les images fournies par toutes les applications installées.
+
+    Si la détection de style n'est pas activée, les recherches n°1 et n°2 ne sont pas effectuées.
 
 (int) `size`
 :   indique la largeur de l'image en pixel. 
+    valeur par défaut :  **`null`** indique qu'aucun redimensionnement sera effectuée
     
-    Si la valeur n'est pas renseigné la taille originale est conservée sinon une conversion d'image sera appliquée afin d'avoir la largeur indiquée.
+    Si la valeur n'est pas renseignée la taille originale est conservée sinon une conversion d'image sera appliquée afin d'avoir la largeur indiquée.
+    Cette conversion d'image est effectuée sur le serveur lors de la premier appel de l'url donnée. Ensuite le résultat de cette conversion d'image est mis en cache (répertoire `var/cache/images`) pour un accès plus rapide lors des prochains appels. Cette conversion retourne toujours une image au format *png*.
 
 
 
 ## Valeur de retour
 
-L'url **relative** d'accès à l'image est retournée. Le résultat de cette fonction peut être mise dans le layout d'une action. Pour avoir une url absolue, il faut ajouter le paramètre "*CORE_EXTERNURL*" pour compléter l'url.
-
-## Erreurs / Exceptions
+L'url **relative** d'accès à l'image est retournée. Le résultat de cette fonction peut être mise dans le layout d'une action qui permet de référence des url relatives. Pour avoir une url absolue, il faut ajouter le paramètre "*CORE_EXTERNURL*" pour compléter l'url.
 
 Si l'image n'est pas trouvée, c'est l'image définie dans l'attribut "*noimage*" de la classe Application qui est retournée. Cette image est 'CORE/Images/noimage.png' :
 ![image non trouvée](images/noimage.png "No image")
+
+## Erreurs / Exceptions
+
+N/A
 
 ## Historique
 
