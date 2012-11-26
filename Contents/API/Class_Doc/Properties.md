@@ -16,18 +16,18 @@ allocated
 
 archiveid
 :   id de l'archive dans laquelle est contenue ce document.
-
+    
     Note : uniquement le document archivé porte cette propriété.
     Pour trouver la liste des lignées documentaires archivées, il faut faire une recherche sur toutes les révisions.
 
 atags
 :   balises applicatives (Tags positionnés sur le document).
-
+    
     Ces tags permettent aux applications de marquer les documents pour des traitements spécifiques.
 
 cdate
 :   date de création de la révision.
-
+    
     Pour obtenir la date de création de la lignée documentaire, il faut récupérer celle de la révision 0.
 
 classname
@@ -39,7 +39,7 @@ comment
 
 confidential
 :   Indique si le document est confidentiel.
-
+    
     Dans ce cas, *confidential* vaut 1.
 
 cvid
@@ -47,9 +47,9 @@ cvid
 
 doctype
 :   Type de document.
-
+    
     Utilisé en interne pour des optimisations de performance et des contrôles.
-
+    
     *   *F* : Document normal (historiquement, F pour *Freedom Document*),
     *   *D* : Dossier (D pour *Dir*),
     *   *S* : Recherche (S pour *Search*),
@@ -64,7 +64,7 @@ domainid
 
 dprofid
 :   identifiant du profil dynamique associé à ce document.
-
+    
     Lorsque le document est soumis à un profil dynamique, ce profil dynamique lui permet de calculer le profil qui lui sera appliqué, lequel est stocké sur le document lui-même. Ainsi, lorsque la propriété *dprofid* est renseignée, la propriété *profid* est égale à l'*id du document* (ce qui correspond à un profil dédié).
 
 forumid
@@ -75,20 +75,20 @@ fromid
 
 icon
 :   référence au fichier d'icone du document.
-
+    
     La valeur est :
-
+    
     *   le nom de l'icone
     *   ou la référence d'un fichier du vault (sous la forme *&lt;type-mime>|&lt;vaultid>|&lt;file-title>*).
 
 id
 :   identifiant unique du document.
-
+    
     Il est calculé automatiquement par la base de données lors de l'ajout du document en base.
 
 initid
 :   id du premier document de la lignée documentaire.
-
+    
     Il est notamment utile pour les recherches.
 
 ldapdn
@@ -97,9 +97,9 @@ ldapdn
 
 lmodify
 :   permet de savoir si le documet a été modifié depuis sa dernière révision.
-
+    
     Les valeurs sont :
-
+    
     *   `Y` : La révision est la révision courante, et a été modifiée depuis la dernière révision ;
     *   `L` : La révision est la dernière révision avant la révision courante ;
     *   `D` : La révision est supprimée ;
@@ -112,7 +112,7 @@ lockdomainid
 
 locked
 :   Indique si le document est verrouillé :
-
+    
     *   Chiffre négatif (inférieur à -1) : Identifiant de l'utilisateur ayant verrouillé le document automatiquement.
         Ce verrou est posé lorsqu'un utilisateur clique sur le bouton de modification d'un document, et est supprimé automatiquement lors de la fin de l'édition, à la fermeture du navigateur (au moyen de l'événement `onBeforeUnload`), ainsi que par le script `freedom_clean` (normalement lancé toute les nuits).
     *   Chiffre positif : Identifiant de l'utilisateur ayant verrouillé le document manuellement.
@@ -121,12 +121,12 @@ locked
 
 name
 :   Nom logique du document.
-
+    
     Référence toujours la version courante d'un document.
 
 owner
 :   Identifiant système de l'utilisateur ayant créé le document.
-
+    
     Cette valeur est spécifique à chaque révision.
 
 postitid
@@ -134,18 +134,18 @@ postitid
 
 prelid
 :   identifiant du document (dossier) de relation primaire.
-
+    
     Cela correspond au parent lors d'une représentation arborescente.
-
+    
     Automatiquement, Dynacase remplit cette propriété avec les formules suivantes :
-
+    
     *   Le premier dossier dans lequel est inséré le document ;
     *   Le dernier dossier dans lequel est déplacé le document ;
     *   Le dossier précédent lorsque le document est retiré d'un dossier.
 
 profid
 :   Identifiant du profil de document.
-
+    
     *   Chiffre négatif : Profil non activé ;
     *   0 : pas de profil ;
     *   Chiffre positif : profil actif ;
@@ -155,7 +155,7 @@ profid
 
 revdate
 :   Date de révision.
-
+    
     Pour un document non révisé, date de dernière modification.
 
 revision
@@ -169,9 +169,9 @@ title
 
 usefor
 :   type d'utilisation du document
-
+    
     *   `S` : La famille est Système : elle n'apparaîtra pas par défaut dans la liste des familles pour les *recherches*, *recherches détaillées* ou *rapports*.
-
+    
         Le caractère 'S' peut aussi être placé devant les autres caractères décrits ci-dessous pour masquer par défaut la famille dans les recherches.
     *   `W` : Le document est un cycle de vie (*W* pour *Workflow*) ;
     *   `G` : Le document est un intercalaire de chemise (*G* pour *Guide*) ;
@@ -179,7 +179,7 @@ usefor
 
 version
 :   libellé de la version : vide par défaut.
-
+    
     La version est affichée à coté de l'état sur les documents, et dans l'historique.
 
 wid

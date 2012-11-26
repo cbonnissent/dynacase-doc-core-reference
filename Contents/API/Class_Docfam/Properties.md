@@ -10,6 +10,6 @@ fromid
 
 schar
 :   Indique les modalités de révision des documents de cette famille :
-
+    
     *   *R* : Révision automatique à chaque modification,
     *   *S* : document non révisable
