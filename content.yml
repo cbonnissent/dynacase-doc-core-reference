@@ -640,3 +640,35 @@ book:
         - level:   2
           element: "api"
           content:  "Trash/API/Action/debug.md"
+        - level:   2
+          element: "api"
+          content:  "Trash/API/Action/Read.md"
+        - level:   2
+          element: "api"
+          content:  "Trash/API/Action/Register.md"
+        - level:   2
+          element: "api"
+          content:  "Trash/API/Action/Set.md"
+        - level:   2
+          element: "api"
+          content:  "Trash/API/Action/Unregister.md"
+        - level:   2
+          element: "api"
+          content:  "Trash/API/Action/getArgument.md"
+        - level:   2
+          element: "api"
+          content:  "Trash/API/Action/getImageUrl.md"
+        - level:   2
+          element: "api"
+          content:  "Trash/API/Action/getParam.md"
+        - level:   2
+          element: "api"
+          content:  "Trash/API/Action/introduction.md"
+        - level:   2
+          element: "api"
+          content:  "Trash/API/Action/text.md"
+        - level:   2
+          element: "api"
+          content:  "Trash/API/introduction.md"
+        - level:   2
+          element: "api"
