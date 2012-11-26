@@ -26,11 +26,6 @@ book:
           content:  "Introduction_dynacase/security.md"
         - level:   2
           content:  "Introduction_dynacase/internationalisation.md"
-        - level:   2
-          content:  "Introduction_dynacase/template.md"
-#
-        - level:   1
-          content:  "Archi/introduction.md"
 #
         - level:   1
           content:  "ClassDoc/introduction.md"
@@ -156,21 +151,6 @@ book:
         - level:   3
           element: "api"
           content:  "API/Class_Action/Method_getImageUrl.md"
-        - level:   3
-          element: "api"
-          content:  "API/Class_Action/Property_lay.md"
-        - level:   3
-          element: "api"
-          content:  "API/Class_Action/Property_Log.md"
-        - level:   3
-          element: "api"
-          content:  "API/Class_Action/Property_parent.md"
-        - level:   3
-          element: "api"
-          content:  "API/Class_Action/Property_session.md"
-        - level:   3
-          element: "api"
-          content:  "API/Class_Action/Property_user.md"
         - level:   2
           element: "chapter"
           content:  "API/Class_ActionUsage.md"
