@@ -3,20 +3,19 @@
 La classe *Application* gère les applications Dynacase.
 Cette classe gère l'accès aux fonction globales liées à l'application comme les paramètres applicatifs. Elle permet d'instancier les objets *Action* en vu de leur exécution.
 
-Les propriétés de la classe *Application* sont :
 
-## Propriétés de la classe Action
-Ces propriétés sont pour la plupart issu du fichier ".app" de description de l'application.
+## Propriétés de la classe Application
+Ces propriétés sont pour la plupart issues du fichier ".app" de description de l'application.
 
 id
 : Identifiant numérique de l'application.
     
     Il est différent suivant les contextes car il est calculé en prenant le prochain numéro disponible lors de l'enregistrement de l'application
 
-
 name
-:
-    Référence de l'application. Contient le nom donnée dans le fichier "*.app*" de description de l'application.
+: Référence de l'application. 
+    
+    Contient le nom donnée dans le fichier "*.app*" de description de l'application.
 
 short_name
 : Description courte de l'application. Issu du fichier "*.app*" de description de l'application.
@@ -24,15 +23,13 @@ short_name
 description
 : Description longue de l'application. Issu du fichier "*.app*" de description de l'application.
 
-
 available
 : Indique la disponibilité de l'application.
     
     Elle contient soit 'Y' soit 'N'. 'Y' indique qu'aucune action de l'application ne peut être exécutée. Si cette propriété vaut 'N', les actions ne pourront être exécutées et un message d'erreur sera renvoyé à la place du résultat de l'action.
 
-
 access_free
-: Indique que toutes les actions de l'application ne nécessite pas de droit d'exécution.
+: Indique que toutes les actions de l'application ne nécessitent pas de droit d'exécution.
     
     Elle contient soit 'Y' soit 'N'. 'Y' indique que les actions n'ont pas d'acl définies.
 
@@ -45,7 +42,7 @@ childof
     Cela indique que les actions de l'application parente seront disponibles sur cette application.
 
 with_frame
-: Obsolète. Indique que les actions de l'application utilise une entête commune.
+: Obsolète. Indique que les actions de l'application utilisent une entête commune.
 
 objectclass
 : Obsolète. Non utilisé

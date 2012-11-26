@@ -6,7 +6,7 @@ Cette classe gère la sécurité, l'exécution et le rendu de l'action. Une acti
 Les propriétés de la classe *Action* sont :
 
 ## Propriétés de la classe Action
-Ces propriétés sont pour la plupart issu du fichier ".app" de description de l'application.
+Ces propriétés sont pour la plupart issues du fichier ".app" de description de l'application.
 
 id
 : Identifiant numérique de l'action.
@@ -16,11 +16,12 @@ id
 id_application
 : Identifiant numérique de l'application portant l'action.
     
-    Pour les mêmes raison que celles de l'*id* celui-ci est différent suivant les contextes.
+    Pour les mêmes raisons que celles de l'*id* celui-ci est différent suivant les contextes.
 
 name
-:
-    Référence de l'action. Contient le nom donnée dans le fichier "*.app*" de description de l'application.
+: Référence de l'action.
+    
+    Contient le nom donné dans le fichier "*.app*" de description de l'application.
 
 short_name
 : Description courte de l'action. Issu du fichier "*.app*" de description de l'application.
@@ -31,17 +32,17 @@ long_name
 script
 : Nom du fichier PHP qui sera inclus lors de l'exécution de l'action.
     
-    Il est issu du fichier "*.app*" de description de l'application si celui-ci est renseigné ou calculé s'il n'est pas renseigné. Dans ce dernier cas, le nom du script est le nom (*name*) de l'action en minuscule suivi de l'extension "*.php*". Le fichier PHP utilisé est celui inclus dans le répertoire de l'application (le nom du répertoire est le nom de l'application).
+    Il est issu du fichier "*.app*" de description de l'application si celui-ci est renseigné. Il est calculé s'il n'est pas renseigné. Dans ce dernier cas, le nom du script est le nom (*name*) de l'action en minuscule suivi de l'extension "*.php*". Le fichier PHP utilisé est celui inclus dans le répertoire de l'application (le nom du répertoire est le nom de l'application).
 
 function
 : Nom de la fonction PHP qui sera appelée lors de l'exécution de l'action.
 
-    Il est issu du fichier "*.app*" de description de l'application si celui-ci est renseigné ou calculé s'il n'est pas renseigné. Dans ce dernier cas, le nom de la fonction est le nom (*name*) de l'action en minuscule.
+    Il est issu du fichier "*.app*" de description de l'application si celui-ci est renseigné. Il est calculé s'il n'est pas renseigné. Dans ce dernier cas, le nom de la fonction est le nom (*name*) de l'action en minuscule.
 
 layout
 : Nom du fichier layout utilisé lors de l'exécution de l'action.
     
-    Il est issu du fichier "*.app*" de description de l'application si celui-ci est renseigné ou calculé s'il n'est pas renseigné. Dans ce dernier cas, le nom du layout est le nom (*name*) de l'action en minuscule suivi de l'extension "*.xml*". Le fichier layout utilisé est celui inclus dans le sous-répertoire "*Layout*" du répertoire de l'application.
+    Il est issu du fichier "*.app*" de description de l'application si celui-ci est renseigné. Il est calculé s'il n'est pas renseigné. Dans ce dernier cas, le nom du layout est le nom (*name*) de l'action en minuscule suivi de l'extension "*.xml*". Le fichier layout utilisé est celui inclus dans le sous-répertoire "*Layout*" du répertoire d'installation de l'application.
 
 available
 : Indique la disponibilité de l'action.
@@ -65,7 +66,7 @@ root
     C'est celle qui sera lancée avec l'url "?app=*APPNAME*" sans préciser d'action. Elle contient soit 'Y' soit 'N'. L'action est déclarée principale si la valeur est 'Y'. Une seule des actions de l'application doit être principale.
 
 icon
-: icône de l'action. Non utilisé
+: Icône de l'action. Non utilisé
 
 toc
 : Obsolète. Indique que l'action peut faire l'objet d'une présentation en onglets
