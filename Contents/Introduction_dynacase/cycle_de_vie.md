@@ -67,8 +67,8 @@ Une transition se déroule de la manière suivante :
 
 ![ Déroulement d'une transition ](cycle_transition.png)
 
-M0 (ou Pré-condition)
-:   La pré-condition ou M0 est une fonction PHP qui est systématiquement exécutée en début de transition, ce qui correspond aux cas suivants :
+M0 (ou précondition)
+:   La précondition ou M0 est une méthode PHP qui est systématiquement exécutée en début de transition, ce qui correspond aux cas suivants :
     
     * lors de l'affichage de la liste des transitions possibles à une étape donnée,
     * avant le déclenchement des ASK (voir entrée suivante),
@@ -80,10 +80,10 @@ ASK
 :   Les ASK sont un ensemble d'attributs utilisés pour poser une question à l'utilisateur avant d'effectuer la transition. Ils peuvent servir à valider une valeur, demander un commentaire, etc. Les valeurs récupérées peuvent être utilisées dans les méthodes du cycle de vie lors des M1, M2, M3.
 
 M1
-:   Le M1 est une méthode PHP qui est appelée après les ASK et le M0 mais avant le changement d'état. On peut l'utiliser pour vérifier un ensemble d'éléments et annuler le passage d'une transition si besoin. Par exemple, on peut vérifier la présence d'un élément dans le document en cours de transition et annuler le passage de la transition si celui-ci n'est pas présent.
+:   Le M1 est une méthode PHP qui est appelée après les ASK et le M0 mais avant le changement d'état. On peut l'utiliser pour vérifier un ensemble d'éléments et annuler le passage d'une transition si besoin. Par exemple, on peut vérifier la sence d'un élément dans le document en cours de transition et annuler le passage de la transition si celui-ci n'est pas présent.
 
 M2
-:   Le M2 est une méthode PHP qui est appelée après le changement d'état. Elle est utilisée pour modifier le document une fois la transition effectuée mais avant les courriels et les minuteurs, elle est utilisée pour modifier le contenu du document avant l'envoi des courriels.
+:   Le M2 est une méthode PHP qui est appelée après le changement d'état. Elle est utilisée pour modifier le document une fois la transition effectuée mais avant les courriels et les minuteurs. Elle est utilisée pour modifier le contenu du document avant l'envoi des courriels.
 
 Courriel
 :   Il est possible d'attacher des courriels au passage d'une transition. Ceux-ci sont alors envoyés à chaque passage de cette transition, le contenu et les destinataires peuvent être composés à l'aide du contenu du document en cours de transition.
@@ -103,7 +103,7 @@ Le cycle de vie se matérialise sous la forme d'un document Dynacase.
 Ce document est ensuite lié à une ou plusieurs familles : tous les nouveaux documents de cette ou ces famille(s) :
 
 * sont affectés à ce cycle de vie;
-* sont automatiquement affecté à la première étape de ce cycle après leur création;
+* sont automatiquement affectés à la première étape de ce cycle après leur création;
 * utilisent ce cycle pour définir :
     * leur représentation,
     * leur accessibilité (qui a le droit de voir, modifier, supprimer).
