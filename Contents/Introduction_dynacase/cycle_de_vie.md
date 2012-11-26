@@ -80,7 +80,7 @@ ASK
 :   Les ASK sont un ensemble d'attributs utilisés pour poser une question à l'utilisateur avant d'effectuer la transition. Ils peuvent servir à valider une valeur, demander un commentaire, etc. Les valeurs récupérées peuvent être utilisées dans les méthodes du cycle de vie lors des M1, M2, M3.
 
 M1
-:   Le M1 est une méthode PHP qui est appelée après les ASK et le M0 mais avant le changement d'état. On peut l'utiliser pour vérifier un ensemble d'éléments et annuler le passage d'une transition si besoin. Par exemple, on peut vérifier la sence d'un élément dans le document en cours de transition et annuler le passage de la transition si celui-ci n'est pas présent.
+:   Le M1 est une méthode PHP qui est appelée après les ASK et le M0 mais avant le changement d'état. On peut l'utiliser pour vérifier un ensemble d'éléments et annuler le passage d'une transition si besoin. Par exemple, on peut vérifier la présence d'un élément dans le document en cours de transition et annuler le passage de la transition si celui-ci n'est pas présent.
 
 M2
 :   Le M2 est une méthode PHP qui est appelée après le changement d'état. Elle est utilisée pour modifier le document une fois la transition effectuée mais avant les courriels et les minuteurs. Elle est utilisée pour modifier le contenu du document avant l'envoi des courriels.
