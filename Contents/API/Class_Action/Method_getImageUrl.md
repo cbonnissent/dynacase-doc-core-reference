@@ -1,4 +1,4 @@
-# Action::getImageUrl()
+# Action::getImageUrl() {#core-ref:4fc8d838-fee6-4e30-ada5-042cf6ab5903}
 
 <div class="short-description">
 Cette méthode retourne l'url d'accès à une image stockée sur le serveur.
@@ -9,7 +9,7 @@ Applicable
 </div>
 -->
 
-## Description
+## Description {#core-ref:d2bc5661-d80e-45dd-80d4-9cea66c3e035}
 
     [php]
     string getImageUrl ( string $name [, bool $detectstyle = true [, int $size = null]] )
@@ -19,11 +19,11 @@ L'image demandée doit être une image fournie par l'application associée à l'
 
 
 
-### Avertissements
+### Avertissements {#core-ref:0013302a-8251-4012-8174-fca6d9d30b10}
 
 N/A
 
-## Liste des paramètres
+## Liste des paramètres {#core-ref:7b85d3c7-2c6c-489e-86df-ef682ab085ae}
 
 
 (string) `name`
@@ -56,22 +56,22 @@ N/A
 
 
 
-## Valeur de retour
+## Valeur de retour {#core-ref:ca0424a7-3135-4f23-830a-da1446203f52}
 
 L'url **relative** d'accès à l'image est retournée. Le résultat de cette fonction peut être mise dans le layout d'une action qui permet de référence des url relatives. Pour avoir une url absolue, il faut ajouter le paramètre "*CORE_EXTERNURL*" pour compléter l'url.
 
 Si l'image n'est pas trouvée, c'est l'image définie dans l'attribut "*noimage*" de la classe Application qui est retournée. Cette image est 'CORE/Images/noimage.png' :
 ![image non trouvée](images/noimage.png "No image")
 
-## Erreurs / Exceptions
+## Erreurs / Exceptions {#core-ref:b9b8aad9-6c82-4f2a-bf39-1a506f6c9f9a}
 
 N/A
 
-## Historique
+## Historique {#core-ref:dc8ab8a4-5a23-4ecc-a92e-8dc9cdd8cac7}
 
 N/A
 
-## Exemples
+## Exemples {#core-ref:f6f2f704-3826-4b65-af1a-f423a8d5b623}
 
     [php]
     // myaction.php
@@ -83,10 +83,10 @@ N/A
     }
     
 
-## Notes
+## Notes {#core-ref:2384b9ca-7fa8-469e-b04b-06e0ed0d8f56}
 
 Bien que cette méthode soit définie sur la classe `Action`, elle est un raccourci pour accéder à la méthode `Application::getImageUrl()` de l'application dont est issu l'action.
 
-## Voir aussi
+## Voir aussi {#core-ref:edf5e295-3982-40bb-aa78-b3ce1a2fcf86}
 
 N/A
