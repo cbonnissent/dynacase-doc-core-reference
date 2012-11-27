@@ -52,7 +52,7 @@ N/A
 
 ## Valeur de retour {#core-ref:ca0424a7-3135-4f23-830a-da1446203f52}
 
-L'URL **relative** d'accès à l'image, par rapport à la racine du contexte, est retournée. Le résultat de cette fonction peut être mis dans le layout d'une action qui permet de référence des URL relatives. Pour avoir une url absolue, il faut ajouter le paramètre "*CORE_EXTERNURL*" pour compléter l'URL.
+L'URL **relative** d'accès à l'image, par rapport à la racine du contexte, est retournée. 
 
 Si l'image n'est pas trouvée, c'est l'image définie dans l'attribut "*noimage*" de la classe Application qui est retournée. Cette image est 'CORE/Images/noimage.png' :
 ![image non trouvée](images/noimage.png "No image")
@@ -66,6 +66,7 @@ N/A
 N/A
 
 ## Exemples {#core-ref:f6f2f704-3826-4b65-af1a-f423a8d5b623}
+Le résultat de cette fonction peut être mis dans le layout d'une action qui permet de référence des URL relatives. Pour avoir une url absolue, il faut ajouter le paramètre "*CORE_EXTERNURL*" pour compléter l'URL.
 
     [php]
     // myaction.php
