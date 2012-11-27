@@ -1,4 +1,4 @@
-# Techniques avancées avec Dynacase
+# Techniques avancées avec Dynacase {#core-ref:ede0109d-edab-4e0e-a5a7-1827df95495a}
 
 <div class="fixme">template</div>
 
