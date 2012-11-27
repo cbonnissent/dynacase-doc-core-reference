@@ -1350,6 +1350,15 @@ lconfirm
     *   `yes`
     *   **`no` (comportement par défaut)**
 
+lcontrol
+:   Indique que le menu est disponible uniquement dans le menu contextuel du document,
+    lorsque la touche *control* est appuyée.
+    
+    Les valeurs possibles sont :
+    
+    *   `yes`
+    *   **`no` (comportement par défaut)**
+
 mheight
 :   Indique la hauteur de la popup.
     

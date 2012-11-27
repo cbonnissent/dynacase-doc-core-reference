@@ -105,19 +105,19 @@ BEGIN
 [fromid]
 :   Identifiant logique (nom logique ou id) de la famille de laquelle cette famille hérite.
     Mettre vide s'il n'y a pas d'héritage.
-
+    
     L'utilisation d'un id à la place d'un nom logique est à réserver aux familles de core.
 
 [title]
 :   Titre de la famille.
-
+    
     Ce titre est utilisé sur les interfaces pour désigner la famille.
-
+    
     Il est automatiquement ajouté au catalogue de traduction, et peut ainsi être traduit.
 
 [id]
 :   Identifiant numérique de la famille.
-
+    
     Le laisser à vide pour utiliser un identifiant logique.
     S'il est valué il faut que cet identifiant ne soit pas déjà pris par un autre document.
     Les valeurs entre 900 et 999 peuvent être utilisée pour vos besoins spécifiques.
@@ -125,14 +125,14 @@ BEGIN
 
 [className]
 :   Nom de la classe PHP de cette famille. Cette classe doit être présente sur le serveur dans un fichier appelé `/FDL/Class.[CLASSNAME].php`.
-
+    
     Le laisser à vide pour que Dynacase génère la classe automatiquement.
-
+    
     Permet un héritage autre que celui prévu par défaut par les classes documentaire.
 
 [logicalName]
 :   Nom logique de la famille.
-
+    
     Doit commencer par une lettre.
     Il ne peut ensuite contenir que des caractères alphanumériques ainsi que les caractères _ et - (pas d'espace, ni de ponctuation).
 
@@ -141,22 +141,22 @@ END
 
 Entre ces 2 lignes, chacune des lignes correspond à :
 
-*   un commentaire
-
-    Une ligne qui ne sera pas traitée lors du traitement de la définition de famille.
-
-    Un commentaire commence toujours par `//`.
-
-    Par exemple
-
-        //propid;value;;;;;;;;;;;;;;;
-
 *   un [paramètre de propriété](#core-ref:40d229c4-33c4-11e2-9147-a3eaf356c37c)
 *   une [propriété de famille](#core-ref:6f013eb8-33c7-11e2-be43-373b9514dea3)
 *   un [attribut](#core-ref:bc3fad86-33cc-11e2-9a69-1bbd9c32b0f2)
 *   un [paramètre de famille](#core-ref:c28824e2-3486-11e2-be3b-337d2321d8ee)
 *   une [valeur par défaut](#core-ref:94fa51e2-3488-11e2-9e34-1f7c912168cf)
 *   une [valeur initiale de paramètre](#core-ref:da804e2e-3573-11e2-8974-4ba96567fbf9)
+*   une [modification d'attribut père](#core-ref:13dcd96d-561f-463c-a88f-4b9db58e4fbd)
+*   un commentaire
+    
+    Une ligne qui ne sera pas traitée lors du traitement de la définition de famille.
+    
+    Un commentaire commence toujours par `//`.
+    
+    Par exemple
+    
+        //propid;value;;;;;;;;;;;;;;;
 
 ### Définition de paramètres de propriété {#core-ref:40d229c4-33c4-11e2-9147-a3eaf356c37c}
 Des paramètres permettent de modifier le comportement des propriétés du document.
@@ -177,20 +177,20 @@ Les paramètres de propriété disponibles sont :
 
 sort
 :   Permet de spécifier si la propriété est disponible dans les recherches et les rapports, et quel est son ordre de tri par défaut.
-
+    
     Les valeurs possibles sont :
-
+    
     *   `no` : la propriété n'apparaîtra pas les recherches et rapports ;
     *   `asc` : la propriété est disponible dans les recherches et les rapports, et est trié par défaut par ordre ascendant ;
     *   `desc` : la propriété est disponible dans les recherches et les rapports, et est trié par défaut par ordre descendant.
-
+    
     Les propriétés suivantes ont un paramètre *sort* par défaut :
-
+    
     *   initid : sort=desc,
     *   revdate : sort=desc,
     *   state : sort=asc,
     *   title : sort=asc
-
+    
     Les autres propriétés sont par défaut à sort=no.
 
 ### Définition de propriétés de famille {#core-ref:6f013eb8-33c7-11e2-be43-373b9514dea3}
@@ -210,13 +210,13 @@ Les différents identifiants de propriété sont les suivants :
 
 CPROFID
 :   Valeur par défaut de la propriété *profid*.
-
+    
     Lors de l'import, les vérifications suivantes sont effectuées :
-
+    
     *   Si la famille hérité de dossier, le document référencé doit être de la famille profil de dossier,
     *   Si la famille hérite de recherche, le document référencé doit être de la famille profil de recherche,
     *   Sinon le document référencé doit être de la famille profil de document.
-
+    
     Si la valeur est vide le profil de document par défaut est enlevé.
 
 CVID
@@ -226,7 +226,7 @@ CVID
 
 DFLDID
 :   identifiant du dossier principal permettant de constituer une arborescence spécifique à la famille .
-
+    
     Ce dossier est nécessaire pour manipuler les documents d'une famille depuis  l'application "ONEFAM".
     Il peut être égal au 'auto', ce qui a pour effet de créer un dossier principal automatiquement.
     Si cette propriété est déjà renseignée, la nouvelle valeur ne sera pas prise en compte.
@@ -240,26 +240,26 @@ ICON
 METHOD
 :   Indique le nom du fichier contenant les méthodes supplémentaires de la famille.
     Cette propriété peut être utilisé sur plusieurs lignes, avec la sémantique suivante :
-
+    
     *   Lorsque le nom est préfixé par *+*, son contenu est concaténé directement dans la classe générée ;
     *   Lorsque le nom est préfixé par *, le fichier n'est pas intégré directement dans la famille, mais une classe intermédiaire est générée. Cela permet notamment de surcharger les méthodes ultérieurement.
-
+    
     Si la valeur est vide les méthodes associées seront enlevées.
 
 PROFID
 :   identifiant du document profil de famille pour cette famille.
     Lors de l'import, les vérifications suivantes sont effectuées :
-
+    
     *   Ce document doit être de la famille 'profil de famille'.
-
+    
     Si la valeur est vide le profil de famille est enlevé.
 
 SCHAR
 :   Indique les modalités de révision des documents de cette famille :
-
+    
     *   *R* : Révision automatique à chaque modification,
     *   *S* : document non révisable
-
+    
     Si la valeur est vide la caractéristique spéciale par défaut est enlevée.
 
 TAG
@@ -273,11 +273,11 @@ TYPE
 
 USEFOR
 :   Caractère désignant une utilisation spéciale. Seulement pour les documents systèmes :
-
+    
     *   *W* : pour les cycles de vie
     *   *G* : pour les intercalaires de chemise
     *   *P* : pour les profils
-
+    
     Si la valeur est vide l'utilisation spéciale par défaut est enlevée.
 
 WID
@@ -300,31 +300,31 @@ ATTR
 :   **Obligatoire**
     Identifiant système de l'attribut.
     Il sera automatiquement converti en minuscules.
-
+    
     Il sert de référence lors des définitions des fonctions et des liens.
     Cet item n'est plus modifiable une fois créé car il peut être utilisé dans les parties spécifiques de la famille.
-
+    
     Cet identificateur doit être unique dans la famille.
     Une redéclaration équivaut à une modification des caractéristiques de l'attribut.
-
+    
     <div class="astuce"><span class="fixme MCO">nommage des attributs</span></div>
 
 [id_conteneur]
 :   **Obligatoire** (sauf pour les attributs de type *frame* ou *tab*)
     Identifiant système de l'attribut structurant ou tableau contenant cet attribut.
-
+    
     Le type *tab* ne peut pas avoir d'attribut conteneur.
-
+    
     Le type *frame* peut être contenu dans un *tab*, ou ne pas avoir d'attribut conteneur.
-
+    
     Le type *array* doit être contenu dans un *frame*.
-
+    
     Tous les autres attributs doivent être contenus dans un *array* ou un *frame*.
 
 [label]
 :   <span class="fixme MCO">obligatoire?</span>
     Libellé de l'attribut.
-
+    
     Ce libellé sera automatiquement traduit s'il est présent dans le catalogue de traduction
     (la clé correspondante est de la forme `[FAMNAME]#[attrid]`,
     avec [FAMNAME] le nom logique de la famille et [attrid] le nom logique de l'attribut, en minuscule).
@@ -332,68 +332,68 @@ ATTR
 [in_title]
 :   **Obligatoire** (sauf pour les attributs de type *array*, *frame* ou *tab*)
     Indique que l'attribut sera utilisé dans la composition du titre du document.
-
+    
     Le titre du document est alors composé en concaténant tous les attributs définis comme tels,
     par ordre croissant de leur *ordre* et en les séparant par des espaces.
-
+    
     Cette caractéristique est ignorée sur les attributs de type *array*, *frame* ou *tab*.
-
+    
     Si aucun attribut n'est marqué comme composant le titre, ou si tous ces attributs sont vides,
     le titre sera *Document sans titre* suivi de l'id du document.
-
+    
     Les valeurs possibles sont :
-
+    
     *   `Y` pour *yes*
     *   `N` pour *no*
 
 [in_abstract]
 :   Indique que l'attribut sera utilisé dans le résumé du document.
-
+    
     Le résumé du document est utilisé pour construire la fiche résumé dans l'application ONEFAM.
-
+    
     Les valeurs possibles sont :
-
+    
     *   `Y` pour *yes*
     *   `N` pour *no*
 
 [type]
 :   type de l'attribut, conformément aux types définis dans [la partie correspondante][type_attribut]
-
+    
     Cette colonne permet également de définir le formatage de l'attribut :
-
+    
     *   attributs de type *text*
-
+        
         Le formatage est effectué avec la [syntaxe sprintf][PHP_sprintf].
-
+        
         Par exemple, `text("%s environ")` ajoute *environ* après la valeur ;
         tandis que `text("<b>%s</b>")` affichera la valeur en gras.
-
+    
     *   attributs de type *int* ou *double*
-
+        
         Le formatage est effectué avec la [syntaxe sprintf][PHP_sprintf].
-
+        
         Par exemple, `double("%.02f")` affiche le nombre avec 2 décimales ;
         tandis que `integer("%d m²")` : la valeur suivie de *m²* ;
         et que `double("%.02f %%")` : affiche *%* après le nombre.
-
+    
     *   attributs de type *date*, *time* et *timestamp*
-
+        
         Le formatage est effectué avec la syntaxe [strftime][PHP_strftime].
-
+        
         Par exemple, `time("%H:%M:%S")`, ou `timestamp("%A %d %B %Y %X")`.
 
 [ordre]
 :   **Obligatoire** (sauf pour les attributs de type *frame* ou *tab*)
     Définit l'ordre de présentation des attributs dans le document.
-
+    
     Cette caractéristique est ignorée sur les attributs de type *frame* ou *tab*.
 
 [visibility]
 :   **Obligatoire**
     Définit la visibilité par défaut de l'attribut.
-
+    
     Les valeurs possibles sont :
-
+    
     *   `H` (*Hidden*) : attribut caché. Généralement utilisé pour des attributs servant soit au calcul, soit à la génération des liens.
     *   `I` (*Invisible*) : attribut invisible : l’attribut n’est présent ni en consultation ni en modification dans le document.
         Un attribut de visibilité I n'est pas modifiable. Pour en modifier la valeur, il est nécessaire de modifier sa visibilité.
@@ -401,18 +401,18 @@ ATTR
     *   `R` (*Read-only*) : attribut visible en lecture seulement. Généralement utilisé pour les attributs calculés.
     *   `S` (*Statique*) : attribut visible en lecture et en modification, mais non modifiable en modification.
     *   `W` (*Writable*) : attribut visible en lecture et modifiable en modification.
-
+    
     Le type array dispose en plus de la visibilité
-
+    
     *   `U` <span class="fixme MCO">U pour ?</span>: Interdit l'ajout et la suppression de lignes dans le tableau.
 
 
 [required]
 :   **facultatif**
     Indique si l'attribut est obligatoire pour la sauvegarde du document.
-
+    
     Les valeurs possibles sont :
-
+    
     *   `Y` pour *yes*
     *   **`N` (valeur par défaut)** pour *no*
 
@@ -420,71 +420,71 @@ ATTR
 :   **facultatif** (Non applicable pour les types "frame", "tab", "array".)
     Ajoute un hyperlien sur l'attribut (en consultation uniquement).
     le texte de l'hyperlien sera la valeur de l'attribut.
-
+    
     L'hyperlien peut être :
-
+    
     *   une simple URL statique ("http://www.dynacase.org"),
     *   une URL paramétrée par
         *   des attributs du document,
         *   des propriétés du document,
         *   des paramètres applicatifs,
-        *   des méthodes du document.
-
+       *   des méthodes du document.
+    
     *   Utilisation d'attribut du document
-
+        
         Les références aux attributs du document sont écrites entre les caractères `%`,
         en indiquant l'identifiant de l'attribut, en majuscules ou en minuscules.
-
+        
         Le caractère `%` est obtenu en le doublant : `TEST%%25` sera converti en *TEST%25*.
-
+        
         Par exemple, soit l'attribut US_MAIL définissant le mail d'une personne.
         Pour déclencher l'édition d'un mail vers une personne, il suffit de mettre l'hyperlien suivant : `mailto:%US_MAIL%`
-
+        
         Autre exemple, soit l'attribut SI_TOWN indiquant la ville de la famille société.
         Pour avoir la météo de la ville il suffit de mettre l'hyperlien suivant : `http://www.location.org/&strLocation=%SI_TOWN%&strCountry=EUR`
-
+        
         Si la valeur est vide pour un des attributs de l'URL, l'hyperlien ne sera pas affiché (on ne pourra pas cliquer sur l'attribut).
-
+        
         Il est possible de désigner des attributs optionnels en utilisant la notation suivante : `%?[ATTRID]%`.
         Le point d'interrogation placé après le pourcentage indique que la valeur de l'attribut peut être vide.
-
+        
         Les valeurs insérées dans le lien sont encodés selon la [RFC 3986][RFC_3986] pour être utilisable comme valeur de paramètre web.
-
+    
     *   Utilisation de propriétés du document
-
+        
         Les références aux propriétés du document sont écrites entre les caractères `%`,
         en indiquant l'identifiant de l'attribut, en majuscules ou en minuscules.
-
+        
         Le caractère `%` est obtenu en le doublant : `TEST%%25` sera converti en *TEST%25*.
-
+        
         Les mots-clefs spéciaux suivants peuvent être utilisés pour la composition de l'URL :
-
+        
         *   `%S%` : est remplacé par l'URL relative vers dynacase,
         *   `%I%` : est remplacé par l'identifiant (équivalent à %ID%),
         *   `%T%` : est remplacé par le titre (équivalent à %TITLE%).
-
+        
         Les valeurs insérées dans le lien sont encodés selon la [RFC 3986][RFC_3986] pour être utilisable comme valeur de paramètre web.
-
+    
     *   Utilisation de paramètres applicatifs
-
+        
         Les références aux paramètres applicatifs sont écrites entre accolades,
         en indiquant l'identifiant de l'attribut, en majuscules ou en minuscules.
-
+        
         Par exemple : `%S%app=TEST&action=TESTONE&arg={CORE_CLIENT}` :
         ici {CORE_CLIENT} sera remplacé par la valeur du paramètre CORE_CLIENT.
-
+        
         Seuls les paramètres de *CORE* et les *paramètres globaux* sont accessibles pour la composition de l'URL.
-
+    
     *   Utilisation de méthodes du document
-
+        
         Les références aux méthodes du document sont écrites entre accolades `%`,
         en notant la méthode comme pour les attributs calculés.
-
+        
         Les parties variables peuvent aussi faire référence à une méthode du document.
         Cette méthode doit retourner une chaîne de caractère encodée selon la [RFC 3986][RFC_3986] qui sera insérée dans la variable.
-
+        
         Par exemple : `%::myTitleLink()%&x=3`
-
+        
             [code php]
             public function myTitleLink(){
                 return sprintf('http://www.test.net/?b=%s',
@@ -505,9 +505,9 @@ ATTR
 [elink]
 :   **facultatif** (Non applicable pour les types "frame", "tab", "array".)
     Extra lien supplémentaire.
-
+    
     Cet extra lien sera présenté en modification uniquement, sous la forme d'un bouton supplémentaire.
-
+    
     La syntaxe de l'extra lien est la même que celle de la colonne *link*.
 
 [constraint]
@@ -517,9 +517,9 @@ ATTR
 [options]
 :   **facultatif**
     Liste des options à appliquer à l'attribut. Les options dépendent du [type d'attribut][type_attribut].
-
+    
     Les options se présentent sous la forme de couples clé/valeur séparés par des `|`.
-
+    
     Par exemple: `esize=3|elabel=saisissez votre prénom`
 
 ### Définition de paramètres de famille {#core-ref:c28824e2-3486-11e2-be3b-337d2321d8ee}
@@ -532,7 +532,7 @@ Un paramètre de famille est défini par la syntaxe suivante :
 
     PARAM;[id_attribut];[id_conteneur];[label];[in_title];[in_abstract];[type];[ordre];[visibility];[required];[link];[phpfile];[phpfunc];[elink];[constraint];[options]
 
-avec les mêmes correspondances que pour [les attributs](#core-ref:bc3fad86-33cc-11e2-9a69-1bbd9c32b0f2), aux exceptions suivantes :
+avec les mêmes correspondances que pour [les attributs][attributs], aux exceptions suivantes :
 
 <span class="fixme MCO">différences entre PARAM et ATTR</span>
 
@@ -559,15 +559,15 @@ DEFAULT
 
 [value]
 :   la valeur par défaut, statique, ou la méthode de calcul.
-
+    
     Dans le cas d'une méthode de calcul, sa syntaxe est identique à celle d'un
     [attribut calculé][attribut_calcule]
-
+    
     Par exemple, `DEFAULT;SGATE_RED;::getTitle(SGATE_IDRED)`
     pré-remplit l'attribut  avec le titre de l'attribut *SGATE_IDRED*,
     alors que `DEFAULT;SGATE_ACTION;GATE_WEATHER`
     pré-remplit l'attribut SGATE_RED avec la chaîne *GATE_WEATHER*
-
+    
     Cas particulier des *array*:
     
     *   Pour définir quelles lignes seront présentes par défaut dans le tableau, on
@@ -613,7 +613,7 @@ DEFAULT
 
 [force=yes]
 :   Indique, lors de la surcharge de valeur par défaut, que la nouvelle valeur par défaut écrase l'ancienne.
-
+    
     Dans le cas contraire, la nouvelle valeur par défaut n'est pas prise en compte.
 
 ### Définition de valeur initiale de paramètre {#core-ref:da804e2e-3573-11e2-8974-4ba96567fbf9}
@@ -644,16 +644,169 @@ INITIAL
 
 [force=yes]
 :   Indique, lors de la surcharge de valeur initiale, que la nouvelle valeur initiale écrase l'ancienne.
-
+    
     Dans le cas contraire, la nouvelle valeur initiale n'est pas prise en compte.
 
+### Modification d'attribut père {#core-ref:13dcd96d-561f-463c-a88f-4b9db58e4fbd}
+
+Lorsqu'une famille étend une autre famille, il peut être nécessaire de changer la définition d'un attribut.
+Cela se fait au moyen d'une ligne de la forme :
+
+    MODATTR;[id_attribut];[id_conteneur];[label];[in_title];[in_abstract];[type];[ordre];[visibility];[required];[link];[phpfile];[phpfunc];[elink];[constraint];[options]
+
+avec les même correspondances que pour la [définition d'un attribut][definition_attribut], à quelques différences près :
+
+MODATTR
+:   **Obligatoire**
+    Signale que la ligne est une modification d'attribut.
+
+[id_attribut]
+:   **Obligatoire**
+    Identifiant système de l'attribut à surcharger.
+    Il sera automatiquement converti en minuscules.
+    
+    L'attribut référencé doit obligatoirement exister dans la famille étendue.
+
+[id_conteneur]
+:   Identifiant système de l'attribut structurant ou tableau contenant cet attribut.
+    
+    Si la valeur est vide, l'attribut conservera sa valeur héritée.
+
+[label]
+:   Libellé de l'attribut.
+    
+    Si la valeur est vide, l'attribut conservera sa valeur héritée.
+
+[in_title]
+:   Indique que l'attribut sera utilisé dans la composition du titre du document.
+    
+    Si la valeur est vide, l'attribut conservera sa valeur héritée.
+
+[in_abstract]
+:   Indique que l'attribut sera utilisé dans le résumé du document.
+    
+    Si la valeur est vide, l'attribut conservera sa valeur héritée.
+
+[type]
+:   type de l'attribut, conformément aux types définis dans [la partie correspondante][type_attribut]
+    
+    Si la valeur est vide, l'attribut conservera sa valeur héritée.
+    
+    Le nouveau type d'attribut doit être compatible avec l'ancien
+    (son stockage en base de données doit être de même type).
+
+[ordre]
+:   Définit l'ordre de présentation des attributs dans le document.
+    
+    Si la valeur est vide, l'attribut conservera sa valeur héritée.
+
+[visibility]
+:   Définit la visibilité par défaut de l'attribut.
+    
+    Si la valeur est vide, l'attribut conservera sa valeur héritée.
+
+
+[required]
+:   Indique si l'attribut est obligatoire pour la sauvegarde du document.
+    
+    Si la valeur est vide, l'attribut conservera sa valeur héritée.
+
+[link]
+:   Ajoute un hyperlien sur l'attribut (en consultation uniquement).
+    
+    Si la valeur est vide, l'attribut conservera sa valeur héritée.
+    
+    Pour supprimer l'hyperlien, il faut mettre la valeur `-`.
+
+[phpfile]
+:   Nom du fichier php pour l'[aide à la saisie][aide_saisie]
+    
+    Si la valeur est vide, l'attribut conservera sa valeur héritée.
+    
+    Pour supprimer l'hyperlien, il faut mettre la valeur `-`.
+
+[phpfunc]
+:   Nom et attributs de la fonction pour l'aide à la saisie,
+    ou nom et attributs de la méthode de calcul s'il s'agit d'un attribut calculé,
+    ou définition des clés-valeurs dans le cas d'un attribut de type énuméré.
+    
+    Si la valeur est vide, l'attribut conservera sa valeur héritée.
+    
+    Pour supprimer l'hyperlien, il faut mettre la valeur `-`.
+
+[elink]
+:   Extra lien supplémentaire.
+    
+    Si la valeur est vide, l'attribut conservera sa valeur héritée.
+    
+    Pour supprimer l'hyperlien, il faut mettre la valeur `-`.
+
+[constraint]
+:   Nom et attributs de la méthode de [contrainte][contrainte]
+    
+    Si la valeur est vide, l'attribut conservera sa valeur héritée.
+    
+    Pour supprimer l'hyperlien, il faut mettre la valeur `-`.
+
+[options]
+:   Liste des options à appliquer à l'attribut.
+    
+    Si la valeur est vide, l'attribut conservera sa valeur héritée.
+    
+    Pour supprimer l'hyperlien, il faut mettre la valeur `-`.
+    
+    Afin de modifier la valeur d'une seule option, il est nécessaire de toutes les reporter,
+    car la valeur `-` va effacer entièrement le contenu de la colonne *options*.
+
 ## Surcharge de définition de famille {#core-ref:686b17c3-220e-4450-a0d0-feb5db002cbc}
+
+La définition d'une famille peut être surchargée, permettant ainsi un import plus modulaire.
+Il est bien question ici de la notion de *surcharge* qui change la définition d'une famille,
+et à ne pas confondre avec le mécanisme d'héritage, qui crée une nouvelle famille.
+
+Pour surcharger une définition de famille, il suffit d'utiliser le même nom logique
+(sur la ligne *BEGIN*).
+
+Lors de la surcharge, le comportement est le suivant :
+
+*   pour les [paramètres de propriété](#core-ref:40d229c4-33c4-11e2-9147-a3eaf356c37c)
+    
+    <span class="fixme MCO">La nouvelle valeur écrase la valeur précédemment définie</span>
+
+*   pour les [propriétés de famille](#core-ref:6f013eb8-33c7-11e2-be43-373b9514dea3)
+    
+    <span class="fixme MCO">La nouvelle valeur écrase la valeur précédemment définie</span>
+
+*   pour les [attributs](#core-ref:bc3fad86-33cc-11e2-9a69-1bbd9c32b0f2)
+    
+    <span class="fixme MCO">La nouvelle définition écrase la définition précédemment définie</span>
+
+*   pour les [paramètres de famille](#core-ref:c28824e2-3486-11e2-be3b-337d2321d8ee)
+    
+    <span class="fixme MCO">La nouvelle définition écrase la définition précédemment définie</span>
+
+*   pour les [valeurs par défaut](#core-ref:94fa51e2-3488-11e2-9e34-1f7c912168cf)
+    
+    <span class="fixme MCO">La nouvelle valeur écrase la valeur précédemment définie si *force=yes* est utilisé</span>
+
+*   pour les [valeurs initiale de paramètre](#core-ref:da804e2e-3573-11e2-8974-4ba96567fbf9)
+    
+    <span class="fixme MCO">La nouvelle valeur écrase la valeur précédemment définie si *force=yes* est utilisé</span>
+
+Ce comportement peut être altéré par l'utilisation du mot clé *RESET* :
+<span class="fixme MCO">plusieurs reset sur une seule ou plusieurs lignes?</span>
+
+<span class="fixme MCO">liens depuis force=yes</span>
+
+<span class="fixme MCO">mailrecipient…</span>
 
 <!-- links -->
 [PHP_sprintf]: http://php.net/manual/fr/function.sprintf.php "Documentation de la fonction sprintf sur php.net"
 [PHP_strftime]: http://php.net/manual/fr/function.strftime.php "Documentation de la fonction strftime sur php.net"
 [RFC_3986]: http://www.ietf.org/rfc/rfc3986.txt
+[attributs]: #core-ref:bc3fad86-33cc-11e2-9a69-1bbd9c32b0f2
 [type_attribut]: #core-ref:4e167170-33ed-11e2-8134-a7f43955d6f3
 [attribut_calcule]: #core-ref:4565cab9-73c8-4eee-bfa7-218ffbd4b687
 [aide_saisie]: #core-ref:0b2d4cd0-4eed-41d8-ac57-37525a444194
 [contrainte]: #core-ref:7b41906b-f199-41a4-94df-33b9ad34153b
+[definition_attribut]: #core-ref:bc3fad86-33cc-11e2-9a69-1bbd9c32b0f2
