@@ -1,6 +1,6 @@
-# les attributs {#core:4e167170-33ed-11e2-8134-a7f43955d6f3}
+# les attributs {#core-ref:4e167170-33ed-11e2-8134-a7f43955d6f3}
 
-## présentation
+## présentation {#core-ref:61891ad3-b786-4824-bb31-f3cc209a96b6}
 
 Les attributs correspondent à des *champs* du document.
 
@@ -18,7 +18,7 @@ Note sur les options : Dans Dynacase, les options sont *libres*, ce qui veut di
 De par leur nature extensible, les options n'ont pas de valeur par défaut ;
 aussi, dans leur description, nous indiquerons par *(comportement par défaut)* le comportement de l'option en l'absence de valeur.
 
-### options communes à tous les types d'attributs {#core:16e19c90-3233-11e2-a58f-6b135c3a2496}
+### options communes à tous les types d'attributs {#core-ref:16e19c90-3233-11e2-a58f-6b135c3a2496}
 
 searchcriteria
 :   Indique quelle sera l'utilisation de l'attribut dans les recherches.
@@ -66,7 +66,7 @@ sortable
 
 version
 :   Indique que l'attribut est utilisé pour la composition de la *version*.
-    Se reporter aux [propriétés de la classe Doc](#Core:9aa8edfa-2f2a-11e2-aaec-838a12b40353) pour plus de détails.
+    Se reporter aux [propriétés de la classe Doc](#core-ref:9aa8edfa-2f2a-11e2-aaec-838a12b40353) pour plus de détails.
     
     Les valeurs possibles sont :
     
@@ -95,19 +95,19 @@ vlabel
         *   `up`
         *   `none`
 
-## action
+## action {#core-ref:a372b25d-ac8f-4b18-854c-6081bf5d64ae}
 
-### description
+### description {#core-ref:a3a60027-5120-4dc9-86d3-fd806ca130b2}
 
-### représentation
+### représentation {#core-ref:73c8d899-10b6-4caf-a980-558e45a6e25e}
 
-### comportement
+### comportement {#core-ref:e034ec11-9e86-422a-a94f-38c67ab5bbf3}
 
-### format de stockage
+### format de stockage {#core-ref:f527a787-bf29-46dc-9ce2-f8c19485e31a}
 
-### options
+### options {#core-ref:90002286-c6f9-47b3-8183-2ad575d4d566}
 
-En plus des [options communes à tous les types d'attributs](#core:16e19c90-3233-11e2-a58f-6b135c3a2496), ce type d'attribut dispose des options suivantes :
+En plus des [options communes à tous les types d'attributs](#core-ref:16e19c90-3233-11e2-a58f-6b135c3a2496), ce type d'attribut dispose des options suivantes :
 
 batchfolder
 :   Indique si l'action définie doit être appliquée sur tous les éléments du dossier.
@@ -120,13 +120,13 @@ batchfolder
     *   `yes`
     *   **`no` (comportement par défaut)**
 
-## account
+## account {#core-ref:87230967-8155-421c-8bbe-70a3c1adc3c0}
 
-### description
+### description {#core-ref:f85a4012-c7e1-4a1f-bdaa-705b40e92114}
 
 Les attributs de type *account* permettent de faire un lien vers un compte (utilisateur, groupe, ou rôle).
 
-### représentation
+### représentation {#core-ref:af7c88df-6eb7-4268-9ffa-532fe3cdee23}
 
 *   consultation :
     Un hyperlien vers l'utilisateur cible, avec comme label le titre l'utilisateur cible, et son icone.
@@ -145,19 +145,19 @@ Les attributs de type *account* permettent de faire un lien vers un compte (util
     
     ![ account simple - consultation odt ](famille/attributs/account-simple-odt.png "account simple - Consultation odt")
 
-### comportement
+### comportement {#core-ref:9f3025e5-53e0-4b19-8e86-ff02b3ad035a}
 
 Lors du rendu d'un account, dynacase récupère dynamiquement le titre des documents cibles.
 Pour chaque document cible, si l'utilisateur n'a pas le droit de voir le document cible,
 le titre est remplacé par le texte *Information non disponible* (se reporter à l'option noaccesstext pour personnaliser ce texte).
 
-### format de stockage
+### format de stockage {#core-ref:cb3ffece-376a-4811-abe1-45c98f8dc9e4}
 
 La valeur stockée est l'id du document associé.
 
-### options
+### options {#core-ref:87c874bb-7ed8-4aaa-b33b-897db020494f}
 
-En plus des [options communes à tous les types d'attributs](#core:16e19c90-3233-11e2-a58f-6b135c3a2496), ce type d'attribut dispose des options suivantes :
+En plus des [options communes à tous les types d'attributs](#core-ref:16e19c90-3233-11e2-a58f-6b135c3a2496), ce type d'attribut dispose des options suivantes :
 
 group
 :   Indique une restriction sur les comptes qui peuvent être référencés par la relation.
@@ -210,15 +210,15 @@ role
     
     *   une liste de référence de rôles séparés par des virgules
 
-## array
+## array {#core-ref:dd400581-8896-4eec-9b9e-f1e5669cf180}
 
-### description
+### description {#core-ref:324c7c7e-bd80-4c19-ad24-daf0f39caa61}
 
 Les attributs de type *array* permettent de définir des tableaux.
 
 Chacun des attributs contenu dans un *array* est alors dit *multiple*, et correspond à une colonne du dit *array*.
 
-### représentation
+### représentation {#core-ref:818bdf5f-c037-41b6-9c64-6e2a23a685d4}
 
 Les array sont représentés au moyen d'une `table`.
 
@@ -244,11 +244,11 @@ Le libellé de la colonne est le libellé de l'attribut correspondant.
     
     ![ array - consultation odt ](famille/attributs/array-odt.png "array - Consultation odt")
 
-### comportement
+### comportement {#core-ref:411d067e-4729-43aa-a33b-49915e131396}
 
 Aucun comportement particulier.
 
-### format de stockage
+### format de stockage {#core-ref:2448fbfc-c138-4134-aa46-800080f63738}
 
 Le tableau en lui même n'est pas stocké, mais modifie la façon dont les attributs qu'il contient sont stockés.
 En effet, une fois dans un tableau, un attribut est multiple, et nécessite donc le stockage de plusieurs valeurs.
@@ -256,7 +256,7 @@ Pour rester simple, la valeur stockée sera une suite des valeurs de stockage si
 
 Pour plus de précisions, se reporter au chapitre avancé sur les formats de stockage.
 
-### options applicables à l'array
+### options applicables à l'array {#core-ref:9eb6f53f-158d-497d-a472-2602a195cbce}
 
 cellbodystyle
 :   Indique le style css appliqué sur les cellules du corps de tableau.
@@ -333,7 +333,7 @@ userowadd
     *   **`yes` (comportement par défaut)**
     *   `no`
 
-### options applicables aux attributs contenus dans un array
+### options applicables aux attributs contenus dans un array {#core-ref:2732ecb2-7cc1-414f-8864-7d7e97a6091b}
 
 align
 :   Indique l'alignement horizontal pour les cellules de la colonne.
@@ -370,13 +370,13 @@ cwidth
     *   une largeur relative en pourcentage (par exemple `30%`)
     *   **`auto` (comportement par défaut)**
 
-## color
+## color {#core-ref:4e42b385-fe99-41ac-8138-cbc8ef5076d6}
 
-### description
+### description {#core-ref:c041bd91-f095-41bf-b1dd-2d0dcb6ce806}
 
 Les attributs de type *color* permettent d'insérer une couleur.
 
-### représentation
+### représentation {#core-ref:51a480cf-a90d-4092-ba66-1102b8c10ca5}
 
 *   consultation :
     
@@ -394,25 +394,25 @@ Les attributs de type *color* permettent d'insérer une couleur.
     
     Non utilisable
 
-### comportement
+### comportement {#core-ref:44695af9-ad45-40f1-8c1b-c14beade3c4f}
 
 Aucun comportement particulier.
 
-### format de stockage
+### format de stockage {#core-ref:4ee50a19-5cee-438f-a505-d0d2978a4670}
 
 La valeur stockée est le code html de la couleur.
 
-### options
+### options {#core-ref:08390cd9-a465-4e7f-87e8-f4223295ada5}
 
-En plus des [options communes à tous les types d'attributs](#core:16e19c90-3233-11e2-a58f-6b135c3a2496), ce type d'attribut dispose des options suivantes :
+En plus des [options communes à tous les types d'attributs](#core-ref:16e19c90-3233-11e2-a58f-6b135c3a2496), ce type d'attribut dispose des options suivantes :
 
-## date
+## date {#core-ref:7ed5e5fe-2b68-489b-b720-58b3f465f20b}
 
-### description
+### description {#core-ref:d30f37bb-a907-4ce8-a09e-dc6bff21b76b}
 
 Les attributs de type *date* permettent d'insérer une date.
 
-### représentation
+### représentation {#core-ref:a08547fe-6459-48a2-b94b-747f70e91219}
 
 *   consultation :
     
@@ -432,7 +432,7 @@ Les attributs de type *date* permettent d'insérer une date.
     
     ![ date - consultation odt ](famille/attributs/date-odt.png "date - Consultation odt")
 
-### comportement
+### comportement {#core-ref:240a15ae-1a7d-4c97-bc58-3fd9533bc02f}
 
 Lors de la saisie, la date est validée, c'est à dire que le format doit être :
 
@@ -440,24 +440,24 @@ Lors de la saisie, la date est validée, c'est à dire que le format doit être�
 *   soit au format « US » ;
 *   soit au format ISO8601.
 
-### format de stockage
+### format de stockage {#core-ref:87c42468-b7ab-49ac-bc7b-5ecc01f7fc2b}
 
 La date est stockée au format ISO8601 (yyyy-mm-dd).
 
-### options
+### options {#core-ref:2bd18e1b-3547-4bcc-8ace-796676ac433e}
 
-En plus des [options communes à tous les types d'attributs](#core:16e19c90-3233-11e2-a58f-6b135c3a2496), ce type d'attribut dispose des options suivantes :
+En plus des [options communes à tous les types d'attributs](#core-ref:16e19c90-3233-11e2-a58f-6b135c3a2496), ce type d'attribut dispose des options suivantes :
 
-## docid
+## docid {#core-ref:d461d5f5-b635-47a0-944d-473c227587ab}
 
-### description
+### description {#core-ref:c5d08a01-4cd2-4328-bce8-961ce6677d89}
 
 Les attributs de type *docid* permettent de faire un lien vers un ou plusieurs documents. Ils sont appelés *relations*.
 
 Les attributs de type *docid* sont *typés*, c'est à dire qu'on précise de quelle famille doivent être les documents cible.
 Cela se fait au moyen de la syntaxe *docid("&lt;family>")* (Dans ce cas, les documents doivent être de la famille *&lt;family>* ou d'une de ses sous-familles).
 
-### représentation
+### représentation {#core-ref:ec18ef5f-f3fd-4ba4-b847-7f929cf694da}
 
 *   consultation :
     
@@ -475,19 +475,19 @@ Cela se fait au moyen de la syntaxe *docid("&lt;family>")* (Dans ce cas, les doc
     
     ![ docid simple - consultation odt ](famille/attributs/docid-simple-odt.png "docid simple - Modification odt")
 
-### comportement
+### comportement {#core-ref:75096496-f4e5-41c0-aa45-c02760723446}
 
 Lors du rendu d'un docid, dynacase récupère le titre des documents cibles.
 Pour chaque document cible, si l'utilisateur n'a pas le droit de voir le document cible,
 le titre est remplacé par le texte *Information non disponible* (se reporter à l'option *noaccesstext* pour personnaliser ce texte).
 
-### format de stockage
+### format de stockage {#core-ref:2f030503-257d-4f61-8edd-cb135fe74e53}
 
 La valeur stockée est l'id du document cible
 
-### options
+### options {#core-ref:9bcfd205-fb07-4a71-be06-ba07d4a9cc7c}
 
-En plus des [options communes à tous les types d'attributs](#core:16e19c90-3233-11e2-a58f-6b135c3a2496), ce type d'attribut dispose des options suivantes :
+En plus des [options communes à tous les types d'attributs](#core-ref:16e19c90-3233-11e2-a58f-6b135c3a2496), ce type d'attribut dispose des options suivantes :
 
 creation
 :   Indique qu'un document de la famille de la relation pourra être créé depuis le formulaire.
@@ -578,13 +578,13 @@ noaccesstext
     
     En l'absence de l'option, le texte affiché est *Information non disponible*
 
-## double
+## double {#core-ref:169365b9-7518-4222-b68c-5710d2779375}
 
-### description
+### description {#core-ref:b1aa4143-3e91-4911-bf98-f00c198552ef}
 
 Les attributs de type *double* permettent d'insérer un nombre avec décimales.
 
-### représentation
+### représentation {#core-ref:e9b9d15c-0492-4664-8295-aa0f514bd020}
 
 *   consultation :
     
@@ -604,7 +604,7 @@ Les attributs de type *double* permettent d'insérer un nombre avec décimales.
     
     ![ double - consultation odt ](famille/attributs/double-odt.png "double - Consultation odt")
 
-### comportement
+### comportement {#core-ref:38bb33db-6ee1-43e7-bd0f-a6f30a32638c}
 
 Lors de l'enregistrement, le nettoyage suivant est effectué :
 
@@ -613,21 +613,21 @@ Lors de l'enregistrement, le nettoyage suivant est effectué :
 
 La valeur nettoyée est validée au moyen de la fonction [is_numeric][PHP_is_numeric].
 
-### format de stockage
+### format de stockage {#core-ref:79669384-86c6-4b68-a8bc-bb1e87adc837}
 
 La valeur stockée est la valeur nettoyée.
 
-### options
+### options {#core-ref:f26a8f0c-f127-4f83-b036-a3172b8e1162}
 
-En plus des [options communes à tous les types d'attributs](#core:16e19c90-3233-11e2-a58f-6b135c3a2496), ce type d'attribut dispose des options suivantes :
+En plus des [options communes à tous les types d'attributs](#core-ref:16e19c90-3233-11e2-a58f-6b135c3a2496), ce type d'attribut dispose des options suivantes :
 
-## enum
+## enum {#core-ref:625303d6-e5d1-40c3-b91d-d1b2e7307f67}
 
-### description
+### description {#core-ref:336860e2-0fb1-4351-b6e0-fac8e9f93822}
 
 Les attributs de type *enum* permettent d'insérer des listes de choix, sous la forme *clé|libellé*.
 
-### représentation
+### représentation {#core-ref:47c0fb81-a866-4f13-8a4b-63b9d3287c74}
 
 *   consultation :
     
@@ -647,17 +647,17 @@ Les attributs de type *enum* permettent d'insérer des listes de choix, sous la 
     
     ![ enum - consultation odt ](famille/attributs/enum-odt.png "enum - Consultation odt")
 
-### comportement
+### comportement {#core-ref:4999969e-7d5a-4140-b857-25d4cd2c0f22}
 
 Aucun comportement particulier.
 
-### format de stockage
+### format de stockage {#core-ref:3ada8389-10b4-41da-a669-7a4c1845c165}
 
 La valeur stockée est la clé.
 
-### options
+### options {#core-ref:4f14142f-6aac-473f-a0e3-87803febb883}
 
-En plus des [options communes à tous les types d'attributs](#core:16e19c90-3233-11e2-a58f-6b135c3a2496), ce type d'attribut dispose des options suivantes :
+En plus des [options communes à tous les types d'attributs](#core-ref:16e19c90-3233-11e2-a58f-6b135c3a2496), ce type d'attribut dispose des options suivantes :
 
 bmenu
 :   Indique si l'énuméré doit apparaître en tant que filtre dans les interfaces de l'application *GENERIC*
@@ -780,13 +780,13 @@ system
     *   `yes`
     *   **`no` (comportement par défaut)**
 
-## file
+## file {#core-ref:0e904376-317c-426e-bc6d-e56fd52bad89}
 
-### description
+### description {#core-ref:75c33b8c-71c9-4086-be85-53da734d89bb}
 
 Les attributs de type *file* permettent d'insérer un fichier.
 
-### représentation
+### représentation {#core-ref:5474b5b0-65fc-410c-8610-1bfe03f72a2b}
 
 *   consultation :
     
@@ -806,17 +806,17 @@ Les attributs de type *file* permettent d'insérer un fichier.
     
     ![ file - consultation odt ](famille/attributs/file-odt.png "file - Consultation odt")
 
-### comportement
+### comportement {#core-ref:b5195047-394d-496b-a25a-e6fad68fbcee}
 
 Lors de l'upload du fichier, il est enregistré dans le *vault*.
 
-### format de stockage
+### format de stockage {#core-ref:2ff4878c-6db2-419f-9dcc-64db69c769d2}
 
 La valeur stockée est l'identifiant vault du fichier (sous la forme *&lt;type-mime>|&lt;vaultid>|&lt;file-title>*).
 
-### options
+### options {#core-ref:cb7fd9e2-a5eb-4f4c-bff0-ed5593904ca5}
 
-En plus des [options communes à tous les types d'attributs](#core:16e19c90-3233-11e2-a58f-6b135c3a2496), ce type d'attribut dispose des options suivantes :
+En plus des [options communes à tous les types d'attributs](#core-ref:16e19c90-3233-11e2-a58f-6b135c3a2496), ce type d'attribut dispose des options suivantes :
 
 hideindav
 :   Indique si le fichier apparaît lors de l'accès au moyen du protocole webdav.
@@ -904,14 +904,14 @@ viewfiletype
     *   `pdf` : Dans ce cas, l'attribut indiqué par l'option *pdffile* sera utilisé comme prévisualisation ;
     *   `image` : Dans ce cas, le moteur de transformation génère une visualisation sous forme d'images avec tourne pages du pdf référencé par l'option *pdffile*.
 
-## frame
+## frame {#core-ref:62b8df9e-4418-4282-a2f2-63dc1306b717}
 
-### description
+### description {#core-ref:308b471c-0e6b-4e8e-879b-945495cf71a7}
 
 Les attributs de type *frame* permettent de regrouper des attributs.
 Ce regroupement sera le plus souvent sémantique.
 
-### représentation
+### représentation {#core-ref:ec628e98-b351-42b1-bed8-304b86755b1f}
 
 *   consultation :
     
@@ -929,17 +929,17 @@ Ce regroupement sera le plus souvent sémantique.
     
     Aucune représentation
 
-### comportement
+### comportement {#core-ref:0630b7d1-c83e-4379-9815-b9ec1f56490f}
 
 Une frame est *collapsible* en cliquant sur son libellé.
 
-### format de stockage
+### format de stockage {#core-ref:2b4e60fd-609e-4d59-9acd-262bfac7de09}
 
 Cet attribut n'est pas stocké.
 
-### options
+### options {#core-ref:7280d24d-8ece-41d2-9ef8-1643eb3e8b3b}
 
-En plus des [options communes à tous les types d'attributs](#core:16e19c90-3233-11e2-a58f-6b135c3a2496), ce type d'attribut dispose des options suivantes :
+En plus des [options communes à tous les types d'attributs](#core-ref:16e19c90-3233-11e2-a58f-6b135c3a2496), ce type d'attribut dispose des options suivantes :
 
 bgcolor
 :   Indique la couleur de fond du cadre.
@@ -949,15 +949,15 @@ bgcolor
     *   toute [couleur css valide][MDN_css_color_value]
         (exemple : `yellow`, `#FF335A`, etc.)
 
-## htmltext
+## htmltext {#core-ref:6ebf113a-1d6a-4c7a-be51-955955056bb3}
 
-### description
+### description {#core-ref:97b8259b-4df3-4450-99b0-c7d8fb5db785}
 
 Les attributs de type *htmltext* permettent d'insérer du texte avec mise en forme.
 
 Le langage de mise en forme est le html, et un éditeur WYSIWYG (basé sur [CKEditor][CKEDITOR_home]) permet d'en simplifier la saisie.
 
-### représentation
+### représentation {#core-ref:8f0bfff9-aaa6-4767-b905-d67a954e2ffa}
 
 *   consultation :
     
@@ -975,7 +975,7 @@ Le langage de mise en forme est le html, et un éditeur WYSIWYG (basé sur [CKEd
     
     la mise en forme est conservée. <span class="fixme MCO">capture + détails suite à correction de [#3283](http://dev.dynacase.org/issues/3283)</span>
 
-### comportement
+### comportement {#core-ref:9bad041e-d747-4d9b-9406-5b62d662229b}
 
 Lors de l'enregistrement, le nettoyage suivant est effectué :
 
@@ -983,13 +983,13 @@ Lors de l'enregistrement, le nettoyage suivant est effectué :
 *   Les entités UTF-8 sont décodées ;
 *   Les commentaires sont supprimés.
 
-### format de stockage
+### format de stockage {#core-ref:083d2816-0682-4c35-b248-caa6e162b80e}
 
 La valeur stockée est le html *nettoyé* selon les règles précédentes.
 
-### options
+### options {#core-ref:8e182116-8762-4157-a743-9abf43db0960}
 
-En plus des [options communes à tous les types d'attributs](#core:16e19c90-3233-11e2-a58f-6b135c3a2496), ce type d'attribut dispose des options suivantes :
+En plus des [options communes à tous les types d'attributs](#core-ref:16e19c90-3233-11e2-a58f-6b135c3a2496), ce type d'attribut dispose des options suivantes :
 
 doclink
 :   Cette option nécessite l'installation du module dynacase-ckeditor-plugins.
@@ -1083,24 +1083,24 @@ toolbarexpand
     *   **`yes` (comportement par défaut)**
     *   `no`
 
-## idoc
+## idoc {#core-ref:17c3a6af-6a98-4db1-a92e-2912fded790e}
 
 **Obsolète**
 
-## ifile
+## ifile {#core-ref:816fc549-ece4-4128-b87e-07acf9142f35}
 
 permet d'intégrer directement la visualisation d'un fichier.
 **Obsolète** (préférer une vue d'attribut lorsque nécessaire)
 
 En consultation, cet attribut sera représenté par une iframe affichant le fichier en mode inline.
 
-## image
+## image {#core-ref:4fca7712-59e0-4186-bfd0-6214104a0f60}
 
-### description
+### description {#core-ref:41e64bba-2ba9-4eb9-9768-f4df6f0bca43}
 
 Les attributs de type *image* permettent d'insérer une image.
 
-### représentation
+### représentation {#core-ref:ce33d1ac-a7b6-4129-b8f2-ee5e11c02055}
 
 *   consultation :
     
@@ -1120,17 +1120,17 @@ Les attributs de type *image* permettent d'insérer une image.
     
     ![ image - consultation odt ](famille/attributs/image-odt.png "image - Consultation odt")
 
-### comportement
+### comportement {#core-ref:bd47c52b-68a0-413c-8ed1-62e4f1f4b578}
 
 Lors de l'upload du fichier, il est enregistré dans le *vault*.
 
-### format de stockage
+### format de stockage {#core-ref:69599309-970d-4b3c-a639-091cca7e1c21}
 
 La valeur stockée est l’identifiant vault du fichier (sous la forme *&lt;type-mime>|&lt;vaultid>|&lt;file-title>*).
 
-### options
+### options {#core-ref:b1a5a304-9eff-4e7a-8e0d-ab2363eaa346}
 
-En plus des [options communes à tous les types d'attributs](#core:16e19c90-3233-11e2-a58f-6b135c3a2496), ce type d'attribut dispose des options suivantes :
+En plus des [options communes à tous les types d'attributs](#core-ref:16e19c90-3233-11e2-a58f-6b135c3a2496), ce type d'attribut dispose des options suivantes :
 
 hideindav
 :   Indique si le fichier apparaît lors de l'accès au moyen du protocole webdav.
@@ -1189,13 +1189,13 @@ rn
     Note: Il est recommandé que la méthode fournisse une extension compatible avec le type mime pour l'utilisation ultérieure sur le poste client et les transformations.
     Pour récupérer l'extension d'un nom de fichier vous pouvez utiliser la fonction `getFileExtension` de la librairie `Lib.FileMime.php`
 
-## integer
+## integer {#core-ref:ab21a433-c24f-40c2-99aa-321fdd1e81a3}
 
-### description
+### description {#core-ref:d66e4885-c1d5-41da-ba18-599d2ef37bea}
 
 Les attributs de type *integer* permettent d'insérer un nombre entier.
 
-### représentation
+### représentation {#core-ref:8342b998-5707-4d2d-9b47-ef2319e80fc7}
 
 *   consultation :
     
@@ -1215,27 +1215,27 @@ Les attributs de type *integer* permettent d'insérer un nombre entier.
     
     ![ integer - consultation odt ](famille/attributs/integer-odt.png "integer - Consultation odt")
 
-### comportement
+### comportement {#core-ref:eda3132e-f8a6-421b-ae07-d36615b705ec}
 
 Lors de la sauvegarde, les vérifications suivantes sont faites :
 
 *   Le nombre est un entier
 
-### format de stockage
+### format de stockage {#core-ref:b87a2fa8-a0ef-4835-908d-6ac777a72343}
 
 La valeur stockée est la valeur brute du nombre.
 
-### options
+### options {#core-ref:d4e4f0d4-8f92-44f2-8240-242ac98c00fe}
 
-En plus des [options communes à tous les types d'attributs](#core:16e19c90-3233-11e2-a58f-6b135c3a2496), ce type d'attribut dispose des options suivantes :
+En plus des [options communes à tous les types d'attributs](#core-ref:16e19c90-3233-11e2-a58f-6b135c3a2496), ce type d'attribut dispose des options suivantes :
 
-## longtext
+## longtext {#core-ref:88016225-a235-4dce-afdb-ea0c867a2cb4}
 
-### description
+### description {#core-ref:e39f3ea5-ee7a-476f-8b75-415434e46a8d}
 
 Les attributs de type *longtext* permettent de saisir du texte multilignes, sans mise en forme.
 
-### représentation
+### représentation {#core-ref:b317d55d-7a36-4544-824b-a06bb480f721}
 
 *   consultation :
     
@@ -1255,17 +1255,17 @@ Les attributs de type *longtext* permettent de saisir du texte multilignes, sans
     
     ![ longtext - consultation odt ](famille/attributs/longtext-odt.png "longtext - Consultation odt")
 
-### comportement
+### comportement {#core-ref:474b9011-0233-4bf5-ab1e-bc3289fcf35d}
 
 Aucun comportement particulier
 
-### format de stockage
+### format de stockage {#core-ref:d8153833-4f91-4a98-85d2-57610c1ff0d7}
 
 La valeur stockée est la valeur brute.
 
-### options
+### options {#core-ref:c1fe0afa-8bbe-4387-aa45-e52ffcbeb1f7}
 
-En plus des [options communes à tous les types d'attributs](#core:16e19c90-3233-11e2-a58f-6b135c3a2496), ce type d'attribut dispose des options suivantes :
+En plus des [options communes à tous les types d'attributs](#core-ref:16e19c90-3233-11e2-a58f-6b135c3a2496), ce type d'attribut dispose des options suivantes :
 
 editheight
 :   Indique la hauteur du `textarea` correspondant.
@@ -1283,15 +1283,15 @@ elabel
     
     *   Toute chaîne de caractères. Attention, la plupart des navigateurs n'acceptent pas de retour chariot.
 
-## menu
+## menu {#core-ref:c976efc3-dc70-463e-a147-2934c96b7bb3}
 
-### description
+### description {#core-ref:eaa7c448-f7aa-4ba6-9a90-9c284e071962}
 
 Les attributs de type *menu* se présentent sous la forme de liens en haut du document.
 
 Ces menus permettent d'accéder à des urls, et ainsi de déclencher des actions, etc.
 
-### représentation
+### représentation {#core-ref:f6520991-b990-4305-af74-80e8a6dd2341}
 
 *   consultation :
     
@@ -1307,20 +1307,20 @@ Ces menus permettent d'accéder à des urls, et ainsi de déclencher des actions
     
     Aucune représentation.
 
-### comportement
+### comportement {#core-ref:7d8fed7b-0e07-4a54-ae02-69345de63a74}
 
 Le menu n'est pas représenté dans les cas suivants:
 
 *   *link* est vide
 *   le menu référence des attributs au moyen de la syntaxe *&lt;attrid>* et un de ces attributs est vide (cela peut être contourné par l'utilisation de la syntaxe ?&lt;attrid>).
 
-### format de stockage
+### format de stockage {#core-ref:0540a07e-5b71-4591-bbcd-4a048d6e3cac}
 
 Cet attribut n'est pas stocké.
 
-### options
+### options {#core-ref:53f09af0-7ca1-4a3b-b3a1-1fc4455d371d}
 
-En plus des [options communes à tous les types d'attributs](#core:16e19c90-3233-11e2-a58f-6b135c3a2496), ce type d'attribut dispose des options suivantes :
+En plus des [options communes à tous les types d'attributs](#core-ref:16e19c90-3233-11e2-a58f-6b135c3a2496), ce type d'attribut dispose des options suivantes :
 
 barmenu
 :   Indique que la popup doit s'ouvrir avec la barre de menus du navigateur.
@@ -1405,13 +1405,13 @@ tconfirm
     
     La valeur par défaut est **`Êtes-vous sûr ?`**
 
-## money
+## money {#core-ref:2afb7c45-6108-4acc-9867-0c0a1723bcf9}
 
-### description
+### description {#core-ref:4203139d-c9a8-4cbc-a6cc-05d06d94593b}
 
 Permet de représenter un format monétaire.
 
-### représentation
+### représentation {#core-ref:ecec88ee-96a4-4594-be7a-daf873d4620c}
 
 *   consultation :
     
@@ -1431,7 +1431,7 @@ Permet de représenter un format monétaire.
     
     ![ money - consultation odt ](famille/attributs/money-odt.png "money - Consultation odt")
 
-### comportement
+### comportement {#core-ref:fe0e31bb-069b-4e47-9805-71b50fce7c75}
 
 Lors de l'enregistrement, le nettoyage suivant est effectué :
 
@@ -1440,21 +1440,21 @@ Lors de l'enregistrement, le nettoyage suivant est effectué :
 
 La valeur nettoyée est validée au moyen de la fonction [is_numeric][PHP_is_numeric].
 
-### format de stockage
+### format de stockage {#core-ref:0ab2dafa-5312-4d54-b160-dd7780664421}
 
 La valeur stockée est la valeur nettoyée.
 
-### options
+### options {#core-ref:26c3a42c-1337-422f-8773-b677cef84699}
 
-En plus des [options communes à tous les types d'attributs](#core:16e19c90-3233-11e2-a58f-6b135c3a2496), ce type d'attribut dispose des options suivantes :
+En plus des [options communes à tous les types d'attributs](#core-ref:16e19c90-3233-11e2-a58f-6b135c3a2496), ce type d'attribut dispose des options suivantes :
 
-## password
+## password {#core-ref:047a1bd7-b48a-4be3-907a-0e4f81d0162f}
 
-### description
+### description {#core-ref:b4d908e8-3758-4ab8-aceb-b1288ea666ae}
 
 Les attributs de type *password* permettent d'insérer des valeurs sans en dévoiler le contenu.
 
-### représentation
+### représentation {#core-ref:0ea14a11-43ed-4b9f-904e-ce50b342079f}
 
 *   consultation :
     
@@ -1472,25 +1472,25 @@ Les attributs de type *password* permettent d'insérer des valeurs sans en dévo
     
     Aucune représentation
 
-### comportement
+### comportement {#core-ref:9208756c-276a-42a3-aec4-eda84fec68e0}
 
 En édition, le champ password est sytématiquement présenté vide. Lors de la sauvegarde, si la valeur est vide, alors l'ancienne valeur est conservée.
 
-### format de stockage
+### format de stockage {#core-ref:94e19ad3-ec9e-4d7f-b51e-8e26e08238e6}
 
 La valeur stockée est la valeur brute.
 
-### options
+### options {#core-ref:5a79056c-6a6d-4f4c-91ea-1dfd257a8540}
 
-En plus des [options communes à tous les types d'attributs](#core:16e19c90-3233-11e2-a58f-6b135c3a2496), ce type d'attribut dispose des options suivantes :
+En plus des [options communes à tous les types d'attributs](#core-ref:16e19c90-3233-11e2-a58f-6b135c3a2496), ce type d'attribut dispose des options suivantes :
 
-## tab
+## tab {#core-ref:5b236ce8-ad99-4e21-ae8a-cbea6942c3e4}
 
-### description
+### description {#core-ref:a46a8c9a-4a1b-4552-8e14-2a3d78fc2cb8}
 
 Les attributs de type *tab* permettent de créer des onglets.
 
-### représentation
+### représentation {#core-ref:06c83445-8009-4797-a9d7-de5fbe000b17}
 
 *   consultation :
     
@@ -1508,17 +1508,17 @@ Les attributs de type *tab* permettent de créer des onglets.
     
     Aucune représentation
 
-### comportement
+### comportement {#core-ref:70e8dfaa-3aad-40ee-b2a9-503324fdc76c}
 
 Aucun comportement particulier.
 
-### format de stockage
+### format de stockage {#core-ref:373f9b7d-07cb-48e9-8222-ada0d9eca6b6}
 
 Cet attribut n'est pas stocké.
 
-### options
+### options {#core-ref:9e3801be-9cd1-4105-a271-787a7082b237}
 
-En plus des [options communes à tous les types d'attributs](#core:16e19c90-3233-11e2-a58f-6b135c3a2496), ce type d'attribut dispose des options suivantes :
+En plus des [options communes à tous les types d'attributs](#core-ref:16e19c90-3233-11e2-a58f-6b135c3a2496), ce type d'attribut dispose des options suivantes :
 
 viewonfly
 :   Indique que le contenu du tab est chargé en ajax lorsque l'utilisateur clique sur l'onglet.
@@ -1554,13 +1554,13 @@ firstopen
     *    `yes`
     *    **`no` (comportement par défaut)**
 
-## text
+## text {#core-ref:d68c1c48-b6ef-4654-a36f-67dfd68c38aa}
 
-### description
+### description {#core-ref:9a0de584-f3d3-4576-8070-36092184c53d}
 
 Les attributs de type *text* permettent d'insérer du texte simple, sur une seule ligne.
 
-### représentation
+### représentation {#core-ref:6384b65b-e9b3-4e18-9ee4-586a20ea5820}
 
 *   consultation :
     
@@ -1580,19 +1580,19 @@ Les attributs de type *text* permettent d'insérer du texte simple, sur une seul
     
     ![ text - consultation odt ](famille/attributs/text-odt.png "text - Consultation odt")
 
-### comportement
+### comportement {#core-ref:8a81d750-2fb2-40f7-926f-9710884bc5c7}
 
 Lors de la sauvegarde, la valeur est nettoyée :
 
 *   le caractère *"\r"* est remplacé par *" "* (espace).
 
-### format de stockage
+### format de stockage {#core-ref:ab1a2bea-df31-4e5a-9079-3a4f77c431d1}
 
 La valeur stockée est la valeur nettoyée.
 
-### options
+### options {#core-ref:92826f53-97a6-4fdb-a3cc-bb0b46877364}
 
-En plus des [options communes à tous les types d'attributs](#core:16e19c90-3233-11e2-a58f-6b135c3a2496), ce type d'attribut dispose des options suivantes :
+En plus des [options communes à tous les types d'attributs](#core-ref:16e19c90-3233-11e2-a58f-6b135c3a2496), ce type d'attribut dispose des options suivantes :
 
 elabel
 :   Valeur de l'attribut `@title` de l'`input` correspondant.
@@ -1608,13 +1608,13 @@ esize
     
     *   Toute valeur entière.
 
-## time
+## time {#core-ref:92319e61-3b3a-4a44-a884-30b4a8149f45}
 
-### description
+### description {#core-ref:1b4580f1-a501-44e1-a91c-1c723d0f1b8d}
 
 Les attributs de type *time* permettent d'insérer une heure.
 
-### représentation
+### représentation {#core-ref:9d0e6897-6040-4a2a-a895-aa26e37d4a57}
 
 *   consultation :
     
@@ -1636,7 +1636,7 @@ Les attributs de type *time* permettent d'insérer une heure.
     
     ![ time - consultation odt ](famille/attributs/time-odt.png "time - Consultation odt")
 
-### comportement
+### comportement {#core-ref:fe20bd98-8ebb-47f2-8d26-b89ac794cc5c}
 
 Lors de la sauvegarde, la valeur est nettoyée :
 
@@ -1649,21 +1649,21 @@ La valeur est vérifiée, et doit correspondre à un des formats suivants :
 *   .\*:.\*
 *   .\*:.\*:.\*
 
-### format de stockage
+### format de stockage {#core-ref:e99684cb-f7a4-4814-ac7d-d0e9365ed114}
 
 La valeur stockée est la valeur nettoyée.
 
-### options
+### options {#core-ref:a183ea74-26de-446b-93ab-587591bd2a57}
 
-En plus des [options communes à tous les types d'attributs](#core:16e19c90-3233-11e2-a58f-6b135c3a2496), ce type d'attribut dispose des options suivantes :
+En plus des [options communes à tous les types d'attributs](#core-ref:16e19c90-3233-11e2-a58f-6b135c3a2496), ce type d'attribut dispose des options suivantes :
 
-## timestamp
+## timestamp {#core-ref:202b3080-ec86-47a6-8fe4-20e4cd5daa25}
 
-### description
+### description {#core-ref:315d0d73-d5ff-4c36-98ad-1985871abc2b}
 
 Les attributs de type *timestamp* permettent d'insérer une date et heure.
 
-### représentation
+### représentation {#core-ref:bbed0319-c60a-4d4b-90c8-6523b134de52}
 
 *   consultation :
     
@@ -1683,7 +1683,7 @@ Les attributs de type *timestamp* permettent d'insérer une date et heure.
     
     ![ timestamp - consultation odt ](famille/attributs/timestamp-odt.png "timestamp - Consultation odt")
 
-### comportement
+### comportement {#core-ref:a4973455-217a-4988-a5d6-5e9b2d234243}
 
 Lors de la saisie, la valeur est validée, c'est à dire que le format doit être :
 
@@ -1691,27 +1691,27 @@ Lors de la saisie, la valeur est validée, c'est à dire que le format doit êtr
 *   soit au format « US » ;
 *   soit au format ISO8601.
 
-### format de stockage
+### format de stockage {#core-ref:602096b5-9cd8-4d32-b217-6da24698f808}
 
 La date est stockée au format ISO8601 « sans T » (yyyy-mm-dd hh:mm:ss).
 
-### options
+### options {#core-ref:a1d759de-e5df-48e7-8a77-7f1bd55b7c2a}
 
-En plus des [options communes à tous les types d'attributs](#core:16e19c90-3233-11e2-a58f-6b135c3a2496), ce type d'attribut dispose des options suivantes :
+En plus des [options communes à tous les types d'attributs](#core-ref:16e19c90-3233-11e2-a58f-6b135c3a2496), ce type d'attribut dispose des options suivantes :
 
-## xml
+## xml {#core-ref:751e9229-3aa5-4269-a7d4-5fa62d5de53c}
 
-### description
+### description {#core-ref:905985cb-0205-4abb-8bb4-eebc2d3828e8}
 
 Le type *XML n'est utilisable que pour des besoins internes de core. Seule la famille "SEARCH" l'utilise.
 
-### représentation
+### représentation {#core-ref:83ee78af-cadb-4625-bf86-7792a093be9e}
 
 Les attributs de type *xml* sont représentés comme du texte simple.
 
-### options
+### options {#core-ref:2881ee7f-2335-4653-96b5-9251ddd19b3e}
 
-En plus des [options communes à tous les types d'attributs](#core:16e19c90-3233-11e2-a58f-6b135c3a2496), ce type d'attribut dispose des options suivantes :
+En plus des [options communes à tous les types d'attributs](#core-ref:16e19c90-3233-11e2-a58f-6b135c3a2496), ce type d'attribut dispose des options suivantes :
 
 <!-- links -->
 [MDN_css_color_value]: https://developer.mozilla.org/en-US/docs/CSS/color_value "description du type css color sur MDN"

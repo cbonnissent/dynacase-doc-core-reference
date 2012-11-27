@@ -2,7 +2,7 @@
  
 <span class="fixme template"> template for famille/parametrage_de_core.md.</span>
 
-## introduction
+## introduction {#core-ref:4b4cb93e-e717-4a42-888d-c2376deab4bb}
 
 Pour paramétrer une application Dynacase, on va utiliser divers formats de fichier :
 
@@ -10,7 +10,7 @@ Pour paramétrer une application Dynacase, on va utiliser divers formats de fich
 *   Le code php sera à déployer dans des fichiers php, à intégrer à la plate-forme ;
 *   Les documents systèmes seront importés au moyen de fichiers csv ou xml.
 
-## Définition de familles
+## Définition de familles {#core-ref:17500007-32d8-4aee-bc3f-7e569e1cd5a6}
 
 Les familles sont définies dans un fichier csv respectant le format suivant:
 
@@ -151,14 +151,14 @@ Entre ces 2 lignes, chacune des lignes correspond à :
 
         //propid;value;;;;;;;;;;;;;;;
 
-*   un [paramètre de propriété](#core:40d229c4-33c4-11e2-9147-a3eaf356c37c)
-*   une [propriété de famille](#core:6f013eb8-33c7-11e2-be43-373b9514dea3)
-*   un [attribut](#core:bc3fad86-33cc-11e2-9a69-1bbd9c32b0f2)
-*   un [paramètre de famille](#core:c28824e2-3486-11e2-be3b-337d2321d8ee)
-*   une [valeur par défaut](#core:94fa51e2-3488-11e2-9e34-1f7c912168cf)
-*   une [valeur initiale de paramètre](#core:da804e2e-3573-11e2-8974-4ba96567fbf9)
+*   un [paramètre de propriété](#core-ref:40d229c4-33c4-11e2-9147-a3eaf356c37c)
+*   une [propriété de famille](#core-ref:6f013eb8-33c7-11e2-be43-373b9514dea3)
+*   un [attribut](#core-ref:bc3fad86-33cc-11e2-9a69-1bbd9c32b0f2)
+*   un [paramètre de famille](#core-ref:c28824e2-3486-11e2-be3b-337d2321d8ee)
+*   une [valeur par défaut](#core-ref:94fa51e2-3488-11e2-9e34-1f7c912168cf)
+*   une [valeur initiale de paramètre](#core-ref:da804e2e-3573-11e2-8974-4ba96567fbf9)
 
-### Définition de paramètres de propriété {#core:40d229c4-33c4-11e2-9147-a3eaf356c37c}
+### Définition de paramètres de propriété {#core-ref:40d229c4-33c4-11e2-9147-a3eaf356c37c}
 Des paramètres permettent de modifier le comportement des propriétés du document.
 
 Leur syntaxe est toujours de la forme `PROP;[propid];[param]`, avec les correspondances suivantes :
@@ -193,7 +193,7 @@ sort
 
     Les autres propriétés sont par défaut à sort=no.
 
-### Définition de propriétés de famille {#core:6f013eb8-33c7-11e2-be43-373b9514dea3}
+### Définition de propriétés de famille {#core-ref:6f013eb8-33c7-11e2-be43-373b9514dea3}
 
 Les propriétés de famille permettent, selon les cas, de définir un comportement particulier pour la famille,
 ou de définir les valeurs par défaut des propriétés des nouveaux documents de cette famille.
@@ -284,7 +284,7 @@ WID
 :   Valeur par défaut de la propriété *wid*.
     Si la valeur est vide le cycle par défaut est enlevé.
 
-### Définition d'attributs {#core:bc3fad86-33cc-11e2-9a69-1bbd9c32b0f2}
+### Définition d'attributs {#core-ref:bc3fad86-33cc-11e2-9a69-1bbd9c32b0f2}
 
 Un attribut est défini par la syntaxe suivante :
 
@@ -494,7 +494,7 @@ ATTR
 
 [phpfile]
 :   **Facultatif** (Non applicable pour les types "frame", "tab", "array".)
-    Nom du fichier php pour l'[aide à la saisie](#core:d72c76aa-33fa-11e2-a2a0-e75d60b6f6bb).
+    Nom du fichier php pour l'[aide à la saisie][aide_saisie]
 
 [phpfunc]
 :   **Facultatif** (Non applicable pour les types "frame", "tab", "array".)
@@ -512,7 +512,7 @@ ATTR
 
 [constraint]
 :   **facultatif** (Non applicable pour les types "frame", "tab", "array".)
-    Nom et attributs de la méthode de [contrainte](#core:16854574-33fc-11e2-9d30-47551fea8d89)
+    Nom et attributs de la méthode de [contrainte][contrainte]
 
 [options]
 :   **facultatif**
@@ -522,7 +522,7 @@ ATTR
 
     Par exemple: `esize=3|elabel=saisissez votre prénom`
 
-### Définition de paramètres de famille {#core:c28824e2-3486-11e2-be3b-337d2321d8ee}
+### Définition de paramètres de famille {#core-ref:c28824e2-3486-11e2-be3b-337d2321d8ee}
 
 Un paramètre de famille est une valeur stockée sur la famille directement, et accessible depuis tous les documents de cette famille.
 
@@ -532,11 +532,11 @@ Un paramètre de famille est défini par la syntaxe suivante :
 
     PARAM;[id_attribut];[id_conteneur];[label];[in_title];[in_abstract];[type];[ordre];[visibility];[required];[link];[phpfile];[phpfunc];[elink];[constraint];[options]
 
-avec les mêmes correspondances que pour [les attributs](#core:bc3fad86-33cc-11e2-9a69-1bbd9c32b0f2), aux exceptions suivantes :
+avec les mêmes correspondances que pour [les attributs](#core-ref:bc3fad86-33cc-11e2-9a69-1bbd9c32b0f2), aux exceptions suivantes :
 
 <span class="fixme MCO">différences entre PARAM et ATTR</span>
 
-### Définition de valeurs par défaut {#core:94fa51e2-3488-11e2-9e34-1f7c912168cf}
+### Définition de valeurs par défaut {#core-ref:94fa51e2-3488-11e2-9e34-1f7c912168cf}
 
 Les valeurs par défaut s'appliquent aux attributs comme aux paramètres.
 
@@ -616,7 +616,7 @@ DEFAULT
 
     Dans le cas contraire, la nouvelle valeur par défaut n'est pas prise en compte.
 
-### Définition de valeur initiale de paramètre {#core:da804e2e-3573-11e2-8974-4ba96567fbf9}
+### Définition de valeur initiale de paramètre {#core-ref:da804e2e-3573-11e2-8974-4ba96567fbf9}
 
 Les paramètres de familles peuvent avoir des valeurs par défaut, utilisées lorsque ces paramètres n'ont
 pas de valeur explicite. mais il est parfois nécessaire de définir la valeur initiale du paramètre en plus
@@ -647,11 +647,13 @@ INITIAL
 
     Dans le cas contraire, la nouvelle valeur initiale n'est pas prise en compte.
 
-## Surcharge de définition de famille
+## Surcharge de définition de famille {#core-ref:686b17c3-220e-4450-a0d0-feb5db002cbc}
 
 <!-- links -->
 [PHP_sprintf]: http://php.net/manual/fr/function.sprintf.php "Documentation de la fonction sprintf sur php.net"
 [PHP_strftime]: http://php.net/manual/fr/function.strftime.php "Documentation de la fonction strftime sur php.net"
 [RFC_3986]: http://www.ietf.org/rfc/rfc3986.txt
-[type_attribut]: #core:4e167170-33ed-11e2-8134-a7f43955d6f3
-[attribut_calcule]: #core:cda30832-348c-11e2-8b26-4be7b60b998d
+[type_attribut]: #core-ref:4e167170-33ed-11e2-8134-a7f43955d6f3
+[attribut_calcule]: #core-ref:4565cab9-73c8-4eee-bfa7-218ffbd4b687
+[aide_saisie]: #core-ref:0b2d4cd0-4eed-41d8-ac57-37525a444194
+[contrainte]: #core-ref:7b41906b-f199-41a4-94df-33b9ad34153b
