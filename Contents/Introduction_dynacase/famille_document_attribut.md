@@ -1,6 +1,6 @@
-# Famille et document et attributs
+# Famille et document et attributs {#core-ref:e01bf76d-481b-41fd-ac64-167a68d34c55}
 
-## Résumé
+## Résumé {#core-ref:4490671c-6768-4506-8bce-1a01890c810d}
 
 Un élément central de Dynacase est le modèle documentaire. Celui-ci peut-être décrit par les concepts suivants :
 
@@ -19,7 +19,7 @@ Les collections
     Recherche
     :   Une recherche est une collection qui est définie par des critères de recherches. Le contenu de cette collection est donc re-calculé à chaque consultation. Par exemple, la recherche *Les documents dont je suis rédacteur* sera exprimée sous la forme d'une recherche permettant de trouver l'ensemble des documents où l'utilisateur en cours est cité comme rédacteur.
 
-## La famille
+## La famille {#core-ref:e263d44b-8357-4450-87bf-11cef8bafb24}
 
 Une famille est un élément permettant de décrire la structure et le comportement de documents. 
 
@@ -61,7 +61,7 @@ Des règles métiers
     * via une classe associée à la famille : celle-ci permet de surcharger les comportements par défaut de Dynacase lors des étapes de la vie du document (création, sauvegarde, édition, etc.);
     * via un fichier PHP : celui-ci liste des méthodes permettant de guider la saisie des utilisateurs (par exemple rechercher uniquement les salles disponibles).
 
-### Famille système et fonctionnelles
+### Famille système et fonctionnelles {#core-ref:cdfbd1d8-994f-4517-aaa2-2275c99bb2f2}
 
 On distingue deux types de familles.
 
@@ -79,7 +79,7 @@ Famille système
 
 NB : il est possible dans le cadre d'un développement Dynacase de définir ses propres familles systèmes et fonctionnelles
 
-## Le document
+## Le document {#core-ref:67929e29-abef-437c-88a3-7f43647c60ff}
 
 Un document est un objet de Dynacase. Il contient de l'information structurée et est persistant. Il est principalement présenté aux utilisateurs sous la forme de formulaires web à compléter ou de pages web.  
 Si on s'appuie sur une analogie avec le paradigme objet, il est un objet.
@@ -97,7 +97,7 @@ Des données
 L'historique
 :   L'historique des actions ayant eu lieu autour du document (historique des modifications, des envoi de mail, etc.).
 
-## Les types d'attributs
+## Les types d'attributs {#core-ref:1edd5ce3-399e-4a75-b96c-cbbea7626f36}
 
 Un type d'attribut est une type de données. Il est utilisé dans les familles pour définir leur structure ; et dans les documents pour représenter, traiter et sauvegarder les données associées au document.
 
@@ -122,7 +122,7 @@ Donnée
 Tableau
 :   Ce type d'attribut permet de créer une représentation tabulaire d'un ensemble d'attributs non-structurants. Ceux-ci deviennent alors les colonnes d'un tableau pouvant avoir plusieurs lignes.
 
-## Les attributs
+## Les attributs {#core-ref:97f8232d-a45e-45ce-b559-71c38855edec}
 
 Un attribut correspond à un champ de données dans la définition d'une famille. L'ensemble des attributs définissent le contenu du document. Lors de la définition d'un attribut au sein d'une famille, on lui adjoint des caractéristiques parmi les suivantes :
 
@@ -150,7 +150,7 @@ Vue particulière (facultatif)
 Options (facultatif)
 :   Des options peuvent être adjointes à l'attribut pour modifier son comportement. Celles-ci sont propres à chaque type d'attribut et permettent d'en modifier soit le comportement soit l'affichage.
 
-## Famille système
+## Famille système {#core-ref:7bd277de-5011-484d-82fd-fd5e23064956}
 
 Une famille système permet de créer des documents utilisés par le paramétrage de Dynacase, dont le contenu est recherchable uniquement pour les administrateurs. C'est le cas pour les familles suivantes :
 
@@ -162,7 +162,7 @@ Ces documents n'ayant pas de sens particulier pour les utilisateurs non administ
 
 NB : il est possible dans le cadre d'un développement Dynacase de définir ses propres familles systèmes
 
-## Collection
+## Collection {#core-ref:a2c4bd53-c31f-4448-82e4-7ec1d2f7f346}
 
 Une collection est un document qui permet de regrouper un ensemble de documents. Elle peut-être utilisée comme base pour des recherches particulières ou comme moyen de permettre à un utilisateur de faire des requêtes. Il existe, notamment, les deux types de collections suivants :
 

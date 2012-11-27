@@ -1,6 +1,6 @@
-# Comptes, utilisateurs, groupes et rôles
+# Comptes, utilisateurs, groupes et rôles {#core-ref:f6d55bb1-7254-480e-9bfa-61f5e532ccad}
 
-## Résumé
+## Résumé {#core-ref:4073bb7b-254e-4461-9c75-ffcf93d1e798}
 
 La gestion des droits et de la sécurité dans Dynacase repose sur la notion de compte. Le compte est lui divisé en trois notions :
 
@@ -17,7 +17,7 @@ Rôle
     * au niveau d'un groupe, il indique que l'ensemble des utilisateurs (directement dans le groupe ou hérités de groupes fils) possèdent ce rôle,
     * au niveau d'un profil, il indique que seul les utilisateurs ayant ce rôle peuvent effectuer un certain type d'action (par exemple : uniquement les utilisateurs ayant le rôle *rédacteur* peuvent modifier le document).
 
-## Utilisateur
+## Utilisateur {#core-ref:ecd3b9fb-f038-48ed-9eea-04b9bbeabb51}
 
 Les utilisateurs Dynacase possèdent les principales caractéristiques suivantes :
 
@@ -38,7 +38,7 @@ Date d'expiration du compte
 
 Il est de plus possible de désactiver un compte et de gérer les groupes via les interfaces d'administration et l'API de Dynacase.
 
-## Groupe
+## Groupe {#core-ref:e01fc125-52ef-4c48-b4c6-95ddeac23327}
 
 Un groupe est un ensemble d'utilisateurs et/ou de groupes, il permet d'effectuer les actions suivantes :
 
@@ -62,6 +62,6 @@ Rôle
 
 De plus, il est possible d'ajouter/supprimer des utilisateurs/groupes d'un groupe via les interfaces d'administration et l'API de Dynacase.
 
-## Rôle
+## Rôle {#core-ref:6017a086-3211-485f-b68a-b93850953065}
 
 Un rôle est uniquement composé de son titre et d'une référence, en effet le rôle n'a de sens que associé à un groupe et à un profil.

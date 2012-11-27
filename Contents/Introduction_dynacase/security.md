@@ -1,6 +1,6 @@
-# Sécurité : authentification, droit applicatif, droit documentaire
+# Sécurité : authentification, droit applicatif, droit documentaire {#core-ref:4e298112-3c56-4677-a05f-e314b1406326}
 
-## Résumé
+## Résumé {#core-ref:bed7ead2-be4f-4593-a2a8-7d0844df0f1f}
 
 Ce chapitre aborde la notion de sécurité au sein de Dynacase. Cela comprend les éléments suivants :
 
@@ -26,7 +26,7 @@ On peut résumer les mécanismes de sécurité avec le schéma suivant :
 
 ![ Sécurité : résumé ](securite_resume.png)
 
-## Mécanisme d'authentification
+## Mécanisme d'authentification {#core-ref:8576e079-69d4-4527-8d33-fa8689708e72}
 
 Le mécanisme d'authentification de Dynacase permet d'identifier les utilisateurs via différentes sources et différents moyens.
     
@@ -43,17 +43,17 @@ Les backends d'authentification fournis par défaut par Dynacase sont :
 
 Il est de plus possible de créer ses propres backend et frontend d'authentification et d'en indiquer l'ordre d'exécution (par exemple, on peut choisir que l'utilisateur sera d'abord authentifié par un reverse proxy puis, si le reverse proxy n'a pas donné l'authentification, par un login sous forme de formulaire).
 
-## Sécurité applicative
+## Sécurité applicative {#core-ref:09c9e3af-d537-4b7e-b3fe-2b96d72bde66}
 
 La sécurité applicative fonctionne avec un mécanisme d'ACL. Chaque action peut-être associée à une ACL et seuls les utilisateurs possédant cette ACL peuvent exécuter cette action.  
 
 NB : une action n'ayant pas d'ACL est accessible à tout utilisateur même si celui-ci n'est pas connecté mais les droits documentaires continuent de s'appliquer (dans le cas d'un utilisateur non connecté c'est l'utilisateur *anonymous guest* qui est utilisé pour le calcul des droits).
 
-## Sécurité documentaire
+## Sécurité documentaire {#core-ref:bab5a377-c8cb-49ce-85c4-5162d05490a1}
 
 La sécurité documentaire est le mécanisme permettant de définir qui peut effectuer quelle opération avec un document. 
 
-### Droits par défaut
+### Droits par défaut {#core-ref:2f441389-2b0f-4d3f-b848-d99b87b7dd83}
 
 Les droits par défaut sont les suivants : 
 
@@ -77,7 +77,7 @@ Créer manuellement
 
 NB : D'autres éléments internes, de plus haut niveau, de Dynacase possèdent plus de droits. Par exemple, les dossiers, recherches et rapport possèdent des droits spécialisés propres à leur fonction (droit d'effectuer la recherche, droit d'ouvrir le dossier, etc.).
 
-### Profil
+### Profil {#core-ref:bdc11019-9650-4910-8182-2c9fcdee5fda}
 
 Le système d'attribution des droits à des utilisateurs repose sur la notion de profil. Un profil est un document interne comportant une matrice permettant d'indiquer quel rôle, groupe ou utilisateur possède quel droit.
 
@@ -118,7 +118,7 @@ Via l'interface de gestion
 
 NB : les moyens sont bien évidemment complémentaires et un document peut changer de nombreuses fois de profil au cours de sa vie.
 
-#### Profil dédié
+#### Profil dédié {#core-ref:11bcbe6e-233c-4ea7-93c3-165d01e38025}
 
 Le profil dédié est un profil qui n'est valable que pour un document. Il est défini directement au niveau du document et permet de gérer au plus près les accès à ce document.  
 Certain types de document système ne peuvent fonctionner qu'avec des profils dédiés, c'est notamment le cas des :

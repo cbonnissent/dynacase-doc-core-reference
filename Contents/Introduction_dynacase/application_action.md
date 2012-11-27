@@ -1,6 +1,6 @@
-# Applications, actions et ACL
+# Applications, actions et ACL {#core-ref:a88e69b9-b583-4651-898f-d2583d0eeb1f}
 
-## Résumé
+## Résumé {#core-ref:7fcd8c91-b981-4ef6-b4b5-7975a17dbe73}
 
 Ce chapitre aborde les points suivants :
 
@@ -17,7 +17,7 @@ Action
 ACL
 :   Une ACL est un droit applicatif, elle a deux usages complémentaires. Au niveau d'une action, elle indique que l'utilisateur doit posséder cette ACL pour pouvoir utiliser cette action et associée à un compte (rôle, utilisateur, groupe) il indique que ce compte possède cette ACL.
 
-## Application
+## Application {#core-ref:82e2587e-fe2b-49ce-a4aa-a25fdc9c12c2}
 
 Une application est caractérisée par :
 
@@ -47,7 +47,7 @@ Des paramètres applicatifs
 
 NB : il est possible à une application d'hériter d'une autre, elle hérite alors de son paramétrage et des actions et paramètres applicatifs.
 
-## ACL
+## ACL {#core-ref:5afe50d4-321c-4dd7-ac1c-9fc3a5076e52}
 
 Une ACL est un marqueur permettant d'indiquer que :
 
@@ -56,7 +56,7 @@ Une ACL est un marqueur permettant d'indiquer que :
 
 La vérification des ACL est incluse dans la plate-forme et est effectuée automatiquement lors de l'appel à une action. Si le compte utilisé pour faire l'appel ne possède pas l'ACL nécessaire un message d'erreur est alors généré.
 
-## Action
+## Action {#core-ref:5f3cfda3-6293-4b3b-8b9f-616e9f9b029f}
 
 L'action est constituée d'une fonction PHP qui est utilisée lors de son appel.
 
@@ -72,7 +72,7 @@ Un nom de layout (facultatif)
 :   Il permet d'indiquer avec quel layout (template utilisé par le moteur de template) l'action est rendue (par défaut, le template a le même nom que l'action).
     NB : si l'action n'a pas de représentation, ou renvoie un élément encodé (JSON, base64, etc.), il est possible d'indiquer à l'action de ne pas utiliser le moteur de template.
 
-## Paramètre applicatif
+## Paramètre applicatif {#core-ref:b8021fc2-a764-43b2-b5db-a12406363650}
 
 Un paramètre applicatif est un élément que l'on peut ajouter à une action pour stocker des données permettant de paramétrer l'action. Une fois le paramètre enregistré une API permet de le manipuler (récupérer, modifier sa valeur).  
 De plus, les paramètres applicatifs sont présentés via les interfaces d'administration de Dynacase et peuvent être modifiés par les administrateurs système. Il sont utilisés principalement dans deux cas :

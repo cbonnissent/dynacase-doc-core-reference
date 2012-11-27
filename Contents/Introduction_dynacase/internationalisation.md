@@ -1,6 +1,6 @@
-# Internationalisation
+# Internationalisation {#core-ref:1de9ba03-a3b6-4b56-bfbe-62ce991f8ca1}
 
-## Résumé
+## Résumé {#core-ref:59fb5d82-b856-4647-8e5a-6f5d7d24085d}
 
 Dynacase comprend un mécanisme permettant l'internationalisation de l'application. Celui-ci permet de :
 
@@ -9,7 +9,7 @@ Dynacase comprend un mécanisme permettant l'internationalisation de l'applicati
  
 Par défaut, il y a deux langues qui sont mises à disposition : le français et l'anglais.
 
-## Mécanisme de traduction
+## Mécanisme de traduction {#core-ref:0a83efc3-e8b6-475c-a265-09b8e3cc31a6}
 
 Dynacase utilise le mécanisme standard de traduction [gettext](https://fr.wikipedia.org/wiki/Gettext) et son implémentation en PHP ([php-gettext](http://docs.php.net/manual/en/book.gettext.php)) pour la gestion des traductions des messages.
 
@@ -29,6 +29,6 @@ La mise en place des traductions lors du développement d'une application passe 
 3. *Déploiement du catalogue sur le serveur*.  Lors de la mise à jour du serveur applicatif, il faut fusionner les nouvelles définitions provenant du catalogue avec celles du catalogue principal.
 4. *Lors de l'exécution du programme*.  lorsque le code passe par une méthode utilisée lors de l'étape 1, il va chercher dans le catalogue principal de la plate-forme le message traduit correspondant à la clef.
 
-## Mécanisme de mise à jour des paramètres régionaux
+## Mécanisme de mise à jour des paramètres régionaux {#core-ref:cd3722a8-0d12-493a-aca1-af262e539d40}
 
 L'ajout de nouveaux paramètres régionaux (format de date, d'heure, etc.) passe par la mise à jour d'un fichier de configuration sur la plate-forme.

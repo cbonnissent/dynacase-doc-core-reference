@@ -1,6 +1,6 @@
-# Cycle de vie
+# Cycle de vie {#core-ref:932119d9-2681-427f-bcf2-2c439784d051}
 
-## Résumé
+## Résumé {#core-ref:82b5b4a9-1b00-4be5-a439-ee62090b17e5}
 
 Ce chapitre décrit un élément fondamental d'un projet Dynacase : **le cycle de vie**.
 
@@ -17,7 +17,7 @@ Les cycles de vie de Dynacase peuvent être représentés par des graphiques ori
 
 ![ Exemple de schéma de cycle de vie ](cycle_de_vie.png)
 
-## Composants d'un cycle de vie
+## Composants d'un cycle de vie {#core-ref:bdb389f7-92cf-46cf-bb16-c93269d6890f}
 
 Un cycle de vie est composé des éléments suivants :
 
@@ -30,7 +30,7 @@ Structure
 Profil du cycle de vie
 :   Un profil est associé au cycle, il permet de définir qui pourra effectuer quelle transition.
 
-## Étapes
+## Étapes {#core-ref:7a7ddbd3-0d27-4715-bc43-c3e4f2205470}
 
 Les étapes marquent un moment clef dans la vie du document. Une étape est constituée de :
 
@@ -59,7 +59,7 @@ Affectation
 
 NB : On considère qu'une étape sans activité doit être terminale (c'est à dire qu'il n'existe pas de transition permettant de sortir de cette étape), car c'est uniquement durant ces étapes que le document n'évolue plus et que donc qu'aucune activité ne s'y applique. Par exemple, un document **gardé pour historique** n'évolue plus et aucune activité ne s'y applique.
 
-## Transition
+## Transition {#core-ref:bc1bbed6-f59b-40d7-94ff-d0881366ae38}
 
 Les transitions indiquent la possibilité de passage entre une étape et une autre.
 
@@ -96,7 +96,7 @@ M3
 
 NB : M2 et M3 peuvent retourner un message, contrairement à celui de M0 et M1 il n'empêchera pas le passage de la transition mais sera présenté à l'utilisateur.
 
-## Cycle de vie, famille et document
+## Cycle de vie, famille et document {#core-ref:f7a3b5f3-273b-4f23-bf1a-d75b81e5e524}
 
 Le cycle de vie se matérialise sous la forme d'un document Dynacase.
 
