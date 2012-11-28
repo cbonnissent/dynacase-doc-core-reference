@@ -1,8 +1,6 @@
 # Paramétrage de Core {#core-ref:cfc7f53b-7982-431e-a04b-7b54eddf4a75}
- 
-<span class="fixme template"> template for famille/parametrage_de_core.md.</span>
 
-## introduction {#core-ref:4b4cb93e-e717-4a42-888d-c2376deab4bb}
+## Introduction {#core-ref:4b4cb93e-e717-4a42-888d-c2376deab4bb}
 
 Pour paramétrer une application Dynacase, on va utiliser divers formats de fichier :
 
@@ -52,7 +50,7 @@ Exemple de définition d'une famille :
     ;;;;;;;;;;;;;;;;
     END;;;;;;;;;;;;;;;;
 
-Ce qui donne, vu dans un tableau :<span class="fixme MCO">ajout de `div.table{overflow: auto;}` dans la css<style>div.table{overflow: auto;}</style></span>
+Ce qui donne, vu dans un tableau :<span class="fixme MCO">MCL: ajout de `div.table{overflow: auto;}` dans la css<style>div.table{overflow: auto;}</style></span>
 
 |          |                       |                   |                |   |            |                     |     |     |      |                                                                              |         |                                       |            |                                  |                                          |                                |  |  |
 | -        |                       |                   |                |   |            |                     |     |     |      |                                                                              |         |                                       |            |                                  |                                          |                                |  |  |
@@ -100,31 +98,37 @@ et se termine toujours par une ligne de la forme :
 avec les correspondances suivantes:
 
 BEGIN
-:   Obligatoire, signale le début d'une définition de famille
+:   Obligatoire, signale le début d'une définition de famille.
 
 [fromid]
 :   Identifiant logique (nom logique ou id) de la famille de laquelle cette famille hérite.
-    Mettre vide s'il n'y a pas d'héritage.
+    
+    Laisser vide s'il n'y a pas d'héritage.
     
     L'utilisation d'un id à la place d'un nom logique est à réserver aux familles de core.
 
 [title]
 :   Titre de la famille.
     
-    Ce titre est utilisé sur les interfaces pour désigner la famille.
+    Ce titre est utilisé sur les IHM pour désigner la famille.
     
     Il est automatiquement ajouté au catalogue de traduction, et peut ainsi être traduit.
 
 [id]
 :   Identifiant numérique de la famille.
     
-    Le laisser à vide pour utiliser un identifiant logique.
+    Laisser vide pour utiliser un identifiant logique
+    (Dans ce cas, Dynacase affectera automatiquement un id unique à la famille).
+    
     S'il est valué il faut que cet identifiant ne soit pas déjà pris par un autre document.
-    Les valeurs entre 900 et 999 peuvent être utilisée pour vos besoins spécifiques.
-    L'usage de valeurs numériques fixe est fortement déconseillée.
+    
+    Les valeurs entre 900 et 999 peuvent être utilisée pour vos besoins spécifiques,
+    bien que l'usage de valeurs numériques fixes soit fortement déconseillée.
 
 [className]
-:   Nom de la classe PHP de cette famille. Cette classe doit être présente sur le serveur dans un fichier appelé `/FDL/Class.[CLASSNAME].php`.
+:   Nom de la classe PHP de cette famille.
+    
+    Cette classe doit être présente sur le serveur dans un fichier appelé `/FDL/Class.[CLASSNAME].php`.
     
     Le laisser à vide pour que Dynacase génère la classe automatiquement.
     
@@ -134,40 +138,40 @@ BEGIN
 :   Nom logique de la famille.
     
     Doit commencer par une lettre.
-    Il ne peut ensuite contenir que des caractères alphanumériques ainsi que les caractères _ et - (pas d'espace, ni de ponctuation).
+    Il ne peut ensuite contenir que des caractères alphanumériques ainsi
+    que les caractères _ et - (pas d'espace, ni de ponctuation).
 
 END
-:   Obligatoire, signale la fin d'une définition de famille
+:   Obligatoire, signale la fin d'une définition de famille.
 
 Entre ces 2 lignes, chacune des lignes correspond à :
 
-*   un [paramètre de propriété](#core-ref:40d229c4-33c4-11e2-9147-a3eaf356c37c)
-*   une [propriété de famille](#core-ref:6f013eb8-33c7-11e2-be43-373b9514dea3)
-*   un [attribut](#core-ref:bc3fad86-33cc-11e2-9a69-1bbd9c32b0f2)
-*   un [paramètre de famille](#core-ref:c28824e2-3486-11e2-be3b-337d2321d8ee)
-*   une [valeur par défaut](#core-ref:94fa51e2-3488-11e2-9e34-1f7c912168cf)
-*   une [valeur initiale de paramètre](#core-ref:da804e2e-3573-11e2-8974-4ba96567fbf9)
-*   une [modification d'attribut père](#core-ref:13dcd96d-561f-463c-a88f-4b9db58e4fbd)
-*   un commentaire
+*   un [paramètre de propriété](#core-ref:40d229c4-33c4-11e2-9147-a3eaf356c37c),
+*   une [propriété de famille](#core-ref:6f013eb8-33c7-11e2-be43-373b9514dea3),
+*   un [attribut](#core-ref:bc3fad86-33cc-11e2-9a69-1bbd9c32b0f2),
+*   un [paramètre de famille](#core-ref:c28824e2-3486-11e2-be3b-337d2321d8ee),
+*   une [valeur par défaut](#core-ref:94fa51e2-3488-11e2-9e34-1f7c912168cf),
+*   une [valeur initiale de paramètre](#core-ref:da804e2e-3573-11e2-8974-4ba96567fbf9),
+*   une [modification d'attribut père](#core-ref:13dcd96d-561f-463c-a88f-4b9db58e4fbd),
+*   une [instruction de réinitialisation](#core-ref:5c661733-772d-42b8-8b3e-b70453ddfd33),
+*   un commentaire.
     
     Une ligne qui ne sera pas traitée lors du traitement de la définition de famille.
     
-    Un commentaire commence toujours par `//`.
-    
-    Par exemple
-    
-        //propid;value;;;;;;;;;;;;;;;
+    Un commentaire commence toujours par `//`. Par exemple : `//propid;value;;;;;;;;;;;;;;;`
 
 ### Définition de paramètres de propriété {#core-ref:40d229c4-33c4-11e2-9147-a3eaf356c37c}
+
 Des paramètres permettent de modifier le comportement des propriétés du document.
 
-Leur syntaxe est toujours de la forme `PROP;[propid];[param]`, avec les correspondances suivantes :
+Leur syntaxe est toujours de la forme `PROP;[propid];[param]`,
+avec les correspondances suivantes :
 
 [propid]
-:   le nom de la propriété
+:   Nom de la propriété.
 
 [param]
-:   définition du paramètre, sous la forme `[parameterName]=[parameterValue]`.
+:   Définition du paramètre, sous la forme `[parameterName]=[parameterValue]`.
 
 Par exemple :
 
@@ -176,13 +180,16 @@ Par exemple :
 Les paramètres de propriété disponibles sont :
 
 sort
-:   Permet de spécifier si la propriété est disponible dans les recherches et les rapports, et quel est son ordre de tri par défaut.
+:   Permet de spécifier si la propriété est disponible dans les recherches
+    et les rapports, et quel est son ordre de tri par défaut.
     
     Les valeurs possibles sont :
     
     *   `no` : la propriété n'apparaîtra pas les recherches et rapports ;
-    *   `asc` : la propriété est disponible dans les recherches et les rapports, et est trié par défaut par ordre ascendant ;
-    *   `desc` : la propriété est disponible dans les recherches et les rapports, et est trié par défaut par ordre descendant.
+    *   `asc` : la propriété est disponible dans les recherches et les rapports ;
+        et est trié par défaut par ordre ascendant ;
+    *   `desc` : la propriété est disponible dans les recherches et les rapports ;
+        et est trié par défaut par ordre descendant.
     
     Les propriétés suivantes ont un paramètre *sort* par défaut :
     
@@ -191,20 +198,22 @@ sort
     *   state : sort=asc,
     *   title : sort=asc
     
-    Les autres propriétés sont par défaut à sort=no.
+    Les autres propriétés sont par défaut à *sort=no*.
 
 ### Définition de propriétés de famille {#core-ref:6f013eb8-33c7-11e2-be43-373b9514dea3}
 
-Les propriétés de famille permettent, selon les cas, de définir un comportement particulier pour la famille,
-ou de définir les valeurs par défaut des propriétés des nouveaux documents de cette famille.
+Les propriétés de famille permettent, selon les cas,
+de définir un comportement particulier pour la famille,
+ou de définir les valeurs par défaut des propriétés
+des nouveaux documents de cette famille.
 
 Leur syntaxe est toujours de la forme `[propid];[value]`, avec les correspondances suivantes :
 
 [propid]
-:   Identifiant de la propriété
+:   Identifiant de la propriété.
 
 [value]
-:   Valeur de la propriété
+:   Valeur de la propriété.
 
 Les différents identifiants de propriété sont les suivants :
 
@@ -213,41 +222,62 @@ CPROFID
     
     Lors de l'import, les vérifications suivantes sont effectuées :
     
-    *   Si la famille hérité de dossier, le document référencé doit être de la famille profil de dossier,
-    *   Si la famille hérite de recherche, le document référencé doit être de la famille profil de recherche,
+    *   Si la famille hérité de dossier,
+        le document référencé doit être de la famille profil de dossier ;
+    *   Si la famille hérite de recherche,
+        le document référencé doit être de la famille profil de recherche, ;
     *   Sinon le document référencé doit être de la famille profil de document.
     
     Si la valeur est vide le profil de document par défaut est enlevé.
 
 CVID
 :   Valeur par défaut de la propriété *cvid*.
-
+    
+    Lors de l'import, les vérifications suivantes sont effectuées :
+    
+    *   Ce document doit être de la famille *contrôle de vue*.
+    *   Ce contrôle de vue doit être applicable à la famille en cours.
+    
     Si la valeur est vide le contrôle de vue par défaut est enlevé.
 
 DFLDID
-:   identifiant du dossier principal permettant de constituer une arborescence spécifique à la famille .
+:   Identifiant du dossier principal permettant de constituer une arborescence spécifique à la famille .
     
-    Ce dossier est nécessaire pour manipuler les documents d'une famille depuis  l'application "ONEFAM".
-    Il peut être égal au 'auto', ce qui a pour effet de créer un dossier principal automatiquement.
+    Ce dossier est nécessaire pour manipuler les documents d'une famille depuis l'application "ONEFAM".
+    Il peut être égal à `auto`, ce qui a pour effet de créer un dossier principal automatiquement.
+    
     Si cette propriété est déjà renseignée, la nouvelle valeur ne sera pas prise en compte.
+    
     Si la valeur est vide le contrôle de vue par défaut est enlevé.
 
 ICON
-:   nom du fichier image définissant l'icône de la famille.
+:   Nom du fichier image définissant l'icône de la famille.
+    
     Cette icône doit être une image de taille 48×48 pixels.
+    
     Si une icône est déjà présente pour cette famille, elle ne sera pas modifiée.
+    
+    <span class="fixme MCO">si la valeur est vide…</span>
 
 METHOD
 :   Indique le nom du fichier contenant les méthodes supplémentaires de la famille.
-    Cette propriété peut être utilisé sur plusieurs lignes, avec la sémantique suivante :
     
-    *   Lorsque le nom est préfixé par *+*, son contenu est concaténé directement dans la classe générée ;
-    *   Lorsque le nom est préfixé par *, le fichier n'est pas intégré directement dans la famille, mais une classe intermédiaire est générée. Cela permet notamment de surcharger les méthodes ultérieurement.
+    Le fichier référencé doit être disponible dans le répertoire *FDL*.
+    
+    Cette propriété peut être utilisé plusieurs fois, avec la sémantique suivante :
+    
+    *   Lorsque le nom est préfixé par *+*,
+        son contenu est concaténé directement dans la classe générée ;
+    *   Lorsque le nom est préfixé par *,
+        le fichier n'est pas intégré directement dans la famille ,
+        mais une classe intermédiaire est générée.
+        Cela permet notamment une surcharge plus fine des méthodes.
     
     Si la valeur est vide les méthodes associées seront enlevées.
 
 PROFID
-:   identifiant du document profil de famille pour cette famille.
+:   Identifiant (nom logique ou id) du document profil de famille pour cette famille.
+    
     Lors de l'import, les vérifications suivantes sont effectuées :
     
     *   Ce document doit être de la famille 'profil de famille'.
@@ -263,12 +293,24 @@ SCHAR
     Si la valeur est vide la caractéristique spéciale par défaut est enlevée.
 
 TAG
-:   Initialise les valeurs de la propriété *atags*
-    Chaque utilisation de la balise TAG ajoutera une valeur à la propriété *atags*
+:   Initialise les valeurs de la propriété *atags*.
+    
+    Chaque utilisation de la balise TAG ajoutera une valeur à la propriété *atags*.
     Les tags applicatifs ne peuvent être supprimés par cette cette directive.
+    
+    Certains tags sont déjà prédéfinis par Dynacase :
+    
+    MAILRECIPIENT
+    :   Déclare la famille comme *destinataire de mail*.
+        Cela permet aux documents de cette famille d'être présentés dans la liste de
+        destinataires lors des envois de mail.
+        
+        La famille doit alors implémenter l'interface `IMailRecipient`.
+        <span class="fixme MCO">ajout d'un lien vers l'interface</span>
 
 TYPE
-:   valeur par défaut de la propriété *type*
+:   Valeur par défaut de la propriété *type*.
+    
     Si la valeur est vide, le type inféré est *C*.
 
 USEFOR
@@ -282,6 +324,12 @@ USEFOR
 
 WID
 :   Valeur par défaut de la propriété *wid*.
+    
+    Lors de l'import, les vérifications suivantes sont effectuées :
+    
+    *   Ce document doit être un document [cycle de vie][workflow] ;
+    *   Le cycle de vie doit être applicable à la famille en cours.
+    
     Si la valeur est vide le cycle par défaut est enlevé.
 
 ### Définition d'attributs {#core-ref:bc3fad86-33cc-11e2-9a69-1bbd9c32b0f2}
@@ -293,24 +341,28 @@ Un attribut est défini par la syntaxe suivante :
 avec les correspondances suivantes :
 
 ATTR
-:   **Obligatoire**
+:   **Obligatoire**  
     Signale que la ligne est une définition d'attribut.
 
 [id_attribut]
-:   **Obligatoire**
+:   **Obligatoire**  
     Identifiant système de l'attribut.
+    
     Il sera automatiquement converti en minuscules.
     
-    Il sert de référence lors des définitions des fonctions et des liens.
     Cet item n'est plus modifiable une fois créé car il peut être utilisé dans les parties spécifiques de la famille.
     
     Cet identificateur doit être unique dans la famille.
-    Une redéclaration équivaut à une modification des caractéristiques de l'attribut.
     
-    <div class="astuce"><span class="fixme MCO">nommage des attributs</span></div>
+    Il est conseillé d'adopter des règles de nommage des attributs, permettant de simplifier leur manipulation.
+    Par exemple : `[FAM]_[TYPE]_[NAME]` avec :
+    
+    *   [FAM] : un préfixe indiquant la famille,
+    *   [TYPE] : une lettre indiquant le type de l'attribut,
+    *   [NAME] : le nom de l'attribut.
 
 [id_conteneur]
-:   **Obligatoire** (sauf pour les attributs de type *frame* ou *tab*)
+:   **Obligatoire** (sauf pour les attributs de type *frame* ou *tab*)  
     Identifiant système de l'attribut structurant ou tableau contenant cet attribut.
     
     Le type *tab* ne peut pas avoir d'attribut conteneur.
@@ -322,15 +374,16 @@ ATTR
     Tous les autres attributs doivent être contenus dans un *array* ou un *frame*.
 
 [label]
-:   <span class="fixme MCO">obligatoire?</span>
+:   <span class="fixme MCO">obligatoire?</span>  
     Libellé de l'attribut.
     
     Ce libellé sera automatiquement traduit s'il est présent dans le catalogue de traduction
     (la clé correspondante est de la forme `[FAMNAME]#[attrid]`,
-    avec [FAMNAME] le nom logique de la famille et [attrid] le nom logique de l'attribut, en minuscule).
+    avec [FAMNAME] le nom logique de la famille et
+    [attrid] le nom logique de l'attribut, en minuscule).
 
 [in_title]
-:   **Obligatoire** (sauf pour les attributs de type *array*, *frame* ou *tab*)
+:   **Obligatoire** (sauf pour les attributs de type *array*, *frame* ou *tab*)  
     Indique que l'attribut sera utilisé dans la composition du titre du document.
     
     Le titre du document est alors composé en concaténant tous les attributs définis comme tels,
@@ -347,7 +400,8 @@ ATTR
     *   `N` pour *no*
 
 [in_abstract]
-:   Indique que l'attribut sera utilisé dans le résumé du document.
+:   **Obligatoire** (sauf pour les attributs de type *array*, *frame* ou *tab*)  
+    Indique que l'attribut sera utilisé dans le résumé du document.
     
     Le résumé du document est utilisé pour construire la fiche résumé dans l'application ONEFAM.
     
@@ -357,7 +411,8 @@ ATTR
     *   `N` pour *no*
 
 [type]
-:   type de l'attribut, conformément aux types définis dans [la partie correspondante][type_attribut]
+:   **Obligatoire** (sauf pour les attributs de type *array*, *frame* ou *tab*)  
+    [Type de l'attribut][type_attribut].
     
     Cette colonne permet également de définir le formatage de l'attribut :
     
@@ -373,7 +428,7 @@ ATTR
         Le formatage est effectué avec la [syntaxe sprintf][PHP_sprintf].
         
         Par exemple, `double("%.02f")` affiche le nombre avec 2 décimales ;
-        tandis que `integer("%d m²")` : la valeur suivie de *m²* ;
+        tandis que `integer("%d m³")` : la valeur suivie de *m³* ;
         et que `double("%.02f %%")` : affiche *%* après le nombre.
     
     *   attributs de type *date*, *time* et *timestamp*
@@ -383,22 +438,27 @@ ATTR
         Par exemple, `time("%H:%M:%S")`, ou `timestamp("%A %d %B %Y %X")`.
 
 [ordre]
-:   **Obligatoire** (sauf pour les attributs de type *frame* ou *tab*)
+:   **Obligatoire** (sauf pour les attributs de type *frame* ou *tab*)  
     Définit l'ordre de présentation des attributs dans le document.
     
     Cette caractéristique est ignorée sur les attributs de type *frame* ou *tab*.
 
 [visibility]
-:   **Obligatoire**
+:   **Obligatoire**  
     Définit la visibilité par défaut de l'attribut.
     
     Les valeurs possibles sont :
     
-    *   `H` (*Hidden*) : attribut caché. Généralement utilisé pour des attributs servant soit au calcul, soit à la génération des liens.
-    *   `I` (*Invisible*) : attribut invisible : l’attribut n’est présent ni en consultation ni en modification dans le document.
-        Un attribut de visibilité I n'est pas modifiable. Pour en modifier la valeur, il est nécessaire de modifier sa visibilité.
-    *   `O` (*<span class="fixme MCO">O pour ?</span>*) : attribut modifiable en modification mais non visible en lecture.
-    *   `R` (*Read-only*) : attribut visible en lecture seulement. Généralement utilisé pour les attributs calculés.
+    *   `H` (*Hidden*) : attribut caché.
+        Généralement utilisé pour des attributs servant soit au calcul, soit à la génération des liens.
+    *   `I` (*Invisible*) : attribut invisible :
+        l’attribut n’est présent ni en consultation ni en modification dans le document.  
+        Un attribut de visibilité I n'est pas modifiable et pour en modifier la valeur,
+        il est nécessaire de modifier sa visibilité.
+    *   `O` (*<span class="fixme MCO">O pour ?</span>*) :
+        attribut modifiable en modification mais non visible en lecture.
+    *   `R` (*Read-only*) : attribut visible en lecture seulement.
+        Généralement utilisé pour les attributs calculés.
     *   `S` (*Statique*) : attribut visible en lecture et en modification, mais non modifiable en modification.
     *   `W` (*Writable*) : attribut visible en lecture et modifiable en modification.
     
@@ -408,7 +468,7 @@ ATTR
 
 
 [required]
-:   **facultatif**
+:   **facultatif**  
     Indique si l'attribut est obligatoire pour la sauvegarde du document.
     
     Les valeurs possibles sont :
@@ -417,13 +477,14 @@ ATTR
     *   **`N` (valeur par défaut)** pour *no*
 
 [link]
-:   **facultatif** (Non applicable pour les types "frame", "tab", "array".)
+:   **facultatif** (Non applicable pour les types "frame", "tab", "array")  
     Ajoute un hyperlien sur l'attribut (en consultation uniquement).
-    le texte de l'hyperlien sera la valeur de l'attribut.
+    
+    Le texte de l'hyperlien sera la valeur de l'attribut.
     
     L'hyperlien peut être :
     
-    *   une simple URL statique ("http://www.dynacase.org"),
+    *   une URL statique ("http://www.dynacase.org"),
     *   une URL paramétrée par
         *   des attributs du document,
         *   des propriétés du document,
@@ -438,17 +499,21 @@ ATTR
         Le caractère `%` est obtenu en le doublant : `TEST%%25` sera converti en *TEST%25*.
         
         Par exemple, soit l'attribut US_MAIL définissant le mail d'une personne.
-        Pour déclencher l'édition d'un mail vers une personne, il suffit de mettre l'hyperlien suivant : `mailto:%US_MAIL%`
+        Pour déclencher l'édition d'un mail vers une personne,
+        il suffit de mettre l'hyperlien suivant : `mailto:%US_MAIL%`.
         
         Autre exemple, soit l'attribut SI_TOWN indiquant la ville de la famille société.
-        Pour avoir la météo de la ville il suffit de mettre l'hyperlien suivant : `http://www.location.org/&strLocation=%SI_TOWN%&strCountry=EUR`
+        Pour avoir la météo de la ville il suffit de mettre l'hyperlien suivant :
+        `http://www.location.org/&strLocation=%SI_TOWN%&strCountry=EUR`.
         
-        Si la valeur est vide pour un des attributs de l'URL, l'hyperlien ne sera pas affiché (on ne pourra pas cliquer sur l'attribut).
+        Si la valeur est vide pour un des attributs de l'URL,
+        l'hyperlien ne sera pas affiché (on ne pourra pas cliquer sur l'attribut).
         
         Il est possible de désigner des attributs optionnels en utilisant la notation suivante : `%?[ATTRID]%`.
         Le point d'interrogation placé après le pourcentage indique que la valeur de l'attribut peut être vide.
         
-        Les valeurs insérées dans le lien sont encodés selon la [RFC 3986][RFC_3986] pour être utilisable comme valeur de paramètre web.
+        Les valeurs insérées dans le lien sont encodés selon la
+        [RFC 3986][RFC_3986] pour être utilisable comme valeur de paramètre web.
     
     *   Utilisation de propriétés du document
         
@@ -463,7 +528,8 @@ ATTR
         *   `%I%` : est remplacé par l'identifiant (équivalent à %ID%),
         *   `%T%` : est remplacé par le titre (équivalent à %TITLE%).
         
-        Les valeurs insérées dans le lien sont encodés selon la [RFC 3986][RFC_3986] pour être utilisable comme valeur de paramètre web.
+        Les valeurs insérées dans le lien sont encodés selon la
+        [RFC 3986][RFC_3986] pour être utilisable comme valeur de paramètre web.
     
     *   Utilisation de paramètres applicatifs
         
@@ -481,7 +547,8 @@ ATTR
         en notant la méthode comme pour les attributs calculés.
         
         Les parties variables peuvent aussi faire référence à une méthode du document.
-        Cette méthode doit retourner une chaîne de caractère encodée selon la [RFC 3986][RFC_3986] qui sera insérée dans la variable.
+        Cette méthode doit retourner une chaîne de caractère encodée selon la
+        [RFC 3986][RFC_3986] qui sera insérée dans la variable.
         
         Par exemple : `%::myTitleLink()%&x=3`
         
@@ -493,17 +560,17 @@ ATTR
             }
 
 [phpfile]
-:   **Facultatif** (Non applicable pour les types "frame", "tab", "array".)
-    Nom du fichier php pour l'[aide à la saisie][aide_saisie]
+:   **Facultatif** (Non applicable pour les types "frame", "tab", "array")  
+    Nom du fichier php pour l'[aide à la saisie][aide_saisie].
 
 [phpfunc]
-:   **Facultatif** (Non applicable pour les types "frame", "tab", "array".)
+:   **Facultatif** (Non applicable pour les types "frame", "tab", "array")  
     Nom et attributs de la fonction pour l'aide à la saisie,
     ou nom et attributs de la méthode de calcul s'il s'agit d'un attribut calculé,
     ou définition des clés-valeurs dans le cas d'un attribut de type énuméré.
 
 [elink]
-:   **facultatif** (Non applicable pour les types "frame", "tab", "array".)
+:   **facultatif** (Non applicable pour les types "frame", "tab", "array")  
     Extra lien supplémentaire.
     
     Cet extra lien sera présenté en modification uniquement, sous la forme d'un bouton supplémentaire.
@@ -511,22 +578,24 @@ ATTR
     La syntaxe de l'extra lien est la même que celle de la colonne *link*.
 
 [constraint]
-:   **facultatif** (Non applicable pour les types "frame", "tab", "array".)
-    Nom et attributs de la méthode de [contrainte][contrainte]
+:   **facultatif** (Non applicable pour les types "frame", "tab", "array")  
+    Nom et attributs de la méthode de [contrainte][contrainte].
 
 [options]
-:   **facultatif**
+:   **facultatif**  
     Liste des options à appliquer à l'attribut. Les options dépendent du [type d'attribut][type_attribut].
     
-    Les options se présentent sous la forme de couples clé/valeur séparés par des `|`.
+    Les options se présentent sous la forme de couples `clé=valeur` séparés par des `|`.
     
     Par exemple: `esize=3|elabel=saisissez votre prénom`
 
 ### Définition de paramètres de famille {#core-ref:c28824e2-3486-11e2-be3b-337d2321d8ee}
 
-Un paramètre de famille est une valeur stockée sur la famille directement, et accessible depuis tous les documents de cette famille.
+Un paramètre de famille est une valeur stockée sur la famille directement,
+et accessible depuis tous les documents de cette famille.
 
-Cela est assimilable à une propriété de classe (ou propriété statique) en programmation orientée objet, même si l'implémentation en diffère.
+Cela est assimilable à une propriété de classe (ou propriété statique) en programmation orientée objet,
+même si l'implémentation en diffère.
 
 Un paramètre de famille est défini par la syntaxe suivante :
 
@@ -540,8 +609,9 @@ avec les mêmes correspondances que pour [les attributs][attributs], aux excepti
 
 Les valeurs par défaut s'appliquent aux attributs comme aux paramètres.
 
-Appliquées aux attributs, elles déterminent la valeur de l'attribut lors de la création d'un nouveau document,
-alors qu'appliquées aux paramètres, elles déterminent la valeur du paramètre lorsque l'utilisateur n'a saisi aucune valeur.
+Appliquées aux attributs, elles déterminent la valeur de l'attribut lors de la
+création d'un nouveau document, alors qu'appliquées aux paramètres,
+elles déterminent la valeur du paramètre lorsque l'utilisateur n'a saisi aucune valeur.
 
 Une valeur par défaut est définie par la syntaxe suivante :
 
@@ -550,23 +620,23 @@ Une valeur par défaut est définie par la syntaxe suivante :
 avec les correspondances suivantes :
 
 DEFAULT
-:   **Obligatoire**
+:   **Obligatoire**  
     Signale que la ligne est une définition de valeur par défaut.
 
 [attrid|paramid]
-:   **Obligatoire**
+:   **Obligatoire**  
     identifiant de l'attribut ou du paramètre auquel s'applique la valeur par défaut.
 
 [value]
 :   la valeur par défaut, statique, ou la méthode de calcul.
     
     Dans le cas d'une méthode de calcul, sa syntaxe est identique à celle d'un
-    [attribut calculé][attribut_calcule]
+    [attribut calculé][attribut_calcule].
     
     Par exemple, `DEFAULT;SGATE_RED;::getTitle(SGATE_IDRED)`
     pré-remplit l'attribut  avec le titre de l'attribut *SGATE_IDRED*,
     alors que `DEFAULT;SGATE_ACTION;GATE_WEATHER`
-    pré-remplit l'attribut SGATE_RED avec la chaîne *GATE_WEATHER*
+    pré-remplit l'attribut SGATE_RED avec la chaîne *GATE_WEATHER*.
     
     Cas particulier des *array*:
     
@@ -590,7 +660,7 @@ DEFAULT
         donne la structure précédente.
         
         Par exemple, la méthode correspondant à la valeur par défaut précédente sera
-        `DEFAULT;ATTR_ARRAY;::defaultArrayValue()`
+        `DEFAULT;ATTR_ARRAY;::defaultArrayValue()`.
         
             [code php]
             public function defaultArrayValue(){
@@ -618,8 +688,9 @@ DEFAULT
 
 ### Définition de valeur initiale de paramètre {#core-ref:da804e2e-3573-11e2-8974-4ba96567fbf9}
 
-Les paramètres de familles peuvent avoir des valeurs par défaut, utilisées lorsque ces paramètres n'ont
-pas de valeur explicite. mais il est parfois nécessaire de définir la valeur initiale du paramètre en plus
+Les paramètres de familles peuvent avoir des valeurs par défaut,
+utilisées lorsque ces paramètres n'ont pas de valeur explicite ;
+mais il est parfois nécessaire de définir la valeur initiale du paramètre en plus
 de sa valeur par défaut.
 
 Une valeur initiale de paramètre est définie par la syntaxe suivante :
@@ -629,18 +700,18 @@ Une valeur initiale de paramètre est définie par la syntaxe suivante :
 avec les correspondances suivantes :
 
 INITIAL
-:   **Obligatoire**
+:   **Obligatoire**  
     Signale que la ligne est une définition de valeur initiale de paramètre.
 
 [paramid]
-:   **Obligatoire**
+:   **Obligatoire**  
     identifiant du paramètre auquel s'applique la valeur initiale.
 
 [value]
 :   la valeur initiale, statique, ou la méthode de calcul.
     
     Dans le cas d'une méthode de calcul, sa syntaxe est identique à celle d'un
-    [attribut calculé][attribut_calcule]
+    [attribut calculé][attribut_calcule].
 
 [force=yes]
 :   Indique, lors de la surcharge de valeur initiale, que la nouvelle valeur initiale écrase l'ancienne.
@@ -657,11 +728,11 @@ Cela se fait au moyen d'une ligne de la forme :
 avec les même correspondances que pour la [définition d'un attribut][definition_attribut], à quelques différences près :
 
 MODATTR
-:   **Obligatoire**
+:   **Obligatoire**  
     Signale que la ligne est une modification d'attribut.
 
 [id_attribut]
-:   **Obligatoire**
+:   **Obligatoire**  
     Identifiant système de l'attribut à surcharger.
     Il sera automatiquement converti en minuscules.
     
@@ -688,7 +759,7 @@ MODATTR
     Si la valeur est vide, l'attribut conservera sa valeur héritée.
 
 [type]
-:   type de l'attribut, conformément aux types définis dans [la partie correspondante][type_attribut]
+:   [type de l'attribut][type_attribut]
     
     Si la valeur est vide, l'attribut conservera sa valeur héritée.
     
@@ -719,7 +790,7 @@ MODATTR
     Pour supprimer l'hyperlien, il faut mettre la valeur `-`.
 
 [phpfile]
-:   Nom du fichier php pour l'[aide à la saisie][aide_saisie]
+:   Nom du fichier php pour l'[aide à la saisie][aide_saisie].
     
     Si la valeur est vide, l'attribut conservera sa valeur héritée.
     
@@ -742,7 +813,7 @@ MODATTR
     Pour supprimer l'hyperlien, il faut mettre la valeur `-`.
 
 [constraint]
-:   Nom et attributs de la méthode de [contrainte][contrainte]
+:   Nom et attributs de la méthode de [contrainte][contrainte].
     
     Si la valeur est vide, l'attribut conservera sa valeur héritée.
     
@@ -757,6 +828,53 @@ MODATTR
     
     Afin de modifier la valeur d'une seule option, il est nécessaire de toutes les reporter,
     car la valeur `-` va effacer entièrement le contenu de la colonne *options*.
+
+### Instructions de réinitialisation {#core-ref:5c661733-772d-42b8-8b3e-b70453ddfd33}
+
+Lors de la [surcharge de famille](#core-ref:686b17c3-220e-4450-a0d0-feb5db002cbc),
+il est possible de réinitialiser certaines parties de la famille.
+
+La syntaxe est la suivante :
+
+    RESET;[keyword]
+
+avec les correspondantes suivantes :
+
+RESET
+:   **Obligatoire**  
+    Signale que la ligne est une réinitialisation.
+
+[keyword]
+:   **Obligatoire**  
+    Indique quels éléments doivent être réinitialisés.
+    
+    Les valeurs possibles sont :
+    
+    `attributes`
+    :   Réinitialise les attributs.
+        
+        La définition de tous les attributs sera effacée
+        (les valeurs ne sont pas supprimées des documents existants)
+    
+    `default`
+    :   Réinitialise les valeurs par défaut.
+        
+        Toutes les valeurs par défaut sont remises à *vide*
+    
+    `properties`
+    :   Réinitialise les paramètres des propriétés.
+        
+        <span class="fixme MCO">Tous les paramètres de propriétés seront remis à leur valeur par défaut?</span>
+    
+    `parameters`
+    :   Réinitialise les paramètres de famille
+        
+        La définition de tous les paramètres de famille sera effacée
+        <span class="fixme MCO">quid des valeurs des paramètres?</span>
+
+Ces instructions de réinitialisation doivent être placées avant la nouvelle définition des éléments réinitialisés. 
+
+<span class="fixme MCO">plusieurs reset sur une seule ou plusieurs lignes?</span>
 
 ## Surcharge de définition de famille {#core-ref:686b17c3-220e-4450-a0d0-feb5db002cbc}
 
@@ -793,12 +911,21 @@ Lors de la surcharge, le comportement est le suivant :
     
     <span class="fixme MCO">La nouvelle valeur écrase la valeur précédemment définie si *force=yes* est utilisé</span>
 
-Ce comportement peut être altéré par l'utilisation du mot clé *RESET* :
-<span class="fixme MCO">plusieurs reset sur une seule ou plusieurs lignes?</span>
+Ce comportement peut être altéré par l'utilisation des
+[Instructions de réinitialisation](#core-ref:#core-ref:5c661733-772d-42b8-8b3e-b70453ddfd33).
 
-<span class="fixme MCO">liens depuis force=yes</span>
+## Prise en compte d'une définition de famille dans Dynacase
 
-<span class="fixme MCO">mailrecipient…</span>
+Une fois votre définition de famille créée, vous pouvez l'importer dans Dynacase.
+
+Cet import permettra à Dynacase de créer les tables nécessaires aux documents de cette famille,
+et de rendre la dite famille disponible dans les différentes IHM de Dynacase.
+
+L'import se fait en ligne de commande, avec la commande suivante :
+
+    ./wsh.php --api=importDocuments --file=[chemin vers le fichier de définition]
+
+<span class="fixme MCO">Pour plus de détails sur l'API `importDocuments`, se référer à la documentation correspondante</span>
 
 <!-- links -->
 [PHP_sprintf]: http://php.net/manual/fr/function.sprintf.php "Documentation de la fonction sprintf sur php.net"
@@ -810,3 +937,4 @@ Ce comportement peut être altéré par l'utilisation du mot clé *RESET* :
 [aide_saisie]: #core-ref:0b2d4cd0-4eed-41d8-ac57-37525a444194
 [contrainte]: #core-ref:7b41906b-f199-41a4-94df-33b9ad34153b
 [definition_attribut]: #core-ref:bc3fad86-33cc-11e2-9a69-1bbd9c32b0f2
+[workflow]: #core-ref:55a53d99-0c24-48d8-8cb9-1caa171f2e9a
