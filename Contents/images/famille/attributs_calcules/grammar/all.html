@@ -1,45 +1,6 @@
-# Les attributs calculés {#core-ref:4565cab9-73c8-4eee-bfa7-218ffbd4b687}
- 
-<span class="fixme template"> template for famille/attributs_calcules.md.</span>
-
-Un *attribut calculé* est un attribut dont la valeur est calculée par Dynacase.
-Ce calcul est effectué au moyen d'une méthode de votre choix.
-<span class="fixme MCO"> Cette valeur ne peut pas être modifié directement par l'utilisateur. Par conséquent, ce type d'attribut ne peut pas avoir d'aide à la saisie. Sa visibilité est soit H (caché) soit R (lecture)</span>
-
-Le calcul de l'attribut peut être
-
-*   local
-    
-    Par exemple : *attr_c = attr_a * attr_b*
-
-*   global
-    
-    Par exemple : *attr_d = nombre de documents du même auteur*
-
-*   externe
-    
-    Par exemple : *attr_e = quantité en stock dans l'ERP*
-
-La méthode de calcul doit être accessible dans la classe du document contenant l'attribut,
-ou être une méthode statique d'une autre classe,
-et retourner un résultat sous forme d'une chaîne de caractères.
-Le résultat est mis dans l'attribut sur lequel s'applique le calcul
-(sauf redirection explicite faite lors de la déclaration de l'attribut).
-
-Ces méthodes sont appelées lors du rafraîchissement de document `Doc::refresh()`.
-D'un point de vue utilisateur, ces attributs sont rafraîchis avant chaque consultation de document.
-
-La syntaxe définissant les attributs calculés est la suivante :
-
-<!--
-![computeMethod](famille/attributs_calcules/grammar/computeMethod.svg)
-![callMethod](famille/attributs_calcules/grammar/callMethod.svg)
-![methodInputs](famille/attributs_calcules/grammar/methodInputs.svg)
-![methodInput](famille/attributs_calcules/grammar/methodInput.svg)
-![text](famille/attributs_calcules/grammar/text.svg)
-![keyWord](famille/attributs_calcules/grammar/keyWord.svg)
--->
-
+<!DOCTYPE html>
+<html>
+<body>
 <svg width="484" height="132" viewBox="-8 -58 484 132 " xmlns="http://www.w3.org/2000/svg" version="1.1">
 <defs><style type="text/css">.terminal_rect{fill:rgb(206,255,206);stroke:black;stroke-width:2;}.terminal_text{fill:black;font-family:Verdana,Sans-serif;text-anchor:middle;font-size:14px;}.symbol_rect{fill:rgb(206,255,206);stroke:black;stroke-width:2;}.symbol_text{fill:black;font-family:Verdana,Sans-serif;font-weight:bold;font-style:italic;text-anchor:middle;font-size:14px;}.path{fill:none;stroke:black;stroke-width:2;}.rule_text{fill:black;font-family:Verdana,Sans-serif;font-weight:bold;font-size:14px;}.rule_path_edge{fill:none;stroke:black;stroke-width:3;}</style></defs>
 <text class="rule_text" x="0" y="-36" >computeMethod:</text>
@@ -57,7 +18,8 @@ La syntaxe définissant les attributs calculés est la suivante :
 <path class="path" d="M0 0 L30 0 M468 0 L438 0" />
 <path class="rule_path_edge" d="M0 -6 L0 6 M468 -6 L468 6" />
 </svg>
-
+<br />
+<br />
 <svg width="806" height="132" viewBox="-8 -58 806 132 " xmlns="http://www.w3.org/2000/svg" version="1.1">
 <defs><style type="text/css">.terminal_rect{fill:rgb(206,255,206);stroke:black;stroke-width:2;}.terminal_text{fill:black;font-family:Verdana,Sans-serif;text-anchor:middle;font-size:14px;}.symbol_rect{fill:rgb(206,255,206);stroke:black;stroke-width:2;}.symbol_text{fill:black;font-family:Verdana,Sans-serif;font-weight:bold;font-style:italic;text-anchor:middle;font-size:14px;}.path{fill:none;stroke:black;stroke-width:2;}.rule_text{fill:black;font-family:Verdana,Sans-serif;font-weight:bold;font-size:14px;}.rule_path_edge{fill:none;stroke:black;stroke-width:3;}</style></defs>
 <text class="rule_text" x="0" y="-36" >callMethod:</text>
@@ -87,7 +49,8 @@ La syntaxe définissant les attributs calculés est la suivante :
 <path class="path" d="M0 0 L30 0 M790 0 L760 0" />
 <path class="rule_path_edge" d="M0 -6 L0 6 M790 -6 L790 6" />
 </svg>
-
+<br />
+<br />
 <svg width="498" height="144" viewBox="-8 -86 498 144 " xmlns="http://www.w3.org/2000/svg" version="1.1">
 <defs><style type="text/css">.terminal_rect{fill:rgb(206,255,206);stroke:black;stroke-width:2;}.terminal_text{fill:black;font-family:Verdana,Sans-serif;text-anchor:middle;font-size:14px;}.symbol_rect{fill:rgb(206,255,206);stroke:black;stroke-width:2;}.symbol_text{fill:black;font-family:Verdana,Sans-serif;font-weight:bold;font-style:italic;text-anchor:middle;font-size:14px;}.path{fill:none;stroke:black;stroke-width:2;}.rule_text{fill:black;font-family:Verdana,Sans-serif;font-weight:bold;font-size:14px;}.rule_path_edge{fill:none;stroke:black;stroke-width:3;}</style></defs>
 <text class="rule_text" x="0" y="-64" >methodInputs:</text>
@@ -104,7 +67,8 @@ La syntaxe définissant les attributs calculés est la suivante :
 <path class="path" d="M0 0 L30 0 M482 0 L452 0" />
 <path class="rule_path_edge" d="M0 -6 L0 6 M482 -6 L482 6" />
 </svg>
-
+<br />
+<br />
 <svg width="726" height="204" viewBox="-8 -86 726 204 " xmlns="http://www.w3.org/2000/svg" version="1.1">
 <defs><style type="text/css">.terminal_rect{fill:rgb(206,255,206);stroke:black;stroke-width:2;}.terminal_text{fill:black;font-family:Verdana,Sans-serif;text-anchor:middle;font-size:14px;}.symbol_rect{fill:rgb(206,255,206);stroke:black;stroke-width:2;}.symbol_text{fill:black;font-family:Verdana,Sans-serif;font-weight:bold;font-style:italic;text-anchor:middle;font-size:14px;}.path{fill:none;stroke:black;stroke-width:2;}.rule_text{fill:black;font-family:Verdana,Sans-serif;font-weight:bold;font-size:14px;}.rule_path_edge{fill:none;stroke:black;stroke-width:3;}</style></defs>
 <text class="rule_text" x="0" y="-64" >methodInput:</text>
@@ -130,7 +94,8 @@ La syntaxe définissant les attributs calculés est la suivante :
 <path class="path" d="M0 0 L30 0 M710 0 L680 0" />
 <path class="rule_path_edge" d="M0 -6 L0 6 M710 -6 L710 6" />
 </svg>
-
+<br />
+<br />
 <svg width="324" height="176" viewBox="-8 -58 324 176 " xmlns="http://www.w3.org/2000/svg" version="1.1">
 <defs><style type="text/css">.terminal_rect{fill:rgb(206,255,206);stroke:black;stroke-width:2;}.terminal_text{fill:black;font-family:Verdana,Sans-serif;text-anchor:middle;font-size:14px;}.symbol_rect{fill:rgb(206,255,206);stroke:black;stroke-width:2;}.symbol_text{fill:black;font-family:Verdana,Sans-serif;font-weight:bold;font-style:italic;text-anchor:middle;font-size:14px;}.path{fill:none;stroke:black;stroke-width:2;}.rule_text{fill:black;font-family:Verdana,Sans-serif;font-weight:bold;font-size:14px;}.rule_path_edge{fill:none;stroke:black;stroke-width:3;}</style></defs>
 <text class="rule_text" x="0" y="-36" >text:</text>
@@ -161,7 +126,8 @@ La syntaxe définissant les attributs calculés est la suivante :
 <path class="path" d="M0 0 L30 0 M308 0 L278 0" />
 <path class="rule_path_edge" d="M0 -6 L0 6 M308 -6 L308 6" />
 </svg>
-
+<br />
+<br />
 <svg width="204" height="132" viewBox="-8 -58 204 132 " xmlns="http://www.w3.org/2000/svg" version="1.1">
 <defs><style type="text/css">.terminal_rect{fill:rgb(206,255,206);stroke:black;stroke-width:2;}.terminal_text{fill:black;font-family:Verdana,Sans-serif;text-anchor:middle;font-size:14px;}.symbol_rect{fill:rgb(206,255,206);stroke:black;stroke-width:2;}.symbol_text{fill:black;font-family:Verdana,Sans-serif;font-weight:bold;font-style:italic;text-anchor:middle;font-size:14px;}.path{fill:none;stroke:black;stroke-width:2;}.rule_text{fill:black;font-family:Verdana,Sans-serif;font-weight:bold;font-size:14px;}.rule_path_edge{fill:none;stroke:black;stroke-width:3;}</style></defs>
 <text class="rule_text" x="0" y="-36" >keyWord:</text>
@@ -174,19 +140,7 @@ La syntaxe définissant les attributs calculés est la suivante :
 <path class="path" d="M0 0 L30 0 M188 0 L158 0" />
 <path class="rule_path_edge" d="M0 -6 L0 6 M188 -6 L188 6" />
 </svg>
-
-Ce qui donne en [BNF][WP_BNF] :
-
-    computeMethod       ::= callMethod ( ( ':' attributeName ) |  )
-    
-    callMethod          ::= ( staticClass |  ) '::' methodName '(' ( methodInputs |  ) ')'
-    
-    methodInputs        ::= methodInput ( ',' methodInput )*
-    
-    methodInput         ::= '<spaces>'* ( attributeName | text | keyWord ) '<spaces>'*
-    
-    text                ::= ( "'" '<text>' ) | ( "'" "[^',]+" "'" ) | ( '"' '[^",]+' '"' )
-    
-    keyWord             ::= 'THIS' | 'K'
-
-[WP_BNF]: http://fr.wikipedia.org/wiki/Backus_Naur_Form "Définition de la Forme de Backus-Naur sur Wikipedia"
+<br />
+<br />
+</body>
+</html>

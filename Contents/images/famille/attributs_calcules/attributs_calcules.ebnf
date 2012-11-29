@@ -1,0 +1,11 @@
+computeMethod       ::= callMethod ( ( ':' attributeName ) |  )
+
+callMethod          ::= ( staticClass |  ) '::' methodName '(' ( methodInputs |  ) ')'
+
+methodInputs        ::= methodInput ( ',' methodInput )*
+
+methodInput         ::= '<spaces>'* ( attributeName | text | keyWord ) '<spaces>'*
+
+text                ::= ( "'" '<text>' ) | ( "'" "[^',]+" "'" ) | ( '"' '[^",]+' '"' )
+
+keyWord             ::= 'THIS' | 'K'
