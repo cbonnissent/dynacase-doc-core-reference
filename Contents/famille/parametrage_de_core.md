@@ -912,7 +912,7 @@ Lors de la surcharge, le comportement est le suivant :
     <span class="fixme MCO">La nouvelle valeur écrase la valeur précédemment définie si *force=yes* est utilisé</span>
 
 Ce comportement peut être altéré par l'utilisation des
-[Instructions de réinitialisation](#core-ref:#core-ref:5c661733-772d-42b8-8b3e-b70453ddfd33).
+[Instructions de réinitialisation](#core-ref:5c661733-772d-42b8-8b3e-b70453ddfd33).
 
 ## Prise en compte d'une définition de famille dans Dynacase
 
