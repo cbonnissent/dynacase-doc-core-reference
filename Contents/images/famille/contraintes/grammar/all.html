@@ -1,31 +1,6 @@
-# Les contraintes {#core-ref:7b41906b-f199-41a4-94df-33b9ad34153b}
- 
-<span class="fixme template"> template for famille/contraintes.md.</span>
-
-Une *contrainte* permet de valider la saisie de l'utilisateur avant 
-que le document soit enregistré.
-
-La contrainte est vérifiée au moyen :
-
-*   soit d'une méthode de la classe du document contenant l'attribut,
-*   soit d'une méthode statique d'une autre classe.
-
-Son retour doit être :
-
-*   soit une chaîne de caractères utilisée comme message d'erreur,
-*   soit un tableau associatif contenant
-    *   un message d'erreur à l'index `err`
-    *   un tableau de suggestions à l'index `sug`
-
-Les suggestions seront proposées à l'utilisateur en remplacement de la valeur
-refusée par la contrainte.
-
-## Syntaxe
-
-La syntaxe définissant les contraintes est la suivante :
-
-<div class="grammar">
-
+<!DOCTYPE html>
+<html>
+<body>
 <svg width="806" height="132" viewBox="-8 -58 806 132 " xmlns="http://www.w3.org/2000/svg" version="1.1">
 <defs><style type="text/css">.terminal_rect{fill:rgb(206,255,206);stroke:black;stroke-width:2;}.terminal_text{fill:black;font-family:Verdana,Sans-serif;text-anchor:middle;font-size:14px;}.symbol_rect{fill:rgb(206,255,206);stroke:black;stroke-width:2;}.symbol_text{fill:black;font-family:Verdana,Sans-serif;font-weight:bold;font-style:italic;text-anchor:middle;font-size:14px;}.path{fill:none;stroke:black;stroke-width:2;}.rule_text{fill:black;font-family:Verdana,Sans-serif;font-weight:bold;font-size:14px;}.rule_path_edge{fill:none;stroke:black;stroke-width:3;}</style></defs>
 <text class="rule_text" x="0" y="-36" >constraint:</text>
@@ -55,7 +30,8 @@ La syntaxe définissant les contraintes est la suivante :
 <path class="path" d="M0 0 L30 0 M790 0 L760 0" />
 <path class="rule_path_edge" d="M0 -6 L0 6 M790 -6 L790 6" />
 </svg>
-
+<br />
+<br />
 <svg width="498" height="144" viewBox="-8 -86 498 144 " xmlns="http://www.w3.org/2000/svg" version="1.1">
 <defs><style type="text/css">.terminal_rect{fill:rgb(206,255,206);stroke:black;stroke-width:2;}.terminal_text{fill:black;font-family:Verdana,Sans-serif;text-anchor:middle;font-size:14px;}.symbol_rect{fill:rgb(206,255,206);stroke:black;stroke-width:2;}.symbol_text{fill:black;font-family:Verdana,Sans-serif;font-weight:bold;font-style:italic;text-anchor:middle;font-size:14px;}.path{fill:none;stroke:black;stroke-width:2;}.rule_text{fill:black;font-family:Verdana,Sans-serif;font-weight:bold;font-size:14px;}.rule_path_edge{fill:none;stroke:black;stroke-width:3;}</style></defs>
 <text class="rule_text" x="0" y="-64" >methodInputs:</text>
@@ -72,7 +48,8 @@ La syntaxe définissant les contraintes est la suivante :
 <path class="path" d="M0 0 L30 0 M482 0 L452 0" />
 <path class="rule_path_edge" d="M0 -6 L0 6 M482 -6 L482 6" />
 </svg>
-
+<br />
+<br />
 <svg width="786" height="204" viewBox="-8 -86 786 204 " xmlns="http://www.w3.org/2000/svg" version="1.1">
 <defs><style type="text/css">.terminal_rect{fill:rgb(206,255,206);stroke:black;stroke-width:2;}.terminal_text{fill:black;font-family:Verdana,Sans-serif;text-anchor:middle;font-size:14px;}.symbol_rect{fill:rgb(206,255,206);stroke:black;stroke-width:2;}.symbol_text{fill:black;font-family:Verdana,Sans-serif;font-weight:bold;font-style:italic;text-anchor:middle;font-size:14px;}.path{fill:none;stroke:black;stroke-width:2;}.rule_text{fill:black;font-family:Verdana,Sans-serif;font-weight:bold;font-size:14px;}.rule_path_edge{fill:none;stroke:black;stroke-width:3;}</style></defs>
 <text class="rule_text" x="0" y="-64" >methodInput:</text>
@@ -98,7 +75,8 @@ La syntaxe définissant les contraintes est la suivante :
 <path class="path" d="M0 0 L30 0 M770 0 L740 0" />
 <path class="rule_path_edge" d="M0 -6 L0 6 M770 -6 L770 6" />
 </svg>
-
+<br />
+<br />
 <svg width="324" height="176" viewBox="-8 -58 324 176 " xmlns="http://www.w3.org/2000/svg" version="1.1">
 <defs><style type="text/css">.terminal_rect{fill:rgb(206,255,206);stroke:black;stroke-width:2;}.terminal_text{fill:black;font-family:Verdana,Sans-serif;text-anchor:middle;font-size:14px;}.symbol_rect{fill:rgb(206,255,206);stroke:black;stroke-width:2;}.symbol_text{fill:black;font-family:Verdana,Sans-serif;font-weight:bold;font-style:italic;text-anchor:middle;font-size:14px;}.path{fill:none;stroke:black;stroke-width:2;}.rule_text{fill:black;font-family:Verdana,Sans-serif;font-weight:bold;font-size:14px;}.rule_path_edge{fill:none;stroke:black;stroke-width:3;}</style></defs>
 <text class="rule_text" x="0" y="-36" >text:</text>
@@ -129,7 +107,8 @@ La syntaxe définissant les contraintes est la suivante :
 <path class="path" d="M0 0 L30 0 M308 0 L278 0" />
 <path class="rule_path_edge" d="M0 -6 L0 6 M308 -6 L308 6" />
 </svg>
-
+<br />
+<br />
 <svg width="204" height="132" viewBox="-8 -58 204 132 " xmlns="http://www.w3.org/2000/svg" version="1.1">
 <defs><style type="text/css">.terminal_rect{fill:rgb(206,255,206);stroke:black;stroke-width:2;}.terminal_text{fill:black;font-family:Verdana,Sans-serif;text-anchor:middle;font-size:14px;}.symbol_rect{fill:rgb(206,255,206);stroke:black;stroke-width:2;}.symbol_text{fill:black;font-family:Verdana,Sans-serif;font-weight:bold;font-style:italic;text-anchor:middle;font-size:14px;}.path{fill:none;stroke:black;stroke-width:2;}.rule_text{fill:black;font-family:Verdana,Sans-serif;font-weight:bold;font-size:14px;}.rule_path_edge{fill:none;stroke:black;stroke-width:3;}</style></defs>
 <text class="rule_text" x="0" y="-36" >keyWord:</text>
@@ -142,84 +121,7 @@ La syntaxe définissant les contraintes est la suivante :
 <path class="path" d="M0 0 L30 0 M188 0 L158 0" />
 <path class="rule_path_edge" d="M0 -6 L0 6 M188 -6 L188 6" />
 </svg>
-
-</div>
-
-Ce qui donne en [BNF][WP_BNF] :
-
-    constraint      ::= ( staticClass |  ) '::' methodName '(' ( methodInputs |  ) ')'
-    
-    methodInputs    ::= methodInput ( ',' methodInput )*
-    
-    methodInput     ::= '<spaces>'* ( sourceAttributeName | text | keyWord ) '<spaces>'*
-    
-    text            ::= ( "'" '<text>' ) | ( "'" "[^',]+" "'" ) | ( '"' '[^",]+' '"' )
-    
-    keyWord         ::= 'THIS' | 'K'
-
-<span class="fixme MCO">pas de paramètres de famille, etc?</span>
-
-avec les éléments suivants :
-
-sourceAttributeName
-:   Un nom d'attribut existant dans la famille.
-    
-    La méthode de la contrainte recevra la valeur de l'attribut au moment de l'appel.
-    
-    Lorsque *attributeName* est dans un array, alors la valeur passée est :
-    
-    *   la valeur sur la même ligne si l'attribut sur lequel est définie la contrainte est dans le même tableau
-    *   la valeur de la colonne (sous la forme d'un tableau php) si l'attribut
-        sur lequel est définie la contrainte est en dehors du tableau
-        <span class="fixme MCO">(y compris si l'attribut calculé est dans un autre tableau)</span>
-
-keyWord
-:   Un mot clé qui est remplacé par une valeur dynamique
-    
-    THIS
-    :   L'objet du document en cours.
-        
-        Cela est utile dans le cas d'un appel à une méthode statique.
-    
-    K
-    :   L'index de la ligne en cours si l'attribut est dans un tableau.
-        
-        Si l'attribut n'est pas dans un tableau, la valeur passée est <span class="fixme MCO">`-1`</span>
-
-## Exemples
-
-### Vérification du format d'un entier
-
-| attrid      | label    | type | visibility | phpfunc                                         |
-| -           |          |      |            |                                                 |
-| article_qte | Quantité | int  | W          | `GenericConstraints::isInt(article_qte,10,100)` |
-
-    [php]
-    <?php
-    
-    Class GenericConstraints{
-        
-        public static function isInt($value, $min=0, $max=PHP_INT_MAX, $customErrorMessage=''){
-            $options = array(
-                'options' => array(
-                    'min_range' => $min,
-                    'max_range' => $max
-                );
-            );
-            if(false === filter_var($value, FILTER_VALIDATE_INT, $options)){
-                if('' === $customErrorMessage){
-                    $customErrorMessage = "GenericConstraints:%s is not an integer between %s and %s";
-                }
-                return sprintf(_($customErrorMessage), $value, $min, $max);
-            }
-            return '';
-        }
-    }
-    
-    ?>
-
-<span class="fixme MCO">Note: Pour plus de souplesse, les bornes min et max pourrait être stockées
-dans des paramètres de la famille, et passés en paramètre à la méthode de la contrainte.</span>
-
-<!-- links -->
-[WP_BNF]: http://fr.wikipedia.org/wiki/Backus_Naur_Form "Définition de la Forme de Backus-Naur sur Wikipedia"
+<br />
+<br />
+</body>
+</html>

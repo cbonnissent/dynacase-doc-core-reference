@@ -1,34 +1,6 @@
-# Les aides à la saisie {#core-ref:0b2d4cd0-4eed-41d8-ac57-37525a444194}
- 
-<span class="fixme template"> template for famille/aides_a_la_saisie.md.</span>
-
-Une *aide à la saisie* permet de compléter ou de remplir des zones de saisie
-lors de la modification d'un document, en proposant des suggestions à l'utilisateur.
-
-Les suggestions sont calculées au moyen d'une fonction qui doit être définie dans
-un fichier php placé dans le répertoire `/EXTERNALS` du contexte.
-
-Elle doit retourner un résultat sous la forme d'un tableau à 2 dimensions :
-
-*   la première dimension correspond à la liste des suggestions ;
-*   la seconde dimension correspond à la *liste des valeurs*
-    à insérer dans le document lors du choix de cette suggestion.
-    
-    Elle est traitée de manière positionnelle :
-    
-    *   La première valeur est affichée en tant que suggestion pour l'utilisateur ;
-    *   les valeurs suivantes sont *dépilées* et affectées dans l'ordre aux attributs cible.
-
-En cas d'erreur, elle peut également retourner une chaîne de caractères,
-qui servira de message d'erreur.
-
-
-## Syntaxe
-
-La syntaxe définissant les aides à la saisie est la suivante :
-
-<div class="grammar">
-
+<!DOCTYPE html>
+<html>
+<body>
 <svg width="684" height="132" viewBox="-8 -58 684 132 " xmlns="http://www.w3.org/2000/svg" version="1.1">
 <defs><style type="text/css">.terminal_rect{fill:rgb(206,255,206);stroke:black;stroke-width:2;}.terminal_text{fill:black;font-family:Verdana,Sans-serif;text-anchor:middle;font-size:14px;}.symbol_rect{fill:rgb(206,255,206);stroke:black;stroke-width:2;}.symbol_text{fill:black;font-family:Verdana,Sans-serif;font-weight:bold;font-style:italic;text-anchor:middle;font-size:14px;}.path{fill:none;stroke:black;stroke-width:2;}.rule_text{fill:black;font-family:Verdana,Sans-serif;font-weight:bold;font-size:14px;}.rule_path_edge{fill:none;stroke:black;stroke-width:3;}</style></defs>
 <text class="rule_text" x="0" y="-36" >inputHelp:</text>
@@ -55,7 +27,8 @@ La syntaxe définissant les aides à la saisie est la suivante :
 <path class="path" d="M0 0 L30 0 M668 0 L638 0" />
 <path class="rule_path_edge" d="M0 -6 L0 6 M668 -6 L668 6" />
 </svg>
-
+<br />
+<br />
 <svg width="458" height="144" viewBox="-8 -86 458 144 " xmlns="http://www.w3.org/2000/svg" version="1.1">
 <defs><style type="text/css">.terminal_rect{fill:rgb(206,255,206);stroke:black;stroke-width:2;}.terminal_text{fill:black;font-family:Verdana,Sans-serif;text-anchor:middle;font-size:14px;}.symbol_rect{fill:rgb(206,255,206);stroke:black;stroke-width:2;}.symbol_text{fill:black;font-family:Verdana,Sans-serif;font-weight:bold;font-style:italic;text-anchor:middle;font-size:14px;}.path{fill:none;stroke:black;stroke-width:2;}.rule_text{fill:black;font-family:Verdana,Sans-serif;font-weight:bold;font-size:14px;}.rule_path_edge{fill:none;stroke:black;stroke-width:3;}</style></defs>
 <text class="rule_text" x="0" y="-64" >funcInputs:</text>
@@ -72,7 +45,8 @@ La syntaxe définissant les aides à la saisie est la suivante :
 <path class="path" d="M0 0 L30 0 M442 0 L412 0" />
 <path class="rule_path_edge" d="M0 -6 L0 6 M442 -6 L442 6" />
 </svg>
-
+<br />
+<br />
 <svg width="424" height="352" viewBox="-8 -58 424 352 " xmlns="http://www.w3.org/2000/svg" version="1.1">
 <defs><style type="text/css">.terminal_rect{fill:rgb(206,255,206);stroke:black;stroke-width:2;}.terminal_text{fill:black;font-family:Verdana,Sans-serif;text-anchor:middle;font-size:14px;}.symbol_rect{fill:rgb(206,255,206);stroke:black;stroke-width:2;}.symbol_text{fill:black;font-family:Verdana,Sans-serif;font-weight:bold;font-style:italic;text-anchor:middle;font-size:14px;}.path{fill:none;stroke:black;stroke-width:2;}.rule_text{fill:black;font-family:Verdana,Sans-serif;font-weight:bold;font-size:14px;}.rule_path_edge{fill:none;stroke:black;stroke-width:3;}</style></defs>
 <text class="rule_text" x="0" y="-36" >funcInput:</text>
@@ -112,7 +86,8 @@ La syntaxe définissant les aides à la saisie est la suivante :
 <path class="path" d="M0 0 L30 0 M408 0 L378 0" />
 <path class="rule_path_edge" d="M0 -6 L0 6 M408 -6 L408 6" />
 </svg>
-
+<br />
+<br />
 <svg width="478" height="144" viewBox="-8 -86 478 144 " xmlns="http://www.w3.org/2000/svg" version="1.1">
 <defs><style type="text/css">.terminal_rect{fill:rgb(206,255,206);stroke:black;stroke-width:2;}.terminal_text{fill:black;font-family:Verdana,Sans-serif;text-anchor:middle;font-size:14px;}.symbol_rect{fill:rgb(206,255,206);stroke:black;stroke-width:2;}.symbol_text{fill:black;font-family:Verdana,Sans-serif;font-weight:bold;font-style:italic;text-anchor:middle;font-size:14px;}.path{fill:none;stroke:black;stroke-width:2;}.rule_text{fill:black;font-family:Verdana,Sans-serif;font-weight:bold;font-size:14px;}.rule_path_edge{fill:none;stroke:black;stroke-width:3;}</style></defs>
 <text class="rule_text" x="0" y="-64" >funcOutputs:</text>
@@ -129,7 +104,8 @@ La syntaxe définissant les aides à la saisie est la suivante :
 <path class="path" d="M0 0 L30 0 M462 0 L432 0" />
 <path class="rule_path_edge" d="M0 -6 L0 6 M462 -6 L462 6" />
 </svg>
-
+<br />
+<br />
 <svg width="354" height="132" viewBox="-8 -58 354 132 " xmlns="http://www.w3.org/2000/svg" version="1.1">
 <defs><style type="text/css">.terminal_rect{fill:rgb(206,255,206);stroke:black;stroke-width:2;}.terminal_text{fill:black;font-family:Verdana,Sans-serif;text-anchor:middle;font-size:14px;}.symbol_rect{fill:rgb(206,255,206);stroke:black;stroke-width:2;}.symbol_text{fill:black;font-family:Verdana,Sans-serif;font-weight:bold;font-style:italic;text-anchor:middle;font-size:14px;}.path{fill:none;stroke:black;stroke-width:2;}.rule_text{fill:black;font-family:Verdana,Sans-serif;font-weight:bold;font-size:14px;}.rule_path_edge{fill:none;stroke:black;stroke-width:3;}</style></defs>
 <text class="rule_text" x="0" y="-36" >funcOutput:</text>
@@ -142,7 +118,8 @@ La syntaxe définissant les aides à la saisie est la suivante :
 <path class="path" d="M0 0 L30 0 M338 0 L308 0" />
 <path class="rule_path_edge" d="M0 -6 L0 6 M338 -6 L338 6" />
 </svg>
-
+<br />
+<br />
 <svg width="324" height="176" viewBox="-8 -58 324 176 " xmlns="http://www.w3.org/2000/svg" version="1.1">
 <defs><style type="text/css">.terminal_rect{fill:rgb(206,255,206);stroke:black;stroke-width:2;}.terminal_text{fill:black;font-family:Verdana,Sans-serif;text-anchor:middle;font-size:14px;}.symbol_rect{fill:rgb(206,255,206);stroke:black;stroke-width:2;}.symbol_text{fill:black;font-family:Verdana,Sans-serif;font-weight:bold;font-style:italic;text-anchor:middle;font-size:14px;}.path{fill:none;stroke:black;stroke-width:2;}.rule_text{fill:black;font-family:Verdana,Sans-serif;font-weight:bold;font-size:14px;}.rule_path_edge{fill:none;stroke:black;stroke-width:3;}</style></defs>
 <text class="rule_text" x="0" y="-36" >text:</text>
@@ -173,7 +150,8 @@ La syntaxe définissant les aides à la saisie est la suivante :
 <path class="path" d="M0 0 L30 0 M308 0 L278 0" />
 <path class="rule_path_edge" d="M0 -6 L0 6 M308 -6 L308 6" />
 </svg>
-
+<br />
+<br />
 <svg width="534" height="352" viewBox="-8 -58 534 352 " xmlns="http://www.w3.org/2000/svg" version="1.1">
 <defs><style type="text/css">.terminal_rect{fill:rgb(206,255,206);stroke:black;stroke-width:2;}.terminal_text{fill:black;font-family:Verdana,Sans-serif;text-anchor:middle;font-size:14px;}.symbol_rect{fill:rgb(206,255,206);stroke:black;stroke-width:2;}.symbol_text{fill:black;font-family:Verdana,Sans-serif;font-weight:bold;font-style:italic;text-anchor:middle;font-size:14px;}.path{fill:none;stroke:black;stroke-width:2;}.rule_text{fill:black;font-family:Verdana,Sans-serif;font-weight:bold;font-size:14px;}.rule_path_edge{fill:none;stroke:black;stroke-width:3;}</style></defs>
 <text class="rule_text" x="0" y="-36" >sourceKeyWord:</text>
@@ -210,7 +188,8 @@ La syntaxe définissant les aides à la saisie est la suivante :
 <path class="path" d="M0 0 L30 0 M518 0 L488 0" />
 <path class="rule_path_edge" d="M0 -6 L0 6 M518 -6 L518 6" />
 </svg>
-
+<br />
+<br />
 <svg width="534" height="132" viewBox="-8 -58 534 132 " xmlns="http://www.w3.org/2000/svg" version="1.1">
 <defs><style type="text/css">.terminal_rect{fill:rgb(206,255,206);stroke:black;stroke-width:2;}.terminal_text{fill:black;font-family:Verdana,Sans-serif;text-anchor:middle;font-size:14px;}.symbol_rect{fill:rgb(206,255,206);stroke:black;stroke-width:2;}.symbol_text{fill:black;font-family:Verdana,Sans-serif;font-weight:bold;font-style:italic;text-anchor:middle;font-size:14px;}.path{fill:none;stroke:black;stroke-width:2;}.rule_text{fill:black;font-family:Verdana,Sans-serif;font-weight:bold;font-size:14px;}.rule_path_edge{fill:none;stroke:black;stroke-width:3;}</style></defs>
 <text class="rule_text" x="0" y="-36" >targetKeyWord:</text>
@@ -232,213 +211,7 @@ La syntaxe définissant les aides à la saisie est la suivante :
 <path class="path" d="M0 0 L30 0 M518 0 L488 0" />
 <path class="rule_path_edge" d="M0 -6 L0 6 M518 -6 L518 6" />
 </svg>
-
-</div>
-
-Ce qui donne en [BNF][WP_BNF] :
-
-    inputHelp       ::= funcName '(' ( funcInputs |  ) ')' ':' funcOutputs
-    
-    funcInputs      ::= funcInput ( ',' funcInput )*
-    
-    funcInput       ::= ( sourceAttributeName | familyParameterName | text | sourceKeyWord | propertyName | '{' appParameterName '}' | '{' familyName '}' )
-    
-    funcOutputs     ::= funcOutput ( ',' funcOutput )*
-    
-    funcOutput      ::= ( targetAttributeName | targetKeyWord )
-    
-    text            ::= ( "'" '<text>' ) | ( "'" "[^',]+" "'" ) | ( '"' '[^",]+' '"' )
-    
-    sourceKeyWord   ::= ( 'CT' | 'CT' '[' relationAttributeName ']' | 'D' | 'I' | 'K' | 'T' | 'A' )
-    
-    targetKeyWord   ::= ( 'CT' | 'CT' '[' relationAttributeName ']' )
-
-<span class="fixme MCO">pas d'espaces possibles?</span>
-
-avec les éléments suivants :
-
-sourceAttributeName
-:   Un nom d'attribut existant dans la famille.
-    
-    La fonction de calcul recevra la valeur de l'attribut au moment de l'appel.
-    
-    Lorsque *attributeName* est dans un array, alors la valeur passée est :
-    
-    *   la valeur sur la même ligne si l'attribut sur lequel est définie
-        l'aide à la saisie est dans le même tableau,
-    *   la valeur de la colonne (sous la forme d'un tableau php) si l'attribut
-        sur lequel est définie l'aide à la saisie est en dehors du tableau
-        <span class="fixme MCO">(y compris si l'attribut calculé est dans un autre tableau)</span>
-
-familyParametername
-:   Un nom de paramètre existant dans la famille.
-    
-    La fonction de calcul recevra la valeur du paramètre au moment de l'appel.
-
-sourceKeyWord
-:   Un mot clé qui est remplacé par une valeur dynamique.
-    
-    CT[relationAttributeName]
-    :   La valeur de l'input correspondant à la relation *relationAttributeName*.
-        
-        Lorsque l'id est rempli, cela correspond au titre du document cible,
-        sinon cela correspond au texte saisi dans cet input.
-    
-    CT
-    :   Raccourci pour CT[currentAttributeName]
-        (où *currentAttributeName* est le nom de l'attribut sur lequel est définie
-        l'aide à la saisie).
-        
-        Ne peut être utilisé que sur les attributs de type relation.
-    
-    D
-    :   Accès à la base de données.
-    
-    I
-    :   Id du document courant.
-    
-    K
-    :   L'index de la ligne en cours si l'attribut est dans un tableau.
-        
-        Si l'attribut n'est pas dans un tableau, la valeur passée est <span class="fixme MCO">`-1`</span>
-    
-    T
-    :   L'objet php correspondant au document en cours.
-        
-        <span class="fixme MCO">le document tel qu'il est en édition, ou le document en base?</span>
-    
-    A
-    :   L'action courante (un objet de la classe `Action`).
-        <span class="fixme MCO">à quoi ça sert?</span>
-
-propertyName
-:   Une propriété du document.
-    <span class="fixme MCO">toutes, ou seulement ID, INITID, TITLE, FROMID, VERSION, REVISION, STATE ?</span>
-
-appParameterName
-:   Un paramètre applicatif.
-    
-    Ce paramètre doit obligatoirement être global.
-
-familyName
-:   Un nom logique de famille.
-    
-    <span class="fixme MCO">il est remplacé par quoi?</span>
-
-targetAttributeName
-:   Un nom d'attribut existant dans la famille.
-    
-    Lors du choix d'une des suggestions, les valeurs correspondant à ces
-    suggestions sont insérées dans l'ordre dans les attributs désignés par
-    *targetAttributeName*
-
-targetKeyWord
-:   Un mot clé désignant la cible de l'aide à la saisie.
-    
-    CT[relationAttributeName]
-    :   L'input correspondant à la relation *relationAttributeName*.
-    
-    CT
-    :   Raccourci pour CT[currentAttributeName]
-        (où *currentAttributeName est le nom de l'attribut sur lequel est définie
-        l'aide à la saisie).
-    
-    ?
-    :   permet de "sauter" une des valeurs de retour sans l'utiliser.
-        
-        Est particulièrement utile dans le cas d'aides à la saisie génériques
-        qui retournent plus de valeurs que d'attributs à compléter.
-
-## Exemples
-
-### Retour unique
-
-| attrid    | label | type | visibility | phpfile    | phpfunc                        |
-| -         |       |      |            |            |                                |
-| city_name | Ville | text | W          | cities.php | getCities(city_name):city_name |
-
-    [php]
-    <?php
-    /**
-     * EXTERNALS/cities.php
-     */
-    
-    function getCities($userInput=''){
-        $suggestions = array();
-        // Liste des villes utilisables
-        availableCities = array(
-            "Paris",
-            "Toulouse",
-            "Souillac"
-        );
-        //teste si les villes correspondent à la saisie de l'utilisateur
-        foreach($availableCities as $city){
-            if( ''===$userInput || preg_match(strToLower($userInput), strToLower($city)) ){
-                $suggestions[] = array(
-                    $city,      //le nom de la suggestion
-                    $city       //la valeur qui ira dans attr_city
-                );
-            }
-        }
-        return $suggestions;
-    }
-    
-    ?>
-
-### Retour multiple
-
-| attrid     | label       | type | visibility | phpfile      | phpfunc                                     |
-| -          |             |      |            |              |                                             |
-| city_name  | Ville       | text | W          | `cities.php` | `getCities(city_name):city_name`            |
-| city_cedex | Code postal | int  | W          | `cities.php` | `getCedex(city_cedex):city_cedex,city_name` |
-
-
-
-    [php]
-    <?php
-    /**
-     * EXTERNALS/cities.php
-     */
-    
-    function getCedex($userInput=''){
-        $suggestions = array();
-        // Liste des villes utilisables
-        availableCities = array(
-            "75000" => "Paris",
-            "31000" => "Toulouse",
-            "46200" => "Souillac"
-        );
-        //teste si les villes correspondent à la saisie de l'utilisateur
-        foreach($availableCities as $cedex => $city){
-            if( ''===$userInput || preg_match($userInput, $cedex) ){
-                $suggestions[] = array(
-                    sprintf("[%d] %s", $cedex, $city),      //le nom de la suggestion
-                    $cedex,                                 //la valeur qui ira dans attr_cedex
-                    $city                                   //la valeur qui ira dans attr_city
-                );
-            }
-        }
-        return $suggestions;
-    }
-    
-    ?>
-
-## Astuces
-
-### attributs relation
-
-*   Lorsqu'une aide à la saisie remplit un attribut de type *docid*,
-    il faut penser à remplir l'id et le titre affiché (*attrid* et *CT[attrid]*).
-*   Lorsqu'un attribut est masqué (visibilité R ou H), alors le champ désigné
-    par *CT[attrid]* n'existe pas, il est donc impossible de les désigner comme
-    retour des aides à la saisie.
-
-### attributs htmltext
-
-*   Lorsqu'un attribut de type *htmltext* est utilisé en entrée
-    d'une aide à la saisie, la valeur reçue est encodée. il est donc nécessaire
-    de la décoder (au moyen de [html_entity_decode][PHP_html_entity_decode])
-
-<!-- links -->
-[WP_BNF]: http://fr.wikipedia.org/wiki/Backus_Naur_Form "Définition de la Forme de Backus-Naur sur Wikipedia"
-[PHP_html_entity_decode]: http://php.net/manual/fr/function.html-entity-decode.php "Documentation de html_entity_decode sur php.net"
+<br />
+<br />
+</body>
+</html>

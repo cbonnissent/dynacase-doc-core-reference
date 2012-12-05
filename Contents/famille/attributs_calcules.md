@@ -3,7 +3,7 @@
 <span class="fixme template"> template for famille/attributs_calcules.md.</span>
 
 Un *attribut calculé* est un attribut dont la valeur est calculée par Dynacase.
-Ce calcul est effectué au moyen d'une méthode de votre choix.
+
 <span class="fixme MCO"> Cette valeur ne peut pas être modifié directement par l'utilisateur. Par conséquent, ce type d'attribut ne peut pas avoir d'aide à la saisie. Sa visibilité est soit H (caché) soit R (lecture)</span>
 
 Le calcul de l'attribut peut être
@@ -20,20 +20,24 @@ Le calcul de l'attribut peut être
     
     Par exemple : *attr_e = quantité en stock dans l'ERP*
 
-La méthode de calcul doit être accessible dans la classe du document contenant l'attribut,
-ou être une méthode statique d'une autre classe,
-et retourner un résultat sous forme d'une chaîne de caractères.
+Ce calcul est effectué au moyen :
+
+*   soit d'une méthode de la classe du document contenant l'attribut,
+*   soit d'une méthode statique d'une autre classe.
+
+Elle doit retourner un résultat sous forme d'une chaîne de caractères.
 Le résultat est mis dans l'attribut sur lequel s'applique le calcul
 (sauf redirection explicite faite lors de la déclaration de l'attribut).
 
-Ces méthodes sont appelées lors du rafraîchissement de document `Doc::refresh()`.
-D'un point de vue utilisateur, ces attributs sont rafraîchis avant chaque consultation de document.
+Le calcul est effectué lors du rafraîchissement des documents (voir la méthode `Doc::refresh()`). <span class="fixme MCO">mettre en cohérence avec l'intro</span>
+D'un point de vue utilisateur, un attribut calculé est rafraîchi avant chaque consultation de document.
 
 ## Syntaxe
 
 La syntaxe définissant les attributs calculés est la suivante :
 
 <div class="grammar">
+
 <svg width="544" height="132" viewBox="-8 -58 544 132 " xmlns="http://www.w3.org/2000/svg" version="1.1">
 <defs><style type="text/css">.terminal_rect{fill:rgb(206,255,206);stroke:black;stroke-width:2;}.terminal_text{fill:black;font-family:Verdana,Sans-serif;text-anchor:middle;font-size:14px;}.symbol_rect{fill:rgb(206,255,206);stroke:black;stroke-width:2;}.symbol_text{fill:black;font-family:Verdana,Sans-serif;font-weight:bold;font-style:italic;text-anchor:middle;font-size:14px;}.path{fill:none;stroke:black;stroke-width:2;}.rule_text{fill:black;font-family:Verdana,Sans-serif;font-weight:bold;font-size:14px;}.rule_path_edge{fill:none;stroke:black;stroke-width:3;}</style></defs>
 <text class="rule_text" x="0" y="-36" >computeMethod:</text>
@@ -168,6 +172,7 @@ La syntaxe définissant les attributs calculés est la suivante :
 <path class="path" d="M0 0 L30 0 M188 0 L158 0" />
 <path class="rule_path_edge" d="M0 -6 L0 6 M188 -6 L188 6" />
 </svg>
+
 </div>
 
 Ce qui donne en [BNF][WP_BNF] :
@@ -184,6 +189,8 @@ Ce qui donne en [BNF][WP_BNF] :
     
     keyWord         ::= 'THIS' | 'K'
 
+<span class="fixme MCO">pas de paramètres applicatifs, pas de propriétés, pas de paramètres de famille, etc.?</span>
+
 avec les éléments suivants :
 
 targetAttributeName
@@ -191,25 +198,25 @@ targetAttributeName
     
     Le résultat de la méthode sera affecté à cet attribut.
     
-    si *targetAttributeName* n'est pas renseigné, alors c'est l'attribut
-    sur lequel est défini la méthode de calcul qui reçoit la valeur.
+    Si *targetAttributeName* n'est pas renseigné, alors c'est l'attribut
+    sur lequel est définie la méthode de calcul qui reçoit la valeur.
 
 sourceAttributeName
 :   Un nom d'attribut existant dans la famille.
     
-    La méthode de calcul recevra la valeur de l'attribut au moment de l'appel
+    La méthode de calcul recevra la valeur de l'attribut au moment de l'appel.
     
     Lorsque *attributeName* est dans un array, alors la valeur passée est :
     
     *   la valeur sur la même ligne si l'attribut calculé est dans le même tableau
-    *   la valeur de la colonne si l'attribut calculé est en dehors du tableau
+    *   la valeur de la colonne (sous la forme d'un tableau php) si l'attribut calculé est en dehors du tableau
         <span class="fixme MCO">(y compris si l'attribut calculé est dans un autre tableau)</span>
 
 keyWord
 :   Un mot clé qui est remplacé par une valeur dynamique
     
     THIS
-    :   l'objet du document en cours.
+    :   L'objet du document en cours.
         
         Cela est utile dans le cas d'un appel à une méthode statique.
     
@@ -224,21 +231,22 @@ keyWord
 
 Extrait de la définition de la famille
 
-| attrid                | label         | type   | visibility | phpfunc                                         |
-| -                     |               |        |            |                                                 |
-| article_qte           | Quantité      | int    | W          |                                                 |
-| article_prix_unitaire | Prix unitaire | double | W          |                                                 |
-| article_prix_total    | Prix total    |        | R          | `::getPrice(article_qte,article_prix_unitaire)` |
+| attrid                | label         | type   | visibility | phpfunc                                             |
+| -                     |               |        |            |                                                     |
+| article_qte           | Quantité      | int    | W          |                                                     |
+| article_prix_unitaire | Prix unitaire | double | W          |                                                     |
+| article_prix_total    | Prix total    |        | R          | `::computePrice(article_qte,article_prix_unitaire)` |
+
 
 
 Extrait du fichier de méthodes associé
 
     [php]
-    public function getPrice($qte, $price){
+    public function computePrice($qte, $price){
         return intval($qte) * floatval($price);
     }
 
-Note: on pourrait aussi utiliser une méthode statique, qui aurait surement plus de sens ici :
+Note: on pourrait aussi utiliser une méthode statique, qui aurait sûrement plus de sens ici :
 
 | attrid                | label         | type   | visibility | phpfunc                                                 |
 | -                     |               |        |            |                                                         |
