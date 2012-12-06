@@ -29,24 +29,8 @@ book:
           content:  "Introduction_dynacase/internationalisation.md"
 #
         - level:   1
-          content:  "ClassDoc/introduction.md"
+          content:  "Object_model/introduction.md"
           subtoc:   2
-        - level:   2
-          content:  "ClassDoc/definition.md"
-        - level:   2
-          content:  "ClassDoc/proprietes.md"
-        - level:   2
-          content:  "ClassDoc/methodes.md"
-#
-        - level:   1
-          content:  "ClassDocFam/introduction.md"
-          subtoc:   2
-        - level:   2
-          content:  "ClassDocFam/definition.md"
-        - level:   2
-          content:  "ClassDocFam/proprietes.md"
-        - level:   2
-          content:  "ClassDocFam/methodes.md"
 #
         - level:   1
           content:  "famille/introduction.md"
@@ -252,6 +236,9 @@ book:
           subtoc:   1
         - level:   3
           element: "chapter"
+          content:  "API/Class_Doc/Properties.md"
+        - level:   3
+          element: "chapter"
           content:  "API/Class_Doc/Method_PostCreated.md"
         - level:   3
           element: "chapter"
@@ -403,6 +390,13 @@ book:
         - level:   3
           element: "chapter"
           content:  "API/Class_Doc/Method_viewattr.md"
+        - level:   2
+          element: "chapter"
+          content:  "API/Class_Docfam.md"
+          subtoc:   1
+        - level:   3
+          element: "chapter"
+          content:  "API/Class_Docfam/Properties.md"
         - level:   2
           element: "chapter"
           content:  "API/Class_DocumentList.md"
