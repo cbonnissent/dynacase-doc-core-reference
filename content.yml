@@ -29,7 +29,7 @@ book:
           content:  "Introduction_dynacase/internationalisation.md"
 #
         - level:   1
-          content:  "Object_model/introduction.md"
+          content:  "object_model/introduction.md"
           subtoc:   2
 #
         - level:   1
@@ -45,8 +45,6 @@ book:
           content:  "famille/contraintes.md"
         - level:   2
           content:  "famille/aides_a_la_saisie.md"
-        - level:   2
-          content:  "famille/hamecons.md"
         - level:   2
           content:  "famille/parametrage_de_core.md"
 #

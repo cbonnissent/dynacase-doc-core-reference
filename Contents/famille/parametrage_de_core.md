@@ -591,12 +591,6 @@ ATTR
 
 ### Définition de paramètres de famille {#core-ref:c28824e2-3486-11e2-be3b-337d2321d8ee}
 
-Un paramètre de famille est une valeur stockée sur la famille directement,
-et accessible depuis tous les documents de cette famille.
-
-Cela est assimilable à une propriété de classe (ou propriété statique) en programmation orientée objet,
-même si l'implémentation en diffère.
-
 Un paramètre de famille est défini par la syntaxe suivante :
 
     PARAM;[id_attribut];[id_conteneur];[label];[in_title];[in_abstract];[type];[ordre];[visibility];[required];[link];[phpfile];[phpfunc];[elink];[constraint];[options]
