@@ -18,7 +18,6 @@ Voici une brève explication des différentes classes.
 ### DbObj {#core-ref:1e07e79d-3760-4d8b-9e41-95c3fb63af08}
 
 La classe `DbObj` sert à la persistance de données.
-On peut la voir comme une une sorte d'[ORM][WP_ORM].
 
 Son fonctionnement est détaillé dans la partie correspondante des
 [techniques avancées][advanced_dbobj].
@@ -59,7 +58,7 @@ Un dossier est une collection statique de documents,
 La classe `DocSearch` est la classe de base des recherches.
 
 Une recherche est une collection dynamique de documents,
-dont le contenu est calculé dynamiquement à chaque accès en fonction
+dont le contenu est calculé à chaque accès en fonction
 des critères de la recherche.
 
 ## Les Hooks {#core-ref:8f3d47de-32b5-4748-8a00-b1569c5423e5}
@@ -73,7 +72,7 @@ Par exemple, lors de la création d'un document, Dynacase vérifiera d'abord
 que l'utilisateur a bien le droit de créer un document de la famille concernée,
 puis vérifiera ensuite que le hook `Doc::preCreated` ne bloque pas cette création.
 
-### Création de document
+### Création de document {#core-ref:b28f8dcb-c0a3-4df5-b3e5-4f55611d3a4d}
 
 Les méthode surchargeables appelées lors de la création d'un document sont :
 
@@ -86,7 +85,7 @@ Les méthode surchargeables appelées lors de la création d'un document sont :
     *   `Doc::preCreated`
     *   `Doc::postCreated`
 
-### Modification de document
+### Modification de document {#core-ref:b09fd0c9-d935-4db2-b942-8a80a4bffaf3}
 
 Les méthode surchargeables appelées lors de la modification d'un document sont :
 
@@ -96,7 +95,7 @@ Les méthode surchargeables appelées lors de la modification d'un document sont
 *   Lors de la modification avec `Doc::modify`
     *   aucune
 
-### Suppression de document
+### Suppression de document {#core-ref:10c4622a-8834-4b9b-94ba-93f278d9bde0}
 
 Les méthode surchargeables appelées lors de la suppression d'un document 
 avec `Doc::delete` sont :
@@ -104,7 +103,7 @@ avec `Doc::delete` sont :
 *   `Doc::preDelete`
 *   `Doc::postDelete`
 
-### Duplication de document
+### Duplication de document {#core-ref:db739471-d1e7-4762-9cfb-1de1a823b06a}
 
 Les méthode surchargeables appelées lors de la duplication d'un document 
 avec `Doc::copy`
@@ -112,14 +111,14 @@ avec `Doc::copy`
 *   `Doc::preCopy`
 *   `Doc::postCopy`
 
-### Import de document
+### Import de document {#core-ref:a95a3a83-fab4-455c-8cb4-9b278f770f3a}
 
 Les méthode surchargeables appelées lors de l'import d'un document sont :
 
 *   `Doc::preImport`
 *   `Doc::postImport`
 
-### Ajout d'un document dans un dossier
+### Ajout d'un document dans un dossier {#core-ref:05847fea-7a2f-4b67-8b4e-ef56d225fcec}
 
 Les méthode surchargeables appelées lors de l'ajout d'un document
 dans un dossier sont :
@@ -131,7 +130,7 @@ dans un dossier sont :
     *   `Dir::preInsertDoc`
     *   `Dir::postMInsertDoc`
 
-### Retrait d'un document d'un dossier
+### Retrait d'un document d'un dossier {#core-ref:a0ec9634-095a-4caa-94e5-7a39d141e185}
 
 Les méthode surchargeables appelées lors du retrait d'un document
 dans un dossier avec `Dir::delFile` sont :
@@ -139,8 +138,6 @@ dans un dossier avec `Dir::delFile` sont :
 *   `Dir::preUnlinkDoc`
 *   `Dir::postUnlinkDoc`
 
-
 <!-- links -->
-[WP_ORM]: http://en.wikipedia.org/wiki/Object-relational_mapping "Définition du Mapping objet-relationnel sur wikipedia"
 [advanced_dbobj]: #core-ref:7a62bb83-17a0-478d-a853-bc359d0fb8fb
 [WP_hooks]: http://fr.wikipedia.org/wiki/Hook_%28informatique%29 "Définition des hooks sur wikipedia"

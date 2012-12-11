@@ -1,6 +1,6 @@
 # Les contraintes {#core-ref:7b41906b-f199-41a4-94df-33b9ad34153b}
  
-<span class="fixme template"> template for famille/contraintes.md.</span>
+## Présentation {#core-ref:c77f6d29-5059-4ee0-9006-72d57a94d04a}
 
 Une *contrainte* permet de valider la saisie de l'utilisateur avant 
 que le document soit enregistré.
@@ -20,7 +20,7 @@ Son retour doit être :
 Les suggestions seront proposées à l'utilisateur en remplacement de la valeur
 refusée par la contrainte.
 
-## Syntaxe
+## Syntaxe {#core-ref:28bfa7d5-918e-4f47-a28b-44ceefcd0a23}
 
 La syntaxe définissant les contraintes est la suivante :
 
@@ -186,9 +186,9 @@ keyWord
         
         Si l'attribut n'est pas dans un tableau, la valeur passée est <span class="fixme MCO">`-1`</span>
 
-## Exemples
+## Exemples {#core-ref:da397b74-3373-4421-986f-a88138d1dce0}
 
-### Vérification du format d'un entier
+### Vérification du format d'un entier {#core-ref:5ce1b62a-09d2-4b43-b774-381cdc9579c4}
 
 | attrid      | label    | type | visibility | phpfunc                                         |
 | -           |          |      |            |                                                 |

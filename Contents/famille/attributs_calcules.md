@@ -1,6 +1,6 @@
 # Les attributs calculés {#core-ref:4565cab9-73c8-4eee-bfa7-218ffbd4b687}
  
-<span class="fixme template"> template for famille/attributs_calcules.md.</span>
+## Présentation {#core-ref:2e0f2949-eccc-4485-915c-3953f170da86}
 
 Un *attribut calculé* est un attribut dont la valeur est calculée par Dynacase.
 
@@ -32,7 +32,7 @@ Le résultat est mis dans l'attribut sur lequel s'applique le calcul
 Le calcul est effectué lors du rafraîchissement des documents (voir la méthode `Doc::refresh()`). <span class="fixme MCO">mettre en cohérence avec l'intro</span>
 D'un point de vue utilisateur, un attribut calculé est rafraîchi avant chaque consultation de document.
 
-## Syntaxe
+## Syntaxe {#core-ref:bb54f32d-d2dd-4702-9c92-e442c800263c}
 
 La syntaxe définissant les attributs calculés est la suivante :
 
@@ -225,9 +225,9 @@ keyWord
         
         Si l'attribut n'est pas dans un tableau, la valeur passée est <span class="fixme MCO">`-1`</span>
 
-## Exemples
+## Exemples {#core-ref:f2823f33-e95d-4fdc-be56-efa5a19a8c4c}
 
-### Calcul d'un prix total
+### Calcul d'un prix total {#core-ref:e9d8d096-3c5c-4f99-afd8-6365e561d75f}
 
 Extrait de la définition de la famille
 

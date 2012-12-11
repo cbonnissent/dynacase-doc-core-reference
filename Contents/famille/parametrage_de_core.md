@@ -908,7 +908,7 @@ Lors de la surcharge, le comportement est le suivant :
 Ce comportement peut être altéré par l'utilisation des
 [Instructions de réinitialisation](#core-ref:5c661733-772d-42b8-8b3e-b70453ddfd33).
 
-## Prise en compte d'une définition de famille dans Dynacase
+## Prise en compte d'une définition de famille dans Dynacase {#core-ref:a2a64666-660f-43ca-8edf-943d0037f0df}
 
 Une fois votre définition de famille créée, vous pouvez l'importer dans Dynacase.
 

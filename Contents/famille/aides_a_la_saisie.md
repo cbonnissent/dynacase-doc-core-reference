@@ -1,6 +1,6 @@
 # Les aides à la saisie {#core-ref:0b2d4cd0-4eed-41d8-ac57-37525a444194}
  
-<span class="fixme template"> template for famille/aides_a_la_saisie.md.</span>
+## Présentation {#core-ref:6378bc90-1560-4463-9995-8a22921c656d}
 
 Une *aide à la saisie* permet de compléter ou de remplir des zones de saisie
 lors de la modification d'un document, en proposant des suggestions à l'utilisateur.
@@ -23,7 +23,7 @@ En cas d'erreur, elle peut également retourner une chaîne de caractères,
 qui servira de message d'erreur.
 
 
-## Syntaxe
+## Syntaxe {#core-ref:c3ea0d07-1032-4abf-9746-df01e9434247}
 
 La syntaxe définissant les aides à la saisie est la suivante :
 
@@ -349,9 +349,9 @@ targetKeyWord
         Est particulièrement utile dans le cas d'aides à la saisie génériques
         qui retournent plus de valeurs que d'attributs à compléter.
 
-## Exemples
+## Exemples {#core-ref:009f3b42-23a0-4599-91fc-f3589db52c55}
 
-### Retour unique
+### Retour unique {#core-ref:6b090586-613e-4a0f-91ba-fa2c5ccc33af}
 
 | attrid    | label | type | visibility | phpfile    | phpfunc                        |
 | -         |       |      |            |            |                                |
@@ -385,7 +385,7 @@ targetKeyWord
     
     ?>
 
-### Retour multiple
+### Retour multiple {#core-ref:56dc74f4-488f-48f9-86a5-3a6af94404c3}
 
 | attrid     | label       | type | visibility | phpfile      | phpfunc                                     |
 | -          |             |      |            |              |                                             |
@@ -423,9 +423,9 @@ targetKeyWord
     
     ?>
 
-## Astuces
+## Astuces {#core-ref:b9c6c197-ae52-4c5c-ab0d-5ca968a3cd32}
 
-### attributs relation
+### attributs relation {#core-ref:71c36648-8145-4dc5-985b-d6967cdf1b94}
 
 *   Lorsqu'une aide à la saisie remplit un attribut de type *docid*,
     il faut penser à remplir l'id et le titre affiché (*attrid* et *CT[attrid]*).
@@ -433,7 +433,7 @@ targetKeyWord
     par *CT[attrid]* n'existe pas, il est donc impossible de les désigner comme
     retour des aides à la saisie.
 
-### attributs htmltext
+### attributs htmltext {#core-ref:04bb23b2-21a6-43b9-b4a7-6616091878bf}
 
 *   Lorsqu'un attribut de type *htmltext* est utilisé en entrée
     d'une aide à la saisie, la valeur reçue est encodée. il est donc nécessaire
