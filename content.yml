@@ -1234,6 +1234,7 @@ book:
           content:  "Trash/introduction.md"
           flags:
             wip: "work in progress"
+            wip_sub: ""
         - level:   2
           element: "chapter"
           content:  "Trash/API/Application/getImageUrl.md"
