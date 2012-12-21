@@ -3,7 +3,7 @@ book:
     module: "Core"
     version: "3.2"
     edition: "1"
-    githubsrc: "https://github.com/Anakeen/dynacase-doc-platform-operating-manual"
+    githubsrc: "https://github.com/Anakeen/dynacase-doc-core-reference"
     chapters:
 #
         - level:   1
@@ -51,83 +51,149 @@ book:
         - level:   1
           content:  "documents_systemes/introduction.md"
           subtoc:   2
+          flags:
+            wip:  "Work in progress"
         - level:   2
           content:  "documents_systemes/recherches.md"
+          flags:
+            wip:  "Work in progress"
         - level:   3
           content:  "documents_systemes/class_searchDoc.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           content:  "documents_systemes/Search.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           content:  "documents_systemes/DSearch.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           content:  "documents_systemes/DSearch.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           content:  "documents_systemes/report.md"
+          flags:
+            wip: "work in progress"
         - level:   2
           content:  "documents_systemes/masques.md"
+          flags:
+            wip: "work in progress"
         - level:   2
           content:  "documents_systemes/controles_de_vues.md"
+          flags:
+            wip: "work in progress"
         - level:   2
           content:  "documents_systemes/modeles_de_mail.md"
+          flags:
+            wip: "work in progress"
         - level:   2
           content:  "documents_systemes/minuteurs.md"
+          flags:
+            wip: "work in progress"
         - level:   2
           content:  "documents_systemes/processus.md"
+          flags:
+            wip: "work in progress"
 #
         - level:   1
           content:  "representations/introduction.md"
+          flags:
+            wip: "work in progress"
           subtoc:   2
         - level:   2
           content:  "representations/classe_layout.md"
+          flags:
+            wip: "work in progress"
         - level:   2
           content:  "representations/vue_de_documents.md"
+          flags:
+            wip: "work in progress"
         - level:   2
           content:  "representations/vue_d_attributs.md"
+          flags:
+            wip: "work in progress"
         - level:   2
           content:  "representations/interface_edition.md"
+          flags:
+            wip: "work in progress"
         - level:   2
           content:  "representations/range_tableau.md"
+          flags:
+            wip: "work in progress"
         - level:   2
           content:  "representations/pied_de_page.md"
+          flags:
+            wip: "work in progress"
         - level:   2
           content:  "representations/ooo_layout.md"
+          flags:
+            wip: "work in progress"
 #
         - level:   1
           content:  "importation_exportation_documents/introduction.md"
+          flags:
+            wip: "work in progress"
           subtoc:   2
         - level:   2
           content:  "importation_exportation_documents/importations.md"
+          flags:
+            wip: "work in progress"
         - level:   2
           content:  "importation_exportation_documents/exportations.md"
+          flags:
+            wip: "work in progress"
 #
         - level:   1
           content:  "comptes_groupes_roles/introduction.md"
+          flags:
+            wip: "work in progress"
           subtoc:   2
 #
         - level:   1
           content:  "securite/introduction.md"
+          flags:
+            wip: "work in progress"
           subtoc:   2
 #
         - level:   1
           content:  "cycles/introduction.md"
+          flags:
+            wip: "work in progress"
           subtoc:   2
         - level:   2
           content:  "cycles/parametrage_importation.md"
+          flags:
+            wip: "work in progress"
 #
         - level:   1
           content:  "applications_actions/introduction.md"
+          flags:
+            wip: "work in progress"
           subtoc:   2
         - level:   2
           content:  "applications_actions/api_usage.md"
+          flags:
+            wip: "work in progress"
         - level:   2
           content:  "applications_actions/action_usage.md"
+          flags:
+            wip: "work in progress"
         - level:   2
           content:  "applications_actions/parametres_applicatifs.md"
+          flags:
+            wip: "work in progress"
         - level:   2
           content:  "applications_actions/droits_applicatifs.md"
+          flags:
+            wip: "work in progress"
 #
         - level:   1
           content:  "API/introduction.md"
+          flags:
+            wip: "work in progress"
           subtoc:   2
 #
 # START of API Content
@@ -136,554 +202,930 @@ book:
         - level:   2
           element: "chapter"
           content:  "API/Class_Action.md"
+          flags:
+            wip: "work in progress"
           subtoc:   1
         - level:   3
           element: "chapter"
           content:  "API/Class_Action/Method_canExecute.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_Action/Method_exitError.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_Action/Method_getImageUrl.md"
+          flags:
+            wip: "work in progress"
         - level:   2
           element: "chapter"
           content:  "API/Class_ActionUsage.md"
+          flags:
+            wip: "work in progress"
           subtoc:   1
         - level:   3
           element: "chapter"
           content:  "API/Class_ActionUsage/Method_getUsage.md"
+          flags:
+            wip: "work in progress"
         - level:   2
           element: "chapter"
           content:  "API/Class_ApiUsage.md"
+          flags:
+            wip: "work in progress"
           subtoc:   1
         - level:   3
           element: "chapter"
           content:  "API/Class_ApiUsage/Method_addEmpty.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_ApiUsage/Method_addHidden.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_ApiUsage/Method_addNeeded.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_ApiUsage/Method_addOption.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_ApiUsage/Method_setText.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_ApiUsage/Method_strict.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_ApiUsage/Method_verify.md"
+          flags:
+            wip: "work in progress"
         - level:   2
           element: "chapter"
           content:  "API/Class_Application.md"
+          flags:
+            wip: "work in progress"
           subtoc:   1
         - level:   3
           element: "chapter"
           content:  "API/Class_Application/Method_addCssCode.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_Application/Method_addCssRef.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_Application/Method_addJsCode.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_Application/Method_addJsRef.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_Application/Method_getCSSLink.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_Application/Method_getJSLink.md"
+          flags:
+            wip: "work in progress"
         - level:   2
           element: "chapter"
           content:  "API/Class_Dir.md"
+          flags:
+            wip: "work in progress"
           subtoc:   1
         - level:   3
           element: "chapter"
           content:  "API/Class_Dir/Method_AddFile.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_Dir/Method_DelFile.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_Dir/Method_postInsertDoc.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_Dir/Method_postMInsertDoc.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_Dir/Method_postModify.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_Dir/Method_postUnlinkDoc.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_Dir/Method_preInsertDoc.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_Dir/Method_preUnlinkDoc.md"
+          flags:
+            wip: "work in progress"
         - level:   2
           element: "chapter"
           content:  "API/Class_Doc.md"
+          flags:
+            wip: "work in progress"
           subtoc:   1
         - level:   3
           element: "chapter"
           content:  "API/Class_Doc/Properties.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_Doc/Method_PostCreated.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_Doc/Method_PostModify.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_Doc/Method_PreCreated.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_Doc/Method_ReallyDelete.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_Doc/Method_Refresh.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_Doc/Method_SpecRefresh.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_Doc/Method_SpecRefreshGen.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_Doc/Method__array2val.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_Doc/Method__val2array.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_Doc/Method_addArrayRow.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_Doc/Method_addComment.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_Doc/Method_addRevision.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_Doc/Method_control.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_Doc/Method_copy.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_Doc/Method_delete.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_Doc/Method_deleteArray.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_Doc/Method_deleteValue.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_Doc/Method_disableEditControl.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_Doc/Method_editattr.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_Doc/Method_enableEditControl.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_Doc/Method_getAValues.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_Doc/Method_getAttribute.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_Doc/Method_getDate.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_Doc/Method_getDocAnchor.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_Doc/Method_getFamDoc.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_Doc/Method_getOldValue.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_Doc/Method_getOldValues.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_Doc/Method_getParamValue.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_Doc/Method_getProperty.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_Doc/Method_getSpecTitle.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_Doc/Method_getState.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_Doc/Method_getTValue.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_Doc/Method_getTitle.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_Doc/Method_getValue.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_Doc/Method_isAlive.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_Doc/Method_isChanged.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_Doc/Method_latestId.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_Doc/Method_postCopy.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_Doc/Method_postImport.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_Doc/Method_postRevive.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_Doc/Method_preConsultation.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_Doc/Method_preCopy.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_Doc/Method_preEdition.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_Doc/Method_preImport.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_Doc/Method_preRevive.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_Doc/Method_removeArrayRow.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_Doc/Method_revive.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_Doc/Method_setState.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_Doc/Method_setValue.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_Doc/Method_store.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_Doc/Method_viewattr.md"
+          flags:
+            wip: "work in progress"
         - level:   2
           element: "chapter"
           content:  "API/Class_Docfam.md"
+          flags:
+            wip: "work in progress"
           subtoc:   1
         - level:   3
           element: "chapter"
           content:  "API/Class_Docfam/Properties.md"
+          flags:
+            wip: "work in progress"
         - level:   2
           element: "chapter"
           content:  "API/Class_DocumentList.md"
+          flags:
+            wip: "work in progress"
           subtoc:   1
         - level:   3
           element: "chapter"
           content:  "API/Class_DocumentList/Method_addDocumentIdentifiers.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_DocumentList/Method_count.md"
+          flags:
+            wip: "work in progress"
         - level:   2
           element: "chapter"
           content:  "API/Class_Layout.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_Layout/Method_gen.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_Layout/Method_set.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_Layout/Method_setBlockData.md"
+          flags:
+            wip: "work in progress"
         - level:   2
           element: "chapter"
           content:  "API/Class_Log.md"
+          flags:
+            wip: "work in progress"
           subtoc:   1
         - level:   3
           element: "chapter"
           content:  "API/Class_Log/Method_Log.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_Log/Method_callstack.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_Log/Method_debug.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_Log/Method_deprecated.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_Log/Method_error.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_Log/Method_fatal.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_Log/Method_info.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_Log/Method_warning.md"
+          flags:
+            wip: "work in progress"
         - level:   2
           element: "chapter"
           content:  "API/Class_ParameterManager.md"
+          flags:
+            wip: "work in progress"
           subtoc:   1
         - level:   3
           element: "chapter"
           content:  "API/Class_ParameterManager/Method_getApplicationParameter.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_ParameterManager/Method_getParameter.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_ParameterManager/Method_resetCache.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_ParameterManager/Method_setApplicationParameter.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_ParameterManager/Method_setGlobalParameter.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_ParameterManager/Method_setGlobalUserParameter.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_ParameterManager/Method_setUserApplicationParameter.md"
+          flags:
+            wip: "work in progress"
         - level:   2
           element: "chapter"
           content:  "API/Class_SearchAccount.md"
+          flags:
+            wip: "work in progress"
           subtoc:   1
         - level:   3
           element: "chapter"
           content:  "API/Class_SearchAccount/Method_addFilter.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_SearchAccount/Method_addGroupFilter.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_SearchAccount/Method_addRoleFilter.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_SearchAccount/Method_docName2login.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_SearchAccount/Method_search.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_SearchAccount/Method_setObjectReturn.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_SearchAccount/Method_setOrder.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_SearchAccount/Method_setSlice.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_SearchAccount/Method_setStart.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_SearchAccount/Method_setTypeFilter.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_SearchAccount/Method_useViewControl.md"
+          flags:
+            wip: "work in progress"
         - level:   2
           element: "chapter"
           content:  "API/Class_SearchDoc.md"
+          flags:
+            wip: "work in progress"
           subtoc:   1
         - level:   3
           element: "chapter"
           content:  "API/Class_SearchDoc/Method_addFilter.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_SearchDoc/Method_addGeneralFilter.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_SearchDoc/Method_count.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_SearchDoc/Method_excludeConfidential.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_SearchDoc/Method_getDocumentList.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_SearchDoc/Method_getError.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_SearchDoc/Method_getIds.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_SearchDoc/Method_getSearchInfo.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_SearchDoc/Method_join.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_SearchDoc/Method_nextDoc.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_SearchDoc/Method_noViewControl.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_SearchDoc/Method_onlyCount.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_SearchDoc/Method_search.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_SearchDoc/Method_setObjectReturn.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_SearchDoc/Method_setOrder.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_SearchDoc/Method_setPertinenceOrder.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_SearchDoc/Method_setRecursiveSearch.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_SearchDoc/Method_setSlice.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_SearchDoc/Method_setStart.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           element: "chapter"
           content:  "API/Class_SearchDoc/Method_useCollection.md"
+          flags:
+            wip: "work in progress"
 
 #
 # END of API Content
 #
         - level:   1
           content:  "Actions/introduction.md"
+          flags:
+            wip: "work in progress"
           subtoc:   2
         - level:   1
           content:  "Advanced/introduction.md"
+          flags:
+            wip: "work in progress"
           subtoc:   2
         - level:   2
           content:  "Advanced/Cinematique/introduction.md"
+          flags:
+            wip: "work in progress"
         - level:   2
           content:  "Advanced/Database/introduction.md"
+          flags:
+            wip: "work in progress"
         - level:   2
           content:  "Advanced/Persistance/introduction.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           content:  "Advanced/Persistance/dbobj.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           content:  "Advanced/Persistance/doc.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           content:  "Advanced/Persistance/querydb.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           content:  "Advanced/Persistance/params.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           content:  "Advanced/Persistance/famille.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           content:  "Advanced/Persistance/user.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           content:  "Advanced/Persistance/acl.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           content:  "Advanced/Persistance/application-action.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           content:  "Advanced/Persistance/permission.md"
+          flags:
+            wip: "work in progress"
         - level:   2
           content:  "Advanced/Recherche/introduction.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           content:  "Advanced/Recherche/searchdoc.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           content:  "Advanced/Recherche/dsearch.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           content:  "Advanced/Recherche/rapport.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           content:  "Advanced/Recherche/ssearch.md"
+          flags:
+            wip: "work in progress"
         - level:   2
           content:  "Advanced/Authent/introduction.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           content:  "Advanced/Authent/provider.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           content:  "Advanced/Authent/session.md"
+          flags:
+            wip: "work in progress"
         - level:   2
           content:  "Advanced/Security/introduction.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           content:  "Advanced/Security/profils.md"
+          flags:
+            wip: "work in progress"
         - level:   2
           content:  "Advanced/Template/introduction.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           content:  "Advanced/Template/texte.md"
+          flags:
+            wip: "work in progress"
         - level:   3
           content:  "Advanced/Template/odt.md"
+          flags:
+            wip: "work in progress"
         - level:   1
           content:  "Trash/introduction.md"
+          flags:
+            wip: "work in progress"
         - level:   2
           element: "chapter"
           content:  "Trash/API/Application/getImageUrl.md"
+          flags:
+            trash: "Archive - do not use this"
         - level:   2
           element: "chapter"
           content:  "Trash/API/Action/warning.md"
+          flags:
+            trash: "Archive - do not use this"
         - level:   2
           element: "chapter"
           content:  "Trash/API/Action/info.md"
+          flags:
+            trash: "Archive - do not use this"
         - level:   2
           element: "chapter"
           content:  "Trash/API/Action/hasPermission.md"
+          flags:
+            trash: "Archive - do not use this"
         - level:   2
           element: "chapter"
           content:  "Trash/API/Action/fatal.md"
+          flags:
+            trash: "Archive - do not use this"
         - level:   2
           element: "chapter"
           content:  "Trash/API/Action/execute.md"
+          flags:
+            trash: "Archive - do not use this"
         - level:   2
           element: "chapter"
           content:  "Trash/API/Action/error.md"
+          flags:
+            trash: "Archive - do not use this"
         - level:   2
           element: "chapter"
           content:  "Trash/API/Action/debug.md"
+          flags:
+            trash: "Archive - do not use this"
         - level:   2
           element: "chapter"
           content:  "Trash/API/Action/Read.md"
+          flags:
+            trash: "Archive - do not use this"
         - level:   2
           element: "chapter"
           content:  "Trash/API/Action/Register.md"
+          flags:
+            trash: "Archive - do not use this"
         - level:   2
           element: "chapter"
           content:  "Trash/API/Action/Set.md"
+          flags:
+            trash: "Archive - do not use this"
         - level:   2
           element: "chapter"
           content:  "Trash/API/Action/Unregister.md"
+          flags:
+            trash: "Archive - do not use this"
         - level:   2
           element: "chapter"
           content:  "Trash/API/Action/getArgument.md"
+          flags:
+            trash: "Archive - do not use this"
         - level:   2
           element: "chapter"
           content:  "Trash/API/Action/getImageUrl.md"
+          flags:
+            trash: "Archive - do not use this"
         - level:   2
           element: "chapter"
           content:  "Trash/API/Action/getParam.md"
+          flags:
+            trash: "Archive - do not use this"
         - level:   2
           element: "chapter"
           content:  "Trash/API/Action/introduction.md"
+          flags:
+            trash: "Archive - do not use this"
         - level:   2
           element: "chapter"
           content:  "Trash/API/Action/text.md"
+          flags:
+            trash: "Archive - do not use this"
         - level:   2
           element: "chapter"
           content:  "Trash/API/introduction.md"
+          flags:
+            trash: "Archive - do not use this"

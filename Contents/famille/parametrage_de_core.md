@@ -552,7 +552,7 @@ ATTR
         
         Par exemple : `%::myTitleLink()%&x=3`
         
-            [code php]
+            [php]
             public function myTitleLink(){
                 return sprintf('http://www.test.net/?b=%s',
                     rawurlencode($this->getTitle())
@@ -656,7 +656,7 @@ DEFAULT
         Par exemple, la méthode correspondant à la valeur par défaut précédente sera
         `DEFAULT;ATTR_ARRAY;::defaultArrayValue()`.
         
-            [code php]
+            [php]
             public function defaultArrayValue(){
                 return array(
                     array(

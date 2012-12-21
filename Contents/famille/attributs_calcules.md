@@ -22,7 +22,7 @@ Le calcul de l'attribut peut être
 
 Ce calcul est effectué au moyen :
 
-*   soit d'une méthode de la classe du document contenant l'attribut,
+*   soit d'une méthode de la classe du document contenant l'attribut <span class="fixme MCO">publique obligatoirement ?</span>,
 *   soit d'une méthode statique d'une autre classe.
 
 Elle doit retourner un résultat sous forme d'une chaîne de caractères.

@@ -6,7 +6,7 @@ Une *aide à la saisie* permet de compléter ou de remplir des zones de saisie
 lors de la modification d'un document, en proposant des suggestions à l'utilisateur.
 
 Les suggestions sont calculées au moyen d'une fonction qui doit être définie dans
-un fichier php placé dans le répertoire `/EXTERNALS` du contexte.
+un fichier php placé dans le répertoire `/EXTERNALS/` du contexte.
 
 Elle doit retourner un résultat sous la forme d'un tableau à 2 dimensions :
 
@@ -19,7 +19,7 @@ Elle doit retourner un résultat sous la forme d'un tableau à 2 dimensions :
     *   La première valeur est affichée en tant que suggestion pour l'utilisateur ;
     *   les valeurs suivantes sont *dépilées* et affectées dans l'ordre aux attributs cible.
 
-En cas d'erreur, elle peut également retourner une chaîne de caractères,
+Elle peut également retourner une chaîne de caractères,
 qui servira de message d'erreur.
 
 

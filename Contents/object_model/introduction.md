@@ -44,6 +44,7 @@ Tous les cycles de vie héritent de la classe `WDoc`.
 ### DocCollection {#core-ref:daece1b9-d710-46dc-85b6-16baa97322ab}
 
 La classe `DocCollection` est la classe de base des collections.
+
 Une collection est un ensemble de documents.
 
 ### Dir {#core-ref:977910df-1dc1-4def-9e0b-fb938f5d849f}

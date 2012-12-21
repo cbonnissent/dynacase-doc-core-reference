@@ -7,7 +7,7 @@ que le document soit enregistré.
 
 La contrainte est vérifiée au moyen :
 
-*   soit d'une méthode de la classe du document contenant l'attribut,
+*   soit d'une méthode de la classe du document contenant l'attribut <span class="fixme MCO">obligatoirement publique?</span>,
 *   soit d'une méthode statique d'une autre classe.
 
 Son retour doit être :

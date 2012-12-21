@@ -20,7 +20,7 @@ les correspondances suivantes :
 Ainsi, dans Dynacase, toute manipulation d'information passera par une
 manipulation de document :
 
-1.  instanciation ou création
+1.  instanciation (depuis la base de données) ou création
 2.  modification
 3.  enregistrement
 
