@@ -11,7 +11,9 @@ book:
 #
         - level:   1
           content:  "introduction.md"
-#
+##
+# Introduction_dynacase
+##
         - level:   1
           content:  "Introduction_dynacase/introduction.md"
           subtoc:   2
@@ -27,11 +29,15 @@ book:
           content:  "Introduction_dynacase/security.md"
         - level:   2
           content:  "Introduction_dynacase/internationalisation.md"
-#
+##
+# object_model
+##
         - level:   1
           content:  "object_model/introduction.md"
           subtoc:   2
-#
+##
+# famille
+##
         - level:   1
           content:  "famille/introduction.md"
           subtoc:   2
@@ -47,7 +53,9 @@ book:
           content:  "famille/aides_a_la_saisie.md"
         - level:   2
           content:  "famille/parametrage_de_core.md"
-#
+##
+# documents_systemes
+##
         - level:   1
           content:  "documents_systemes/introduction.md"
           subtoc:   2
@@ -55,13 +63,9 @@ book:
             wip:  "Work in progress"
         - level:   2
           content:  "documents_systemes/recherches.md"
+          subtoc:   2
           flags:
             wip:  "Work in progress"
-            wip_sub: ""
-        - level:   3
-          content:  "documents_systemes/class_searchDoc.md"
-          flags:
-            wip: "work in progress"
             wip_sub: ""
         - level:   3
           content:  "documents_systemes/Search.md"
@@ -74,7 +78,12 @@ book:
             wip: "work in progress"
             wip_sub: ""
         - level:   3
-          content:  "documents_systemes/DSearch.md"
+          content:  "documents_systemes/MSearch.md"
+          flags:
+            wip: "work in progress"
+            wip_sub: ""
+        - level:   3
+          content:  "documents_systemes/SSearch.md"
           flags:
             wip: "work in progress"
             wip_sub: ""
@@ -108,7 +117,9 @@ book:
           flags:
             wip: "work in progress"
             wip_sub: ""
-#
+##
+# representations
+##
         - level:   1
           content:  "representations/introduction.md"
           flags:
@@ -149,7 +160,9 @@ book:
           flags:
             wip: "work in progress"
             wip_sub: ""
-#
+##
+# importation_exportation_documents
+##
         - level:   1
           content:  "importation_exportation_documents/introduction.md"
           flags:
@@ -165,19 +178,25 @@ book:
           flags:
             wip: "work in progress"
             wip_sub: ""
-#
+##
+# comptes_groupes_roles
+##
         - level:   1
           content:  "comptes_groupes_roles/introduction.md"
           flags:
             wip: "work in progress"
           subtoc:   2
-#
+##
+# securite
+##
         - level:   1
           content:  "securite/introduction.md"
           flags:
             wip: "work in progress"
           subtoc:   2
-#
+##
+# cycles
+##
         - level:   1
           content:  "cycles/introduction.md"
           flags:
@@ -188,7 +207,9 @@ book:
           flags:
             wip: "work in progress"
             wip_sub: ""
-#
+##
+# applications_actions
+##
         - level:   1
           content:  "applications_actions/introduction.md"
           flags:
@@ -214,7 +235,9 @@ book:
           flags:
             wip: "work in progress"
             wip_sub: ""
-#
+##
+# API
+##
         - level:   1
           content:  "API/introduction.md"
           flags:
@@ -1097,7 +1120,9 @@ book:
           flags:
             wip: "work in progress"
           subtoc:   2
-#
+##
+# Advanced
+##
         - level:   1
           content:  "Advanced/introduction.md"
           flags:
@@ -1229,7 +1254,9 @@ book:
           flags:
             wip: "work in progress"
             wip_sub: ""
-#
+##
+# Trash
+##
         - level:   1
           content:  "Trash/introduction.md"
           flags:
