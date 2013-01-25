@@ -1127,7 +1127,6 @@ book:
           content:  "Advanced/introduction.md"
           flags:
             wip: "work in progress"
-            wip_sub: ""
           subtoc:   2
         - level:   2
           content:  "Advanced/Cinematique/introduction.md"
