@@ -42,4 +42,4 @@ Accès anonyme par `index.php `et `useIndexAsGuest`
     Pour ouvrir explicitement une session de consultation authentifiée, il faut
     accéder à l'URL de l'application d'authentification spécifique de
     l'Authenticator utilisé. Par exemple pour l'Authenticator `html` :
-    `authent.php?sole=A&app=AUTHENT&action=LOGINFORM`
+    `authent.php?app=AUTHENT&action=LOGINFORM`

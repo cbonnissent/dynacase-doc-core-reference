@@ -22,7 +22,7 @@ L'action demandée par la requête doit être déclarée `openaccess=Y` pour pou
 Les jetons sont créés à l'aide de la classe `Class.UserToken.php`.
 
 Un jeton peut être paramétré pour n'être utilisable qu'avec une action bien
-définie, et empêcher ainsi qu'il ne soit utilisé pour éexécuter une action non
+définie, et empêcher ainsi qu'il ne soit utilisé pour exécuter une action non
 autorisée.
 
 Pour plus de détails sur la création des jetons : voir la documentation du

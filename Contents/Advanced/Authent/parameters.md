@@ -30,7 +30,7 @@ Exemple de fichier `conf/dbaccess.php` livré par dynacase :
             'auth' => array(
                 'app' => 'AUTHENT',
                 'action' => 'LOGINFORM',
-                'args' => 'sole=A'
+                'args' => ''
             ) ,
             'username' => 'auth_user',
             'password' => 'auth_pass',
@@ -181,7 +181,7 @@ Les paramètres des Authenticator sont spécifiés dans la variable
             'auth' => array(
                 'app' => 'AUTHENT',
                 'action' => 'LOGINFORM',
-                'args' => 'sole=A'
+                'args' => ''
             ) ,
             'username' => 'auth_user',
             'password' => 'auth_pass',

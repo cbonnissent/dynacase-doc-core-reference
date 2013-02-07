@@ -619,6 +619,7 @@ book:
           content:  "Advanced/Recherche/ssearch.md"
         - level:   2
           content:  "Advanced/Authent/introduction.md"
+          subtoc:   1
         - level:   3
           content:  "Advanced/Authent/parameters.md"
         - level:   3
