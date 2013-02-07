@@ -619,11 +619,16 @@ book:
           content:  "Advanced/Recherche/ssearch.md"
         - level:   2
           content:  "Advanced/Authent/introduction.md"
+          subtoc:   1
+        - level:   3
+          content:  "Advanced/Authent/parameters.md"
+        - level:   3
+          content:  "Advanced/Authent/open_provider.md"
+        - level:   3
+          content:  "Advanced/Authent/guest.md"
         - level:   3
           content:  "Advanced/Authent/provider.md"
         - level:   3
-          content:  "Advanced/Authent/session.md"
-        - level:   2
           content:  "Advanced/Security/introduction.md"
         - level:   3
           content:  "Advanced/Security/profils.md"
