@@ -9,10 +9,10 @@ Ils sont assimilables à des propriétés de classe (ou propriétés statiques)
 en programmation orientée objet, même si l'implémentation en diffère.
 
 Ils sont typés au même titre que les attributs,
-<span class="fixme MCO">et peuvent également être soumis à des contraintes</span>.
+<span class="fixme" data-assignedto="EBR">et peuvent également être soumis à des contraintes</span>.
 
 Un paramètre de famille peut également être dynamique,
-lorsqu'il est défini par une méthode statique <span class="fixme MCO">de la famille uniquement?</span>.
+lorsqu'il est défini par une méthode statique <span class="fixme" data-assignedto="EBR">de la famille uniquement?</span>.
 Dans ce cas, la méthode sera lancée à chaque récupération du paramètre.
 
 ## Exemple d'utilisation {#core-ref:a29da8f2-6619-4b58-a3f2-a7c7690f0cb2}

@@ -29,7 +29,7 @@ des éléments de présentation suivants :
 *   une limite au nombre de résultats présentés.
     Lorsque le nombre d'éléments est supérieur à cette limite, 
     alors la liste de résultats sera tronquée 
-    et seul les N premiers éléments seront présentés, <span class="fixme MCO">valeur par défaut?</span>
+    et seul les N premiers éléments seront présentés, <span class="fixme" data-assignedto="EBR">valeur par défaut?</span>
 
 *   les colonnes du tableau de résultat.
     
@@ -65,7 +65,7 @@ via un assistant d'export.
 
 ## Assistant d'export csv
 
-<span class="fixme MCO"></span>
+<span class="fixme" data-assignedto="MCO"></span>
 
 <!-- links -->
 [detailed_search_param]: #core-ref:de8a1440-fb42-4ad0-b041-5c762b5258d9

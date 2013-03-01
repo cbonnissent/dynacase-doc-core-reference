@@ -973,7 +973,7 @@ Le langage de mise en forme est le html, et un éditeur WYSIWYG (basé sur [CKEd
 
 *   odt :
     
-    la mise en forme est conservée. <span class="fixme MCO">capture + détails suite à correction de [#3283](http://dev.dynacase.org/issues/3283)</span>
+    la mise en forme est conservée. <span class="fixme" data-assignedto="MCO">capture + détails suite à correction de [#3283](http://dev.dynacase.org/issues/3283)</span>
 
 ### comportement {#core-ref:9bad041e-d747-4d9b-9406-5b62d662229b}
 

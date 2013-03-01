@@ -253,7 +253,7 @@ Ce qui donne en [BNF][WP_BNF] :
     
     targetKeyWord   ::= ( 'CT' | 'CT' '[' relationAttributeName ']' )
 
-<span class="fixme MCO">pas d'espaces possibles?</span>
+<span class="fixme" data-assignedto="EBR">pas d'espaces possibles?</span>
 
 avec les éléments suivants :
 
@@ -268,7 +268,7 @@ sourceAttributeName
         l'aide à la saisie est dans le même tableau,
     *   la valeur de la colonne (sous la forme d'un tableau php) si l'attribut
         sur lequel est définie l'aide à la saisie est en dehors du tableau
-        <span class="fixme MCO">(y compris si l'attribut calculé est dans un autre tableau)</span>
+        <span class="fixme" data-assignedto="EBR">(y compris si l'attribut calculé est dans un autre tableau)</span>
 
 familyParametername
 :   Un nom de paramètre existant dans la famille.
@@ -300,20 +300,20 @@ sourceKeyWord
     K
     :   L'index de la ligne en cours si l'attribut est dans un tableau.
         
-        Si l'attribut n'est pas dans un tableau, la valeur passée est <span class="fixme MCO">`-1`</span>
+        Si l'attribut n'est pas dans un tableau, la valeur passée est <span class="fixme" data-assignedto="EBR">`-1`</span>
     
     T
     :   L'objet php correspondant au document en cours.
         
-        <span class="fixme MCO">le document tel qu'il est en édition, ou le document en base?</span>
+        <span class="fixme" data-assignedto="EBR">le document tel qu'il est en édition, ou le document en base?</span>
     
     A
     :   L'action courante (un objet de la classe `Action`).
-        <span class="fixme MCO">à quoi ça sert?</span>
+        <span class="fixme" data-assignedto="EBR">à quoi ça sert?</span>
 
 propertyName
 :   Une propriété du document.
-    <span class="fixme MCO">toutes, ou seulement ID, INITID, TITLE, FROMID, VERSION, REVISION, STATE ?</span>
+    <span class="fixme" data-assignedto="EBR">toutes, ou seulement ID, INITID, TITLE, FROMID, VERSION, REVISION, STATE ?</span>
 
 appParameterName
 :   Un paramètre applicatif.
@@ -323,7 +323,7 @@ appParameterName
 familyName
 :   Un nom logique de famille.
     
-    <span class="fixme MCO">il est remplacé par quoi?</span>
+    <span class="fixme" data-assignedto="EBR">il est remplacé par quoi?</span>
 
 targetAttributeName
 :   Un nom d'attribut existant dans la famille.

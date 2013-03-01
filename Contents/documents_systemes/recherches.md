@@ -4,7 +4,7 @@
 
 Dans Dynacase, il est possible de définir des recherches et de les sauvegarder
 pour les réutiliser. Ce qui est sauvegardé au moyen d'une recherche',
-ce sont les critères et non pas les résultats. <span class="fixme MCO">mettre un exemple</span>
+ce sont les critères et non pas les résultats. <span class="fixme" data-assignedto="MCO">mettre un exemple</span>
 
 Une recherche est donc une *collection dynamique* de documents.
 
@@ -21,7 +21,7 @@ des recherches pré-cablées pour les utilisateurs : ces recherches doivent
     [propriétés des familles][family_properties]
     de la famille concernée).
 
-<span class="fixme MCO">mettre un exemple</span>
+<span class="fixme" data-assignedto="MCO">mettre un exemple</span>
 
 ### Backend d'approvisionnement pour des interfaces spécifiques {#core-ref:4871bf7b-02b0-408a-b1e1-585ae3554921}
 

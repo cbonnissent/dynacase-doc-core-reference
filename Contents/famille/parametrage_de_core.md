@@ -50,7 +50,7 @@ Exemple de définition d'une famille :
     ;;;;;;;;;;;;;;;;
     END;;;;;;;;;;;;;;;;
 
-Ce qui donne, vu dans un tableau :<span class="fixme MCO">MCL: ajout de `div.table{overflow: auto;}` dans la css<style>div.table{overflow: auto;}</style></span>
+Ce qui donne, vu dans un tableau :<span class="fixme" data-assignedto="MCO">MCL: ajout de `div.table{overflow: auto;}` dans la css<style>div.table{overflow: auto;}</style></span>
 
 |          |                       |                   |                |   |            |                     |     |     |      |                                                                              |         |                                       |            |                                  |                                          |                                |  |  |
 | -        |                       |                   |                |   |            |                     |     |     |      |                                                                              |         |                                       |            |                                  |                                          |                                |  |  |
@@ -257,7 +257,7 @@ ICON
     
     Si une icône est déjà présente pour cette famille, elle ne sera pas modifiée.
     
-    <span class="fixme MCO">si la valeur est vide…</span>
+    <span class="fixme" data-assignedto="EBR">si la valeur est vide…</span>
 
 METHOD
 :   Indique le nom du fichier contenant les méthodes supplémentaires de la famille.
@@ -306,7 +306,7 @@ TAG
         destinataires lors des envois de mail.
         
         La famille doit alors implémenter l'interface `IMailRecipient`.
-        <span class="fixme MCO">ajout d'un lien vers l'interface</span>
+        <span class="fixme" data-assignedto="MCO">ajout d'un lien vers l'interface</span>
 
 TYPE
 :   Valeur par défaut de la propriété *type*.
@@ -374,7 +374,7 @@ ATTR
     Tous les autres attributs doivent être contenus dans un *array* ou un *frame*.
 
 [label]
-:   <span class="fixme MCO">obligatoire?</span>  
+:   <span class="fixme" data-assignedto="EBR">obligatoire?</span>  
     Libellé de l'attribut.
     
     Ce libellé sera automatiquement traduit s'il est présent dans le catalogue de traduction
@@ -455,7 +455,7 @@ ATTR
         l’attribut n’est présent ni en consultation ni en modification dans le document.  
         Un attribut de visibilité I n'est pas modifiable et pour en modifier la valeur,
         il est nécessaire de modifier sa visibilité.
-    *   `O` (*<span class="fixme MCO">O pour ?</span>*) :
+    *   `O` (*<span class="fixme" data-assignedto="EBR">O pour ?</span>*) :
         attribut modifiable en modification mais non visible en lecture.
     *   `R` (*Read-only*) : attribut visible en lecture seulement.
         Généralement utilisé pour les attributs calculés.
@@ -464,7 +464,7 @@ ATTR
     
     Le type array dispose en plus de la visibilité
     
-    *   `U` <span class="fixme MCO">U pour ?</span>: Interdit l'ajout et la suppression de lignes dans le tableau.
+    *   `U` <span class="fixme" data-assignedto="EBR">U pour ?</span>: Interdit l'ajout et la suppression de lignes dans le tableau.
 
 
 [required]
@@ -597,7 +597,7 @@ Un paramètre de famille est défini par la syntaxe suivante :
 
 avec les mêmes correspondances que pour [les attributs][attributs], aux exceptions suivantes :
 
-<span class="fixme MCO">différences entre PARAM et ATTR</span>
+<span class="fixme" data-assignedto="EBR">différences entre PARAM et ATTR</span>
 
 ### Définition de valeurs par défaut {#core-ref:94fa51e2-3488-11e2-9e34-1f7c912168cf}
 
@@ -858,17 +858,17 @@ RESET
     `properties`
     :   Réinitialise les paramètres des propriétés.
         
-        <span class="fixme MCO">Tous les paramètres de propriétés seront remis à leur valeur par défaut?</span>
+        <span class="fixme" data-assignedto="EBR">Tous les paramètres de propriétés seront remis à leur valeur par défaut?</span>
     
     `parameters`
     :   Réinitialise les paramètres de famille
         
         La définition de tous les paramètres de famille sera effacée
-        <span class="fixme MCO">quid des valeurs des paramètres?</span>
+        <span class="fixme" data-assignedto="EBR">quid des valeurs des paramètres?</span>
 
 Ces instructions de réinitialisation doivent être placées avant la nouvelle définition des éléments réinitialisés. 
 
-<span class="fixme MCO">plusieurs reset sur une seule ou plusieurs lignes?</span>
+<span class="fixme" data-assignedto="EBR">plusieurs reset sur une seule ou plusieurs lignes?</span>
 
 ## Surcharge de définition de famille {#core-ref:686b17c3-220e-4450-a0d0-feb5db002cbc}
 
@@ -883,27 +883,27 @@ Lors de la surcharge, le comportement est le suivant :
 
 *   pour les [paramètres de propriété](#core-ref:40d229c4-33c4-11e2-9147-a3eaf356c37c)
     
-    <span class="fixme MCO">La nouvelle valeur écrase la valeur précédemment définie</span>
+    <span class="fixme" data-assignedto="EBR">La nouvelle valeur écrase la valeur précédemment définie</span>
 
 *   pour les [propriétés de famille](#core-ref:6f013eb8-33c7-11e2-be43-373b9514dea3)
     
-    <span class="fixme MCO">La nouvelle valeur écrase la valeur précédemment définie</span>
+    <span class="fixme" data-assignedto="EBR">La nouvelle valeur écrase la valeur précédemment définie</span>
 
 *   pour les [attributs](#core-ref:bc3fad86-33cc-11e2-9a69-1bbd9c32b0f2)
     
-    <span class="fixme MCO">La nouvelle définition écrase la définition précédemment définie</span>
+    <span class="fixme" data-assignedto="EBR">La nouvelle définition écrase la définition précédemment définie</span>
 
 *   pour les [paramètres de famille](#core-ref:c28824e2-3486-11e2-be3b-337d2321d8ee)
     
-    <span class="fixme MCO">La nouvelle définition écrase la définition précédemment définie</span>
+    <span class="fixme" data-assignedto="EBR">La nouvelle définition écrase la définition précédemment définie</span>
 
 *   pour les [valeurs par défaut](#core-ref:94fa51e2-3488-11e2-9e34-1f7c912168cf)
     
-    <span class="fixme MCO">La nouvelle valeur écrase la valeur précédemment définie si *force=yes* est utilisé</span>
+    <span class="fixme" data-assignedto="EBR">La nouvelle valeur écrase la valeur précédemment définie si *force=yes* est utilisé</span>
 
 *   pour les [valeurs initiale de paramètre](#core-ref:da804e2e-3573-11e2-8974-4ba96567fbf9)
     
-    <span class="fixme MCO">La nouvelle valeur écrase la valeur précédemment définie si *force=yes* est utilisé</span>
+    <span class="fixme" data-assignedto="EBR">La nouvelle valeur écrase la valeur précédemment définie si *force=yes* est utilisé</span>
 
 Ce comportement peut être altéré par l'utilisation des
 [Instructions de réinitialisation](#core-ref:5c661733-772d-42b8-8b3e-b70453ddfd33).
@@ -919,7 +919,7 @@ L'import se fait en ligne de commande, avec la commande suivante :
 
     ./wsh.php --api=importDocuments --file=[chemin vers le fichier de définition]
 
-<span class="fixme MCO">Pour plus de détails sur l'API `importDocuments`, se référer à la documentation correspondante</span>
+<span class="fixme" data-assignedto="MCO">Pour plus de détails sur l'API `importDocuments`, se référer à la documentation correspondante</span>
 
 <!-- links -->
 [PHP_sprintf]: http://php.net/manual/fr/function.sprintf.php "Documentation de la fonction sprintf sur php.net"

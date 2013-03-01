@@ -4,7 +4,7 @@
 
 Un *attribut calculé* est un attribut dont la valeur est calculée par Dynacase.
 
-<span class="fixme MCO"> Cette valeur ne peut pas être modifié directement par l'utilisateur. Par conséquent, ce type d'attribut ne peut pas avoir d'aide à la saisie. Sa visibilité est soit H (caché) soit R (lecture)</span>
+<span class="fixme" data-assignedto="EBR"> Cette valeur ne peut pas être modifié directement par l'utilisateur. Par conséquent, ce type d'attribut ne peut pas avoir d'aide à la saisie. Sa visibilité est soit H (caché) soit R (lecture)</span>
 
 Le calcul de l'attribut peut être
 
@@ -22,14 +22,14 @@ Le calcul de l'attribut peut être
 
 Ce calcul est effectué au moyen :
 
-*   soit d'une méthode de la classe du document contenant l'attribut <span class="fixme MCO">publique obligatoirement ?</span>,
+*   soit d'une méthode de la classe du document contenant l'attribut <span class="fixme" data-assignedto="EBR">publique obligatoirement ?</span>,
 *   soit d'une méthode statique d'une autre classe.
 
 Elle doit retourner un résultat sous forme d'une chaîne de caractères.
 Le résultat est mis dans l'attribut sur lequel s'applique le calcul
 (sauf redirection explicite faite lors de la déclaration de l'attribut).
 
-Le calcul est effectué lors du rafraîchissement des documents (voir la méthode `Doc::refresh()`). <span class="fixme MCO">mettre en cohérence avec l'intro</span>
+Le calcul est effectué lors du rafraîchissement des documents (voir la méthode `Doc::refresh()`). <span class="fixme" data-assignedto="MCO">mettre en cohérence avec l'intro</span>
 D'un point de vue utilisateur, un attribut calculé est rafraîchi avant chaque consultation de document.
 
 ## Syntaxe {#core-ref:bb54f32d-d2dd-4702-9c92-e442c800263c}
@@ -189,7 +189,7 @@ Ce qui donne en [BNF][WP_BNF] :
     
     keyWord         ::= 'THIS' | 'K'
 
-<span class="fixme MCO">pas de paramètres applicatifs, pas de propriétés, pas de paramètres de famille, etc.?</span>
+<span class="fixme" data-assignedto="EBR">pas de paramètres applicatifs, pas de propriétés, pas de paramètres de famille, etc.?</span>
 
 avec les éléments suivants :
 
@@ -210,7 +210,7 @@ sourceAttributeName
     
     *   la valeur sur la même ligne si l'attribut calculé est dans le même tableau
     *   la valeur de la colonne (sous la forme d'un tableau php) si l'attribut calculé est en dehors du tableau
-        <span class="fixme MCO">(y compris si l'attribut calculé est dans un autre tableau)</span>
+        <span class="fixme" data-assignedto="EBR">(y compris si l'attribut calculé est dans un autre tableau)</span>
 
 keyWord
 :   Un mot clé qui est remplacé par une valeur dynamique
@@ -223,7 +223,7 @@ keyWord
     K
     :   L'index de la ligne en cours si l'attribut est dans un tableau.
         
-        Si l'attribut n'est pas dans un tableau, la valeur passée est <span class="fixme MCO">`-1`</span>
+        Si l'attribut n'est pas dans un tableau, la valeur passée est <span class="fixme" data-assignedto="EBR">`-1`</span>
 
 ## Exemples {#core-ref:f2823f33-e95d-4fdc-be56-efa5a19a8c4c}
 

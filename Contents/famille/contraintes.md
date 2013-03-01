@@ -7,7 +7,7 @@ que le document soit enregistré.
 
 La contrainte est vérifiée au moyen :
 
-*   soit d'une méthode de la classe du document contenant l'attribut <span class="fixme MCO">obligatoirement publique?</span>,
+*   soit d'une méthode de la classe du document contenant l'attribut <span class="fixme" data-assignedto="EBR">obligatoirement publique?</span>,
 *   soit d'une méthode statique d'une autre classe.
 
 Son retour doit être :
@@ -157,7 +157,7 @@ Ce qui donne en [BNF][WP_BNF] :
     
     keyWord         ::= 'THIS' | 'K'
 
-<span class="fixme MCO">pas de paramètres de famille, etc?</span>
+<span class="fixme" data-assignedto="EBR">pas de paramètres de famille, etc?</span>
 
 avec les éléments suivants :
 
@@ -171,7 +171,7 @@ sourceAttributeName
     *   la valeur sur la même ligne si l'attribut sur lequel est définie la contrainte est dans le même tableau
     *   la valeur de la colonne (sous la forme d'un tableau php) si l'attribut
         sur lequel est définie la contrainte est en dehors du tableau
-        <span class="fixme MCO">(y compris si l'attribut calculé est dans un autre tableau)</span>
+        <span class="fixme" data-assignedto="EBR">(y compris si l'attribut calculé est dans un autre tableau)</span>
 
 keyWord
 :   Un mot clé qui est remplacé par une valeur dynamique
@@ -184,7 +184,7 @@ keyWord
     K
     :   L'index de la ligne en cours si l'attribut est dans un tableau.
         
-        Si l'attribut n'est pas dans un tableau, la valeur passée est <span class="fixme MCO">`-1`</span>
+        Si l'attribut n'est pas dans un tableau, la valeur passée est <span class="fixme" data-assignedto="EBR">`-1`</span>
 
 ## Exemples {#core-ref:da397b74-3373-4421-986f-a88138d1dce0}
 
@@ -218,7 +218,7 @@ keyWord
     
     ?>
 
-<span class="fixme MCO">Note: Pour plus de souplesse, les bornes min et max pourrait être stockées
+<span class="fixme" data-assignedto="MCO">Note: Pour plus de souplesse, les bornes min et max pourrait être stockées
 dans des paramètres de la famille, et passés en paramètre à la méthode de la contrainte.</span>
 
 <!-- links -->
