@@ -50,17 +50,20 @@ le fichier `conf/local-dbaccess.php`.
 
 Lorsque l'utilisateur demande une page, un appel est effectué à la méthode
 `checkAuthentication()` *(1)* de l'Authenticator qui retourne si l'utilisateur
-est déjà authentifié ou non *(2)*.
-
-Si l'utilisateur est déjà authentifié, alors l'accès à la page est autorisé.
+est déjà authentifié ou non.
 
 Si l'utilisateur n'est pas authentifié, alors il est redirigé vers la méthode
 `askAuthentication()` qui est en charge de dérouter l'exécution vers le code
-nécessaire à la demande des informations de connection.
+nécessaire à la demande des informations de connexion.
 
 L'utilisateur rentre les informations d'authentification qui sont ensuite
-validées auprés des Provider configurés via l'appel de la méthode
-`validateCredential()` du Provider *(3)* et *(4)*.
+validées auprès des Providers configurés via l'appel de la méthode
+`validateCredential()` du Provider *(4)*.
+
+Une fois l'utilisateur authentifié, un contrôle d'autorisation est effectué avec
+d'une part un premier contrôle auprès du Provider via l'appel de la méthode
+`checkAuthorization()` de l'Authenticator *(2)*, et d'autre part, un deuxième
+contrôle d'autorisation final auprès de Dynacase *(3)*.
 
 <!-- links -->
 [wikipedia_Basic_access_authentication]: http://en.wikipedia.org/wiki/Basic_access_authentication

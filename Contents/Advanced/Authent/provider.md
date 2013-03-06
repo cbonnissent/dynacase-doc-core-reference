@@ -6,10 +6,10 @@ classe `WHAT/Class.Provider.php`.
 Les méthodes à implémenter obligatoirement sont :
 
 * abstract function validateCredential($username, $password)
-* abstract function validateAuthorization($opt)
 
 Les méthodes optionnelles sont :
 
+* public function validateAuthorization($opt)
 * public function __construct($authProviderName, $parms)
 * public function initializeUser($username)
 
@@ -32,14 +32,21 @@ La méthode doit retourner :
 Une fois le couple login/password validé, cette méthode permet de contrôler si
 l'utilisateur est autorisé à se connecter.
 
+Cette méthode est optionnelle, et peut ne pas être fournit par le Provider s'il
+n'a pas de contrôles d'autorisation supplémentaires à faire.
+
 Cette méthode prend entrée un argument :
 
 *   `$opt`: une structure contenant le nom de l'utilisateur.
     
         [php]
         $opt = array(
-            'username' => $username
+            'username' => $username,
+            'dcp_account' => $Account
         );
+
+* `'username'` : le login de l'utilisateur authentifié.
+* `'dcp_account`' : l'objet *Account* de l'utilisateur authentifié.
 
 La méthode retourne :
 
@@ -115,8 +122,8 @@ notre provider, et utiliser la commande `checkpassword-pam` pour valider le
 username et le password reçu.
 
 Pour simplifier l'exemple, la méthode `validateAuthorization()` retournera
-`true` systématiquement (on supposera que l'autorisation du compte est établie
-dans la phase de validation du mot de passe).
+`true` systématiquement (elle pourrait aussi ne pas être implémentée, ce qui
+donnerait le même résultat).
 
     [php]
     <?php
@@ -128,13 +135,13 @@ dans la phase de validation du mot de passe).
         public function validateCredential($username, $password) {
             $service = 'freedom';
             if( array_key_exists('service', $this->parms) ) {
-                $service = $this->parms{'service'};
+                $service = $this->parms['service'];
             }
             return $this->checkpassword_pam($username, $password, $service);
         }
         
         public function validateAuthorization($opt) {
-            $username = $opt{'username'};
+            $username = $opt['username'];
             return true;
         }
         
