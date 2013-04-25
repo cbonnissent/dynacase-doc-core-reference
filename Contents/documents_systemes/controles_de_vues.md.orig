@@ -44,14 +44,14 @@ un nom de *menu*
 :   si la vue est affichable, indique le libellé du menu sous lequel doit être
     présentée la vue
     
-## Profilage du contrôle de vue {#core-ref:742f93b5-9df6-4cad-be22-1fd8eb6a76ef}
+## Profilage du contrôle de vue
 
 Il est possible d'appliquer un profil à un contrôle de vue. Ce profile détermine
 alors pour chaque vue qui a le droit d'y accéder.
 
 Le profil en question peut être statique, mais également dynamique.
 
-## Choix automatique de la vue {#core-ref:b74b3617-2085-47f8-9172-9f35c0290b5a}
+## Choix automatique de la vue
 
 La vue à utiliser peut être explicitement spécifiée au moyen du paramètre d'url
 `vid=[VIEW_ID]` où `[VIEW_ID]` est l'*identifiant système* de la vue à
@@ -65,23 +65,10 @@ sera automatiquement choisie selon le mécanisme suivant :
 2.  classement des vues restantes par numéro d'*ordre*,
 3.  utilisation de la première des vues restantes.
 
-<span class="fixme MCO">Si aucune des vues n'est utilisable, …</span>
-
-## libellé du menu *modifier* {#core-ref:bcf1d848-9abb-4260-a4c1-0c6fd5abc3c9}
+## libellé du menu *modifier*
 
 Lors de la consultation, le libellé du menu *modifier* correspondra au libellé
 de la vue de modification choisie selon l'algorithme précédent.
-
-## Astuces
-
-Les ordres ne sont pas obligés de se suivre. Aussi, vous pouvez numéroter vos
-vues de 10 en 10, afin de faciliter l'ajout futur d'une nouvelle vue.
-
-Il est recommandé de restreindre la visibilité des attributs sur la famille,
-et d'élargir ces visibilités au moyen des contrôles de vue et des masques
-associés. Ainsi, il devient aisé d'avoir une vue d'administration, utilisant un
-masque dédié, et ayant le plus faible ordre, et les autres vues restreintes,
-sans masque et avec un ordre supérieur.
 
 <!-- links -->
 [masque]: #core-ref:327ad491-06df-4e5b-b49a-695c75439fe1
