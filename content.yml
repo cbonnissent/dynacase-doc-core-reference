@@ -62,56 +62,30 @@ book:
       content:  "documents_systemes/introduction.md"
       subtoc:   2
       flags:
-        wip:  "Work in progress"
         need-review:  "Need review"
     - level:   2
       content:  "documents_systemes/recherches.md"
       subtoc:   2
-      flags:
-        wip:  "Work in progress"
     - level:   3
       content:  "documents_systemes/Search.md"
-      flags:
-        wip: "work in progress"
     - level:   3
       content:  "documents_systemes/DSearch.md"
-      flags:
-        wip: "work in progress"
     - level:   3
       content:  "documents_systemes/MSearch.md"
-      flags:
-        wip: "work in progress"
     - level:   3
       content:  "documents_systemes/SSearch.md"
-      flags:
-        wip: "work in progress"
     - level:   3
       content:  "documents_systemes/report.md"
-      flags:
-        wip: "work in progress"
     - level:   2
       content:  "documents_systemes/masques.md"
-      flags:
-        wip: "work in progress"
     - level:   2
       content:  "documents_systemes/controles_de_vues.md"
-      flags:
-        wip: "work in progress"
     - level:   2
       content:  "documents_systemes/modeles_de_mail.md"
-      flags:
-        wip: "work in progress"
-        wip_sub: ""
     - level:   2
       content:  "documents_systemes/minuteurs.md"
-      flags:
-        wip: "work in progress"
-        wip_sub: ""
     - level:   2
       content:  "documents_systemes/processus.md"
-      flags:
-        wip: "work in progress"
-        wip_sub: ""
 ##
 # representations
 ##

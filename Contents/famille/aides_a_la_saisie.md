@@ -73,44 +73,54 @@ La syntaxe définissant les aides à la saisie est la suivante :
 <path class="rule_path_edge" d="M0 -6 L0 6 M442 -6 L442 6" />
 </svg>
 
-<svg width="424" height="352" viewBox="-8 -58 424 352 " xmlns="http://www.w3.org/2000/svg" version="1.1">
+<svg width="856" height="380" viewBox="-8 -86 856 380 " xmlns="http://www.w3.org/2000/svg" version="1.1">
 <defs><style type="text/css">.terminal_rect{fill:rgb(206,255,206);stroke:black;stroke-width:2;}.terminal_text{fill:black;font-family:Verdana,Sans-serif;text-anchor:middle;font-size:14px;}.symbol_rect{fill:rgb(206,255,206);stroke:black;stroke-width:2;}.symbol_text{fill:black;font-family:Verdana,Sans-serif;font-weight:bold;font-style:italic;text-anchor:middle;font-size:14px;}.path{fill:none;stroke:black;stroke-width:2;}.rule_text{fill:black;font-family:Verdana,Sans-serif;font-weight:bold;font-size:14px;}.rule_path_edge{fill:none;stroke:black;stroke-width:3;}</style></defs>
-<text class="rule_text" x="0" y="-36" >funcInput:</text>
-<rect class="symbol_rect" x="66" y="-14" width="206" height="28" rx="1" />
-<text class="symbol_text" x="169" y="4" >sourceAttributeName</text>
-<rect class="symbol_rect" x="66" y="30" width="206" height="28" rx="1" />
-<text class="symbol_text" x="169" y="48" >familyParameterName</text>
-<rect class="symbol_rect" x="66" y="74" width="56" height="28" rx="1" />
-<text class="symbol_text" x="94" y="92" >text</text>
-<rect class="symbol_rect" x="66" y="118" width="146" height="28" rx="1" />
-<text class="symbol_text" x="139" y="136" >sourceKeyWord</text>
-<rect class="symbol_rect" x="66" y="162" width="136" height="28" rx="1" />
-<text class="symbol_text" x="134" y="180" >propertyName</text>
-<rect class="terminal_rect" x="66" y="206" width="26" height="28" rx="28" />
-<text class="terminal_text" x="79" y="224" >{</text>
-<rect class="symbol_rect" x="116" y="206" width="176" height="28" rx="1" />
-<text class="symbol_text" x="204" y="224" >appParameterName</text>
-<rect class="terminal_rect" x="316" y="206" width="26" height="28" rx="28" />
-<text class="terminal_text" x="329" y="224" >}</text>
-<path class="path" d="M92 220 L116 220" />
-<path class="path" d="M292 220 L316 220" />
-<rect class="terminal_rect" x="66" y="250" width="26" height="28" rx="28" />
-<text class="terminal_text" x="79" y="268" >{</text>
-<rect class="symbol_rect" x="116" y="250" width="116" height="28" rx="1" />
-<text class="symbol_text" x="174" y="268" >familyName</text>
-<rect class="terminal_rect" x="256" y="250" width="26" height="28" rx="28" />
-<text class="terminal_text" x="269" y="268" >}</text>
-<path class="path" d="M92 264 L116 264" />
-<path class="path" d="M232 264 L256 264" />
-<path class="path" d="M30 0 L66 0 M30 0 Q42 0 42 12 M378 0 L272 0 M378 0 Q366 0 366 12" />
-<path class="path" d="M54 44 L66 44 M54 44 Q42 44 42 32 L42 12 M354 44 L272 44 M354 44 Q366 44 366 32 L366 12" />
-<path class="path" d="M54 88 L66 88 M54 88 Q42 88 42 76 L42 32 M354 88 L122 88 M354 88 Q366 88 366 76 L366 32" />
-<path class="path" d="M54 132 L66 132 M54 132 Q42 132 42 120 L42 76 M354 132 L212 132 M354 132 Q366 132 366 120 L366 76" />
-<path class="path" d="M54 176 L66 176 M54 176 Q42 176 42 164 L42 120 M354 176 L202 176 M354 176 Q366 176 366 164 L366 120" />
-<path class="path" d="M54 220 L66 220 M54 220 Q42 220 42 208 L42 164 M354 220 L342 220 M354 220 Q366 220 366 208 L366 164" />
-<path class="path" d="M54 264 L66 264 M54 264 Q42 264 42 252 L42 208 M354 264 L282 264 M354 264 Q366 264 366 252 L366 208" />
-<path class="path" d="M0 0 L30 0 M408 0 L378 0" />
-<path class="rule_path_edge" d="M0 -6 L0 6 M408 -6 L408 6" />
+<text class="rule_text" x="0" y="-64" >funcInput:</text>
+<rect class="terminal_rect" x="78" y="-14" width="96" height="28" rx="28" />
+<text class="terminal_text" x="126" y="4" >&lt;spaces&gt;</text>
+<path class="path" d="M78 0 L54 0 M66 0 Q54 0 54 -12 L54 -36 Q54 -48 66 -48 L186 -48 Q198 -48 198 -36 L198 -12 Q198 0 186 0 L174 0 L198 0" />
+<path class="path" d="M78 0 L30 0 Q42 0 42 12 L42 24 Q42 36 54 36 L198 36 Q210 36 210 24 L210 12 Q210 0 222 0 L174 0 M30 0 L54 0 M198 0 L222 0" />
+<rect class="symbol_rect" x="282" y="-14" width="206" height="28" rx="1" />
+<text class="symbol_text" x="385" y="4" >sourceAttributeName</text>
+<rect class="symbol_rect" x="282" y="30" width="206" height="28" rx="1" />
+<text class="symbol_text" x="385" y="48" >familyParameterName</text>
+<rect class="symbol_rect" x="282" y="74" width="56" height="28" rx="1" />
+<text class="symbol_text" x="310" y="92" >text</text>
+<rect class="symbol_rect" x="282" y="118" width="146" height="28" rx="1" />
+<text class="symbol_text" x="355" y="136" >sourceKeyWord</text>
+<rect class="symbol_rect" x="282" y="162" width="136" height="28" rx="1" />
+<text class="symbol_text" x="350" y="180" >propertyName</text>
+<rect class="terminal_rect" x="282" y="206" width="26" height="28" rx="28" />
+<text class="terminal_text" x="295" y="224" >{</text>
+<rect class="symbol_rect" x="332" y="206" width="176" height="28" rx="1" />
+<text class="symbol_text" x="420" y="224" >appParameterName</text>
+<rect class="terminal_rect" x="532" y="206" width="26" height="28" rx="28" />
+<text class="terminal_text" x="545" y="224" >}</text>
+<path class="path" d="M308 220 L332 220" />
+<path class="path" d="M508 220 L532 220" />
+<rect class="terminal_rect" x="282" y="250" width="26" height="28" rx="28" />
+<text class="terminal_text" x="295" y="268" >{</text>
+<rect class="symbol_rect" x="332" y="250" width="116" height="28" rx="1" />
+<text class="symbol_text" x="390" y="268" >familyName</text>
+<rect class="terminal_rect" x="472" y="250" width="26" height="28" rx="28" />
+<text class="terminal_text" x="485" y="268" >}</text>
+<path class="path" d="M308 264 L332 264" />
+<path class="path" d="M448 264 L472 264" />
+<path class="path" d="M246 0 L282 0 M246 0 Q258 0 258 12 M594 0 L488 0 M594 0 Q582 0 582 12" />
+<path class="path" d="M270 44 L282 44 M270 44 Q258 44 258 32 L258 12 M570 44 L488 44 M570 44 Q582 44 582 32 L582 12" />
+<path class="path" d="M270 88 L282 88 M270 88 Q258 88 258 76 L258 32 M570 88 L338 88 M570 88 Q582 88 582 76 L582 32" />
+<path class="path" d="M270 132 L282 132 M270 132 Q258 132 258 120 L258 76 M570 132 L428 132 M570 132 Q582 132 582 120 L582 76" />
+<path class="path" d="M270 176 L282 176 M270 176 Q258 176 258 164 L258 120 M570 176 L418 176 M570 176 Q582 176 582 164 L582 120" />
+<path class="path" d="M270 220 L282 220 M270 220 Q258 220 258 208 L258 164 M570 220 L558 220 M570 220 Q582 220 582 208 L582 164" />
+<path class="path" d="M270 264 L282 264 M270 264 Q258 264 258 252 L258 208 M570 264 L498 264 M570 264 Q582 264 582 252 L582 208" />
+<rect class="terminal_rect" x="666" y="-14" width="96" height="28" rx="28" />
+<text class="terminal_text" x="714" y="4" >&lt;spaces&gt;</text>
+<path class="path" d="M666 0 L642 0 M654 0 Q642 0 642 -12 L642 -36 Q642 -48 654 -48 L774 -48 Q786 -48 786 -36 L786 -12 Q786 0 774 0 L762 0 L786 0" />
+<path class="path" d="M666 0 L618 0 Q630 0 630 12 L630 24 Q630 36 642 36 L786 36 Q798 36 798 24 L798 12 Q798 0 810 0 L762 0 M618 0 L642 0 M786 0 L810 0" />
+<path class="path" d="M222 0 L246 0" />
+<path class="path" d="M594 0 L618 0" />
+<path class="path" d="M0 0 L30 0 M840 0 L810 0" />
+<path class="rule_path_edge" d="M0 -6 L0 6 M840 -6 L840 6" />
 </svg>
 
 <svg width="478" height="144" viewBox="-8 -86 478 144 " xmlns="http://www.w3.org/2000/svg" version="1.1">
@@ -241,7 +251,7 @@ Ce qui donne en [BNF][WP_BNF] :
     
     funcInputs      ::= funcInput ( ',' funcInput )*
     
-    funcInput       ::= ( sourceAttributeName | familyParameterName | text | sourceKeyWord | propertyName | '{' appParameterName '}' | '{' familyName '}' )
+    funcInput       ::= '<spaces>'* ( sourceAttributeName | familyParameterName | text | sourceKeyWord | propertyName | '{' appParameterName '}' | '{' familyName '}' ) '<spaces>'*
     
     funcOutputs     ::= funcOutput ( ',' funcOutput )*
     
@@ -252,8 +262,6 @@ Ce qui donne en [BNF][WP_BNF] :
     sourceKeyWord   ::= ( 'CT' | 'CT' '[' relationAttributeName ']' | 'D' | 'I' | 'K' | 'T' | 'A' )
     
     targetKeyWord   ::= ( 'CT' | 'CT' '[' relationAttributeName ']' )
-
-<span class="fixme" data-assignedto="EBR">pas d'espaces possibles?</span>
 
 avec les éléments suivants :
 
@@ -268,7 +276,8 @@ sourceAttributeName
         l'aide à la saisie est dans le même tableau,
     *   la valeur de la colonne (sous la forme d'un tableau php) si l'attribut
         sur lequel est définie l'aide à la saisie est en dehors du tableau
-        <span class="fixme" data-assignedto="EBR">(y compris si l'attribut calculé est dans un autre tableau)</span>
+    *   la valeur sur la même ligne  si l'attribut est dans un autre tableau, ce
+        qui peut conduire à des comportements surprenants.
 
 familyParametername
 :   Un nom de paramètre existant dans la famille.
@@ -300,20 +309,23 @@ sourceKeyWord
     K
     :   L'index de la ligne en cours si l'attribut est dans un tableau.
         
-        Si l'attribut n'est pas dans un tableau, la valeur passée est <span class="fixme" data-assignedto="EBR">`-1`</span>
+        Si l'attribut n'est pas dans un tableau, la valeur passée est `-1`
     
     T
     :   L'objet php correspondant au document en cours.
         
-        <span class="fixme" data-assignedto="EBR">le document tel qu'il est en édition, ou le document en base?</span>
+        L'objet récupéré est le document tel qu'il est en base de donnée.
     
     A
     :   L'action courante (un objet de la classe `Action`).
-        <span class="fixme" data-assignedto="EBR">à quoi ça sert?</span>
+        
+        Cela permet, par exemple, de récupérer des informations sur
+        l'utilisateur courant.
 
 propertyName
 :   Une propriété du document.
-    <span class="fixme" data-assignedto="EBR">toutes, ou seulement ID, INITID, TITLE, FROMID, VERSION, REVISION, STATE ?</span>
+    
+    Elle sera remplacée par sa valeur.
 
 appParameterName
 :   Un paramètre applicatif.
@@ -323,7 +335,7 @@ appParameterName
 familyName
 :   Un nom logique de famille.
     
-    <span class="fixme" data-assignedto="EBR">il est remplacé par quoi?</span>
+    Il sera remplacé par son *id*.
 
 targetAttributeName
 :   Un nom d'attribut existant dans la famille.

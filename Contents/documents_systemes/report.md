@@ -28,8 +28,9 @@ des éléments de présentation suivants :
 
 *   une limite au nombre de résultats présentés.
     Lorsque le nombre d'éléments est supérieur à cette limite, 
-    alors la liste de résultats sera tronquée 
-    et seul les N premiers éléments seront présentés, <span class="fixme" data-assignedto="EBR">valeur par défaut?</span>
+    alors la liste de résultats sera tronquée et seul les N premiers éléments
+    seront présentés. La valeur par défaut est déterminée au moyen du paramètre
+    `rep_maxdisplaylimit` de la famille rapport (par défaut à 1000).
 
 *   les colonnes du tableau de résultat.
     
@@ -65,7 +66,7 @@ via un assistant d'export.
 
 ## Assistant d'export csv {#core-ref:cf6934f9-afe2-48ea-877a-7a1cdc9f770e}
 
-<span class="fixme" data-assignedto="MCO"></span>
+<span class="fixme" data-assignedto="MCO">screenshot</span>
 
 <!-- links -->
 [detailed_search_param]: #core-ref:de8a1440-fb42-4ad0-b041-5c762b5258d9

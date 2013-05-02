@@ -7,7 +7,7 @@ que le document soit enregistré.
 
 La contrainte est vérifiée au moyen :
 
-*   soit d'une méthode de la classe du document contenant l'attribut <span class="fixme" data-assignedto="EBR">obligatoirement publique?</span>,
+*   soit d'une méthode publique de la classe du document contenant l'attribut,
 *   soit d'une méthode statique d'une autre classe.
 
 Son retour doit être :
@@ -26,9 +26,27 @@ La syntaxe définissant les contraintes est la suivante :
 
 <div class="grammar">
 
+<svg width="544" height="132" viewBox="-8 -58 544 132 " xmlns="http://www.w3.org/2000/svg" version="1.1">
+<defs><style type="text/css">.terminal_rect{fill:rgb(206,255,206);stroke:black;stroke-width:2;}.terminal_text{fill:black;font-family:Verdana,Sans-serif;text-anchor:middle;font-size:14px;}.symbol_rect{fill:rgb(206,255,206);stroke:black;stroke-width:2;}.symbol_text{fill:black;font-family:Verdana,Sans-serif;font-weight:bold;font-style:italic;text-anchor:middle;font-size:14px;}.path{fill:none;stroke:black;stroke-width:2;}.rule_text{fill:black;font-family:Verdana,Sans-serif;font-weight:bold;font-size:14px;}.rule_path_edge{fill:none;stroke:black;stroke-width:3;}</style></defs>
+<text class="rule_text" x="0" y="-36" >computeMethod:</text>
+<rect class="symbol_rect" x="30" y="-14" width="116" height="28" rx="1" />
+<text class="symbol_text" x="88" y="4" >callMethod</text>
+<rect class="terminal_rect" x="206" y="-14" width="26" height="28" rx="28" />
+<text class="terminal_text" x="219" y="4" >:</text>
+<rect class="symbol_rect" x="256" y="-14" width="206" height="28" rx="1" />
+<text class="symbol_text" x="359" y="4" >targetAttributeName</text>
+<path class="path" d="M232 0 L256 0" />
+<path class="path" d="M206 44 L222 44" />
+<path class="path" d="M170 0 L206 0 M170 0 Q182 0 182 12 M498 0 L462 0 M498 0 Q486 0 486 12" />
+<path class="path" d="M194 44 L206 44 M194 44 Q182 44 182 32 L182 12 M474 44 L222 44 M474 44 Q486 44 486 32 L486 12" />
+<path class="path" d="M146 0 L170 0" />
+<path class="path" d="M0 0 L30 0 M528 0 L498 0" />
+<path class="rule_path_edge" d="M0 -6 L0 6 M528 -6 L528 6" />
+</svg>
+
 <svg width="806" height="132" viewBox="-8 -58 806 132 " xmlns="http://www.w3.org/2000/svg" version="1.1">
 <defs><style type="text/css">.terminal_rect{fill:rgb(206,255,206);stroke:black;stroke-width:2;}.terminal_text{fill:black;font-family:Verdana,Sans-serif;text-anchor:middle;font-size:14px;}.symbol_rect{fill:rgb(206,255,206);stroke:black;stroke-width:2;}.symbol_text{fill:black;font-family:Verdana,Sans-serif;font-weight:bold;font-style:italic;text-anchor:middle;font-size:14px;}.path{fill:none;stroke:black;stroke-width:2;}.rule_text{fill:black;font-family:Verdana,Sans-serif;font-weight:bold;font-size:14px;}.rule_path_edge{fill:none;stroke:black;stroke-width:3;}</style></defs>
-<text class="rule_text" x="0" y="-36" >constraint:</text>
+<text class="rule_text" x="0" y="-36" >callMethod:</text>
 <rect class="symbol_rect" x="66" y="-14" width="126" height="28" rx="1" />
 <text class="symbol_text" x="129" y="4" >staticClass</text>
 <path class="path" d="M66 44 L82 44" />
@@ -73,7 +91,7 @@ La syntaxe définissant les contraintes est la suivante :
 <path class="rule_path_edge" d="M0 -6 L0 6 M482 -6 L482 6" />
 </svg>
 
-<svg width="786" height="204" viewBox="-8 -86 786 204 " xmlns="http://www.w3.org/2000/svg" version="1.1">
+<svg width="786" height="248" viewBox="-8 -86 786 248 " xmlns="http://www.w3.org/2000/svg" version="1.1">
 <defs><style type="text/css">.terminal_rect{fill:rgb(206,255,206);stroke:black;stroke-width:2;}.terminal_text{fill:black;font-family:Verdana,Sans-serif;text-anchor:middle;font-size:14px;}.symbol_rect{fill:rgb(206,255,206);stroke:black;stroke-width:2;}.symbol_text{fill:black;font-family:Verdana,Sans-serif;font-weight:bold;font-style:italic;text-anchor:middle;font-size:14px;}.path{fill:none;stroke:black;stroke-width:2;}.rule_text{fill:black;font-family:Verdana,Sans-serif;font-weight:bold;font-size:14px;}.rule_path_edge{fill:none;stroke:black;stroke-width:3;}</style></defs>
 <text class="rule_text" x="0" y="-64" >methodInput:</text>
 <rect class="terminal_rect" x="78" y="-14" width="96" height="28" rx="28" />
@@ -82,13 +100,16 @@ La syntaxe définissant les contraintes est la suivante :
 <path class="path" d="M78 0 L30 0 Q42 0 42 12 L42 24 Q42 36 54 36 L198 36 Q210 36 210 24 L210 12 Q210 0 222 0 L174 0 M30 0 L54 0 M198 0 L222 0" />
 <rect class="symbol_rect" x="282" y="-14" width="206" height="28" rx="1" />
 <text class="symbol_text" x="385" y="4" >sourceAttributeName</text>
-<rect class="symbol_rect" x="282" y="30" width="56" height="28" rx="1" />
-<text class="symbol_text" x="310" y="48" >text</text>
-<rect class="symbol_rect" x="282" y="74" width="86" height="28" rx="1" />
-<text class="symbol_text" x="325" y="92" >keyWord</text>
+<rect class="symbol_rect" x="282" y="30" width="206" height="28" rx="1" />
+<text class="symbol_text" x="385" y="48" >familyParameterName</text>
+<rect class="symbol_rect" x="282" y="74" width="56" height="28" rx="1" />
+<text class="symbol_text" x="310" y="92" >text</text>
+<rect class="symbol_rect" x="282" y="118" width="86" height="28" rx="1" />
+<text class="symbol_text" x="325" y="136" >keyWord</text>
 <path class="path" d="M246 0 L282 0 M246 0 Q258 0 258 12 M524 0 L488 0 M524 0 Q512 0 512 12" />
-<path class="path" d="M270 44 L282 44 M270 44 Q258 44 258 32 L258 12 M500 44 L338 44 M500 44 Q512 44 512 32 L512 12" />
-<path class="path" d="M270 88 L282 88 M270 88 Q258 88 258 76 L258 32 M500 88 L368 88 M500 88 Q512 88 512 76 L512 32" />
+<path class="path" d="M270 44 L282 44 M270 44 Q258 44 258 32 L258 12 M500 44 L488 44 M500 44 Q512 44 512 32 L512 12" />
+<path class="path" d="M270 88 L282 88 M270 88 Q258 88 258 76 L258 32 M500 88 L338 88 M500 88 Q512 88 512 76 L512 32" />
+<path class="path" d="M270 132 L282 132 M270 132 Q258 132 258 120 L258 76 M500 132 L368 132 M500 132 Q512 132 512 120 L512 76" />
 <rect class="terminal_rect" x="596" y="-14" width="96" height="28" rx="28" />
 <text class="terminal_text" x="644" y="4" >&lt;spaces&gt;</text>
 <path class="path" d="M596 0 L572 0 M584 0 Q572 0 572 -12 L572 -36 Q572 -48 584 -48 L704 -48 Q716 -48 716 -36 L716 -12 Q716 0 704 0 L692 0 L716 0" />
@@ -151,13 +172,11 @@ Ce qui donne en [BNF][WP_BNF] :
     
     methodInputs    ::= methodInput ( ',' methodInput )*
     
-    methodInput     ::= '<spaces>'* ( sourceAttributeName | text | keyWord ) '<spaces>'*
+    methodInput     ::= '<spaces>'* ( sourceAttributeName | familyParameterName | text | keyWord ) '<spaces>'*
     
     text            ::= ( "'" '<text>' ) | ( "'" "[^',]+" "'" ) | ( '"' '[^",]+' '"' )
     
     keyWord         ::= 'THIS' | 'K'
-
-<span class="fixme" data-assignedto="EBR">pas de paramètres de famille, etc?</span>
 
 avec les éléments suivants :
 
@@ -171,7 +190,13 @@ sourceAttributeName
     *   la valeur sur la même ligne si l'attribut sur lequel est définie la contrainte est dans le même tableau
     *   la valeur de la colonne (sous la forme d'un tableau php) si l'attribut
         sur lequel est définie la contrainte est en dehors du tableau
-        <span class="fixme" data-assignedto="EBR">(y compris si l'attribut calculé est dans un autre tableau)</span>
+    *   la valeur sur la même ligne  si l'attribut est dans un autre tableau, ce
+        qui peut conduire à des comportements surprenants.
+
+familyParametername
+:   Un nom de paramètre existant dans la famille.
+    
+    La contrainte recevra la valeur du paramètre au moment de l'appel.
 
 keyWord
 :   Un mot clé qui est remplacé par une valeur dynamique
@@ -184,7 +209,7 @@ keyWord
     K
     :   L'index de la ligne en cours si l'attribut est dans un tableau.
         
-        Si l'attribut n'est pas dans un tableau, la valeur passée est <span class="fixme" data-assignedto="EBR">`-1`</span>
+        Si l'attribut n'est pas dans un tableau, la valeur passée est `-1`
 
 ## Exemples {#core-ref:da397b74-3373-4421-986f-a88138d1dce0}
 

@@ -8,11 +8,11 @@ et accessible depuis tous les documents de cette famille.
 Ils sont assimilables à des propriétés de classe (ou propriétés statiques)
 en programmation orientée objet, même si l'implémentation en diffère.
 
-Ils sont typés au même titre que les attributs,
-<span class="fixme" data-assignedto="EBR">et peuvent également être soumis à des contraintes</span>.
+Ils sont typés au même titre que les attributs, mais ne peuvent pas être soumis
+à des contraintes.
 
 Un paramètre de famille peut également être dynamique,
-lorsqu'il est défini par une méthode statique <span class="fixme" data-assignedto="EBR">de la famille uniquement?</span>.
+lorsqu'il est défini par une méthode statique.
 Dans ce cas, la méthode sera lancée à chaque récupération du paramètre.
 
 ## Exemple d'utilisation {#core-ref:a29da8f2-6619-4b58-a3f2-a7c7690f0cb2}

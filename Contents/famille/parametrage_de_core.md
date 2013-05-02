@@ -101,18 +101,21 @@ BEGIN
 :   Obligatoire, signale le début d'une définition de famille.
 
 [fromid]
-:   Identifiant logique (nom logique ou id) de la famille de laquelle cette famille hérite.
+:   Identifiant logique (nom logique ou id) de la famille de laquelle cette
+    famille hérite.
     
     Laisser vide s'il n'y a pas d'héritage.
     
-    L'utilisation d'un id à la place d'un nom logique est à réserver aux familles de core.
+    L'utilisation d'un id à la place d'un nom logique est à réserver aux
+    familles de core.
 
 [title]
 :   Titre de la famille.
     
     Ce titre est utilisé sur les IHM pour désigner la famille.
     
-    Il est automatiquement ajouté au catalogue de traduction, et peut ainsi être traduit.
+    Il est automatiquement ajouté au catalogue de traduction, et peut ainsi être
+    traduit.
 
 [id]
 :   Identifiant numérique de la famille.
@@ -120,19 +123,23 @@ BEGIN
     Laisser vide pour utiliser un identifiant logique
     (Dans ce cas, Dynacase affectera automatiquement un id unique à la famille).
     
-    S'il est valué il faut que cet identifiant ne soit pas déjà pris par un autre document.
+    S'il est valué il faut que cet identifiant ne soit pas déjà pris par un
+    autre document.
     
-    Les valeurs entre 900 et 999 peuvent être utilisée pour vos besoins spécifiques,
-    bien que l'usage de valeurs numériques fixes soit fortement déconseillée.
+    Les valeurs entre 900 et 999 peuvent être utilisée pour vos besoins
+    spécifiques, bien que l'usage de valeurs numériques fixes soit fortement
+    déconseillée.
 
 [className]
 :   Nom de la classe PHP de cette famille.
     
-    Cette classe doit être présente sur le serveur dans un fichier appelé `/FDL/Class.[CLASSNAME].php`.
+    Cette classe doit être présente sur le serveur dans un fichier appelé
+    `/FDL/Class.[CLASSNAME].php`.
     
     Le laisser à vide pour que Dynacase génère la classe automatiquement.
     
-    Permet un héritage autre que celui prévu par défaut par les classes documentaire.
+    Permet un héritage autre que celui prévu par défaut par les classes
+    documentaire.
 
 [logicalName]
 :   Nom logique de la famille.
@@ -207,7 +214,10 @@ de définir un comportement particulier pour la famille,
 ou de définir les valeurs par défaut des propriétés
 des nouveaux documents de cette famille.
 
-Leur syntaxe est toujours de la forme `[propid];[value]`, avec les correspondances suivantes :
+<span class="fixme" data-assignedto="EBR">comment on force une nouvelle valeur ?</span>
+
+Leur syntaxe est toujours de la forme `[propid];[value]`, avec les
+correspondances suivantes :
 
 [propid]
 :   Identifiant de la propriété.
@@ -241,12 +251,15 @@ CVID
     Si la valeur est vide le contrôle de vue par défaut est enlevé.
 
 DFLDID
-:   Identifiant du dossier principal permettant de constituer une arborescence spécifique à la famille .
+:   Identifiant du dossier principal permettant de constituer une arborescence
+    spécifique à la famille .
     
     Ce dossier est nécessaire pour manipuler les documents d'une famille depuis l'application "ONEFAM".
-    Il peut être égal à `auto`, ce qui a pour effet de créer un dossier principal automatiquement.
+    Il peut être égal à `auto`, ce qui a pour effet de créer un dossier
+    principal automatiquement.
     
-    Si cette propriété est déjà renseignée, la nouvelle valeur ne sera pas prise en compte.
+    Si cette propriété est déjà renseignée, la nouvelle valeur ne sera pas prise
+    en compte.
     
     Si la valeur est vide le contrôle de vue par défaut est enlevé.
 
@@ -255,16 +268,20 @@ ICON
     
     Cette icône doit être une image de taille 48×48 pixels.
     
-    Si une icône est déjà présente pour cette famille, elle ne sera pas modifiée.
+    Si cette propriété est déjà renseignée, la nouvelle valeur ne sera pas prise
+    en compte.
     
-    <span class="fixme" data-assignedto="EBR">si la valeur est vide…</span>
+    Si la famille n'a pas encore d'icône, alors la nouvelle valeur est prise en
+    compte.
 
 METHOD
-:   Indique le nom du fichier contenant les méthodes supplémentaires de la famille.
+:   Indique le nom du fichier contenant les méthodes supplémentaires de la
+    famille.
     
     Le fichier référencé doit être disponible dans le répertoire *FDL*.
     
-    Cette propriété peut être utilisé plusieurs fois, avec la sémantique suivante :
+    Cette propriété peut être utilisé plusieurs fois, avec la sémantique
+    suivante :
     
     *   Lorsque le nom est préfixé par *+*,
         son contenu est concaténé directement dans la classe générée ;
@@ -276,7 +293,8 @@ METHOD
     Si la valeur est vide les méthodes associées seront enlevées.
 
 PROFID
-:   Identifiant (nom logique ou id) du document profil de famille pour cette famille.
+:   Identifiant (nom logique ou id) du document profil de famille pour cette
+    famille.
     
     Lors de l'import, les vérifications suivantes sont effectuées :
     
@@ -295,15 +313,18 @@ SCHAR
 TAG
 :   Initialise les valeurs de la propriété *atags*.
     
-    Chaque utilisation de la balise TAG ajoutera une valeur à la propriété *atags*.
-    Les tags applicatifs ne peuvent être supprimés par cette cette directive.
+    Chaque utilisation de la balise TAG ajoutera une valeur à la propriété
+    *atags*.
+    
+    **Note** : Les tags applicatifs ne peuvent être supprimés par cette cette
+    directive.
     
     Certains tags sont déjà prédéfinis par Dynacase :
     
     MAILRECIPIENT
     :   Déclare la famille comme *destinataire de mail*.
-        Cela permet aux documents de cette famille d'être présentés dans la liste de
-        destinataires lors des envois de mail.
+        Cela permet aux documents de cette famille d'être présentés dans la
+        liste de destinataires lors des envois de mail.
         
         La famille doit alors implémenter l'interface `IMailRecipient`.
         <span class="fixme" data-assignedto="MCO">ajout d'un lien vers l'interface</span>
@@ -314,7 +335,8 @@ TYPE
     Si la valeur est vide, le type inféré est *C*.
 
 USEFOR
-:   Caractère désignant une utilisation spéciale. Seulement pour les documents systèmes :
+:   Caractère désignant une utilisation spéciale. Seulement pour les documents
+    systèmes :
     
     *   *W* : pour les cycles de vie
     *   *G* : pour les intercalaires de chemise
@@ -350,11 +372,13 @@ ATTR
     
     Il sera automatiquement converti en minuscules.
     
-    Cet item n'est plus modifiable une fois créé car il peut être utilisé dans les parties spécifiques de la famille.
+    Cet item n'est plus modifiable une fois créé car il peut être utilisé dans
+    les parties spécifiques de la famille.
     
     Cet identificateur doit être unique dans la famille.
     
-    Il est conseillé d'adopter des règles de nommage des attributs, permettant de simplifier leur manipulation.
+    Il est conseillé d'adopter des règles de nommage des attributs, permettant
+    de simplifier leur manipulation.
     Par exemple : `[FAM]_[TYPE]_[NAME]` avec :
     
     *   [FAM] : un préfixe indiquant la famille,
@@ -363,22 +387,25 @@ ATTR
 
 [id_conteneur]
 :   **Obligatoire** (sauf pour les attributs de type *frame* ou *tab*)  
-    Identifiant système de l'attribut structurant ou tableau contenant cet attribut.
+    Identifiant système de l'attribut structurant ou tableau contenant cet
+    attribut.
     
     Le type *tab* ne peut pas avoir d'attribut conteneur.
     
-    Le type *frame* peut être contenu dans un *tab*, ou ne pas avoir d'attribut conteneur.
+    Le type *frame* peut être contenu dans un *tab*, ou ne pas avoir d'attribut
+    conteneur.
     
     Le type *array* doit être contenu dans un *frame*.
     
-    Tous les autres attributs doivent être contenus dans un *array* ou un *frame*.
+    Tous les autres attributs doivent être contenus dans un *array* ou un
+    *frame*.
 
 [label]
-:   <span class="fixme" data-assignedto="EBR">obligatoire?</span>  
+:   **facultatif**  
     Libellé de l'attribut.
     
-    Ce libellé sera automatiquement traduit s'il est présent dans le catalogue de traduction
-    (la clé correspondante est de la forme `[FAMNAME]#[attrid]`,
+    Ce libellé sera automatiquement traduit s'il est présent dans le catalogue
+    de traduction (la clé correspondante est de la forme `[FAMNAME]#[attrid]`,
     avec [FAMNAME] le nom logique de la famille et
     [attrid] le nom logique de l'attribut, en minuscule).
 
@@ -386,13 +413,16 @@ ATTR
 :   **Obligatoire** (sauf pour les attributs de type *array*, *frame* ou *tab*)  
     Indique que l'attribut sera utilisé dans la composition du titre du document.
     
-    Le titre du document est alors composé en concaténant tous les attributs définis comme tels,
-    par ordre croissant de leur *ordre* et en les séparant par des espaces.
+    Le titre du document est alors composé en concaténant tous les attributs
+    définis comme tels, par ordre croissant de leur *ordre* et en les séparant
+    par des espaces.
     
-    Cette caractéristique est ignorée sur les attributs de type *array*, *frame* ou *tab*.
+    Cette caractéristique est ignorée sur les attributs de type *array*, *frame*
+    ou *tab*.
     
-    Si aucun attribut n'est marqué comme composant le titre, ou si tous ces attributs sont vides,
-    le titre sera *Document sans titre* suivi de l'id du document.
+    Si aucun attribut n'est marqué comme composant le titre, ou si tous ces
+    attributs sont vides, le titre sera *Document sans titre* suivi de l'id du
+    document.
     
     Les valeurs possibles sont :
     
@@ -403,7 +433,8 @@ ATTR
 :   **Obligatoire** (sauf pour les attributs de type *array*, *frame* ou *tab*)  
     Indique que l'attribut sera utilisé dans le résumé du document.
     
-    Le résumé du document est utilisé pour construire la fiche résumé dans l'application ONEFAM.
+    Le résumé du document est utilisé pour construire la fiche résumé dans
+    l'application ONEFAM.
     
     Les valeurs possibles sont :
     
@@ -450,21 +481,25 @@ ATTR
     Les valeurs possibles sont :
     
     *   `H` (*Hidden*) : attribut caché.
-        Généralement utilisé pour des attributs servant soit au calcul, soit à la génération des liens.
+        Généralement utilisé pour des attributs servant soit au calcul, soit à
+        la génération des liens.
     *   `I` (*Invisible*) : attribut invisible :
-        l’attribut n’est présent ni en consultation ni en modification dans le document.  
-        Un attribut de visibilité I n'est pas modifiable et pour en modifier la valeur,
-        il est nécessaire de modifier sa visibilité.
-    *   `O` (*<span class="fixme" data-assignedto="EBR">O pour ?</span>*) :
+        l’attribut n’est présent ni en consultation ni en modification dans le
+        document.  
+        Un attribut de visibilité I n'est pas modifiable et pour en modifier la
+        valeur, il est nécessaire de modifier sa visibilité.
+    *   `O` :
         attribut modifiable en modification mais non visible en lecture.
     *   `R` (*Read-only*) : attribut visible en lecture seulement.
         Généralement utilisé pour les attributs calculés.
-    *   `S` (*Statique*) : attribut visible en lecture et en modification, mais non modifiable en modification.
-    *   `W` (*Writable*) : attribut visible en lecture et modifiable en modification.
+    *   `S` (*Statique*) : attribut visible en lecture et en modification, mais
+        non modifiable en modification.
+    *   `W` (*Writable*) : attribut visible en lecture et modifiable en
+        modification.
     
     Le type array dispose en plus de la visibilité
     
-    *   `U` <span class="fixme" data-assignedto="EBR">U pour ?</span>: Interdit l'ajout et la suppression de lignes dans le tableau.
+    *   `U` : Interdit l'ajout et la suppression de lignes dans le tableau.
 
 
 [required]
@@ -493,36 +528,45 @@ ATTR
     
     *   Utilisation d'attribut du document
         
-        Les références aux attributs du document sont écrites entre les caractères `%`,
-        en indiquant l'identifiant de l'attribut, en majuscules ou en minuscules.
+        Les références aux attributs du document sont écrites entre les
+        caractères `%`, en indiquant l'identifiant de l'attribut, en majuscules
+        ou en minuscules.
         
-        Le caractère `%` est obtenu en le doublant : `TEST%%25` sera converti en *TEST%25*.
+        Le caractère `%` est obtenu en le doublant : `TEST%%25` sera converti en
+        *TEST%25*.
         
         Par exemple, soit l'attribut US_MAIL définissant le mail d'une personne.
         Pour déclencher l'édition d'un mail vers une personne,
         il suffit de mettre l'hyperlien suivant : `mailto:%US_MAIL%`.
         
-        Autre exemple, soit l'attribut SI_TOWN indiquant la ville de la famille société.
-        Pour avoir la météo de la ville il suffit de mettre l'hyperlien suivant :
+        Autre exemple, soit l'attribut SI_TOWN indiquant la ville de la famille
+        société. Pour avoir la météo de la ville il suffit de mettre l'hyperlien
+        suivant :
         `http://www.location.org/&strLocation=%SI_TOWN%&strCountry=EUR`.
         
         Si la valeur est vide pour un des attributs de l'URL,
-        l'hyperlien ne sera pas affiché (on ne pourra pas cliquer sur l'attribut).
+        l'hyperlien ne sera pas affiché (on ne pourra pas cliquer sur
+        l'attribut).
         
-        Il est possible de désigner des attributs optionnels en utilisant la notation suivante : `%?[ATTRID]%`.
-        Le point d'interrogation placé après le pourcentage indique que la valeur de l'attribut peut être vide.
+        Il est possible de désigner des attributs optionnels en utilisant la
+        notation suivante : `%?[ATTRID]%`.
+        Le point d'interrogation placé après le pourcentage indique que la
+        valeur de l'attribut peut être vide.
         
         Les valeurs insérées dans le lien sont encodés selon la
         [RFC 3986][RFC_3986] pour être utilisable comme valeur de paramètre web.
     
     *   Utilisation de propriétés du document
         
-        Les références aux propriétés du document sont écrites entre les caractères `%`,
-        en indiquant l'identifiant de l'attribut, en majuscules ou en minuscules.
+        Les références aux propriétés du document sont écrites entre les
+        caractères `%`, en indiquant l'identifiant de l'attribut, en majuscules
+        ou en minuscules.
         
-        Le caractère `%` est obtenu en le doublant : `TEST%%25` sera converti en *TEST%25*.
+        Le caractère `%` est obtenu en le doublant : `TEST%%25` sera converti en
+        *TEST%25*.
         
-        Les mots-clefs spéciaux suivants peuvent être utilisés pour la composition de l'URL :
+        Les mots-clefs spéciaux suivants peuvent être utilisés pour la
+        composition de l'URL :
         
         *   `%S%` : est remplacé par l'URL relative vers dynacase,
         *   `%I%` : est remplacé par l'identifiant (équivalent à %ID%),
@@ -534,19 +578,22 @@ ATTR
     *   Utilisation de paramètres applicatifs
         
         Les références aux paramètres applicatifs sont écrites entre accolades,
-        en indiquant l'identifiant de l'attribut, en majuscules ou en minuscules.
+        en indiquant l'identifiant de l'attribut, en majuscules ou en
+        minuscules.
         
         Par exemple : `%S%app=TEST&action=TESTONE&arg={CORE_CLIENT}` :
         ici {CORE_CLIENT} sera remplacé par la valeur du paramètre CORE_CLIENT.
         
-        Seuls les paramètres de *CORE* et les *paramètres globaux* sont accessibles pour la composition de l'URL.
+        Seuls les paramètres de *CORE* et les *paramètres globaux* sont
+        accessibles pour la composition de l'URL.
     
     *   Utilisation de méthodes du document
         
         Les références aux méthodes du document sont écrites entre accolades `%`,
         en notant la méthode comme pour les attributs calculés.
         
-        Les parties variables peuvent aussi faire référence à une méthode du document.
+        Les parties variables peuvent aussi faire référence à une méthode du
+        document.
         Cette méthode doit retourner une chaîne de caractère encodée selon la
         [RFC 3986][RFC_3986] qui sera insérée dans la variable.
         
@@ -597,7 +644,7 @@ Un paramètre de famille est défini par la syntaxe suivante :
 
 avec les mêmes correspondances que pour [les attributs][attributs], aux exceptions suivantes :
 
-<span class="fixme" data-assignedto="EBR">différences entre PARAM et ATTR</span>
+<span class="fixme" data-assignedto="EBR">différences entre PARAM et ATTR</span><span class="fixme" data-assignedto="MCO">pas de contraintes, statique pour le calcul, liens pas pris en compte, visibilités d'édition, </span>
 
 ### Définition de valeurs par défaut {#core-ref:94fa51e2-3488-11e2-9e34-1f7c912168cf}
 
@@ -848,7 +895,10 @@ RESET
     :   Réinitialise les attributs.
         
         La définition de tous les attributs sera effacée
-        (les valeurs ne sont pas supprimées des documents existants)
+        (les valeurs ne sont pas supprimées des documents existants).
+        
+        **Attention** : cela réinitialise aussi la valeur des paramètres de
+        famille.
     
     `default`
     :   Réinitialise les valeurs par défaut.
@@ -856,19 +906,18 @@ RESET
         Toutes les valeurs par défaut sont remises à *vide*
     
     `properties`
-    :   Réinitialise les paramètres des propriétés.
+    :   Réinitialise les valeurs des paramètres des propriétés.
         
-        <span class="fixme" data-assignedto="EBR">Tous les paramètres de propriétés seront remis à leur valeur par défaut?</span>
+        Tous les paramètres de propriétés seront remis à leur valeur par défaut.
     
     `parameters`
-    :   Réinitialise les paramètres de famille
+    :   Réinitialise les valeurs des paramètres de famille
         
-        La définition de tous les paramètres de famille sera effacée
-        <span class="fixme" data-assignedto="EBR">quid des valeurs des paramètres?</span>
+        Tous les paramètres de famille seront remis à leur valeur par défaut.
 
 Ces instructions de réinitialisation doivent être placées avant la nouvelle définition des éléments réinitialisés. 
 
-<span class="fixme" data-assignedto="EBR">plusieurs reset sur une seule ou plusieurs lignes?</span>
+Chaque instruction doit être sur sa propre ligne.
 
 ## Surcharge de définition de famille {#core-ref:686b17c3-220e-4450-a0d0-feb5db002cbc}
 
@@ -883,27 +932,27 @@ Lors de la surcharge, le comportement est le suivant :
 
 *   pour les [paramètres de propriété](#core-ref:40d229c4-33c4-11e2-9147-a3eaf356c37c)
     
-    <span class="fixme" data-assignedto="EBR">La nouvelle valeur écrase la valeur précédemment définie</span>
+    La nouvelle valeur écrase la valeur précédemment définie.
 
 *   pour les [propriétés de famille](#core-ref:6f013eb8-33c7-11e2-be43-373b9514dea3)
     
-    <span class="fixme" data-assignedto="EBR">La nouvelle valeur écrase la valeur précédemment définie</span>
+    La nouvelle valeur écrase la valeur précédemment définie.
 
 *   pour les [attributs](#core-ref:bc3fad86-33cc-11e2-9a69-1bbd9c32b0f2)
     
-    <span class="fixme" data-assignedto="EBR">La nouvelle définition écrase la définition précédemment définie</span>
+    La nouvelle valeur écrase la valeur précédemment définie.
 
 *   pour les [paramètres de famille](#core-ref:c28824e2-3486-11e2-be3b-337d2321d8ee)
     
-    <span class="fixme" data-assignedto="EBR">La nouvelle définition écrase la définition précédemment définie</span>
+    La nouvelle valeur écrase la valeur précédemment définie.
 
 *   pour les [valeurs par défaut](#core-ref:94fa51e2-3488-11e2-9e34-1f7c912168cf)
     
-    <span class="fixme" data-assignedto="EBR">La nouvelle valeur écrase la valeur précédemment définie si *force=yes* est utilisé</span>
+    <span class="fixme" data-assignedto="EBR">La nouvelle valeur écrase la valeur précédemment définie si *force=yes* est utilisé</span><span class="fixme" data-assignedto="MCO">OUI</span>
 
 *   pour les [valeurs initiale de paramètre](#core-ref:da804e2e-3573-11e2-8974-4ba96567fbf9)
     
-    <span class="fixme" data-assignedto="EBR">La nouvelle valeur écrase la valeur précédemment définie si *force=yes* est utilisé</span>
+    <span class="fixme" data-assignedto="EBR">La nouvelle valeur écrase la valeur précédemment définie si *force=yes* est utilisé</span><span class="fixme" data-assignedto="MCO">OUI</span>
 
 Ce comportement peut être altéré par l'utilisation des
 [Instructions de réinitialisation](#core-ref:5c661733-772d-42b8-8b3e-b70453ddfd33).

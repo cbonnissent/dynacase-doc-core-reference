@@ -23,15 +23,16 @@ Chaque vue est composées de :
 
 une *zone* (sous la forme `APP:ZONE`)
 :   permet d'indiquer un template de représentation. se reporter à 
-    <span class="fixme MCO">vues de documents</span> pour plus de précisions.
+    <span class="fixme" data-assigned-to="mco">vues de documents</span> pour
+    plus de précisions.
 
 un *masque*
 :   permet de spécifier un [masque][masque] à appliquer lors de l'utilisation de
     cette vue
 
 un numéro d'*ordre*
-:   entier strictement positif, il permet d'indiquer un ordre de préférence pour
-    les vues.
+:   entier strictement positif (**Attention** : une vue avec l'ordre 0 n'est pas
+    prise en compte, il permet d'indiquer un ordre de préférence pour les vues.
 
 un caractère *affichable*
 :   indique si la vue doit être présentée à l'utilisateur sous forme de menu
@@ -56,23 +57,26 @@ Le profil en question peut être statique, mais également dynamique.
 La vue à utiliser peut être explicitement spécifiée au moyen du paramètre d'url
 `vid=[VIEW_ID]` où `[VIEW_ID]` est l'*identifiant système* de la vue à
 utiliser. Dynacase va alors vérifier que l'utilisateur a bien accès à la vue
-spécifiée. <span class="fixme MCO">Dans le cas contraire</span>, ou lorsqu'aucune vue n'est spécifiée, la vue
-sera automatiquement choisie selon le mécanisme suivant :
+spécifiée. Dans le cas contraire, un message d'erreur est retourné. Si le
+paramètre `vid` référence une vue non existante, ou lorsqu'aucune vue n'est
+spécifiée, la vue est automatiquement choisie selon le mécanisme suivant :
 
 1.  restriction à la liste des vues pour lesquelles
     *   le *type* correspond à l'action courante,
     *   l'utilisateur est autorisé à y accéder,
-2.  classement des vues restantes par numéro d'*ordre*,
+2.  classement des vues restantes par numéro d'*ordre* croissant
+,
 3.  utilisation de la première des vues restantes.
+    Si aucune des vues n'est utilisable, c'est la vue par défaut qui est
+    utilisée.
 
-<span class="fixme MCO">Si aucune des vues n'est utilisable, …</span>
 
 ## libellé du menu *modifier* {#core-ref:bcf1d848-9abb-4260-a4c1-0c6fd5abc3c9}
 
 Lors de la consultation, le libellé du menu *modifier* correspondra au libellé
 de la vue de modification choisie selon l'algorithme précédent.
 
-## Astuces
+## Astuces {#core-ref:2c014979-7901-48be-ab15-89e107f0065b}
 
 Les ordres ne sont pas obligés de se suivre. Aussi, vous pouvez numéroter vos
 vues de 10 en 10, afin de faciliter l'ajout futur d'une nouvelle vue.
