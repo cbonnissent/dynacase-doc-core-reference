@@ -21,9 +21,9 @@ Chaque vue est composées de :
 :   *consultation* ou *édition*, détermine pour quelle type de représentation
     la-dite vue est utilisable.
 
-une *zone* (sous la forme `APP:ZONE`)
+une *zone* (sous la forme `APP:ZONE:OPTIONS:TRANSFORMATION`)
 :   permet d'indiquer un template de représentation. se reporter à 
-    <span class="fixme" data-assigned-to="mco">vues de documents</span> pour
+    [vues de documents][document_view] pour
     plus de précisions.
 
 un *masque*
@@ -89,3 +89,4 @@ sans masque et avec un ordre supérieur.
 
 <!-- links -->
 [masque]: #core-ref:327ad491-06df-4e5b-b49a-695c75439fe1
+[document_view]: #core-ref:cb3e2b97-ee6d-4cdf-aa25-b2e41d0d3156

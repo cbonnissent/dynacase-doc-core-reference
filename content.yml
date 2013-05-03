@@ -95,7 +95,7 @@ book:
         wip: "work in progress"
       subtoc:   2
     - level:   2
-      content:  "representations/classe_layout.md"
+      content:  "representations/zones.md"
       flags:
         wip: "work in progress"
         wip_sub: ""
@@ -106,11 +106,6 @@ book:
         wip_sub: ""
     - level:   2
       content:  "representations/vue_d_attributs.md"
-      flags:
-        wip: "work in progress"
-        wip_sub: ""
-    - level:   2
-      content:  "representations/interface_edition.md"
       flags:
         wip: "work in progress"
         wip_sub: ""

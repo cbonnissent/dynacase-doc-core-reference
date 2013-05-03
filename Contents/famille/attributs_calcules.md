@@ -273,3 +273,4 @@ Note: on pourrait aussi utiliser une méthode statique, qui aurait sûrement plu
 
 <!-- links -->
 [WP_BNF]: http://fr.wikipedia.org/wiki/Backus_Naur_Form "Définition de la Forme de Backus-Naur sur Wikipedia"
+[hooks]: #core-ref:8f3d47de-32b5-4748-8a00-b1569c5423e5
