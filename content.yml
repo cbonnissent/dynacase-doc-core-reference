@@ -105,12 +105,12 @@ book:
         wip: "work in progress"
         wip_sub: ""
     - level:   2
-      content:  "representations/vue_d_attributs.md"
+      content:  "representations/vue_d_attribut.md"
       flags:
         wip: "work in progress"
         wip_sub: ""
     - level:   2
-      content:  "representations/range_tableau.md"
+      content:  "representations/vue_de_range_tableau.md"
       flags:
         wip: "work in progress"
         wip_sub: ""
@@ -218,7 +218,7 @@ book:
         wip: "work in progress"
         wip_sub: ""
 ##
-# API
+# API (cf https://docs.google.com/a/anakeen.com/spreadsheet/ccc?key=0At_Kbrf9EDr8dHRkM1BqbjdGQnN1TXVPLXE4eUhJOGc#gid=0)
 ##
     - level:   1
       content:  "API/introduction.md"

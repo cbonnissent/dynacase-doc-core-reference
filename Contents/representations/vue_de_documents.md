@@ -14,8 +14,9 @@ Par convention :
 
 *   le fichier de template porte l'extension xml,
 *   son nom détermine le nom de la vue,
-*   la méthode associée doit porter le même nom. L'objet `Layout` sera
-    accessible au moyen de la propriété `lay` de l'objet courant.
+*   la méthode associée doit porter le même nom.  
+    L'objet `Layout` est accessible au moyen de la propriété `lay` de l'objet
+    courant (`$this->lay`).
 
 <span class="fixme" data-assignedto="EBR">préciser les règles de casse</span>
 
@@ -40,7 +41,7 @@ En l'absence de méthode correspondant à la vue, le contrôleur par défaut est
 appelé. cette méthode dépend du type de vue :
 
 *   en consultation, la méthode appelée est `Doc::viewDefaultCard`.
-*   en modification, la méthode appelée est `Doc::viewDefaultCard`.<span class="fixme" data-assignedto="EBR">Cela signifie qu'en l'absence de contrôleur de vue, une vue de modification apparaîtra comme une vue de consultation !</span>.
+*   en modification, la méthode appelée est `Doc::viewDefaultCard`.<span class="fixme" data-assignedto="EBR">Cela signifie qu'en l'absence de contrôleur de vue, une vue de modification apparaîtra comme une vue de consultation !?</span>.
 
 ## Syntaxe d'une zone documentaire {#core-ref:49b96dc9-64e9-4f5a-a167-396282625c1e}
 
@@ -109,7 +110,7 @@ La vue personnalisée est toujours rendue encapsulée dans `FDL:VIEWCARD`,
 elle-même rendue au sein de `FDL:FDL_CARD`. Aussi cette vue personnalisée
 doit-elle générer un fragment qui sera inséré dans le `body` de la page.
 
-### Options des vues documentaires en consultation
+### Options des vues documentaires en consultation {#core-ref:96d615e5-b6a6-46d3-b42d-4396dbc42b8b}
 
 Les options disponibles en consultation sont les suivantes :
 
@@ -152,9 +153,9 @@ Les options disponibles en consultation sont les suivantes :
 
 ### Utilisation des valeurs du document {#core-ref:a5c38657-4537-404f-b908-c2684d343880}
 
-Afin d'utiliser les valeurs du document dans le template, il est possible
-d'appeler les méthodes `Doc::viewAttr` et `Doc::viewProp`. Elles vont créer les
-clés suivantes :
+le [contrôleur par défaut][default_view_controleur] fait automatiquement appel
+aux méthodes `Doc::viewAttr` et `Doc::viewProp`. Elles initialisent les clés
+suivantes :
 
 *   viewAttr va créer :
     *   `L_ATTRID` pour chaque attribut : le libellé (traduit) de l'attribut,
@@ -166,6 +167,10 @@ clés suivantes :
     *   <span class="fixme" data-assignedto="EBR">on n'a pas les textualValues ?</span>
 *   viewProp va créer :
     *   `V_PROPID` pour chaque propriété : la valeur de la propriété
+
+Lors de l'utilisation d'un contrôleur personnalisé, il est possible d'appeler
+ces méthodes afin de générer les clés correspondantes. Il est également possible
+de définir d'autres clés en utilisant les différentes méthodes du `Layout`.
 
 **Attention** : toutes ces clés respectent les visibilités : si l'utilisateur
 n'a pas le droit de voir un attribut, les clés `L_ATTRID` et `V_ATTRID` seront
@@ -211,7 +216,7 @@ elle-même rendue au sein de `GENERIC:GENERIC_EDIT`. Aussi cette vue
 personnalisée doit-elle générer un fragment de formulaire, qui sera inséré dans
 le `form` de la page.
 
-### Options des vues documentaires en modification
+### Options des vues documentaires en modification {#core-ref:9e341064-ea78-4049-819c-8d0ab765840e}
 
 Les options disponibles en modification sont les suivantes :
 
@@ -244,8 +249,9 @@ Les options disponibles en modification sont les suivantes :
 
 ### Utilisation des valeurs du document {#core-ref:37dd7910-1c29-461f-9628-5f50c543ed2d}
 
-Afin d'utiliser les valeurs du document dans le template, il est possible
-d'appeler la méthode `Doc::editAttr`. Elles va créer les clés suivantes :
+le [contrôleur par défaut][default_view_controleur] fait automatiquement appel
+aux méthodes `Doc::editAttr` et `Doc::viewProp`. Elles initialisent les clés
+suivantes :
 
 *   `L_ATTRID` pour chaque attribut : le libellé (traduit) de l'attribut,
     entouré d'une balise `<b/>` si l'attribut est obligatoire),
@@ -253,9 +259,17 @@ d'appeler la méthode `Doc::editAttr`. Elles va créer les clés suivantes :
 *   `W_ATTRID` pour chaque attribut : `true` si l'attribut est visible, `false`
     sinon.
 
+Lors de l'utilisation d'un contrôleur personnalisé, il est possible d'appeler
+ces méthodes afin de générer les clés correspondantes. Il est également possible
+de définir d'autres clés en utilisant les différentes méthodes du `Layout`.
+
 **Attention** : toutes ces clés respectent les visibilités : si l'utilisateur
 n'a pas le droit de voir un attribut, la clé `V_ATTRID` génère un
 `<input type="hidden"/>`.
+
+Lors de l'utilisation d'un contrôleur personnalisé, il est possible d'appeler
+ces méthodes afin de générer les clés correspondantes. Il est également possible
+de définir d'autres clés en utilisant les différentes méthodes du `Layout`.
 
 <!-- links -->
 [default_view_controleur]: #core-ref:1b7cb4c6-df1e-4124-8f5d-deaeac92561b
