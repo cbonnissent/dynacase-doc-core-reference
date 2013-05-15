@@ -33,7 +33,7 @@ L'avancement du cycle de rédaction est le suivant : <span class="flag wip">work
 
 <span class="flag wip">work in progress</span> 
     
-Soit la rédaction n'a pas démarrée ou alors le contenu reste une ébauche. 
+Soit la rédaction n'est pas démarrée ou alors le contenu reste une ébauche. 
 Ces chapitres sont présentés pour donner des indications sur la future structure ou le type d'information qui seront proposées.
 
 <span class="flag draft">draft</span>
@@ -44,13 +44,13 @@ Le contenu doit être utilisée avec précaution : il pourra être repris en ter
 <span class="flag need-review">need review</span>
 
 La rédaction est terminée, les relectures et corrections nécessaires effectuées.
-Seule la revue de publication reste à faire. Ces chapitres peuvent donc être 'consommés' sans risque : seule des modifications mineures ou des corrections, principalement sur la forme peuvent y être apportées.
+Seule la revue de publication reste à faire. Ces chapitres peuvent donc être 'consommés' sans risque : seules des modifications mineures ou des corrections, principalement sur la forme, peuvent y être apportées.
 
 <span class="flag new">new | updated</span>
 
 Ce marquage met en évidence des parties nouvelles ou mises à jour depuis la précédente édition.
 
-Si un chapitre est 'marqué', sauf marquage particulier, son contenu, incluant ses sous-chapitres, est considéré comme marqué à l'identique.
+Si un chapitre est 'marqué' son contenu, incluant ses sous-chapitres, est considéré comme marqué à l'identique -sauf marquage particulier-.
 
 
 
