@@ -24,5 +24,34 @@ Les premiers chapitres présentent les objets et mécanismes Dynacase. Leur comp
 
 _Bon développement..._
 
+## État de la documentation
+
+
+Nous marquons les chapitres pour informer le lecteur de l'état d'avancement de leur rédaction et donner une indication sur la fiabilité de leur contenu.
+
+L'avancement du cycle de rédaction est le suivant : <span class="flag wip">work in progress</span> > <span class="flag draft">draft</span> > <span class="flag need-review">need review</span> > <span class="flag new">new | updated</span>.
+
+<span class="flag wip">work in progress</span> 
+    
+Soit la rédaction n'a pas démarrée ou alors le contenu reste une ébauche. 
+Ces chapitres sont présentés pour donner des indications sur la future structure ou le type d'information qui seront proposées.
+
+<span class="flag draft">draft</span>
+
+Une première version a été rédigée sans toutefois avoir suivi les étapes de relecture/correction. 
+Le contenu doit être utilisée avec précaution : il pourra être repris en terme de structure ou de contenu.
+
+<span class="flag need-review">need review</span>
+
+La rédaction est terminée, les relectures et corrections nécessaires effectuées.
+Seule la revue de publication reste à faire. Ces chapitres peuvent donc être 'consommés' sans risque : seule des modifications mineures ou des corrections, principalement sur la forme peuvent y être apportées.
+
+<span class="flag new">new | updated</span>
+
+Ce marquage met en évidence des parties nouvelles ou mises à jour depuis la précédente édition.
+
+Si un chapitre est 'marqué', sauf marquage particulier, son contenu, incluant ses sous-chapitres, est considéré comme marqué à l'identique.
+
+
 
 [^1]: Le Case Management est une évolutions des stratégies comme le BPM ou le travail collaboratif . Elle s'adapte de façon transverse à l'évolution des besoins de l'organisation, tout en permettant un contrôle et une traçabilité complète des opérations. Les outils de Case Management permettent de mettre en œuvre un très grand nombre de procédures comme le traitement des réclamations, l'ouverture de comptes, la gestion de projets, suivi des faits techniques...
