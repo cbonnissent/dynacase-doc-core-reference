@@ -1,0 +1,30 @@
+.item\:toc span.flag,
+.item\:subtoc span.flag,
+span.flag {
+    border-width: 1px;
+    border-radius : 3px;
+    padding:0 2px;
+    display:inline-block;
+    font-size: 8pt;
+    font-weight: normal;
+}
+
+span.flag.wip {
+    background-color: #CECECE;
+    color: white;
+}
+
+span.flag.draft {
+    background-color: #ECB0B0;
+    color: white;
+}
+
+span.flag.need-review {
+    background-color: #FFD994;
+    color: white;
+}
+
+span.flag.new {
+    background-color: #008821;
+    color: white;
+}
