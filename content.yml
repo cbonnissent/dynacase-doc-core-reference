@@ -32,12 +32,16 @@ book:
     - level:   1
       content:  "object_model/introduction.md"
       subtoc:   2
+      flags:
+        need-review:  "need review"
 ##
 # famille
 ##
     - level:   1
       content:  "famille/introduction.md"
       subtoc:   2
+      flags:
+        need-review:  "need review"
     - level:   2
       content:  "famille/attributs.md"
     - level:   2
@@ -59,7 +63,7 @@ book:
       content:  "documents_systemes/introduction.md"
       subtoc:   2
       flags:
-        need-review:  "Need review"
+        need-review:  "need review"
     - level:   2
       content:  "documents_systemes/recherches.md"
       subtoc:   2
@@ -88,34 +92,27 @@ book:
 ##
     - level:   1
       content:  "representations/introduction.md"
-      flags:
-        wip: "work in progress"
       subtoc:   2
     - level:   2
       content:  "representations/zones.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        draft: "draft"
     - level:   2
       content:  "representations/vue_de_documents.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        draft: "draft"
     - level:   2
       content:  "representations/vue_d_attribut.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        draft: "draft"
     - level:   2
       content:  "representations/vue_de_range_tableau.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        draft: "draft"
     - level:   2
       content:  "representations/ooo_layout.md"
       flags:
         wip: "work in progress"
-        wip_sub: ""
 ##
 # importation_exportation_documents
 ##
@@ -1099,24 +1096,19 @@ book:
 ##
     - level:   1
       content:  "Advanced/introduction.md"
-      flags:
-        wip: "work in progress"
       subtoc:   2
     - level:   2
       content:  "Advanced/Cinematique/introduction.md"
       flags:
         wip: "work in progress"
-        wip_sub: ""
     - level:   2
       content:  "Advanced/Database/introduction.md"
       flags:
         wip: "work in progress"
-        wip_sub: ""
     - level:   2
       content:  "Advanced/Persistance/introduction.md"
       flags:
         wip: "work in progress"
-        wip_sub: ""
     - level:   3
       content:  "Advanced/Persistance/dbobj.md"
       flags:
@@ -1166,7 +1158,6 @@ book:
       content:  "Advanced/Recherche/introduction.md"
       flags:
         wip: "work in progress"
-        wip_sub: ""
     - level:   3
       content:  "Advanced/Recherche/searchdoc.md"
       flags:
@@ -1191,33 +1182,27 @@ book:
       content:  "Advanced/Authent/introduction.md"
       subtoc:   1
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        need-review: "need review"
     - level:   3
       content:  "Advanced/Authent/parameters.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        need-review: "need review"
     - level:   3
       content:  "Advanced/Authent/open_provider.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        need-review: "need review"
     - level:   3
       content:  "Advanced/Authent/guest.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        need-review: "need review"
     - level:   3
       content:  "Advanced/Authent/provider.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        need-review: "need review"
     - level:   2
       content:  "Advanced/Security/introduction.md"
       flags:
         wip: "work in progress"
-        wip_sub: ""
     - level:   3
       content:  "Advanced/Security/profils.md"
       flags:
@@ -1227,7 +1212,6 @@ book:
       content:  "Advanced/Template/introduction.md"
       flags:
         wip: "work in progress"
-        wip_sub: ""
     - level:   3
       content:  "Advanced/Template/texte.md"
       flags:
