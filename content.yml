@@ -8,9 +8,6 @@ book:
 #
     - level:   1
       content:  "preambule.md"
-#
-    - level:   1
-      content:  "introduction.md"
 ##
 # Introduction_dynacase
 ##
