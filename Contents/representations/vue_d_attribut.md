@@ -150,7 +150,7 @@ Lors de l'utilisation d'un contrôleur personnalisé, il est possible d'appeler
 ces méthodes afin de générer les clés correspondantes. Il est également possible
 de définir d'autres clés en utilisant les différentes méthodes du `Layout`.
 
-## Limitations
+## Limitations {#core-ref:064493b3-7cc2-4cb8-9aa6-1ba96e11a228}
 
 Les vues d'attribut ne sont pas gérées par Dynacase dans les vues de document
 personnalisées.

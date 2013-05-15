@@ -15,7 +15,7 @@ Par convention :
 *   le fichier de template porte l'extension xml,
 *   son nom détermine le nom de la vue.
 
-## syntaxe du template
+## syntaxe du template {#core-ref:d9a89b1e-9792-49c3-b390-d358c2b78999}
 
 un template de vue de rangés de tableau est un fichier xml **valide**.
 Il doit respecter la `dtd` suivante :
@@ -70,21 +70,21 @@ n'est pas obligatoire) :
         utiliser des entités html, il faut les déclarer dans la dtd (par
         exemple: `<!ENTITY nbsp "&#160;">`).
 
-## Vue de consultation
+## Vue de consultation {#core-ref:d237e0d4-ca4e-4b9e-8249-45aef7d2ef0f}
 
 <span class="fixme" data-assignedto="EBR">modèle de boites / zones ?</span>
 
 Afin de spécifier la vue d'attribut à utiliser en consultation, il faut utiliser
 l'option `rowviewzone`.<span class="fixme" data-assignedto="EBR">à documenter dans les options d'attribut ?</span>
 
-### Utilisation des valeurs du document
+### Utilisation des valeurs du document {#core-ref:553ce7f2-b0db-4986-b72b-09ccad1831b2}
 
 Lors de l'utilisation des vues de rangés de tableau, les clés suivantes sont
 instanciées :
 
 *   `L_ATTRID` pour chaque attribut : le libellé (traduit) de l'attribut,
 *   `V_ATTRID` pour chaque attribut : la valeur (au format html) de l'attribut,
-*   `ATTRID` pour chaque attribut : la valeur brute de l'attribut.
+*   `ATTRID` pour chaque attribut : la valeur brute de l'attribut.<span class="fixme" data-assignedto="EBR">Vrai?</span>
 
 **Attention** : toutes ces clés respectent les visibilités : si l'utilisateur
 n'a pas le droit de voir un attribut, les clés `L_ATTRID` et `V_ATTRID` seront
@@ -95,21 +95,21 @@ De plus, il est possible, comme dans tous les templates, d'utiliser :
 *   les paramètres globaux,
 *   les chaînes traduisibles (syntaxe `[TEXT:…]`).
 
-## Vue de modification
+## Vue de modification {#core-ref:c0ed29f6-02e5-4ff2-8943-511a7d00c106}
 
 <span class="fixme" data-assignedto="EBR">modèle de boites / zones ?</span>
 
 Afin de spécifier la vue d'attribut à utiliser en consultation, il faut utiliser
 l'option `roweditzone`.<span class="fixme" data-assignedto="EBR">à documenter dans les options d'attribut ?</span>
 
-### Utilisation des valeurs du document
+### Utilisation des valeurs du document {#core-ref:bd24ca4f-181a-4073-9144-fc0b8cb10727}
 
 Lors de l'utilisation des vues de rangés de tableau, les clés suivantes sont
 instanciées :
 
 *   `L_ATTRID` pour chaque attribut : le libellé (traduit) de l'attribut,
 *   `V_ATTRID` pour chaque attribut : l'input correspondant à l'attribut,
-*   `ATTRID` pour chaque attribut : la valeur brute de l'attribut.
+*   `ATTRID` pour chaque attribut : la valeur brute de l'attribut.<span class="fixme" data-assignedto="EBR">Vrai?</span>
 
 **Attention** : toutes ces clés respectent les visibilités : si l'utilisateur
 n'a pas le droit de voir un attribut, les clés `L_ATTRID` et `V_ATTRID` seront

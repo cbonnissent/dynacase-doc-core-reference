@@ -9,7 +9,7 @@ Ils sont assimilables à des propriétés de classe (ou propriétés statiques)
 en programmation orientée objet, même si l'implémentation en diffère.
 
 Ils sont typés au même titre que les attributs, mais ne peuvent pas être soumis
-à des contraintes.
+à des contraintes.<span class="fixme" data-assignedto="MCO">Faux, à corriger</span>
 
 Un paramètre de famille peut également être dynamique,
 lorsqu'il est défini par une méthode statique.

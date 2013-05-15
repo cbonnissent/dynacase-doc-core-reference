@@ -115,11 +115,6 @@ book:
         wip: "work in progress"
         wip_sub: ""
     - level:   2
-      content:  "representations/pied_de_page.md"
-      flags:
-        wip: "work in progress"
-        wip_sub: ""
-    - level:   2
       content:  "representations/ooo_layout.md"
       flags:
         wip: "work in progress"
