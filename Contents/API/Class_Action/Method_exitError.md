@@ -1,55 +1,60 @@
-# Action::exitError()
+# Action::exitError {#core-ref:D6845AA2-FACC-41B5-82D1-4681FCE55783}
 
 <div class="short-description">
-<span class="fixme template">short description for Action::exitError()</span>
+Mettre fin à l'exécution d'une action avec un message d'erreur.
 </div>
+
 <!--
 <div class="applicability">
 Obsolète depuis #.#.#
 </div>
 -->
 
-## Description
+## Description {#core-ref:5DDFBD76-CB4D-4AB5-9849-5BF9C90DA9A6}
+
 
     [php]
-    <return type> exitError ( <parameters> )
+    void exitError ( string $texterr )
 
-<span class="fixme template">long description</span>
+Permet de mettre fin à l'exécution de l'action et de remonter un message d'erreur à l'utilisateur.
 
-### Avertissements
+- Si l'action est exécutée en mode Web (variable PHP `$_SERVER['HTTP_HOST']` non vide), alors une page HTML d'erreur est générée avec le message d'erreur donné en argument.
+- Si l'action n'est pas exécutée en mode Web, une exception `Dcp\Core\Exception` est levée avec le message d'erreur donné en argument.
 
-<span class="fixme template">Avertissements</span>
+## Avertissements {#core-ref:EBE69C82-09F3-474A-82A6-32F4E5F10025}
 
-## Liste des paramètres
+N/A
 
-<span class="fixme template">Liste des paramètres</span>
+## Liste des paramètres {#core-ref:DDE7A59F-4F32-415C-9C34-8D6A69A8F488}
 
-<div class="fixme template">
-exemple:  
-[out] (array) `info`
-:   Si `info`est fourni, il sera rempli avec les informations de l'image (taille, couleur, etc.).
-</div>
+(string) `texterr`
+:   Le message d'erreur.
 
-## Valeur de retour
+## Valeur de Retour {#core-ref:B3F54635-9009-4EA6-9394-E18ADF595CB6}
 
-<span class="fixme template">Valeur de retour</span>
+La méthode ne retourne pas de valeur.
 
-## Erreurs / Exceptions
+## Erreurs / Exceptions {#core-ref:909579B3-281E-4E80-9BFC-4748B8D7D6DF}
 
-<span class="fixme template">Erreurs / Exceptions</span>
+N/A
 
-## Historique
+## Historique {#core-ref:7A747EED-CE9A-4554-B77B-F6716FA39BB2}
 
-<span class="fixme template">Historique</span>
+N/A
 
-## Exemples
+## Exemples {#core-ref:4252BB94-5C44-428A-8BAA-0F78056BC19C}
 
-<span class="fixme template">Exemples</span>
+- Exemple #1
 
-## Notes
 
-<span class="fixme template">Notes</span>
+    [php]
+    $errmsg = sprintf("Document with id '%d' does not exists.", $docId);
+    $action->exitError($errmsg);
 
-## Voir aussi
+## Notes {#core-ref:F36C29BF-520A-428D-97C1-90E061BA27A7}
 
-<span class="fixme template">Voir aussi</span>
+N/A
+
+## Voir aussi {#core-ref:E671125D-DCDB-4349-B9E3-0648CD92B9A3}
+
+N/A
