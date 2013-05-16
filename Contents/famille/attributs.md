@@ -973,7 +973,11 @@ Le langage de mise en forme est le html, et un éditeur WYSIWYG (basé sur [CKEd
 
 *   odt :
     
-    la mise en forme est conservée. <span class="fixme" data-assignedto="MCO">capture + détails suite à correction de [#3283](http://dev.dynacase.org/issues/3283)</span>
+    la mise en forme est conservée.
+    
+    Se reporter au chapitre sur les vues odt
+    pour les [restrictions][odt_restrictions] sur l'utilisation des attributs de
+    type html dans les document openDocument text.
 
 ### comportement {#core-ref:9bad041e-d747-4d9b-9406-5b62d662229b}
 
@@ -1732,3 +1736,4 @@ En plus des [options communes à tous les types d'attributs](#core-ref:16e19c90-
 [SORTTABLEJS_home]: http://www.kryogenix.org/code/browser/sorttable/ "site officiel de sorttable.js"
 [JSCOLOR_home]: http://jscolor.com/ "site officiel de JSColor"
 [JSCALENDAR_HOME]: http://www.dynarch.com/projects/calendar/old/ "site officiel de JSCalendar"
+[odt_restrictions]: #core-ref:3742b35d-ddc0-440e-a0aa-08ea2faf0e46

@@ -31,8 +31,10 @@ Elle doit retourner un résultat sous forme d'une chaîne de caractères.
 Le résultat est mis dans l'attribut sur lequel s'applique le calcul
 (sauf redirection explicite faite lors de la déclaration de l'attribut).
 
-Le calcul est effectué lors du rafraîchissement des documents (voir la méthode `Doc::refresh()`). <span class="fixme" data-assignedto="MCO">mettre en cohérence avec l'intro</span>
-D'un point de vue utilisateur, un attribut calculé est rafraîchi avant chaque consultation de document.
+Le calcul est effectué lors du rafraîchissement des documents (voir la méthode
+`Doc::refresh()`).
+D'un point de vue utilisateur, un attribut calculé est rafraîchi avant chaque
+consultation de document.
 
 ## Syntaxe {#core-ref:bb54f32d-d2dd-4702-9c92-e442c800263c}
 
