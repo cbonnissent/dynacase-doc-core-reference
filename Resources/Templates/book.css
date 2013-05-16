@@ -1,3 +1,7 @@
+/*
+    Gestion des flags
+ */
+
 .item\:toc span.flag,
 .item\:subtoc span.flag,
 span.flag {
@@ -28,3 +32,9 @@ span.flag.new {
     background-color: #008821;
     color: white;
 }
+
+/*
+    Gestion des tables
+ */
+
+div.table{overflow: auto;}

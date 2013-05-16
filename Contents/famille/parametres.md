@@ -8,12 +8,13 @@ et accessible depuis tous les documents de cette famille.
 Ils sont assimilables à des propriétés de classe (ou propriétés statiques)
 en programmation orientée objet, même si l'implémentation en diffère.
 
-Ils sont typés au même titre que les attributs, mais ne peuvent pas être soumis
-à des contraintes.<span class="fixme" data-assignedto="MCO">Faux, à corriger</span>
+Ils peuvent être soumis à des contraintes.
+Dans ce cas, la méthode doit être statique.
 
 Un paramètre de famille peut également être dynamique,
 lorsqu'il est défini par une méthode statique.
-Dans ce cas, la méthode sera lancée à chaque récupération du paramètre.
+Dans ce cas, la méthode doit être statique et sera lancée à chaque récupération
+du paramètre.
 
 ## Exemple d'utilisation {#core-ref:a29da8f2-6619-4b58-a3f2-a7c7690f0cb2}
 

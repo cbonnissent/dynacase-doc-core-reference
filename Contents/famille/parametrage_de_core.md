@@ -50,7 +50,7 @@ Exemple de définition d'une famille :
     ;;;;;;;;;;;;;;;;
     END;;;;;;;;;;;;;;;;
 
-Ce qui donne, vu dans un tableau :<span class="fixme" data-assignedto="MCO">MCL: ajout de `div.table{overflow: auto;}` dans la css<style>div.table{overflow: auto;}</style></span>
+Ce qui donne, vu dans un tableau :
 
 |          |                       |                   |                |   |            |                     |     |     |      |                                                                              |         |                                       |            |                                  |                                          |                                |  |  |
 | -        |                       |                   |                |   |            |                     |     |     |      |                                                                              |         |                                       |            |                                  |                                          |                                |  |  |
@@ -214,8 +214,6 @@ de définir un comportement particulier pour la famille,
 ou de définir les valeurs par défaut des propriétés
 des nouveaux documents de cette famille.
 
-<span class="fixme" data-assignedto="EBR">comment on force une nouvelle valeur ?</span>
-
 Leur syntaxe est toujours de la forme `[propid];[value]`, avec les
 correspondances suivantes :
 
@@ -258,10 +256,13 @@ DFLDID
     Il peut être égal à `auto`, ce qui a pour effet de créer un dossier
     principal automatiquement.
     
-    Si cette propriété est déjà renseignée, la nouvelle valeur ne sera pas prise
-    en compte.
+    Si cette propriété est déjà renseignée, 2 cas de figure se présentent :
     
-    Si la valeur est vide le contrôle de vue par défaut est enlevé.
+    *   La nouvelle valeur est 'auto' : Dans ce cas, l'ancienne valeur est
+        conservée
+    *   La nouvelle valeur n'est pas 'auto' : la nouvelle valeur est utilisée.
+    
+    Si la valeur est vide le dossier principal par défaut est enlevé.
 
 ICON
 :   Nom du fichier image définissant l'icône de la famille.
@@ -290,7 +291,8 @@ METHOD
         mais une classe intermédiaire est générée.
         Cela permet notamment une surcharge plus fine des méthodes.
     
-    Si la valeur est vide les méthodes associées seront enlevées.
+    Si la valeur est vide, *toutes* les méthodes associées seront enlevées (y
+    compris celles déclarées avec * ou +).
 
 PROFID
 :   Identifiant (nom logique ou id) du document profil de famille pour cette
@@ -327,7 +329,7 @@ TAG
         liste de destinataires lors des envois de mail.
         
         La famille doit alors implémenter l'interface `IMailRecipient`.
-        <span class="fixme" data-assignedto="MCO">ajout d'un lien vers l'interface</span>
+        <span class="fixme" data-assignedto="nobody">ajout d'un lien vers l'interface</span>
 
 TYPE
 :   Valeur par défaut de la propriété *type*.
@@ -638,13 +640,20 @@ ATTR
 
 ### Définition de paramètres de famille {#core-ref:c28824e2-3486-11e2-be3b-337d2321d8ee}
 
-Un paramètre de famille est défini par la syntaxe suivante :
+Un [paramètre de famille][family_param] est défini par la syntaxe suivante :
 
     PARAM;[id_attribut];[id_conteneur];[label];[in_title];[in_abstract];[type];[ordre];[visibility];[required];[link];[phpfile];[phpfunc];[elink];[constraint];[options]
 
 avec les mêmes correspondances que pour [les attributs][attributs], aux exceptions suivantes :
 
-<span class="fixme" data-assignedto="EBR">différences entre PARAM et ATTR</span><span class="fixme" data-assignedto="MCO">pas de contraintes, statique pour le calcul, liens pas pris en compte, visibilités d'édition, </span>
+*   Ils ne sont affichés dans les interfaces par défaut de dynacase qu'en
+    édition. De fait :
+    *   Utiliser une visibilité telle que *R* ou *H* rendra ce paramètre
+        inutilisable dans les interfaces standard.
+    *   Le *link* n'a pas de sens
+*   Le calcul est fait lors de l'accès au paramètre.
+*   Les méthodes de calcul et de contrainte doivent être statiques (elles sont
+    spécifiées par la syntaxe `class::method`).
 
 ### Définition de valeurs par défaut {#core-ref:94fa51e2-3488-11e2-9e34-1f7c912168cf}
 
@@ -948,11 +957,11 @@ Lors de la surcharge, le comportement est le suivant :
 
 *   pour les [valeurs par défaut](#core-ref:94fa51e2-3488-11e2-9e34-1f7c912168cf)
     
-    <span class="fixme" data-assignedto="EBR">La nouvelle valeur écrase la valeur précédemment définie si *force=yes* est utilisé</span><span class="fixme" data-assignedto="MCO">OUI</span>
+    La nouvelle valeur écrase la valeur précédemment définie si *force=yes* est utilisé.
 
 *   pour les [valeurs initiale de paramètre](#core-ref:da804e2e-3573-11e2-8974-4ba96567fbf9)
     
-    <span class="fixme" data-assignedto="EBR">La nouvelle valeur écrase la valeur précédemment définie si *force=yes* est utilisé</span><span class="fixme" data-assignedto="MCO">OUI</span>
+    La nouvelle valeur écrase la valeur précédemment définie si *force=yes* est utilisé.
 
 Ce comportement peut être altéré par l'utilisation des
 [Instructions de réinitialisation](#core-ref:5c661733-772d-42b8-8b3e-b70453ddfd33).
@@ -968,7 +977,7 @@ L'import se fait en ligne de commande, avec la commande suivante :
 
     ./wsh.php --api=importDocuments --file=[chemin vers le fichier de définition]
 
-<span class="fixme" data-assignedto="MCO">Pour plus de détails sur l'API `importDocuments`, se référer à la documentation correspondante</span>
+<span class="fixme" data-assignedto="nobody">Pour plus de détails sur l'API `importDocuments`, se référer à la documentation correspondante</span>
 
 <!-- links -->
 [PHP_sprintf]: http://php.net/manual/fr/function.sprintf.php "Documentation de la fonction sprintf sur php.net"
@@ -981,3 +990,4 @@ L'import se fait en ligne de commande, avec la commande suivante :
 [contrainte]: #core-ref:7b41906b-f199-41a4-94df-33b9ad34153b
 [definition_attribut]: #core-ref:bc3fad86-33cc-11e2-9a69-1bbd9c32b0f2
 [workflow]: #core-ref:55a53d99-0c24-48d8-8cb9-1caa171f2e9a
+[family_param]: #core-ref:4595c8e7-5002-4dbc-b6bb-882b4123efd8

@@ -243,8 +243,10 @@ keyWord
     
     ?>
 
-<span class="fixme" data-assignedto="MCO">Note: Pour plus de souplesse, les bornes min et max pourrait être stockées
-dans des paramètres de la famille, et passés en paramètre à la méthode de la contrainte.</span>
+<!--
+Note: Pour plus de souplesse, les bornes min et max pourrait être stockées
+dans des paramètres de la famille, et passés en paramètre à la méthode de la contrainte.
+-->
 
 <!-- links -->
 [WP_BNF]: http://fr.wikipedia.org/wiki/Backus_Naur_Form "Définition de la Forme de Backus-Naur sur Wikipedia"
