@@ -22,6 +22,11 @@ Le modèle de mail porte les informations suivantes :
 Famille
 :   Famille à laquelle est rattaché le modèle de mail. Cette famille permet de
     lister les attributs qui seront utilisables pour la composition du mail.
+    
+    **Note** : Dans l'éditeur du corps de message, les clefs d'attributs ne sont
+    accessibles que lors d'une modification du document après avoir sélectionné
+    la famille et non directement lors de l'ouverture du formulaire d'édition du
+    modèle de mail.
 
 Famille cycle
 :   Famille du cycle de vie auquel est rattaché ce modèle de mail. Cette famille
@@ -40,7 +45,8 @@ Le sujet
 :   Le sujet est un texte libre. Il peut contenir des parties variables issues
     du document qui va être envoyé, sous la forme `[BALISE]`.
     Les balises sont générées par le document, et peuvent être complétées par le
-    second paramètre de la méthode `MailTemplate::sendMail()` <span class="fixme" data-assignedto="MCO">On en parle où, des balises V_ et de sendMail ?</span>  
+    second paramètre de la méthode `MailTemplate::sendMail()`.
+    
     **Note**: attention, le sujet d'un mail ne pouvant pas contenir de html, il
     est déconseillé d'utiliser les balises `[V_TITLE]` ou `[V_ATTRID]` où attrid
     est une relation.
@@ -49,16 +55,20 @@ Le corps
 :   Le corps est un texte html avec mise en forme. Il peut contenir des parties
     variables issues du document qui va être envoyé, sous la forme `[BALISE]`.
     Les balises sont générées par le document, et peuvent être complétées par le
-    second paramètre de la méthode `MailTemplate::sendMail()` <span class="fixme" data-assignedto="MCO">On en parle où, des balises V_ et de sendMail ?</span>
+    second paramètre de la méthode `MailTemplate::sendMail()`.
 
 Les pièces jointes
 :   Les fichiers attachés font référence à des attributs de type *file* (ou
     *image*) du document. Les fichiers seront alors en pièce jointe du courriel.
     Bien sûr, ces attributs peuvent être des listes de fichiers (attribut
-    *file* ou *image* dans un tableau).  
+    *file* ou *image* dans un tableau).
+    
      Il est possible d'utiliser la notation `:` pour aller chercher des
-    valeurs sur les documents liés(par exemple : `TST_MYID:THE_FILE`
-    récupère la valeur de l'attribut `THE_FILE` dans le document référencé par l'attribut relation `TST_MYID` <span class="fixme" data-assignedto="EBR">peut-on utiliser plusieurs `:` comme dans getRValue ?</span>).
+    valeurs sur les documents liés (par exemple : `TST_MYID:THE_FILE`
+    récupère la valeur de l'attribut `THE_FILE` dans le document référencé par
+    l'attribut relation `TST_MYID`). La notation `:` peut être utilisée
+    plusieurs fois pour aller de relation en relation (par exemple :
+    `TST_RELATIONONEID:OTHER_RELATIONID:THE_FILE`).
 
 ## Spécification de l'émetteur ou du destinataire {#core-ref:c73aee80-78d9-460e-ad7e-de13bfb849cd}
 
@@ -66,70 +76,93 @@ L'émetteur ou les destinataires peuvent être choisis parmi :
 
 *   une *adresse fixe* : le destinataire est alors *statique*. Une aide à la
     saisie permet de récupérer l'adresse d'un utilisateur existant, mais une
-    fois la valeur saisie, elle ne sera jamais mise à jour.  
+    fois la valeur saisie, elle ne sera jamais mise à jour.
+    
     L'adresse indiquée doit être dans une forme acceptable pour le champ
     *from* d'une requête SMTP (ie. de la forme
     `"nom expéditeur" <mail@host.net`.
+
 *   Une valeur du document lié :
+    
     *   un *attribut texte* : le destinataire est alors dynamique, et est
         rattaché à un attribut textuel du document. Cet attribut doit
         contenir une adresse email dans une forme acceptable pour le champ
         *from* d'une requête SMTP (ie. de la forme
-        `"nom expéditeur" <mail@host.net`).  
+        `"nom expéditeur" <mail@host.net`).
+        
         Il est possible d'utiliser la notation `:` pour aller chercher des
-        valeurs sur les documents liés(par exemple : `TST_MYID:THE_MAIL`
-        récupère la valeur de l'attribut `THE_MAIL` dans le document référencé par l'attribut relation `TST_MYID` <span class="fixme" data-assignedto="EBR">peut-on utiliser plusieurs `:` comme dans getRValue ?</span>).
+        valeurs sur les documents liés (par exemple : `TST_MYID:THE_MAIL`
+        récupère la valeur de l'attribut `THE_MAIL` dans le document référencé
+        par l'attribut relation `TST_MYID`.)
+        
+        La notation `:` peut être utilisée plusieurs fois pour aller de relation
+        en relation (par exemple :
+        `TST_RELATIONONEID:OTHER_RELATIONID:THE_MAIL`).
+    
     *   un *attribut relation* : le destinataire est alors dynamique, et est
         rattaché à un attribut de type relation (*account* ou *docid*) du
-        document.  
+        document.
+        
         Si le document cible implémente une méthode `::getMail()`, alors elle
         sera utilisée pour renseigner l'émetteur. Sinon, il sera récupéré à
-        partir de l'attribut `US_MAIL` du document cible.  
+        partir de l'attribut `US_MAIL` du document cible.
+        
         **Note** : Pour l'émetteur, les adresses de groupes ne peuvent être
         utilisés (il est en effet interdit de spécifier un émetteur multiple
         au niveau de la norme SMTP.
+    
     *   un *paramètre de famille texte* : le destinataire est alors
         dynamique, et est rattaché à un paramètre de la famille du document.
         Ce paramètre doit contenir une adresse email dans une forme
         acceptable pour le champ*from* d'une requête SMTP (ie. de la forme
-        `"nom expéditeur" <mail@host.net`).<span class="fixme" data-assignedto="EBR">Il est possible d'utiliser la notation ':' pour aller chercher des valeurs sur les documents liés. ici aussi?</span>
+        `"nom expéditeur" <mail@host.net`).
+        
+        **Note** : La notation `:` n'est pas autorisée pour les paramètres.
+    
     *   un *paramètre de famille relation* : le destinataire est alors
         dynamique, et est rattaché à un paramètre de famille de type
-        relation (*account* ou *docid*).  
+        relation (*account* ou *docid*).
+        
         Si le document cible implémente une méthode `::getMail()`, alors elle
         sera utilisée pour renseigner l'émetteur. Sinon, il sera récupéré à
-        partir de l'attribut `US_MAIL` du document cible.  
+        partir de l'attribut `US_MAIL` du document cible.
+        
         **Note** : Pour l'émetteur, les adresses de groupes ne peuvent être
         utilisés (il est en effet interdit de spécifier un émetteur multiple
         au niveau de la norme SMTP.
+
 *   Une valeur du workflow lié :
+    
     *   un *attribut cycle* : Il se comporte comme un *attribut texte*, mais
         est récupéré sur le workflow associé au document.
+    
     *   une *relation cycle* : Il se comporte comme un *attribut relation*,
         mais est récupéré sur le workflow associé au document.
-    *   un *paramètre cycle* : Il se comporte comme un *paramètre de famille
+    
+    *   un *paramètre cycle* : Il se comporte comme un *paramètre de famille
         texte*, mais est récupéré sur la famille du workflow associé au
         document.
 
 ## Désactivation des liens {#core-ref:976387b2-fdc0-4697-96f9-583f2181b375}
 
-Lorsque le mail est envoyé à des personnes qui n'ont pas de compte sur le SI, il
-est inutile de leur envoyer des liens vers des ressources auxquelles ils n'ont
-pas accès. Il est donc possible de désactiver tous les les liens, au moyen de
-l'attribut *avec liens*, qui doit alors être décoché.
+Lorsque le mail est envoyé à des personnes qui n'ont pas de compte sur le
+système d'information, il est inutile de leur envoyer des liens vers des
+ressources auxquelles ils n'ont pas accès. Il est donc possible de désactiver
+tous les liens vers les documents, au moyen de l'attribut *avec liens*, qui doit
+alors être décoché.
 
 ## Enregistrement des messages envoyés {#core-ref:cfd63c8d-05b6-4c29-9517-c90ca6076eae}
 
-Les messages envoyés peuvent être enregistrés. Dansd ce cas, le message est
+Les messages envoyés peuvent être enregistrés. Dans ce cas, le message est
 stocké dans la famille *message envoyé*, et son profil est identique à celui du
 document servant à l'envoi.
 
-Pour stocker le message il faut cocher l'attruibut *Enregistrer une copie*.
+Pour stocker le message il faut cocher l'attribut *Enregistrer une copie*.
 
 **Note** : Attention, cela peut générer un grand nombre de documents, ce qui
 peut conduire à terme à une dégradation des performances.
 
-## historique {#core-ref:940b9b75-5567-45ee-afa0-33ae9d56d77a}
+## Historique {#core-ref:940b9b75-5567-45ee-afa0-33ae9d56d77a}
 
 Pour chaque message envoyé, un message est ajouté à  l'historique du document
 servant à l'envoi. Ce message contient :
@@ -140,14 +173,13 @@ servant à l'envoi. Ce message contient :
 Si une erreur survient lors de l'envoi du message, elle est ajoutée à
 l'historique du document servant à l'envoi, et est retournée à l'utilisateur.
 
-## limitations {#core-ref:568e0c31-6115-4d80-8ffb-dac4cda93df2}
+## Limitations {#core-ref:568e0c31-6115-4d80-8ffb-dac4cda93df2}
 
 Les messages ainsi générés ne sont pas des listes de diffusion : un seul mail
 est envoyé. Aussi, lors de l'envoi d'un message à plusieurs destinataires, tous
 recevront le même message, et il n'est pas possible de personnaliser le message
 par utilisateur.
 
-<span class="fixme" data-assignedto="EBR">Autres limitations ?</span>
 
 <!-- links -->
 [emetteur_destinataire]: #core-ref:c73aee80-78d9-460e-ad7e-de13bfb849cd
