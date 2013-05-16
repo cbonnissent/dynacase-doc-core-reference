@@ -4,9 +4,7 @@ Les minuteurs permettent de déclencher des actions à des dates prédéfinies. 
 dates peuvent être statiques, ou liées à des valeurs du document qui porte le
 minuteur.
 
-C'est utile, par exemple, pour répondre à une exigence de la forme :
-
-<span class="fixme" data-assignedto="MCL">style pour les `blockquote`</span>
+C'est utile, par exemple, pour répondre à une exigence de la forme :
 
 >   Le délai de validation par défaut est de 15 jours, mais il est modifiable
     par l'utilisateur.  
@@ -16,15 +14,16 @@ C'est utile, par exemple, pour répondre à une exigence de la forme :
 
 ## Actions {#core-ref:ab602a0f-caea-4124-90d8-8c9d4c34971c}
 
-Un minuteur effectue une séquence d'action. Chaque action peut être :
+Un minuteur effectue une séquence d'action. Chaque action peut être :
 
 *   un envoi de mail
 *   un changement d'état
 *   l'exécution d'une méthode du document portant le minuteur
-*   une combinaison des 3 types d'actions précédentes. Dans ce cas l'ordre d'exécution est :
-    1. _le changement d'état_
-    1. _l'envoi de mail_
-    1. _l'exécution de la méthode.
+*   une combinaison des 3 types d'actions précédentes. Dans ce cas l'ordre
+    d'exécution est :
+    1. le changement d'état
+    1. l'envoi de mail
+    1. l'exécution de la méthode.
 
 Chaque action est définie par un délai, et un nombre d'itérations.
 
@@ -43,11 +42,11 @@ Chaque action est définie par un délai, et un nombre d'itérations.
 ## Date de référence {#core-ref:386637d4-ab5b-4b3b-bf80-f2e6c226c555}
 
 Par défaut, la date de référence d'un minuteur est sa date d'attachement au
-document. Il est possible de modifier cette date de référence de 2 manières :
+document. Il est possible de modifier cette date de référence de 2 manières :
 
 Date de référence dynamique
-:   La date de référence peut être reliée à un attribut de type *date* du
-    document auquel est rattaché le minuteur.
+:   La date de référence peut être reliée à un attribut de type *date* ou 
+    *timestamp* du document auquel est rattaché le minuteur.
     
     Dans ce cas, la date de référence est recalculée à chaque mise à jour du
     document.
@@ -55,33 +54,54 @@ Date de référence dynamique
 Décalage de la date de référence
 :   il est possible d'appliquer un delta à cette date de référence, qu'elle soit
     dynamique ou non. ce delta peut servir, par exemple, à effectuer une action,
-    *N jours avant la date cible* : dans ce cas, on appliquera un delta de
-    *-N jours*.
+    *N jours avant la date cible* : dans ce cas, on appliquera un delta de
+    *-N jours*.
     
     Ainsi, pour répondre au besoin donné en introduction, on appliquera le
-    paramétrage suivant :
+    paramétrage suivant :
     
     *   Lors de l'envoi en validation, la date butoir est demandée à
         l'utilisateur (et sa valeur par défaut est positionnée à
         *aujourd'hui + 15 jours*)
     *   La date saisie est enregistrée dans l'attribut *date_butoir_validation*
-    *   Un minuteur est paramétré comme suit :
-        *   date de référence dynamique : *date_butoir_validation*
-        *   delta : *-5 jours*
-        *   Action 1 :
-            *   délai : 0
-            *   occurrences : 1
-            *   mail : [le modèle de mail de notre choix]
-            *   changement d'état : aucun
-            *   méthode : aucune
-        *   Action 2 :
-            *   délai : 5 jours
-            *   occurrences : 1
-            *   mail : aucun
-            *   changement d'état : *non validé*
-            *   méthode : aucune
+    *   Un minuteur est paramétré comme suit :
+        *   date de référence dynamique : *date_butoir_validation*
+        *   delta : *-5 jours*
+        *   Action 1 :
+            *   délai : 0
+            *   occurrences : 1
+            *   mail : [le modèle de mail de notre choix]
+            *   changement d'état : aucun
+            *   méthode : aucune
+        *   Action 2 :
+            *   délai : 5 jours
+            *   occurrences : 1
+            *   mail : aucun
+            *   changement d'état : *non validé*
+            *   méthode : aucune
             
-    **Note** : Le délai peut aussi être négatif. Pour l'exemple, si le delta est à zéro, il faut mettre un délai de -5 à la première action et 0 à la deuxième action.
+    **Note** : Le délai peut aussi être négatif. Il est donc également possible
+    d'appliquer le paramétrage suivant :
+    
+    *   Lors de l'envoi en validation, la date butoir est demandée à
+        l'utilisateur (et sa valeur par défaut est positionnée à
+        *aujourd'hui + 15 jours*)
+    *   La date saisie est enregistrée dans l'attribut *date_butoir_validation*
+    *   Un minuteur est paramétré comme suit :
+        *   date de référence dynamique : *date_butoir_validation*
+        *   delta : 0
+        *   Action 1 :
+            *   délai : *-5 jours*
+            *   occurrences : 1
+            *   mail : [le modèle de mail de notre choix]
+            *   changement d'état : aucun
+            *   méthode : aucune
+        *   Action 2 :
+            *   délai : 0
+            *   occurrences : 1
+            *   mail : aucun
+            *   changement d'état : *non validé*
+            *   méthode : aucune
 
 ## Historique {#core-ref:3f736d31-4f76-46c5-bb50-4ef6a7861a78}
 
@@ -91,7 +111,7 @@ document auquel est attaché le minuteur.
 ## Administration {#core-ref:eedae048-f3ca-42fc-9ed9-f2f2a63d0412}
 
 Les minuteurs peuvent être administrés depuis le _centre d'administration_.
-(application : DOCADMIN, action : TIMERS_ADMIN).
+(application : DOCADMIN, action : TIMERS_ADMIN).
 
 <!-- links -->
 [date_de_reference]: #core-ref:386637d4-ab5b-4b3b-bf80-f2e6c226c555
