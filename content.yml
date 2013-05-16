@@ -184,28 +184,24 @@ book:
     - level:   1
       content:  "applications_actions/introduction.md"
       flags:
-        wip: "work in progress"
+        draft:  "draft"
       subtoc:   2
+    - level:   2
+      content:  "applications_actions/ecrire_application.md"
+      flags:
+        draft:  "draft"       
     - level:   2
       content:  "applications_actions/ecrire_action.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
-    - level:   3
-      content:  "applications_actions/action_usage.md"
-      flags:
-        wip: "work in progress"
-        wip_sub: ""
+        draft:  "draft"
     - level:   2
       content:  "applications_actions/parametres_applicatifs.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        draft:  "draft"
     - level:   2
       content:  "applications_actions/droits_applicatifs.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        draft:  "draft"
 ##
 # API (cf https://docs.google.com/a/anakeen.com/spreadsheet/ccc?key=0At_Kbrf9EDr8dHRkM1BqbjdGQnN1TXVPLXE4eUhJOGc#gid=0)
 ##
