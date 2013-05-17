@@ -137,8 +137,24 @@ book:
     - level:   1
       content:  "comptes_groupes_roles/introduction.md"
       flags:
-        wip: "work in progress"
+        need-review: "need review"
       subtoc:   2
+    - level:   2
+      content:  "comptes_groupes_roles/utilisateurs.md"
+      flags:
+        need-review: "need review"
+    - level:   2
+      content:  "comptes_groupes_roles/groupes.md"
+      flags:
+        need-review: "need review"
+    - level:   2
+      content:  "comptes_groupes_roles/roles.md"
+      flags:
+        need-review: "need review"
+    - level:   2
+      content:  "comptes_groupes_roles/importation_comptes.md"
+      flags:
+        need-review: "need review"
 ##
 # securite
 ##
