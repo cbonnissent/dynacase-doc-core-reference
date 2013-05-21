@@ -78,10 +78,12 @@ puis vérifiera ensuite que le hook `Doc::preCreated` ne bloque pas cette créat
 Les méthode surchargeables appelées lors de la création d'un document sont :
 
 *   Lors de la création avec `Doc::store`
+    *   `Doc::preStore`
     *   `Doc::preCreated`
     *   `Doc::postCreated`
-    *   `Doc::specRefresh`
-    *   `Doc::postModify`
+    *   `Doc::preRefresh`
+    *   `Doc::postRefresh`
+    *   `Doc::postStore`
 *   Lors de la création avec `Doc::add`
     *   `Doc::preCreated`
     *   `Doc::postCreated`
@@ -91,8 +93,10 @@ Les méthode surchargeables appelées lors de la création d'un document sont :
 Les méthode surchargeables appelées lors de la modification d'un document sont :
 
 *   Lors de la modification avec `Doc::store`
-    *   `Doc::specRefresh`
-    *   `Doc::postModify`
+    *   `Doc::preStore`
+    *   `Doc::preRefresh`
+    *   `Doc::postRefresh`
+    *   `Doc::postStore`
 *   Lors de la modification avec `Doc::modify`
     *   aucune
 
@@ -107,10 +111,10 @@ avec `Doc::delete` sont :
 ### Duplication de document {#core-ref:db739471-d1e7-4762-9cfb-1de1a823b06a}
 
 Les méthode surchargeables appelées lors de la duplication d'un document 
-avec `Doc::copy`
+avec `Doc::duplicate`
 
-*   `Doc::preCopy`
-*   `Doc::postCopy`
+*   `Doc::preDuplicate`
+*   `Doc::postDuplicate`
 
 ### Import de document {#core-ref:a95a3a83-fab4-455c-8cb4-9b278f770f3a}
 
@@ -124,20 +128,20 @@ Les méthode surchargeables appelées lors de l'import d'un document sont :
 Les méthode surchargeables appelées lors de l'ajout d'un document
 dans un dossier sont :
 
-*   Lors de l'insertion avec `Dir::addFile`
-    *   `Dir::preInsertDoc`
-    *   `Dir::postInsertDoc`
-*   Lors de l'insertion avec `Dir::insertMDoc`
-    *   `Dir::preInsertDoc`
-    *   `Dir::postMInsertDoc`
+*   Lors de l'insertion avec `Dir::insertDocument`
+    *   `Dir::preInsertDocument`
+    *   `Dir::postInsertDocument`
+*   Lors de l'insertion avec `Dir::insertMultipleDocuments`
+    *   `Dir::preInsertMultipleDocuments`
+    *   `Dir::postInsertMultipleDocuments`
 
 ### Retrait d'un document d'un dossier {#core-ref:a0ec9634-095a-4caa-94e5-7a39d141e185}
 
 Les méthode surchargeables appelées lors du retrait d'un document
-dans un dossier avec `Dir::delFile` sont :
+dans un dossier avec `Dir::removeDocument` sont :
 
-*   `Dir::preUnlinkDoc`
-*   `Dir::postUnlinkDoc`
+*   `Dir::preRemoveDocument`
+*   `Dir::postRemoveDocument`
 
 <!-- links -->
 [advanced_dbobj]: #core-ref:7a62bb83-17a0-478d-a853-bc359d0fb8fb
