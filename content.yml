@@ -32,16 +32,12 @@ book:
     - level:   1
       content:  "object_model/introduction.md"
       subtoc:   2
-      flags:
-        need-review:  "need review"
 ##
 # famille
 ##
     - level:   1
       content:  "famille/introduction.md"
       subtoc:   1
-      flags:
-        need-review:  "need review"
     - level:   2
       content:  "famille/attributs.md"
       subtoc:   1
@@ -115,8 +111,6 @@ book:
     - level:   1
       content:  "documents_systemes/introduction.md"
       subtoc:   2
-      flags:
-        need-review:  "need review"
     - level:   2
       content:  "documents_systemes/recherches.md"
       subtoc:   2
@@ -138,8 +132,6 @@ book:
       content:  "documents_systemes/modeles_de_mail.md"
     - level:   2
       content:  "documents_systemes/minuteurs.md"
-    - level:   2
-      content:  "documents_systemes/processus.md"
 ##
 # representations
 ##
@@ -189,25 +181,15 @@ book:
 ##
     - level:   1
       content:  "comptes_groupes_roles/introduction.md"
-      flags:
-        need-review: "need review"
       subtoc:   2
     - level:   2
       content:  "comptes_groupes_roles/utilisateurs.md"
-      flags:
-        need-review: "need review"
     - level:   2
       content:  "comptes_groupes_roles/groupes.md"
-      flags:
-        need-review: "need review"
     - level:   2
       content:  "comptes_groupes_roles/roles.md"
-      flags:
-        need-review: "need review"
     - level:   2
       content:  "comptes_groupes_roles/importation_comptes.md"
-      flags:
-        need-review: "need review"
 ##
 # securite
 ##
@@ -1284,6 +1266,15 @@ book:
         wip_sub: ""
     - level:   3
       content:  "Advanced/Template/odt.md"
+      flags:
+        wip: "work in progress"
+        wip_sub: ""
+    - level:   2
+      content:  "Advanced/familles/introduction.md"
+      flags:
+        wip: "work in progress"
+    - level:   3
+      content:  "Advanced/familles/processus.md"
       flags:
         wip: "work in progress"
         wip_sub: ""
