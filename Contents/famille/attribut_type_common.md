@@ -33,7 +33,7 @@ showempty
 sortable
 :   Indique les modalités de tri de l'attribut.
     
-    Par défaut, les attributs sont considérés comme non sortable.
+    Par défaut, les attributs sont considérés comme non triable.
     
     Les valeurs possibles sont :
     
@@ -58,12 +58,12 @@ vlabel
     
     Les valeurs possibles sont :
     
-    *   pour les attributs de type frame et onglet :
+    *   pour les attributs de type _frame_ et _onglet_ :
         
         *   **`up` (comportement par défaut)**
         *   `none`
     
-    *   pour les attributs de type array :
+    *   pour les attributs de type _array_ :
         
         *   **`left` (valeur par défaut *en consultation*)**
         *   **`up` (valeur par défaut *en modification*)**
@@ -75,40 +75,51 @@ vlabel
         *   `up`
         *   `none`
 
-
 ititle
-: texte du tooltip du bouton '...' de l'[aide à la saisie][aide_saisie]. 
-  Par défaut : «choisissez une valeur »
+:   Texte du tooltip du bouton '...' de l'[aide à la saisie][aide_saisie]. 
+    Par défaut : « choisissez une valeur »
 
 ltitle
-: Texte affichable en popup sur l'hyperlien lorsque la souris passe
-  dessus
+:   Texte affichable en popup sur l'hyperlien lorsque la souris passe
+    dessus
 
 ltarget
-: Nom de la fenêtre destinataire de l'hyperlien. Par défaut `_self`.
-  Si `ltarget=fhidden` alors la requête ira dans une fenêtre cachée.
+:   Nom de la fenêtre destinataire de l'hyperlien. Par défaut `_self`.
+    Si `ltarget=fhidden` alors la requête ira dans une fenêtre cachée.
 
 lconfirm
-: Indique si on veut un message de confirmation avant l'activation du
-lien. Mettre `lconfirm=yes` pour activer la confirmation.
+:   Indique si on veut un message de confirmation avant l'activation du
+    lien. Mettre `lconfirm=yes` pour activer la confirmation.
 
 tconfirm
-: texte de la confirmation
+: Texte de la confirmation
 
 autosuggest
-:  En édition, sur une aide à la saisie, indique que la recherche est
-  lancée à chaque modification du texte saisi. (par défaut `yes`).
-  Mettre à `no` pour désactiver l'auto-suggestion
+:   En édition, sur une aide à la saisie, indique que la recherche est
+    lancée à chaque modification du texte saisi. (par défaut `yes`).
+    Mettre à `no` pour désactiver l'auto-suggestion
 
 eltitle
-: Options pour pour les extra liens (*elink*).
-  Texte affichable surgissant sur le bouton généré par l'extra lien.
+:   Options pour pour les extra liens (*elink*).
+    Texte affichable surgissant sur le bouton généré par l'[extra lien][elink].
 
 elsymbol
-: Caractère affiché sur le bouton généré par l'extra lien. Par défaut c'est le caractère `+` qui est affiché.
+:   Caractère affiché sur le bouton généré par l'[extra lien][elink].
+    Par défaut c'est le caractère `+` qui est affiché.
 
 eltarget
-: Nom de la fenêtre destinataire sur le bouton généré par l'extra lien.
+:   Nom de la fenêtre destinataire sur le bouton généré par l'[extra lien][elink].
+
+viewtemplate
+:   Référence de la [vue d'attribut][viewtemplate] à utiliser lors de la
+    consultation du document
+
+edittemplate
+:   Référence de la [vue d'attribut][edittemplate] à utiliser lors de la
+    modification du document
 
 <!-- links -->
 [aide_saisie]: #core-ref:0b2d4cd0-4eed-41d8-ac57-37525a444194
+[elink]: #core-ref:edf84026-7980-442f-bc86-88739e49e3b5
+[viewtemplate]: #core-ref:9cb7b313-7294-424d-bd86-a63155025902 "vue de consultation"
+[edittemplate]: #core-ref:4faa4b17-56fc-4e42-a091-f1a97b7591b8 "vue de modification"
