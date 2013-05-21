@@ -14,17 +14,17 @@ span.flag {
 }
 
 span.flag.wip {
-    background-color: #CECECE;
+    background-color: #E9A7A7;
     color: white;
 }
 
 span.flag.draft {
-    background-color: #ECB0B0;
+    background-color: #ECBA6F;
     color: white;
 }
 
 span.flag.need-review {
-    background-color: #FFD994;
+    background-color: #57B1E4;
     color: white;
 }
 
@@ -32,6 +32,72 @@ span.flag.new {
     background-color: #008821;
     color: white;
 }
+
+/*
+body.flag-wip {
+    background-color: #E9A7A7;
+}
+
+body.flag-draft {
+    background-color: #ECBA6F;
+}
+
+body.flag-need-review {
+    background-color: #57B1E4;
+}
+
+body.flag-new {
+    background-color: #008821;
+}
+*/
+
+.flags-banner {
+    position:fixed;
+    top: 5em;
+    right: -4em;
+    font-weight: bold;
+    color: #fff;
+    background-color: black;
+    text-align: center;
+    width: 20em;
+    height: 2em;
+    line-height: 2em;
+    border-radius: 3px;
+    border: 1px solid #fff;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+
+    /* Safari */
+    -webkit-transform: rotate(45deg);
+
+    /* Firefox */
+    -moz-transform: rotate(45deg);
+
+    /* IE */
+    -ms-transform: rotate(45deg);
+
+    /* Opera */
+    -o-transform: rotate(45deg);
+
+    /* Internet Explorer */
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+
+.flags-banner.flag-wip {
+    background-color: #E9A7A7;
+}
+
+.flags-banner.flag-draft {
+    background-color: #ECBA6F;
+}
+
+.flags-banner.flag-need-review {
+    background-color: #57B1E4;
+}
+
+.flags-banner.flag-new {
+    background-color: #008821;
+}
+
 
 /*
     Gestion des tables
