@@ -31,16 +31,16 @@ Mot de passe (optionnel)
 :   Le mot de passe est utilisé lors de la phase de login, il est stocké sous la forme d'une empreinte cryptographique (hash) en base de données.
 
 Adresse e-mail (optionnel)
-:   L'adresse e-mail de l'utilisateur est utilisée lors d'un envoi de mail à un utilisateur ou à un groupe d'utilisateurs, cette adresse e-mail est alors automatiquement récupéré par la plate-forme lors de la mise en forme d'un courriel.
+:   L'adresse e-mail de l'utilisateur est utilisée lors d'un envoi de mail à un utilisateur ou à un groupe d'utilisateurs, cette adresse e-mail est alors automatiquement récupérée par la plate-forme lors de la mise en forme d'un courriel.
 
 Date d'expiration du compte
-:   Cette date permet d'indiquer qu'un compte ne sera plus actif passé une certaine date. Lorsque le compte est inactif, l'utilisateur ne peut plus se connecter mais le compte n'est pas supprimé et peut-être réactivé par la suite.
+:   Cette date permet d'indiquer qu'un compte ne sera plus actif passé une certaine date. Lorsque le compte est inactif, l'utilisateur ne peut plus se connecter. Le compte n'est pas supprimé et peut-être réactivé par la suite.
 
 Il est de plus possible de désactiver un compte et de gérer les groupes via les interfaces d'administration et l'API de Dynacase.
 
 ## Groupe {#core-ref:e01fc125-52ef-4c48-b4c6-95ddeac23327}
 
-Un groupe est un ensemble d'utilisateurs et/ou de groupes, il permet d'effectuer les actions suivantes :
+Un groupe est un ensemble d'utilisateurs ou de groupes, il permet d'effectuer les actions suivantes :
 
 * envoi d'un mail aux membres d'un groupe,
 * affectation d'un ou plusieurs rôles à l'ensemble des membres du groupe,
@@ -49,7 +49,7 @@ Un groupe est un ensemble d'utilisateurs et/ou de groupes, il permet d'effectuer
 Les groupes possèdent les caractéristiques suivantes :
 
 Nom
-:   Titre du document groupe
+:   Nom du groupe
 
 Login
 :   Il sert à l'identification du groupe.

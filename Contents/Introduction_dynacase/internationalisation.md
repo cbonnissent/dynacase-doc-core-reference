@@ -7,7 +7,7 @@ Dynacase comprend un mécanisme permettant l'internationalisation de l'applicati
 * traduire l'ensemble des labels présentés dans l'interface,
 * présenter la date en fonction de la locale de l'utilisateur.
  
-Par défaut, il y a deux langues qui sont mises à disposition : le français et l'anglais.
+Par défaut, deux langues sont disponibles : le français et l'anglais.
 
 ## Mécanisme de traduction {#core-ref:0a83efc3-e8b6-475c-a265-09b8e3cc31a6}
 
@@ -16,7 +16,7 @@ Dynacase utilise le mécanisme standard de traduction [gettext](https://fr.wikip
 Cet outil permet deux choses :
 
 * lors du développement : la création de catalogues de traduction en extrayant les clefs directement du code PHP,
-* lors de l'exécution : la récupération de la traduction d'une clef par rapport à la locale en cours.
+* lors de l'exécution : la récupération de la traduction d'une clef par rapport à la locale en cours (la langue choisie par l'utilisateur).
 
 La mise en place des traductions lors du développement d'une application passe donc par les étapes suivantes :
 

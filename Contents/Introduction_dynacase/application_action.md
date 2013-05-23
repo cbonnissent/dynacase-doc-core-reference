@@ -15,7 +15,7 @@ Action
     * des IHM spécifiques (mise en place d'un portail d'accueil, d'interface de manipulation de documents, etc.)
 
 ACL
-:   Une ACL est un droit applicatif, elle a deux usages complémentaires. Au niveau d'une action, elle indique que l'utilisateur doit posséder cette ACL pour pouvoir utiliser cette action et associée à un compte (rôle, utilisateur, groupe) il indique que ce compte possède cette ACL.
+:   Une ACL est un droit applicatif, elle a deux usages complémentaires. Au niveau d'une action, elle indique que l'utilisateur doit posséder cette ACL pour pouvoir utiliser cette action et associée à un compte (rôle, utilisateur, groupe) elle indique que ce compte possède cette ACL.
 
 ## Application {#core-ref:82e2587e-fe2b-49ce-a4aa-a25fdc9c12c2}
 
@@ -45,7 +45,7 @@ Une liste de définition d'action
 Des paramètres applicatifs
 : Les paramètres applicatifs sont présentés sous la forme d'une liste décrivant l'ensemble des paramètres applicatifs applicables pour l'application
 
-NB : il est possible à une application d'hériter d'une autre, elle hérite alors de son paramétrage et des actions et paramètres applicatifs.
+NB : une application peut hériter d'une autre, elle hérite alors de son paramétrage et des actions et paramètres applicatifs.
 
 ## ACL {#core-ref:5afe50d4-321c-4dd7-ac1c-9fc3a5076e52}
 

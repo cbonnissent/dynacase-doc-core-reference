@@ -28,7 +28,7 @@ Une famille est un élément permettant de décrire la structure et le comportem
 Le schéma ci-dessus indique qu'une famille Dynacase est constituée des éléments suivants :
 
 Des propriétés
-:   Elles définissent le comportement de la famille et des méta-données qui lui sont associées,
+:   Elles définissent le comportement de la famille et des méta-données qui lui sont associées.
 
 Une structure
 :   Elle définit l'organisation et le type des données contenues par les documents de la famille.  
@@ -55,13 +55,13 @@ Des contrôles de vues
     Par exemple, un manager peut voir plus d'éléments sur un compte-rendu qu'un simple participant.
 
 Des règles métiers
-:   Elles sont l'ensemble des règles s'appliquant à un type de document. Elles peuvent être de type très divers (ajout d'une règle de calcul de numéro chrono, ajout de contraintes particulières sur la mise en forme des données, calcul automatique d'une valeur, aide aux utilisateur pour la saisie des valeurs).  
+:   Elles sont l'ensemble des règles s'appliquant à un type de document. Elles peuvent être de type très divers (ajout d'une règle de calcul de numéro chrono, ajout de contraintes particulières sur la mise en forme des données, calcul automatique d'une valeur, aide aux utilisateurs pour la saisie des valeurs).  
     Elles se déclarent de deux manières :
     
     * via une classe associée à la famille : celle-ci permet de surcharger les comportements par défaut de Dynacase lors des étapes de la vie du document (création, sauvegarde, édition, etc.);
     * via un fichier PHP : celui-ci liste des méthodes permettant de guider la saisie des utilisateurs (par exemple rechercher uniquement les salles disponibles).
 
-### Famille système et fonctionnelles {#core-ref:cdfbd1d8-994f-4517-aaa2-2275c99bb2f2}
+### Familles système et fonctionnelle {#core-ref:cdfbd1d8-994f-4517-aaa2-2275c99bb2f2}
 
 On distingue deux types de familles.
 
@@ -75,7 +75,7 @@ Famille système
     * modèle de mail : qui permet de définir un modèle d'envoi par mail pour un type de document;
     * etc.
     
-    Ces documents n'ayant pas de sens particulier pour les utilisateurs non administrateurs, ils ne sont pas accessibles via les recherches par défaut pour ne pas surcharger celles-ci avec des informations non pertinentes.
+    Ces documents n'ayant pas de sens particulier pour les utilisateurs non administrateurs, ils ne sont pas accessibles via les recherches par défaut pour ne pas les surcharger avec des informations non pertinentes.
 
 NB : il est possible dans le cadre d'un développement Dynacase de définir ses propres familles systèmes et fonctionnelles
 
@@ -99,7 +99,7 @@ L'historique
 
 ## Les types d'attributs {#core-ref:1edd5ce3-399e-4a75-b96c-cbbea7626f36}
 
-Un type d'attribut est une type de données. Il est utilisé dans les familles pour définir leur structure ; et dans les documents pour représenter, traiter et sauvegarder les données associées au document.
+Un type d'attribut est un type de données. Il est utilisé dans les familles pour définir leur structure et dans les documents pour représenter, traiter et sauvegarder les données associées au document.
 
 Il existe trois catégories d'attributs :
 
@@ -120,7 +120,7 @@ Donnée
 :   Ces attributs permettent de structurer les données récoltées au sein d'un formulaire. Ils permettent d'indiquer qu'une famille est composée d'un champ texte, d'un champ date, etc. Leur présence permet à la plate-forme de générer à la fois les formulaires et la structure en base de données permettant de stocker les documents.
 
 Tableau
-:   Ce type d'attribut permet de créer une représentation tabulaire d'un ensemble d'attributs non-structurants. Ceux-ci deviennent alors les colonnes d'un tableau pouvant avoir plusieurs lignes.
+:   Ce type d'attribut permet de créer une représentation tabulaire d'un ensemble d'attributs Donnée. Ceux-ci deviennent alors les colonnes d'un tableau pouvant avoir plusieurs lignes.
 
 ## Les attributs {#core-ref:97f8232d-a45e-45ce-b559-71c38855edec}
 
