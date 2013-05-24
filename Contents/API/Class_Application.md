@@ -1,10 +1,10 @@
-# Classe Application
+# Classe Application {#core-ref:5fca4352-702f-44fb-8ffa-3686545c6c67}
 
 La classe *Application* gère les applications Dynacase.
 Cette classe gère l'accès aux fonction globales liées à l'application comme les paramètres applicatifs. Elle permet d'instancier les objets *Action* en vu de leur exécution.
 
 
-## Propriétés de la classe Application
+## Propriétés de la classe Application {#core-ref:e2510a47-76d3-4bb2-b03f-f773c3b8eff4}
 Ces propriétés sont pour la plupart issues du fichier ".app" de description de l'application.
 
 id
@@ -60,7 +60,7 @@ tag
 : Permet d'indiquer une marque. Les applications de Dynacase Core sont marquées "CORE".
 
 
-## Propriétés fonctionnelles
+## Propriétés fonctionnelles {#core-ref:bfc9edaa-6814-423e-b654-d801a0185164}
 Ces propriétés sont renseignées une fois que l'objet *Application* est initialisé avec un identifiant valide.
 
 user

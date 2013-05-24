@@ -166,5 +166,5 @@ Si la commande est :
     dans le fichier MYAPP_init.php.
 
 `delete`
-:   supprime les paramètres de l'application.
+:   supprime les paramètres de l'application ainsi que l'application elle-même.
 

@@ -4,13 +4,13 @@ Pour créer une nouvelle application, il faut au minimum un dossier et deux
 fichiers :
 
     MYAPP
-    |--MYAPP.app
+    |-- MYAPP.app
     `-- MYAPP_init.php
 
 où *MYAPP* est le nom de l'application.
 
 Si l'application est visible, l'icône de l'application doit être ajoutée
-(image carrée entre 48 et 68 px, au format png si possible):
+(image carrée entre 48 et 64 px, au format png si possible):
 
     Images/votre_image.png
 
@@ -120,7 +120,6 @@ Les différentes clés utilisables dans `$app_desc` sont :
 
 **childof** (facultatif)
 :   Indique si cette application [hérite d'une autre][childofapp].
-    <span class="fixme" data-assignedto="NTL">lien vers explications sur l'héritage des applications</span>
     
     Il est possible de faire dériver une application de n'importe quelle autre
     application existante (ex: ONEFAM,GENERIC...). Cette technique est
@@ -152,7 +151,7 @@ Les différentes clés utilisables dans `$app_desc` sont :
     
     
 
-Ces clés correspondent aux [propriétés de la classe Application]()<span class="fixme" data-assignedto="MCO">Ajouter le lien vers le chapitre des propriétés de la classe Application</span>
+Ces clés correspondent aux propriétés de la [classe Application][classapplication]
 
 ## MYAPP_init.php {#core-ref:64c24cf9-b646-4a0f-9164-d0d146e12023}
 
@@ -204,4 +203,5 @@ jour soit prise en compte.
 [app_desc]: #core-ref:f0dbbdd0-5f93-4173-be2f-bac715b80771
 [droits_applicatifs]: #core-ref:a98b72ea-c063-4907-abc4-e5171ab55e59
 [parametres_applicatifs]: #core-ref:c3d9cb18-16d0-435a-b8c2-5fa6ac06c522
-[childofapp]: #FIXME
+[childofapp]: #core-ref:3fb1bd33-0190-4e8c-96f5-6a8c0f084e6f
+[classapplication]: #core-ref:5fca4352-702f-44fb-8ffa-3686545c6c67
