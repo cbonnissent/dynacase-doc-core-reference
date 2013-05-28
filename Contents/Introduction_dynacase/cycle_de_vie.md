@@ -7,7 +7,7 @@ Ce chapitre décrit un élément fondamental d'un projet Dynacase : **le cycle d
 Le cycle de vie est un objet interne à Dynacase qui permet de faire évoluer un document au sein d'un processus. Lors de ce processus, différentes actions peuvent être appliquées au document :
 
 * changement/calcul de valeurs (le numéro chrono n'est affecté qu'après la validation du document),
-* changement des droits associés à un document (un document en rédaction ne peut-être modifiable que par son rédacteur),
+* changement des droits associés à un document (un document en rédaction ne peut être modifiable que par son rédacteur),
 * évolution du formulaire (l'onglet validation n'apparaît que lors de l'étape validation),
 * envoi de courriel (le validateur d'un document reçoit un courriel lorsque son avis est nécessaire),
 * déclenchement d'un minuteur (si après 1 mois le document est toujours en validation, le valideur est relancé),
@@ -57,7 +57,7 @@ Couleur
 Affectation
 :   L'affectation d'un utilisateur à une étape permet de réserver le document à cet utilisateur et d'éventuellement verrouiller le document à l'intention de cet utilisateur et de lui envoyer un courriel.
 
-NB : On considère qu'une étape sans activité doit être terminale (c'est à dire qu'il n'existe pas de transition permettant de sortir de cette étape), car c'est uniquement durant ces étapes que le document n'évolue plus et que donc qu'aucune activité ne s'y applique. Par exemple, un document **gardé pour historique** n'évolue plus et aucune activité ne s'y applique.
+NB : On considère qu'une étape sans activité doit être terminale (c'est à dire qu'il n'existe pas de transition permettant de sortir de cette étape), car c'est uniquement durant ces étapes que le document n'évolue plus, qu'aucune activité ne s'y applique. Par exemple, un document **gardé pour historique** n'évolue plus et aucune activité ne s'y applique.
 
 ## Transition {#core-ref:bc1bbed6-f59b-40d7-94ff-d0881366ae38}
 
@@ -74,7 +74,7 @@ M0 (ou précondition)
     * avant le déclenchement des ASK (voir entrée suivante),
     * avant le changement d'état en lui même
     
-    Si la précondition n'est pas remplie alors elle renvoie un message qui est affiché à l'utilisateur et ne permet pas d'effectuer la transition
+    Si la précondition n'est pas remplie alors elle renvoie un message qui est affiché à l'utilisateur et ne permet pas d'effectuer la transition.
 
 ASK
 :   Les ASK sont un ensemble d'attributs utilisés pour poser une question à l'utilisateur avant d'effectuer la transition. Ils peuvent servir à valider une valeur, demander un commentaire, etc. Les valeurs récupérées peuvent être utilisées dans les méthodes du cycle de vie lors des M1, M2, M3.
@@ -89,7 +89,7 @@ Courriel
 :   Il est possible d'attacher des courriels au passage d'une transition. Ceux-ci sont alors envoyés à chaque passage de cette transition, le contenu et les destinataires peuvent être composés à l'aide du contenu du document en cours de transition.
 
 Minuteur
-:   Il est possible d'attacher des minuteurs au passage d'une transition. Ceux-ci servent à déclencher une action de manière asynchrone (au bout d'un certain temps). Un des usages les plus typiques et la relance par mail (par exemple, si jamais le document est toujours à l'état relecture au bout de 15 jours le relecteur reçoit à nouveau un mail l'invitant à relire le document).
+:   Il est possible d'attacher des minuteurs au passage d'une transition. Ceux-ci servent à déclencher une action de manière asynchrone (au bout d'un certain temps). Un des usages les plus typiques est la relance par mail (par exemple, si jamais le document est toujours à l'état relecture au bout de 15 jours le relecteur reçoit à nouveau un mail l'invitant à relire le document).
 
 M3
 :   Le M3 est une méthode PHP qui est appelée en tout dernier lors d'une transition. Elle est utilisée pour effectuer une action après le passage de la transition, l'envoi des mails et des minuteurs.

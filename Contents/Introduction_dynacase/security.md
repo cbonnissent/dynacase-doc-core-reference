@@ -20,7 +20,7 @@ Une mécanique d'autorisation
     :   Ce système est basé sur des ACL, seuls les utilisateurs possédant l'ACL requise peuvent exécuter l'application ou l'action.
     
     Sécurité documentaire
-    :   Un système de droit, profil et rôle permet de désigner de manière statique ou dynamique (suivant l'état et/ou le contenu du document) quels utilisateurs peuvent consulter, modifier, supprimer, etc. des documents.
+    :   Un système de droit, profil et rôle permet de désigner de manière statique ou dynamique (suivant l'état ou le contenu du document) quels utilisateurs peuvent consulter, modifier, supprimer, etc. des documents.
 
 On peut résumer les mécanismes de sécurité avec le schéma suivant :
 
@@ -39,7 +39,7 @@ Les frontend d'authentification fournis par défaut par Dynacase sont :
 Les backends d'authentification fournis par défaut par Dynacase sont :
 
 * authentification sur base Dynacase,
-* authentification par LDAP (via un module complémentaire).
+* authentification par LDAP/Active Directory (via un module complémentaire).
 
 Il est de plus possible de créer ses propres backend et frontend d'authentification et d'en indiquer l'ordre d'exécution (par exemple, on peut choisir que l'utilisateur sera d'abord authentifié par un reverse proxy puis, si le reverse proxy n'a pas donné l'authentification, par un login sous forme de formulaire).
 
@@ -70,7 +70,7 @@ Supprimer
 De plus, il existe au niveau d'une famille documentaire les droits suivants:
 
 Créer 
-:   Un utilisateur ayant ce droit sur un document de famille peut créer un document de cette famille en exécutant une action effectuant cette tâche.
+:   Un utilisateur ayant ce droit sur une famille peut créer un document de cette famille en exécutant une action effectuant cette tâche.
 
 Créer manuellement
 :   Un utilisateur ayant ce droit peut créer un document de cette famille, en passant par l'interface de création de document par défaut.
@@ -91,7 +91,7 @@ Statique
 Dynamique
 :   la liste des utilisateurs ayant droit varie alors suivant l'étape et/ou le contenu du document (par exemple : seul l'utilisateur cité dans l'attribut *validateur* de document peut le modifier lors de l'étape *validation*)
 
-et différents types de profils :
+Il existe différents types de profils :
 
 Document
 :   Il concerne un document et n'indique que les droits de base (voir, modifier, supprimer).
@@ -108,10 +108,10 @@ Via la famille
 :   Le profil est associé via une propriété de la définition de famille. Dans ce cas, tous les nouveaux documents de cette famille porteront ce profil.
 
 Via le cycle de vie
-:   Le profil est associé via le paramétrage du cycle de vie à une étape et tous les documents passant par cette étape se voient associés au profil.
+:   Le profil est associé via le paramétrage du cycle de vie à une étape et tous les documents passant par cette étape se voient appliqué le profil.
 
 Via le code
-:   Le profil est associé dynamiquement en utilisant les fonctions de l'API.
+:   Le profil est attaché dynamiquement en utilisant les fonctions de l'API.
 
 Via l'interface de gestion
 :   Si l'utilisateur possède les droits suffisants, il lui est possible de changer le profil d'un document en cours.
