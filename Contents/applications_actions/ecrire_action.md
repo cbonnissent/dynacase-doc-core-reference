@@ -12,15 +12,15 @@ Toutes les actions doivent être définies au sein d'une [application]
 La description de l'action se fait dans le fichier [`MYAPP.app`][my_app.app]
 dans la variable `$action_desc`.
 
-Une action est définie à l'aide d'un fichier PHP et d'un layout XML/HTML.
-Le fichier PHP ou le layout est optionnel, mais il faut au moins un des deux.
+Une action est définie à l'aide d'un fichier PHP et d'un template XML/HTML.
+Le fichier PHP ou le template est optionnel, mais il faut au moins un des deux.
 Chaque action peut définir son [droit d'accès (ACL)]
 (#core-ref:a98b72ea-c063-4907-abc4-e5171ab55e59). 
 Si l'utilisateur n'a pas le droit défini, l'exécution de l'action sera 
 interdite. Si l'action n'a pas d'ACL, l'action sera considérée comme libre 
 ainsi tout utilisateur aura le droit de l'exécuter.
 
-Le nom du fichier PHP, du layout et de la fonction, doivent être définis dans `MYAPP.app`. 
+Le nom du fichier PHP, du template et de la fonction, doivent être définis dans `MYAPP.app`. 
 
 Exemple:
 Pour la définition de `$app_desc` se reporter au chapitre [applications]
@@ -65,29 +65,29 @@ Pour la définition de `$app_desc` se reporter au chapitre [applications]
 **long_name** (facultatif)
 :   Description longue de l'action.
     
-    (par défaut le **long_name** est égal au **short_name**)
+    (s'il est omis le **long_name** est égal au **short_name**)
 
 **script** (facultatif)
 :   Nom du fichier PHP qui sera inclus lors de l'exécution de l'action.
     
-    Par défaut le nom du script est le nom (**name**) de l'action en minuscules,
+    S'il est omis, le nom du script est le nom (**name**) de l'action en minuscules,
     suivi de l'extension `.php`
     
 **function** (facultatif)
 :   Nom de la fonction PHP qui sera appelée lors de l'exécution de l'action.
     Elle doit se trouver dans le fichier défini par **script**.
     
-    Par défaut, le nom de la fonction est le nom (**name**) de l'action en
+    S'il est omis, le nom de la fonction est le nom (**name**) de l'action en
     minuscules.
 
 **layout** (facultatif)
 :   Nom du fichier template utilisé lors de l'exécution de l'action.
     
-    Par défaut le nom du layout est le nom (**name**) de l'action en minuscules
+    S'il est omis, le nom du template est le nom (**name**) de l'action en minuscules
     suivi de l'extension `.xml`
 
 **available** (facultatif) 
-:   Indique si l'action est disponible. Deux valeurs possibles: 
+:   Indique si l'action est disponible. Deux valeurs possibles : 
     
     *   `'Y'` : action disponible  (valeur par défaut)
     *   `'N'` : action non disponible.
@@ -101,14 +101,15 @@ Pour la définition de `$app_desc` se reporter au chapitre [applications]
     Le nom du droit doit être une des valeurs définies par la variable
     `$app_acl`. Une absence de valeur indique qu'il n'est pas nécessaire d'avoir
     un droit particulier pour exécuter l'action. Si un utilisateur tente
-    d'exécuter une action dont il n'a pas les droits, dans le cas d'une requête
+    d'exécuter une action dont il n'a pas les droits alors dans le cas d'une requête
     HTTP, le status _"503 Action forbidden"_ sera renvoyé.
     
     **Note** : l'utilisateur "admin" peut exécuter toutes les actions sans
     restriction de droits.
 
 **root** (facultatif)
-:   Indique que cette action est l'action principale de l'application. Deux valeurs possibles: 
+:   Indique que cette action est l'action principale de l'application. Deux 
+valeurs possibles: 
     
     * 'Y' action principale. Dans ce cas l'action sera lancée avec l'url `?app=MYAPP`;
     * 'N' action non principale (valeur par défaut).
@@ -120,7 +121,8 @@ Pour la définition de `$app_desc` se reporter au chapitre [applications]
 
 ### Contenu d'un fichier exemple d'action: `myaction1.php` {#core-ref:47071800-7b9a-4ef1-b428-324ffa6293e9}
 
-Le fichier `myaction1.php` contient une fonction du même nom que l'action avec comme paramètre une référence à l'objet [Action](#core-ref:29553eba-bcea-4baf-bef8-103c3a3510fa)
+Le fichier `myaction1.php` contient une fonction du même nom que l'action avec 
+comme paramètre une référence à l'objet [Action](#core-ref:29553eba-bcea-4baf-bef8-103c3a3510fa)
 
 
     Fichier myaction1.php
@@ -138,7 +140,7 @@ Pour récupérer
     [php]
     $parameterValue = $action->getParam("nom_du_paramètre");
 
-* le handler de la base de donnée:
+* les coordonnées de la base de donnée:
 
     [php]
     $dbaccess = $action->dbaccess;
@@ -146,12 +148,13 @@ Pour récupérer
 * l'utilisateur courant: 
 
     [php]
-    $user = $action->user;
+    $user = $action->user; // Objet de type `Account`
 
-* l'application liée à l'action (retourne une instance d'objet de la classe [Application]()<span class="fixme" data-assignedto="MCO">Ajouter le lien vers le chapitre des propriétés de la classe Application</span>)
+* l'application liée à l'action (retourne une instance d'objet de la classe [Application][classapplication]
+
 
     [php]
-    $application = $action->parent
+    $application = $action->parent // Objet de type `Application`
 
 * les valeurs passées dans l'URL:
 
@@ -163,9 +166,11 @@ Pour récupérer
 
 #### Vérifier les arguments et donner l'usage {#core-ref:b9756f83-8a67-42fa-ad4d-0641ae3c886d}
 
-La classe [ActionUsage]()<span class="fixme" data-assignedto="MCO">Ajouter le lien vers la classe ActionUsage</span> permet de valider que les arguments reçus sont valides (attribut obligatoire/optionnel).
+La classe [ActionUsage][actionusage] permet de valider que les arguments reçus 
+sont valides (attribut obligatoire/optionnel).
 
-Si l'option strict est mise à `true` (valeur par défaut), tout argument non compris dans l'usage provoquera une erreur et l'action sera déroutée dès l'appel à `verify()`.
+Si l'option strict est mise à `true` (valeur par défaut), tout argument non 
+compris dans l'usage provoquera une erreur et l'action sera déroutée dès l'appel à `verify()`.
 
 Exemple d'utilisation de `ActionUsage`:
 
@@ -173,6 +178,7 @@ Exemple d'utilisation de `ActionUsage`:
     function my_color(Action &$action)
     {
     	$usage = new ActionUsage($action);
+        $usage->setText(_("Get color map"));
     	$red = $usage->addOptionalParameter("red", "red level", array(), 128);
     	$quality = $usage->addOptionalParameter("quality", "quality", array(), 20);
     	$usage->verify();
@@ -181,9 +187,8 @@ Exemple d'utilisation de `ActionUsage`:
     	if (!is_numeric($quality)) $usage->exitError('quality must be a integer');
     }
 
-Plus d'informations sur la classe `ActionUsage` sont disponible [ici]()<span class="fixme" data-assignedto="MCO">Ajouter le lien vers la classe ActionUsage</span>
 
-#### Afficher/Transmettre des données dans le layout {#core-ref:3b806816-b4f3-415c-a22f-fe059b818d91}
+#### Afficher/Transmettre des données dans le template {#core-ref:3b806816-b4f3-415c-a22f-fe059b818d91}
 
 Il faut utiliser l'attribut `lay` de l'objet `$action` qui est passé en
 paramètre. L'attribut `lay` est un objet de la classe [`Layout`][class_layout] :
@@ -191,12 +196,13 @@ paramètre. L'attribut `lay` est un objet de la classe [`Layout`][class_layout]�
     [php]
     $action->lay->set("mydata", "val_to_be_sent");
 
-Plus d'informations sur la classe `Layout` sont disponibles [ici][class_layout]
+Plus d'informations sur les template sont disponibles [ici][template]
 
 #### Mise en garde et astuces {#core-ref:41079be9-2294-4bd6-ae76-cb6934a7302b}
 
 * L'appel à  `$this->` ne fonctionne pas dans le fichier action : ce n'est pas un objet.
-* Pour sortir de la fonction et afficher un message d'erreur à l'utilisateur, il faut utiliser la méthode [`exitError()`][exiterror] :
+* Pour sortir de la fonction et afficher un message d'erreur à l'utilisateur,
+ il faut utiliser la méthode [`exitError()`][exiterror] :
 
     [php]
     $action->exitError("Message d'erreur");
@@ -204,29 +210,39 @@ Plus d'informations sur la classe `Layout` sont disponibles [ici][class_layout]
 
 ### Contenu d'un fichier exemple de template d'action: `myaction1.xml` {#core-ref:1daf83ca-fcb3-496f-8790-a1ce29c6bbf0}
 
-Le layout de l'action peut faire référence aux layout de l'application de FDL. Pour cela, le contenu du fichier est inséré entre les 2 balises :
+Le template de l'action peut faire référence aux zones de l'application de FDL.
+Pour cela, le contenu du fichier est inséré entre les 2 balises :
 
-    [code]
+    [html]
     [ZONE FDL:HTMLHEAD]
     ...
     [mydata]
     [ZONE FDL:HTMLFOOT]
 
-Cela rajoutera une entête et un pied de page au layout qui incluront tous les fichiers nécessaires à l'affichage d'un layout Dynacase.
+Cela rajoutera une entête et un pied de page au template qui incluront tous les 
+fichiers nécessaires à l'affichage d'un template Dynacase.
 
 La balise `HTMLHEAD` peut contenir un attribut `title` en plus:
 
-    [code]
+    [html]
     [ZONE FDL:HTMLHEAD?title=mon titre]
 
 Cela changera le titre de la page web en `mon titre`.
 
-Le reste de la page entre les deux balises doit être du code HTML valide ou utiliser le [système de template de Dynacase](#core-ref:9073f5b0-3cde-4690-a7a2-ffb5c4c7b94f)
+Le reste de la page entre les deux balises doit être du code HTML valide ou 
+utiliser le [système de template de Dynacase](#core-ref:9073f5b0-3cde-4690-a7a2-ffb5c4c7b94f)
 
-**Note** : Bien que la plupart des layout sont faits pour produire des pages HTML, le layout peut aussi produire tout type de données textuelles telles que du javascript, des css, du json ou du XML. Une action peut aussi retourner des fichiers binaires telles que des images mais dans ce cas ce n'est pas l'objet `lay` qui sera utilisé pour le retour.
+**Note** : Bien que la plupart des templates sont faits pour produire des pages 
+HTML, le templat peut aussi produire tout type de données textuelles telles que
+ du javascript, des css, du json ou du XML. Une action peut aussi retourner des 
+ fichiers binaires telles que des images mais dans ce cas ce n'est pas l'objet 
+ `lay` qui sera utilisé pour le retour.
 
 <!-- links -->
 [application]: #core-ref:395f44f1-6699-4ad8-b525-31e65e9b6efb
 [my_app.app]: #core-ref:cf584c21-ebee-4444-8046-da3fa3a2db1b
 [class_layout]: #core-ref:9f9edc1b-17a5-4f54-86ee-69e33016fe18
 [exiterror]: #core-ref:D6845AA2-FACC-41B5-82D1-4681FCE55783
+[actionusage]: #core-ref:7a8932eb-a59f-482a-9991-4ee1c634eae4
+[classapplication]: #core-ref:5fca4352-702f-44fb-8ffa-3686545c6c67
+[template]: #core-ref:af9ea76c-069e-49e1-a382-efc8ca35f1eb
