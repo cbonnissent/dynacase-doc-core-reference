@@ -138,3 +138,45 @@ blockquote cite {
 blockquote cite:before {
     content: "\2014 \2009";
 }
+.chunk_nav {
+    background-color: rgba(80,80,80,0.15);
+    -moz-animation: fadeout 5s; /* Firefox */
+    -webkit-animation: fadeout 5s; /* Safari and Chrome */
+    -o-animation: fadeout 5s; /* Opera */
+    animation: fadeout 5s;
+}
+@-moz-keyframes fadeout { /* Firefox */
+    from {
+        background-color: rgba(80,80,80,1);
+    }
+    to {
+        background-color: rgba(80,80,80,0.15);
+    }
+}
+@-webkit-keyframes fadeout { /* Safari and Chrome */
+    from {
+        background-color: rgba(80,80,80,1);
+    }
+    to {
+        background-color: rgba(80,80,80,0.15);
+    }
+}
+@-o-keyframes fadeout { /* Opera */
+    from {
+        background-color: rgba(80,80,80,1);
+    }
+    to {
+        background-color: rgba(80,80,80,0.15);
+    }
+}
+@keyframes fadeout {
+    from {
+        background-color: rgba(80,80,80,1);
+    }
+    to {
+        background-color: rgba(80,80,80,0.15);
+    }
+}
+.chunk_nav:hover {
+    background-color: rgba(80,80,80,1);
+}
