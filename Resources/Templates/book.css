@@ -180,3 +180,14 @@ blockquote cite:before {
 .chunk_nav:hover {
     background-color: rgba(80,80,80,1);
 }
+
+a code {
+    color: #247FCA;
+}
+a code:hover {
+    color: #ffffff;
+    background-color: #8AE234;
+}
+#chunk_toc {
+    background-color: #fff;
+}
