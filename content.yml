@@ -221,18 +221,7 @@ book:
     - level:  1
       content:  "dynacase_cli/introduction.md"
       flags:
-        wip: "work in progress"
-      subtoc:   2
-    - level:   2
-      content:  "dynacase_cli/ecrire_api.md"
-      flags:
-        wip: "work in progress"
-        wip_sub: ""
-    - level:   3
-      content:  "dynacase_cli/api_usage.md"
-      flags:
-        wip: "work in progress"
-        wip_sub: ""
+        need-review: "need review"
 ##
 # applications_actions
 ##
