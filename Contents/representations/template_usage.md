@@ -19,16 +19,14 @@ Le template `atomic.xml` :
 Associé au fichier `atomic.php` :
 
     [php]
-    
-        $lay = new Layout("atomic.xml");
-        $x=34;
-        $y=78;
-        $lay->set("X",$x);
-        $lay->set("Y",$y);
-        $lay->set("XplusY",$x+$y);
-        $lay->set("XfoisY",$x*$y);
-        print $lay->gen();
-    
+    $lay = new Layout("atomic.xml");
+    $x=34;
+    $y=78;
+    $lay->set("X",$x);
+    $lay->set("Y",$y);
+    $lay->set("XplusY",$x+$y);
+    $lay->set("XfoisY",$x*$y);
+    print $lay->gen();
 
 Donne :
 
@@ -48,22 +46,20 @@ Le template `multiplication.xml` :
 Associé au fichier `multiplication.php` :
 
     [php]
+    $lay = new Layout("multiplication.xml");
+    $x=3;
+    $tmul = array(); // tableau pour le bloc MUL
     
-        $lay = new Layout("multiplication.xml");
-        $x=3;
-        $tmul = array(); // tableau pour le bloc MUL
-        
-        for ($i=1; $i<10; $i++) {
-            $tmul[] = array(
-                "Y"      => $i,
-                "XfoisY" => $i*$x
-            );
-        }
-        
-        $lay->set("X",$x);
-        $lay->setBlockData("MUL",$tmul);
-        print $lay->gen();
+    for ($i=1; $i<10; $i++) {
+        $tmul[] = array(
+            "Y"      => $i,
+            "XfoisY" => $i*$x
+        );
+    }
     
+    $lay->set("X",$x);
+    $lay->setBlockData("MUL",$tmul);
+    print $lay->gen();
 
 Donne :
 
@@ -93,10 +89,8 @@ Le template `cond.xml` :
 Associé au fichier `cond.php` :
 
     [php]
-    
-        $lay = new Layout("cond.xml");
-        $lay->set("Interdit",false);
-    
+    $lay = new Layout("cond.xml");
+    $lay->set("Interdit",false);
 
 Donne :
 
