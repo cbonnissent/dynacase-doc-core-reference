@@ -184,7 +184,7 @@ blockquote cite:before {
 a code {
     color: #247FCA;
 }
-a code:hover {
+a:hover code {
     color: #ffffff;
     background-color: #8AE234;
 }
