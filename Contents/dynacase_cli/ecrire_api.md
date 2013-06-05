@@ -1,1 +1,0 @@
-# Écrire un script CLI {#core-ref:4df1314f-9fdd-4a7f-af37-a18cc39f3505}
