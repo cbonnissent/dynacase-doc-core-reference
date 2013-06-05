@@ -143,7 +143,18 @@ L'émetteur ou les destinataires peuvent être choisis parmi :
         texte*, mais est récupéré sur la famille du workflow associé au
         document.
 
-## Désactivation des liens {#core-ref:976387b2-fdc0-4697-96f9-583f2181b375}
+## Hyperliens {#core-ref:0d251885-b91f-4ceb-bf8c-97b4954040af}
+
+### Calcul des liens {#core-ref:1f7269a5-fedf-40b1-bc92-2d1566e3de7d}
+
+Les liens sont générés au moyen de la
+[méthode `Doc::getDocAnchor`][getDocAnchor].
+
+Les URLS dans les modèles de mail sont composées à partir de la valeur du
+[paramètre `CORE_MAILACTIONURL`][CORE_MAILACTIONURL], lui-même composé à partir
+du [paramètre `CORE_MAILACTION`][CORE_MAILACTION].
+
+### Désactivation des liens {#core-ref:976387b2-fdc0-4697-96f9-583f2181b375}
 
 Lorsque le mail est envoyé à des personnes qui n'ont pas de compte sur le
 système d'information, il est inutile de leur envoyer des liens vers des
@@ -183,3 +194,6 @@ par utilisateur.
 
 <!-- links -->
 [emetteur_destinataire]: #core-ref:c73aee80-78d9-460e-ad7e-de13bfb849cd
+[getDocAnchor]: #core-ref:55e9c46c-2a10-4911-8243-7c913416648f
+[CORE_MAILACTION]: #core-ref:c1d9e009-49a5-47a4-9104-4d044ea24aa3
+[CORE_MAILACTIONURL]: #core-ref:033299c3-fe9a-4833-9dbd-45952bdf63bc
