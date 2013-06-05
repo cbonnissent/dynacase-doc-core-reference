@@ -1,12 +1,12 @@
 # Paramétrage Authenticator et Provider {#core-ref:83ef4602-6929-11e2-ad52-0021e9fffec1}
 
 L'Authenticator et les Provider utilisés sont paramétrés dans le fichier
-`conf/local-dbaccess.php`.
+`config/local-dbaccess.php`.
 
-Le fichier `conf/local-dbaccess.php` permet de surcharger le fichier de
-configuration `conf/dbaccess.php` livré par défaut par dynacase.
+Le fichier `config/local-dbaccess.php` permet de surcharger le fichier de
+configuration `config/dbaccess.php` livré par défaut par dynacase.
 
-Exemple de fichier `conf/dbaccess.php` livré par dynacase :
+Exemple de fichier `config/dbaccess.php` livré par dynacase :
 
     [php]
     <?php
@@ -66,7 +66,7 @@ Exemple de fichier `conf/dbaccess.php` livré par dynacase :
         include ($local_dbaccess);
     }
 
-Exemple de fichier `conf/local-dbaccess.php` pour la surcharge du paramétrage :
+Exemple de fichier `config/local-dbaccess.php` pour la surcharge du paramétrage :
 
     [php]
     <?php
@@ -241,10 +241,10 @@ peut-être utile de pouvoir se connecter sur ce système sous le compte `admin`
 local (Master Default) sans devoir avoir un compte `admin` existant sur CAS.
 
 Pour cela, on peut implémenter un « aiguillage » dans le fichier
-`conf/local-dbaccess.php` afin de sélectionner le mode d'authentification en
+`config/local-dbaccess.php` afin de sélectionner le mode d'authentification en
 fonctions d'éléments de la requête (comme le champ `Host:` des requêtes HTTP).
 
-Exemple de fichier `conf/local-dbaccess.php` avec « aiguillage » par
+Exemple de fichier `config/local-dbaccess.php` avec « aiguillage » par
 VirtualHost :
 
     [php]
@@ -274,7 +274,7 @@ VirtualHost :
 
 Dans cet exemple, si on se connecte sur l'URL `http://admin-ged.example.net`,
 alors c'est le mécanisme d'authentification défini par défaut dans le
-`conf/dbaccess.php` qui sera appliqué, et dans le cas contraire, on appliquera
+`config/dbaccess.php` qui sera appliqué, et dans le cas contraire, on appliquera
 l'authentification CAS.
 
 De cette manière, les utilisateurs se connectent par CAS sur leur URL
