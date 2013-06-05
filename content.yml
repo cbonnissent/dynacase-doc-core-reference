@@ -220,8 +220,6 @@ book:
 ##
     - level:  1
       content:  "dynacase_cli/introduction.md"
-      flags:
-        need-review: "need review"
 ##
 # applications_actions
 ##
