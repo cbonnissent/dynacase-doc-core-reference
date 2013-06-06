@@ -7,7 +7,7 @@
 Url d'accès à l'index de dynacase.
 
 *   Type : `G`
-*   Défaut : &lt;vide>
+*   Défaut : ` ` (vide)
 *   Exemple : `http://www.example.net/dynacase/`
 
 ### `CORE_EXTERNURL` {#core-ref:b3965d07-3673-434c-949f-78a551b1e089}
