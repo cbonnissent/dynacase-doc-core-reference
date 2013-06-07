@@ -138,7 +138,9 @@ blockquote cite {
 blockquote cite:before {
     content: "\2014 \2009";
 }
-.chunk_nav {
+
+.chunk_nav,
+#copy {
     background-color: rgba(80,80,80,0.15);
     -moz-animation: fadeout 5s; /* Firefox */
     -webkit-animation: fadeout 5s; /* Safari and Chrome */
@@ -177,7 +179,8 @@ blockquote cite:before {
         background-color: rgba(80,80,80,0.15);
     }
 }
-.chunk_nav:hover {
+.chunk_nav:hover,
+#copy:hover {
     background-color: rgba(80,80,80,1);
 }
 
