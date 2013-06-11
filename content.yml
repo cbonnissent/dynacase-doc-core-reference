@@ -1163,6 +1163,10 @@ book:
       flags:
         wip: "work in progress"
       subtoc:   2
+    - level:   2
+      content:  "parameters_ref/core.md"
+      flags:
+        wip: "work in progress"
 
 ##
 # Style
