@@ -1176,6 +1176,8 @@ book:
       flags:
         wip: "work in progress"
       subtoc:   1
+    - level:   2
+      content:  "wsh_ref/cleanFamily.md"
 
 ##
 # Advanced
