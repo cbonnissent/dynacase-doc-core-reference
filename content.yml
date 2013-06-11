@@ -1169,10 +1169,15 @@ book:
         wip: "work in progress"
 
 ##
-# Style
+# wsh de ref
 ##
     - level:   1
-      content:  "Style/styles.md"
+      content:  "wsh_ref/introduction.md"
+      flags:
+        wip: "work in progress"
+      subtoc:   1
+    - level:   2
+      content:  "wsh_ref/cleanFamily.md"
 
 ##
 # Advanced
@@ -1180,6 +1185,8 @@ book:
     - level:   1
       content:  "Advanced/introduction.md"
       subtoc:   2
+    - level:   2
+      content:  "Style/styles.md"
     - level:   2
       content:  "Advanced/Cinematique/introduction.md"
       flags:
