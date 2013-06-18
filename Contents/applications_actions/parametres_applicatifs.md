@@ -127,7 +127,7 @@ définition du paramètre.
 *   Lors des mises à jour d'application, les valeurs des paramètres ne sont
     pas modifiées sauf pour le type `static`.
 
-## Forcer la mise à jour des paramètres
+## Forcer la mise à jour des paramètres {#core-ref:4bd9e0d5-dfaf-41e8-acbf-92f8d6bbcd44}
 
 Les paramètres d'une application peuvent être mises à jour de manière explicite
 par la commande `appadmin` via le programme `wsh`.
