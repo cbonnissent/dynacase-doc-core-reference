@@ -1179,7 +1179,39 @@ book:
         wip: "work in progress"
       subtoc:   1
     - level:   2
+      content:  "wsh_ref/accountRefreshGroup.md"
+    - level:   2
+      content:  "wsh_ref/appadmin.md"
+    - level:   2
       content:  "wsh_ref/cleanFamily.md"
+    - level:   2
+      content:  "wsh_ref/cleanFamilyParameter.md"
+    - level:   2
+      content:  "wsh_ref/crontab.md"
+    - level:   2
+      content:  "wsh_ref/DocRelInit.md"
+    - level:   2
+      content:  "wsh_ref/dynacaseDbCleaner.md"
+    - level:   2
+      content:  "wsh_ref/fdl_adoc.md"
+    - level:   2
+      content:  "wsh_ref/fdl_deletefamily.md"
+    - level:   2
+      content:  "wsh_ref/fixMultipleAliveRevision.md"
+    - level:   2
+      content:  "wsh_ref/get_param.md"
+    - level:   2
+      content:  "wsh_ref/importDocuments.md"
+    - level:   2
+      content:  "wsh_ref/refreshDocuments.md"
+    - level:   2
+      content:  "wsh_ref/set_param.md"
+    - level:   2
+      content:  "wsh_ref/setStyle.md"
+    - level:   2
+      content:  "wsh_ref/VaultExamine.md"
+    - level:   2
+      content:  "wsh_ref/VaultIndexInit.md"
 
 ##
 # Advanced
