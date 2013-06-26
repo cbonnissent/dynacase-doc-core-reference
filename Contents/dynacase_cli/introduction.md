@@ -63,9 +63,9 @@ l'argument `foo`.
 
 Exemple d'appel :
 
-    ./wsh.php --api=dynacaseDbCleaner
+    ./wsh.php --api=cleanContext
 
-Cela appellera le script `/API/dynacaseDbCleaner.php`.
+Cela appellera le script `/API/cleanContext.php`.
 
 La liste des scripts disponibles est obtenu au moyen de la commande *listapi* :
 
@@ -80,7 +80,7 @@ La liste des scripts disponibles est obtenu au moyen de la commande *listapi* :
 Afin de connaître l'usage d'un script, il est possible d'utiliser l'option
 `--help` :
 
-    ./wsh.php --api=dynacaseDbCleaner --help
+    ./wsh.php --api=cleanContext --help
     Clean base
     Usage :
         Options:

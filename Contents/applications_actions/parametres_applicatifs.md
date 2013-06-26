@@ -130,9 +130,9 @@ définition du paramètre.
 ## Forcer la mise à jour des paramètres {#core-ref:4bd9e0d5-dfaf-41e8-acbf-92f8d6bbcd44}
 
 Les paramètres d'une application peuvent être mises à jour de manière explicite
-par la commande `appadmin` via le programme `wsh`.
+par la commande `manageApplications` via le programme `wsh`.
 
-    www-data@test:~$ ./wsh.php --api=appadmin --help
+    www-data@test:~$ ./wsh.php --api=manageApplications --help
     
     Manage application
     Usage :
@@ -144,7 +144,7 @@ par la commande `appadmin` via le programme `wsh`.
 
 Exemple :
 
-    www-data@test:~$ ./wsh.php --api=appadmin --appname=MYAPP --method=update
+    www-data@test:~$ ./wsh.php --api=manageApplications --appname=MYAPP --method=update
     MYAPP...update
     15/05/2013 13:31:56 LOG::[I] Dynacase:DbObj:application  : Init : MYAPP
     15/05/2013 13:31:56 LOG::[I] Dynacase:DbObj:acl  : Acl Modify : MYAPP_VERIFICATION, Access to ticket sales

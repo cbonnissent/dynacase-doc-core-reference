@@ -1,8 +1,8 @@
-# appadmin {#core-ref:675f4a02-692e-429b-a786-063246f40fca}
+# manageApplications {#core-ref:675f4a02-692e-429b-a786-063246f40fca}
 
 ## Description {#core-ref:af1a02a2-b0bf-4395-8441-29d67797fa12}
 
-Le script `appadmin` permet d'installer, ou de mettre à jour, la définition d'une
+Le script `manageApplications` permet d'installer, ou de mettre à jour, la définition d'une
 application Dynacase.
 
 Voir aussi :

@@ -1,10 +1,10 @@
-# DocRelInit {#core-ref:6c3ef616-21e4-4e47-bb80-c1556c016f10}
+# initializeDocrelTable {#core-ref:6c3ef616-21e4-4e47-bb80-c1556c016f10}
 
 ## Description {#core-ref:f844c159-3150-4858-82bb-9033914a5e9d}
 
 Les relations entre documents sont stockées dans un cache, la table `docrel`.
 
-Le script `DocRelInit` permet de régénérer ce cache.
+Le script `initializeDocrelTable` permet de régénérer ce cache.
 
 ## Usage {#core-ref:111b371e-ad18-4c19-b0c2-019d75fe9d75}
 

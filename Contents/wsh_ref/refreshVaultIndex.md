@@ -1,11 +1,11 @@
-# VaultIndexInit {#core-ref:17575c41-0b44-4164-8876-c08f4c2c3eb3}
+# refreshVaultIndex {#core-ref:17575c41-0b44-4164-8876-c08f4c2c3eb3}
 
 ## Description {#core-ref:38a15067-4c07-40bb-b67a-63982e0eb044}
 
 Les associations entre les documents et les fichiers qu'ils référencent sont
 stockées dans un cache, la table `docvaultindex`.
 
-Le script `VaultIndexInit` permet de régénérer ce cache.
+Le script `refreshVaultIndex` permet de régénérer ce cache.
 
 ## Usage {#core-ref:5763b9de-1405-4788-a246-ce902dbbe4d0}
 

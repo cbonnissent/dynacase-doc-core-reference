@@ -1,8 +1,8 @@
-# crontab {#core-ref:6aa4de16-1e51-49df-9926-7079aab0d268}
+# manageContextCrontab {#core-ref:6aa4de16-1e51-49df-9926-7079aab0d268}
 
 ## Description {#core-ref:3933ec74-cda9-4ebf-9215-a3c1d4456af4}
 
-Le script `crontab` permet d'enregistrer, ou supprimer, des crontabs du contexte
+Le script `manageContextCrontab` permet d'enregistrer, ou supprimer, des crontabs du contexte
 dans l’ordonnanceur cron du système.
 
 ## Usage {#core-ref:eb6cebe0-ef8d-44f7-89d7-599b840842ee}

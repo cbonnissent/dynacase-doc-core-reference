@@ -1179,39 +1179,39 @@ book:
         wip: "work in progress"
       subtoc:   1
     - level:   2
-      content:  "wsh_ref/accountRefreshGroup.md"
+      content:  "wsh_ref/refreshGroups.md"
     - level:   2
-      content:  "wsh_ref/appadmin.md"
+      content:  "wsh_ref/manageApplications.md"
     - level:   2
       content:  "wsh_ref/cleanFamily.md"
     - level:   2
       content:  "wsh_ref/cleanFamilyParameter.md"
     - level:   2
-      content:  "wsh_ref/crontab.md"
+      content:  "wsh_ref/manageContextCrontab.md"
     - level:   2
-      content:  "wsh_ref/DocRelInit.md"
+      content:  "wsh_ref/initializeDocrelTable.md"
     - level:   2
-      content:  "wsh_ref/dynacaseDbCleaner.md"
+      content:  "wsh_ref/cleanContext.md"
     - level:   2
-      content:  "wsh_ref/fdl_adoc.md"
+      content:  "wsh_ref/generateDocumentClass.md"
     - level:   2
-      content:  "wsh_ref/fdl_deletefamily.md"
+      content:  "wsh_ref/destroyFamily.md"
     - level:   2
       content:  "wsh_ref/fixMultipleAliveRevision.md"
     - level:   2
-      content:  "wsh_ref/get_param.md"
+      content:  "wsh_ref/getApplicationParameter.md"
     - level:   2
       content:  "wsh_ref/importDocuments.md"
     - level:   2
       content:  "wsh_ref/refreshDocuments.md"
     - level:   2
-      content:  "wsh_ref/set_param.md"
+      content:  "wsh_ref/setApplicationParameter.md"
     - level:   2
       content:  "wsh_ref/setStyle.md"
     - level:   2
-      content:  "wsh_ref/VaultExamine.md"
+      content:  "wsh_ref/checkVault.md"
     - level:   2
-      content:  "wsh_ref/VaultIndexInit.md"
+      content:  "wsh_ref/refreshVaultIndex.md"
 
 ##
 # Advanced

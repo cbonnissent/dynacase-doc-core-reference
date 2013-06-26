@@ -1,4 +1,4 @@
-# accountRefreshGroup {#core-ref:baa4a5f5-91f6-42eb-9c14-89163459c146}
+# refreshGroups {#core-ref:baa4a5f5-91f6-42eb-9c14-89163459c146}
 
 ## Description {#core-ref:b15b4802-61d3-460e-bf16-74da373eb22f}
 

@@ -1,8 +1,8 @@
-# dynacaseDbCleaner {#core-ref:100b123b-da1a-45b4-848b-0622f3e09a40}
+# cleanContext {#core-ref:100b123b-da1a-45b4-848b-0622f3e09a40}
 
 ## Description {#core-ref:b4753378-0d6a-48ad-a80f-0cd63a9e8620}
 
-Le script `dynacaseDbCleaner` permet d'effectuer les opérations de nettoyage
+Le script `cleanContext` permet d'effectuer les opérations de nettoyage
 journalières du contexte.
 
 Opérations principales :
@@ -19,7 +19,7 @@ Opérations principales :
 
 ## Usage {#core-ref:f0ae7db2-44cc-4593-9019-09ffe005cb8d}
 
-`real` (default `no`)
+`full` (default `no`)
 :   Permet d'effectuer (`yes`) des opérations de nettoyage additionnelles
     (telles que lancées, la nuit, par la crontab du contexte) :
     

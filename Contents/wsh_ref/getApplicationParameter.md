@@ -1,8 +1,9 @@
-# get_param {#core-ref:113ecafb-1fa0-496d-8d39-810204b52291}
+# getApplicationParameter {#core-ref:113ecafb-1fa0-496d-8d39-810204b52291}
 
 ## Description {#core-ref:d666fd71-c191-463b-baed-135d407f57fc}
 
-Le script `get_param` permet de récupérer la valeur d'un paramètre.
+Le script `getApplicationParameter` permet de récupérer la valeur d'un
+paramètre.
 
 ## Usage {#core-ref:d2486cc3-67ff-4896-b024-288603b76766}
 

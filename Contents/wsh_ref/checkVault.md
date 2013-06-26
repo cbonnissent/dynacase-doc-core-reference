@@ -1,8 +1,8 @@
-# VaultExamine {#core-ref:147bcb5f-5415-4902-8df4-26b77e508a5f}
+# checkVault {#core-ref:147bcb5f-5415-4902-8df4-26b77e508a5f}
 
 ## Description {#core-ref:f9750692-1e3d-4671-bc01-91a0e73c5963}
 
-Le script `VaultExamine` permet d'identifier les fichiers du vault qui ne sont
+Le script `checkVault` permet d'identifier les fichiers du vault qui ne sont
 référencés par aucun document Dynacase (fichiers orphelins), ou bien les
 documents Dynacase qui référencent des fichiers qui n'existent plus dans le
 vault.
@@ -46,9 +46,9 @@ Le script permet ensuite de supprimer ces fichiers orphelins.
 
 La bonne exécution de cette commande peut nécessiter, au préalable, l'exécution
 du script d'API
-[`VaultIndexInit`][VaultIndexInit] afin de
+[`refreshVaultIndex`][refreshVaultIndex] afin de
 correctement détecter les incohérences de relations entre les fichiers et les
 documents Dynacase.
 
 <!-- links -->
-[VaultIndexInit]: #core-ref:17575c41-0b44-4164-8876-c08f4c2c3eb3
+[refreshVaultIndex]: #core-ref:17575c41-0b44-4164-8876-c08f4c2c3eb3

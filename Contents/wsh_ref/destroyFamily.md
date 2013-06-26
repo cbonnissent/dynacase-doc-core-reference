@@ -1,8 +1,8 @@
-# fdl_deletefamily {#core-ref:534bf934-5a2f-4160-8912-567d8f933ddb}
+# destroyFamily {#core-ref:534bf934-5a2f-4160-8912-567d8f933ddb}
 
 ## Description {#core-ref:85b1f18e-4f61-4668-9b2a-799223f2321c}
 
-Le script `fdl_deletefamily` permet de supprimer complètement une famille et ses
+Le script `destroyFamily` permet de supprimer complètement une famille et ses
 documents.
 
 ## Usage {#core-ref:9ae91119-bff2-4266-9d90-d1a1468c7f11}

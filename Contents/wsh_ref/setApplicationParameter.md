@@ -1,8 +1,9 @@
-# set_param {#core-ref:75bd5f66-ad6b-470b-b217-7e926d7f960e}
+# setApplicationParameter {#core-ref:75bd5f66-ad6b-470b-b217-7e926d7f960e}
 
 ## Description {#core-ref:baffb5e2-2bd5-4952-93ad-0d08e24883dc}
 
-Le script `set_param` permet de changer la valeur d'un paramètre applicatif.
+Le script `setApplicationParameter` permet de changer la valeur d'un paramètre
+applicatif.
 
 ## Usage {#core-ref:468354ee-e36a-487c-bc1c-6304a7cbf2a1}
 
