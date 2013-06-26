@@ -1,4 +1,4 @@
-# Les essentiels de l'API
+# Les essentiels de l'API {#core-ref:0c6d26ba-ab12-4659-aaf9-bcad5a1194ef}
 
 Ce chapitre détaille les méthodes et les fonctions qu'il est essentiel de connaître pour le développement d'un module Dynacase.
 Les API décrites dans ce chapitre abordent les notions principales de Dynacase qui sont :

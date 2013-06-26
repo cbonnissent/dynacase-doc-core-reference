@@ -1,4 +1,4 @@
-# Action::canExecute {#core-ref:18D21ADF-E583-4023-9D80-95DE75F19EB0}
+# Action::canExecute {#core-ref:18d21adf-e583-4023-9d80-95de75f19eb0}
 
 <div class="short-description">
 Vérifier si l'utilisateur a le droit d'exécuter une action donnée.
@@ -10,7 +10,7 @@ Obsolète depuis #.#.#
 </div>
 -->
 
-## Description {#core-ref:4BC7C264-411D-4260-AD20-014486184079}
+## Description {#core-ref:4bc7c264-411d-4260-ad20-014486184079}
 
 
     [php]
@@ -18,11 +18,11 @@ Obsolète depuis #.#.#
 
 Permet de vérifier si l'utilisateur connecté a le droit d'exécuter une action donnée.
 
-## Avertissements {#core-ref:68B1AC3E-3E7F-4893-9B5F-44063DC791AE}
+## Avertissements {#core-ref:68b1ac3e-3e7f-4893-9b5f-44063dc791ae}
 
 N/A
 
-## Liste des paramètres {#core-ref:6C6F5601-BB52-4317-987B-553049BDAD61}
+## Liste des paramètres {#core-ref:6c6f5601-bb52-4317-987b-553049bdad61}
 
 (string) `actname`
 :   Le nom de l'action dont on souhaite vérifier le droit d'exécution pour l'utilisateur connecté.
@@ -30,19 +30,19 @@ N/A
 (int) `appid`
 :   Identifiant de l'application de l'action dont on souhaite vérifier le droit d'exécution. Par défaut, l'application de l'objet `Action` est utilisée.
 
-## Valeur de Retour {#core-ref:E9C0C1EA-E8E7-42C1-9601-D3D35071ABA3}
+## Valeur de Retour {#core-ref:e9c0c1ea-e8e7-42c1-9601-d3d35071aba3}
 
 Retourne une chaîne vide si l'utilisateur a le droit d'exécuter l'action donnée, ou une chaîne non vide lorsque l'utilisateur n'a pas le droit d'exécuter l'action donnée ou s'il y a une erreur dans la vérification du droit.
 
-## Erreurs / Exceptions {#core-ref:333BD273-F6C6-407C-A543-C7C742870A82}
+## Erreurs / Exceptions {#core-ref:333bd273-f6c6-407c-a543-c7c742870a82}
 
 En cas d'erreur dans la vérification des droits (ex. application ou action non existante), une chaîne non vide est retournée avec le message d'erreur rencontré.
 
-## Historique {#core-ref:6D1FBF0D-31BE-41A5-BD2E-8DFB56E6E03C}
+## Historique {#core-ref:6d1fbf0d-31be-41a5-bd2e-8dfb56e6e03c}
 
 N/A
 
-## Exemples {#core-ref:7A4009CA-523E-4A70-BA01-8B6810C05A9D}
+## Exemples {#core-ref:7a4009ca-523e-4a70-ba01-8b6810c05a9d}
 
 - Exemple #1 Vérifier si l'utilisateur a le droit d'exécuter l'action `MY_ACTION` de l'application de l'action courante
 
@@ -86,10 +86,10 @@ N/A
      */
     [...]
 
-## Notes {#core-ref:543A6273-A063-4D2B-96FE-42809B798B37}
+## Notes {#core-ref:543a6273-a063-4d2b-96fe-42809b798b37}
 
 N/A
 
-## Voir aussi {#core-ref:6E666681-C981-417E-8265-46424A8F2DCC}
+## Voir aussi {#core-ref:6e666681-c981-417e-8265-46424a8f2dcc}
 
 N/A

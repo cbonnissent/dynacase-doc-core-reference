@@ -1,4 +1,4 @@
-# Application::addJsRef {#core-ref:B4B041AA-2649-498D-ACE7-52131053C7DB}
+# Application::addJsRef {#core-ref:b4b041aa-2649-498d-ace7-52131053c7db}
 
 <div class="short-description">
 Ajouter un lien vers un script Javascript à un template.
@@ -6,7 +6,7 @@ Ajouter un lien vers un script Javascript à un template.
 
 <!-- <div class="applicability"></div> -->
 
-## Description {#core-ref:B72C0289-774F-4BB9-8BC6-25C89216BF87}
+## Description {#core-ref:b72c0289-774f-4bb9-8bc6-25c89216bf87}
 
 
     [php]
@@ -14,11 +14,11 @@ Ajouter un lien vers un script Javascript à un template.
 
 Permet d'ajouter un lien vers un script JavaScript qui sera inséré dans les éléments `[JS:REF]` des templates utilisées lors du rendu d'une vue.
 
-## Avertissements {#core-ref:77BA2E0E-2D54-4C7F-9F7B-3286C1FC9883}
+## Avertissements {#core-ref:77ba2e0e-2d54-4c7f-9f7b-3286c1fc9883}
 
 N/A
 
-## Liste des paramètres {#core-ref:52E58F18-54FD-41EC-99B7-EB736DAC7BA2}
+## Liste des paramètres {#core-ref:52e58f18-54fd-41ec-99b7-eb736dac7ba2}
 
 (string) `ref`
 :   La référence au script JavaScript.
@@ -31,19 +31,19 @@ N/A
 (string) `packName`
 :   Les scripts peuvent être concaténés afin de réduire le nombre de fichiers chargés par le client. Dans ce cas, tous les scripts ajoutés avec un même identifiant `packName` seront concaténés pour ne donner qu'un seul fichier à charger. Des `packName` différents peuvent être utilisés pour faire des scripts qui seront servis chacun dans un fichier unique et distinct par `packName`.
 
-## Valeur de Retour {#core-ref:5E557C4D-F9E7-496D-96AE-8AB287B070EB}
+## Valeur de Retour {#core-ref:5e557c4d-f9e7-496d-96ae-8ab287b070eb}
 
 La méthode retourne une chaîne de caractère non vide avec l'emplacement du script JavaScript ajouté, ou une chaîne de caractère vide si l'emplacement du script n'est pas valide.
 
-## Erreurs / Exceptions {#core-ref:5C1F9F56-615A-4E6E-A17C-AC43B40CE293}
+## Erreurs / Exceptions {#core-ref:5c1f9f56-615a-4e6e-a17c-ac43b40ce293}
 
 N/A
 
-## Historique {#core-ref:67BDDEF5-2B08-4C06-A75F-A4583BCB77E6}
+## Historique {#core-ref:67bddef5-2b08-4c06-a75f-a4583bcb77e6}
 
 N/A
 
-## Exemples {#core-ref:C46F66EC-69D7-4F1E-9D2B-47782FB48A2E}
+## Exemples {#core-ref:c46f66ec-69d7-4f1e-9d2b-47782fb48a2e}
 
 - Exemple #1
 
@@ -103,13 +103,13 @@ Résultat du rendu de la vue de l'action :
       </body>
     </html>
 
-## Notes {#core-ref:70208A8E-D4EE-42DC-8626-CA2CBDA0933F}
+## Notes {#core-ref:70208a8e-d4ee-42dc-8626-ca2cbda0933f}
 
 - Les scripts ajoutées via cette méthode seront servis avec une directive indiquant au client de mettre en cache le résultat obtenu et minimiser ainsi les requêtes au serveur.
 - L'expiration de la mise en cache est gérée via un argument `wv=<version>` dont le numéro de version est incrémenté à chaque mise à jour d'un module.
 - Les `packName` sont composés par utilisateur et sont mis en cache sur le navigateur de l'utilisateur : ils ne sont donc pas partagés et/ou mis en cache sur le serveur.
 
-## Voir aussi {#core-ref:B925E618-7DC9-4FA5-AB65-3E7B556BEFA0}
+## Voir aussi {#core-ref:b925e618-7dc9-4fa5-ab65-3e7b556befa0}
 
 - [`Application::addJsCode`](#core-ref:49A8E28B-F286-45D7-B9E0-CC3591A8EFDE)
 - [`Application::getJSLink`](#core-ref:95056B5D-5002-4A5D-BC26-31595FAD9AFD)

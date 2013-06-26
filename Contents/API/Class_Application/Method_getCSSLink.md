@@ -1,4 +1,4 @@
-# Application::getCSSLink {#core-ref:7A7BE83F-FBC2-4F45-8115-BC295321BCF4}
+# Application::getCSSLink {#core-ref:7a7be83f-fbc2-4f45-8115-bc295321bcf4}
 
 <div class="short-description">
 Récupérer le lien de téléchargement (URL) d'une feuille de style CSS.
@@ -6,7 +6,7 @@ Récupérer le lien de téléchargement (URL) d'une feuille de style CSS.
 
 <!-- <div class="applicability"></div> -->
 
-## Description {#core-ref:E7994E66-C164-414F-8D03-6680F4C16AD3}
+## Description {#core-ref:e7994e66-c164-414f-8d03-6680f4c16ad3}
 
 
     [php]
@@ -14,11 +14,11 @@ Récupérer le lien de téléchargement (URL) d'une feuille de style CSS.
 
 Permet de retourner le lien de téléchargement (URL) d'une feuille de style CSS servie par Dynacase avec gestion de la version du cache (Voir [Notes](#core-ref:9C309FEA-C54A-48C3-AD9C-03F20D532D1D)).
 
-## Avertissements {#core-ref:06FD2B30-72C3-4E44-8656-588EDFCAE2CA}
+## Avertissements {#core-ref:06fd2b30-72c3-4e44-8656-588edfcae2ca}
 
 N/A
 
-## Liste des paramètres {#core-ref:6469FDAD-A30E-4E74-A191-9C7392B3F56C}
+## Liste des paramètres {#core-ref:6469fdad-a30e-4e74-a191-9c7392b3f56c}
 
 (string) `ref`
 :   La référence à la feuille de style CSS.
@@ -32,19 +32,19 @@ N/A
 (string) `packName`
 :   Les feuilles de style peuvent être concaténées afin de réduire le nombre de fichiers chargés par le client. Dans ce cas, toutes les feuilles de style ajoutées avec un même identifiant `packName` seront concaténées pour ne donner qu'un seul fichier à charger. Des `packName` différents peuvent être utilisés pour faire des groupes de feuilles de style qui seront servis chacun dans un fichier unique et distinct par `packName`.
 
-## Valeur de Retour {#core-ref:8B51AF9C-CC86-4A76-A312-38BB27B1D737}
+## Valeur de Retour {#core-ref:8b51af9c-cc86-4a76-a312-38bb27b1d737}
 
 La méthode retourne une chaîne de caractère non vide avec le lien de téléchargement de la feuille de style CSS ajoutée, ou une chaîne de caractère vide si l'emplacement de la feuille de style n'est pas valide.
 
-## Erreurs / Exceptions {#core-ref:F8FBEEC1-DB4A-4612-90E3-01FB3FEDC38D}
+## Erreurs / Exceptions {#core-ref:f8fbeec1-db4a-4612-90e3-01fb3fedc38d}
 
 N/A
 
-## Historique {#core-ref:DACABE14-A2FC-4641-A06A-5E356771DB03}
+## Historique {#core-ref:dacabe14-a2fc-4641-a06a-5e356771db03}
 
 N/A
 
-## Exemples {#core-ref:56CD86DA-97FA-4D24-8BC6-E1491883D5F5}
+## Exemples {#core-ref:56cd86da-97fa-4d24-8bc6-e1491883d5f5}
 
 - Exemple #1
 
@@ -102,13 +102,13 @@ Résultat du rendu de la vue de l'action :
       </body>
     </html>
 
-## Notes {#core-ref:9C309FEA-C54A-48C3-AD9C-03F20D532D1D}
+## Notes {#core-ref:9c309fea-c54a-48c3-ad9c-03f20d532d1d}
 
 - Les feuilles de style ajoutées via cette méthode seront servies avec une directive indiquant au client de mettre en cache le résultat obtenu et minimiser ainsi les requêtes au serveur.
 - L'expiration de la mise en cache est gérée via un argument `wv=<version>` dont le numéro de version est incrémenté à chaque mise à jour d'un module.
 - Les `packName` sont composés par utilisateur et sont mis en cache sur le navigateur de l'utilisateur : ils ne sont donc pas partagés et/ou mis en cache sur le serveur.
 
-## Voir aussi {#core-ref:C9BC22F8-4D83-4D16-AEFB-684B25F7CBC4}
+## Voir aussi {#core-ref:c9bc22f8-4d83-4d16-aefb-684b25f7cbc4}
 
 - [`Application::addCssCode`](#core-ref:5480ED21-5027-45C3-9EFE-3897784B8865)
 - [`Application::addCssRef`](#core-ref:4BBA8A6B-8002-4C0A-8AC7-70D75B31B02B)
