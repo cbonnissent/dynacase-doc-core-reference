@@ -1,4 +1,4 @@
-# Application::getJSLink {#core-ref:95056B5D-5002-4A5D-BC26-31595FAD9AFD}
+# Application::getJSLink {#core-ref:95056b5d-5002-4a5d-bc26-31595fad9afd}
 
 <div class="short-description">
 Récupérer le lien de téléchargement (URL) d'un script JavaScript.
@@ -6,7 +6,7 @@ Récupérer le lien de téléchargement (URL) d'un script JavaScript.
 
 <!-- <div class="applicability"></div> -->
 
-## Description {#core-ref:49FF5907-2FD3-4640-9A54-DAD1A1130A20}
+## Description {#core-ref:49ff5907-2fd3-4640-9a54-dad1a1130a20}
 
 
     [php]
@@ -14,11 +14,11 @@ Récupérer le lien de téléchargement (URL) d'un script JavaScript.
 
 Permet de retourner le lien de téléchargement (URL) d'un script JavaScript servie par Dynacase avec gestion de la version du cache (Voir [Notes](#core-ref:3CD6C795-A11C-4128-B467-E221A81A0DF5)).
 
-## Avertissements {#core-ref:79ADA855-2C43-49EA-AB20-A35BF5F39DEB}
+## Avertissements {#core-ref:79ada855-2c43-49ea-ab20-a35bf5f39deb}
 
 N/A
 
-## Liste des paramètres {#core-ref:0809ADAD-6F96-4867-BD11-0E83E6DD76EE}
+## Liste des paramètres {#core-ref:0809adad-6f96-4867-bd11-0e83e6dd76ee}
 
 (string) `ref`
 :   La référence au script JavaScript.
@@ -32,19 +32,19 @@ N/A
 (string) `packName`
 :   Les scripts peuvent être concaténées afin de réduire le nombre de fichiers chargés par le client. Dans ce cas, toutes les scripts ajoutées avec un même identifiant `packName` seront concaténées pour ne donner qu'un seul fichier à charger. Des `packName` différents peuvent être utilisés pour faire des groupes de scripts qui seront servis chacun dans un fichier unique et distinct par `packName`.
 
-## Valeur de Retour {#core-ref:85258105-E450-41E9-A5E5-0470126FF1B4}
+## Valeur de Retour {#core-ref:85258105-e450-41e9-a5e5-0470126ff1b4}
 
 La méthode retourne une chaîne de caractère non vide avec le lien de téléchargement du script JavaScript ajouté, ou une chaîne de caractère vide si l'emplacement du script n'est pas valide.
 
-## Erreurs / Exceptions {#core-ref:117B79EE-3A3B-420B-BF80-8C7392428369}
+## Erreurs / Exceptions {#core-ref:117b79ee-3a3b-420b-bf80-8c7392428369}
 
 N/A
 
-## Historique {#core-ref:781670BD-78EA-43F2-98C8-568840974615}
+## Historique {#core-ref:781670bd-78ea-43f2-98c8-568840974615}
 
 N/A
 
-## Exemples {#core-ref:29E1119B-4F34-4071-97B7-C252401D58D5}
+## Exemples {#core-ref:29e1119b-4f34-4071-97b7-c252401d58d5}
 
 - Exemple #1
 
@@ -97,13 +97,13 @@ Résultat du rendu de la vue de l'action :
       </body>
     </html>
 
-## Notes {#core-ref:3CD6C795-A11C-4128-B467-E221A81A0DF5}
+## Notes {#core-ref:3cd6c795-a11c-4128-b467-e221a81a0df5}
 
 - Les scripts ajoutées via cette méthode seront servis avec une directive indiquant au client de mettre en cache le résultat obtenu et minimiser ainsi les requêtes au serveur.
 - L'expiration de la mise en cache est gérée via un argument `wv=<version>` dont le numéro de version est incrémenté à chaque mise à jour d'un module.
 - Les `packName` sont composés par utilisateur et sont mis en cache sur le navigateur de l'utilisateur : ils ne sont donc pas partagés et/ou mis en cache sur le serveur.
 
-## Voir aussi {#core-ref:447D6155-3AF5-4274-A308-CB647DB1966A}
+## Voir aussi {#core-ref:447d6155-3af5-4274-a308-cb647db1966a}
 
 - [`Application::addJsCode`](#core-ref:49A8E28B-F286-45D7-B9E0-CC3591A8EFDE)
 - [`Application::addJsRef`](#core-ref:B4B041AA-2649-498D-ACE7-52131053C7DB)

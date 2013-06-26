@@ -1,4 +1,4 @@
-# Application::addJsCode {#core-ref:49A8E28B-F286-45D7-B9E0-CC3591A8EFDE}
+# Application::addJsCode {#core-ref:49a8e28b-f286-45d7-b9e0-cc3591a8efde}
 
 <div class="short-description">
 Ajouter du code Javascript à un template.
@@ -6,7 +6,7 @@ Ajouter du code Javascript à un template.
 
 <!-- <div class="applicability"></div> -->
 
-## Description {#core-ref:F066FF5A-F356-4B92-AF63-B9F98565D924}
+## Description {#core-ref:f066ff5a-f356-4b92-af63-b9f98565d924}
 
 
     [php]
@@ -14,28 +14,28 @@ Ajouter du code Javascript à un template.
 
 Permet d'ajouter des instructions JavaScript (`code`) qui seront insérées dans les éléments `[JS:CODE]` des templates utilisées lors du rendu d'une vue.
 
-## Avertissements {#core-ref:307520C6-C9B7-4089-9716-DA6FABED51B3}
+## Avertissements {#core-ref:307520c6-c9b7-4089-9716-da6fabed51b3}
 
 N/A
 
-## Liste des paramètres {#core-ref:47953186-B7E2-4921-802A-CF62848B5559}
+## Liste des paramètres {#core-ref:47953186-b7e2-4921-802a-cf62848b5559}
 
 (string) `code`
 :   Bloc de code d'instructions JavaScript.
 
-## Valeur de Retour {#core-ref:91BE3731-622F-43C3-957B-782353211240}
+## Valeur de Retour {#core-ref:91be3731-622f-43c3-957b-782353211240}
 
 La méthode ne retourne pas de valeur.
 
-## Erreurs / Exceptions {#core-ref:E035DD1D-79A7-4E1B-AA36-00E54A726443}
+## Erreurs / Exceptions {#core-ref:e035dd1d-79a7-4e1b-aa36-00e54a726443}
 
 N/A
 
-## Historique {#core-ref:AF32718C-8FC7-43DB-AE5B-A73C158447FC}
+## Historique {#core-ref:af32718c-8fc7-43db-ae5b-a73c158447fc}
 
 N/A
 
-## Exemples {#core-ref:2D4BE354-A439-428E-AC7E-6A4B6D5D6E1A}
+## Exemples {#core-ref:2d4be354-a439-428e-ac7e-6a4b6d5d6e1a}
 
 - Exemple #1
 
@@ -91,11 +91,11 @@ Résultat du rendu de la vue de l'action :
       </body>
     </html>
 
-## Notes {#core-ref:548BFB05-6BDD-49D2-96AF-5729CEFBD06E}
+## Notes {#core-ref:548bfb05-6bdd-49d2-96af-5729cefbd06e}
 
 N/A
 
-## Voir aussi {#core-ref:CA7BA655-2CA2-4AEC-ADB5-6916C7382F32}
+## Voir aussi {#core-ref:ca7ba655-2ca2-4aec-adb5-6916c7382f32}
 
 - [`Application::addJsRef`](#core-ref:B4B041AA-2649-498D-ACE7-52131053C7DB)
 - [`Application::getJSLink`](#core-ref:95056B5D-5002-4A5D-BC26-31595FAD9AFD)

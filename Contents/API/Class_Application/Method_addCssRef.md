@@ -1,4 +1,4 @@
-# Application::addCssRef {#core-ref:4BBA8A6B-8002-4C0A-8AC7-70D75B31B02B}
+# Application::addCssRef {#core-ref:4bba8a6b-8002-4c0a-8ac7-70d75b31b02b}
 
 <div class="short-description">
 Ajouter un lien vers une feuille de style CSS à un template.
@@ -6,7 +6,7 @@ Ajouter un lien vers une feuille de style CSS à un template.
 
 <!-- <div class="applicability"></div> -->
 
-## Description {#core-ref:03C18EDE-A3BE-4518-ADBD-265B2EA74DA7}
+## Description {#core-ref:03c18ede-a3be-4518-adbd-265b2ea74da7}
 
 
     [php]
@@ -14,11 +14,11 @@ Ajouter un lien vers une feuille de style CSS à un template.
 
 Permet d'ajouter un lien vers une feuille de style CSS qui sera insérée dans les éléments `[CSS:REF]` des templates utilisées lors du rendu d'une vue.
 
-## Avertissements {#core-ref:22003ACD-A383-4C2C-928A-3BA9F8E53B88}
+## Avertissements {#core-ref:22003acd-a383-4c2c-928a-3ba9f8e53b88}
 
 N/A
 
-## Liste des paramètres {#core-ref:B6D1170A-DB84-4AB1-8B18-504BD4B445B0}
+## Liste des paramètres {#core-ref:b6d1170a-db84-4ab1-8b18-504bd4b445b0}
 
 (string) `ref`
 :   La référence à la feuille de style CSS.
@@ -31,19 +31,19 @@ N/A
 (string) `packName`
 :   Les feuilles de style peuvent être concaténées afin de réduire le nombre de fichiers chargés par le client. Dans ce cas, toutes les feuilles de style ajoutées avec un même identifiant `packName` seront concaténées pour ne donner qu'un seul fichier à charger. Des `packName` différents peuvent être utilisés pour faire des groupes de feuilles de style qui seront servis chacun dans un fichier unique et distinct par `packName`.
 
-## Valeur de Retour {#core-ref:27DBD4DD-485D-4F2E-ABCD-AB0AC66D73C6}
+## Valeur de Retour {#core-ref:27dbd4dd-485d-4f2e-abcd-ab0ac66d73c6}
 
 La méthode retourne une chaîne de caractères non vide avec l'emplacement de la feuille de style CSS ajoutée, ou une chaîne de caractères vide si l'emplacement de la feuille de style n'est pas valide.
 
-## Erreurs / Exceptions {#core-ref:41788C64-AA2B-4F2F-9470-46C6CD24FE04}
+## Erreurs / Exceptions {#core-ref:41788c64-aa2b-4f2f-9470-46c6cd24fe04}
 
 N/A
 
-## Historique {#core-ref:AC4C2011-7104-4BFF-9938-571A44BBEFF1}
+## Historique {#core-ref:ac4c2011-7104-4bff-9938-571a44bbeff1}
 
 N/A
 
-## Exemples {#core-ref:70B7105C-4A8D-4C6A-A23E-ECF3B44D285C}
+## Exemples {#core-ref:70b7105c-4a8d-4c6a-a23e-ecf3b44d285c}
 
 - Exemple #1
 
@@ -108,13 +108,13 @@ Résultat du rendu de la vue de l'action :
       </body>
     </html>
 
-## Notes {#core-ref:72360E3F-5350-4A2F-A6A7-6EBBD2E80125}
+## Notes {#core-ref:72360e3f-5350-4a2f-a6a7-6ebbd2e80125}
 
 - Les feuilles de style ajoutées via cette méthode seront servies avec une directive indiquant au client de mettre en cache le résultat obtenu et minimiser ainsi les requêtes au serveur.
 - L'expiration de la mise en cache est gérée via un argument `wv=<version>` dont le numéro de version est incrémenté à chaque mise à jour d'un module.
 - Les `packName` sont composés par utilisateur et sont mis en cache sur le navigateur de l'utilisateur : ils ne sont donc pas partagés et/ou mis en cache sur le serveur.
 
-## Voir aussi {#core-ref:0F8F1E52-37FB-4C9E-9C71-051B98FFEAC2}
+## Voir aussi {#core-ref:0f8f1e52-37fb-4c9e-9c71-051b98ffeac2}
 
 - [`Application::addCssCode`](#core-ref:5480ED21-5027-45C3-9EFE-3897784B8865)
 - [`Application::getCSSLink`](#core-ref:7A7BE83F-FBC2-4F45-8115-BC295321BCF4)
