@@ -20,7 +20,7 @@ Une vue d'attribut est composée de :
 
 Par convention :
 
-*   le fichier de template porte l'extension xml,
+*   le fichier de template porte l'extension `.xml`,
 *   son nom détermine le nom de la vue,
 *   la méthode associée doit porter le même nom.  
     L'objet `Layout` est accessible au moyen de la propriété `lay` de l'objet
@@ -34,7 +34,7 @@ de se prémunir d'une éventuelle exécution arbitraire de code.
 
 les paramètres reçus par la méthode sont au nombre de 3 :
 
-*   `$target` (string): nom de la fenêtre graphique qui sera utilisé pour les
+*   `$target` (string) : nom de la fenêtre graphique qui sera utilisée pour les
     hyperliens (`"_self"` par défaut) ;
 *   `$ulink` (booléen) : indique s'il faut générer les hyperliens (`true` par
     défaut) ;
@@ -417,7 +417,7 @@ Exemple :
       Nombre à saisir
         [V_MY_NUMBER]
     
-Dans ce cas le résultat sera 
+Dans ce cas le résultat sera :
 
     [html]
     <table>

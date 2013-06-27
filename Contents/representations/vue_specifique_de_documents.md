@@ -12,9 +12,9 @@ Pour qu'une méthode du document soit utilisable en tant que contrôleur d'une
 vue, il est nécessaire de lui ajouter la phpDoc `@templateController` afin
 de se prémunir d'une éventuelle exécution arbitraire de code.
 
-les paramètres reçus par la méthode sont au nombre de 3 :
+Les paramètres reçus par la méthode sont au nombre de 3 :
 
-*   `$target` (string): nom de la fenêtre graphique qui sera utilisé pour les
+*   `$target` (string) : nom de la fenêtre graphique qui sera utilisée pour les
     hyperliens (`"_self"` par défaut) ;
 *   `$ulink` (booléen) : indique s'il faut générer les hyperliens (`true` par
     défaut) ;
@@ -23,7 +23,7 @@ les paramètres reçus par la méthode sont au nombre de 3 :
 
 Par convention :
 
-*   le fichier de template porte l'extension xml,
+*   le fichier de template porte l'extension `.xml`,
 *   son nom (en minuscule) détermine le nom de la vue,
 *   la méthode associée doit porter le même nom (la casse du nom de la méthode
     n'est pas prise en compte).  
@@ -104,7 +104,7 @@ inséré dans le `body` de la page HTML.
 Afin de définir une vue personnalisée, il est possible :
 
 *   d'utiliser un [contrôle de vue][CVDOC],
-*   de spécifier une zone en paramètre http : pour ce faire, il suffit de passer
+*   de spécifier une zone en paramètre HTTP : pour ce faire, il suffit de passer
     l'identifiant de la zone documentaire dans le paramètre `zone` de l'url
     d'accès au document.
 *   d'indiquer la zone documentaire dans l'attribut `defaultView` du fichier

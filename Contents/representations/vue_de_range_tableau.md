@@ -12,13 +12,13 @@ de tableau ne contiennent pas de code. Elles sont donc uniquement composées de�
 
 Par convention :
 
-*   le fichier de template porte l'extension xml,
+*   le fichier de template porte l'extension `.xml`,
 *   son nom détermine le nom de la vue.
 
 ## Syntaxe du template de rangée de tableau {#core-ref:d9a89b1e-9792-49c3-b390-d358c2b78999}
 
-un template de vue de rangés de tableau est un fichier xml **valide**.
-Il doit respecter la `dtd` suivante :
+un template de vue de rangés de tableau est un fichier XML **valide**.
+Il doit respecter la `DTD` suivante :
 
     [dtd]
     <?xml version="1.0" encoding="UTF-8" ?>
@@ -32,7 +32,7 @@ Il doit respecter la `dtd` suivante :
         class CDATA #IMPLIED
         style CDATA #IMPLIED>
 
-Voici un exemple de fichier valide (ici, la dtd est déclarée inline, mais elle
+Voici un exemple de fichier valide (ici, la DTD est déclarée inline, mais elle
 n'est pas obligatoire) :
 
     [xml]
@@ -58,16 +58,16 @@ n'est pas obligatoire) :
     </table>
 
 *   Le bloc `table-head` définit le `thead` du tableau généré.
-*   Le bloc `table-body` définit le `tbody` du tableau généré.
-*   Chaque balise `cell` définit une cellule et set donc retranscrite sous la
+*   Le bloc `table-body` définit une rangée `tr` du `tbody` du tableau généré.
+*   Chaque balise `cell` définit une cellule et est donc retranscrite sous la
     forme d'une balise `td`.
     *   Les attributs `style` et `class` de la balise `cell` sont transmis
         tels-quels à la balise `td` résultante.
     *   Les autres attributs sont ignorés
     *   le contenu de la balise `td` résultante est exactement le contenu de la
         balise `cell`. ce dernier doit donc être du xhtml valide.  
-        **Attention** : puisque le document est interprété en *xml pur*, pour
-        utiliser des entités html, il faut les déclarer dans la dtd (par
+        **Attention** : puisque le document est interprété en *XML pur*, pour
+        utiliser des entités HTML, il faut les déclarer dans la DTD (par
         exemple: `<!ENTITY nbsp "&#160;">`).
 
 ## Vue de consultation de rangée de tableau {#core-ref:d237e0d4-ca4e-4b9e-8249-45aef7d2ef0f}
@@ -99,7 +99,7 @@ Lors de l'utilisation des vues de rangés de tableau, les clés suivantes sont
 instanciées :
 
 *   `L_ATTRID` pour chaque attribut : le libellé (traduit) de l'attribut,
-*   `V_ATTRID` pour chaque attribut : la valeur (au format html) de l'attribut
+*   `V_ATTRID` pour chaque attribut : la valeur (au format HTML) de l'attribut
 
 **Attention** : les clés `V_ATTRID` respectent les visibilités : si la
 [visibilité][visibility] est `H` (caché) ou `I` (invisible) ou 
@@ -166,8 +166,8 @@ Ce qui représente le tableau suivant :
 
 ## Vue de modification de rangée de tableau {#core-ref:c0ed29f6-02e5-4ff2-8943-511a7d00c106}
 
-Afin de spécifier la vue d'attribut à utiliser en consultation, il faut utiliser
-l'option `roweditzone`
+Afin de spécifier la vue d'attribut à utiliser en modification, il faut utiliser
+l'option `roweditzone`.
 
 La représentation standard d'un tableau en modification est :
 

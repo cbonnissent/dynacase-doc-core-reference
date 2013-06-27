@@ -34,7 +34,7 @@ Pour référencer une zone documentaire, la syntaxe suivante est utilisée :
     transformation est effectuée par le [module de transformation][TE].
     
     Il suffit d'indiquer le nom du moteur à utiliser comme `pdf` pour une
-    transformation en PDF. La transformation n'est possible' qu'avec l'option
+    transformation en PDF. La transformation n'est possible qu'avec l'option
     `B` (binary).
 
 
@@ -71,7 +71,6 @@ Exemples :
 |                           | FDL/Layout/viewbodycard.xml    | ::viewbodycard()  |
 | `MYAPP:myview.html`       | MYAPP/Layout/myview.html       | ::myView()        |
 | `MYAPP:MYVIEW?extra=yes`  | MYAPP/Layout/MYVIEW.xml        | ::myview()        |
-| `MYAPP:MYVIEW?extra=yes`  | MYAPP/Layout/mysimpleView.html | ::mySimpleView()  |
 | `MYAPP:mySimpleview.html` | MYAPP/Layout/mysimpleview.html | ::mySimpleView()  |
 
 ## Définition de la vue de consultation {#core-ref:d59a0b84-49c8-470b-8f38-fb138eb62be5}
@@ -145,7 +144,7 @@ Les options disponibles en consultation sont les suivantes :
     générer une page complète.
 
 `B`
-:   Pour les squelette non HTML binaires.
+:   Pour les squelettes non HTML binaires.
     Cas notamment des fichiers openDocumentText (`*.odt`).
     Dans ce cas le retour de la vue par la méthode `Doc::viewDoc()`
     sera le nom d'un fichier temporaire et non le contenu comme pour les zones
