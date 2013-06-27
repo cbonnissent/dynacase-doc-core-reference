@@ -19,12 +19,12 @@ répertoire `Images/`.
 
 L'application peut aussi contenir une ou plusieurs [actions][actions].
 
-Tous les fichiers de template (xml/html/js/css) doivent se trouver dans un
+Tous les fichiers de template (XML/HTML/JS/CSS) doivent se trouver dans un
 répertoire `Layout/`.
 
 Tous les autres fichiers doivent se trouver à la racine du dossier.
 
-Exemple : Arborescence d'une application avec deux actions :
+Exemple : Arborescence d'une application avec deux actions :
 
     MYAPP
     |-- Images
@@ -40,7 +40,7 @@ Exemple : Arborescence d'une application avec deux actions :
     `-- MYAPP_init.php
 
 Le dossier doit avoir le même nom que l'application et être mis à la racine du
-[contexte][contexte].<span class="fixme" data-assignedto="MCO">Ajouter un lien vers la définition d'un contexte Dynacase</span>
+[contexte][contexte].
 
 ## MYAPP.app {#core-ref:cf584c21-ebee-4444-8046-da3fa3a2db1b}
 
@@ -72,7 +72,7 @@ Exemple de contenu minimum:
 
 ### Contenu possible pour `$app_desc` {#core-ref:f0dbbdd0-5f93-4173-be2f-bac715b80771}
 
-Les différentes clés utilisables dans `$app_desc` sont :
+Les différentes clés utilisables dans `$app_desc` sont :
 
 **name** (obligatoire)
 :   Nom système de l'application.
@@ -93,8 +93,8 @@ Les différentes clés utilisables dans `$app_desc` sont :
 :   Nom qui apparaît en titre du sous-menu de l'application *APP_SWITCHER* 
     fourni par le module _dynacase-appswitcher_. Le sous-menu apparaît lors de
     la sélection de l'application dans le menu déroulant de la barre
-    d'application (si l'application est visible). Il sert à décrire l'application
-    et peut être multiligne 
+    d'application (si l'application est visible). Il sert à décrire
+    l'application et peut être multiligne 
 
 **icon** (facultatif)
 :   Nom du fichier image qui sera publié dans `MYAPP/Images/`.
@@ -104,13 +104,13 @@ Les différentes clés utilisables dans `$app_desc` sont :
     dossier `Images/` des sources.
 
 **displayable** (facultatif)
-: Un booléen pouvant avoir pour deux valeurs :
+: Un booléen pouvant avoir deux valeurs :
     
-    *   "Y" : l'application apparaîtra dans le menu déroulant de la barre
+    *   `Y` : l'application apparaîtra dans le menu déroulant de la barre
         d'application.
-    *   "N" : l'application sera invisible.  (par défaut)
+    *   `N` : l'application sera invisible.  (par défaut)
     
-    **Remarque** : Une application invisible peut quand même avoir ses actions
+    **Remarque** : Une application invisible peut quand même avoir ses actions
     appelées. Par exemple l'application "GENERIC" est invisible mais nombre de
     ses actions sont utilisées par l'application "ONEFAM".
     Ce paramètre est pris en compte par l'application *APP_SWITCHER* pour
@@ -126,13 +126,13 @@ Les différentes clés utilisables dans `$app_desc` sont :
     principalement utilisée pour créer des applications basées sur ONEFAM pour
     regrouper les familles par fonctionnalités.
 
-   **Limitation** : Un seul niveau d'héritage est pris en compte.
+   **Limitation** : Un seul niveau d'héritage est pris en compte.
 
 **available** (facultatif) 
-:   Indique si l'application est disponible. Deux valeurs possibles : 
+:   Indique si l'application est disponible. Deux valeurs possibles :
     
-    * 'Y' : application disponible (valeur par défaut) 
-    * 'N' : application non disponible. 
+    * `Y` : application disponible (valeur par défaut) 
+    * `N` : application non disponible. 
     
     Une application indisponible ne peut exécuter aucune de ses actions.
     Dans le cas d'une requête HTTP, le status "503 Application unavalaible"
@@ -146,10 +146,8 @@ Les différentes clés utilisables dans `$app_desc` sont :
     marquées "CORE". Ceci peut être utile pour réaliser des interfaces de haut
     niveau qui donnent accès à plusieurs applications suivant leur tag. Pour 
     préciser plusieurs tags sur une même application, il faut les séparer par un
-    espace. Exemple : Une application avec comme valeur dans tag `"CORE ADMIN"`
+    espace. Exemple : Une application avec comme valeur dans tag `"CORE ADMIN"`
     aura le tag `"CORE"` et le tag `"ADMIN"`.
-    
-    
 
 Ces clés correspondent aux propriétés de la [classe Application][classapplication]
 
@@ -168,33 +166,32 @@ Plus d'informations sur les [paramètres applicatifs][parametres_applicatifs].
 
 Pour initialiser l'application, il faut:
 
-1. Publier les sources dans un répertoire portant le même nom que l'application
- à la racine du contexte sur le serveur.
-2. Lancer le script `programs/record_application` qui se trouve sur le
-serveur. Ce script prend deux arguments: 
-    *  une chaîne de caractère représentant le nom de l'application.
-    *  la lettre `I` (pour l'installation) ou `U` (pour la mise à jour)
-3. Lancer le script `programs/update_catalog` pour mettre à jour les traductions.
+1.  Publier les sources dans un répertoire portant le même nom que l'application
+    à la racine du contexte sur le serveur.
+2.  Lancer le script `programs/record_application` qui se trouve sur le serveur.
+    Ce script prend deux arguments: 
+    *   une chaîne de caractère représentant le nom de l'application.
+    *   la lettre `I` (pour l'installation) ou `U` (pour la mise à jour)
+3.  Lancer le script `programs/update_catalog` pour mettre à jour les
+    traductions.
 
 Exemple d'initialisation d'application:
 
     [code bash]
-    # Le répertoire courant dans cet exemple est la racine du contexte sur le serveur, l'utilisateur est celui du serveur web `apache`.
+    # Dans cet exemple,
+    # Le répertoire courant est la racine du contexte sur le serveur,
+    # l'utilisateur est celui du serveur web `apache`.
     $> cp -r /chemin_vers_mes_sources/MYAPP .
     $> ./programs/record_application MYAPP I
     $> ./programs/update_catalog
 
-Pour la mise à jour, la suite de commandes est la même en remplaçant `./programs/record_application MYAPP I` par `./programs/record_application MYAPP U`.
+Pour la mise à jour, la suite de commandes est la même en remplaçant
+`./programs/record_application MYAPP I` par
+`./programs/record_application MYAPP U`.
 
 **Remarque**: Une fois l'application initialisée, il est possible de faire la
-mise à jour en passant par l'interface graphique du _centre d'administration_ 
-(Menu: _"Gestion des applications/Les applications"_) puis en cliquant sur
-l'icône _"mise à jour"_ en forme de flèche qui tourne. Dans ce cas, il suffit
-de copier les sources modifiées de son application sur le serveur, et de cliquer
-sur ce bouton, il se chargera d'exécuter les scripts nécessaires à la mise à
-jour complète.
-Il n'est pas obligatoire d'augmenter le numéro de version pour que la mise à
-jour soit prise en compte.
+mise à jour en passant par l'interface graphique du [centre d'administration]
+[admin_center].
 
 
 <!-- links -->
@@ -205,3 +202,4 @@ jour soit prise en compte.
 [parametres_applicatifs]: #core-ref:c3d9cb18-16d0-435a-b8c2-5fa6ac06c522
 [childofapp]: #core-ref:3fb1bd33-0190-4e8c-96f5-6a8c0f084e6f
 [classapplication]: #core-ref:5fca4352-702f-44fb-8ffa-3686545c6c67
+[centre_administration]: #FIXME

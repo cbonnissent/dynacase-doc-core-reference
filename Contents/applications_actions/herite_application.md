@@ -21,7 +21,7 @@ toutes  mise à jour également : les nouvelles actions sont ajoutées et les
 De même les actions  modifiées sont aussi modifiés dans les applications
 héritant de l'application parente.
 
-## Surcharge des descriptions d'actions
+## Surcharge des descriptions d'actions {#core-ref:669ec249-4b06-4dae-b9b9-f73e84b90e27}
 
 Le fichier de description de l'application héritée peut modifier les
 caractéristiques  des actions de l'application parente.
@@ -40,8 +40,9 @@ Extrait de l'application parente :
             "name"       => "ONEFAM_ROOT",
             "short_name" => N_("one family root"),
             "acl"        => "ONEFAM_READ",
-            "root"       => "Y")
+            "root"       => "Y"
         )
+    );
 
 Extrait de l'application héritée :
 
@@ -49,8 +50,9 @@ Extrait de l'application héritée :
     $action_desc = array (
         array(
            "name"       =>"ONEFAM_ROOT",
-           "root"       => "N"  )
-    )
+           "root"       => "N"
+        )
+    );
 
 Dans cet exemple, l'action `ONEFAM_ROOT` aura les caractéristiques suivantes
 dans  l'application héritée :
@@ -58,7 +60,7 @@ dans  l'application héritée :
 *    name          : "ONEFAM_ROOT",
 *    short_name    : N_("one family root"),
 *    acl           : "ONEFAM_READ",
-*    root          : "N
+*    root          : "**N**"
 *    script        : "onefam_root.php"
 *    function      : "onefam_root"
 *    layout        : "onefam_root.xml"
@@ -66,7 +68,7 @@ dans  l'application héritée :
 
 L'action `ONEFAM_ROOT` n'est plus l'action principale dans ce cas.
 
-### Surcharge du contrôleur de l'action
+### Surcharge du contrôleur de l'action {#core-ref:68b42cdf-6983-455e-a8fd-03fceda299f5}
 Le contrôleur de l'action peut être changé en modifiant la description.
 
 Extrait de l'application parente `MY_FIRSTAPP`:
@@ -76,8 +78,9 @@ Extrait de l'application parente `MY_FIRSTAPP`:
         array(
             "name"       => "MY_FIRSTACTION",
             "short_name" => N_("my action"),
-            "acl"        => "MY_ACL")
+            "acl"        => "MY_ACL"
         )
+    );
 
 Extrait de l'application héritée `MY_SPEAPP`:
 
@@ -86,8 +89,9 @@ Extrait de l'application héritée `MY_SPEAPP`:
         array(
            "name"       =>"MY_FIRSTACTION",
            "function"   => "spe_firstaction"
-           "script"     => "spe_firstaction.php" )
-    )
+           "script"     => "spe_firstaction.php"
+        )
+    );
 
 Dans cet exemple, l'action `MY_FIRSTACTION` aura les caractéristiques suivantes
 dans  l'application héritée :
@@ -110,12 +114,13 @@ fichier `my_firstaction.xml` proviendra du répertoire `MY_FIRSTAPP/Layout`.
 
     [php]
     require_once "MYAPP/my_firstaction.php";
+    
     function spe_firstaction(Action $action) {
         my_firstaction($action); // call parent action
         // ... do specific custom
     }
 
-### Surcharge du template de l'action
+### Surcharge du template de l'action {#core-ref:aff349cc-cca5-4db8-94cf-e3ed857b709f}
 
 Le template de l'action peut être changé en modifiant la description.
 
@@ -126,33 +131,35 @@ Extrait de l'application parente `MY_FIRSTAPP`:
         array(
             "name"       => "MY_FIRSTACTION",
             "short_name" => N_("my action"),
-            "acl"        => "MY_ACL")
+            "acl"        => "MY_ACL"
         )
+    );
 
 Extrait de l'application héritée `MY_SPEAPP`:
 
     [php]
     $action_desc = array (
         array(
-           "name"       =>"MY_FIRSTACTION",
-           "layout"   => "spe_firstaction.xml" )
-    )
+            "name"       =>"MY_FIRSTACTION",
+            "layout"   => "spe_firstaction.xml"
+        )
+    );
 
 Dans cet exemple, l'action `MY_FIRSTACTION` aura les caractéristiques suivantes
 dans  l'application héritée :
 
-*    name          : "MY_FIRSTACTION",
-*    short_name    :  N_("my action"),
-*    acl           : "MY_ACL",
-*    root          : "N
-*    script        : "my_firstaction.php"
-*    function      : "my_firstaction"
-*    layout        : "**spe_firstaction.xml**"
+*   name          : "MY_FIRSTACTION",
+*   short_name    :  N_("my action"),
+*   acl           : "MY_ACL",
+*   root          : "N
+*   script        : "my_firstaction.php"
+*   function      : "my_firstaction"
+*   layout        : "**spe_firstaction.xml**"
 
 Le fichier `my_firstaction.php` proviendra du répertoire `MY_FIRSTAPP`, le
 fichier `spe_firstaction.xml` proviendra du répertoire `MY_SPEAPP/Layout`.
 
-## Surcharge par publication  
+## Surcharge par publication {#core-ref:a52907ca-b5af-40f9-a2f3-aa945849a72b}
 
 Les contrôleurs et les template peuvent aussi être surchargés si l'application
 dérivée contient un fichier PHP contrôleur de même nom que l'application
@@ -163,16 +170,16 @@ et ensuite dans le répertoire de l'application parente. De même, le template e
 d'abord recherché dans le répertoire `Layout` de l'application dérivée et
 ensuite dans le répertoire `Layout` de l'application parente.
 
-## Ajouter de nouvelles actions
+## Ajouter de nouvelles actions {#core-ref:727601e3-1306-4032-8015-1b1fa5228a3d}
 
 La description des nouvelles [actions][actiondef] est insérée dans le tableau
 `$action_desc`  comme pour la modification des actions hérités.
 
 Ces actions peuvent utiliser les droits déclarés sur l'application parente.
 
-## Héritage des droits
+## Héritage des droits {#core-ref:56f74404-98d8-4d85-b9f9-40d7211bb822}
 
-Les déclarations des [droits][acl] inscrits dans le tableau `$app_acl` sont
+Les déclarations des [droits][acldef] inscrits dans le tableau `$app_acl` sont
 copiés  dans l'application héritée.
 
 Au niveau de la pose des droits aux utilisateurs, groupes et rôles aucun
@@ -185,7 +192,7 @@ l'installation  ou de la mise à jours ces nouveaux droits seront ajoutée aux
 droits hérités. Il  n'est pas possible d'enlever des descriptions de droits
 fournies par l'application  parente.
 
-## Modification des paramètres applicatifs
+## Modification des paramètres applicatifs {#core-ref:6eb341da-29df-4145-b8de-27ba62571c15}
 
 Pour les [paramètres de l'application][paramdef] parente seuls les paramètres
 non globaux pourront  être redéfinis par les applications filles. Les valeurs
@@ -214,7 +221,8 @@ Paramètres de l'application parente :
             "global" => "Y",
             "user" => "N",
             "descr" => N_("Seuil maximum")
-        ) )
+        )
+    );
 
 Modification des paramètres sur l'application héritée
 
@@ -222,7 +230,8 @@ Modification des paramètres sur l'application héritée
     $app_const = array(
         "VERSION" => "1.0.1-0",
         "ONEFAM_IDS" => "MY_FAMILYONE,MY_FAMILYTWO",
-        "ONEFAM_MIDS" => "MY_FAMILYTHREE")
+        "ONEFAM_MIDS" => "MY_FAMILYTHREE"
+    );
    
 Dans cet exemple les paramètres "ONEFAM_IDS" et "ONEFAM_MIDS" peuvent être
 initialisés avec leur propre valeur. Le paramètre "ONEFAM_GLOBALMAX" lui ne peut
@@ -231,7 +240,7 @@ faire l'objet  d'une modification.
 L'application héritée peut ajouter ces propres paramètres dans le tableau
 `$app_const`.
 
-## Créer une application pouvant être dérivée
+## Créer une application pouvant être dérivée {#core-ref:ab8374b9-684d-4cdf-bb4d-265b4f87b375}
 
 Si une application n'a pas été prévue pour être dérivée alors il ne sera pas
 possible  à l'application hérité de modifier le comportement des actions et des
@@ -254,10 +263,6 @@ dérivées. Si une application dérivée modifie le comportement de l'action
 `MY_ACTION`  alors dans ce cas l'url de l'ancre pointera sur l'action modifiée
 et non sur l'originale.  De même avec l'action `MY_ZONE` qui sera l'action
 modifiée en cas de dérivation.
-
-
-
-
 
 <!-- links -->
 [appdesc]: #core-ref:f0dbbdd0-5f93-4173-be2f-bac715b80771
