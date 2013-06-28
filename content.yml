@@ -1443,6 +1443,15 @@ book:
         wip: "work in progress"
         wip_sub: ""
     - level:   2
+      content:  "Advanced/Applications/introduction.md"
+      flags:
+        wip: "work in progress"
+    - level:   3
+      content:  "Advanced/Applications/migration.md"
+      flags:
+        wip: "work in progress"
+        wip_sub: ""
+    - level:   2
       content:  "Advanced/Recherche/introduction.md"
       flags:
         wip: "work in progress"
