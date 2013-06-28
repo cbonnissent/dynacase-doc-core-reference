@@ -44,7 +44,7 @@ Le fichier _csv_ produit sera comme décrit ci-dessous :
 
 Un nom logique temporaire est généré pour les documents n'ayant pas de nom
 logique. Cet identifiant temporaire est supprimé tous les soirs avec le
-programme _wsh_ "dynacaseDbCleaner".
+programme _wsh_ `cleanContext`.
 
 La clef `PROFIL` contient l'ensemble des droits explicites mis sur les
 [profils][profilage]. L'affectation des droits est faite avec les noms
