@@ -99,7 +99,7 @@ Donne :
 ## Internationalisation  {#core-ref:6a4b3a9b-11b6-47d4-b387-0ff177dd9f82}
 
 Pour rendre du texte traduisible, il faut utiliser la syntaxe
-`[TEXT:translate me]`. ce texte sera automatiquement ajouté au catalogue de
+`[TEXT:translate me]`. Ce texte sera automatiquement ajouté au catalogue de
 traduction, et sera remplacé par sa traduction lors du rendu du template.
 
 
