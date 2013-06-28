@@ -309,64 +309,54 @@ book:
       element: "chapter"
       content:  "API/Class_ActionUsage.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        need-review: "need review"
       subtoc:   1
     - level:   3
       element: "chapter"
       content:  "API/Class_ActionUsage/Method_getUsage.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        need-review: "need review"
     - level:   2
       element: "chapter"
       content:  "API/Class_ApiUsage.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        need-review: "need review"
       subtoc:   1
     - level:   3
       element: "chapter"
-      content:  "API/Class_ApiUsage/Method_addEmpty.md"
+      content:  "API/Class_ApiUsage/Method_addEmptyParameter.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        need-review: "need review"
     - level:   3
       element: "chapter"
-      content:  "API/Class_ApiUsage/Method_addHidden.md"
+      content:  "API/Class_ApiUsage/Method_addHiddenParameter.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        need-review: "need review"
     - level:   3
       element: "chapter"
-      content:  "API/Class_ApiUsage/Method_addNeeded.md"
+      content:  "API/Class_ApiUsage/Method_addRequiredParameter.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        need-review: "need review"
     - level:   3
       element: "chapter"
-      content:  "API/Class_ApiUsage/Method_addOption.md"
+      content:  "API/Class_ApiUsage/Method_addOptionalParameter.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        need-review: "need review"
     - level:   3
       element: "chapter"
-      content:  "API/Class_ApiUsage/Method_setText.md"
+      content:  "API/Class_ApiUsage/Method_setDefinitionText.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        need-review: "need review"
     - level:   3
       element: "chapter"
-      content:  "API/Class_ApiUsage/Method_strict.md"
+      content:  "API/Class_ApiUsage/Method_setStrictMode.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        need-review: "need review"
     - level:   3
       element: "chapter"
       content:  "API/Class_ApiUsage/Method_verify.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        need-review: "need review"
     - level:   2
       element: "chapter"
       content:  "API/Class_Application.md"
