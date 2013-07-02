@@ -884,52 +884,82 @@ book:
         need-review: "need review"
     - level:   2
       element: "chapter"
-      content:  "API/Class_ParameterManager.md"
+      content:  "API/Class_ApplicationParameterManager.md"
       flags:
-        wip: "work in progress"
+        draft: "draft"
         wip_sub: ""
       subtoc:   1
     - level:   3
       element: "chapter"
-      content:  "API/Class_ParameterManager/Method_getApplicationParameter.md"
+      content:  "API/Class_ApplicationParameterManager/Method_getCommonParameterValue.md"
       flags:
-        wip: "work in progress"
+        draft: "draft"
         wip_sub: ""
     - level:   3
       element: "chapter"
-      content:  "API/Class_ParameterManager/Method_getParameter.md"
+      content:  "API/Class_ApplicationParameterManager/Method_getParameter.md"
       flags:
-        wip: "work in progress"
+        draft: "draft"
         wip_sub: ""
     - level:   3
       element: "chapter"
-      content:  "API/Class_ParameterManager/Method_resetCache.md"
+      content:  "API/Class_ApplicationParameterManager/Method_getParameters.md"
       flags:
-        wip: "work in progress"
+        draft: "draft"
         wip_sub: ""
     - level:   3
       element: "chapter"
-      content:  "API/Class_ParameterManager/Method_setApplicationParameter.md"
+      content:  "API/Class_ApplicationParameterManager/Method_getParameterValue.md"
       flags:
-        wip: "work in progress"
+        draft: "draft"
         wip_sub: ""
     - level:   3
       element: "chapter"
-      content:  "API/Class_ParameterManager/Method_setGlobalParameter.md"
+      content:  "API/Class_ApplicationParameterManager/Method_getScopedParameterValue.md"
       flags:
-        wip: "work in progress"
+        draft: "draft"
         wip_sub: ""
     - level:   3
       element: "chapter"
-      content:  "API/Class_ParameterManager/Method_setGlobalUserParameter.md"
+      content:  "API/Class_ApplicationParameterManager/Method_getUserParameterDefaultValue.md"
       flags:
-        wip: "work in progress"
+        draft: "draft"
         wip_sub: ""
     - level:   3
       element: "chapter"
-      content:  "API/Class_ParameterManager/Method_setUserApplicationParameter.md"
+      content:  "API/Class_ApplicationParameterManager/Method_getUserParameterValue.md"
       flags:
-        wip: "work in progress"
+        draft: "draft"
+        wip_sub: ""
+    - level:   3
+      element: "chapter"
+      content:  "API/Class_ApplicationParameterManager/Method_resetCache.md"
+      flags:
+        draft: "draft"
+        wip_sub: ""
+    - level:   3
+      element: "chapter"
+      content:  "API/Class_ApplicationParameterManager/Method_setCommonParameterValue.md"
+      flags:
+        draft: "draft"
+        wip_sub: ""
+    - level:   3
+      element: "chapter"
+      content:  "API/Class_ApplicationParameterManager/Method_setParameterValue.md"
+      flags:
+        draft: "draft"
+        wip_sub: ""
+    - level:   3
+      element: "chapter"
+      content:  "API/Class_ApplicationParameterManager/Method_setUserParameterDefaultValue.md"
+      flags:
+        draft: "draft"
+        wip_sub: ""
+    - level:   3
+      element: "chapter"
+      content:  "API/Class_ApplicationParameterManager/Method_setUserParameterValue.md"
+      flags:
+        draft: "draft"
         wip_sub: ""
     - level:   2
       element: "chapter"
