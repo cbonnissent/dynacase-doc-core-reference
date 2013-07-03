@@ -220,8 +220,36 @@ book:
     - level:   1
       content:  "securite/introduction.md"
       flags:
-        wip: "work in progress"
+        draft: "draft"
       subtoc:   2
+    - level:   2
+      content:  "securite/regles_securite.md"
+      flags:
+        draft: "draft"
+    - level:   2
+      content:  "securite/param_profil.md"
+      flags:
+        draft: "draft"
+    - level:   2
+      content:  "securite/droits_applicatifs.md"
+      flags:
+        draft: "draft"
+    - level:   2
+      content:  "securite/droit_core.md"
+      flags:
+        draft: "draft"
+    - level:   2
+      content:  "securite/droits_documents.md"
+      flags:
+        draft: "draft"
+    - level:   2
+      content:  "securite/droits_cv.md"
+      flags:
+        draft: "draft"
+    - level:   2
+      content:  "securite/droits_workflow.md"
+      flags:
+        draft: "draft"
 ##
 # cycles
 ##

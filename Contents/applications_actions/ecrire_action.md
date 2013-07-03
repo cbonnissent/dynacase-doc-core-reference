@@ -202,7 +202,7 @@ paramètre. L'attribut `lay` est un objet de la classe [`Layout`][class_layout]�
     [php]
     $action->lay->set("mydata", "val_to_be_sent");
 
-Plus d'informations sur les template sont disponibles [ici][template].
+Plus d'informations sur les templates sont disponibles [ici][template].
 
 #### Mise en garde et astuces {#core-ref:41079be9-2294-4bd6-ae76-cb6934a7302b}
 
@@ -244,6 +244,20 @@ du Javascript, des CSS, du JSON ou du XML. Une action peut aussi retourner des
 fichiers binaires telles que des images mais dans ce cas ce n'est pas l'objet
 `lay` qui sera utilisé pour le retour.
 
+## Exécuter une action {#core-ref:14b2cf06-da86-46be-832e-942e842c9552}
+
+Une action est exécutée sur le serveur en indiquant le nom de l'application et
+le nom de l'action dans l'url d'accès.
+
+Le nom de l'application est indiqué dans le paramètre `app` et le nom de
+l'action dans le paramètre `action`.
+
+Exemple :
+
+    ?app=MY_APP&action=MY_ACTION
+
+Les actions peuvent aussi être exécutées en mode console avec [_wsh_][actionwsh].
+
 <!-- links -->
 [droits_applicatifs]: #core-ref:a98b72ea-c063-4907-abc4-e5171ab55e59
 [application]: #core-ref:395f44f1-6699-4ad8-b525-31e65e9b6efb
@@ -253,6 +267,6 @@ fichiers binaires telles que des images mais dans ce cas ce n'est pas l'objet
 [actionusage]: #core-ref:7a8932eb-a59f-482a-9991-4ee1c634eae4
 [classapplication]: #core-ref:5fca4352-702f-44fb-8ffa-3686545c6c67
 [template]: #core-ref:af9ea76c-069e-49e1-a382-efc8ca35f1eb
-[class_action]: #core-ref:29553eba-bcea-4baf-bef8-103c3a3510fa
+[actionwsh] #core-ref:63832d9f-61a8-4846-a9d5-c34ee58de4a6
 [parametre_applicatif]: #core-ref:c3d9cb18-16d0-435a-b8c2-5fa6ac06c522
 [view_representation]: #core-ref:9073f5b0-3cde-4690-a7a2-ffb5c4c7b94f

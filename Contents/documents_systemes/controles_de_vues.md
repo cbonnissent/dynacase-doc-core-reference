@@ -47,7 +47,7 @@ un nom de *menu*
     
 ## Profilage du contrôle de vue {#core-ref:742f93b5-9df6-4cad-be22-1fd8eb6a76ef}
 
-Il est possible d'appliquer un profil à un contrôle de vue. Ce profile détermine
+Il est possible d'appliquer un [profil][cvprofil] à un contrôle de vue. Ce profile détermine
 alors pour chaque vue qui a le droit d'y accéder.
 
 Le profil en question peut être statique, mais également dynamique.
@@ -63,7 +63,7 @@ spécifiée, la vue est automatiquement choisie selon le mécanisme suivant :
 
 1.  restriction à la liste des vues pour lesquelles
     *   le *type* correspond à l'action courante,
-    *   l'utilisateur est autorisé à y accéder,
+    *   l'utilisateur [est autorisé à y accéder][cvprofil],
 2.  classement des vues restantes par numéro d'*ordre* croissant
 ,
 3.  utilisation de la première des vues restantes.
@@ -88,5 +88,6 @@ masque dédié, et ayant le plus faible ordre, et les autres vues restreintes,
 sans masque et avec un ordre supérieur.
 
 <!-- links -->
-[masque]: #core-ref:327ad491-06df-4e5b-b49a-695c75439fe1
+[masque]: #core-ref:327ad491-06df-4e5b-b49a-695c75439fe1 "Définition d'un masque"
 [document_view]: #core-ref:cb3e2b97-ee6d-4cdf-aa25-b2e41d0d3156
+[cvprofil]: #core-ref:65603797-5d8a-4a0d-954a-2dc69b5af11e "Détail sur le profilage d'un contrôle de vue"
