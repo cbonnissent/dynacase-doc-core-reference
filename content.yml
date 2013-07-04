@@ -142,28 +142,16 @@ book:
       subtoc:   2
     - level:   2
       content:  "representations/template_usage.md"
-      flags:
-        need-review: "need review"
     - level:   2
       content:  "representations/vue_de_documents.md"
-      flags:
-        need-review: "need review"
     - level:   2
       content:  "representations/vue_specifique_de_documents.md"
-      flags:
-        need-review: "need review"
     - level:   2
       content:  "representations/vue_d_attribut.md"
-      flags:
-        need-review: "need review"
     - level:   2
       content:  "representations/vue_de_range_tableau.md"
-      flags:
-        need-review: "need review"
     - level:   2
       content:  "representations/ooo_layout.md"
-      flags:
-        wip: "work in progress"
 ##
 # importation_exportation_documents
 ##
