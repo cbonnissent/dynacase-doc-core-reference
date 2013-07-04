@@ -850,57 +850,38 @@ book:
       element: "chapter"
       content:  "API/Class_Log.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        need-review: "need review"
       subtoc:   1
-    - level:   3
-      element: "chapter"
-      content:  "API/Class_Log/Method_Log.md"
-      flags:
-        wip: "work in progress"
-        wip_sub: ""
-    - level:   3
-      element: "chapter"
-      content:  "API/Class_Log/Method_callstack.md"
-      flags:
-        wip: "work in progress"
-        wip_sub: ""
     - level:   3
       element: "chapter"
       content:  "API/Class_Log/Method_debug.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        need-review: "need review"
     - level:   3
       element: "chapter"
       content:  "API/Class_Log/Method_deprecated.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        need-review: "need review"
     - level:   3
       element: "chapter"
       content:  "API/Class_Log/Method_error.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        need-review: "need review"
     - level:   3
       element: "chapter"
       content:  "API/Class_Log/Method_fatal.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        need-review: "need review"
     - level:   3
       element: "chapter"
       content:  "API/Class_Log/Method_info.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        need-review: "need review"
     - level:   3
       element: "chapter"
       content:  "API/Class_Log/Method_warning.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        need-review: "need review"
     - level:   2
       element: "chapter"
       content:  "API/Class_ParameterManager.md"

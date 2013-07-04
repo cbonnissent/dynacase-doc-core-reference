@@ -1,55 +1,55 @@
 # Log::info() {#core-ref:1029172b-29eb-46cd-a2ff-6c1501320e5b}
 
-<div class="short-description">
-<span class="fixme template">short description for Log::info()</span>
+<div markdown="1" class="short-description">
+La méthode `info()` journalise un message avec le niveau de log `Log::INFO`.
 </div>
-<!--
-<div class="applicability">
-Obsolète depuis #.#.#
-</div>
--->
 
 ## Description {#core-ref:23bff0c2-cede-4bca-95ba-b7c3c466d3f6}
 
     [php]
-    <return type> info ( <parameters> )
+    void info ( string $message )
 
-<span class="fixme template">long description</span>
+## Avertissements {#core-ref:2e2bdbe2-a4af-4830-814f-86372345f052}
 
-### Avertissements {#core-ref:7af8f90c-60fb-4c0a-ab17-1a10b74cecbc}
-
-<span class="fixme template">Avertissements</span>
+Le [paramètre applicatif `CORE_LOGLEVEL`][CORE_LOGLEVEL] doit contenir la lettre
+`I` pour que le message soit journalisé.
 
 ## Liste des paramètres {#core-ref:c314fd7f-ca20-461e-8621-d8448f9f903f}
 
-<span class="fixme template">Liste des paramètres</span>
-
-<div class="fixme template">
-exemple:  
-[out] (array) `info`
-:   Si `info`est fourni, il sera rempli avec les informations de l'image (taille, couleur, etc.).
-</div>
+(string) `message`
+:   Le message à journaliser.
 
 ## Valeur de retour {#core-ref:ba309b32-0e72-42b0-a30a-50eb0e58163d}
 
-<span class="fixme template">Valeur de retour</span>
+Aucune.
 
 ## Erreurs / Exceptions {#core-ref:3cd34132-9e11-4021-b3c4-782173ed94a4}
 
-<span class="fixme template">Erreurs / Exceptions</span>
+Aucune.
 
 ## Historique {#core-ref:21f85be4-b7d6-4580-9872-4be5529ec073}
 
-<span class="fixme template">Historique</span>
+Aucun.
 
 ## Exemples {#core-ref:b2b1422d-572b-4d39-aea4-6235b53f078d}
 
-<span class="fixme template">Exemples</span>
+    [php]
+    $log = new Log();
+    $log->info("lp0 on fire");
+
+Sortie :
+
+    Jul  3 14:15:92 localhost [I] Dynacase: []  : lp0 on fire
 
 ## Notes {#core-ref:45cb2273-a6b7-4699-81b9-141059063c06}
 
-<span class="fixme template">Notes</span>
+Aucune.
 
 ## Voir aussi {#core-ref:ad7ed323-a2fa-454b-88e6-9fb3345d9f84}
 
-<span class="fixme template">Voir aussi</span>
+-   La [classe `Log`][log]
+-   Le [paramètre applicatif `CORE_LOGLEVEL`][CORE_LOGLEVEL]
+
+<!-- links -->
+[log]: #core-ref:2b8f4534-e749-46ba-b69e-afaa470c4b5c
+[CORE_LOGLEVEL]: #core-ref:c579e530-ebfd-442b-9c25-886f19507931
