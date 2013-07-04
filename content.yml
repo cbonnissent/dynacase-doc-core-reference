@@ -158,36 +158,36 @@ book:
     - level:   1
       content:  "importation_exportation_documents/introduction.md"
       flags:
-        draft: "draft"
+        need-review: "need review"
       subtoc:   2
     - level:   2
       content:  "importation_exportation_documents/importations.md"
       flags:
-        draft: "draft"
+        need-review: "need review"
     - level:   2
       content:  "importation_exportation_documents/importationsxml.md"
       flags:
-        draft: "draft"
+        need-review: "need review"
     - level:   2
       content:  "importation_exportation_documents/importationsarchive.md"
       flags:
-        draft: "draft"
+        need-review: "need review"
     - level:   2
       content:  "importation_exportation_documents/importationswsh.md"
       flags:
-        draft: "draft"
+        need-review: "need review"
     - level:   2
       content:  "importation_exportation_documents/exportations.md"
       flags:
-         draft: "draft"
+        need-review: "need review"
     - level:   2
       content:  "importation_exportation_documents/exportationsxml.md"
       flags:
-         draft: "draft"
+        need-review: "need review"
     - level:   2
       content:  "importation_exportation_documents/exportationsprofil.md"
       flags:
-        draft: "draft"
+        need-review: "need review"
 ##
 # comptes_groupes_roles
 ##
