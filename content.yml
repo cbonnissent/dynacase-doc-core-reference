@@ -243,14 +243,20 @@ book:
 ##
     - level:   1
       content:  "cycles/introduction.md"
-      flags:
-        wip: "work in progress"
       subtoc:   2
     - level:   2
+      content:  "cycles/implementation.md"
+    - level:   2
       content:  "cycles/parametrage_importation.md"
-      flags:
-        wip: "work in progress"
-        wip_sub: ""
+      subtoc:   2
+    - level:   3
+      content:  "cycles/family_wf.md"
+    - level:   3
+      content:  "cycles/document_wf.md"
+    - level:   3
+      content:  "cycles/profilage_wf.md"
+    - level:   2
+      content:  "cycles/wf_api.md"
 ##
 # API
 ##
@@ -1393,6 +1399,10 @@ book:
       subtoc:   2
     - level:   2
       content:  "Style/styles.md"
+    - level:   2
+      content:  "Advanced/Internationalisation/introduction.md"
+      flags:
+        wip: "work in progress"
     - level:   2
       content:  "Advanced/Cinematique/introduction.md"
       flags:
