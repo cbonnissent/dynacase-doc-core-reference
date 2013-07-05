@@ -19,7 +19,7 @@ Si aucune valeur n'est spécifiée, alors le port `25` est utilisé.
 
 ## Notes {#core-ref:f1a81a6d-d3e1-4792-9cc9-8c1b015bed32}
 
-N/A
+Aucune.
 
 <!-- links -->
 [smtp_host]: #core-ref:7fae21a9-00d4-47f9-88e7-2400f1893a52

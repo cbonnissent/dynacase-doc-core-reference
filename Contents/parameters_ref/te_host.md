@@ -17,6 +17,6 @@ La valeur peut être une adresse IP (e.g. `192.168.100.1`) ou un nom d'hôte (e.
 
 ## Notes {#core-ref:af95da99-ba17-461a-a10b-217366c42d6f}
 
-N/A
+Aucune.
 
 <!-- links -->

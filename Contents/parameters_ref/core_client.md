@@ -17,6 +17,6 @@ contenant pas le caractère `"` (double-quote).
 
 ## Notes {#core-ref:bb3f08be-6e5c-470a-abb0-3d4ade014893}
 
-N/A
+Aucune.
 
 <!-- links -->

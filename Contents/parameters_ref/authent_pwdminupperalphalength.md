@@ -19,6 +19,6 @@ Si la valeur 0 est spécifiée, alors ce contrôle n'est pas effectué.
 
 ## Notes {#core-ref:8d2a5335-f221-4837-b5f7-84d83ee09502}
 
-N/A
+Aucune.
 
 <!-- links -->

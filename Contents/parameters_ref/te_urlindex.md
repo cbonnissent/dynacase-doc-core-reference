@@ -18,6 +18,6 @@ l'index de Dynacase (e.g. `http://www.example.net:8080/dynacase/`).
 
 ## Notes {#core-ref:fcc0d341-1423-4b1d-8715-30d0f0a29dc1}
 
-N/A
+Aucune.
 
 <!-- links -->

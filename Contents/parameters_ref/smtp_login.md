@@ -18,6 +18,6 @@ La valeur est une chaîne de caractères contenant le login de connexion
 
 ## Notes {#core-ref:eced938e-e841-448f-9882-b69d4a06bfaa}
 
-N/A
+Aucune.
 
 <!-- links -->

@@ -18,6 +18,6 @@ de Dynacase (e.g. `CORE/Images/logo-mini.png`).
 
 ## Notes {#core-ref:38f1e7e0-577e-4e94-8aa7-882712e4a392}
 
-N/A
+Aucune.
 
 <!-- links -->

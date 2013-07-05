@@ -18,6 +18,6 @@ La valeur est une chaîne de caractères (texte simple ligne).
 
 ## Notes {#core-ref:bec04f25-b1fb-48a7-9151-ae3010a307cc}
 
-N/A
+Aucune.
 
 <!-- links -->

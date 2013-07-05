@@ -18,6 +18,6 @@ disponible.
 
 ## Notes {#core-ref:5e3bac64-4144-4281-8049-ae2e64ba6d4b}
 
-N/A
+Aucune.
 
 <!-- links -->

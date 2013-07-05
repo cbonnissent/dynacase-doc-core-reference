@@ -17,6 +17,6 @@ La valeur est une adresse mail valide (e.g. `jsmith@example.org`).
 
 ## Notes {#core-ref:6e4cb5c1-7ba6-47f7-8629-3ec57ff8f457}
 
-N/A
+Aucune.
 
 <!-- links -->

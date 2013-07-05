@@ -17,7 +17,7 @@ La valeur est une chaîne de caractère contenant le mot de passe associé au
 
 ## Notes {#core-ref:61da0936-7719-4baa-b6dc-7875838145bf}
 
-N/A
+Aucune.
 
 <!-- links -->
 [smtp_login]: #core-ref:2a690bed-2051-4b13-9ad1-65d57414fc4e

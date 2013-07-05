@@ -20,6 +20,6 @@ effectué.
 
 ## Notes {#core-ref:a4a42d1a-c82c-4136-bea0-33bbaf459de8}
 
-N/A
+Aucune.
 
 <!-- links -->

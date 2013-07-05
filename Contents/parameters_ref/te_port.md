@@ -17,6 +17,6 @@ transformation (e.g. `51968`).
 
 ## Notes {#core-ref:6ccb40f3-4f09-4c1e-8fcc-febb4be58361}
 
-N/A
+Aucune.
 
 <!-- links -->

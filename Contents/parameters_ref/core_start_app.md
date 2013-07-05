@@ -18,6 +18,6 @@ La valeur du paramètre doit être le nom d'une application Dynacase
 
 ## Notes {#core-ref:18210d55-dd07-46d9-b6b4-fa91c9a67b7e}
 
-N/A
+Aucune.
 
 <!-- links -->

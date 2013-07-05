@@ -25,6 +25,6 @@ Exemple de valeurs :
 
 ## Notes {#core-ref:434bac90-5578-4f3c-9d50-4a2a4854cec1}
 
-N/A
+Aucune.
 
 <!-- links -->

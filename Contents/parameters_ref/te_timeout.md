@@ -21,6 +21,6 @@ Si aucune valeur n'est spécifiée, la valeur `3` est utilisée.
 
 ## Notes {#core-ref:17886389-f996-4860-a4f6-adaf8c92c58d}
 
-N/A
+Aucune.
 
 <!-- links -->
