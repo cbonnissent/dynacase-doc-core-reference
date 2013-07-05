@@ -30,7 +30,7 @@ Aucun.
 ## Valeur de retour {#core-ref:c4169c6c-8611-4cc9-a7f5-bc4633678389}
 
 Retourne une chaîne de caractères avec la valeur principale du paramètre, ou
-`null` si le paramètre ou l'application demandé n'est pas trouvé.
+`null` si le paramètre ou l'application demandé ne sont pas trouvés.
 
 ## Erreurs / Exceptions {#core-ref:dfa172bf-3249-4cd3-b619-8eb486ec96c2}
 
@@ -68,9 +68,9 @@ déclarée sur l'utilisateur.
 ## Notes {#core-ref:4d1dea92-5f75-4eb0-9792-5003a43c845b}
 
 *   L'argument `application` peut aussi être la constante
-`ApplicationParameterManager::CURRENT_APPLICATION` (pour référencer
-l'application courante) ou `ApplicationParameterManager::GLOBAL_PARAMETER` (pour
-adresser des paramètres globaux).
+    `ApplicationParameterManager::CURRENT_APPLICATION` (pour référencer
+    l'application *courante*) ou `ApplicationParameterManager::GLOBAL_PARAMETER`
+    (pour adresser des *paramètres globaux*).
 
 *   Cette méthode est équivalente à un appel à la méthode
 [`getCommonParameterValue()`][getCommonParameterValue].

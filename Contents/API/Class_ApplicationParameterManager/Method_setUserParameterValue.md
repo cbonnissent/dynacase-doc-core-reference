@@ -1,6 +1,6 @@
 # ApplicationParameterManager::setUserParameterValue() {#core-ref:174cdcd6-d465-4c4f-abd7-a0a9bca51f52}
 
-<div class="short-description">
+<div markdown="1" class="short-description">
 La méthode `setUserParameterValue()` permet d'écrire la valeur personnalisée
 d'un paramètre utilisateur d'une application.
 </div>
@@ -63,9 +63,9 @@ Aucun.
 ## Notes {#core-ref:4eba9d15-0643-4295-8ec2-b3885cfc0409}
 
 *   L'argument `application` peut aussi être la constante
-`ApplicationParameterManager::CURRENT_APPLICATION` (pour l'application *
-courante) ou `ApplicationParameterManager::GLOBAL_PARAMETER` pour adresser des *
-paramètres globaux.
+    `ApplicationParameterManager::CURRENT_APPLICATION` (pour l'application 
+    *courante*) ou `ApplicationParameterManager::GLOBAL_PARAMETER` pour adresser
+    des *paramètres globaux*.
 
 ## Voir aussi {#core-ref:9be1b0d5-f1a1-4007-b9ed-262b0cba0214}
 

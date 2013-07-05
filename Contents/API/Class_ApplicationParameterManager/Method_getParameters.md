@@ -77,9 +77,9 @@ Sortie :
 ## Notes {#core-ref:5821c2c8-5f75-4286-9b99-fbc541e24aa6}
 
 *   L'argument `application` peut aussi être la constante
-`ApplicationParameterManager::CURRENT_APPLICATION` (pour référencer
-l'application courante) ou `ApplicationParameterManager::GLOBAL_PARAMETER` (pour
-adresser des paramètres globaux).
+    `ApplicationParameterManager::CURRENT_APPLICATION` (pour référencer
+    l'application *courante*) ou `ApplicationParameterManager::GLOBAL_PARAMETER`
+    (pour adresser des *paramètres globaux*).
 
 ## Voir aussi {#core-ref:4c33a391-24e9-41c7-b161-49295bfc962e}
 

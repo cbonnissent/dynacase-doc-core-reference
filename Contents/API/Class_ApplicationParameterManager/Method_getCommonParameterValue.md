@@ -11,10 +11,10 @@ d'un paramètre.
     string static getCommonParameterValue ( mixed $application,
                                            string $parameterName )
 
-Retourne la valeur principale du paramètre `$parameterName` définit sur
+Retourne la valeur principale du paramètre `$parameterName` défini sur
 l'application `$application`.
 
-Pour obtenir la valeur personnalisée d'un utilisateur : voir méthode
+Pour obtenir la valeur personnalisée d'un utilisateur : voir la méthode
 [`getUserParameterValue()`][getUserParameterValue].
 
 ### Avertissements {#core-ref:15f56ddc-9ed7-485f-b549-495426f96c4b}
@@ -60,9 +60,9 @@ Sortie :
 ## Notes {#core-ref:5a8679a3-25f0-400e-9f2f-b1d936f0d5f1}
 
 *   L'argument `application` peut aussi être la constante
-`ApplicationParameterManager::CURRENT_APPLICATION` (pour référencer
-l'application courante) ou `ApplicationParameterManager::GLOBAL_PARAMETER` (pour
-adresser des paramètres globaux).
+    `ApplicationParameterManager::CURRENT_APPLICATION` (pour référencer
+    l'application *courante*) ou `ApplicationParameterManager::GLOBAL_PARAMETER`
+    (pour adresser des *paramètres globaux*).
 
 ## Voir aussi {#core-ref:78918f97-5dcc-4ae8-b575-49c110b8dbef}
 

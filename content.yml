@@ -886,81 +886,68 @@ book:
       element: "chapter"
       content:  "API/Class_ApplicationParameterManager.md"
       flags:
-        draft: "draft"
-        wip_sub: ""
+        need-review: "need review"
       subtoc:   1
     - level:   3
       element: "chapter"
       content:  "API/Class_ApplicationParameterManager/Method_getCommonParameterValue.md"
       flags:
-        draft: "draft"
-        wip_sub: ""
+        need-review: "need review"
     - level:   3
       element: "chapter"
       content:  "API/Class_ApplicationParameterManager/Method_getParameter.md"
       flags:
-        draft: "draft"
-        wip_sub: ""
+        need-review: "need review"
     - level:   3
       element: "chapter"
       content:  "API/Class_ApplicationParameterManager/Method_getParameters.md"
       flags:
-        draft: "draft"
-        wip_sub: ""
+        need-review: "need review"
     - level:   3
       element: "chapter"
       content:  "API/Class_ApplicationParameterManager/Method_getParameterValue.md"
       flags:
-        draft: "draft"
-        wip_sub: ""
+        need-review: "need review"
     - level:   3
       element: "chapter"
       content:  "API/Class_ApplicationParameterManager/Method_getScopedParameterValue.md"
       flags:
-        draft: "draft"
-        wip_sub: ""
+        need-review: "need review"
     - level:   3
       element: "chapter"
       content:  "API/Class_ApplicationParameterManager/Method_getUserParameterDefaultValue.md"
       flags:
-        draft: "draft"
-        wip_sub: ""
+        need-review: "need review"
     - level:   3
       element: "chapter"
       content:  "API/Class_ApplicationParameterManager/Method_getUserParameterValue.md"
       flags:
-        draft: "draft"
-        wip_sub: ""
+        need-review: "need review"
     - level:   3
       element: "chapter"
       content:  "API/Class_ApplicationParameterManager/Method_resetCache.md"
       flags:
-        draft: "draft"
-        wip_sub: ""
+        need-review: "need review"
     - level:   3
       element: "chapter"
       content:  "API/Class_ApplicationParameterManager/Method_setCommonParameterValue.md"
       flags:
-        draft: "draft"
-        wip_sub: ""
+        need-review: "need review"
     - level:   3
       element: "chapter"
       content:  "API/Class_ApplicationParameterManager/Method_setParameterValue.md"
       flags:
-        draft: "draft"
-        wip_sub: ""
+        need-review: "need review"
     - level:   3
       element: "chapter"
       content:  "API/Class_ApplicationParameterManager/Method_setUserParameterDefaultValue.md"
       flags:
-        draft: "draft"
-        wip_sub: ""
+        need-review: "need review"
     - level:   3
       element: "chapter"
       content:  "API/Class_ApplicationParameterManager/Method_setUserParameterValue.md"
       flags:
-        draft: "draft"
-        wip_sub: ""
+        need-review: "need review"
     - level:   2
       element: "chapter"
       content:  "API/Class_SearchAccount.md"

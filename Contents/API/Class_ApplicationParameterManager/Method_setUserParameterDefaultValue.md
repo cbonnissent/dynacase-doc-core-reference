@@ -9,8 +9,8 @@ d'un paramètre utilisateur d'une application.
 
     [php]
     void static setUserParameterDefaultValue ( mixed $application,
-    	                                      string $parameterName,
-    	                                      string $value )
+                                              string $parameterName,
+                                              string $value )
 
 ### Avertissements {#core-ref:4cf0803f-4063-4583-8337-170a4f4c079e}
 
@@ -53,12 +53,12 @@ Aucun.
 ## Notes {#core-ref:be147b35-3820-4aa9-8acb-e70b9f792332}
 
 *   L'argument `application` peut aussi être la constante
-`ApplicationParameterManager::CURRENT_APPLICATION` (pour l'application courante)
-ou `ApplicationParameterManager::GLOBAL_PARAMETER` pour adresser des paramètres
-globaux.
+    `ApplicationParameterManager::CURRENT_APPLICATION` (pour l'application
+    *courante*) ou `ApplicationParameterManager::GLOBAL_PARAMETER` pour adresser
+    des *paramètres globaux*.
 
 *   Cette méthode est équivalente à un appel à la méthode
-[`setCommonParameterValue()`][setCommonParameterValue].
+    [`setCommonParameterValue()`][setCommonParameterValue].
 
 ## Voir aussi {#core-ref:2a7d3b46-dc84-4959-833e-56e43c87e394}
 

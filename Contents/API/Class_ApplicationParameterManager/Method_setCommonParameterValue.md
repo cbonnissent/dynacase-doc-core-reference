@@ -13,7 +13,7 @@ paramètre d'une application.
                                   string $value )
 
 La valeur principale du paramètre `$parameterName` de l'application
-`$application` est positionné avec la valeur `$value` fournit.
+`$application` est positionnée avec la valeur `$value` fournie.
 
 ### Avertissements {#core-ref:8509e6e0-e713-4e6e-87b6-47bb97c42592}
 
@@ -54,8 +54,8 @@ Aucun.
     try {
         ApplicationParameterManager::setCommonParameterValue('CORE', 'CORE_LANG', 'en_US');
     } catch(\Dcp\ApplicationParameterManager\Exception $e) {
-    	printf("Error setting parameter's default value.");
-    	throw $e;
+        printf("Error setting parameter's default value.");
+        throw $e;
     }
     
     /* Affiche la valeur principale de CORE_LANG */
@@ -68,10 +68,10 @@ Sortie :
 
 ## Notes {#core-ref:38111e4b-8d42-40fe-b6ef-bd172bf77e4e}
 
-*   L'argument `application` peut aussi être la constante
-`ApplicationParameterManager::CURRENT_APPLICATION` (pour référencer
-l'application courante) ou `ApplicationParameterManager::GLOBAL_PARAMETER` (pour
-adresser des paramètres globaux).
+    *   L'argument `application` peut aussi être la constante
+    `ApplicationParameterManager::CURRENT_APPLICATION` (pour référencer
+    l'application *courante*) ou `ApplicationParameterManager::GLOBAL_PARAMETER`
+    (pour adresser des *paramètres globaux*).
 
 ## Voir aussi {#core-ref:10c4088c-083d-4c30-8088-a3c64cda8d3e}
 
