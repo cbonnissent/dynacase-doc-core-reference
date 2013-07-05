@@ -7,11 +7,11 @@ Ajoute un paramètre qui ne prend pas de valeur (flag).
 ## Description {#core-ref:130e7615-09b2-49b8-8ec1-66aba637d08f}
 
     [php]
-    mixed addEmptyParameter ( string $argName [, string $argDefinition] )
+    mixed addEmptyParameter ( string $argName, string $argDefinition = "" )
 
 ### Avertissements {#core-ref:999cc856-618b-4795-84de-deebed7505d8}
 
-N/A
+Aucun.
 
 ## Liste des paramètres {#core-ref:ec93c26c-08df-43f3-89db-a9b34c46c1cf}
 
@@ -28,7 +28,7 @@ retournée, sinon `false` est retourné.
 
 ## Erreurs / Exceptions {#core-ref:bc3ebeb7-1e25-4dbc-8b28-6e948ddbc35c}
 
-N/A
+Aucune.
 
 ## Historique {#core-ref:61658bde-3384-4bf8-a8fc-3adfe0c98d72}
 
@@ -63,7 +63,7 @@ Le paramètre est présent.
 
 ## Notes {#core-ref:735ef18f-56f1-47f9-9609-14aefe90720c}
 
-N/A
+Aucune.
 
 ## Voir aussi {#core-ref:8f648fc5-fce0-4a1d-a363-1cef037c3438}
 

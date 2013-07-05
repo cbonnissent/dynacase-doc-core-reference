@@ -7,13 +7,15 @@ Ajoute un paramètre obligatoire.
 ## Description {#core-ref:d5e69362-3f26-4ae3-96d8-62624fdeddd6}
 
     [php]
-    string addRequiredParameter ( string $argName [, string $argDefinition [, array $restriction = null]] )
+    string addRequiredParameter ( string $argName,
+                                  string $argDefinition = "",
+                                string[] $restriction = null )
 
 La présence du paramètre est vérifiée, et sa valeur retournée.
 
 ### Avertissements {#core-ref:d64c4af7-74d5-46d4-a109-9aa4e8677e27}
 
-N/A
+Aucun.
 
 ## Liste des paramètres {#core-ref:4639d869-8ae0-4a45-848d-565feb492de6}
 
@@ -23,8 +25,8 @@ N/A
 (string) `argDefinition`
 :   Un texte (simple ligne) de description du paramètre.
 
-(array) `restriction`
-:   Liste des valeurs possibles pour le paramètre.
+(string[]) `restriction`
+:   Liste (`array`) des valeurs possibles pour le paramètre.
 
 ## Valeur de retour {#core-ref:5963b16e-8706-4af4-87a8-30ba9e4f9bb3}
 
@@ -35,7 +37,7 @@ du paramètre n'est pas dans cette liste, alors la validation est mise en erreur
 
 ## Erreurs / Exceptions {#core-ref:7021d6a5-9728-42d4-ae3c-84020db9f9b2}
 
-N/A
+Aucune.
 
 ## Historique {#core-ref:2a5333fe-083e-45ba-a849-2357c63850dd}
 
@@ -87,7 +89,7 @@ possible.
 
 ## Notes {#core-ref:b73888b7-ba50-4fe4-9a16-031a81189a5d}
 
-N/A
+Aucune.
 
 ## Voir aussi {#core-ref:72d44ba0-b890-41e9-8a8b-8a706355f13a}
 

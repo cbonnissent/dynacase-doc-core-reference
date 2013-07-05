@@ -14,11 +14,11 @@ Le texte d'aide retourné est un texte multi-ligne avec le retour chariot Unix
 
 ### Avertissements {#core-ref:073d51b7-e73d-4cda-8db0-cf8a4a445271}
 
-N/A
+Aucun.
 
 ## Liste des paramètres {#core-ref:231bcbda-eb33-4297-9095-04a5606c7067}
 
-N/A
+Aucun.
 
 ## Valeur de retour {#core-ref:3cc714fd-a200-4e54-b808-e6c6f0cfea72}
 
@@ -26,11 +26,11 @@ Le message texte d'aide d'usage sur plusieurs lignes.
 
 ## Erreurs / Exceptions {#core-ref:e572d250-d6ac-4e15-b364-adf519256a96}
 
-N/A
+Aucune.
 
 ## Historique {#core-ref:afde67ef-cb1c-4a7f-a001-d79d929a19f4}
 
-N/A
+Aucun.
 
 ## Exemples {#core-ref:2968384e-c4e8-4e89-b932-458642f496b6}
 
@@ -57,7 +57,39 @@ N/A
         ...
     }
 
-    [bash]
+Web :
+
+    .-------------------------------------------------------------------.
+    |   .-------------.                                                 |
+    |  /  Erreur    x  \                                                |
+    |-'                 '-----------------------------------------------|
+    | [ http://localhost/?app=MYAPP&action=MYACTION1 ________________ ] |
+    |-------------------------------------------------------------------|
+    |                                                                   |
+    |  .-------------------------------------------------------------.  |
+    |  | argument 'id' expected                                      |  |
+    |  |                                                             |  |
+    |  |                                                             |  |
+    |  | Sample action                                               |  |
+    |  |                                                             |  |
+    |  | Usage :                                                     |  |
+    |  |                                                             |  |
+    |  |          &app=MYAPP : <application name>                    |  |
+    |  |                                                             |  |
+    |  |          &action=MYACTION1 : <action name>                  |  |
+    |  |                                                             |  |
+    |  |          &id=<Document id>                                  |  |
+    |  |                                                             |  |
+    |  |     Options:                                                |  |
+    |  |                                                             |  |
+    |  |          &format=<Paper format> [a3|a4|a5], default is 'a4' |  |
+    |  '-------------------------------------------------------------'  |
+    |                                                                   |
+    |                                                                   |
+    '-------------------------------------------------------------------'
+
+CLI :
+
     $ ./wsh.php --app=MYAPP --action=MYACTION1
     Erreur : {CORE0001} argument 'id' expected
     
@@ -67,11 +99,11 @@ N/A
             --action=MYACTION1 : <action_name>
             --id=<Document id>
         Options:
-            --format=<Paper format> [a3|a4|a5], default is 'a4'
+            --format=<Paper format> [a3|a4|a5], default is 'a4' 
 
 ## Notes {#core-ref:c58158a0-2b24-46e9-8229-d5bf4bb6bd41}
 
-N/A
+Aucune.
 
 ## Voir aussi {#core-ref:25bb9941-9b47-447b-af09-daadf4819a6d}
 

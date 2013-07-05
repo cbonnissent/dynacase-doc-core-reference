@@ -7,7 +7,10 @@ Ajoute un paramètre optionnel.
 ## Description {#core-ref:3a2e4ef7-6858-4898-9231-7aa21243bd4f}
 
     [php]
-    string addOptionalParameter ( string $argName, [, string $argDefinition [, array $restriction = null [, mixed $default = null]]] )
+    string addOptionalParameter ( string $argName,
+                                  string $argDefinition,
+                                   array $restriction = null,
+                                  string $default = null )
 
 La présence du paramètre est vérifiée, et sa valeur retournée.
 
@@ -26,7 +29,7 @@ N/A
 (array) `restriction`
 :   Liste des valeurs possibles pour le paramètre.
 
-(mixed) `default`
+(string) `default`
 :   Valeur retournée par défaut si le paramètre n'est pas présent.
 
 ## Valeur de retour {#core-ref:6aa039a9-c319-48a3-b1ef-669ce05ecb41}

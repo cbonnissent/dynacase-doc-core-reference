@@ -7,14 +7,14 @@ Lance la validation des paramètres précédemment définis.
 ## Description {#core-ref:46ca347d-2ee7-4d92-a676-a3f8933ec365}
 
     [php]
-    void verify ( [bool $useException = false] )
+    void verify ( bool $useException = false )
 
 Lance la validation des paramètres précédemment définis et génère une erreur si
 les paramètres ne sont pas conformes.
 
 ### Avertissements {#core-ref:e910d72c-4b4f-4e0e-9619-16e723e8a967}
 
-N/A
+Aucun.
 
 ## Liste des paramètres {#core-ref:1f2394ec-d961-451e-915f-835c5f949ef8}
 
@@ -24,7 +24,7 @@ N/A
 
 ## Valeur de retour {#core-ref:56cc7195-0225-472f-84da-56cf7b413419}
 
-N/A
+Aucune.
 
 ## Erreurs / Exceptions {#core-ref:9b71f137-0b3f-49de-81c8-df2843ebb952}
 
@@ -36,7 +36,7 @@ actif, alors une exception `\Dcp\ApiUsage\Exception` est levée.
 
 ## Historique {#core-ref:e4e8edd4-2943-4984-b5cb-f8b44babd9a5}
 
-N/A
+Aucun.
 
 ## Exemples {#core-ref:9c713ec6-f02f-4673-b919-ccdad9673bd4}
 
@@ -47,19 +47,21 @@ N/A
     } catch(\Dcp\ApiUsage\Exception $e) {
         printf("Bad parameters!\n");
     }
+    printf("Done.");
 
 &nbsp;
 
     $ ./wsh.php --api=test --foo=bar
     Bad parameters!
+    Done.
 
 ## Notes {#core-ref:8a4a4f47-3e80-41a3-a4c6-6b033571919d}
 
-N/A
+Aucune.
 
 ## Voir aussi {#core-ref:5ed83ba7-4fa0-463f-8365-b34e2513d1fd}
 
-N/A
+Aucun.
 
 <!-- links -->
 [action_exiterror]: #core-ref:d6845aa2-facc-41b5-82d1-4681fce55783

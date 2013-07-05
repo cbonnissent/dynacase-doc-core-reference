@@ -7,7 +7,7 @@ Ajoute un paramètre sans que celui-ci ne soit visible dans le texte d'usage.
 ## Description {#core-ref:b0f11a22-5295-4a04-89c8-46d4ee30b0d4}
 
     [php]
-    string addHiddenParameter ( string $argNAme [, string $argDefinition] )
+    string addHiddenParameter ( string $argNAme, string $argDefinition = "" )
 
 La présence du paramètre est vérifiée, et sa valeur retournée.
 

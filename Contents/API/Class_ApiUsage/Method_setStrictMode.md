@@ -7,7 +7,7 @@ Active, ou désactive, le mode de validation strict des paramètres.
 ## Description {#core-ref:b9198925-5e68-44ad-8567-d8ce4fd33de6}
 
     [php]
-    void setStrictMode ( [bool $strict = true] )
+    void setStrictMode ( bool $strict = true )
 
 Lorsque le mode de validation strict est activé, la présence d'arguments
 inconnus met en échec la validation des paramètres.
@@ -16,7 +16,7 @@ Par défaut, le mode de validation strict est actif.
 
 ### Avertissements {#core-ref:8400e184-7708-4de9-8fe2-e0ae36d861ea}
 
-N/A
+Aucun.
 
 ## Liste des paramètres {#core-ref:f240c37a-9d22-4ab2-ba30-616d84f2e742}
 
@@ -25,11 +25,11 @@ N/A
 
 ## Valeur de retour {#core-ref:accb2d55-37c0-4878-924c-4704716c2623}
 
-N/A
+Aucune.
 
 ## Erreurs / Exceptions {#core-ref:3ec7ce11-731f-43aa-8300-412b9a054dac}
 
-N/A
+Aucune.
 
 ## Historique {#core-ref:c05d18d3-924b-4f09-a7f7-42fc1d398e28}
 
@@ -67,7 +67,7 @@ Aucune erreur n'est remonté concernant le paramètre `foo` inconnu.
 
 ## Notes {#core-ref:a0db0f86-0482-43db-b42a-193aac8b23e2}
 
-N/A
+Aucune.
 
 ## Voir aussi {#core-ref:44e0585e-e6ea-40a5-9226-639848fd84d7}
 

@@ -11,7 +11,7 @@ Ajoute un texte de description du script d'API dans le message d'usage.
 
 ### Avertissements {#core-ref:1b5987d2-df9c-4aec-b268-534f419ece71}
 
-N/A
+Aucun.
 
 ## Liste des paramètres {#core-ref:ad961828-c5af-48d8-bd07-d8aa225bff1a}
 
@@ -24,7 +24,7 @@ La méthode ne retourne pas de valeur.
 
 ## Erreurs / Exceptions {#core-ref:1b17bf35-579f-4d48-a0d2-551baa2b85b8}
 
-N/A
+Aucune.
 
 ## Historique {#core-ref:3a32d719-4bbb-43b0-b732-ded2fa0a73c7}
 
@@ -48,7 +48,7 @@ N/A
 
 ## Notes {#core-ref:1f45ad0a-97dd-42e0-93f1-482de8e6c309}
 
-N/A
+Aucune.
 
 ## Voir aussi {#core-ref:55a17a86-4996-4d93-83ee-f1af685b4c25}
 
