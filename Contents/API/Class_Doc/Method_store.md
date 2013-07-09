@@ -39,11 +39,11 @@ Des informations plus détaillées sont disponibles dans le paramètre `$info`.
 
 ## Erreurs / Exceptions {#core-ref:8b5b15c4-851b-4a34-9fa7-7ce5d1db8bd4}
 
-Si la création ou la modification n'a pas pu être réalisée, alors la méthode
+Si l'enregistrement en base de donnée n'a pas pu être réalisée, alors la méthode
 retourne un message d'erreur.
 
-Code retour de `$info` : storeInfo::errorCode :<span class="fixme" data-
-assignedto="EBR">je comprends pas cette ligne</span>
+Le code de retour du paramètre `$info` est indiqué dans l'attribut `errorCode`. 
+Les différents codes d'erreur de `$info->errorCode` sont :
 
 storeInfo::NO_ERROR
 :   Pas d'erreur.
@@ -90,11 +90,11 @@ Soit la famille MY_FAMILY suivante :
 Exemple d'enregistrement d'une modification sans contrôle d'erreur.
 
     [php]
-    use \Dcp\AttributeIdentifiers\MyFamily as Aself;
+    use \Dcp\AttributeIdentifiers\MyFamily as MyAttributes;
     
     /** @var \Dcp\Family\MyFamily */
     $d=new_Doc("","MY_DOCUMENT");
-    $d->setValue(Aself::my_numberone, 234);
+    $d->setValue(MyAttributes::my_numberone, 234);
     $d->store($info); // enregistrement en base de données
 
 ### Création d'un document {#core-ref:ffb0061e-5c1b-48d9-bc14-7dbe11f136df}
@@ -102,12 +102,12 @@ Exemple d'enregistrement d'une modification sans contrôle d'erreur.
 Exemple d'enregistrement d'un nouveau document sans contrôle d'erreur.
 
     [php]
-    use \Dcp\AttributeIdentifiers\MyFamily as Aself;
+    use \Dcp\AttributeIdentifiers\MyFamily as MyAttributes;
     
     /** @var \Dcp\Family\MyFamily */
     $d=createDoc("","MY_FAMILY");
-    $d->setValue(Aself::my_numberone, 234);
-    $d->setValue(Aself::my_numbertwo, 873);
+    $d->setValue(MyAttributes::my_numberone, 234);
+    $d->setValue(MyAttributes::my_numbertwo, 873);
     $d->store($info);// enregistrement en base de données
     printf("Nouvel identifiant : %d\n", $d->id);
 
@@ -116,11 +116,11 @@ Exemple d'enregistrement d'un nouveau document sans contrôle d'erreur.
 Les codes erreurs de `$info` permettent de préciser l'origine du problème.
 
     [php]
-    use \Dcp\AttributeIdentifiers\MyFamily as Aself;
+    use \Dcp\AttributeIdentifiers\MyFamily as MyAttributes;
     
     /** @var \Dcp\Family\MyFamily */
     $d = new_Doc("", "MY_DOCUMENT");
-    $err = $d->setValue(Aself::my_numberone, 234);
+    $err = $d->setValue(MyAttributes::my_numberone, 234);
     
     if (empty($err)) {
         /** @var storeInfo $info */

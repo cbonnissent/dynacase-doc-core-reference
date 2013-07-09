@@ -17,8 +17,7 @@ Une copie du document est créée. Un nouvel identifiant (propriété `id`) est
 créé. Le document conserve le même identifiant initial (propriété `initid`) et
 son numéro de révision (propriété `revision`) est incrémenté de un.
 
-<span class="fixme" data-assignedto="EBR">n'indique pas clairement que $this
-sera le nouveau document.</span>
+L'objet courant devient le nouveau document avec un nouvel identifiant.
 
 ### Avertissements {#core-ref:7c989da3-6457-46f6-8814-8c8c4bd1557d}
 

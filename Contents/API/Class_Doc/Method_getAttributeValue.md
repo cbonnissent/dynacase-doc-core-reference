@@ -101,14 +101,14 @@ Vérification de l'attribut `my_sum` en fonction des valeurs de `my_numberone` e
 `my_numbertwo` 
 
     [php]
-    use \Dcp\AttributeIdentifiers\MyFamily as AMyFamily;
+    use \Dcp\AttributeIdentifiers\MyFamily as Attributes\MyFamily;
     
     /** @var \Dcp\Family\MyFamily */
     $myDoc = new_Doc("", "MY_DOCUMENT");
     if ($myDoc->isAlive()) {
-        $n1=$myDoc->getAttributeValue(AMyFamily::my_numberone);
-        $n2=$myDoc->getAttributeValue(AMyFamily::my_numbertwo);
-        $sum=$myDoc->getAttributeValue(AMyFamily::my_sum);
+        $n1=$myDoc->getAttributeValue(Attributes\MyFamily::my_numberone);
+        $n2=$myDoc->getAttributeValue(Attributes\MyFamily::my_numbertwo);
+        $sum=$myDoc->getAttributeValue(Attributes\MyFamily::my_sum);
         if ($sum != ($n1 + $n2)) {
             printf("La somme est incorrecte : %d + %d <> %d ! \n", $n1, $n2, $sum);
         }
@@ -117,12 +117,12 @@ Vérification de l'attribut `my_sum` en fonction des valeurs de `my_numberone` e
 Retour d'un tableau. Le document a deux rangées.
 
     [php]
-    use \Dcp\AttributeIdentifiers\MyFamily as AMyFamily;
+    use \Dcp\AttributeIdentifiers\MyFamily as Attributes\MyFamily;
     
     /** @var \Dcp\Family\MyFamily */
     $myDoc = new_Doc("", "MY_DOCUMENT");
     if ($myDoc->isAlive()) {
-        $partipants=$myDoc->getAttributeValue(AMyFamily::my_t_partner);
+        $partipants=$myDoc->getAttributeValue(Attributes\MyFamily::my_t_partner);
         print_r($partipants);
     }
 

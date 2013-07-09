@@ -29,10 +29,9 @@ Si la valeur est une chaîne vide ou égale à `null`, alors la valeur de
 l'attribut ne sera pas modifiée. Si la valeur est égale à un espace ` `, la
 valeur sera effacée.
 
-Les espaces en début et fin de valeur sont supprimés.
+Les espaces et caractères invisibles en début et fin de valeur sont supprimés.
+La fonction [`trim`][phptrim] est utilisée pour réaliser cette suppression.
 
-<span class="fixme" data-assignedto="EBR">c'est vraiment que les espaces, ou
-alors c'est trim?</span>
 
 ## Liste des paramètres {#core-ref:43df765e-53c3-478a-9287-20c78d3bbc8a}
 
@@ -50,12 +49,8 @@ alors c'est trim?</span>
 
 (int) `kvalue`
 :   En cas d'erreur et dans le cas où l'attribut est multiple, indique l'index
-    de la valeur erronée.
-    <span class="fixme" data-assignedto="EBR">de la première erreur rencontrée?
-    quid lorsqu'il y a plusieurs erreurs ?</span>
+    de la première valeur erronée de l'attribut multiple.
 
-<span class="fixme" data-assignedto="EBR">tu ne dis pas qu'on peut lui filer un
-array</span>
 
 ## Valeur de retour {#core-ref:371a06e3-7a06-485c-8e44-d5af576e965f}
 
@@ -104,7 +99,7 @@ Avec la classe :
 
     [php]
     namespace My;
-    use \Dcp\AttributeIdentifiers\MyFamily as Aself;
+    use \Dcp\AttributeIdentifiers\MyFamily as MyAttributes;
     
     class MyFamily extends \Dcp\Family\Document
     {
@@ -113,15 +108,15 @@ Avec la classe :
          */
         protected function setMyRawSum()
         {
-            $n1 = intval($this->getRawValue(Aself::my_numberone));
-            $n2 = intval($this->getRawValue(Aself::my_numbertwo));
-            return $this->setValue(Aself::my_sum, ($n1 + $n2));
+            $n1 = intval($this->getRawValue(MyAttributes::my_numberone));
+            $n2 = intval($this->getRawValue(MyAttributes::my_numbertwo));
+            return $this->setValue(MyAttributes::my_sum, ($n1 + $n2));
         }
         /**
          * Le rédacteur est l'utilisateur courant 
          */
         protected function setMyRedactor() {
-            return $this->setValue(Aself::my_redactor, getCurrentUser()->fid);
+            return $this->setValue(MyAttributes::my_redactor, getCurrentUser()->fid);
         }
         public function postStore()
         {
@@ -157,3 +152,4 @@ Aucunes
 [docsetattrvalue]:  #core-ref:1e766800-b2e1-462b-9793-b0261ede8677
 [docclearValue]:    #core-ref:30b0592f-f0cd-498f-bc5f-301891c297e0
 [docaddarrayrow]:   #core-ref:d75110cb-24f6-4810-9b62-45ce6fd99e70
+[phptrim]:          http://www.php.net/manual/fr/function.trim.php "fonction trim sur le site php.net"

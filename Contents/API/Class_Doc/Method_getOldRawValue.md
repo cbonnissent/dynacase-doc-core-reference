@@ -61,24 +61,24 @@ Cette méthode était anciennement nommée `getOldValue`.
 Le document de l'exemple a son attribut `my_numberone` initialisé à `-3`.
 
     [php]
-    use \Dcp\AttributeIdentifiers\MyFamily as AMyFamily;
+    use \Dcp\AttributeIdentifiers\MyFamily as Attributes\MyFamily;
     
     function printOldValue(Doc $doc) {
         printf( '         Valeur :');
-        var_dump($doc->getRawValue(AMyFamily::my_numberone));
+        var_dump($doc->getRawValue(Attributes\MyFamily::my_numberone));
         printf( 'Ancienne Valeur :');
-        var_dump($doc->getOldRawValue(AMyFamily::my_numberone));
+        var_dump($doc->getOldRawValue(Attributes\MyFamily::my_numberone));
         printf( "#---------------------\n");
     }
     
     function updateValue(Doc $doc, $newValue){
         if(null === $newValue){
             printf('  efface valeur :null');
-            $doc->clearValue(AMyFamily::my_numberone, $newValue);
+            $doc->clearValue(Attributes\MyFamily::my_numberone, $newValue);
         } else {
             printf('     maj valeur :');
             var_dump($newValue);
-            $doc->setValue(AMyFamily::my_numberone, $newValue);
+            $doc->setValue(Attributes\MyFamily::my_numberone, $newValue);
         }
     }
     
@@ -150,16 +150,16 @@ Avec la classe :
 
     [php]
     namespace My;
-    use \Dcp\AttributeIdentifiers\MyFamily as Aself;
+    use \Dcp\AttributeIdentifiers\MyFamily as MyAttributes;
     
     class MyFamily extends \Dcp\Family\Document
     {
         protected function setMyCountChange() {
             $err='';
-            $oldValue=$this->getOldRawValue(Aself::my_countchange);
+            $oldValue=$this->getOldRawValue(MyAttributes::my_countchange);
             if ($oldValue !== false) {
-                $cc=$this->getAttributeValue(Aself::my_countchange);
-                $err=$this->setAttributeValue(Aself::my_countchange, $cc+1);
+                $cc=$this->getAttributeValue(MyAttributes::my_countchange);
+                $err=$this->setAttributeValue(MyAttributes::my_countchange, $cc+1);
             }
             return $err;
         }

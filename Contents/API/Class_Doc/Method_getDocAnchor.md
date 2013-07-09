@@ -75,7 +75,10 @@ Aucun.
 (bool) `viewIcon`
 :   Si `true` l'icône de la famille du document sera présentée
     dans l'ancre HTML.
-    <span class="fixme" data-assignedto="EBR">préciser le markup</span>
+    Dans ce cas l'ancre html aura la classe "relation" avec une image de fond :  
+    `<a class="relation" style="background-image:url("myicon.png")>myTitle</a>`
+    Sinon l'ancre html retournée est sans classe ni style particuliers.
+
 
 ## Valeur de retour {#core-ref:c812a822-8874-49a4-8905-5cc88d2f6eda}
 
@@ -95,7 +98,9 @@ Aucun.
     [php]
     /* Générer une ancre HTML sans JS mais avec l'icône de la famille du document */
     $htmlAnchor = $this->getDocAnchor($docId, "_self", true, false, false, "latest", true);
-    
+    /* Retourne :
+    <a  documentId="7202" class="relation" style="background-image:url(resizeimg.php?img=Images/myicon.png&size=14)" target="_self" href="?&amp;app=FDL&amp;action=OPENDOC&amp;mode=view&amp;id=7202&amp;latest=Y">Mon Document</a>
+    */
     /* Insérer le fragment HTML dans le layout */
     $this->lay->set('LINK_TO_DOCUMENT', $htmlAnchor);
 

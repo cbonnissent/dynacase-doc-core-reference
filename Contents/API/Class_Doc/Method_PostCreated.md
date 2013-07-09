@@ -64,7 +64,7 @@ Soit la famille suivante :
 
     [php]
     namespace My;
-    use \Dcp\AttributeIdentifiers\MyFamily as Aself;
+    use \Dcp\AttributeIdentifiers\MyFamily as MyAttributes;
     
     class MyFamily extends \Dcp\Family\Document
     {
@@ -72,11 +72,11 @@ Soit la famille suivante :
         {
             $msg = '';
             if ($this->revision == 0) { // création initiale
-                $err = $this->setValue(Aself::my_ref, uniqid('my'));
+                $err = $this->setValue(MyAttributes::my_ref, uniqid('my'));
                 if ($err) {
                     $msg = sprintf("Pas d'identifiant");
                 } else {
-                    $msg = sprintf("Création identifiant %s", $this->getRawValue(Aself::my_ref));
+                    $msg = sprintf("Création identifiant %s", $this->getRawValue(MyAttributes::my_ref));
                 }
             }
             return $msg;
@@ -88,9 +88,9 @@ Soit la famille suivante :
 En cas de famille héritée, il est nécessaire d'appeler l'hameçon du parent pour
 disposer des mêmes fonctionnalités.
 
-<span class="fixme" data-assignedto="EBR">Au vu de l'exemple et de
-l'explication, cela ressemble fortement à postStore. Il serait intéressant
-d'ajouter une petite note sur quand préférer l'une ou l'autre.</span>
+Cette méthode est appelée par [`Doc::store()`][docstore] qu'en cas de création
+ou de révision tandis que l'hameçon [`Doc::postStore()`][docpoststore] est
+appelé systématiquement par la méthode [`Doc::store()`][docstore].
 
 ## Voir aussi {#core-ref:fd05fb03-1114-4b6c-82c6-c44d311925e8}
 

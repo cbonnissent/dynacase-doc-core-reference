@@ -30,8 +30,7 @@ atags
     Ces tags permettent aux applications de marquer les documents pour des 
     traitements spécifiques.
     
-    <span class="fixme" data-assignedto="EBR">indiquer que cette propriété ne
-    doit pas être récupérée directement, mais par Doc::getATag</span>
+    La méthode `Doc::getATag()` vérifie la présence d'une balise applicative.
 
 cdate
 :   date de création de la révision.
@@ -39,7 +38,7 @@ cdate
     Pour obtenir la date de création de la lignée documentaire, il faut
     récupérer celle de la révision 0.
     
-    <span class="fixme" data-assignedto="EBR">format de la date ?</span>
+    Le format de la date est `YYYY-MM-DD HH:MM:SS`.
 
 classname
 :   nom de la classe associée au document. Utilisé uniquement pour les familles.
@@ -131,10 +130,10 @@ lockdomainid
 :   voir la documentation de l'application offline.
 
 locked
-:   Indique si le document est verrouillé :
+:   Indique l'uid de l'utilisateur qui a verrouillé le document :
     
-    *   Chiffre négatif (inférieur à -1) : Identifiant de l'utilisateur ayant
-        verrouillé le document automatiquement.
+    *   Chiffre négatif (inférieur à -1) : Identifiant de l'utilisateur (uid)
+        ayant verrouillé le document automatiquement.
         
         Ce verrou est posé lorsqu'un utilisateur clique sur le bouton de
         modification d'un document, et est supprimé automatiquement lors de la
@@ -142,10 +141,8 @@ locked
         `onBeforeUnload`), ainsi que par le [script
         `cleanContext`][wsh_cleanContext].
         
-    *   Chiffre positif : Identifiant de l'utilisateur ayant verrouillé le
+    *   Chiffre positif : Identifiant de l'utilisateur (uid) ayant verrouillé le
         document manuellement.
-        <span class="fixme" data-assignedto="EBR">uid? si oui, harmoniser avec
-        *allocated*</span>
         
     *   0 = Pas de verrou.
         
@@ -190,7 +187,7 @@ revdate
 :   Date de révision.
     
     Pour un document non révisé, date de dernière modification.
-    <span class="fixme" data-assignedto="EBR">format ?</span>
+    Le format de cette date un entier (_unix timestamp_).
 
 revision
 :   numéro d'ordre du document dans sa lignée documentaire.

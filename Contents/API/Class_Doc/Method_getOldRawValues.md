@@ -56,7 +56,7 @@ Avec la classe :
 
     [php]
     namespace My;
-    use \Dcp\AttributeIdentifiers\MyFamily as Aself;
+    use \Dcp\AttributeIdentifiers\MyFamily as MyAttributes;
     
     class MyFamily extends \Dcp\Family\Document
     {
@@ -72,8 +72,8 @@ Le code suivant indique le résultat de `getOldRawvalues()`.
     if ($myDoc->isAlive()) {
         print "### Valeurs initiales ### \n";
         print_r($myDoc->getValues());
-        $myDoc->setValue(AMyFamily::my_numberone, 342);
-        $myDoc->setValue(AMyFamily::my_numbertwo, 352);
+        $myDoc->setValue(Attributes\MyFamily::my_numberone, 342);
+        $myDoc->setValue(Attributes\MyFamily::my_numbertwo, 352);
         $myDoc->refresh();
         
         print "### Nouvelles valeurs  ### \n";

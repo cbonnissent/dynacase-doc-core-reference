@@ -58,7 +58,7 @@ Avec la classe :
 
     [php]
     namespace My;
-    use \Dcp\AttributeIdentifiers\MyFamily as Aself;
+    use \Dcp\AttributeIdentifiers\MyFamily as MyAttributes;
     
     class MyFamily extends \Dcp\Family\Document
     {
@@ -69,8 +69,8 @@ Avec la classe :
         public function postRefresh()
         {
             $msg = '';
-            $sum = $this->getAttributeValue(Aself::my_sum);
-            $max = $this->getFamilyParameterValue(Aself::my_max);
+            $sum = $this->getAttributeValue(MyAttributes::my_sum);
+            $max = $this->getFamilyParameterValue(MyAttributes::my_max);
             if ($sum > $max) {
                 $msg = sprintf("Max %d is reached", $max);
             }

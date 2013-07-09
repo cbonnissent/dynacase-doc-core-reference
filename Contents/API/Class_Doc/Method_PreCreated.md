@@ -73,7 +73,7 @@ Soit la famille suivante :
 
     [php]
     namespace My;
-    use \Dcp\AttributeIdentifiers\MyFamily as Aself;
+    use \Dcp\AttributeIdentifiers\MyFamily as MyAttributes;
     
     class MyFamily extends \
     Dcp\Family\Document
@@ -81,9 +81,9 @@ Soit la famille suivante :
         public function preCreated()
         {
             $err = parent::preCreated();
-            $n1 = $this->getAttributeValue(Aself::my_numberone);
-            $n2 = $this->getAttributeValue(Aself::my_numbertwo);
-            $max = $this->getFamilyParameterValue(Aself::my_max);
+            $n1 = $this->getAttributeValue(MyAttributes::my_numberone);
+            $n2 = $this->getAttributeValue(MyAttributes::my_numbertwo);
+            $max = $this->getFamilyParameterValue(MyAttributes::my_max);
             if (($n1 + $n2) > $max) {
                 $err .= ($err ? "\n" : "") . sprintf("Max %d is reached", $max);
             }
@@ -96,9 +96,9 @@ Soit la famille suivante :
 En cas de famille héritée, il est nécessaire d'appeler l'hameçon du parent pour
 disposer des mêmes fonctionnalités.
 
-<span class="fixme" data-assignedto="EBR">Au vu de l'exemple et de
-l'explication, cela ressemble fortement à prestore. Il serait intéressant
-d'ajouter une petite note sur quand préférer l'une ou l'autre.</span>
+Cette méthode est appelée par [`Doc::store()`][docstore] qu'en cas de création
+ou de révision tandis que l'hameçon [`Doc::preStore()`][docprestore] est appelé
+systématiquement par la méthode [`Doc::store()`][docstore].
 
 ## Voir aussi {#core-ref:e9e47c9a-ab49-4a64-bec8-0db3540456f0}
 

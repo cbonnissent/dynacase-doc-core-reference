@@ -64,15 +64,15 @@ Avec la classe :
 
     [php]
     namespace My;
-    use \Dcp\AttributeIdentifiers\MyFamily as Aself;
+    use \Dcp\AttributeIdentifiers\MyFamily as MyAttributes;
     
     class MyFamily extends \Dcp\Family\Document
     {
         public function mySum($x, $y)
         {
-            $n1 = intval($this->getRawValue(Aself::my_numberone));
+            $n1 = intval($this->getRawValue(MyAttributes::my_numberone));
             // si "my_number_two" est vide, alors, la valeur sera 543
-            $n2 = intval($this->getRawValue(Aself::my_numbertwo, "543"));
+            $n2 = intval($this->getRawValue(MyAttributes::my_numbertwo, "543"));
 
             return ($n1 + $n2);
         }
@@ -83,13 +83,13 @@ Vérification de l'attribut `my_sum` en fonction des valeurs de `my_numberone` e
 `my_numbertwo` 
 
     [php]
-    use \Dcp\AttributeIdentifiers\MyFamily as AMyFamily;
+    use \Dcp\AttributeIdentifiers\MyFamily as Attributes\MyFamily;
     /** @var \Dcp\Family\MyFamily */
     $myDoc = new_Doc("", "MY_DOCUMENT");
     if ($myDoc->isAlive()) {
-        $n1=intval($myDoc->getRawValue(AMyFamily::my_numberone));
-        $n2=intval($myDoc->getRawValue(AMyFamily::my_numbertwo, "543"));
-        $sum=intval($myDoc->getRawValue(AMyFamily::my_sum));
+        $n1=intval($myDoc->getRawValue(Attributes\MyFamily::my_numberone));
+        $n2=intval($myDoc->getRawValue(Attributes\MyFamily::my_numbertwo, "543"));
+        $sum=intval($myDoc->getRawValue(Attributes\MyFamily::my_sum));
         if ($sum != ($n1 +$n2)) {
             printf("La somme est incorrecte : %d + %d <> %d ! \n", $n1, $n2, $sum);
         }
@@ -111,8 +111,9 @@ Format brut en fonction des types d'attributs :
 `file`, `image`
 :   les pointeurs de fichiers sous la forme "[mimeType]|[vaultId]|[fileName]"
 
-<span class="fixme" data-assignedto="EBR">pour les htmltext, préciser si c'est
-htmlencodé, etc.</span>
+`htmltext` 
+:   le texte retourné est un fragment html dont les entités html
+    (caractères accentués notamment) ont été convertis en caractères utf-8.
 
 Pour les autres types, aucun formatage spécial n'est appliqué, la valeur brute
 correspond à la valeur donnée.
@@ -121,7 +122,23 @@ Pour les valeurs multiples, chaque valeur est séparée par le caractère `\n`
 (retour chariot). Si une des valeurs multiples contient un retour chariot,
 celui-ci est remplacé par les caractères `<BR>`.
 
-<span class="fixme" data-assignedto="EBR">Pour les multiples à 2 niveaux…</span>
+Pour les multiples à 2 niveaux (attribut multiple dans un tableau), le premier
+niveau a comme séparateur le caractère '\n' et le deuxième niveau les caractères
+"<BR>".
+Exemple : "`1234\n567<BR>8876<BR>987\n678<BR>295`"
+indique la structure à 2 niveaux suivante :
+
+1.   -
+    1. 1234
+2.  -
+    1. 567
+    1. 8876
+    1. 987
+1.  -
+    1. 678
+    1. 295 
+
+
 
 ## Voir aussi {#core-ref:78ce65c8-e7f6-4578-8b6a-3f825db4adbe}
 

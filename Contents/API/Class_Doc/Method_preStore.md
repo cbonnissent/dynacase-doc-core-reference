@@ -65,16 +65,16 @@ Soit la famille suivante :
 
     [php]
     namespace My;
-    use \Dcp\AttributeIdentifiers\MyFamily as Aself;
+    use \Dcp\AttributeIdentifiers\MyFamily as MyAttributes;
     
     class MyFamily extends \Dcp\Family\Document
     {
         public function preStore()
         {
             $err = '';
-            $n1 = $this->getAttributeValue(Aself::my_numberone);
-            $n2 = $this->getAttributeValue(Aself::my_numbertwo);
-            $max = $this->getFamilyParameterValue(Aself::my_max);
+            $n1 = $this->getAttributeValue(MyAttributes::my_numberone);
+            $n2 = $this->getAttributeValue(MyAttributes::my_numbertwo);
+            $max = $this->getFamilyParameterValue(MyAttributes::my_max);
             if (($n1 + $n2) > $max) {
                 $err = sprintf("Max %d is reached", $max);
             }
@@ -87,9 +87,10 @@ Soit la famille suivante :
 En cas de famille héritée, il est nécessaire d'appeler l'hameçon du parent pour
 disposer des mêmes fonctionnalités.
 
-<span class="fixme" data-assignedto="EBR">Au vu de l'exemple et de
-l'explication, cela ressemble fortement à preCreated. Il serait intéressant
-d'ajouter une petite note sur quand préférer l'une ou l'autre.</span>
+Cette méthode est appelée par [`Doc::store`][docstore] en cas de création, de
+révision et de modification tandis que l'hameçon
+[`Doc::preCreated()`][docprecreated] est appelé qu'en cas de création ou de
+révision.
 
 ## Voir aussi {#core-ref:4d2d6173-d571-4f45-89e5-aa2f9dea64d9}
 

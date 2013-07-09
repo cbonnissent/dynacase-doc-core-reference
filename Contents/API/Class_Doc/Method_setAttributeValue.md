@@ -7,8 +7,8 @@ Modifie la valeur d'un attribut de document.
 ## Description {#core-ref:d0e5e69d-4f7f-4b77-87f7-818656954e90}
 
     [php]
-    <void> setAttributeValue ( string $attributeIdentifier,
-                                mixed $value )
+    void setAttributeValue ( string $attributeIdentifier,
+                              mixed $value )
 
 Modifie la valeur d'un attribut de l'objet _Document_. La modification n'est pas
 enregistrée en base de données.
@@ -22,18 +22,15 @@ Les résultats fournis par la méthode
 [`Doc::getRawValue()`][docgetrawvalue] ne peuvent pas être utilisés
 directement par cette méthode.
 
-Pour les valeurs de type `string`, les espaces en début et fin de valeur sont
-supprimés.
-
-<span class="fixme" data-assignedto="EBR">c'est vraiment que les espaces, ou
-alors c'est trim?</span>
+Les espaces et caractères invisibles en début et fin de valeur sont supprimés.
+La fonction [`trim`][phptrim] est utilisée pour réaliser cette suppression.
 
 ## Liste des paramètres {#core-ref:4d1ee0a2-6e51-4e69-9e6e-0f55a96374b5}
 
 (string) `attributeIdentifier`
 :   Identifiant de l'attribut à modifier.
 
-(string|string[]) `value` 
+(mixed) `value` 
 :   Nouvelle [valeur **typée**][doctypevalue]. Le type de la valeur est fonction
     du type de l'attribut (voir [les types en fonction de la
     valeur][doctypevalue]).
@@ -91,7 +88,7 @@ Avec la classe :
 
     [php]
     namespace My;
-    use \Dcp\AttributeIdentifiers\MyFamily as Aself;
+    use \Dcp\AttributeIdentifiers\MyFamily as MyAttributes;
     use \Dcp\AttributeIdentifiers\Iuser as Aiuser;
     
     class MyFamily extends \Dcp\Family\Document
@@ -101,24 +98,24 @@ Avec la classe :
          */
         protected function setMySum()
         {
-            $n1 = $this->getAttributeValue(Aself::my_numberone);
-            $n2 = $this->getAttributeValue(Aself::my_numbertwo);
-            $this->setAttributeValue(Aself::my_sum, ($n1 + $n2));
+            $n1 = $this->getAttributeValue(MyAttributes::my_numberone);
+            $n2 = $this->getAttributeValue(MyAttributes::my_numbertwo);
+            $this->setAttributeValue(MyAttributes::my_sum, ($n1 + $n2));
         }
         /**
          * Mise à jour de l'attribut `my_mail` avec l'adresse courriel du rédacteur
          */
         protected function setMyMail()
         {
-            $redacId = $this->getAttributeValue(Aself::my_redactor);
+            $redacId = $this->getAttributeValue(MyAttributes::my_redactor);
             if ($redacId === null) {
-                $this->clearValue(Aself::my_mail);
+                $this->clearValue(MyAttributes::my_mail);
             } else {
                 $redacDoc=new_doc($this->dbaccess,$redacId );
                 if ($redacDoc->isAlive()) {
-                    $this->setAttributeValue(Aself::my_mail, $redacDoc->getAttributeValue(AIuser::us_mail));
+                    $this->setAttributeValue(MyAttributes::my_mail, $redacDoc->getAttributeValue(AIuser::us_mail));
                 } else {
-                    $this->clearValue(Aself::my_mail);
+                    $this->clearValue(MyAttributes::my_mail);
                 }
             }
         }
@@ -141,7 +138,7 @@ Avec la classe :
 
     [php]
     namespace My;
-    use \Dcp\AttributeIdentifiers\MyFamily as Aself;
+    use \Dcp\AttributeIdentifiers\MyFamily as MyAttributes;
     use \Dcp\AttributeIdentifiers\Iuser as Aiuser;
     
     class MyFamily extends \Dcp\Family\Document
@@ -153,7 +150,7 @@ Avec la classe :
         {
             $d = new \DateTime('now');
             $d->modify('+7 day');
-            $this->setAttributeValue(Aself::my_nextdate, $d);
+            $this->setAttributeValue(MyAttributes::my_nextdate, $d);
         }
         public function postStore()
         {
@@ -207,7 +204,7 @@ l'adresse mail de chaque partenaire.
 
     [php]
     namespace My;
-    use \Dcp\AttributeIdentifiers\MyFamily as Aself;
+    use \Dcp\AttributeIdentifiers\MyFamily as MyAttributes;
     use \Dcp\AttributeIdentifiers\MyContact as AMyContact;
     
     class MyFamily extends \Dcp\Family\Document
@@ -225,10 +222,10 @@ l'adresse mail de chaque partenaire.
             /** @var \Dcp\Family\MyContact $contact */
             foreach ($dl as $contact) {
                 $partners[] = array(
-                    Aself::my_coauthors => $contact->id,
-                    Aself::my_comail => $contact->getAttributeValue(AMyContact::my_mail));
+                    MyAttributes::my_coauthors => $contact->id,
+                    MyAttributes::my_comail => $contact->getAttributeValue(AMyContact::my_mail));
             }
-            $this->setAttributeValue(Aself::my_t_partner, $partners);
+            $this->setAttributeValue(MyAttributes::my_t_partner, $partners);
         }
         
         public function postStore()
@@ -278,3 +275,4 @@ valeurs sont autorisés.
 [docgetrawvalue]:   #core-ref:f779391c-ee61-4c3a-8976-6b74f83ecc8f
 [doctypevalue]:     #core-ref:b2e45d57-63f8-408f-9779-ebf35e6967e4
 [docpoststore]:     #core-ref:99520a31-0aef-4bc6-b20a-114737059d17 "Hameçon Doc::postStore()"
+[phptrim]:          http://www.php.net/manual/fr/function.trim.php "fonction trim sur le site php.net"

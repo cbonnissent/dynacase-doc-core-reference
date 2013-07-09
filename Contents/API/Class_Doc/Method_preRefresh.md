@@ -55,7 +55,7 @@ Avec la classe :
 
     [php]
     namespace My;
-    use \Dcp\AttributeIdentifiers\MyFamily as Aself;
+    use \Dcp\AttributeIdentifiers\MyFamily as MyAttributes;
     use \Dcp\AttributeIdentifiers\Iuser as Aiuser;
     
     class MyFamily extends \Dcp\Family\Document
@@ -63,26 +63,27 @@ Avec la classe :
         public function preRefresh()
         {
             $msg = '';
-            $redactorId = $this->getRawValue(Aself::my_redactor);
+            $redactorId = $this->getRawValue(MyAttributes::my_redactor);
             if ($redactorId) {
                 $du = new_doc($this->dbaccess, $redactorId);
                 if ($du->isAlive()) {
                     $redactorMail=$du->getRawValue(Aiuser::us_mail);
-                    if ($redactorMail != $this->getRawValue(Aself::my_mail)) {
-                        $msg=sprintf("L'adresse du rédacteur a été changée.\nNouvelle adresse : %s", $redactorMail);
-                        $this->setValue(Aself::my_mail, $du->getRawValue(Aiuser::us_mail));
+                    if ($redactorMail != $this->getRawValue(MyAttributes::my_mail)) {
+                        $err=$this->setValue(MyAttributes::my_mail, $du->getRawValue(Aiuser::us_mail));
+                        if (empty($err)) {
+                            $msg=sprintf("L'adresse du rédacteur a été changée.\nNouvelle adresse : %s", $redactorMail);
+                        } else {
+                            $msg=sprintf("Erreur d'affectation : %s", $err);
+                        }
                     }
                 }
             } else {
-                $this->clearValue(Aself::my_mail);
+                $this->clearValue(MyAttributes::my_mail);
             }
             return $msg;
         }
     }
 
-<span class="fixme" data-assignedto="EBR">je n'aime pas cet exemple, car il
-montre aussi l'utilisation d'un setValue sans récupération du message d'erreur,
-ce qui est une mauvaise pratique…</span>
 
 ## Notes {#core-ref:f41b94f9-2887-4549-9768-7ae711e18bdc}
 

@@ -61,7 +61,7 @@ Avec la classe :
 
     [php]
     namespace My;
-    use \Dcp\AttributeIdentifiers\MyFamily as Aself;
+    use \Dcp\AttributeIdentifiers\MyFamily as MyAttributes;
     
     class MyFamily extends \Dcp\Family\Document
     {
@@ -73,9 +73,9 @@ Avec la classe :
         {
             $err=parent::postStore();
             if (empty($err)) {
-                $n1 = $this->getAttributeValue(Aself::my_numberone);
-                $n2 = $this->getAttributeValue(Aself::my_numbertwo);
-                $this->setAttributeValue(Aself::my_sum, $this->mySum($n1, $n2));
+                $n1 = $this->getAttributeValue(MyAttributes::my_numberone);
+                $n2 = $this->getAttributeValue(MyAttributes::my_numbertwo);
+                $this->setAttributeValue(MyAttributes::my_sum, $this->mySum($n1, $n2));
             }
             return $err;
         }
@@ -85,9 +85,11 @@ Avec la classe :
 En cas de famille héritée, il est nécessaire d'appeler l'hameçon du parent pour
 disposer des mêmes fonctionnalités.
 
-<span class="fixme" data-assignedto="EBR">Au vu de l'exemple et de
-l'explication, cela ressemble fortement à postCreated. Il serait intéressant
-d'ajouter une petite note sur quand préférer l'une ou l'autre.</span>
+Cette méthode est appelée par [`Doc::store()`][docstore] en cas de création, de
+révision et de modification tandis que l'hameçon
+[`Doc::postCreated()`][docpostcreated] est appelé qu'en cas de création ou de
+révision.
+
 
 ## Voir aussi {#core-ref:ade45758-e063-4c80-8694-6a49f0845270}
 
