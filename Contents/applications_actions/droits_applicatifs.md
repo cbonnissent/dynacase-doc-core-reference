@@ -7,7 +7,8 @@ Chaque action peut être soumise à un droit applicatif (ACL).
 Ces droits permettent de gérer l'accès à ces actions : seuls les utilisateurs
 possédant cette ACL peuvent exécuter cette action.
 
-Exemple de `MYAPP.app` avec les droits applicatifs :
+Exemple de `MYAPP.app` avec les droits applicatifs :  
+
 Pour la définition de `$app_desc` se reporter au chapitre
 [applications][my_app.app]
 
@@ -38,7 +39,7 @@ Chaque ACL doit se trouver dans un tableau. Ce tableau peut contenir les clés 
 **name** (obligatoire)
 :   Nom logique de l'ACL.
     
-    Il sera utilisé pour référencer l'ACL (dans la
+    Il est utilisé pour référencer l'ACL (dans la
     [description des actions][action_desc] par exemple).
 
 **description** (facultatif)
@@ -51,7 +52,7 @@ Chaque ACL doit se trouver dans un tableau. Ce tableau peut contenir les clés 
     * `Y` : l'ACL est affectée au groupe *Utilisateurs*
     * `N` : l'ACL n'est affectée à aucun groupe (valeur par défaut)
 
-Plus d'informations sur le fonctionnement des Acls sont disponibles dans le
+Plus d'informations sur le fonctionnement des ACLs sont disponibles dans le
 chapitre sur [le fonctionnement de la sécurité dans Dynacase][securite].
 
 <!-- links -->

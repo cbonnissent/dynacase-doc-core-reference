@@ -267,29 +267,17 @@ book:
 ##
     - level:   1
       content:  "applications_actions/introduction.md"
-      flags:
-        need-review: "need review"
       subtoc:   2
     - level:   2
       content:  "applications_actions/ecrire_application.md"
-      flags:
-        need-review: "need review"
     - level:   2
       content:  "applications_actions/ecrire_action.md"
-      flags:
-        need-review: "need review"
     - level:   2
       content:  "applications_actions/parametres_applicatifs.md"
-      flags:
-        need-review: "need review"
     - level:   2
       content:  "applications_actions/droits_applicatifs.md"
-      flags:
-        need-review: "need review"
     - level:   2
       content:  "applications_actions/herite_application.md"
-      flags:
-        need-review: "need review"
 ##
 # API (cf https://docs.google.com/a/anakeen.com/spreadsheet/ccc?key=0At_Kbrf9EDr8dHRkM1BqbjdGQnN1TXVPLXE4eUhJOGc#gid=0)
 ##
