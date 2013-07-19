@@ -1471,13 +1471,13 @@ book:
         wip_sub: ""
     - level:   2
       content:  "Advanced/Recherche/introduction.md"
+      subtoc:   1
       flags:
-        wip: "work in progress"
+        draft: "draft"
     - level:   3
       content:  "Advanced/Recherche/searchdoc.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        draft: "draft"
     - level:   3
       content:  "Advanced/Recherche/dsearch.md"
       flags:
@@ -1527,6 +1527,10 @@ book:
       flags:
         wip: "work in progress"
         wip_sub: ""
+    - level:   3
+      content:  "Advanced/Template/formatcollection.md"
+      flags:
+        draft: "draft"
     - level:   2
       content:  "Advanced/familles/introduction.md"
       flags:
