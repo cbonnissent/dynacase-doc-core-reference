@@ -1479,10 +1479,13 @@ book:
       flags:
         draft: "draft"
     - level:   3
+      content:  "Advanced/Recherche/generalsearch.md"
+      flags:
+        draft: "draft"
+    - level:   3
       content:  "Advanced/Recherche/dsearch.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        draft: "draft"
     - level:   3
       content:  "Advanced/Recherche/rapport.md"
       flags:
@@ -1491,8 +1494,7 @@ book:
     - level:   3
       content:  "Advanced/Recherche/ssearch.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        draft: "draft"
     - level:   2
       content:  "Advanced/Authent/introduction.md"
       subtoc:   1

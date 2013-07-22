@@ -114,7 +114,6 @@ Extrait de la partie "attributes"
                             [value] => Test 1
                             [displayValue] => Test 1
                         )
-
                     [tst_double] => doubleAttributeValue Object
                         (
                             [value] => 0
@@ -184,7 +183,7 @@ dans cet exemple : int("%04d"). La valeur est de type "int"
 ### type `double`
 
     [php]
-   [tst_double] => doubleAttributeValue Object
+    [tst_double] => doubleAttributeValue Object
                         (
                             [value] => 0
                             [displayValue] => 0,00
