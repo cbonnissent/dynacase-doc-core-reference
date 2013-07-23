@@ -1471,11 +1471,47 @@ book:
         wip_sub: ""
     - level:   2
       content:  "Advanced/Recherche/introduction.md"
-      subtoc:   1
+      subtoc:   2
       flags:
         draft: "draft"
     - level:   3
       content:  "Advanced/Recherche/searchdoc.md"
+      flags:
+        draft: "draft"
+    - level:   4
+      content:  "Advanced/Recherche/critereattribut.md"
+      flags:
+        draft: "draft"
+    - level:   4
+      content:  "Advanced/Recherche/critereid.md"
+      flags:
+        draft: "draft"
+    - level:   4
+      content:  "Advanced/Recherche/criteredossier.md"
+      flags:
+        draft: "draft"
+    - level:   4
+      content:  "Advanced/Recherche/critereacl.md"
+      flags:
+        draft: "draft"
+    - level:   4
+      content:  "Advanced/Recherche/critererevision.md"
+      flags:
+        draft: "draft"
+    - level:   4
+      content:  "Advanced/Recherche/docrel.md"
+      flags:
+        draft: "draft"
+    - level:   4
+      content:  "Advanced/Recherche/critereitecallback.md"
+      flags:
+        draft: "draft"
+    - level:   3
+      content:  "Advanced/Recherche/count.md"
+      flags:
+        draft: "draft"
+    - level:   3
+      content:  "Advanced/Recherche/errors.md"
       flags:
         draft: "draft"
     - level:   3
@@ -1489,8 +1525,7 @@ book:
     - level:   3
       content:  "Advanced/Recherche/rapport.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        draft: "draft"
     - level:   3
       content:  "Advanced/Recherche/ssearch.md"
       flags:
@@ -1517,6 +1552,7 @@ book:
         wip_sub: ""
     - level:   2
       content:  "Advanced/Template/introduction.md"
+      subtoc:   1
       flags:
         wip: "work in progress"
     - level:   3

@@ -13,6 +13,6 @@ tels que :
 *   Critère sur les activités ou état lié à un cycle de vie
 
 Les chapitres suivants détaillent, les techniques permettant de rechercher de
-manière efficaces les documents.
+manière efficace les documents.
 
 
