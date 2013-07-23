@@ -9,7 +9,7 @@ Ajoute un paramètre obligatoire.
     [php]
     string addRequiredParameter ( string $argName,
                                   string $argDefinition = "",
-                                string[] $restriction = null )
+                        string[]|callable $restriction = null )
 
 La présence du paramètre est vérifiée, et sa valeur retournée.
 
@@ -25,8 +25,41 @@ Aucun.
 (string) `argDefinition`
 :   Un texte (simple ligne) de description du paramètre.
 
-(string[]) `restriction`
-:   Liste (`array`) des valeurs possibles pour le paramètre.
+(string[]|callable) `restriction`
+:   Liste (`array`) des valeurs possibles pour le paramètre ou une
+ [callable][callable definition] vérifiant une contrainte que l'on souhaite
+  appliquer. Si un tableau de deux chaînes de caractères est passés en paramètre,
+   il sera considéré comme un tableau de restriction, pas une callable. 
+
+### La callable de restriction {#core-ref:f24b5a38-ba8f-4b13-bc4f-78e69a561467}
+
+Le paramètre de restriction peut être une [callable][callable definition].
+ Elle permet de vérifier une contrainte que l'on souhaite appliquer aux valeurs
+  passées en argument du paramètre.
+
+    [php]
+    string function (   string|string[] $values
+                                string  $argName
+                              ApiUsage  $apiusage )
+                              
+Cette [callable][callable definition] reçoit trois arguments:
+
+(string|string[]) `values`
+: La ou les valeurs du paramètre
+
+(string) `argName`
+: Le nom du paramètre
+
+(ApiUsage) `apiusage`
+: L'objet courant de type ApiUsage contenant les informations des autres paramètres
+
+Elle est appelée lors du [`apiUsage::verify()`][apiUsage_verify] et, si elle
+ retourne une chaîne de caractères, celle-ci fera lieu d'erreur et sera affichée
+  à l'utilisateur.
+
+Dans le cas de la demande d'usage (le `--help`), la constante
+ `ApiUsage::GET_USAGE` sera passée à la place des valeurs. Dans ce cas la chaîne
+  retournée sera affichée dans l'usage après la description du paramètre.
 
 ## Valeur de retour {#core-ref:5963b16e-8706-4af4-87a8-30ba9e4f9bb3}
 
@@ -87,6 +120,53 @@ possible.
     docid = '1234'
     format = 'a4'
 
+Exemple avec une callable:
+
+    [php]
+    $usage = new ApiUsage();
+    $numberpositive = $usage->addRequiredParameter("number", "A number", function($values, $argname, $apiusage) {
+        if ($values === ApiUsage::GET_USAGE) return "Must be a positive number";
+        if (is_array($values)) {
+            foreach ($values as $value) {
+                if ($value < 0) return sprintf("Error for parameter %s: value %s must be a positive number", $argname, $value);
+            }
+        } else if ($values < 0) return sprintf("Error for parameter %s: value %s must be a positive number", $argname, $values);
+        return "";
+        });
+    $usage->verify();
+    
+    printf("number = '%s'\n", $numberpositive);
+
+&nbsp;
+
+    $ ./wsh.php --api=test
+    Erreur : {CORE0001} argument 'number' expected
+    
+    
+    Usage :
+            --number=<A number>Must be a positive number
+       Options:
+            --userid=<user system id or login name to execute function - default is (admin)>, default is '1'
+            --help (Show usage) 
+
+L'usage est affiché car un paramètre requis n'est pas présent.
+
+     $ ./wsh.php --api=test --number=-12
+    Erreur : {CORE0001} Error checking argument number type: Error for parameter number: value -12 must be a positive number
+    
+    
+    Usage :
+            --number=<A number>Must be a positive number
+       Options:
+            --userid=<user system id or login name to execute function - default is (admin)>, default is '1'
+            --help (Show usage) 
+    
+L'usage est affiché car la valeur du paramètre `number` n'est pas une valeur
+acceptée par la callable.
+
+    $ ./wsh.php --api=test --number=12
+    number = '12'
+    
 ## Notes {#core-ref:b73888b7-ba50-4fe4-9a16-031a81189a5d}
 
 Aucune.
@@ -97,3 +177,4 @@ Aucune.
 
 <!-- links -->
 [apiUsage_verify]: #core-ref:26496476-30f7-4e64-979a-fb019d762b7b
+[callable definition]: http://www.php.net/manual/fr/language.types.callable.php

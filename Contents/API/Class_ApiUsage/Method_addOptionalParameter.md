@@ -9,7 +9,7 @@ Ajoute un paramètre optionnel.
     [php]
     string addOptionalParameter ( string $argName,
                                   string $argDefinition,
-                                   array $restriction = null,
+                       string[]|callable $restriction = null,
                                   string $default = null )
 
 La présence du paramètre est vérifiée, et sa valeur retournée.
@@ -26,8 +26,8 @@ N/A
 (string) `argDefinition`
 :   Un texte (simple ligne) de description du paramètre.
 
-(array) `restriction`
-:   Liste des valeurs possibles pour le paramètre.
+(string[]|callable) `restriction`
+:   Liste des valeurs possibles pour le paramètre ou une [callable][callable information] vérifiant une contrainte que l'on souhaite appliquer.
 
 (string) `default`
 :   Valeur retournée par défaut si le paramètre n'est pas présent.
@@ -88,3 +88,4 @@ N/A
 
 <!-- links -->
 [apiUsage_verify]: #core-ref:26496476-30f7-4e64-979a-fb019d762b7b
+[callable information]: #core-ref:f24b5a38-ba8f-4b13-bc4f-78e69a561467
