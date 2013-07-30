@@ -8,8 +8,8 @@ Le script `initializeDocrelTable` permet de régénérer ce cache.
 
 ## Usage {#core-ref:111b371e-ad18-4c19-b0c2-019d75fe9d75}
 
-`dryrun` (default `no`)
-:   Permet d'afficher (`yes`) les requêtes SQL sans les exécuter et donc sans
+`dryrun` 
+:   Permet d'afficher les requêtes SQL sans les exécuter et donc sans
     modifier quoi que ce soit.
 
 `famid` (default `all`)
@@ -18,19 +18,20 @@ Le script `initializeDocrelTable` permet de régénérer ce cache.
     
     Par défaut, le traitement s'applique à toutes les familles (`all`).
 
-`transaction` (default `no`)
-:   Permet d'indiquer si les modifications sont effectuées dans une transaction
-    (`yes`) ou si les elles sont effectuées sans transaction (`no`).
+`transaction` 
+:   Permet d'indiquer d'effectuer les modifications dans une transaction
     
     Si l'on utilise une transaction et qu'une des sous-opérations génère une
     erreur, alors aucune des modifications n'est appliquée.
 
-`realclean` (default `yes`)
-:   Permet de spécifier si l'on souhaite supprimer au préalable tout le contenu
-    de la table `docrel` (`yes`), ou si on souhaite supprimer le contenu au
-    fur et à mesure du traitement des familles (`no`).
+`softclean`  
+:   Indique que la table `docrel` ne sera pas supprimée avant sa reconstruction.
+    La table `docrel` est mise à jour au fur et à mesure 
+    du traitement des familles.  
+    Dans le cas contraire, la table `docrel` est
+    supprimée avant d'être intégralement reconstituée.
     
-    Cette option sera systématiquement désactivée si une famille est spécifiée
+    Cette option sera systématiquement activée si une famille est spécifiée
     via l'option `famid`.
 
 ## Limite d'usage {#core-ref:4692046f-08ff-408e-93c4-c4564c6d7e95}

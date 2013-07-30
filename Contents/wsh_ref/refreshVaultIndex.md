@@ -9,8 +9,8 @@ Le script `refreshVaultIndex` permet de régénérer ce cache.
 
 ## Usage {#core-ref:5763b9de-1405-4788-a246-ce902dbbe4d0}
 
-`dryrun` (default `no`)
-:   Permet d'afficher (`yes`) les requêtes SQL sans les exécuter et donc
+`dryrun` 
+:   Permet d'afficher les requêtes SQL sans les exécuter et donc
     sans modifier quoi que ce soit.
 
 `famid` (default `all`)
@@ -19,19 +19,19 @@ Le script `refreshVaultIndex` permet de régénérer ce cache.
     
     Par défaut, le traitement s'applique à toutes les familles (`all`).
 
-`transaction` (default `no`)
-:   Permet d'indiquer si les modifications sont effectuées dans une transaction
-    (`yes`) ou si les elles sont effectuées sans transaction (`no`).
-
+`transaction` 
+:   Permet d'indiquer que les modifications sont effectuées dans une transaction.
+    Par défaut, aucune transation n'est utilisée.
+    
     Si l'on utilise une transaction et qu'une des sous-opérations génère une
     erreur, alors aucune des modifications n'est appliquée.
 
-`realclean` (default `yes`)
-:   Permet de spécifier si l'on souhaite supprimer au préalable tout le contenu
-    de la table `docvaultindex` (`yes`), ou si on souhaite supprimer le
-    contenu au fur et à mesure du traitement des familles (`no`).
+`softclean` 
+:   Ne supprime pas tous les index au préalable.
+    Par défaut la table `docvaultindex` est totalement vidée avant d'être 
+    reconstruite.
     
-    Cette option est systématiquement désactivée si une famille est spécifiée
+    Cette option est systématiquement activée si une famille est spécifiée
     via l'option `famid`.
 
 ## Limite d'usage {#core-ref:7220d4f8-e649-40d5-bd9e-04184dda2211}

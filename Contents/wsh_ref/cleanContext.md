@@ -19,8 +19,8 @@ Opérations principales :
 
 ## Usage {#core-ref:f0ae7db2-44cc-4593-9019-09ffe005cb8d}
 
-`full` (default `no`)
-:   Permet d'effectuer (`yes`) des opérations de nettoyage additionnelles
+`full` 
+:   Permet d'effectuer des opérations de nettoyage additionnelles
     (telles que lancées, la nuit, par la crontab du contexte) :
     
     * Suppression des références à des documents supprimés dans les répertoires

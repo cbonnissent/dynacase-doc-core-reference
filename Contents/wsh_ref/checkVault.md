@@ -14,8 +14,8 @@ Le script permet ensuite de supprimer ces fichiers orphelins.
 `vault` (default `FREEDOM`)
 :   Le nom du vault que l'on souhaite inspecter ou modifier.
 
-`test` (default `no`)
-:   Permet d'afficher (`yes`) les opérations qui seraient effectuées sans
+`test` 
+:   Permet d'afficher les opérations qui seront effectuées sans
     modifier quoi que ce soit.
 
 **`cmd` (obligatoire)**
@@ -38,9 +38,9 @@ Le script permet ensuite de supprimer ces fichiers orphelins.
     :   Supprime les fichiers orphelins (fichiers qui ne sont référencés par
     	aucun document Dynacase).
 
-`csv` (default `no`)
+`csv` 
 :   Permet d'afficher le résultat de l'inspection sous la forme d'un fichier CSV
-    (pour utilisation par un outils tiers).
+    avec comme séparateur le point-virgule. (pour utilisation par un outils tiers).
 
 ## Limite d'usage {#core-ref:c04842e5-cce2-422d-9848-e79885b36098}
 
