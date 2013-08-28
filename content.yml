@@ -1536,6 +1536,12 @@ book:
       flags:
         wip: "work in progress"
         wip_sub: ""
+    - level:   2
+      content:  "Advanced/autoloader.md"
+      flags:
+        wip: "work in progress"
+        wip_sub: ""
+
 ##
 # Trash
 ##
