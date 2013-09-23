@@ -1539,8 +1539,7 @@ book:
     - level:   2
       content:  "Advanced/autoloader.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        draft: "draft" 
 
 ##
 # Trash

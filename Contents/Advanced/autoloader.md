@@ -1,37 +1,57 @@
 # Autoloader {#core-ref:aa4be34f-3a06-4769-8bb6-fcdc002fd342}
 
-Le mécanisme d'autoloader de Dynacase indéxe tous les fichiers PHP (extension `.php`) du contexte pour rechercher toutes les classes définis dans ces fichiers.
+Le mécanisme d'autoloader de Dynacase parcourt tous les fichiers PHP (extension
+`.php`) du contexte pour indexer toutes les classes définies dans ces fichiers.
 
-La liste des classes, avec leur fichier source d'inclusion, est alors stockée dans le fichier `.autoloader.cache` à la racine du contexte Dynacase.
+La liste des classes, avec leur fichier source d'inclusion, est alors stockée
+dans le fichier `.autoloader.cache` à la racine du contexte Dynacase.
 
-Le fichier de cache `.autoloader.cache` est automatiquement régénéré lorsque ce dernier est supprimé ou qu'une classe demandée n'est pas trouvée dans le cache. Suite à cette régénération, si la classe demandée n'est toujours pas présente dans le cache, alors une exception est levée indiquant que la classe demandée n'existe pas.
+Le fichier de cache `.autoloader.cache` est automatiquement régénéré lorsqu'il
+est inexistant (et donc lors du premier appel à l'autoloader faisant suite à la
+suppression de ce fichier) ou qu'une classe demandée n'est pas trouvée dans le
+cache. Suite à cette régénération, si la classe demandée n'est toujours pas
+présente dans le cache, alors une exception est levée indiquant que la classe
+demandée n'existe pas.
 
-Une même classe PHP ne peut être livrée par deux fichiers PHP distincts, et une exception est levée lorsque deux fichiers PHP distincts définissant une même classe PHP sont trouvés.
+Une même classe PHP (la comparaison est insensible à la casse) ne peut être
+livrée par deux fichiers PHP distincts, et une exception est levée lorsque deux
+fichiers PHP distincts définissant une même classe PHP sont trouvés.
 
 ## Utilisation {#core-ref:be48bd77-ae91-4b41-8fe8-afd38561a9e8}
 
 ### Ajout d'une nouvelle classe {#core-ref:4065d4f8-5cf1-4cbf-8fc6-38bacdbefa5a}
 
-Pour ajouter une nouvelle classe, il suffit de livrer le fichier PHP qui défini cette classe et d'utiliser normalement cette classe.
+Pour ajouter une nouvelle classe, il suffit de livrer le fichier PHP qui définit
+cette classe et d'utiliser normalement cette classe.
 
-L'autoloader lancera automatiquement une régénération du cache lors de la première utilisation de cette classe.
+L'autoloader lancera automatiquement une régénération du cache lors de la
+première utilisation de cette classe.
 
 ### Déplacement d'une classe {#core-ref:5cc70a16-2cc4-4f37-95e7-209c59b6f0f2}
 
-Pour déplacer une classe d'un fichier PHP dans un nouveau fichier PHP (en conservant le nom de la classe), il faut déplacer la classe dans le nouveau fichier et supprimer le fichier de cache `.autoloader.cache` ce qui aura pour effet de régénérer ce dernier lors de la prochaine utilisation d'une classe.
+Pour déplacer une classe d'un fichier PHP dans un nouveau fichier PHP (en
+conservant le nom de la classe), il faut déplacer la classe dans le nouveau
+fichier et supprimer le fichier de cache `.autoloader.cache` ce qui aura pour
+effet de régénérer ce dernier lors de la prochaine utilisation d'une classe.
 
 ### Suppression d'une classe {#core-ref:b0ad4ec4-8ce0-4cf2-9269-68e081119af0}
 
-Pour supprimer une classe d'un fichier PHP il faut supprimer la classe de son fichier et supprimer le fichier de cache `.autoloader.cache` ce qui aura pour effet de régénérer ce dernier lors de la prochaine utilisation d'une classe.
+Pour supprimer une classe d'un fichier PHP il faut supprimer la classe de son
+fichier et supprimer le fichier de cache `.autoloader.cache` ce qui aura pour
+effet de régénérer ce dernier lors de la prochaine utilisation d'une classe.
 
 ### Charger et activer manuellement l'autoloader Dynacase {#core-ref:ac9bb742-5eea-4748-a4b5-93b99fb5bdc8}
 
-Par défaut, l'autoloader est chargé et actif sur tous les codes PHP exécutés par Dynacase ([Action][action], [scripts CLI][scripts_cli], etc.).
+Par défaut, l'autoloader est chargé et actif sur tout code PHP exécuté par
+Dynacase ([Action][action], [scripts CLI][scripts_cli], etc.).
 
-Cepdendant, dans le cas ou vous voudriez exécuter un code PHP tier (non intégré comme [Action][action] ou [scripts CLI][scripts_cli]) qui utiliserait des classes Dynacase, il faudra alors inclure le fichier `WHAT/autoload.php` afin de charger et activer l'autoloader Dynacase :
+Cedendant, dans le cas où vous voulez exécuter un code PHP tiers (non intégré
+comme [Action][action] ou [scripts CLI][scripts_cli]) qui utiliserait des
+classes Dynacase, il faut inclure le fichier `WHAT/autoload.php` afin de charger
+et activer l'autoloader Dynacase :
 
     [php]
-    include_once 'WHAT/autoload.php';
+    require_once 'WHAT/autoload.php';
 
 ## Personnalisation {#core-ref:e23eed6c-cbbd-4332-9c24-7695e1290e49}
 
@@ -39,18 +59,31 @@ Cepdendant, dans le cas ou vous voudriez exécuter un code PHP tier (non intégr
 
 Par défaut, l'autoloader indexe tous les fichiers PHP du contexte.
 
-Pour exclure des répertoires (ou des fichiers) de l'indexation de l'autoloader, il faut déclarer ces éléments dans un fichier d'autoloader-ignore.
+Pour exclure des répertoires (ou des fichiers) de l'indexation de l'autoloader,
+il faut déclarer ces éléments dans un fichier d'autoloader-ignore.
 
-Les fichiers d'autoloader-ignore se trouvent dans le répertoire `.autoloader-ignore.d` situé à la racine du contexte et contiennent une liste de mofifs (au format [shell glob][fnmatch]) des éléments à ignorer.
+Les fichiers d'autoloader-ignore se trouvent dans le répertoire
+`.autoloader-ignore.d` situé à la racine du contexte et contiennent une liste de
+motifs (au format [shell glob][fnmatch]) des éléments à ignorer.
 
 Format :
 
-* Les lignes commençant par un `#` (dièse) sont des commentaires et sont ignorés ;
-* Les lignes vides ou ne contenant que des espaces sont ignorés ;
-* Les espaces en début et en fin de motif sont conservés et interprétés comme tels lors de la correspondance avec les fichiers (i.e. `MYAPP/lib/* ` correspondra aux chemins de fichiers qui commencent par `MYAPP/lib` et qui se terminent par un espace ` `).
-* Les motifs (au format [shell glob][fnmatch]) sont appliqués sur les chemins des fichiers PHP relatifs à la racine du contexte Dynacase (i.e. `MYAPP/lib/foo.php`).
+*   Les lignes commençant par un `#` (dièse) sont des commentaires et sont
+    ignorés ;
+    
+*   Les lignes vides ou ne contenant que des espaces sont ignorés ;
+    
+*   Les espaces en début et en fin de motif sont conservés et interprétés comme
+    tels lors de la correspondance avec les fichiers.
+    
+    Ainsi, `MYAPP/lib/* ` correspond aux chemins de fichiers qui commencent par
+    `MYAPP/lib` et qui se terminent par un espace ` `).
+    
+*   Les motifs (au format [shell glob][fnmatch]) sont appliqués sur les chemins
+    des fichiers PHP relatifs à la racine du contexte Dynacase (i.e.
+    `MYAPP/lib/foo.php`).
 
-Exemple de fichier `.autoloader-ignore.d/myapp` :
+Exemple de fichier `.autoloader-ignore.d/myapp` :
 
     # Ceci est un commentaire
     
@@ -62,7 +95,11 @@ Exemple de fichier `.autoloader-ignore.d/myapp` :
 
 ### Prévention des doublons de classes {#core-ref:647f075f-0750-47cf-94fd-4445a6ac64df}
 
-Pour se prémunir d'erreurs de doublons de classes (une même classe PHP livrée par deux fichiers PHP distinct), vous pouvez utiliser le programme `programs/check_autoloader` dans les phases de `<post-install/>` et `<post-upgrade/>` (du `info.xml` du module) afin de vérifier qu'il n'y ait pas de doublons de classes.
+Pour se prémunir d'erreurs de doublons de classes (une même classe PHP livrée
+par deux fichiers PHP distinct), vous pouvez utiliser le programme
+`programs/check_autoloader` dans les phases de `<post-install/>` et
+`<post-upgrade/>` (du `info.xml` du module) afin de vérifier qu'il n'y a pas de
+doublons de classes.
 
 Exemple d'utilisation dans `info.xml` :
 
