@@ -9,7 +9,7 @@ Ajoute un paramètre obligatoire.
     [php]
     string addRequiredParameter ( string $argName,
                                   string $argDefinition = "",
-                        string[]|callable $restriction = null )
+                       string[]|callable $restriction = null )
 
 La présence du paramètre est vérifiée, et sa valeur retournée.
 
@@ -26,47 +26,59 @@ Aucun.
 :   Un texte (simple ligne) de description du paramètre.
 
 (string[]|callable) `restriction`
-:   Liste (`array`) des valeurs possibles pour le paramètre ou une
- [callable][callable definition] vérifiant une contrainte que l'on souhaite
-  appliquer. Si un tableau de deux chaînes de caractères est passés en paramètre,
-   il sera considéré comme un tableau de restriction, pas une callable. 
+:   Liste des valeurs possibles pour le paramètre ou un
+    [callable][callable_information] vérifiant une contrainte à appliquer à la
+    valeur du paramètre.
+    
+    Si la restriction est un `array`, alors la valeur passée doit
+    obligatoirement être scalaire, et sa valeur doit être parmi les valeurs du
+    tableau.
+    
+    Pour une autre restriction, se reporter à la description du [callable de
+    restriction][callable_information].
 
-### La callable de restriction {#core-ref:f24b5a38-ba8f-4b13-bc4f-78e69a561467}
+### Le callable de restriction {#core-ref:f24b5a38-ba8f-4b13-bc4f-78e69a561467}
 
-Le paramètre de restriction peut être une [callable][callable definition].
- Elle permet de vérifier une contrainte que l'on souhaite appliquer aux valeurs
-  passées en argument du paramètre.
+Le paramètre de restriction peut être un [callable][callable_definition]. Il
+permet de vérifier une contrainte que l'on souhaite appliquer aux valeurs
+passées en argument du paramètre.
 
     [php]
     string function (   string|string[] $values
-                                string  $argName
-                              ApiUsage  $apiusage )
+                                 string $argName
+                               ApiUsage $apiusage )
                               
-Cette [callable][callable definition] reçoit trois arguments:
+Ce [callable][callable_definition] reçoit trois arguments:
 
 (string|string[]) `values`
-: La ou les valeurs du paramètre
+:   La ou les valeurs du paramètre
 
 (string) `argName`
-: Le nom du paramètre
+:   Le nom du paramètre
 
 (ApiUsage) `apiusage`
-: L'objet courant de type ApiUsage contenant les informations des autres paramètres
+:   L'objet courant de type ApiUsage contenant les informations des autres
+    paramètres
 
-Elle est appelée lors du [`apiUsage::verify()`][apiUsage_verify] et, si elle
- retourne une chaîne de caractères, celle-ci fera lieu d'erreur et sera affichée
-  à l'utilisateur.
+Il est déclenché lors de l'appel à [`apiUsage::verify()`][apiUsage_verify] et
+doit retourner :
 
-Dans le cas de la demande d'usage (le `--help`), la constante
- `ApiUsage::GET_USAGE` sera passée à la place des valeurs. Dans ce cas la chaîne
-  retournée sera affichée dans l'usage après la description du paramètre.
+*   Une chaîne vide si la valeur est valide,
+*   Un message d'erreur si la valeur n'est pas valide,
+*   une chaîne d'usage si la valeur est la constante `ApiUsage::GET_USAGE`.
+
+Les callables suivants sont disponibles pour les cas standard :
+
+*   `ApiUsage::isScalar` : vérifie que la valeur est scalaire.  
+    C'est la restriction appliquée par défaut.
+*   `ApiUsage::isArray` : vérifie que la valeur est multiple.
 
 ## Valeur de retour {#core-ref:5963b16e-8706-4af4-87a8-30ba9e4f9bb3}
 
 Retourne la valeur du paramètre.
 
-Si une liste de valeurs possibles est spécifiée (`restriction`) et que la valeur
-du paramètre n'est pas dans cette liste, alors la validation est mise en erreur.
+Si la valeur n'est pas conforme à la restriction spécifiée au moyen du paramètre
+`restriction`, alors la validation est mise en erreur.
 
 ## Erreurs / Exceptions {#core-ref:7021d6a5-9728-42d4-ae3c-84020db9f9b2}
 
@@ -78,7 +90,11 @@ Aucune.
 
 ## Exemples {#core-ref:d4014682-77e2-444c-9002-b22696c6177f}
 
+### Restriction par un array {#core-ref:c22b69d6-520a-40fa-9864-568fa75b298a}
+
     [php]
+    <?php
+    
     $usage = new ApiUsage();
     $docid = $usage->addRequiredParameter("docid", "Document id");
     $format = $usage->addRequiredParameter("format", "Paper format", array("a4", "a3"));
@@ -87,7 +103,7 @@ Aucune.
     printf("docid = '%s'\n", $docid);
     printf("format = '%s'\n", $format);
 
-&nbsp;
+Omission d'un paramètre obligatoire :
 
     $ ./wsh.php --api=test
     Erreur : {CORE0001} argument 'docid' expected
@@ -98,9 +114,9 @@ Aucune.
             --format=<Paper format> [a4|a3]
        Options:
             --userid=<user system id or login name to execute function - default is (admin)>, default is '1'
-            --help (Show usage) 
+            --help (Show usage)
 
-L'usage est affiché car un paramètre requis n'est pas présent.
+Passage d'une valeur ne respectant pas la restriction :
 
     $ ./wsh.php --api=test --docid=1234 --format=foo
     Erreur : {CORE0001} argument 'format' must be one of these values : a4, a3
@@ -113,56 +129,65 @@ L'usage est affiché car un paramètre requis n'est pas présent.
             --userid=<user system id or login name to execute function - default is (admin)>, default is '1'
             --help (Show usage) 
 
-L'usage est affiché car la valeur du paramètre `format` n'est pas une valeur
-possible.
+Appel valide :
 
     $ ./wsh.php --api=test --docid=1234 --format=a4
     docid = '1234'
     format = 'a4'
 
-Exemple avec une callable:
+### Restriction par un callable {#core-ref:f3c38186-509f-4ced-a3ec-9d5d2387fff5}
 
     [php]
+    <?php
+    
     $usage = new ApiUsage();
-    $numberpositive = $usage->addRequiredParameter("number", "A number", function($values, $argname, $apiusage) {
-        if ($values === ApiUsage::GET_USAGE) return "Must be a positive number";
-        if (is_array($values)) {
-            foreach ($values as $value) {
-                if ($value < 0) return sprintf("Error for parameter %s: value %s must be a positive number", $argname, $value);
+    $numberpositive = $usage->addRequiredParameter(
+        "number",
+        "A number",
+        function($values, $argname, $apiusage) {
+            if (ApiUsage::GET_USAGE === $values){
+                return "A positive number";
             }
-        } else if ($values < 0) return sprintf("Error for parameter %s: value %s must be a positive number", $argname, $values);
-        return "";
-        });
+            if (is_array($values)) {
+                $invalidValues = array_filter($values, function($var){return($var < 0);});
+                if(count($invalidValues) > 0){
+                    return sprintf("Following values are not positive : [%s]", implode("],[", $invalidValues));
+                }
+            } elseif ($values < 0){
+                return sprintf("Following value is not positive : [%s]", $values);
+            }
+            return "";
+        }
+    );
     $usage->verify();
     
     printf("number = '%s'\n", $numberpositive);
 
-&nbsp;
+Omission d'un paramètre obligatoire :
 
     $ ./wsh.php --api=test
     Erreur : {CORE0001} argument 'number' expected
     
     
     Usage :
-            --number=<A number>Must be a positive number
+            --number=<A number>A positive number
        Options:
             --userid=<user system id or login name to execute function - default is (admin)>, default is '1'
-            --help (Show usage) 
+            --help (Show usage)
 
-L'usage est affiché car un paramètre requis n'est pas présent.
+Passage d'une valeur ne respectant pas la restriction :
 
      $ ./wsh.php --api=test --number=-12
-    Erreur : {CORE0001} Error checking argument number type: Error for parameter number: value -12 must be a positive number
+    Erreur : {CORE0001} Error checking argument number type: Following value is not positive : [-12]
     
     
     Usage :
-            --number=<A number>Must be a positive number
+            --number=<A number>A positive number
        Options:
             --userid=<user system id or login name to execute function - default is (admin)>, default is '1'
             --help (Show usage) 
     
-L'usage est affiché car la valeur du paramètre `number` n'est pas une valeur
-acceptée par la callable.
+Appel valide :
 
     $ ./wsh.php --api=test --number=12
     number = '12'
@@ -177,4 +202,4 @@ Aucune.
 
 <!-- links -->
 [apiUsage_verify]: #core-ref:26496476-30f7-4e64-979a-fb019d762b7b
-[callable definition]: http://www.php.net/manual/fr/language.types.callable.php
+[callable_definition]: http://www.php.net/manual/fr/language.types.callable.php
