@@ -11,11 +11,11 @@ documents.
 :   Identifiant, ou nom logique, de la famille sur laquelle appliquer le
     traitement.
 
-`force` (default `yes`)
-:   `yes` indique que l'échec d'une sous-opération ne mettra pas en erreur
+`transaction` 
+:   Permet d'indiquer que l'erreur d'une sous-opération doit annuler
+    l'ensemble des modifications.  
+    Dans le cas contraire,  l'échec d'une sous-opération ne mettra pas en erreur
     l'ensemble du traitement, qui poursuivra alors son exécution.
-    `no` permet d'indiquer que l'erreur d'une sous-opération doit annuler
-    l'ensemble des modifications.
 
 ## Limite d'usage {#core-ref:fd57e437-c873-44bf-b691-e2c42d2950da}
 
