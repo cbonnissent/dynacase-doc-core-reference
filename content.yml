@@ -2,7 +2,7 @@ book:
   title: "Manuel de référence"
   module: "Core"
   version: "3.2"
-  edition: "2"
+  edition: "3"
   githubsrc: "https://github.com/Anakeen/dynacase-doc-core-reference"
   chapters:
 #
@@ -343,6 +343,7 @@ book:
       content:  "API/Class_ApiUsage.md"
       flags:
         need-review: "need review"
+        new: "updated"
       subtoc:   1
     - level:   3
       element: "chapter"
@@ -482,32 +483,38 @@ book:
       content:  "API/Class_Doc.md"
       flags:
         draft: "draft"
+        new: "new"
       subtoc:   1
     - level:   3
       element: "chapter"
       content:  "API/Class_Doc/Properties.md"
       flags:
         draft: "draft"
+        new: "new"
     - level:   3
       element: "chapter"
       content:  "API/Class_Doc/Method_PreCreated.md"
       flags:
         draft: "draft"
+        new: "new"
     - level:   3
       element: "chapter"
       content:  "API/Class_Doc/Method_PostCreated.md"
       flags:
         draft: "draft"
+        new: "new"
     - level:   3
       element: "chapter"
       content:  "API/Class_Doc/Method_preStore.md"
       flags:
         draft: "draft"
+        new: "new"
     - level:   3
       element: "chapter"
       content:  "API/Class_Doc/Method_postStore.md"
       flags:
         draft: "draft"
+        new: "new"
     - level:   3
       element: "chapter"
       content:  "API/Class_Doc/Method_ReallyDelete.md"
@@ -519,16 +526,19 @@ book:
       content:  "API/Class_Doc/Method_Refresh.md"
       flags:
         draft: "draft"
+        new: "new"
     - level:   3
       element: "chapter"
       content:  "API/Class_Doc/Method_preRefresh.md"
       flags:
         draft: "draft"
+        new: "new"
     - level:   3
       element: "chapter"
       content:  "API/Class_Doc/Method_postRefresh.md"
       flags:
         draft: "draft"
+        new: "new"
     - level:   3
       element: "chapter"
       content:  "API/Class_Doc/Method__array2val.md"
@@ -552,11 +562,13 @@ book:
       content:  "API/Class_Doc/Method_addHistoryEntry.md"
       flags:
         draft: "draft"
+        new: "new"
     - level:   3
       element: "chapter"
       content:  "API/Class_Doc/Method_revise.md"
       flags:
         draft: "draft"
+        new: "new"
     - level:   3
       element: "chapter"
       content:  "API/Class_Doc/Method_control.md"
@@ -628,6 +640,7 @@ book:
       content:  "API/Class_Doc/Method_getDocAnchor.md"
       flags:
         draft: "draft"
+        new: "new"
     - level:   3
       element: "chapter"
       content:  "API/Class_Doc/Method_getFamDoc.md"
@@ -639,11 +652,13 @@ book:
       content:  "API/Class_Doc/Method_getOldRawValue.md"
       flags:
         draft: "draft"
+        new: "new"
     - level:   3
       element: "chapter"
       content:  "API/Class_Doc/Method_getOldRawValues.md"
       flags:
         draft: "draft"
+        new: "new"
     - level:   3
       element: "chapter"
       content:  "API/Class_Doc/Method_getParamValue.md"
@@ -685,11 +700,13 @@ book:
       content:  "API/Class_Doc/Method_getRawValue.md"
       flags:
         draft: "draft"
+        new: "new"
     - level:   3
       element: "chapter"
       content:  "API/Class_Doc/Method_getAttributeValue.md"
       flags:
         draft: "draft"
+        new: "new"
     - level:   3
       element: "chapter"
       content:  "API/Class_Doc/Method_isAlive.md"
@@ -779,16 +796,19 @@ book:
       content:  "API/Class_Doc/Method_setValue.md"
       flags:
         draft: "draft"
+        new: "new"
     - level:   3
       element: "chapter"
       content:  "API/Class_Doc/Method_setAttributeValue.md"
       flags:
         draft: "draft"
+        new: "new"
     - level:   3
       element: "chapter"
       content:  "API/Class_Doc/Method_store.md"
       flags:
         draft: "draft"
+        new: "new"
     - level:   3
       element: "chapter"
       content:  "API/Class_Doc/Method_viewattr.md"
@@ -800,12 +820,14 @@ book:
       content:  "API/Class_Docfam.md"
       flags:
         draft: "draft"
+        new: "new"
       subtoc:   1
     - level:   3
       element: "chapter"
       content:  "API/Class_Docfam/Properties.md"
       flags:
         draft: "draft"
+        new: "new"
     - level:   2
       element: "chapter"
       content:  "API/Class_DocumentList.md"
@@ -1343,10 +1365,12 @@ book:
       content:  "wsh_ref/initializeDocrelTable.md"
       flags:
         need-review: "need review"
+        new: "updated"
     - level:   2
       content:  "wsh_ref/cleanContext.md"
       flags:
         need-review: "need review"
+        new: "updated"
     - level:   2
       content:  "wsh_ref/generateDocumentClass.md"
       flags:
@@ -1355,6 +1379,7 @@ book:
       content:  "wsh_ref/destroyFamily.md"
       flags:
         need-review: "need review"
+        new: "updated"
     - level:   2
       content:  "wsh_ref/fixMultipleAliveRevision.md"
       flags:
@@ -1383,10 +1408,12 @@ book:
       content:  "wsh_ref/checkVault.md"
       flags:
         need-review: "need review"
+        new: "updated"
     - level:   2
       content:  "wsh_ref/refreshVaultIndex.md"
       flags:
         need-review: "need review"
+        new: "updated"
 
 ##
 # Advanced
@@ -1471,62 +1498,77 @@ book:
       subtoc:   2
       flags:
         draft: "draft"
+        new: "new"
     - level:   3
       content:  "Advanced/Recherche/searchdoc.md"
       flags:
         draft: "draft"
+        new: "new"
     - level:   4
       content:  "Advanced/Recherche/critereattribut.md"
       flags:
         draft: "draft"
+        new: "new"
     - level:   4
       content:  "Advanced/Recherche/critereid.md"
       flags:
         draft: "draft"
+        new: "new"
     - level:   4
       content:  "Advanced/Recherche/criteredossier.md"
       flags:
         draft: "draft"
+        new: "new"
     - level:   4
       content:  "Advanced/Recherche/critereacl.md"
       flags:
         draft: "draft"
+        new: "new"
     - level:   4
       content:  "Advanced/Recherche/critererevision.md"
       flags:
         draft: "draft"
+        new: "new"
     - level:   4
       content:  "Advanced/Recherche/docrel.md"
       flags:
         draft: "draft"
+        new: "new"
     - level:   4
       content:  "Advanced/Recherche/critereitecallback.md"
       flags:
         draft: "draft"
+        new: "new"
     - level:   4
       content:  "Advanced/Recherche/count.md"
       flags:
         draft: "draft"
+        new: "new"
     - level:   4
       content:  "Advanced/Recherche/errors.md"
       flags:
         draft: "draft"
+        new: "new"
     - level:   4
       content:  "Advanced/Recherche/generalsearch.md"
       flags:
         draft: "draft"
+        new: "new"
     - level:   3
       content:  "Advanced/Recherche/dsearch.md"
       flags:
         draft: "draft"
+        new: "new"
     - level:   3
       content:  "Advanced/Recherche/rapport.md"
       flags:
         draft: "draft"
+        new: "new"
     - level:   3
       content:  "Advanced/Recherche/ssearch.md"
       flags:
         draft: "draft"
+        new: "new"
     - level:   2
       content:  "Advanced/Authent/introduction.md"
       subtoc:   1
@@ -1566,6 +1608,7 @@ book:
       content:  "Advanced/Template/formatcollection.md"
       flags:
         draft: "draft"
+        new: "new"
     - level:   2
       content:  "Advanced/familles/introduction.md"
       flags:
@@ -1578,7 +1621,8 @@ book:
     - level:   2
       content:  "Advanced/autoloader.md"
       flags:
-        draft: "draft" 
+        draft: "draft"
+        new: "new" 
 
 ##
 # Trash
