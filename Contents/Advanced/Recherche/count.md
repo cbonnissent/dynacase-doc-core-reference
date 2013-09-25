@@ -1,6 +1,6 @@
 # Compter le nombre de résultats {#core-ref:0afc5f26-837a-4ffc-96c8-6b5c2131246a}
 
-Le nombre de résultat peut être obtenu avec la méthode `DocSearch::count()`
+Le nombre de résultats peut être obtenu avec la méthode `DocSearch::count()`
 après avoir effectué la recherche (appel `DocSearch::search()`).
 
     [php]
@@ -12,7 +12,7 @@ après avoir effectué la recherche (appel `DocSearch::search()`).
 
 Si seul le nombre vous intéresse, la méthode `::count()` n'est pas la plus
 performante car la requête est lancée et l'ensemble des résultats est récupéré.
-Pour des performances plus accrues, il faut utiliser la méthode
+Pour des performances accrues, il faut utiliser la méthode
 `SearchDoc::onlyCount()`. Ceci effectue la recherche en ne retournant que le
 nombre de documents correspondants.
 
@@ -23,10 +23,10 @@ nombre de documents correspondants.
     // pas d'appel à Doc::Search
     $c=$s->onlyCount();// retourne le nombre de résultat
 
-Attention, l'appel aux méthodes DocSearch::search ou DocSearch::onlyCount lance
-une requête au serveur de base de données. Le résultat est mis en cache pour
-être exploité par les itérateurs. Un deuxième appel à DocSearch::search ou
-DocSearch::onlyCount ne relance pas une deuxième requête. Si on veut reéxécuter
+Attention, le premier appel à une des méthodes `DocSearch::search` ou
+`DocSearch::onlyCount` lance une requête au serveur de base de données. Le
+résultat est mis en cache pour être exploité par les itérateurs. Un deuxième
+appel à ces méthodes ne relance pas une deuxième requête. Si on veut reéxécuter
 la requête il faut soit créer un nouvel objet, soit utiliser la méthode
 `DocSearch::reset()`.
 

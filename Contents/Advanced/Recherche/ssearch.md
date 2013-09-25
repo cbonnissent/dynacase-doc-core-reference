@@ -1,21 +1,27 @@
 # Recherche spécialisée {#core-ref:f5708494-27c1-4bc9-8f2d-03b2ce4eb31d}
 
-Pour toutes recherches non prévues en standard par l'interface, il est possible
-de programmer des recherches spécifiques. Elles pourront ensuite être utilisées
+Pour toute recherche non prévue en standard par l'interface, il est possible de
+programmer des recherches spécifiques. Elles pourront ensuite être utilisées
 comme une recherche “normale” depuis l'interface grâce à la famille “recherche
-spécialisée”. Lorsque vous éditer une recherche spécialisée, vous devez
-renseigner le fichier php où se trouve la fonction de recherche et le nom de
-cette fonction. Le fichier PHP devra être dans le répertoire `EXTERNALS` sur
-votre serveur.
+spécialisée”. Lorsque vous éditez une recherche spécialisée, vous devez
+renseigner
 
-Les arguments de la fonction sont au minimum de 3 :
+*   le fichier php où se trouve la fonction de recherche.
+    
+    Ce fichier devra être dans le répertoire `EXTERNALS` du contexte.
+    
+*   Le nom de cette fonction.
+    
+    Cette fonction prend les 3 arguments suivants :
+    
+    *   start : start index pour la recherche
+    *   slice : nombre max d'éléments à retourner
+    *   userid : utilisateur courant
+    
+    Des [arguments supplémentaires][additional_arguments] peuvent également être
+    fournis.
 
-*   start : start index pour la recherche
-*   slice : nombre max d'éléments à retourner
-*   userid : utilisateur courant
-
-
-Exemple  : fichier EXTERNALS/mytest.php :
+Exemple : fichier `EXTERNALS/mytest.php` :
 
 
     [php]
@@ -28,7 +34,7 @@ Exemple  : fichier EXTERNALS/mytest.php :
      * @param int $slice offset ("ALL" means no limit)
      * @param int $userid user system identifier (NOT USED in this function)
      */
-    function myToViewTags($start="0", $slice="ALL",$userid=0) {
+    function myToViewTags($start="0", $slice="ALL", $userid=0) {
         $tag="TOVIEWDOC";
         $s=new \SearchDoc();
         $s->setObjectReturn(false);
@@ -64,18 +70,24 @@ utiliser.
 Des arguments supplémentaires peuvent être ajoutés dans l'attribut 'Argument
 PHP' (`se_phparg`). Il sont ajoutés dans l'appel à partir de la quatrième
 position. Pour rajouter plusieurs arguments, il faut les séparer par une virgule
-(exemple : `1234,ceci est un test,dernier argument`). Dans ces arguments, il est
-possible de référencer des attributs du document recherche lui même. Il faut
-alors utiliser la notation suivante %TITLE% pour avoir le titre de la recherche,
-ou %SE_IDCFLD% pour avoir l'identifiant du dossier dans lequel s'exécute la
-recherche.
+(exemple : `1234,ceci est un test,dernier argument`).
 
-N'importe quel attribut ou propriété de la recherche est accessible. Le mot clef
-%THIS%, permet d'obtenir l'objet recherche dans sa globalité. La fonction de
-recherche doit retourner un tableau de document. 
+Dans ces arguments, il est possible de référencer
+
+*   N'importe quel attribut ou propriété du document recherche lui même, au
+    moyen de la notation `%ATTRID%` ou `%PROPID%`.
+    
+    Par exemple, `%TITLE%` pour avoir le titre
+    de la recherche, ou `%SE_IDCFLD%` pour avoir l'identifiant du dossier dans
+    lequel s'exécute la recherche.
+
+*   L'objet recherche lui-même au moyen du mot clé `%THIS%`.
 
 ## Retour de la fonction {#core-ref:14319d25-7f8d-44dc-80ea-68c58e233533}
 
-Ces documents retournés doivent être des documents bruts ( type `array` et non
-object). Ce type est celui retourné par la classe SearchDoc en utilisant la méthode
-`::setObjectReturn(false)`.
+La fonction de recherche doit retourner un tableau de *documents bruts* ( type
+`array` et non `object`). Ce type est celui retourné par la classe `SearchDoc` en
+utilisant la méthode `::setObjectReturn(false)`.
+
+<!-- links -->
+[additional_arguments]: #core-ref:64e7b7b7-188f-4576-a49f-f36b32664162

@@ -26,7 +26,7 @@ La méthode `DocRel::getIRelations()` retourne les caractéristiques des documen
 *   ctitle : titre de la cible
 *   sicon : icone de la source
 *   cicon : icone de la cible
-*   type : type de lien (nom de l'attribut ayant étable le lien)
+*   type : type de lien (nom de l'attribut ayant établi le lien)
 *   doctype : doctype du document source
 
 Résultat :
@@ -98,12 +98,15 @@ Résultat :
             )
  </pre></td></tr></table>
 
-Pour exploiter les résultats, il est possible d'utiliser un object `DocumentList`.
+Pour exploiter les résultats, il est possible d'utiliser un objet `DocumentList`.
 
     [php]
-    $ids=array_map(function ($r) {
-                return $r["sinitid"];
-                 }, $toMeRelation);
+    $ids=array_map(
+        function ($r) {
+            return $r["sinitid"];
+        },
+        $toMeRelation
+    );
     $dl=new DocumentList();
     $dl->addDocumentIdentifiers($ids);
     /**
@@ -118,7 +121,7 @@ Résultat :
     Gardien Dogue Robert '5835'
     animal Théodor '5973'
 
-L'object  `$dl` contient alors les documents pointant vers la cible.
+L'objet `$dl` contient alors les documents pointant vers la cible.
 
 
 

@@ -83,7 +83,7 @@ critères du document _recherche_.
     $rd= createDoc("", \Dcp\Family\Dsearch::familyName);
     $rd->setValue(\Dcp\AttributeIdentifiers\Dsearch::ba_title, "my Search");
     $rd->store();
-    // on modifie la requête qui sera utilisée avec celle produite par SearchDoc
+    // on remplace la requête qui sera utilisée par celle produite par SearchDoc
     $rd->addStaticQuery($sql);
 
 Dans ce cas, le document produit s'il est modifié par l'interface perdra ses
@@ -91,7 +91,7 @@ caractéristiques spécifiques au dépend des nouveaux critères présents sur
 l'interface graphique.
 
 La méthode `DocSearch::addStaticQuery()` ne peut être utilisée que si le
-document est enregistré en base de données. 
+document est déjà enregistré en base de données.
 
 La requête _sql_ enregistrée ne doit pas tenir compte des droits. Ces critères
 de droits sont ajoutés lors de l'utilisation de la recherche détaillée.
@@ -106,17 +106,17 @@ un critère une méthode comme valeur.
 Cet exemple indique que le critère sera la date courante - 7 jours. La méthode
 doc::getDate() est une méthode statique de la classe doc.
 
-Les méthodes utilisables dans les recherches détaillées sont les méthodes du
-document qui ont un commentaire (au [format DocBlock][docblock) et  qui
-contiennent les tags `@searchLabel` et `@searchType`. Vous pouvez ainsi déclarer
-votre propre méthode, utilisable comme critère de recherche, dans le fichier
-méthode de votre famille et ajouter les commentaires DocBlock adéquats. Cette
-méthode est généralement statique car elle ne doit pas faire appel à des valeurs
-de document. Par contre vous pouvez bien entendu utiliser des paramètres de la
-famille. La valeur de retour de cette méthode sera utilisé comme valeur du
-critère. Cela ne peut être appliqué que sur des opérateurs nécessitant une seule
-valeur. Cette méthode spécifique sera utilisable pour des recherches détaillées
-portant sur la famille en question.
+Les méthodes utilisables dans les recherches détaillées sont les méthodes de la
+classe de la famille sur laquelle porte la recherche qui ont un commentaire (au
+[format DocBlock][docblock] et qui contiennent les tags `@searchLabel` et
+`@searchType`. Vous pouvez ainsi déclarer votre propre méthode, utilisable comme
+critère de recherche, dans le fichier méthode de votre famille et ajouter les
+commentaires DocBlock adéquats. Cette méthode est généralement statique car elle
+ne doit pas faire appel à des valeurs de document. Par contre vous pouvez bien
+entendu utiliser des paramètres de la famille. La valeur de retour de cette
+méthode sera utilisé comme valeur du critère. Cela ne peut être appliqué que sur
+des opérateurs nécessitant une seule valeur. Cette méthode spécifique sera
+utilisable pour des recherches détaillées portant sur la famille en question.
 
 Exemple de déclaration de méthode :
 
@@ -130,7 +130,7 @@ Exemple de déclaration de méthode :
      * @searchType money
      */
     public function getRandomNumber() {
-      return mt_rand(1, 10);
+        return mt_rand(1, 10);
     }
 
 Le tag `@searchLabel` permet de spécifier le libellé qui sera présenté lors de

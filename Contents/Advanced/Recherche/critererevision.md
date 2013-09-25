@@ -1,4 +1,5 @@
 # Recherche sur les propriétés du document {#core-ref:1e7cbc19-65cf-436c-b27d-75e9853adc5a}
+
 ## Recherche et révision {#core-ref:cbb4116f-f49b-413b-b9a9-1dc17668fc57}
 
 Par défaut seule la dernière révision du document est retournée. Pour chercher
@@ -26,7 +27,7 @@ Les opérateurs utilisables sont les [opérateurs SQL][pgop] de PostgreSQL.
     $dl=$s->search()->getDocumentList();
      
     foreach ($dl as $k=>$doc)
-      print "$k)".$doc->getTitle()."\n";
+        print "$k)".$doc->getTitle()."\n";
     }
 
 Dans la cas où on recherche une valeurs dans n'importe quel attribut du

@@ -11,14 +11,13 @@ d'utiliser les attributs de cette famille comme critères.
     $s->search();
      
     while ($doc=$s->nextDoc()) {
-      print "$k)".$doc->getTitle()."(".$doc>getRawValue("my_mail","nomail").")\n";
-     }
+        print "$k)".$doc->getTitle()."(".$doc>getRawValue("my_mail","nomail").")\n";
+    }
 
-L'exemple ci-dessus montre la recherche de toutes les personnes dont l'adresse
-courriel est un organisme et dont le prénom contient jean. Le paramètre sqlfilters
-établit une conjonction de condition.  Recherche avec l'opérateur 'or' Si on
-veut établir une disjonction, il faut l'écrire manuellement en SQL en utilisant
-l'opérateur logique `or`.
+L'exemple ci-dessus montre la recherche de toutes les personnes dont le prénom
+contient *jean*. Les filtres ajoutés au moyen de la méthode `addFilter`
+établissent une conjonction de conditions. Pour établir une disjonction, il faut
+l'écrire manuellement en SQL en utilisant l'opérateur logique `or`.
 
 Les [opérateurs sql][pgop] utilisés doivent être compatibles avec les types des
 [attributs][docattributs] stockés en base de données.
@@ -32,8 +31,8 @@ Les [opérateurs sql][pgop] utilisés doivent être compatibles avec les types d
     $s->search();
      
     while ($doc=$s->nextDoc()) {
-      print "$k)".$doc->title."(".$doc->getRawValue("my_mail","nomail").':'.
-        $doc->getRawValue("my_postalcode").")\n";
+        print "$k)".$doc->title."(".$doc->getRawValue("my_mail","nomail").':'.
+            $doc->getRawValue("my_postalcode").")\n";
      }
 
 **Note** : Les types [`docid`][attdocid] sont enregistrés au format `text` dans la
@@ -43,9 +42,9 @@ Les [opérateurs sql][pgop] utilisés doivent être compatibles avec les types d
 ## Recherche sur des attributs de type énumérés (getKindDoc) {#core-ref:f5a2cf74-ee40-4df8-93fa-f75b0b9f5aaf}
 
 Pour rechercher des documents suivant des attributs de type énumérés, une
-fonction simplifiée de recherche existe. Cette fonction getKindDoc() a pour but
-de construire la règle de filtrage adéquate pour tenir compte de la hiérarchie
-dans ce type d'attribut.
+fonction simplifiée de recherche existe. Cette fonction `getKindDoc()` a pour
+but de construire la règle de filtrage adéquate en tenant compte de la
+hiérarchie dans ce type d'attribut.
 
     [php]
     include_once("FDL/Class.Doc.php");
@@ -53,13 +52,14 @@ dans ce type d'attribut.
     
     $dbaccess=GetParam("FREEDOM_DB");
     $tdoc=getKindDoc($dbaccess,
-     "USER",         // nom de la famille//
-     "us_type",      // attribut énuméré où s'applique le filtrage//
-     "chefserv");    // clef à rechercher//
+        "USER",         // nom de la famille
+        "us_type",      // attribut énuméré sur lequel s'applique le filtrage
+        "chefserv"      // clef à rechercher
+    );
      
     while (list($k, $v) = each($tdoc)) {
-      print "$k)".$v["title"]."(".getv($v,"us_mail","nomail").")\n";
-     }
+        print "$k)".$v["title"]."(".getv($v,"us_mail","nomail").")\n";
+    }
 
 
 Cet exemple permet de sélectionner la liste des chefs de service. Le chef de
@@ -89,8 +89,10 @@ Le filtre précédent fonctionne aussi mais il est un peu moins performant.
 Il est possible d'ajouter des critères portant sur une autre table en utilisant
 un mécanisme de jointure. Ce mécanisme ne permet pas de récupérer des données
 provenant de cette autre table mais permet de les utiliser comme critère de
-recherche. Exemple : recherche des documents qui ont dans l'historique un ordre
-de suppression émis par l'utilisateur courant
+recherche.
+
+Exemple : recherche des documents qui ont dans l'historique un ordre de
+suppression émis par l'utilisateur courant
 
     [php]
     $s=new searchDoc();
@@ -101,9 +103,10 @@ de suppression émis par l'utilisateur courant
     $s->distinct=true;
     $result= $s->search();
 
-Il est possible d'utiliser les tables `dochisto`, `docutag` ou `docrel` pour
-établir un critère de jointure. On ne peut utiliser qu'un seul ordre "join" par
-requête.
+Il est notamment possible d'utiliser, entre autres, les tables `dochisto`,
+`docutag` ou `docrel` pour établir un critère de jointure.
+
+On ne peut utiliser qu'un seul ordre "join" par requête.
 
 Il est aussi possible de créer un critère sur une famille liée :
 

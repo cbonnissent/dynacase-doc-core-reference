@@ -1,6 +1,6 @@
 # Mécanismes de recherche {#core-ref:bda916b0-e564-40fd-b195-c62bbab7b8be}
 
-La recherche de document est une fonctionnalité essentielle à la gestion des
+La recherche de documents est une fonctionnalité essentielle à la gestion des
 documents. Cette recherche permet de trouver des documents sur divers critères
 tels que :
 
@@ -12,7 +12,7 @@ tels que :
 *   Critère sur les relations entre document
 *   Critère sur les activités ou état lié à un cycle de vie
 
-Les chapitres suivants détaillent, les techniques permettant de rechercher de
-manière efficace les documents.
+Les chapitres suivants détaillent les techniques permettant d'effectuer des
+recherches de documents.
 
 

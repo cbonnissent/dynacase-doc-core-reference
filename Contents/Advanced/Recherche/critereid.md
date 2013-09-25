@@ -9,16 +9,21 @@ l'itérateur de document.
     $dl=new DocumentList();
     $dl->addDocumentIdentifiers(array(1112, 1110, 1120, 2034));
     foreach ($dl as $fam) {
-      print $fam->getTitle()."\n";
+        print $fam->getTitle()."\n";
     }
 
 La méthode `DocumentList::addDocumentIdentifiers()` permet de renseigner la
-liste des identifiants de document. Si dans la liste un ou plusieurs identifiant
-n'existe pas alors l'itérateur ne les retournera pas. Dans ce cas le nombre de
-document retourné sera inférieur au nombre de d'identifiant donné. Par défaut
-seuls les document que l'utilisateur a le droit de voir sont retournés. Si vous
-voulez affiner les critères de recherche vous pouvez le faire en utilisant la
-recherche stockée dans l'iterateur.
+liste des identifiants de document.
+
+Si dans la liste un ou plusieurs identifiant n'existe pas alors l'itérateur ne
+les retournera pas. Dans ce cas le nombre de document retourné sera inférieur au
+nombre d'identifiants donnés.
+
+Par défaut seuls les document que l'utilisateur a le droit de voir sont
+retournés.
+
+Si vous voulez affiner les critères de recherche vous pouvez le faire en
+utilisant la recherche stockée dans l'iterateur.
 
     [php]
     $dl=new DocumentList();
@@ -26,10 +31,10 @@ recherche stockée dans l'iterateur.
     $dl->getSearchDocument()->addFilter("title ~ 'Doe'");
     $dl->getSearchDocument()->noViewControl();
 
-Cela ne retournera que les documents dont le titre contient Doe parmi les trois
-documents donnés sans tenir compte des droits de visibilités. Il est possible
-aussi d'utiliser la fonction de callback pour l'appliquer à l'ensemble de la
-liste (voir `DocumentList::listMap()`).
+Cela ne retournera que les documents dont le titre contient *Doe* parmi les
+trois documents donnés sans tenir compte des droits de visibilités. Il est aussi
+possible d'utiliser la fonction de callback pour l'appliquer à l'ensemble
+de la liste (voir `DocumentList::listMap()`).
 
 
 <!-- link -->

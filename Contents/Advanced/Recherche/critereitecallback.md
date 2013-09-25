@@ -1,4 +1,3 @@
-
 # Callback et itérateur {#core-ref:c7cc0501-bec4-4948-af31-0ed217ff84ae}
 
 ## Callback sur un itérateur {#core-ref:8d29c759-c339-437f-8391-7acdaa26a9a3}
@@ -14,15 +13,14 @@ documents provenant d'un iterateur.
     $dl=$s->getDocumentList();
     $test=1;
     $callback=function (&$doc) use ($test) {
-              if ($test) { // test for fun
-                $doc->lock();  // here lock document
-              }
+        if ($test) { // test for fun
+            $doc->lock();  // lock document
+        }
     };
     $dl->listMap($callback);
     foreach ($dl as $docid=>$doc) {
-      print "$docid)".$doc->getTitle()."(".$doc->getProperty("locked").")\n";
+        print "$docid)".$doc->getTitle()."(".$doc->getProperty("locked").")\n";
     }
-
 
 Dans cet exemple l'ensemble des documents sera verrouillé. La fonction de
 mapping est appelée sur chacun des documents lors de l'itération.. S'il n'y a
@@ -41,18 +39,17 @@ a pas de retour explicite.
     $s->search(); // déclenchement de la recherche
     $dl=$s->getDocumentList();
     
-    $callback=function (&$doc)  { 
-                if (! $doc->isLocked()) {
-                      $doc->lock();
-                      return true;
-                }
-                return false;
+    $callback=function (&$doc) {
+        if (! $doc->isLocked()) {
+            $doc->lock();
+            return true;
+        }
+        return false;
     };
     $dl->listMap($callback);
     foreach ($dl as $docid=>$doc) {
-      print "$docid)".$doc->getTitle()."(".$doc->getProperty("locked").")\n";
-     }
-
+        print "$docid)".$doc->getTitle()."(".$doc->getProperty("locked").")\n";
+    }
 
 Cet exemple ne verrouillera que les document non verrouillés et ne retournera
 que les documents venant d'être verrouillés.

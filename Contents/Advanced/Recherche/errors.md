@@ -1,9 +1,10 @@
 # Traitement des erreurs {#core-ref:0aa58477-0cb6-4da6-9e34-fae048d10bd6}
 
-Si la requête échoue suite à des erreurs de filtres une exception de type `\Dcp\Db\Exception` est retournée.
+Si la requête échoue suite à des erreurs SQL (souvent liées à un filtre mal
+formé), une exception de type `\Dcp\Db\Exception` est retournée.
 
 Les autres erreurs de configuration sont accessibles en utilisant la méthode
-::getError().
+`::getError()`.
 
     [php]
     try {

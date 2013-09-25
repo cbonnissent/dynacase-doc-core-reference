@@ -1,18 +1,24 @@
-# Recherche de document contenu dans un dossier {#core-ref:7f084be4-ceb8-464d-81e4-8902da361aff}
+# Recherche de document contenu dans une collection {#core-ref:7f084be4-ceb8-464d-81e4-8902da361aff}
 
-La classe SearchDoc permet de faire des recherches dans un dossier ou une
-recherche spécifique au moyen de la méthode `DocSearch::useCollection()`. Cette
-recherche n'est pas récursive par défaut, c'est à dire qu'elle ne recherchera
-que dans le dossier indiqué. il est possible de faire des recherches récursives
-à l'aide de la méthode DocSearch::setRecursiveSearch(). Le niveau de profondeur
-de la recherche est ensuite défini au moyen de la propriété
-DocSearch::folderRecursiveLevel, positionné à 2 par défaut.
+La classe `SearchDoc` permet de faire des recherches dans une collection
+spécifique (dossier ou recherche) au moyen de la méthode
+`DocSearch::useCollection()`.
+
+Cette recherche n'est pas récursive par défaut, c'est à dire qu'elle ne
+recherchera que dans la collection indiquée.
+
+Lorsque la collection est un dossier, il est possible de faire des recherches
+récursives à l'aide de la méthode `DocSearch::setRecursiveSearch()`. Le niveau
+de profondeur de la recherche est ensuite défini au moyen de la propriété
+`DocSearch::folderRecursiveLevel`, positionné à 2 par défaut.
 
 **Note** : On notera que c'est le niveau de récursivité. par exemple,
 `folderRecursiveLevel=0` veut dire que l'on recherche dans le dossier, alors que
-`folderRecursiveLevel=1` indique de rechercher dans le dossier et ses sous-
-dossiers.
+`folderRecursiveLevel=1` indique de rechercher dans le dossier et ses
+sous-dossiers.
 
+Lorsque la collection est une recherche, il n'est pas possible de faire la
+recherche récursivement.
 
     [php]
     $dirid=2345; // identifiant d'un document recherche
@@ -21,7 +27,7 @@ dossiers.
     $s->useCollection($dirid);
     $s->search();
     if ($s->searchError()) {
-         $action->exitError(sprintf("search error : %s",$s->getError()));
+        $action->exitError(sprintf("search error : %s",$s->getError()));
     }
 
 
