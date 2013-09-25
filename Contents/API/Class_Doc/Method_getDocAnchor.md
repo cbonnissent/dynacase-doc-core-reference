@@ -7,7 +7,13 @@ Générer un fragment HTML contenant une ancre HTML vers un document.
 ## Description {#core-ref:8ca28abd-366b-47b8-bf17-9d9e2e952080}
 
     [php]
-    string getDocAnchor ( int $id, [ string $target = "_self" [, bool $htmllink = true [, bool|string $title = false [, bool $js = true [, string $docrev = "latest" [, bool $viewIcon = false ]]]]]] )
+    string getDocAnchor (         int $id,
+                               string $target = "_self" ,
+                                 bool $htmllink = true ,
+                          bool|string $title = false ,
+                                 bool $js = true ,
+                               string $docrev = "latest" ,
+                                 bool $viewIcon = false  )
 
 Permet de générer un fragment HTML, qui pourra être inséré dans un document
 HTML, et qui contiendra une ancre HTML (`<a href="…">…</a>`) vers un document
@@ -15,7 +21,7 @@ Dynacase.
 
 ### Avertissements {#core-ref:124fbf30-ae8c-4dd7-9023-76b80d7804bb}
 
-N/A
+Aucun.
 
 ## Liste des paramètres {#core-ref:de6252d4-d376-4c35-a85d-f2ff835aa224}
 
@@ -24,7 +30,7 @@ N/A
     HTML.
 
 (string) `target`
-:   Le nom du format du lien HTML. Les valeurs supportés sont :
+:   Le nom du format du lien HTML. Les valeurs supportées sont :
     
     *   **`_self` (par défaut)**,
     
@@ -39,7 +45,7 @@ N/A
         
     *   `ext` (pour un fragment HTML inséré dans une interface ExtJS),
     
-    toute autre valeur sera prise en compte comme la propriété `target` de
+    toute autre valeur sera prise en compte comme l'attribut `target` de
     l'ancre HTML générée.
 
 (bool) `htmllink`
@@ -57,7 +63,7 @@ N/A
 (string) `docrev`
 :   Indique sur quelle révision du document pointera l'ancre HTML.
     
-    Les valeurs possibles  sont :
+    Les valeurs possibles sont :
     
     *   `latest`,
     *   `fixed`,
@@ -69,6 +75,10 @@ N/A
 (bool) `viewIcon`
 :   Si `true` l'icône de la famille du document sera présentée
     dans l'ancre HTML.
+    Dans ce cas l'ancre html aura la classe "relation" avec une image de fond :  
+    `<a class="relation" style="background-image:url("myicon.png")>myTitle</a>`
+    Sinon l'ancre html retournée est sans classe ni style particuliers.
+
 
 ## Valeur de retour {#core-ref:c812a822-8874-49a4-8905-5cc88d2f6eda}
 
@@ -77,28 +87,30 @@ vers le document.
 
 ## Erreurs / Exceptions {#core-ref:d21f852c-d233-408f-aaeb-ff3cca310d4b}
 
-N/A
+Aucun.
 
 ## Historique {#core-ref:3a513f2a-6956-4199-b716-7919790b3d47}
 
-N/A
+Aucun.
 
 ## Exemples {#core-ref:6167c555-8387-460e-bed6-121a67c2bdd8}
 
     [php]
     /* Générer une ancre HTML sans JS mais avec l'icône de la famille du document */
     $htmlAnchor = $this->getDocAnchor($docId, "_self", true, false, false, "latest", true);
-    
+    /* Retourne :
+    <a  documentId="7202" class="relation" style="background-image:url(resizeimg.php?img=Images/myicon.png&size=14)" target="_self" href="?&amp;app=FDL&amp;action=OPENDOC&amp;mode=view&amp;id=7202&amp;latest=Y">Mon Document</a>
+    */
     /* Insérer le fragment HTML dans le layout */
     $this->lay->set('LINK_TO_DOCUMENT', $htmlAnchor);
 
 ## Notes {#core-ref:a3c9ae9e-3ed8-4611-9b39-7f742e381d9a}
 
-N/A
+Aucun.
 
 ## Voir aussi {#core-ref:58c61a64-7a4e-4283-9cc1-237fa2b3911d}
 
-N/A
+Aucun.
 
 <!-- links -->
 [docrev]: #core-ref:9bcfd205-fb07-4a71-be06-ba07d4a9cc7c

@@ -1,61 +1,53 @@
-# Doc::preCreated() {#core-ref:e85aa9d4-5e62-4a60-9d1c-f60433301747}
+# Doc::preStore() {#core-ref:3517da95-82fe-4adb-8bc4-ef49ca55edb0}
 
 <div class="short-description" markdown="1">
-
 Hameçon utilisé par la méthode [`Doc::Store()`][docstore]. Elle est appelée
 avant l'enregistrement en base de données. Cette méthode doit vérifier si les
-conditions de création de document sont valides.
-
-Cette méthode est utilisable aussi pour pré-remplir des attributs avant
-l'enregistrement.
-
-Cette méthode est aussi appelée lors de la révision d'un document.
+conditions de modification de document sont valides.
 
 </div>
 
-
-## Description {#core-ref:4707d4b4-3cad-4d76-8d1d-d9fa75f2fe30}
+## Description {#core-ref:6a386ab6-e2c9-419e-a8c7-7875df6c2db8}
 
     [php]
-    string preCreated ()
+    string preStore ()
 
-Si cette méthode retourne un message d'erreur alors la création est abandonnée
-et la méthode [`Doc::store()`][docstore] retournera le message fourni par cette
-méthode afin d'indiquer l'échec.
+Si cette méthode retourne un message d'erreur alors la modification sera
+abandonnée et la méthode [`Doc::Store()`][docstore] retournera le message fourni
+par cette méthode afin d'indiquer l'échec.
 
-### Avertissements {#core-ref:014358b2-bf94-4af3-af27-c5de57751a46}
 
-Le document n'a pas encore d'identificateur lors de la création initiale. S'il
-s'agit d'une révision, le document possède déjà un identificateur mais celui-ci
-sera modifié. L'identificateur initial (`initid`) reste inchangé en cas de
-révision.
+### Avertissements {#core-ref:c3c55aac-e6fb-49f1-b62c-16e57ab8d984}
 
-## Liste des paramètres {#core-ref:347f3a0c-8520-488c-a42f-10c682a2ea32}
+Le document n'a pas encore d'identificateur lors d'une création.
+Cette méthode n'est pas appelée lors d'une révision.
+
+## Liste des paramètres {#core-ref:63a1e5c8-731a-40b9-b1b3-54dec73995ea}
 
 Aucun paramètre.
 
-## Valeur de retour {#core-ref:87b533dd-c54b-4235-8608-8d6c6acfc87a}
+## Valeur de retour {#core-ref:b6b77dad-14f4-47da-994f-ec8719f01563}
 
 Message d'erreur. Si la méthode retourne une chaîne de caractères non vide, elle
 sera considérée comme un message d'erreur et la création de document sera
 abandonnée.
 
-Ce message est aussi stocké dans le paramètre de sortie `$info->error` de la
-méthode [`Doc::store()`][docstore].
+Ce message est aussi stocké dans le paramètre de sortie `$info->preStore` de la
+méthode [`Doc::Store()`][docstore].
 
-## Erreurs / Exceptions {#core-ref:a60d52b1-2de0-4b17-9c30-b149fb8e0af6}
+## Erreurs / Exceptions {#core-ref:3689ef07-59b4-4b63-9763-48d7f6d2565b}
 
 Aucune.
 
-## Historique {#core-ref:19ffa317-5af2-4eed-9c87-d209403a9d8f}
+## Historique {#core-ref:1988b945-7432-48f3-8b55-10eb16d9be00}
 
 Aucun.
 
-## Exemples {#core-ref:3a95452a-c163-4c2b-8dc1-01794dc778cf}
+## Exemples {#core-ref:2628e1ce-7af9-41dc-acae-0e009091357d}
 
-Dans la famille _MyFamily_, la création d'un document ne devra être possible que
-si la somme des attributs MY_NUMBERONE et MY_NUMBERTWO est inférieur au
-paramètre MY_MAX de la famille.
+Dans la famille _MyFamily_, la modification d'un document ne devra être
+possible que si la somme des attributs MY_NUMBERONE et MY_NUMBERTWO est
+inférieure au paramètre MY_MAX de la famille.
 
 Soit la famille suivante :
 
@@ -75,38 +67,38 @@ Soit la famille suivante :
     namespace My;
     use \Dcp\AttributeIdentifiers\MyFamily as MyAttributes;
     
-    class MyFamily extends \
-    Dcp\Family\Document
+    class MyFamily extends \Dcp\Family\Document
     {
-        public function preCreated()
+        public function preStore()
         {
-            $err = parent::preCreated();
+            $err = '';
             $n1 = $this->getAttributeValue(MyAttributes::my_numberone);
             $n2 = $this->getAttributeValue(MyAttributes::my_numbertwo);
             $max = $this->getFamilyParameterValue(MyAttributes::my_max);
             if (($n1 + $n2) > $max) {
-                $err .= ($err ? "\n" : "") . sprintf("Max %d is reached", $max);
+                $err = sprintf("Max %d is reached", $max);
             }
             return $err;
         }
     }
 
-## Notes {#core-ref:3548a3b2-cd44-412e-9ca5-ace8470fc3d1}
+## Notes {#core-ref:1815fc08-a3a7-4a80-8c37-9a0487bcf2ba}
 
 En cas de famille héritée, il est nécessaire d'appeler l'hameçon du parent pour
 disposer des mêmes fonctionnalités.
 
-Cette méthode est appelée par [`Doc::store()`][docstore] qu'en cas de création
-ou de révision tandis que l'hameçon [`Doc::preStore()`][docprestore] est appelé
-systématiquement par la méthode [`Doc::store()`][docstore].
+Cette méthode est appelée par [`Doc::store`][docstore] en cas de création, de
+révision et de modification tandis que l'hameçon
+[`Doc::preCreated()`][docprecreated] est appelé qu'en cas de création ou de
+révision.
 
-## Voir aussi {#core-ref:e9e47c9a-ab49-4a64-bec8-0db3540456f0}
+## Voir aussi {#core-ref:4d2d6173-d571-4f45-89e5-aa2f9dea64d9}
 
 *   [Doc::store][docstore]
+*   [Doc::preCreated][docprecreated]
 *   [Doc::postCreated][docpostcreated]
+*   [Doc::preCreated][docprecreated]
 *   [Doc::preStore][docprestore]
-*   [Doc::postStore][docpoststore]
-*   [Doc::revise][docrevise]
 
 <!-- links -->
 [docstore]:         #core-ref:b8540d13-ece6-4e9e-9b72-6a56bca9da12
@@ -117,4 +109,3 @@ systématiquement par la méthode [`Doc::store()`][docstore].
 [docprerefresh]:    #core-ref:580d6be1-6b6a-439b-abd7-34b26cfaf2e5 "Hameçon Doc::preRefresh()"
 [docpostrefresh]:   #core-ref:9352c534-3691-41e3-b293-599db8e9a4fd "Hameçon Doc::postRefresh()"
 [docrevise]:        #core-ref:882e3730-0483-4dbc-9b9d-0d0b5cc31d38
-
