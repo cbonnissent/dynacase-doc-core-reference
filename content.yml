@@ -1468,28 +1468,65 @@ book:
         wip_sub: ""
     - level:   2
       content:  "Advanced/Recherche/introduction.md"
+      subtoc:   2
       flags:
-        wip: "work in progress"
+        draft: "draft"
     - level:   3
       content:  "Advanced/Recherche/searchdoc.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        draft: "draft"
+    - level:   4
+      content:  "Advanced/Recherche/critereattribut.md"
+      flags:
+        draft: "draft"
+    - level:   4
+      content:  "Advanced/Recherche/critereid.md"
+      flags:
+        draft: "draft"
+    - level:   4
+      content:  "Advanced/Recherche/criteredossier.md"
+      flags:
+        draft: "draft"
+    - level:   4
+      content:  "Advanced/Recherche/critereacl.md"
+      flags:
+        draft: "draft"
+    - level:   4
+      content:  "Advanced/Recherche/critererevision.md"
+      flags:
+        draft: "draft"
+    - level:   4
+      content:  "Advanced/Recherche/docrel.md"
+      flags:
+        draft: "draft"
+    - level:   4
+      content:  "Advanced/Recherche/critereitecallback.md"
+      flags:
+        draft: "draft"
+    - level:   4
+      content:  "Advanced/Recherche/count.md"
+      flags:
+        draft: "draft"
+    - level:   4
+      content:  "Advanced/Recherche/errors.md"
+      flags:
+        draft: "draft"
+    - level:   4
+      content:  "Advanced/Recherche/generalsearch.md"
+      flags:
+        draft: "draft"
     - level:   3
       content:  "Advanced/Recherche/dsearch.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        draft: "draft"
     - level:   3
       content:  "Advanced/Recherche/rapport.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        draft: "draft"
     - level:   3
       content:  "Advanced/Recherche/ssearch.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        draft: "draft"
     - level:   2
       content:  "Advanced/Authent/introduction.md"
       subtoc:   1
@@ -1512,6 +1549,7 @@ book:
         wip_sub: ""
     - level:   2
       content:  "Advanced/Template/introduction.md"
+      subtoc:   1
       flags:
         wip: "work in progress"
     - level:   3
@@ -1524,6 +1562,10 @@ book:
       flags:
         wip: "work in progress"
         wip_sub: ""
+    - level:   3
+      content:  "Advanced/Template/formatcollection.md"
+      flags:
+        draft: "draft"
     - level:   2
       content:  "Advanced/familles/introduction.md"
       flags:
