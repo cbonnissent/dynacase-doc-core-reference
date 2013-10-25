@@ -1,8 +1,31 @@
-# Internationalisation {#core-ref:8f3ad20a-4630-4e86-937b-da3fa26ba423}
+# Publier et mettre à jour les catalogues {#core-ref:7f5e9754-6db2-4dcb-ac99-e640f8a93c38}
 
-Ce chapitre indique comment utiliser des textes localisés dans vos applications
-et dans toutes les interfaces homme-machine.
+Les catalogues sources (`.po`) doivent être publiés sur le serveur dans le
+répertoire :
 
+    locale/<lang>/LC_MESSAGES/SRC/
+
+Les catalogues binaires (`.mo`) doivent être publiés sur le serveur dans le
+répertoire :
+
+    locale/<lang>/LC_MESSAGES/
+
+Note : les catalogues binaires peuvent être obtenus par le programme `msgfmt` et
+inversement les catalogues sources peuvent être obtenu par le programme
+`msgunfmt`.
+
+Le répertoire `<lang>` est l'identifiant de la locale sur deux lettres : 
+
+-   `fr` : français
+-   `en` : anglais
+
+Pour prendre en compte les nouvelles traductions, il faut lancer le programme :
+
+    $ ./whattext
+
+sur le serveur depuis le répertoire d'installation. Ce programme va fusionner
+l'ensemble des catalogues dans un catalogue principal. Ce catalogue sera chargé
+lors de l'exécution des actions et scripts Dynacase.
 
 
 

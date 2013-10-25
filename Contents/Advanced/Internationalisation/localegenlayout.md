@@ -1,9 +1,4 @@
-# Internationalisation {#core-ref:8f3ad20a-4630-4e86-937b-da3fa26ba423}
-
-Ce chapitre indique comment utiliser des textes localisés dans vos applications
-et dans toutes les interfaces homme-machine.
-
-
+# Générer les catalogues pour les layout
 
 
 <!-- link -->

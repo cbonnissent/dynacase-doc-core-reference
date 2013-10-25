@@ -1,9 +1,13 @@
-# Internationalisation {#core-ref:8f3ad20a-4630-4e86-937b-da3fa26ba423}
+# Traduire les textes {#core-ref:e4864125-5654-4e0e-8202-a6ed3ceb925c}
 
-Ce chapitre indique comment utiliser des textes localisés dans vos applications
-et dans toutes les interfaces homme-machine.
+Pour traduire les textes il faut compléter les catalogues. Chacun des catalogues
+doit être produit pour une langue donnée. 
 
+Les [outils de gettext][gettextutil] standards tel que `msginit` et `msgmerge`
+permettent de créer et mettre à jour les catalogues.
 
+Une fois les catalogues initialisé, de nombreux outils comme [poedit][poedit]
+permettent de modifier les traductions des catalogues.
 
 
 <!-- link -->
@@ -18,3 +22,4 @@ et dans toutes les interfaces homme-machine.
 [xgettext]:         http://www.gnu.org/software/gettext/manual/html_node/xgettext-Invocation.htm "xgettext reference"
 [famdecl]:          #core-ref:cfc7f53b-7982-431e-a04b-7b54eddf4a75
 [gettextutil]:      http://www.gnu.org/software/gettext/manual/html_node/index.html#Top
+[poedit]:           http://www.poedit.net/ "Site de poEdit"

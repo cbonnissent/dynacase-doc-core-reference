@@ -1,9 +1,20 @@
-# Internationalisation {#core-ref:8f3ad20a-4630-4e86-937b-da3fa26ba423}
+# Générer et mettre à jour les entrées du catalogue {#core-ref:2c163f00-8e94-4736-86f2-bb51352c52aa}
 
-Ce chapitre indique comment utiliser des textes localisés dans vos applications
-et dans toutes les interfaces homme-machine.
+## Générer les catalogues pour les fichiers PHP
 
+La génération des catalogues est effectuée par le programme [xgettext][xgettext].
 
+    xgettext 
+          --language=PHP
+          --keyword=___:1
+          --keyword=___:1,2c
+          --keyword=n___:1,2
+          --keyword=n___:1,2,4c
+          --keyword='N_' 
+          --keyword='text' 
+          --keyword='Text'
+          --from-code=utf-8 
+          --output=myCatalog.po  myFile1.php myFile2.php ...
 
 
 <!-- link -->

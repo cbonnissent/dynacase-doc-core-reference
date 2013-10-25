@@ -1,9 +1,25 @@
-# Internationalisation {#core-ref:8f3ad20a-4630-4e86-937b-da3fa26ba423}
+# Utiliser une traduction dans un template {#core-ref:18dc3bda-3d6a-4590-9d9e-4a867a58ca7d}
 
-Ce chapitre indique comment utiliser des textes localisés dans vos applications
-et dans toutes les interfaces homme-machine.
+Dans les [templates][layout], des textes simples (sans variable) peuvent faire
+l'objet de traduction.
 
+    [html]
+    <h1>[TEXT:Welcome to my page]</h1>
+    <p><label for="myInput">[TEXT:My Label]</label><input id="myInput"/></p>
 
+Les textes indiqués par la syntaxe `[TEXT:<clef de traduction>]` sont remplacés
+par la traduction issue du même catalogue que les textes traduits en PHP. Si la
+traduction n'est pas trouvée dans le catalogue, le texte initial est affiché
+(sans le '[TEXT:]').
+
+Comme pour les traductions en PHP, il est possible d'utiliser une clef de
+contexte pour démarquer sa traduction.
+
+    [html]
+    <h1>[TEXT(my Context):Welcome to my page]</h1>
+    <p><label for="myInput">[TEXT(my Context):My Label]</label><input id="myInput"/></p>
+
+Le contexte doit être écrit entre parenthèses juste après la clef `TEXT`.
 
 
 <!-- link -->
