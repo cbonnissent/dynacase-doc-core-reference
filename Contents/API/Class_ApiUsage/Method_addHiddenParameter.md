@@ -9,7 +9,7 @@ Ajoute un paramètre sans que celui-ci ne soit visible dans le texte d'usage.
     [php]
     string addHiddenParameter ( string $argNAme, string $argDefinition = "" )
 
-La présence du paramètre est vérifiée, et sa valeur retournée.
+La présence du paramètre est vérifiée et sa valeur retournée.
 
 Un paramètre `hidden` n'est pas requis, et il est traité comme un paramètre
 optionnel ([`ApiUsage::addOptionalParameter`][apiusage_addoptionalparameter]).

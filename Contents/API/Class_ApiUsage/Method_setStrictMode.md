@@ -10,7 +10,8 @@ Active, ou désactive, le mode de validation strict des paramètres.
     void setStrictMode ( bool $strict = true )
 
 Lorsque le mode de validation strict est activé, la présence d'arguments
-inconnus met en échec la validation des paramètres.
+non enregistrés auprès de l'instance d'ApiUsage en cours met en échec la 
+validation des paramètres.
 
 Par défaut, le mode de validation strict est actif.
 
@@ -67,7 +68,9 @@ Aucune erreur n'est remonté concernant le paramètre `foo` inconnu.
 
 ## Notes {#core-ref:a0db0f86-0482-43db-b42a-193aac8b23e2}
 
-Aucune.
+Si l'action a pour vocation d'être appelée par une autre action, il est 
+préférable de passer le mode strict à `false` pour ne pas déclencher d'erreur
+si l'action appelante n'a pas la même liste de paramètres.
 
 ## Voir aussi {#core-ref:44e0585e-e6ea-40a5-9226-639848fd84d7}
 

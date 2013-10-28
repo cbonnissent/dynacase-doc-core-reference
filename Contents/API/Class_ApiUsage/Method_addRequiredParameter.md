@@ -11,7 +11,7 @@ Ajoute un paramètre obligatoire.
                                   string $argDefinition = "",
                        string[]|callable $restriction = null )
 
-La présence du paramètre est vérifiée, et sa valeur retournée.
+La présence du paramètre est vérifiée et sa valeur retournée.
 
 ### Avertissements {#core-ref:d64c4af7-74d5-46d4-a109-9aa4e8677e27}
 
