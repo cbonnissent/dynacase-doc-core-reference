@@ -32,7 +32,7 @@ un *masque*
 
 un numéro d'*ordre*
 :   entier strictement positif (**Attention** : une vue avec l'ordre 0 n'est pas
-    prise en compte, il permet d'indiquer un ordre de préférence pour les vues.
+    prise en compte, il permet d'indiquer un ordre de préférence pour les vues.)
 
 un caractère *affichable*
 :   indique si la vue doit être présentée à l'utilisateur sous forme de menu

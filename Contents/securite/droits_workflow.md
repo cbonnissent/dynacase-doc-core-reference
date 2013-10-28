@@ -49,7 +49,7 @@ ajoutés au profil de ce cycle.
 Les cycles de vie ont la possibilité d'avoir un [profil dynamique][dynprof]
 en indiquant la famille dans l'attribut "dynamique\famille" (`dpdoc_famid`).
 Dans ce cas, ce sont les valeurs des attributs du document associé qui seront
-utilisés pour vérifier les droits d'accès aux transitions.
+utilisées pour vérifier les droits d'accès aux transitions.
 
 Avec le profil suivant :
 
@@ -73,7 +73,6 @@ transitions sont utilisés pour référencer les droits spécifiques.
 | ---------- | --------------------- | --- | ------ | ------------------------------- | --------------------------------- |
 | __PROFIL__ | MY_WORKFLOW           |     | RESET  | my_firstTransition=MY_FIRSTROLE | my_secondTransition=MY_SECONDROLE |
 
-
 ## Profil d'étape {#core-ref:226eb791-83f5-4f6a-9ea1-bddc74cf9e73}
 
 Pour chacune des étapes du cycle de vie, un profil peut être défini. Ce profil
@@ -82,9 +81,6 @@ Ce profil lié doit être compatible avec le document associé.
 
 Si aucun profil n'est attaché à une étape, le document conserve son profil
 actuel lorsqu'il passe dans cette étape.
-
-
-
 
 <!-- links -->
 [workflow]:         #core-ref:55a53d99-0c24-48d8-8cb9-1caa171f2e9a

@@ -4,13 +4,13 @@ La colonne _Mis par défaut_ indique que ce droit est posé sur le groupe
 `GDEFAULT` (Groupe "Utilisateurs") qui est le groupe par défaut des
 utilisateurs.
 
-| Application | Droit          | Mis pas défaut | Description                                                                                                               |
+| Application | Droit          | Mis par défaut | Description                                                                                                               |
 | ----------- | -------------- | :------------: | ------------------------------------------------------------------------------------------------------------------------- |
 | FDL         | EDIT           | Oui            | Autorise le verrouillage et le déverrouillage de document. Accès aux menus spécifiques liés au méthodes du document       |
 | FDL         | NORMAL         | Oui            | Autorise les accès aux interfaces standards de consultation de document                                                   |
 |             |                |                |                                                                                                                           |
 | FDL         | SYSTEM         | Non            | Autorise la modification des paramètres pour les documents famille. Doit être utilisé en corrélation avec FREEDOM_MASTER. |
-| FDL         | FAMILOui       | Non            | Autorise le paramétrage spécifique de famille.                                                                            |
+| FDL         | FAMILY       | Non            | Autorise le paramétrage spécifique de famille.                                                                            |
 | FDL         | EXPORT         | Non            | Autorise l'exportation de dossiers ou de recherches. Doit être utilisé en corrélation avec FREEDOM_MASTER.                |
 |             |                |                |                                                                                                                           |
 | GENERIC     | GENERIC_READ   | Oui            | Autorise les accès aux interfaces standards de liste de documents                                                         |
