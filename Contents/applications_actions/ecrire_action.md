@@ -133,15 +133,16 @@ comme paramètre une référence à l'objet [Action][class_action].
     // …
     }
 
-#### Récupération de valeurs {#core-ref:a52dc8a3-8221-4496-8318-c565e9e657f4}
-Pour récupérer 
+#### Récupération de valeurs d'environnement {#core-ref:a52dc8a3-8221-4496-8318-c565e9e657f4}
+
+Pour récupérer :
 
 *   la valeur d'un [paramètre applicatif][parametre_applicatif] :
     
         [php]
         $parameterValue = $action->getParam("nom_du_paramètre");
 
-*   le service d'accès à la base de donnée :
+*   le service d'accès à la base de données :
     
         [php]
         $dbaccess = $action->dbaccess;
@@ -155,7 +156,19 @@ Pour récupérer
     [Application][classapplication] :
     
         [php]
-        $application = $action->parent // Objet de type `Application`
+        $application = $action->parent; // Objet de type `Application`
+        
+
+*   les valeurs passées dans l'URL :
+    
+    Une action peut être lancée par l'activation d'un lien hypertexte 
+    ou la soumission d'un formulaire. L'URL appelée peut contenir des 
+    paramètres, dont les valeurs sont récupérées par l'intermédiaire 
+    de la méthode `Action::getArgument`. Toutefois, il faut préférer l'utilisation
+    de la classe ActionUsage pour la récupération des paramètres.
+    
+        [php]
+        $val = $action->getArgument("url_val", "val_par_defaut");
 
 
 #### Vérifier les arguments et donner l'usage {#core-ref:b9756f83-8a67-42fa-ad4d-0641ae3c886d}
