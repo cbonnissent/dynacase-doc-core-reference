@@ -188,7 +188,7 @@ application héritée sont totalement dissociés. Seuls les noms et description
 des droits sont réutilisés.
 
 De nouveaux droits peuvent être indiqués dans le tableau `$app_acl`. Lors de
-l'installation ou de la mise à jour ces nouveaux droits sont ajoutée aux
+l'installation ou de la mise à jour, ces nouveaux droits sont ajoutés aux
 droits hérités. Il n'est pas possible d'enlever des descriptions de droits
 fournies par l'application parente.
 

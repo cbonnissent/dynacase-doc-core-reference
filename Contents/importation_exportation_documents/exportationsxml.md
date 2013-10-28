@@ -6,9 +6,9 @@ document a son propre schéma XML. L'exportation _Xml_ d'un contenu de dossier o
 de recherche peut se faire de deux façons : en générant un fichier par document
 ou dans un seul fichier xml.
 
-Si vous voulez utiliser le fichier _Xml_ pour un exportation vers un autre
-contexte dynacase, il faut absolument indiquer l'option "sans les identificateurs"
-, sinon les documents importés seront incohérents et pourront corrompre le contexte.
+Si vous voulez utiliser le fichier _Xml_ pour une exportation vers un autre
+contexte, il faut absolument indiquer l'option "sans les identificateurs"
+, sinon les documents importés sont incohérents et peuvent corrompre le contexte.
 
 Les fichiers produits par l'exportation _Xml_ sont conformes au format
 d'[importation XML][importXML].

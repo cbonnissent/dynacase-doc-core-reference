@@ -209,8 +209,9 @@ Le template de l'action peut faire référence à ou plusieurs [zones][zone].
 Le reste de la page entre les deux balises doit être du code HTML valide ou
 utiliser le [système de template de Dynacase][view_representation].
 
-**Note** : Bien que la plupart des templates soient fait pour produire des pages
-HTML, le template peut aussi produire tout type de données textuelles (HTML,JS,CSS).
+**Note** : Bien que la plupart des templates produisent des pages
+HTML, le template peut aussi produire tout type de données textuelles 
+(HTML, JS, CSS, JSON, XML, CSV, etc.).
 Une action peut aussi retourner des fichiers binaires mais dans ce cas ce n'est 
 pas l'objet `lay` qui sera utilisé pour le retour.
 
@@ -240,4 +241,4 @@ Les actions peuvent aussi être exécutées en mode console avec [_wsh_][actionw
 [actionwsh]: #core-ref:63832d9f-61a8-4846-a9d5-c34ee58de4a6
 [parametre_applicatif]: #core-ref:c3d9cb18-16d0-435a-b8c2-5fa6ac06c522
 [view_representation]: #core-ref:9073f5b0-3cde-4690-a7a2-ffb5c4c7b94f
-[zone]: #FIXME
+[zone]: #core-ref:fed06a0c-3fd6-11e3-9658-88d5dc830245
