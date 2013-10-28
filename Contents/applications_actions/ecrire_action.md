@@ -6,7 +6,7 @@ Une action est le déroulement d'une fonction PHP.
 
 ### Introduction {#core-ref:cdb5f957-d0e5-428f-b954-15f8782d4ce5}
 
-Toutes les actions sont être définies au sein d'une [application][application].
+Toutes les actions sont définies au sein d'une [application][application].
 La description de l'action se fait dans le fichier [`MYAPP.app`][my_app.app]
 dans la variable `$action_desc`.
 
