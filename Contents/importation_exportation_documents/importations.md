@@ -21,7 +21,7 @@ Ce fichier d'importation est *auto-descriptif* ; c'est à dire qu'il
 ### Ordre des attributs {#core-ref:e41116ee-a682-4033-a7ab-22dc1b99e56a}
 
 Avant de décrire les valeurs des attributs d'un document il est nécessaire
-d'indiquer à quels attributs correspond chaque valeur.
+d'indiquer à quel attribut correspond chaque valeur.
 
 Pour définir l'ordre des attributs, il faut utiliser une ligne `ORDER`.  
 Chaque ligne `ORDER` est propre à une famille (et ne concerne donc pas les
@@ -30,18 +30,18 @@ familles qui en héritent).
 Cette ligne doit être présente avant les lignes décrivant les documents de la
 famille concernée.
 
-Les 4 premières colonnes sont toujours les mêmes : 
+Les 4 premières colonnes contiennent : 
 
-1.  1ère colonne : toujours `ORDER`,
+1.  1ère colonne : `ORDER`,
 1.  2ème colonne : identifiant de la famille (nom logique)
 1.  3ème colonne : vide (utilisée pour l'alignement avec la [ligne `DOC`][doc]),
 1.  4ème colonne : vide (utilisée pour l'alignement avec la [ligne `DOC`][doc]).
 
-Les autres colonnes définiront l'ordre des attributs à utiliser dans les
-[lignes `DOC`][doc] de la même famille qui suivront.
+Les autres colonnes définissent l'ordre des attributs à utiliser dans les
+[lignes `DOC`][doc] de la même famille qui suivent.
 
-Si plusieurs lignes `ORDER` sont écrites à la suite, les documents sont importés
-avec le dernier ordre interprété.
+Si plusieurs lignes `ORDER` référençant la même familles sont écrites à la suite,
+les documents sont importés avec le dernier ordre interprété.
 
 Exemple :
 
@@ -222,9 +222,9 @@ comme paramètre passé à `preImport` et `postImport` :
 Lors d'une importation, Dynacase utilise une heuristique pour déterminer si un
 document existant doit être mis à jour ou s'il faut un créer un nouveau. Cette
 heuristique se base sur les *clés d'importation* de la famille : si un et un
-seul document de la même famille ou d'une sous-famille.
-égales à celles du document en cours d'importation, alors Dynacase fera une mise
-à jour. dans le cas contraire, Dynacase fera une création de document.
+seul document de la même famille ou d'une sous-famille a ses clés d'importations 
+égales à celles du document en cours d'importation, alors Dynacase fait une mise
+à jour dans le cas contraire, Dynacase fait une création de document.
 
 Les clés d'importation pour une famille sont déterminées au moyen d'une ligne
 `KEYS`.  
@@ -243,9 +243,9 @@ L'ordre des colonnes est :
 1. 5ème colonne : clef primaire,
 1. 6ème colonne : clef secondaire.
 
-Les colonnes 5 et 6 servent à définir les attributs qui seront utilisés comme
+Les colonnes 5 et 6 servent à définir les attributs ou propriétés qui sont utilisés comme
 clé.  On peut avoir un maximum de deux clés par ligne (dans ce cas, il faudra
-que les deux clés correspondent pour que le document soit reconnu)
+que les deux clés correspondent pour que le document soit reconnu).
 
 Exemple :
 
@@ -257,13 +257,13 @@ Exemple :
 | DOC       | ZOO_CLASSE     |     | -   | Reptilia         | Reptiles          | Rampe                |
 | DOC       | ZOO_CLASSE     |     | -   | Actinopterygii   |                   | Nage                 |
 
-Dans cette exemple, les documents seront reconnus par leur attribut
-'cl_latinname'. Donc pour le premier document, la clé sera
+Dans cette exemple, les documents sont reconnus par leur attribut
+'cl_latinname'. Donc pour le premier document, la clé est
 'Actinopterygii', et pour le deuxième 'Reptilia'. Dans cet exemple le document 
-_Actinopterygii_ sera d'abord créé avec le nom _Poissons_, puis il sera mis à jour 
+_Actinopterygii_ est d'abord créé avec le nom _Poissons_, puis il est mis à jour 
 avec la caractéristique _Nage_.
 
-Les lignes `KEYS` seront appliquées dans l'ordre dans
+Les lignes `KEYS` sont appliquées dans l'ordre dans
 lesquelles elles ont été écrites.
 
 ## Modifier l'icone d'un document {#core-ref:ac8ef5d6-fd4f-403e-bec1-486466f3f5f7}
@@ -289,6 +289,16 @@ L'ordre des colonnes est  :
 Le nom de l'image doit référencer un fichier présent dans le répertoire
 `./Images` à la racine du répertoire d'installation sur le serveur.
 
+## Précautions d'utilisation
+
+Lors de l'import de documents quelques précautions d'usage sont à prendre en compte :
+
+* Les attributs calculés peuvent devenir incohérent, ils sont en effet initialisés
+avec les valeurs lors de l'import. Ceci peut créer des incohérences.
+* Les documents de faisant référence à un `account` ne sont pas ré-importables tel
+que. Il faut suivre la procédure de ré-import tel que décrite dans ce 
+[chapitre][importation].
+
 <!-- links -->
 [CSV]: http://fr.wikipedia.org/wiki/Comma-separated_values "Comma-separated values sur wikipedia"
 [ODS]: http://fr.wikipedia.org/wiki/OpenDocument "Open Document sur wikipedia"
@@ -297,3 +307,4 @@ Le nom de l'image doit référencer un fichier présent dans le répertoire
 [doc]: #core-ref:3acb8fbe-6e5a-4933-95fa-2cea0eae2fc5
 [setValue]: #core-ref:febc397f-e629-4d47-955d-27cab8f4ed2f
 [keys]: #core-ref:7eefc8e7-16a6-4188-99d5-c2c9d817a1fe
+[importation]: #core-ref:a0cb9a84-6bde-476c-b55c-95c8f12abd3a

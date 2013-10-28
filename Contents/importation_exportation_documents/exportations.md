@@ -1,9 +1,7 @@
 # Exportation de documents {#core-ref:88fb91b5-51a3-4b33-ac2e-5f20eddd8210}
  
 L'accès à l'interface d'exportation se fait depuis le _centre d'administration_.
-avec l'application _Explorateur de documents_. <span class="fixme" data-
-assignedto="nobody">remplacer avec l'approche CLI lorsque
-http://dev.dynacase.org/issues/4057 sera résolu</span>
+avec l'application _Explorateur de documents_.
 
 ![ Exportation de documents ](ihmexportation.png)
 
@@ -57,9 +55,9 @@ Fichiers
 Identificateur
 :   Permet de sauvegarder les identificateurs systèmes numériques des documents.
     
-    *   `Avec les identificateurs` : Cela implique que votre fichier ne sera
-        ré-importable que dans la même base. Cela identifie de manière non
-        ambiguë chaque document dans l'objectif d'une restauration.
+    *   `Avec les identificateurs` : Cela implique que votre fichier n'est
+        ré-importable que dans la même base. En contrepartie, les documents
+        sont identifiés de manière non ambiguë dans l'objectif d'une restauration.
     *   `Sans les identificateurs` : permet de réimporter les documents dans
         n'importe quelle base. Cela implique que lors d'une réimportation dans
         la même base, la mise à jour des documents existants n'est pas garantie
@@ -74,8 +72,8 @@ Choisir les colonnes
     Chaque administrateur  peut définir et sauvegarder les attributs qu'il veut
     exporter pour chaque famille.
     
-    L'interface de choix  des colonnes est présentés lorsqu'une famille est
-    sélectionnée. Une fois le choix  sélectionné et sauvegardé alors seuls les
+    L'interface de choix des colonnes est présentée lorsqu'une famille est
+    sélectionnée. Une fois le choix sélectionné et sauvegardé alors seuls les
     attributs choisis seront exportés. Le  choix _"Ne pas tenir compte des
     préférences"_ permet d'exporter l'ensemble des attributs.
 

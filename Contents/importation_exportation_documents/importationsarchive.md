@@ -5,7 +5,7 @@ fichiers liés aux documents.
 
 ## Importation de fichiers brute {#core-ref:05c1349e-a032-40e3-9a32-e48a14a2cd97}
 
-Une archive brute permet d'importer un ensemble de fichiers. Ces fichiers seront
+Une archive brute permet d'importer un ensemble de fichiers. Ces fichiers sont
 inclus dans des familles qui ont au moins un attribut de type _[file][attrfile]_
 ou _[image][attrimage]_.
 

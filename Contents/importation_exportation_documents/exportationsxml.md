@@ -7,8 +7,8 @@ de recherche peut se faire de deux façons : en générant un fichier par docum
 ou dans un seul fichier xml.
 
 Si vous voulez utiliser le fichier _Xml_ pour un exportation vers un autre
-contexte dynacase, il faut indiquer l'option "sans les identificateurs", sinon
-les documents importés seront considérés comme des mises à jours.
+contexte dynacase, il faut absolument indiquer l'option "sans les identificateurs"
+, sinon les documents importés seront incohérents et pourront corrompre le contexte.
 
 Les fichiers produits par l'exportation _Xml_ sont conformes au format
 d'[importation XML][importXML].

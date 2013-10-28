@@ -22,7 +22,6 @@ Les fichiers XML à importer doivent être conforme au schéma de la famille.
 Il est recommandé de valider les fichiers XML produits à l'aide du schéma avant
 importation.
 
-
 ## Relation  {#core-ref:46f5af7a-46c8-43b8-a2df-a89ea89aea75}
 
 Pour déclarer une relation avec un autre document, l'attribut `name` permet
@@ -125,6 +124,9 @@ id
     
     **Attention** : cet identifiant est propre à une base, et ne peut
     qu'exceptionnellement être utilisé d'une base à l'autre.
+
+**Note** : Si l'`id` et le `name` sont présent simultanément alors l'`id` est utilisé 
+et pas le `name`.
 
 ## Clefs d'importation XML {#core-ref:6a56e8e3-0e85-408f-a175-428818b1e0c0}
 
