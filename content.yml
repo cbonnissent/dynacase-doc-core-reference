@@ -1191,147 +1191,81 @@ book:
 #
     - level:   1
       content:  "parameters_ref/introduction.md"
-      flags:
-        need-review: "need review"
       subtoc:   2
 
     - level: 2
       content: "parameters_ref/access.md"
-      flags:
-        need-review: "need review"
       subtoc:   1
     - level: 3
       content: "parameters_ref/core_urlindex.md"
-      flags:
-        need-review: "need review"
     - level: 3
       content: "parameters_ref/core_mailaction.md"
-      flags:
-        need-review: "need review"
     - level: 3
       content: "parameters_ref/core_start_app.md"
-      flags:
-        need-review: "need review"
 
     - level: 2
       content: "parameters_ref/system.md"
-      flags:
-        need-review: "need review"
       subtoc:   1
     - level: 3
       content: "parameters_ref/core_loglevel.md"
-      flags:
-        need-review: "need review"
     - level: 3
       content: "parameters_ref/memory_limit.md"
-      flags:
-        need-review: "need review"
     - level: 3
       content: "parameters_ref/core_sessionttl.md"
-      flags:
-        need-review: "need review"
     - level: 3
       content: "parameters_ref/authent_pwdmindigitlength.md"
-      flags:
-        need-review: "need review"
     - level: 3
       content: "parameters_ref/authent_pwdminlength.md"
-      flags:
-        need-review: "need review"
     - level: 3
       content: "parameters_ref/authent_pwdminloweralphalength.md"
-      flags:
-        need-review: "need review"
     - level: 3
       content: "parameters_ref/authent_pwdminupperalphalength.md"
-      flags:
-        need-review: "need review"
     - level: 3
       content: "parameters_ref/authent_accountexpiredelay.md"
-      flags:
-        need-review: "need review"
     - level: 3
       content: "parameters_ref/authent_failurecount.md"
-      flags:
-        need-review: "need review"
 
     - level: 2
       content: "parameters_ref/smtp.md"
-      flags:
-        need-review: "need review"
       subtoc:   1
     - level: 3
       content: "parameters_ref/smtp_from.md"
-      flags:
-        need-review: "need review"
     - level: 3
       content: "parameters_ref/smtp_host.md"
-      flags:
-        need-review: "need review"
     - level: 3
       content: "parameters_ref/smtp_login.md"
-      flags:
-        need-review: "need review"
     - level: 3
       content: "parameters_ref/smtp_passwd.md"
-      flags:
-        need-review: "need review"
     - level: 3
       content: "parameters_ref/smtp_port.md"
-      flags:
-        need-review: "need review"
 
     - level: 2
       content: "parameters_ref/te.md"
-      flags:
-        need-review: "need review"
       subtoc:   1
     - level: 3
       content: "parameters_ref/te_activate.md"
-      flags:
-        need-review: "need review"
     - level: 3
       content: "parameters_ref/te_fulltext.md"
-      flags:
-        need-review: "need review"
     - level: 3
       content: "parameters_ref/te_host.md"
-      flags:
-        need-review: "need review"
     - level: 3
       content: "parameters_ref/te_port.md"
-      flags:
-        need-review: "need review"
     - level: 3
       content: "parameters_ref/te_timeout.md"
-      flags:
-        need-review: "need review"
     - level: 3
       content: "parameters_ref/te_urlindex.md"
-      flags:
-        need-review: "need review"
 
     - level: 2
       content: "parameters_ref/client_interface.md"
-      flags:
-        need-review: "need review"
       subtoc:   1
     - level: 3
       content: "parameters_ref/core_client.md"
-      flags:
-        need-review: "need review"
     - level: 3
       content: "parameters_ref/core_realm.md"
-      flags:
-        need-review: "need review"
     - level: 3
       content: "parameters_ref/core_logoclient.md"
-      flags:
-        need-review: "need review"
     - level: 3
       content: "parameters_ref/dynacase_favico.md"
-      flags:
-        need-review: "need review"
 
 ##
 # wsh de ref

@@ -4,7 +4,7 @@
 
 Le paramètre `CORE_REALM` permet de spécifier le domaine d'authentification.
 
-Ce domaine est utilisé pour l'authentification HTTP Basic, et est affiché sur la
+Ce domaine est utilisé pour l'authentification HTTP Basic et est affiché sur la
 page de connexion par défaut.
 
 *   App : `CORE`

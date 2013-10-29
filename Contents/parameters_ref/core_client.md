@@ -3,11 +3,11 @@
 ## Description {#core-ref:f3ace128-ea77-4499-bfcc-63d7a6efcceb}
 
 Le paramètre `CORE_CLIENT` permet de spécifier le titre affiché sur la page de
-connexion par défaut, et sur certaines interfaces d'accueil.
+connexion par défaut et sur certaines interfaces d'accueil.
 
 *   App : `CORE`
 *   Portée : Global
-*   Valeur initiale : `&lt;N O M&nbsp;&nbsp;&nbsp;&nbsp;D U&nbsp;&nbsp;&nbsp;&nbsp;C L I E N T&gt;`
+*   Valeur initiale : `<NOM DU CLIENT>`
 *   Utilisateur : Non
 
 ## Valeur {#core-ref:db9341ac-418d-474b-ae6e-d8d41cfadc4b}
@@ -17,6 +17,7 @@ contenant pas le caractère `"` (double-quote).
 
 ## Notes {#core-ref:bb3f08be-6e5c-470a-abb0-3d4ade014893}
 
-Aucune.
+La valeur par défaut est remplacée lors de l'installation par la valeur demandée
+par l'installeur.
 
 <!-- links -->

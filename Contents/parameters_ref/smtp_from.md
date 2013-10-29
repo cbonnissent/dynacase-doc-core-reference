@@ -3,7 +3,7 @@
 ## Description {#core-ref:571d8190-50eb-403c-a3aa-599e4c75ac70}
 
 Le paramètre `SMTP_FROM` permet de spécifier l'adresse mail utilisée par défaut
-lors de l'envoi d'un mail par Dynacase lorsque l'adresse de l'émetteur n'est pas
+lors de l'envoi d'un courriel par Dynacase lorsque l'adresse de l'émetteur n'est pas
 spécifiée.
 
 *   App : `FDL`
