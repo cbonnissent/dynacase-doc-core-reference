@@ -12,7 +12,7 @@ Envoyer un message dans les journaux d'évènements.
     [php]
     void warning ( string $msg )
 
-La méthode `warning` de l'objet `Action` permet d'envoyer un message dans les journaux d'évènements de Dynacase avec le niveau "(W)arning".
+La méthode `warning` de l'objet `Action` permet d'envoyer un message dans les journaux d'événements de Dynacase avec le niveau "(W)arning".
 
 ## Avertissements
 
@@ -21,7 +21,7 @@ N/A
 ## Liste des paramêtres
 
 (string) `msg`
-:   Le message à envoyer au journal d'évènements avec le niveau "(W)arning".
+:   Le message à envoyer au journal d'événements avec le niveau "(W)arning".
 
 ## Valeur de Retour
 

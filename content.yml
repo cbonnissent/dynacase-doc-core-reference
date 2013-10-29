@@ -874,39 +874,25 @@ book:
     - level:   2
       element: "chapter"
       content:  "API/Class_Log.md"
-      flags:
-        need-review: "need review"
       subtoc:   1
     - level:   3
       element: "chapter"
       content:  "API/Class_Log/Method_debug.md"
-      flags:
-        need-review: "need review"
     - level:   3
       element: "chapter"
       content:  "API/Class_Log/Method_deprecated.md"
-      flags:
-        need-review: "need review"
     - level:   3
       element: "chapter"
       content:  "API/Class_Log/Method_error.md"
-      flags:
-        need-review: "need review"
     - level:   3
       element: "chapter"
       content:  "API/Class_Log/Method_fatal.md"
-      flags:
-        need-review: "need review"
     - level:   3
       element: "chapter"
       content:  "API/Class_Log/Method_info.md"
-      flags:
-        need-review: "need review"
     - level:   3
       element: "chapter"
       content:  "API/Class_Log/Method_warning.md"
-      flags:
-        need-review: "need review"
     - level:   2
       element: "chapter"
       content:  "API/Class_ApplicationParameterManager.md"

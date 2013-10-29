@@ -2,7 +2,7 @@
 
 <div markdown="1" class="short-description">
 La classe `Log` permet d'envoyer des messages dans un journal d'événements
-(syslog ou fichier spécifique).
+([`syslog`][syslog] ou fichier spécifique).
 </div>
 
 Chaque message comporte un niveau de log, et le [paramètre applicatif
@@ -76,11 +76,11 @@ Sortie :
 
 ### Notes {#core-ref:7c0460e9-0f1c-4db5-9f54-6e1489bacfc4}
 
-Si le fichier `logfile` n'est pas spécifié, alors les messages iront dans le
+Si le fichier `logfile` n'est pas spécifié, alors les messages vont dans le
 journal système [`syslog`][syslog].
 
 Les noms `application` et `function` sont utilisés pour composer un préfixe qui
-sera placé devant chaque message émis par l'objet `Log` (voir exemple ci-dessus
+est placé devant chaque message émis par l'objet `Log` (voir exemple ci-dessus
 et dans la documentation des méthodes).
 
 ### Voir aussi {#core-ref:5eb86445-fbee-4095-9992-342e90975e93}

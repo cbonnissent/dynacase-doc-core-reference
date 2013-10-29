@@ -12,7 +12,7 @@ Envoyer un message dans les journaux d'évènements.
     [php]
     void fatal ( string $msg )
 
-La méthode `fatal` de l'objet `Action` permet d'envoyer un message dans les journaux d'évènements de Dynacase avec le niveau "(F)atal".
+La méthode `fatal` de l'objet `Action` permet d'envoyer un message dans les journaux d'événements de Dynacase avec le niveau "(F)atal".
 
 ## Avertissements
 
@@ -21,7 +21,7 @@ N/A
 ## Liste des paramètres
 
 (string) `msg`
-:   Le message à envoyer au journal d'évènements avec le niveau "(F)atal".
+:   Le message à envoyer au journal d'événements avec le niveau "(F)atal".
 
 ## Valeur de Retour
 
