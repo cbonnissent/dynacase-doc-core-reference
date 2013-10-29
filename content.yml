@@ -1467,7 +1467,7 @@ book:
     - level:   4
       content:  "Advanced/Internationalisation/localegenlayout.md"
       flags:
-        wip: "work in progress"
+        draft: "draft"
     - level:   3
       content:  "Advanced/Internationalisation/translate.md"
       flags:
@@ -1491,7 +1491,8 @@ book:
     - level:   3
       content:  "Advanced/Internationalisation/javascript.md"
       flags:
-        wip: "work in progress"
+        draft: "draft"
+        new: "new"
     - level:   2
       content:  "Advanced/Cinematique/introduction.md"
       flags:

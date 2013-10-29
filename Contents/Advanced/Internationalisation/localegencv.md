@@ -1,11 +1,20 @@
 # Générer les catalogues pour les contrôles de vues
 
-Les libellés des vues des contrôles de vues peuvent être traduits.
+Les libellés des vues des [contrôles de vues][cvdoc] peuvent être traduits.
 
-Le programme `fam2po.php` permet d'extraire les clefs de traduction depuis un
+Le programme `xgettextFamily` permet d'extraire les clefs de traduction depuis un
 fichier de description de contrôle de vue.
 
-    php ./buildTools/fam2po.php locale someCVDoc.csv
+    ./buildTools/xgettextFamily -o myLocaleDirectory someCVDoc.csv
+    
+    myLocaleDirectory/MYCV.pot wrote
+
+Les options de `xgettext` **ne sont pas utilisables** pour modifier le fichier
+produit.
+
+L'option de sortie `-o` doit renseigner un répertoire accessible en écriture.
+
+Le fichier de sortie produit est le nom logique du document de contrôle de vue.
 
 Exemple de fichier de traduction produits :
 
@@ -69,3 +78,4 @@ Les clefs suivantes sont générées :
 [xgettext]:         http://www.gnu.org/software/gettext/manual/html_node/xgettext-Invocation.htm "xgettext reference"
 [famdecl]:          #core-ref:cfc7f53b-7982-431e-a04b-7b54eddf4a75
 [gettextutil]:      http://www.gnu.org/software/gettext/manual/html_node/index.html#Top
+[cvdoc]:            #core-ref:017f061a-7c12-42f8-aa9b-276cf706e7e0

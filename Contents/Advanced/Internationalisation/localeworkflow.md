@@ -1,6 +1,7 @@
 # Traduction des cycles de vies
 
-Les élément états, transition et activités des cycles de vie peuvent être traduit.
+Les éléments états, transition et activités des [cycles de vie][workflow] peuvent
+être traduits.
 
     [php]
     namespace MyTest;
@@ -27,9 +28,9 @@ Les élément états, transition et activités des cycles de vie peuvent être t
         );
 
 Les clefs des états et des transitions sont leurs identifiants. Il est
-nécessaire d'identifier ces clefs de traduction au programme de génération de
-catalogue. Une des solutions consiste à ajouter une fonction factice qui sert à
-identifier les éléments à traduire.
+nécessaire d'identifier ces clefs de traduction pour le programme de génération
+de catalogue. Une des solutions consiste à ajouter une fonction factice qui sert
+à identifier les éléments à traduire.
 
     [php]
     private function i18n () {
@@ -56,3 +57,4 @@ identifier les éléments à traduire.
 [xgettext]:         http://www.gnu.org/software/gettext/manual/html_node/xgettext-Invocation.htm "xgettext reference"
 [famdecl]:          #core-ref:cfc7f53b-7982-431e-a04b-7b54eddf4a75
 [gettextutil]:      http://www.gnu.org/software/gettext/manual/html_node/index.html#Top
+[workflow]:         #core-ref:b8824399-f17d-4007-adde-8a7433939273

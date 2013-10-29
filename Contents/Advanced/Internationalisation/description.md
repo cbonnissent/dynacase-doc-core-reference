@@ -1,4 +1,4 @@
-# Description du principe {#core-ref:0a03a448-736d-4caa-ac95-72e735aeea6f}
+# Description du principe de traduction {#core-ref:0a03a448-736d-4caa-ac95-72e735aeea6f}
 
 Les traductions utilisent la bibliothèque [getText][wikiGettext] qui est un
 standard pour la gestion des programmes multilingues.

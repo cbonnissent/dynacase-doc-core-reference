@@ -4,7 +4,7 @@
 
 ### Utiliser une forme simple
 
-La fonction fournie en standard par PHP et la fonction [getText][phpGettext].
+La fonction fournie en standard par PHP et la fonction [gettext][phpGettext].
 Cette fonction permet de rechercher dans un catalogue la traduction
 correspondante au texte donné en paramètre.
 
@@ -70,7 +70,7 @@ traduite directement.
 
 ### Utiliser une forme plurielle
 
-Les traductions des formes plurielles est prise en compte par la bibliothèque
+Les traductions des formes plurielles sont prises en compte par la bibliothèque
 _gettext_.
 
 La forme plurielle est indiquée à l'aide la fonction php standard
@@ -131,7 +131,9 @@ _1_. Cela sera correct pour le français qui considère que tout nombre compris
 entre _]-2, 2[_ comme singulier. Mais cela sera incorrect en anglais qui
 considère que tout nombre différent de 1 ou -1 n'est pas singulier.
 
-
+Note : Lors de la génération du catalogue principal, c'est l'entête utilisée
+dans le  fichier `header.mo` qui défini l'entête et donc la forme plurielle
+utilisée.
 
 
 <!-- link -->

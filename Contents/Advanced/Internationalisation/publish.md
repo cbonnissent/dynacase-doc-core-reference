@@ -3,15 +3,19 @@
 Les catalogues sources (`.po`) doivent être publiés sur le serveur dans le
 répertoire :
 
-    locale/<lang>/LC_MESSAGES/SRC/
+    locale/<lang>/LC_MESSAGES/src/
 
 Les catalogues binaires (`.mo`) doivent être publiés sur le serveur dans le
 répertoire :
 
     locale/<lang>/LC_MESSAGES/
 
+Les catalogues sources sont prioritaires aux catalogues binaires. Cela implique
+que s'il y a des clefs dupliquées c'est la traduction des fichiers sources qui
+sera utilisée.
+
 Note : les catalogues binaires peuvent être obtenus par le programme `msgfmt` et
-inversement les catalogues sources peuvent être obtenu par le programme
+inversement les catalogues sources peuvent être obtenus par le programme
 `msgunfmt`.
 
 Le répertoire `<lang>` est l'identifiant de la locale sur deux lettres : 

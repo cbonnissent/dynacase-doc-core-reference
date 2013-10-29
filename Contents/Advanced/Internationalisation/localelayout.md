@@ -21,6 +21,7 @@ contexte pour démarquer sa traduction.
 
 Le contexte doit être écrit entre parenthèses juste après la clef `TEXT`.
 
+Cette notation est aussi utilisable dans les [templates _ODT_][odttemplate].
 
 <!-- link -->
 [wikiGettext]:       http://fr.wikipedia.org/wiki/GNU_gettext "Gettext sur Wikipédia"
@@ -34,3 +35,4 @@ Le contexte doit être écrit entre parenthèses juste après la clef `TEXT`.
 [xgettext]:         http://www.gnu.org/software/gettext/manual/html_node/xgettext-Invocation.htm "xgettext reference"
 [famdecl]:          #core-ref:cfc7f53b-7982-431e-a04b-7b54eddf4a75
 [gettextutil]:      http://www.gnu.org/software/gettext/manual/html_node/index.html#Top
+[odttemplate]:      #core-ref:d03e0905-2be1-4649-a823-9f64e94cba29 

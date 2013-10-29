@@ -1,4 +1,22 @@
-# Générer les catalogues pour les layout
+# Générer les catalogues pour les templates
+
+
+Le programme `xgettextLayout` permet d'extraire les clefs de traduction depuis des
+fichier de template texte et openDocument Text.
+
+    ./buildTools/xgettextLayout -o myLayouts.pot file1.html file2.xml file3.js file4.odt ...
+
+Les clefs '[TEXT:...]' sont extraites et indiquées dans le fichier `.pot` produit.
+De même les clefs avec contexte `|TEXT(ctx):...  ]` sont aussi extraites avec leur 
+contexte.
+
+Les options de `xgettext` sont utilisables pour modifier le fichier produit.
+
+    ./buildtools/xgettextLayout --omit-header -o myLayouts.pot test.html
+
+Il est possible de déclarer les fichiers d'entrées via le pipe.
+
+    find . -name "*xml" | ../buildtools/xgettextLayout -o myLayouts.pot -f-
 
 
 <!-- link -->

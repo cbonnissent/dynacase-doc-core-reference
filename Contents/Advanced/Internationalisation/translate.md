@@ -1,12 +1,12 @@
 # Traduire les textes {#core-ref:e4864125-5654-4e0e-8202-a6ed3ceb925c}
 
-Pour traduire les textes il faut compléter les catalogues. Chacun des catalogues
+Pour traduire les textes, il faut compléter les catalogues. Chacun des catalogues
 doit être produit pour une langue donnée. 
 
-Les [outils de gettext][gettextutil] standards tel que `msginit` et `msgmerge`
+Les [outils de gettext][gettextutil] standards tels que `msginit` et `msgmerge`
 permettent de créer et mettre à jour les catalogues.
 
-Une fois les catalogues initialisé, de nombreux outils comme [poedit][poedit]
+Une fois les catalogues initialisés, de nombreux outils comme [poedit][poedit]
 permettent de modifier les traductions des catalogues.
 
 
@@ -21,5 +21,5 @@ permettent de modifier les traductions des catalogues.
 [layout]:           #core-ref:5f4a2f4b-9ceb-42db-8ac1-2a7baa621ce2
 [xgettext]:         http://www.gnu.org/software/gettext/manual/html_node/xgettext-Invocation.htm "xgettext reference"
 [famdecl]:          #core-ref:cfc7f53b-7982-431e-a04b-7b54eddf4a75
-[gettextutil]:      http://www.gnu.org/software/gettext/manual/html_node/index.html#Top
+[gettextutil]:      http://www.gnu.org/software/gettext/manual/html_node/index.html#Top "GNU gettext utilities"
 [poedit]:           http://www.poedit.net/ "Site de poEdit"

@@ -12,14 +12,28 @@ Exemple : TestSimple.ods
 | ATTR  | TST_TITLE   | TST_FR_HTML | Titre          | Y   | N          | text  | 110 | W   | Y    |      |         |                                                     |
 | ATTR  | TST_SIZE    | TST_FR_HTML | Taille         | N   | N          | enum  | 120 | W   |      |      |         | XL&#124; Very large,L &#124; Large,M &#124;Medium,S |
 
-Le programme `fam2po.php` permet d'extraire les clefs de traduction depuis un
-fichier de description de famille.
+Le programme `xgettextFamily` permet d'extraire les clefs de traduction depuis un
+ou plusieurs fichiers de description de famille (CSV ou ODS).
 
-    php ./buildTools/fam2po.php locale TestSimple.ods
+    ./buildTools/xgettextFamily -o / TestSimple.ods
+    
+    myLocaleDirectory/TST_SIMPLE.pot wrote.
 
 produit le fichier `locale/TST_SIMPLE.pot`. L'identifiant de la famille sert
-pour le nom du fichier et pour les clefs de traduction. La production du fichier
+pour le nom du fichier et pour les clefs de traduction. 
+
+L'option de sortie `-o` doit renseigner un répertoire accessible en écriture.
+
+La production du fichier
 temporaire sert pour construire les catalogues dans les langues voulues.
+
+Il est possible de déclarer les fichiers d'entrées via le pipe.
+
+    find . -name "family*.csv" | ../buildtools/xgettextFamily -o myLocaleDirectory -f-
+
+Cela produit un fichier `.pot` par famille.
+
+Les options de `xgettext` **ne sont pas utilisables** pour modifier le fichier produit.
 
 Extrait du fichier généré "TST_SIMPLE.pot" avec la famille décrite ci-dessus :
 
@@ -64,15 +78,21 @@ Les clefs suivantes sont générée :
 `FAMNAME#title`
 :   Titre de la famille FAMNAME
 
-`FAMNAME#ATTRID`
-:   Libellé de l'attribut ATTRID de la famille FAMNAME
+`FAMNAME#<attrid>`
+:   Libellé de l'attribut `<attrid>` de la famille FAMNAME
 
-`FAMNAME#ATTRID#ENUMVALUE`
-:   Libellé de la valeur ENUMVALUE de l'énuméré ATTRID de la famille FAMNAME.
+`FAMNAME#<attrid>#ENUMVALUE`
+:   Libellé de la valeur ENUMVALUE de l'énuméré `<attrid>` de la famille FAMNAME.
     **Note** : Les traductions des énumérés peuvent être modifiées par
     l'administrateur depuis l'interface du centre d'administration. Les traductions
     des énumérés faite par l'interface sont toujours prioritaires aux traductions
     faites dans les catalogues livrés par le module.
+
+`FAMNAME#<attrid>#OPTIONKEY`
+:   Traduction des valeurs de certaines [options d'attributs][optionattr] 
+    sensibles à la localisation.
+    Les options prises en compte sont :  "elabel", "ititle", "submenu", 
+    "ltitle", "eltitle", "elsymbol", "lsymbol", "showempty".
 
 
 
@@ -89,3 +109,4 @@ Les clefs suivantes sont générée :
 [xgettext]:         http://www.gnu.org/software/gettext/manual/html_node/xgettext-Invocation.htm "xgettext reference"
 [famdecl]:          #core-ref:cfc7f53b-7982-431e-a04b-7b54eddf4a75
 [gettextutil]:      http://www.gnu.org/software/gettext/manual/html_node/index.html#Top
+[optionattr]:       #core-ref:16e19c90-3233-11e2-a58f-6b135c3a2496 "Options d'attribut"
