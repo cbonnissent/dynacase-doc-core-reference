@@ -10,8 +10,8 @@ utilisateur.
 
     [php]
     voir static setParameterValue ( mixed $application,
-    	                           string $parameterName,
-    	                           string $value )
+                                   string $parameterName,
+                                   string $value )
 
 Si le paramètre est un paramètre utilisateur (`'user' => 'Y'`) alors c'est la
 valeur personnalisée qui est écrite

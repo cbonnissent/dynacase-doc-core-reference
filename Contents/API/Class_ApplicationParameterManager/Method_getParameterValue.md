@@ -32,7 +32,7 @@ Aucun.
 
 Retourne une chaîne de caractère contenant la valeur du paramètre.
 
-Si l'application ou le paramètre spécifiés n'existent pas alors la valeur `null`
+Si l'application ou le paramètre spécifié n'existe pas alors la valeur `null`
 est retournée.
 
 ## Erreurs / Exceptions {#core-ref:fbabb397-a373-4d37-86ae-a54ea2b8c1f5}

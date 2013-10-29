@@ -20,7 +20,7 @@ interroger la valeur d'un paramètre.
 ### Avertissements {#core-ref:c04ea10e-6e97-4ec4-b8f0-c320262db0ce}
 
 Le cache n'est pas partagé entre les différentes requêtes. Chaque requête à son
-propre cache, et des incohérences peuvent donc apparaître lors de la lecture ou
+propre cache et des incohérences peuvent donc apparaître lors de la lecture ou
 l'écriture d'un même paramètre par deux requêtes concurrentes.
 
 ## Liste des paramètres {#core-ref:17cc55d4-6cfd-4e1d-8b9c-438e4e89e5c3}

@@ -47,7 +47,7 @@ La méthode ne retourne rien.
 ## Erreurs / Exceptions {#core-ref:edc15ec8-3d2c-42ef-be78-722fc9b6d3e5}
 
 Si le paramètre n'existe pas, est incorrect, ou si le paramètre n'est pas un
-paramètre utilisateur et que `check` est à  `true`, alors une exception
+paramètre utilisateur et que `check` est à `true`, alors une exception
 (`\Dcp\ApplicationParameterManager\Exception`) est levée.
 
 ## Historique {#core-ref:7109b8b6-69a7-4c62-a0b9-2e77f2bc6f57}
