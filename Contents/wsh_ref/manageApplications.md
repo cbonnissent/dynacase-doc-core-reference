@@ -26,7 +26,7 @@ Voir aussi :
     
     `reinit`
     :   Re-initialise l'application (dans le cas ou elle a déjà été initialisée
-    	avec la méthode `init`).
+        avec la méthode `init`).
     
     `delete`
     :   Supprime la définition de l'application.

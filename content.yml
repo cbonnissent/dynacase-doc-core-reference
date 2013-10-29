@@ -1338,82 +1338,41 @@ book:
 ##
     - level:   1
       content:  "wsh_ref/introduction.md"
-      flags:
-        need-review: "need review"
       subtoc:   1
     - level:   2
       content:  "wsh_ref/refreshGroups.md"
-      flags:
-        need-review: "need review"
     - level:   2
       content:  "wsh_ref/manageApplications.md"
-      flags:
-        need-review: "need review"
     - level:   2
       content:  "wsh_ref/cleanFamily.md"
-      flags:
-        need-review: "need review"
     - level:   2
       content:  "wsh_ref/cleanFamilyParameter.md"
-      flags:
-        need-review: "need review"
     - level:   2
       content:  "wsh_ref/manageContextCrontab.md"
-      flags:
-        need-review: "need review"
     - level:   2
       content:  "wsh_ref/initializeDocrelTable.md"
-      flags:
-        need-review: "need review"
-        new: "updated"
     - level:   2
       content:  "wsh_ref/cleanContext.md"
-      flags:
-        need-review: "need review"
-        new: "updated"
     - level:   2
       content:  "wsh_ref/generateDocumentClass.md"
-      flags:
-        need-review: "need review"
     - level:   2
       content:  "wsh_ref/destroyFamily.md"
-      flags:
-        need-review: "need review"
-        new: "updated"
     - level:   2
       content:  "wsh_ref/fixMultipleAliveRevision.md"
-      flags:
-        need-review: "need review"
     - level:   2
       content:  "wsh_ref/getApplicationParameter.md"
-      flags:
-        need-review: "need review"
     - level:   2
       content:  "wsh_ref/importDocuments.md"
-      flags:
-        need-review: "need review"
     - level:   2
       content:  "wsh_ref/refreshDocuments.md"
-      flags:
-        need-review: "need review"
     - level:   2
       content:  "wsh_ref/setApplicationParameter.md"
-      flags:
-        need-review: "need review"
     - level:   2
       content:  "wsh_ref/setStyle.md"
-      flags:
-        need-review: "need review"
     - level:   2
       content:  "wsh_ref/checkVault.md"
-      flags:
-        need-review: "need review"
-        new: "updated"
     - level:   2
       content:  "wsh_ref/refreshVaultIndex.md"
-      flags:
-        need-review: "need review"
-        new: "updated"
 
 ##
 # Advanced
