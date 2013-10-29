@@ -7,19 +7,19 @@ propriétés de la [classe `Doc`][docprop].
 ## Particularités sur les propriétés héritées
 
 fromid
-:   identifiant de la famille parente.
+:   Identifiant de la famille parente.
 
 icon 
-:   icone de la famille. Cette icone est aussi utilisée pour les documents
+:   Icone de la famille. Cette icone est aussi utilisée pour les documents
 de cette famille.
 
 classname
-:   nom de la [classe associée à la famille][famdef].
+:   Nom de la [classe associée à la famille][famdef].
 
 initid
-:   identifiant de la famille. Toujours égal à `id`car les familles ne sont 
+:   Identifiant de la famille. Toujours égal à `id`car les familles ne sont 
     pas révisables.
-    
+
 cvid
 :   Toujours vide. Non utilisable pour une famille.
 
@@ -45,19 +45,17 @@ title
 schar
 :   Indique les modalités de révision des documents de cette famille :
     
-    *   *R* : Révision automatique à chaque modification,
-    *   *S* : document non révisable
+    *   *R* : Révision automatique à chaque modification;
+    *   *S* : document non révisable.
 
 cprofid
 :   Identifiant du profil qui sera lié aux nouveaux document de la famille.
-
 
 dfldid 
 :   Dossier _racine_ de la famille. Ce dossier est notamment utilisé par
 l'application `ONEFAM` via l'action `GENERIC:GENERIC_TAB` qui liste les
 documents.
-    
-    
+
 cfldid
 :   Identifiant de recherche ou de dossier par défaut. Cet identifiant est
     utilisé par  l'action `GENERIC:GENERIC_TAB`. Cette recherche est effectuée si
@@ -87,8 +85,6 @@ param
 :   Valeurs des paramètres de la famille. Ces valeurs sont linéarisés.
     Elles sont accessibles avec la méthode `DocFam::getParameterRawValue()` ou 
     `Doc::getFamilyParameterValue()`.
-
- 
 
 <!-- links -->
 [docprop]:  #core-ref:9aa8edfa-2f2a-11e2-aaec-838a12b40353 "Propriété de la classe Doc"
