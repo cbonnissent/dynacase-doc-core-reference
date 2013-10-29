@@ -23,9 +23,11 @@ Les principales méthodes de modification de valeurs sont :
 
 ### Avertissements {#core-ref:199c24b2-b5a9-470b-85c2-b9fad759b23e}
 
-Cette méthode ne récupère que les valeurs changées de l'objet courant. Si le
-document est modifié depuis un autre objet, l'ancienne valeur ne sera pas mise à
-jour.
+Cette méthode ne récupère que les valeurs changées que sur un objet. Si on
+instancie deux fois le même document, alors les modifications de l'un ne sont
+pas répercutées sur l'autre.  Si l'attribut n'a pas encore été modifié la valeur
+de retour est `false` (après une création).  Les enregistrements de valeurs
+modifiés sont remis à zéro lors d'une révision ([`Doc::revise`][revise]).
 
 ## Liste des paramètres {#core-ref:5ac9d375-7eb2-490d-be7e-b71a8894105c}
 
@@ -44,8 +46,8 @@ La valeur de retour indique la valeur brute précédente à la modification.
 | "bleu"   | "bleu"      | "jaune"     |
 | " "      | null        | "bleu"      |
 
-Si la valeur n'a pas encore été changée, le retour sera le booléen `false`. Si
-l'identifiant de l'attribut n'existe pas le retour sera aussi `false`.
+Si la valeur n'a pas encore été changée, le retour est le booléen `false`. Si
+l'identifiant de l'attribut n'existe pas le retour est aussi `false`.
 
 ## Erreurs / Exceptions {#core-ref:786292f2-8df9-4ea9-88e4-16ecc7ef77c7}
 
@@ -197,5 +199,5 @@ Dans le cas des attribut multi-valués, il est possible d'utiliser la méthode
 [docaddarrayrow]:   #core-ref:d75110cb-24f6-4810-9b62-45ce6fd99e70
 [rawValueToArray]:  #core-ref:5f4c4ac5-7429-4d07-94d0-245fe63cbfe5
 [docgetOldValues]:  #core-ref:d76b0955-26c8-49c8-9e34-82c41e0e4def
-
+[revise]:           #core-ref:b80227eb-4f01-430a-9882-87b53f2413dc
 

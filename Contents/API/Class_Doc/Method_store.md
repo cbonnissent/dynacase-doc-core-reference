@@ -10,8 +10,8 @@ Cette méthode enregistre les modifications d'un document en base de données.
     string store (storeInfo &$info = null, bool $skipConstraint = false )
 
 Cette méthode permet la modification ou la création de document. Si le document
-n'a pas d'identifiant (`id`), une création de document sera effectuée, sinon le
-document sera mis à jour.
+n'a pas d'identifiant (`id`), une création de document est effectuée, sinon le
+document est mis à jour.
 
 ### Avertissements {#core-ref:fd0141dc-9206-4ce8-8aca-e4908c64a3f4}
 

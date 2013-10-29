@@ -1,7 +1,7 @@
 # Doc::getDocAnchor() {#core-ref:55e9c46c-2a10-4911-8243-7c913416648f}
 
 <div class="short-description">
-Générer un fragment HTML contenant une ancre HTML vers un document.
+Générer un fragment HTML contenant une ancre (balise a) HTML vers un document.
 </div>
 
 ## Description {#core-ref:8ca28abd-366b-47b8-bf17-9d9e2e952080}
@@ -45,15 +45,15 @@ Aucun.
         
     *   `ext` (pour un fragment HTML inséré dans une interface ExtJS),
     
-    toute autre valeur sera prise en compte comme l'attribut `target` de
+    toute autre valeur est prise en compte comme l'attribut `target` de
     l'ancre HTML générée.
 
 (bool) `htmllink`
 :   Si `false` alors seul le fragment HTML contenant le titre,
-    sans ancre, sera généré.
+    sans ancre, est généré.
 
 (bool|string) `title`
-:   Si une chaîne est spécifiée, alors elle sera utilisée à
+:   Si une chaîne est spécifiée, alors elle est utilisée à
     la place du titre du document.
 
 (bool) `js`
@@ -73,8 +73,7 @@ Aucun.
     précisions.
 
 (bool) `viewIcon`
-:   Si `true` l'icône de la famille du document sera présentée
-    dans l'ancre HTML.
+:   Si `true` l'icone de la famille du document est présentée dans l'ancre HTML.
     Dans ce cas l'ancre html aura la classe "relation" avec une image de fond :  
     `<a class="relation" style="background-image:url("myicon.png")>myTitle</a>`
     Sinon l'ancre html retournée est sans classe ni style particuliers.

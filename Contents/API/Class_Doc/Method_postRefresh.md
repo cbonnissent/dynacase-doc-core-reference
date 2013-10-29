@@ -1,6 +1,6 @@
 # Doc::postRefresh() {#core-ref:9352c534-3691-41e3-b293-599db8e9a4fd}
 <div class="short-description" markdown="1">
-Hameçon utilisé par la méthode [`Doc::refresh()`][docrefresh].
+[Hameçon][hook] (ou hook) utilisé par la méthode [`Doc::refresh()`][docrefresh].
 </div>
 
 ## Description {#core-ref:1c504ccc-70d8-4e3b-a725-a31c1d72db90}
@@ -93,3 +93,4 @@ disposer des mêmes fonctionnalités.
 [docpostrefresh]:   #core-ref:9352c534-3691-41e3-b293-599db8e9a4fd "Hameçon Doc::postRefresh()"
 [docrefresh]:       #core-ref:0bab02de-50e0-46f2-8bdb-81c62dc86c93
 [computeattr]:      #core-ref:4565cab9-73c8-4eee-bfa7-218ffbd4b687
+[hook]:             https://fr.wikipedia.org/wiki/Hook_(informatique)

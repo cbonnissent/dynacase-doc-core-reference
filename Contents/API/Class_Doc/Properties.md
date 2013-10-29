@@ -9,31 +9,34 @@ De façon générale, bien que ces propriétés ne soient pas marquées comme
 *private*, leur affectation ne doit passer que par les setters appropriés. Les
 propriétés n'ayant pas de setter spécifiques sont modifiées par effet de bord
 d'autres méthodes du document (par exemple, `Doc::revision` ne doit pas être
-modifié, mais [`Doc::revise`][docrevise] incrémentera cette propriété).
+modifié, mais [`Doc::revise`][docrevise] incrémente cette propriété).
 
 adate
 :   Date de dernier accès au document.
 
 allocated
-:   uid de l'utilisateur auquel le document est affecté.
+:   Identifiant système de l'utilisateur auquel le document est affecté.
 
 archiveid
-:   id de l'archive dans laquelle est contenue ce document.
+:   Id de l'archive dans laquelle est contenue ce document.
     
-    Note : uniquement le document archivé porte cette propriété.
+    Note : cette propriété n'est portée que par le document archivé.
     Pour trouver la liste des lignées documentaires archivées, il faut faire 
     une recherche sur toutes les révisions.
 
 atags
-:   balises applicatives (Tags positionnés sur le document).
+:   Balises applicatives (Tags positionnés sur le document).
     
     Ces tags permettent aux applications de marquer les documents pour des 
     traitements spécifiques.
     
+    Les tags sont stockés dans une chaîne de caractères et sont séparés par des 
+    `\n`.
+    
     La méthode `Doc::getATag()` vérifie la présence d'une balise applicative.
 
 cdate
-:   date de création de la révision.
+:   Date de création de la révision.
     
     Pour obtenir la date de création de la lignée documentaire, il faut
     récupérer celle de la révision 0.
@@ -41,10 +44,10 @@ cdate
     Le format de la date est `YYYY-MM-DD HH:MM:SS`.
 
 classname
-:   nom de la classe associée au document. Utilisé uniquement pour les familles.
+:   Nom de la classe associée au document. Utilisé uniquement pour les familles.
 
 comment
-:   commentaire de révision.
+:   Commentaire de révision.
     **Obsolète** (voir Objet DocHisto).
 
 confidential
@@ -53,7 +56,7 @@ confidential
     Dans ce cas, *confidential* vaut 1.
 
 cvid
-:   identifiant du document [contrôle de vue][CVDoc] associé à ce document.
+:   Identifiant du document [contrôle de vue][CVDoc] associé à ce document.
 
 doctype
 :   Type de document.
@@ -67,13 +70,13 @@ doctype
     *   *T* : Temporaire,
     *   *Z* : Document supprimé (Z pour *Zombie*),
     *   *W* : Cycle de vie (W pour *Workflow*),
-    *   *C* : Famille (C pour *Class*)
+    *   *C* : Famille (C pour *Class*).
 
 domainid
-:   voir la documentation de l'application offline.
+:   Voir la documentation de l'application offline.
 
 dprofid
-:   identifiant du profil dynamique associé à ce document.
+:   Identifiant du profil dynamique associé à ce document.
     
     Lorsque le document est soumis à un [profil dynamique][profil_dynamique], ce
     profil dynamique lui permet de calculer le profil qui lui sera appliqué,
@@ -85,10 +88,10 @@ forumid
 :   **Obsolète**
 
 fromid
-:   id de la famille d'appartenance.
+:   Id de la famille d'appartenance.
 
 icon
-:   référence au fichier d'icone du document.
+:   Référence au fichier d'icone du document.
     
     La valeur est :
     
@@ -97,43 +100,43 @@ icon
         (sous la forme *&lt;type-mime>|&lt;vaultid>|&lt;file-title>*).
 
 id
-:   identifiant unique du document.
+:   Identifiant unique du document.
     
     Il est calculé automatiquement par la base de données lors de l'ajout du
     document en base.
 
 initid
-:   id du premier document de la lignée documentaire.
+:   Id du premier document de la lignée documentaire.
     
     Il est notamment utile pour les recherches.
 
 ldapdn
-:   chemin LDAP dans le cas d'une copie sur un serveur LDAP.
+:   Chemin LDAP dans le cas d'une copie sur un serveur LDAP.
     **obsolète**
 
 lmodify
-:   permet de savoir si le document a été modifié depuis sa dernière révision.
+:   Permet de savoir si le document a été modifié depuis sa dernière révision.
     
     Les valeurs sont :
     
-    *   `Y` : La révision est la révision courante, et a été modifiée depuis la
+    *   `Y` : La révision est la révision courante et a été modifiée depuis la
         dernière révision ;
     *   `L` : La révision est la dernière révision avant la révision courante ;
     *   `D` : La révision est supprimée ;
     *   `N` :
         *   Toute révision figée du document (autre que la *N-1*) :
-            Dans ce cas, *locked* vaut -1 ;
+            dans ce cas, *locked* vaut -1 ;
         *   La révision est la révision courante du document, mais identique à
             la révision *N-1*.
 
 lockdomainid
-:   voir la documentation de l'application offline.
+:   Voir la documentation de l'application offline.
 
 locked
-:   Indique l'uid de l'utilisateur qui a verrouillé le document :
+:   Indique l'identifiant système de l'utilisateur qui a verrouillé le document :
     
-    *   Chiffre négatif (inférieur à -1) : Identifiant de l'utilisateur (uid)
-        ayant verrouillé le document automatiquement.
+    *   Chiffre négatif (inférieur à -1) : La valeur absolue indique l'identifiant
+        système de l'utilisateur ayant verrouillé le document automatiquement.
         
         Ce verrou est posé lorsqu'un utilisateur clique sur le bouton de
         modification d'un document, et est supprimé automatiquement lors de la
@@ -141,12 +144,12 @@ locked
         `onBeforeUnload`), ainsi que par le [script
         `cleanContext`][wsh_cleanContext].
         
-    *   Chiffre positif : Identifiant de l'utilisateur (uid) ayant verrouillé le
+    *   Chiffre positif : Identifiant système de l'utilisateur ayant verrouillé le
         document manuellement.
         
-    *   0 = Pas de verrou.
+    *   `0` : Pas de verrou.
         
-    *   -1 = Document révisé (figé).
+    *   `-1` : Document révisé (figé).
 
 name
 :   Nom logique du document.
@@ -159,19 +162,21 @@ owner
     Cette valeur est spécifique à chaque révision.
 
 postitid
-:   identifiant du document post-it associé (famille *NOTE*).
+:   Identifiant du document post-it associé (famille *NOTE*).
 
 prelid
-:   identifiant du document (dossier) de relation primaire.
+:   Identifiant du document (dossier) de relation primaire.
     
     Cela correspond au parent lors d'une représentation arborescente.
     
-    Automatiquement, Dynacase remplit cette propriété avec les formules
-    suivantes :
+    Cette propriété est gérée automatiquement avec les règles de gestion suivantes :
     
-    *   Le premier dossier dans lequel est inséré le document ;
-    *   Le dernier dossier dans lequel est déplacé le document ;
-    *   Le dossier précédent lorsque le document est retiré d'un dossier.
+    *   Lorsque le document n'a jamais été inséré dans un dossier : 
+        le premier dossier dans lequel est inséré le document ;
+    *   Lorsque le document est déplacé dans un nouveau dossier : 
+        le dernier dossier dans lequel est déplacé le document ;
+    *   Lorsque le document est retiré d'un dossier : 
+        si le document est dans un autre dossier, alors celui-ci est sélectionné.
 
 profid
 :   Identifiant du profil de document.
@@ -186,28 +191,27 @@ profid
 revdate
 :   Date de révision.
     
-    Pour un document non révisé, date de dernière modification.
+    Pour un document non révisé, c'est la date de dernière modification.
     Le format de cette date un entier (_unix timestamp_).
 
 revision
-:   numéro d'ordre du document dans sa lignée documentaire.
+:   Numéro d'ordre du document dans sa lignée documentaire.
 
 state
-:   étape du document ou référence à un identifiant de document *état libre*.
+:   Étape du document ou référence à un identifiant de document *état libre*.
 
 title
 :   Titre du document.
 
 usefor
-:   type d'utilisation du document :
+:   Type d'utilisation du document :
     
-    *   `S` : La famille est Système : elle n'apparaîtra pas par défaut dans la
+    *   `S` : La famille est Système : elle n'apparaît pas par défaut dans la
         liste des familles pour les *recherches*, *recherches détaillées* ou
         *rapports*.
         
         Le caractère 'S' peut aussi être placé devant les autres caractères
-        décrits ci-dessous pour masquer par défaut la famille dans les
-        recherches.
+        décrits ci-dessous pour masquer la famille dans les recherches.
         
     *   `W` : Le document est un cycle de vie (*W* pour *Workflow*) ;
         
@@ -216,16 +220,16 @@ usefor
     *   `P` : Le document est un profil (*P* pour *Profile*).
 
 version
-:   libellé de la version : vide par défaut.
+:   Libellé de la version : il est vide par défaut.
     
-    La version est affichée à coté de l'état sur les documents, et dans
+    La version est affichée à coté de l'état sur les documents et dans
     l'historique.
     
     *Note* : La version n'est pas obligatoirement numérique, elle peut aussi
     être alphanumérique ; mais elle ne doit pas contenir de retour de chariot.
 
 wid
-:   identifiant du [document *cycle de vie*][WF_document] associé à ce document.
+:   Identifiant du [document *cycle de vie*][WF_document] associé à ce document.
 
 <!-- links -->
 [docrevise]:        #core-ref:882e3730-0483-4dbc-9b9d-0d0b5cc31d38

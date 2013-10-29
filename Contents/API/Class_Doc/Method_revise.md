@@ -1,7 +1,10 @@
 # Doc::revise() {#core-ref:882e3730-0483-4dbc-9b9d-0d0b5cc31d38}
 
-<div class="short-description">
-Cette méthode crée une révision du document courant.
+<div class="short-description"> 
+
+Cette méthode crée une révision du document courant. Cela permet de garder une
+version figée du document pour historique.
+
 </div>
 
 ## Description {#core-ref:acc2155b-e52c-46a7-afdd-0161848aa343}
@@ -13,9 +16,9 @@ Le document courant est enregistré en base et est figé. Sa propriété `locked
 vaut alors `-1`. La méthode `Doc::isFixed()` permet de savoir si un document est
 figé.
 
-Une copie du document est créée. Un nouvel identifiant (propriété `id`) est
-créé. Le document conserve le même identifiant initial (propriété `initid`) et
-son numéro de révision (propriété `revision`) est incrémenté de un.
+Une copie du document est créée. Un nouvel identifiant est créé et est affecté à
+la propriété `id`. Le document conserve le même identifiant initial (propriété
+`initid`) et son numéro de révision (propriété `revision`) est incrémenté de un.
 
 L'objet courant devient le nouveau document avec un nouvel identifiant.
 
@@ -32,7 +35,7 @@ Un document qui n'a pas d'identifiant ne peut pas être révisé.
 
 ## Valeur de retour {#core-ref:8a5fd585-05b8-41de-9090-137119d2ed02}
 
-Message d'erreur. Si un message non vide est retourné alors la révision a été
+Message d'erreur : Si un message non vide est retourné alors la révision a été
 abandonnée (la raison est donnée par le message d'erreur).
 
 ## Erreurs / Exceptions {#core-ref:9352bbb3-7d24-457b-ae85-15a0b5cd83e5}
@@ -80,15 +83,15 @@ Lors d'un ajout de documents les hameçons suivants sont lancés :
 
 L'hameçon `preRevise` a pour rôle de valider les conditions de révision du
 document. Si cette méthode retourne une chaîne de caractère non-vide alors elle
-sera considérée comme un retour d'erreur et la révision ne sera pas effectuée.
-Ce message sera retourné par la méthode `Doc::revise()`.
+est considérée comme un retour d'erreur et la révision n'est pas effectuée.
+Ce message est retourné par la méthode `Doc::revise()`.
 
 ### Hameçon `postRevise` {#core-ref:4fd0befd-c587-4259-835b-3f4fa7c24e4b}
 
 L'hameçon `postRevise` a pour rôle de réaliser un post-traitement après la
 révision. Cette méthode utilise la nouvelle révision. Si cette méthode retourne
-une chaîne de caractère non-vide alors elle sera considérée comme un message
-d'erreur. Ce message sera enregistré dans l'historique du document.
+une chaîne de caractères non-vide alors elle est considérée comme un message
+d'erreur. Ce message est enregistré dans l'historique du document.
 
 ## Voir aussi {#core-ref:68f970b7-6995-47c4-8d24-bf142e2ace1f}
 

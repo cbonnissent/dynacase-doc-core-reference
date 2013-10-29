@@ -1,10 +1,9 @@
 # Doc::preStore() {#core-ref:3517da95-82fe-4adb-8bc4-ef49ca55edb0}
 
 <div class="short-description" markdown="1">
-Hameçon utilisé par la méthode [`Doc::Store()`][docstore]. Elle est appelée
-avant l'enregistrement en base de données. Cette méthode doit vérifier si les
-conditions de modification de document sont valides.
-
+[Hameçon][hook] (ou hook) utilisé par la méthode [`Doc::Store()`][docstore].
+Elle est appelée avant l'enregistrement en base de données. Cette méthode doit
+vérifier si les conditions de modification de document sont valides.
 </div>
 
 ## Description {#core-ref:6a386ab6-e2c9-419e-a8c7-7875df6c2db8}
@@ -12,8 +11,8 @@ conditions de modification de document sont valides.
     [php]
     string preStore ()
 
-Si cette méthode retourne un message d'erreur alors la modification sera
-abandonnée et la méthode [`Doc::Store()`][docstore] retournera le message fourni
+Si cette méthode retourne un message d'erreur alors la modification est
+abandonnée et la méthode [`Doc::Store()`][docstore] retourne le message fourni
 par cette méthode afin d'indiquer l'échec.
 
 
@@ -29,7 +28,7 @@ Aucun paramètre.
 ## Valeur de retour {#core-ref:b6b77dad-14f4-47da-994f-ec8719f01563}
 
 Message d'erreur. Si la méthode retourne une chaîne de caractères non vide, elle
-sera considérée comme un message d'erreur et la création de document sera
+est considérée comme un message d'erreur et la création de document est
 abandonnée.
 
 Ce message est aussi stocké dans le paramètre de sortie `$info->preStore` de la
@@ -45,7 +44,7 @@ Aucun.
 
 ## Exemples {#core-ref:2628e1ce-7af9-41dc-acae-0e009091357d}
 
-Dans la famille _MyFamily_, la modification d'un document ne devra être
+Dans la famille _MyFamily_, la modification d'un document ne doit être
 possible que si la somme des attributs MY_NUMBERONE et MY_NUMBERTWO est
 inférieure au paramètre MY_MAX de la famille.
 
@@ -109,3 +108,4 @@ révision.
 [docprerefresh]:    #core-ref:580d6be1-6b6a-439b-abd7-34b26cfaf2e5 "Hameçon Doc::preRefresh()"
 [docpostrefresh]:   #core-ref:9352c534-3691-41e3-b293-599db8e9a4fd "Hameçon Doc::postRefresh()"
 [docrevise]:        #core-ref:882e3730-0483-4dbc-9b9d-0d0b5cc31d38
+[hook]:             https://fr.wikipedia.org/wiki/Hook_(informatique)

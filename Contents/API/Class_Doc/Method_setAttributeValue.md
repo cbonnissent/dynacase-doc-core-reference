@@ -22,8 +22,9 @@ Les résultats fournis par la méthode
 [`Doc::getRawValue()`][docgetrawvalue] ne peuvent pas être utilisés
 directement par cette méthode.
 
-Les espaces et caractères invisibles en début et fin de valeur sont supprimés.
-La fonction [`trim`][phptrim] est utilisée pour réaliser cette suppression.
+Les espaces et certains caractères invisibles en début et fin de valeur sont
+supprimés. La fonction [`trim`][phptrim] est utilisée pour réaliser cette
+suppression.
 
 ## Liste des paramètres {#core-ref:4d1ee0a2-6e51-4e69-9e6e-0f55a96374b5}
 
@@ -47,13 +48,13 @@ Void.
 
 Retourne une exception de type `\Dcp\Exception` dans les cas suivants :
 
-*   L'attribut n'existe pas
+*   L'attribut n'existe pas;
 *   Le type attribut ne peut recevoir de valeur (`frame`, `tab`, `menu`)
 
 Retourne une exception de type `\Dcp\AttributeValue\Exception` dans les cas
 suivants :
 
-*   La valeur est incompatible avec le type d'attribut
+*   La valeur est incompatible avec le type d'attribut;
 *   Une valeur scalaire est donnée pour un attribut multiple.
 
 ## Historique {#core-ref:2ac0c68c-897b-4ed6-97c9-5d36c8e49db9}

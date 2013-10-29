@@ -17,7 +17,7 @@ document.
 
 ### Avertissements {#core-ref:9915015f-7e30-46c0-bb10-19898db22f98}
 
-Les messages enregistrés ne sont pas localisable. Cela implique que les messages
+Les messages enregistrés ne sont pas localisables. Cela implique que les messages
 restitués par l'historique ne sont pas traduits.
 
 ## Liste des paramètres {#core-ref:293eee10-486a-4216-a18c-9fae74e58407}
@@ -29,16 +29,16 @@ restitués par l'historique ne sont pas traduits.
 (int) `level`
 :   Niveau du message :
     
-    *   DocHisto::NOTICE : notification
-    *   **DocHisto::INFO** : message d'information (valeur par défaut)
-    *   DocHisto::MESSAGE : message standard
-    *   DocHisto:: WARNING : message d'avertissement
+    *   DocHisto::NOTICE : notification;
+    *   **DocHisto::INFO** : message d'information (valeur par défaut);
+    *   DocHisto::MESSAGE : message standard;
+    *   DocHisto:: WARNING : message d'avertissement;
     *   DocHisto::ERROR : message d'erreur. Dans ce cas, le message est aussi 
         ajouté au fichier log d'erreur du serveur _Apache_.
 
 (string) `code` 
-:   Code du message. ce code peut être utilisé pour répertorier certaines
-    entrées dans l'historique. Par exemple le code `CREATE` est utilisé pour
+:   Code du message : ce code peut être utilisé pour répertorier certaines
+    entrées dans l'historique. Par exemple, le code `CREATE` est utilisé pour
     indiquer les messages relatifs à la création d'un document. La méthode
     `Doc::getHisto()` permet de filtrer en fonction du code les messages de
     l'historique.
