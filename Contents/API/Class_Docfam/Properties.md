@@ -45,8 +45,8 @@ title
 schar
 :   Indique les modalités de révision des documents de cette famille :
     
-    *   *R* : Révision automatique à chaque modification;
-    *   *S* : document non révisable.
+    *   `R` : Révision automatique à chaque modification,
+    *   `S` : document non révisable.
 
 cprofid
 :   Identifiant du profil qui sera lié aux nouveaux document de la famille.
