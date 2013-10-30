@@ -1397,9 +1397,6 @@ book:
         wip_sub: ""
     - level:   3
       content:  "Advanced/Template/formatcollection.md"
-      flags:
-        draft: "draft"
-        new: "new"
     - level:   2
       content:  "Advanced/familles/introduction.md"
       flags:
