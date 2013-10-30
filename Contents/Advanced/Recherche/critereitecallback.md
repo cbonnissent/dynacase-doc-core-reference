@@ -3,7 +3,7 @@
 ## Callback sur un itérateur {#core-ref:8d29c759-c339-437f-8391-7acdaa26a9a3}
 
 Il est possible d'appliquer une fonction sur chacun des documents d'une liste de
-documents provenant d'un iterateur.
+documents provenant d'un itérateur.
 
     [php]
     $s=new SearchDoc("","IUSER");
@@ -22,9 +22,9 @@ documents provenant d'un iterateur.
         print "$docid)".$doc->getTitle()."(".$doc->getProperty("locked").")\n";
     }
 
-Dans cet exemple l'ensemble des documents sera verrouillé. La fonction de
-mapping est appelée sur chacun des documents lors de l'itération.. S'il n'y a
-pas d'itération la fonction de mapping ne sera pas appelée.
+Dans cet exemple l'ensemble des documents sera verrouillé.  *Attention* : La
+fonction de mapping est appelée sur chacun des documents lors de l'itération.
+S'il n'y a pas d'itération la fonction de mapping ne sera pas appelée.
 
 ## Callback sur un itérateur avec filtrage {#core-ref:13b548b0-0e13-407c-b7f3-0d32321d5602}
 

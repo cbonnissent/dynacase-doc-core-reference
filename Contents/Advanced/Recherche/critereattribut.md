@@ -16,8 +16,9 @@ d'utiliser les attributs de cette famille comme critères.
 
 L'exemple ci-dessus montre la recherche de toutes les personnes dont le prénom
 contient *jean*. Les filtres ajoutés au moyen de la méthode `addFilter`
-établissent une conjonction de conditions. Pour établir une disjonction, il faut
-l'écrire manuellement en SQL en utilisant l'opérateur logique `or`.
+établissent une conjonction de conditions (opérateur `and`). Pour établir une
+disjonction, il faut l'écrire manuellement en SQL en utilisant l'opérateur
+logique `or`.
 
 Les [opérateurs sql][pgop] utilisés doivent être compatibles avec les types des
 [attributs][docattributs] stockés en base de données.
@@ -61,7 +62,6 @@ hiérarchie dans ce type d'attribut.
         print "$k)".$v["title"]."(".getv($v,"us_mail","nomail").")\n";
     }
 
-
 Cet exemple permet de sélectionner la liste des chefs de service. Le chef de
 service a pour clef 'chefserv'.
 
@@ -72,7 +72,7 @@ filtre Postgresql suivant permet de filtrer les documents dont une des valeurs
 est égale à une valeur précise :
 
     [php]
-    $s->addFilter("string_to_array(%s,E'\\n') && '{%s}', $attrId, $expectedValue);
+    $s->addFilter("string_to_array(%s,E'\\n') && '{%s}'", $attrId, $expectedValue);
 
 Si le tableau contient une liste d'identifiants de document, le filtre
 Postgresql suivant peut être utilisé pour retourner tous les documents contenant
@@ -106,7 +106,7 @@ suppression émis par l'utilisateur courant
 Il est notamment possible d'utiliser, entre autres, les tables `dochisto`,
 `docutag` ou `docrel` pour établir un critère de jointure.
 
-On ne peut utiliser qu'un seul ordre "join" par requête.
+*Attention* : On ne peut utiliser qu'un seul ordre "join" par requête.
 
 Il est aussi possible de créer un critère sur une famille liée :
 

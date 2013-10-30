@@ -26,7 +26,7 @@ nombre de documents correspondants.
 Attention, le premier appel à une des méthodes `DocSearch::search` ou
 `DocSearch::onlyCount` lance une requête au serveur de base de données. Le
 résultat est mis en cache pour être exploité par les itérateurs. Un deuxième
-appel à ces méthodes ne relance pas une deuxième requête. Si on veut reéxécuter
+appel à ces méthodes ne relance pas une deuxième requête. Si on veut re-éxécuter
 la requête il faut soit créer un nouvel objet, soit utiliser la méthode
 `DocSearch::reset()`.
 

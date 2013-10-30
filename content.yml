@@ -1287,79 +1287,34 @@ book:
     - level:   2
       content:  "Advanced/Recherche/introduction.md"
       subtoc:   2
-      flags:
-        draft: "draft"
-        new: "new"
     - level:   3
       content:  "Advanced/Recherche/searchdoc.md"
-      flags:
-        draft: "draft"
-        new: "new"
     - level:   4
       content:  "Advanced/Recherche/critereattribut.md"
-      flags:
-        draft: "draft"
-        new: "new"
     - level:   4
       content:  "Advanced/Recherche/critereid.md"
-      flags:
-        draft: "draft"
-        new: "new"
     - level:   4
       content:  "Advanced/Recherche/criteredossier.md"
-      flags:
-        draft: "draft"
-        new: "new"
     - level:   4
       content:  "Advanced/Recherche/critereacl.md"
-      flags:
-        draft: "draft"
-        new: "new"
     - level:   4
       content:  "Advanced/Recherche/critererevision.md"
-      flags:
-        draft: "draft"
-        new: "new"
     - level:   4
       content:  "Advanced/Recherche/docrel.md"
-      flags:
-        draft: "draft"
-        new: "new"
     - level:   4
       content:  "Advanced/Recherche/critereitecallback.md"
-      flags:
-        draft: "draft"
-        new: "new"
     - level:   4
       content:  "Advanced/Recherche/count.md"
-      flags:
-        draft: "draft"
-        new: "new"
     - level:   4
       content:  "Advanced/Recherche/errors.md"
-      flags:
-        draft: "draft"
-        new: "new"
     - level:   4
       content:  "Advanced/Recherche/generalsearch.md"
-      flags:
-        draft: "draft"
-        new: "new"
     - level:   3
       content:  "Advanced/Recherche/dsearch.md"
-      flags:
-        draft: "draft"
-        new: "new"
     - level:   3
       content:  "Advanced/Recherche/rapport.md"
-      flags:
-        draft: "draft"
-        new: "new"
     - level:   3
       content:  "Advanced/Recherche/ssearch.md"
-      flags:
-        draft: "draft"
-        new: "new"
     - level:   2
       content:  "Advanced/Authent/introduction.md"
       subtoc:   1

@@ -3,7 +3,7 @@
 ## Recherche sans tenir compte des droits {#core-ref:f3fb1d45-d401-4ffd-a152-0fe0aa005a81}
 
 Par défaut, seuls les documents que l'utilisateur a le droit de voir sont
-retournés. Pour retourner tous les documents sans vérifier les droit, il faut
+retournés. Pour retourner tous les documents sans vérifier les droits, il faut
 utiliser la méthode `overrideViewControl()`.
 
     [php]
@@ -16,10 +16,10 @@ vérifié.
 ## Recherche et documents confidentiels {#core-ref:5da495b6-7e9f-4063-a254-3689bb786389}
 
 Les documents confidentiels sont les documents dont la propriété 'confidential'
-est égale à 1. L'accès à ces documents doit être contrôlé par l'application qui
-décide quelles parties elle veut montrer. À la différence du droit voir ('view')
+est égale à 1.  L'accès à ces documents doit être contrôlé par l'application qui
+décide quelles parties elle veut montrer.  À la différence du droit voir ('view')
 des documents, la recherche retourne les documents confidentiels par défaut. Le
-filtrage est à faire du côté de l'application avec un post-traitement.
+filtrage est à faire du côté de l'application avec un post-traitement.  
 Cependant, il est possible de rajouter un filtre permettant de ne pas retourner
 les documents confidentiels que l'utilisateur n'a pas le droit de voir (droit :
 'confidential'). Pour cela, il faut appeler la méthode `excludeConfidential()`.

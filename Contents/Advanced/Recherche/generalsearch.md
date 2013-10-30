@@ -18,26 +18,38 @@ dans ce cas : "chevaux". Par contre cette recherche ne retournera pas les
 documents contenant "chevaleresques". Cette recherche ne tient pas compte des
 accents.
 
-## Mot exact {#core-ref:91db46cf-99e1-411c-aab1-e62ab0752bce}
+## Terme exact {#core-ref:91db46cf-99e1-411c-aab1-e62ab0752bce}
 
-Pour rechercher un mot exact il faut le mettre entre `"` (double quotes). Ainsi
+Pour rechercher un terme exact il faut le mettre entre `"` (double quotes). Ainsi
 
     [php]
     $s->addGeneralFilter('"cheval"'); 
 
-retournera les documents contenant le mot "cheval" mais pas "chevaux", cette
+retourne les documents contenant le mot "cheval" mais pas "chevaux", cette
 recherche tient aussi compte des accents.
+
+    [php]
+    $s->addGeneralFilter('"cheval blanc"'); 
+
+retourne tous les documents contenant exactement le terme cheval blanc
+(attention, ici, blanc doit être positionné immédiatement à la suite de cheval).
 
 ## Partie de mot {#core-ref:226c599f-9816-44d6-857c-ba1cd5ef1852}
 
-Pour rechercher une partie de mot, il faut utiliser le caractère `~` devant la
+Pour rechercher une partie de mot, il faut utiliser le caractère `*` devant la
 partie à rechercher.
 
     [php]
-    $s->addGeneralFilter('"~cheval"'); 
+    $s->addGeneralFilter('cheva*'); 
 
-L'exemple ci-dessus, recherchera la documents contenant "cheval" ou
-"chevaleresque" mais pas "chevaux". Cette recherche tient compte des accents.
+retourne tous les documents contenant des mots commençant par cheva, comme
+`cheval`, `chevalier`, `chevaux`, etc.
+
+    [php]
+    $s->addGeneralFilter('*vage');
+
+retourne tous les documents contenant des mots se terminant par vage, comme
+élevage, gavage, pavage, etc.
 
 ## Plusieurs mots {#core-ref:d2a146a2-a692-4750-9bab-e451a9e9664d}
 
@@ -81,7 +93,7 @@ paramètre) pour vérifier l'orthographe des mots en  français.
 
 Cet exemple lance une recherche sur les mots "méson" ou "maison". Cette
 vérification n'est pas effectuée sur les termes exacts (avec double quote) ni
-sur  les expressions (usage du `~` ). 
+sur les expressions (usage du `*` ). 
 
 ## Ordonnancement par pertinence {#core-ref:d3f2d069-4e87-4423-97cf-4589ae3be2c7}
 
@@ -93,15 +105,15 @@ l'information lexicale, la proximité et la structure ; en fait sont considér�
 
 *   le nombre de fois où les termes de la requête apparaissent dans le
     document,
-*   la proximité des termes de la recherche avec ceux de la requête
+*   la proximité des termes de la recherche avec ceux de la requête,
 *   l'importance du passage du document où se trouvent les termes du document.
 
 Les poids des mots sont en fonction de l'endroit où le terme est trouvé.
 
-*   Poids A : titre du document
-*   Poids B : attributs résumés
-*   Poids C : autres attributs non résumé
-*   Poids D : contenu des fichiers attachés (si indexation activé)
+*   poids A : titre du document,
+*   poids B : attributs résumés,
+*   poids C : autres attributs non résumé,
+*   poids D : contenu des fichiers attachés (si indexation activé).
 
 Si le terme recherché est de poids A, la pertinence sera plus élevée que s'il
 est trouvé avec un poids B. Si on a utilisé une recherche générale sans

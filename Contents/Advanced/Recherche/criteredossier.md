@@ -5,16 +5,16 @@ spécifique (dossier ou recherche) au moyen de la méthode
 `DocSearch::useCollection()`.
 
 Cette recherche n'est pas récursive par défaut, c'est à dire qu'elle ne
-recherchera que dans la collection indiquée.
+recherche que dans la collection indiquée.
 
 Lorsque la collection est un dossier, il est possible de faire des recherches
 récursives à l'aide de la méthode `DocSearch::setRecursiveSearch()`. Le niveau
 de profondeur de la recherche est ensuite défini au moyen de la propriété
 `DocSearch::folderRecursiveLevel`, positionné à 2 par défaut.
 
-**Note** : On notera que c'est le niveau de récursivité. par exemple,
-`folderRecursiveLevel=0` veut dire que l'on recherche dans le dossier, alors que
-`folderRecursiveLevel=1` indique de rechercher dans le dossier et ses
+**Note** : Le `setRecursiveSearch` fait référence au niveau de récursivité. par
+exemple, `folderRecursiveLevel=0` veut dire que l'on recherche dans le dossier,
+alors que `folderRecursiveLevel=1` indique de rechercher dans le dossier et ses
 sous-dossiers.
 
 Lorsque la collection est une recherche, il n'est pas possible de faire la

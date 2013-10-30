@@ -2,7 +2,7 @@
 
 ## Recherche de documents issus d'une même famille  {#core-ref:5954b300-a514-4a3e-966e-dac5cf07950d}
 
-La recherche de documents en fonction d'une famille est réalisé avec la classe
+La recherche de documents en fonction d'une famille est réalisée avec la classe
 [`SearchDoc`][searchdoc].
 
 Exemple basique : recherche de tous les utilisateurs (document de la famille
@@ -52,11 +52,11 @@ les données affichables des documents recherchés.
 
 Par défaut les résultats suivants sont exclus :
 
-*   Les documents supprimés (`doctype = 'Z'`)
-*   Les documents figés (`locked = -1`)
-*   Les documents temporaires (`doctype='T'`)
-*   Les documents archivés (`archiveid is null`)
-*   Les documents non visibles par l'utilisateur courant ([droit][docacl] `view`)
+*   les documents supprimés (`doctype = 'Z'`),
+*   les documents figés (`locked = -1`),
+*   les documents temporaires (`doctype='T'`),
+*   les documents archivés (`archiveid is null`),
+*   les documents non visibles par l'utilisateur courant ([droit][docacl] `view`).
 
 ### Retour de documents bruts  {#core-ref:4c508940-f5a0-40ee-a942-6372a95d112e}
 
@@ -91,7 +91,7 @@ spécifiques aux sous-familles si la recherche comporte de tels documents.
 
 ### Retour d'objets documentaires {#core-ref:84a293c0-0ea6-428c-8da6-f8cc46980d5b}
 
-Ce programme permet d'écrire tous les titres des documents accessible de la
+Ce programme permet d'écrire tous les titres des documents accessibles de la
 famille "utilisateur". Ici, on n'a utilisé que le critère d'appartenance à une
 famille.  L'appel à la méthode `DocSearch::setObjectReturn()` indique que la
 méthode `DocSearch::Search()` doit retourner des objets documentaires
