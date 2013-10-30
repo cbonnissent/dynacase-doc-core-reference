@@ -416,40 +416,22 @@ book:
     - level:   2
       element: "chapter"
       content:  "API/Class_Doc.md"
-      flags:
-        draft: "draft"
-        new: "new"
       subtoc:   1
     - level:   3
       element: "chapter"
       content:  "API/Class_Doc/Properties.md"
-      flags:
-        draft: "draft"
-        new: "new"
     - level:   3
       element: "chapter"
       content:  "API/Class_Doc/Method_PreCreated.md"
-      flags:
-        draft: "draft"
-        new: "new"
     - level:   3
       element: "chapter"
       content:  "API/Class_Doc/Method_PostCreated.md"
-      flags:
-        draft: "draft"
-        new: "new"
     - level:   3
       element: "chapter"
       content:  "API/Class_Doc/Method_preStore.md"
-      flags:
-        draft: "draft"
-        new: "new"
     - level:   3
       element: "chapter"
       content:  "API/Class_Doc/Method_postStore.md"
-      flags:
-        draft: "draft"
-        new: "new"
     - level:   3
       element: "chapter"
       content:  "API/Class_Doc/Method_ReallyDelete.md"
@@ -459,21 +441,12 @@ book:
     - level:   3
       element: "chapter"
       content:  "API/Class_Doc/Method_Refresh.md"
-      flags:
-        draft: "draft"
-        new: "new"
     - level:   3
       element: "chapter"
       content:  "API/Class_Doc/Method_preRefresh.md"
-      flags:
-        draft: "draft"
-        new: "new"
     - level:   3
       element: "chapter"
       content:  "API/Class_Doc/Method_postRefresh.md"
-      flags:
-        draft: "draft"
-        new: "new"
     - level:   3
       element: "chapter"
       content:  "API/Class_Doc/Method__array2val.md"
@@ -495,15 +468,9 @@ book:
     - level:   3
       element: "chapter"
       content:  "API/Class_Doc/Method_addHistoryEntry.md"
-      flags:
-        draft: "draft"
-        new: "new"
     - level:   3
       element: "chapter"
       content:  "API/Class_Doc/Method_revise.md"
-      flags:
-        draft: "draft"
-        new: "new"
     - level:   3
       element: "chapter"
       content:  "API/Class_Doc/Method_control.md"
@@ -573,9 +540,6 @@ book:
     - level:   3
       element: "chapter"
       content:  "API/Class_Doc/Method_getDocAnchor.md"
-      flags:
-        draft: "draft"
-        new: "new"
     - level:   3
       element: "chapter"
       content:  "API/Class_Doc/Method_getFamDoc.md"
@@ -585,15 +549,9 @@ book:
     - level:   3
       element: "chapter"
       content:  "API/Class_Doc/Method_getOldRawValue.md"
-      flags:
-        draft: "draft"
-        new: "new"
     - level:   3
       element: "chapter"
       content:  "API/Class_Doc/Method_getOldRawValues.md"
-      flags:
-        draft: "draft"
-        new: "new"
     - level:   3
       element: "chapter"
       content:  "API/Class_Doc/Method_getParamValue.md"
@@ -633,15 +591,9 @@ book:
     - level:   3
       element: "chapter"
       content:  "API/Class_Doc/Method_getRawValue.md"
-      flags:
-        draft: "draft"
-        new: "new"
     - level:   3
       element: "chapter"
       content:  "API/Class_Doc/Method_getAttributeValue.md"
-      flags:
-        draft: "draft"
-        new: "new"
     - level:   3
       element: "chapter"
       content:  "API/Class_Doc/Method_isAlive.md"
@@ -729,21 +681,12 @@ book:
     - level:   3
       element: "chapter"
       content:  "API/Class_Doc/Method_setValue.md"
-      flags:
-        draft: "draft"
-        new: "new"
     - level:   3
       element: "chapter"
       content:  "API/Class_Doc/Method_setAttributeValue.md"
-      flags:
-        draft: "draft"
-        new: "new"
     - level:   3
       element: "chapter"
       content:  "API/Class_Doc/Method_store.md"
-      flags:
-        draft: "draft"
-        new: "new"
     - level:   3
       element: "chapter"
       content:  "API/Class_Doc/Method_viewattr.md"

@@ -2,8 +2,8 @@
 
 <div class="short-description" markdown="1">  
 
-Hameçon utilisé par la méthode [`Doc::Store()`][docstore]. Cette méthode est
-appelée après l'enregistrement en base de données.
+[Hameçon][hook] (ou hook) utilisé par la méthode [`Doc::Store()`][docstore].
+Cette méthode est appelée après l'enregistrement en base de données.
 
 </div>
 
@@ -16,16 +16,16 @@ Cette méthode est utilisable aussi pour réaliser un post-traitement après une
 création de document. Elle ne peut pas annuler l'enregistrement. Le document
 possède un identificateur et est déjà enregistré en base.
 
-Cette méthode est aussi appelée par [Doc::revise()][docrevise] lorsque le
+Cette méthode est aussi appelée par [`Doc::revise()`][docrevise] lorsque le
 document est révisé. Une révision entraîne une création en base de données.
 
 ### Avertissements {#core-ref:49929040-b38d-4b2a-9432-98c48af2ff3a}
 
 Il ne faut pas appeler la méthode [`Doc::Store()`][docstore] dans cette méthode
-au risque d'avoir une boucle infinie.
+au risque d'avoir une boucle de récursion infinie.
 
-Si des modifications d'attributs sont réalisées dans cette méthode, elles seront
-enregistrés en base par la méthode [`Doc::Store()`][docstore].
+Si des modifications d'attributs sont réalisées dans cette méthode, elles sont
+automatiquement enregistrées en base par la méthode [`Doc::Store()`][docstore].
 
 ## Liste des paramètres {#core-ref:617d3a6d-a2b7-4288-b874-26c97e5e1307}
 
@@ -33,7 +33,7 @@ Aucun paramètre.
 
 ## Valeur de retour {#core-ref:355cb8b8-7c9f-41de-b573-0a204a2433f7}
 
-La valeur de retour est un message d'information. Ce message sera enregistré
+La valeur de retour est un message d'information. Ce message est enregistré
 dans l'historique du document.
 
 ## Erreurs / Exceptions {#core-ref:24ecaa74-c05f-4808-ac16-c18bd44aa0d0}
@@ -109,4 +109,4 @@ appelé systématiquement par la méthode [`Doc::store()`][docstore].
 [docprerefresh]:    #core-ref:580d6be1-6b6a-439b-abd7-34b26cfaf2e5 "Hameçon Doc::preRefresh()"
 [docpostrefresh]:   #core-ref:9352c534-3691-41e3-b293-599db8e9a4fd "Hameçon Doc::postRefresh()"
 [docrevise]:        #core-ref:882e3730-0483-4dbc-9b9d-0d0b5cc31d38
-
+[hook]:             https://fr.wikipedia.org/wiki/Hook_(informatique)

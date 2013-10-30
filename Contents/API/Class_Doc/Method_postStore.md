@@ -1,8 +1,8 @@
 # Doc::postStore() {#core-ref:99520a31-0aef-4bc6-b20a-114737059d17}
 
-<div class="short-description" markdown="1">
-Hameçon utilisé par la méthode [`Doc::Store()`][docstore]`. Cette méthode est
-appelée après l'enregistrement en base de données.
+<div class="short-description" markdown="1"> 
+[Hameçon][hook] (ou hook) utilisé par la méthode [`Doc::Store()`][docstore].
+Cette méthode est appelée après l'enregistrement en base de données.
 </div>
 
 ## Description {#core-ref:6a794ff2-4c9c-4bb1-aed7-8c23e3b7ab2d}
@@ -17,10 +17,10 @@ identificateur et est déjà enregistré en base.
 ### Avertissements {#core-ref:a3f912a9-0ccf-4f38-97af-faeac7c423aa}
 
 Il ne faut pas appeler la méthode [`Doc::Store()`][docstore] dans cette méthode
-au risque d'avoir une boucle infinie.
+au risque d'avoir une boucle de récursion infinie.
 
-Si des modifications d'attributs sont réalisées dans cette méthode, elles seront
-enregistrés en base par la méthode [`Doc::Store()`][docstore].
+Si des modifications d'attributs sont réalisées dans cette méthode, elles sont
+enregistrées en base par la méthode [`Doc::Store()`][docstore].
 
 
 ## Liste des paramètres {#core-ref:0252e614-71e3-44f8-a4d8-6bc5ea238ce2}
@@ -29,7 +29,7 @@ Aucun paramètre.
 
 ## Valeur de retour {#core-ref:5ceded6d-ae21-4c1e-b554-537b532aed23}
 
-La valeur de retour est un message d'information. Il sera stocké dans le
+La valeur de retour est un message d'information. Il est stocké dans le
 paramètre de sortie `$info->postStore` de la méthode [`Doc::Store()`][docstore].
 
 ## Erreurs / Exceptions {#core-ref:e187697c-5e99-4083-ab9d-05d2a6056435}
@@ -107,4 +107,4 @@ révision.
 [docprerefresh]:    #core-ref:580d6be1-6b6a-439b-abd7-34b26cfaf2e5 "Hameçon Doc::preRefresh()"
 [docpostrefresh]:   #core-ref:9352c534-3691-41e3-b293-599db8e9a4fd "Hameçon Doc::postRefresh()"
 [docrevise]:        #core-ref:882e3730-0483-4dbc-9b9d-0d0b5cc31d38
-
+[hook]:             https://fr.wikipedia.org/wiki/Hook_(informatique)

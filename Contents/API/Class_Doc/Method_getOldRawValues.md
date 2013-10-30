@@ -26,7 +26,7 @@ Aucun.
 ## Valeur de retour {#core-ref:50244fd3-0a0c-449f-8b77-9b741f85696a}
 
 Retourne un tableau indexé par l'identifiant de l'attribut (en minuscules).
-Chaque attribut modifié à sa propre entrée dans le tableau. Les attribut non
+Chaque attribut modifié a sa propre entrée dans le tableau. Les attributs non
 modifiés n'ont pas d'entrée dans le tableau.
 
 ## Erreurs / Exceptions {#core-ref:9dc9b65f-32fb-4997-8ff1-1817e4ecccb6}

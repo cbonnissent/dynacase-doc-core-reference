@@ -1,7 +1,7 @@
 # Doc::preRefresh() {#core-ref:580d6be1-6b6a-439b-abd7-34b26cfaf2e5}
 
 <div class="short-description" markdown="1">
-Hameçon utilisé par la méthode [`Doc::refresh()`][docrefresh].
+[Hameçon][hook] (ou hook) utilisé par la méthode [`Doc::refresh()`][docrefresh].
 </div>
 
 ## Description {#core-ref:ae076285-e189-4974-a637-14296192545f}
@@ -24,7 +24,7 @@ Aucun.
 
 ## Valeur de retour {#core-ref:e3f80887-87c0-464f-8f75-12c429c36225}
 
-Cette méthode doit retourner une chaîne de caractères. Ce message sera retourné
+Cette méthode doit retourner une chaîne de caractères. Ce message est retourné
 par la méthode [`Doc::refresh()`][docrefresh].
 
 ## Erreurs / Exceptions {#core-ref:6ea9af28-baa7-458f-b2f3-fff17d51ff4d}
@@ -102,3 +102,4 @@ disposer des mêmes fonctionnalités.
 [docrefresh]:       #core-ref:0bab02de-50e0-46f2-8bdb-81c62dc86c93
 [computeattr]:      #core-ref:4565cab9-73c8-4eee-bfa7-218ffbd4b687
 [docsetvalue]:      #core-ref:febc397f-e629-4d47-955d-27cab8f4ed2f
+[hook]:             https://fr.wikipedia.org/wiki/Hook_(informatique)

@@ -26,11 +26,12 @@ Les résultats fournis par la méthode
 directement par cette méthode.
 
 Si la valeur est une chaîne vide ou égale à `null`, alors la valeur de
-l'attribut ne sera pas modifiée. Si la valeur est égale à un espace ` `, la
-valeur sera effacée.
+l'attribut n'est pas modifiée. Si la valeur est égale à un espace ` `, la
+valeur est effacée.
 
-Les espaces et caractères invisibles en début et fin de valeur sont supprimés.
-La fonction [`trim`][phptrim] est utilisée pour réaliser cette suppression.
+Les espaces et certains caractères invisibles en début et fin de valeur sont
+supprimés. La fonction [`trim`][phptrim] est utilisée pour réaliser cette
+suppression.
 
 
 ## Liste des paramètres {#core-ref:43df765e-53c3-478a-9287-20c78d3bbc8a}
