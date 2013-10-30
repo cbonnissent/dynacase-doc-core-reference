@@ -11,8 +11,8 @@ répertoire :
     locale/<lang>/LC_MESSAGES/
 
 Les catalogues sources sont prioritaires aux catalogues binaires. Cela implique
-que s'il y a des clefs dupliquées c'est la traduction des fichiers sources qui
-sera utilisée.
+que s'il y a des clefs dupliquées, c'est la traduction des fichiers sources qui
+est utilisée.
 
 Note : les catalogues binaires peuvent être obtenus par le programme `msgfmt` et
 inversement les catalogues sources peuvent être obtenus par le programme
@@ -27,11 +27,9 @@ Pour prendre en compte les nouvelles traductions, il faut lancer le programme :
 
     $ ./whattext
 
-sur le serveur depuis le répertoire d'installation. Ce programme va fusionner
-l'ensemble des catalogues dans un catalogue principal. Ce catalogue sera chargé
-lors de l'exécution des actions et scripts Dynacase.
-
-
+sur le serveur depuis le répertoire d'installation. Ce programme fusionne
+l'ensemble des catalogues dans un catalogue principal. C'est ce catalogue qui
+est chargé lors de l'exécution des actions et scripts Dynacase.
 
 <!-- link -->
 [wikiGettext]:       http://fr.wikipedia.org/wiki/GNU_gettext "Gettext sur Wikipédia"

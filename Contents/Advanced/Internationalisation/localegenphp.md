@@ -1,6 +1,6 @@
 # Générer et mettre à jour les entrées du catalogue {#core-ref:2c163f00-8e94-4736-86f2-bb51352c52aa}
 
-## Générer les catalogues pour les fichiers PHP
+## Générer les catalogues pour les fichiers PHP {#core-ref:6feaa982-4171-11e3-9e01-48f953959281}
 
 La génération des catalogues est effectuée traditionnellement par le programme
  [xgettext][xgettext].

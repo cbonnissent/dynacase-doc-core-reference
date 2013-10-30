@@ -1,4 +1,4 @@
-# Générer les catalogues pour les templates
+# Générer les catalogues pour les templates {#core-ref:0294a176-4171-11e3-b364-cffb8e583c34}
 
 
 Le programme `xgettextLayout` permet d'extraire les clefs de traduction depuis des
@@ -27,7 +27,7 @@ Il est possible de déclarer les fichiers d'entrées via le pipe.
 [gencatalog]:        #core-ref:2c163f00-8e94-4736-86f2-bb51352c52aa
 [pgettext]:          http://www.gnu.org/software/gettext/manual/html_node/Contexts.html "Contexte dans gettext"
 [ngettext]:          http://www.php.net/manual/fr/function.ngettext.php "ngettext sur php.net"
-[layout]:           #core-ref:5f4a2f4b-9ceb-42db-8ac1-2a7baa621ce2
-[xgettext]:         http://www.gnu.org/software/gettext/manual/html_node/xgettext-Invocation.htm "xgettext reference"
-[famdecl]:          #core-ref:cfc7f53b-7982-431e-a04b-7b54eddf4a75
-[gettextutil]:      http://www.gnu.org/software/gettext/manual/html_node/index.html#Top
+[layout]:            #core-ref:5f4a2f4b-9ceb-42db-8ac1-2a7baa621ce2
+[xgettext]:          http://www.gnu.org/software/gettext/manual/html_node/xgettext-Invocation.htm "xgettext reference"
+[famdecl]:           #core-ref:cfc7f53b-7982-431e-a04b-7b54eddf4a75
+[gettextutil]:       http://www.gnu.org/software/gettext/manual/html_node/index.html#Top

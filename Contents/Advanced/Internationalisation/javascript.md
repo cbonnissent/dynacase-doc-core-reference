@@ -1,6 +1,6 @@
-# Utiliser un catalogue dans les fonctions javascript
+# Utiliser un catalogue dans les fonctions JavaScript {#core-ref:c5e3821a-4170-11e3-9b2b-b38f13ee44c4}
 
-Le module _dynacase-datajs_ fournit une bibliothèque javascript permettant
+Le module _dynacase-datajs_ fournit une bibliothèque JavaScript permettant
 d'utiliser des traductions.
 
     [javascript]
@@ -23,7 +23,11 @@ La méthode `Fdl.Context::_()` retourne la traduction comme pour la fonction `_`
 
 La langue choisie est celle de l'utilisateur (paramètre applicatif `CORE_LANG`).
 
-## Génération du catalogue temporaire
+*Note* : La récupération du catalogue est une opération JavaScript qui fait un 
+appel Ajax synchrone au serveur, elle bloque donc l'exécution du JavaScript le 
+temps de la récupération des traductions.
+
+## Génération du catalogue temporaire {#core-ref:54be89bc-4171-11e3-b408-cffb8e583c3}
 
 Le programme `xgettextJs` permet générer le catalogue temporaire.
 
@@ -34,7 +38,7 @@ Le programme `xgettextJs` permet générer le catalogue temporaire.
 Ce catalogue temporaire peut ainsi être utilisé pour produire les fichiers
 catalogue de traduction.
 
-## Publication du catalogue
+## Publication du catalogue {#core-ref:5bd6f306-4171-11e3-999b-60d7dc830245}
 
 Les catalogues sources (`.po`) doivent être publiés sur le serveur dans le
 répertoire :

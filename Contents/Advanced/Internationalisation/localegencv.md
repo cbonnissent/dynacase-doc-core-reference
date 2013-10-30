@@ -1,4 +1,4 @@
-# Générer les catalogues pour les contrôles de vues
+# Générer les catalogues pour les contrôles de vues {#core-ref:e01fa01e-4170-11e3-816c-60d7dc830245}
 
 Les libellés des vues des [contrôles de vues][cvdoc] peuvent être traduits.
 
@@ -29,32 +29,31 @@ Exemple de fichier de traduction produits :
     "Content-Type: text/plain; charset=UTF-8\n"
     "Content-Transfer-Encoding: 8bit\n"
     "Language: \n"
-
+    
     #: App/Fusers/accountprofil.ods.csv
     #, fuzzy
     msgid "CV_IUSER_ACCOUNT#label#EUSER"
     msgstr "Admin edit"
-
+    
     #: App/Fusers/accountprofil.ods.csv
     #, fuzzy
     msgid "CV_IUSER_ACCOUNT#label#EGROUP"
     msgstr "Groupes"
-
+    
     #: App/Fusers/accountprofil.ods.csv
     #, fuzzy
     msgid "CV_IUSER_ACCOUNT#menu#EGROUP"
     msgstr "Compte"
-
+    
     #: App/Fusers/accountprofil.ods.csv
     #, fuzzy
     msgid "CV_IUSER_ACCOUNT#label#ESUBSTITUTE"
     msgstr "Modifier le suppléant"
-
+    
     #: App/Fusers/accountprofil.ods.csv
     #, fuzzy
     msgid "CV_IUSER_ACCOUNT#menu#ESUBSTITUTE"
     msgstr "Compte"
-
 
 Les clefs suivantes sont générées :
 
@@ -63,8 +62,6 @@ Les clefs suivantes sont générées :
 
 `CVNAME#menu#IDVUE`
 :   Libellé du menu de la vue IDVUE du contrôle de vue CVNAME
-
-
 
 <!-- link -->
 [wikiGettext]:       http://fr.wikipedia.org/wiki/GNU_gettext "Gettext sur Wikipédia"
