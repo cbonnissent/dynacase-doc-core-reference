@@ -12,7 +12,7 @@ Envoyer un message dans les journaux d'évènements.
     [php]
     void info ( string $msg )
 
-La méthode `info` de l'objet `Action` permet d'envoyer un message dans les journaux d'évènements de Dynacase avec le niveau "(I)nfo".
+La méthode `info` de l'objet `Action` permet d'envoyer un message dans les journaux d'événements de Dynacase avec le niveau "(I)nfo".
 
 ## Avertissements
 
@@ -21,7 +21,7 @@ N/A
 ## Liste des paramètres
 
 (string) `msg`
-:   Le message à envoyer au journal d'évènements avec le niveau "(I)nfo"
+:   Le message à envoyer au journal d'événements avec le niveau "(I)nfo"
 
 ## Valeur de Retour
 
