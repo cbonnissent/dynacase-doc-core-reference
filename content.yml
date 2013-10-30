@@ -262,26 +262,26 @@ book:
       element: "chapter"
       content:  "API/Class_Action.md"
       flags:
-        wip: "work in progress"
+        draft: "draft"
         wip_sub: ""
       subtoc:   1
     - level:   3
       element: "chapter"
       content:  "API/Class_Action/Method_canExecute.md"
       flags:
-        wip: "work in progress"
+        draft: "draft"
         wip_sub: ""
     - level:   3
       element: "chapter"
       content:  "API/Class_Action/Method_exitError.md"
       flags:
-        wip: "work in progress"
+        draft: "draft"
         wip_sub: ""
     - level:   3
       element: "chapter"
       content:  "API/Class_Action/Method_getImageUrl.md"
       flags:
-        wip: "work in progress"
+        draft: "draft"
         wip_sub: ""
     - level:   2
       element: "chapter"
@@ -319,44 +319,44 @@ book:
       element: "chapter"
       content:  "API/Class_Application.md"
       flags:
-        wip: "work in progress"
+        draft: "draft"
         wip_sub: ""
       subtoc:   1
     - level:   3
       element: "chapter"
       content:  "API/Class_Application/Method_addCssCode.md"
       flags:
-        wip: "work in progress"
+        draft: "draft"
         wip_sub: ""
     - level:   3
       element: "chapter"
       content:  "API/Class_Application/Method_addCssRef.md"
       flags:
-        wip: "work in progress"
+        draft: "draft"
         wip_sub: ""
     - level:   3
       element: "chapter"
       content:  "API/Class_Application/Method_addJsCode.md"
       flags:
-        wip: "work in progress"
+        draft: "draft"
         wip_sub: ""
     - level:   3
       element: "chapter"
       content:  "API/Class_Application/Method_addJsRef.md"
       flags:
-        wip: "work in progress"
+        draft: "draft"
         wip_sub: ""
     - level:   3
       element: "chapter"
       content:  "API/Class_Application/Method_getCSSLink.md"
       flags:
-        wip: "work in progress"
+        draft: "draft"
         wip_sub: ""
     - level:   3
       element: "chapter"
       content:  "API/Class_Application/Method_getJSLink.md"
       flags:
-        wip: "work in progress"
+        draft: "draft"
         wip_sub: ""
     - level:   2
       element: "chapter"
