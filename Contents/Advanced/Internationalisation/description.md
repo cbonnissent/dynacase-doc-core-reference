@@ -11,7 +11,8 @@ paramètre est modifié à chaque nouvelle connexion de l'utilisateur.
 
 Le catalogue qui est utilisé contient tous les textes traduits de tous les
 modules installés. Il est dont important d'avoir des textes qui ne sont pas déjà
-utilisés par un autre module.
+utilisés par un autre module pour éviter d'écraser les traductions d'un autre
+module, ce qui pourrait dégrader la traduction de ce module.
 
 
 <!-- link -->

@@ -2,7 +2,7 @@
 
 ## Résumé {#core-ref:59fb5d82-b856-4647-8e5a-6f5d7d24085d}
 
-Dynacase comprend un mécanisme permettant l'internationalisation de l'application. Celui-ci permet de :
+Dynacase comprend un mécanisme permettant l'[internationalisation][wfri18n] de l'application. Celui-ci permet de :
 
 * traduire l'ensemble des labels présentés dans l'interface,
 * présenter la date en fonction de la locale de l'utilisateur.
@@ -32,3 +32,6 @@ La mise en place des traductions lors du développement d'une application passe 
 ## Mécanisme de mise à jour des paramètres régionaux {#core-ref:cd3722a8-0d12-493a-aca1-af262e539d40}
 
 L'ajout de nouveaux paramètres régionaux (format de date, d'heure, etc.) passe par la mise à jour d'un fichier de configuration sur la plate-forme.
+
+
+[wfri18n]:  https://fr.wikipedia.org/wiki/Internationalisation_de_logiciel

@@ -1,4 +1,4 @@
-# Générer les catalogues pour les familles de document
+# Générer les catalogues pour les familles de document {#core-ref:f5872ef4-4170-11e3-ba58-48f953959281}
 
 La description de la [structure de famille][famdecl] est définie dans une
 fichier CSV ou ODS. Ce fichier est utilisable pour produire un catalogue de traduction.
@@ -48,26 +48,26 @@ Extrait du fichier généré "TST_SIMPLE.pot" avec la famille décrite ci-dessus
     "Content-Type: text/plain; charset=UTF-8\n"
     "Content-Transfer-Encoding: 8bit\n"
     "Language: \n"
-
+    
     #, fuzzy, (TestSimple.ods.csv)
     msgid "TST_SIMPLE#title"
     msgstr "Test simple"
-
+    
     #: TestSimple.ods.csv
     #, fuzzy, (TestSimple.ods.csv)
     msgid "TST_SIMPLE#tst_fr_html"
     msgstr "Cadre 1"
-
+    
     #: TestSimple.ods.csv
     #, fuzzy, (TestSimple.ods.csv)
     msgid "TST_SIMPLE#tst_title"
     msgstr "Titre"
-
+    
     #: TestSimple.ods.csv
     #, fuzzy, (TestSimple.ods.csv)
     msgid "TST_SIMPLE#tst_size"
     msgstr "Taille"
-
+    
     #, fuzzy, (TestSimple.ods.csv)
     msgid "TST_SIMPLE#tst_size#XL"
     msgstr "Very large"
@@ -93,9 +93,6 @@ Les clefs suivantes sont générée :
     sensibles à la localisation.
     Les options prises en compte sont :  "elabel", "ititle", "submenu", 
     "ltitle", "eltitle", "elsymbol", "lsymbol", "showempty".
-
-
-
 
 <!-- link -->
 [wikiGettext]:       http://fr.wikipedia.org/wiki/GNU_gettext "Gettext sur Wikipédia"

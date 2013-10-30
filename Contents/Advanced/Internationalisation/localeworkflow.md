@@ -1,7 +1,7 @@
-# Traduction des cycles de vies
+# Traduction des cycles de vies {#core-ref:10bf85d6-4171-11e3-8016-b38f13ee44c4}
 
 Les éléments états, transition et activités des [cycles de vie][workflow] peuvent
-être traduits.
+être traduits, de la manière suivante :
 
     [php]
     namespace MyTest;
@@ -42,8 +42,8 @@ de catalogue. Une des solutions consiste à ajouter une fonction factice qui ser
         $i18n=_("tst:activity:etat_redacted");
     }
 
-
-
+Cette fonction peut être soit une fonction privée du cycle de vie, soit être
+présente dans un autre fichier qui n'est pas déployé.
 
 <!-- link -->
 [wikiGettext]:       http://fr.wikipedia.org/wiki/GNU_gettext "Gettext sur Wikipédia"

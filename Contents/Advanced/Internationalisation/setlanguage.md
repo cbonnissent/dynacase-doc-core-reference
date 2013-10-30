@@ -1,4 +1,4 @@
-# Modifier la langue dans un programme
+# Modifier la langue dans un programme {#core-ref:1d2f5742-4171-11e3-9773-cffb8e583c34}
 
 Par défaut, le catalogue correspondant à la locale de l'utilisateur connecté est
 chargé. Il est possible de changer le catalogue en cours d'exécution en

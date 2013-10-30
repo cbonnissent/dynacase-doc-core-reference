@@ -1151,73 +1151,32 @@ book:
     - level:   2
       content:  "Advanced/Internationalisation/introduction.md"
       subtoc:   2
-      flags:
-        draft: "draft"
-        new: "new"
     - level:   3
       content:  "Advanced/Internationalisation/description.md"
-      flags:
-        draft: "draft"
-        new: "new"
     - level:   3
       content:  "Advanced/Internationalisation/catalogue.md"
-      flags:
-        draft: "draft"
-        new: "new"
     - level:   4
       content:  "Advanced/Internationalisation/localelayout.md"
-      flags:
-        draft: "draft"
-        new: "new"
     - level:   4
       content:  "Advanced/Internationalisation/localeworkflow.md"
-      flags:
-        draft: "draft"
-        new: "new"
     - level:   3
       content:  "Advanced/Internationalisation/localegenphp.md"
-      flags:
-        draft: "draft"
-        new: "new"
     - level:   4
       content:  "Advanced/Internationalisation/localegenfamily.md"
-      flags:
-        draft: "draft"
-        new: "new"
     - level:   4
       content:  "Advanced/Internationalisation/localegencv.md"
-      flags:
-        draft: "draft"
-        new: "new"
     - level:   4
       content:  "Advanced/Internationalisation/localegenlayout.md"
-      flags:
-        draft: "draft"
     - level:   3
       content:  "Advanced/Internationalisation/translate.md"
-      flags:
-        draft: "draft"
-        new: "new"
     - level:   3
       content:  "Advanced/Internationalisation/publish.md"
-      flags:
-        draft: "draft"
-        new: "new"
     - level:   3
       content:  "Advanced/Internationalisation/setlanguage.md"
-      flags:
-        draft: "draft"
-        new: "new"
     - level:   3
       content:  "Advanced/Internationalisation/addlanguage.md"
-      flags:
-        draft: "draft"
-        new: "new"
     - level:   3
       content:  "Advanced/Internationalisation/javascript.md"
-      flags:
-        draft: "draft"
-        new: "new"
     - level:   2
       content:  "Advanced/Cinematique/introduction.md"
       flags:

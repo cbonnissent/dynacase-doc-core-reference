@@ -30,7 +30,7 @@ Fichier : `locale/es/lang.php`
 Ensuite, il faut publier l'ensemble des traductions nécessaires dans le nouveau
 répertoire dédiée au nouveau langage `locale/es/LC_MESSAGES/`.
 
-Pour éviter toutes ambiguïtés sur l'entête du catalogue principal, un fichier
+Pour éviter toute ambiguïté sur l'entête du catalogue principal, un fichier
 `header.mo` doit être installé dans le répertoire LC_MESSAGE de la nouvelle
 langue. Ce fichier doit contenir l'entête du catalogue qui précise l'encodage
 `UTF-8` et la forme plurielle.
@@ -50,7 +50,7 @@ Exemple `header.po` :
     "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 **Important** : Pour que les locales soient prises en compte, il faut que le
-système d'exploitation est connaissance de ces locales. La liste des locales du 
+système d'exploitation ait connaissance de ces locales. La liste des locales du 
 système est obtenue avec la commande `locale-gen`.
 
     # locale-gen
@@ -60,12 +60,8 @@ système est obtenue avec la commande `locale-gen`.
       fr_FR.UTF-8... done
     Generation complete.
 
-
 Les locales **UTF-8** doivent être générées.
-Cette même commande permet aussi d'ajouter de nouvelle locale au système.
-
-
-
+Cette même commande permet aussi d'ajouter de nouvelles locales au système.
 
 <!-- link -->
 [wikiGettext]:       http://fr.wikipedia.org/wiki/GNU_gettext "Gettext sur Wikipédia"
