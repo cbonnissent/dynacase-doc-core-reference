@@ -29,11 +29,11 @@ restitués par l'historique ne sont pas traduits.
 (int) `level`
 :   Niveau du message :
     
-    *   DocHisto::NOTICE : notification;
-    *   **DocHisto::INFO** : message d'information (valeur par défaut);
-    *   DocHisto::MESSAGE : message standard;
-    *   DocHisto:: WARNING : message d'avertissement;
-    *   DocHisto::ERROR : message d'erreur. Dans ce cas, le message est aussi 
+    *   `DocHisto::NOTICE` : notification,
+    *   **`DocHisto::INFO`** : message d'information (valeur par défaut),
+    *   `DocHisto::MESSAGE` : message standard,
+    *   `DocHisto:: WARNING` : message d'avertissement,
+    *   `DocHisto::ERROR` : message d'erreur. Dans ce cas, le message est aussi 
         ajouté au fichier log d'erreur du serveur _Apache_.
 
 (string) `code` 
