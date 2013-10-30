@@ -21,7 +21,7 @@ Le script `refreshVaultIndex` permet de régénérer ce cache.
 
 `transaction` 
 :   Permet d'indiquer que les modifications sont effectuées dans une transaction.
-    Par défaut, aucune transation n'est utilisée.
+    Par défaut, aucune transaction n'est utilisée.
     
     Si l'on utilise une transaction et qu'une des sous-opérations génère une
     erreur, alors aucune des modifications n'est appliquée.

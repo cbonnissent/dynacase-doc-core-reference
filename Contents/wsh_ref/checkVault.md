@@ -36,7 +36,7 @@ Le script permet ensuite de supprimer ces fichiers orphelins.
     
     `clean-unref`
     :   Supprime les fichiers orphelins (fichiers qui ne sont référencés par
-    	aucun document Dynacase).
+        aucun document Dynacase).
 
 `csv` 
 :   Permet d'afficher le résultat de l'inspection sous la forme d'un fichier CSV

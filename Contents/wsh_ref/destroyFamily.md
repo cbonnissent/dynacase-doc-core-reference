@@ -14,7 +14,7 @@ documents.
 `transaction` 
 :   Permet d'indiquer que l'erreur d'une sous-opération doit annuler
     l'ensemble des modifications.  
-    Dans le cas contraire,  l'échec d'une sous-opération ne mettra pas en erreur
+    Dans le cas contraire, l'échec d'une sous-opération ne mettra pas en erreur
     l'ensemble du traitement, qui poursuivra alors son exécution.
 
 ## Limite d'usage {#core-ref:fd57e437-c873-44bf-b691-e2c42d2950da}
