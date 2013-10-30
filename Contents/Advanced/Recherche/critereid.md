@@ -16,7 +16,7 @@ La méthode `DocumentList::addDocumentIdentifiers()` permet de renseigner la
 liste des identifiants de document.
 
 Si dans la liste un ou plusieurs identifiant n'existe pas alors l'itérateur ne
-les retournera pas. Dans ce cas le nombre de document retourné sera inférieur au
+les retourne pas. Dans ce cas le nombre de documents retourné est inférieur au
 nombre d'identifiants donnés.
 
 Par défaut seuls les document que l'utilisateur a le droit de voir sont

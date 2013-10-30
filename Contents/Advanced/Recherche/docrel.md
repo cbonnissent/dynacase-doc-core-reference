@@ -20,14 +20,14 @@ La méthode `DocRel::getIRelations()` donne la liste des documents liés vers un
 
 La méthode `DocRel::getIRelations()` retourne les caractéristiques des documents liés.
 
-*   sinitid : identifiant initial source (celui qui pointe vers la cible)
-*   cinitid : identifiant initial cible (la cible pointé par la source)
-*   stitle : titre de la source
-*   ctitle : titre de la cible
-*   sicon : icone de la source
-*   cicon : icone de la cible
-*   type : type de lien (nom de l'attribut ayant établi le lien)
-*   doctype : doctype du document source
+*   `sinitid` : identifiant initial source (celui qui pointe vers la cible),
+*   `cinitid` : identifiant initial cible (la cible pointé par la source),
+*   `stitle` : titre de la source,
+*   `ctitle` : titre de la cible,
+*   `sicon` : icone de la source,
+*   `cicon` : icone de la cible,
+*   `type` : type de lien (nom de l'attribut ayant établi le lien),
+*   `doctype` : doctype du document source.
 
 Résultat :
 
@@ -38,25 +38,25 @@ Résultat :
     (
         [0] => Array
             (
-                [sinitid] => 5973
-                [cinitid] => 5835
-                [ctitle] => Dogue Robert
-                [cicon] => ugarde.png
-                [stitle] => Théodor
-                [sicon] => animal.png
-                [type] => an_gardien
-                [doctype] => F
+                ["sinitid"] => 5973
+                ["cinitid"] => 5835
+                ["ctitle"] => "Dogue Robert"
+                ["cicon"] => "ugarde.png"
+                ["stitle"] => "Théodor"
+                ["sicon"] => "animal.png"
+                ["type"] => "an_gardien"
+                ["doctype"] => "F"
             )
         [1] => Array
             (
-                [sinitid] => 5835
-                [cinitid] => 5835
-                [ctitle] => Dogue Robert
-                [cicon] => ugarde.png
-                [stitle] => Dogue Robert
-                [sicon] => ugarde.png
-                [type] => us_meid
-                [doctype] => F
+                ["sinitid"] => 5835
+                ["cinitid"] => 5835
+                ["ctitle"] => "Dogue Robert"
+                ["cicon"] => "ugarde.png"
+                ["stitle"] => "Dogue Robert"
+                ["sicon"] => "ugarde.png"
+                ["type"] => "us_meid"
+                ["doctype"] => "F"
             )
     )
  </pre></td><td ><pre>
@@ -65,36 +65,36 @@ Résultat :
     (
         [0] => Array
             (
-                [sinitid] => 5835
-                [cinitid] => 5830
-                [ctitle] => Surveillants
-                [cicon] => igroup.png
-                [stitle] => Dogue Robert
-                [sicon] => ugarde.png
-                [type] => us_idgroup
-                [doctype] => F
+                ["sinitid"] => 5835
+                ["cinitid"] => 5830
+                ["ctitle"] => "Surveillants"
+                ["cicon"] => "igroup.png"
+                ["stitle"] => "Dogue Robert"
+                ["sicon"] => "ugarde.png"
+                ["type"] => "us_idgroup"
+                ["doctype"] => "F"
             )
         [1] => Array
             (
-                [sinitid] => 5835
-                [cinitid] => 1010
-                [ctitle] => Utilisateurs
-                [cicon] => igroup.png
-                [stitle] => Dogue Robert
-                [sicon] => ugarde.png
-                [type] => us_idgroup
-                [doctype] => F
+                ["sinitid"] => 5835
+                ["cinitid"] => 1010
+                ["ctitle"] => "Utilisateurs"
+                ["cicon"] => "igroup.png"
+                ["stitle"] => "Dogue Robert"
+                ["sicon"] => "ugarde.png"
+                ["type"] => "us_idgroup"
+                ["doctype"] => "F"
             )
         [2] => Array
             (
-                [sinitid] => 5835
-                [cinitid] => 5832
-                [ctitle] => Gardien surveillant
-                [cicon] => role.png
-                [stitle] => Dogue Robert
-                [sicon] => ugarde.png
-                [type] => us_roles
-                [doctype] => F
+                ["sinitid"] => 5835
+                ["cinitid"] => 5832
+                ["ctitle"] => "Gardien surveillant"
+                ["cicon"] => "role.png"
+                ["stitle"] => "Dogue Robert"
+                ["sicon"] => "ugarde.png"
+                ["type"] => "us_roles"
+                ["doctype"] => "F"
             )
  </pre></td></tr></table>
 
@@ -122,8 +122,6 @@ Résultat :
     animal Théodor '5973'
 
 L'objet `$dl` contient alors les documents pointant vers la cible.
-
-
 
 <!-- link -->
 [searchdoc]:        #core-ref:a5216d5c-4e0f-4e3c-9553-7cbfda6b3255

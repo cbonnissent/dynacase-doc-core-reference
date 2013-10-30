@@ -18,7 +18,6 @@ Cet exemple montre la recherche de document par le titre. Ici, tout type de
 document est retourné si son titre contient 'jean' en majuscule ou minuscule.
 Les opérateurs utilisables sont les [opérateurs SQL][pgop] de PostgreSQL.
 
-
     [php]
     $nom="jean";
     $s=new SearchDoc();// famid : toute famille
@@ -65,8 +64,6 @@ La recherche sur l'état est effectuée sur les révisions passées.
     $s->latest=false; // toutes les révisions
     $s->addFilter("locked = -1"); // révisions passés uniquement
     $s->search();
-
-
 
 <!-- link -->
 [searchdoc]:        #core-ref:a5216d5c-4e0f-4e3c-9553-7cbfda6b3255

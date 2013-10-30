@@ -14,9 +14,9 @@ renseigner
     
     Cette fonction prend les 3 arguments suivants :
     
-    *   start : start index pour la recherche
-    *   slice : nombre max d'éléments à retourner
-    *   userid : utilisateur courant
+    *   start : start index pour la recherche,
+    *   slice : nombre max d'éléments à retourner,
+    *   userid : utilisateur courant.
     
     Des [arguments supplémentaires][additional_arguments] peuvent également être
     fournis.

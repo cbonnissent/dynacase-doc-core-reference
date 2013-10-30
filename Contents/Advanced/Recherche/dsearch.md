@@ -86,7 +86,7 @@ critères du document _recherche_.
     // on remplace la requête qui sera utilisée par celle produite par SearchDoc
     $rd->addStaticQuery($sql);
 
-Dans ce cas, le document produit s'il est modifié par l'interface perdra ses
+Dans ce cas, le document produit s'il est modifié par l'interface perd ses
 caractéristiques spécifiques au dépend des nouveaux critères présents sur
 l'interface graphique.
 
