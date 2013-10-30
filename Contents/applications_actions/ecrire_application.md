@@ -10,7 +10,7 @@ fichiers :
 où *MYAPP* est le nom de l'application.
 
 Si l'application est visible, l'icône de l'application doit être ajoutée
-(image carrée entre 48 et 64 px, au format png si possible):
+(image carrée entre 48 et 64 px) :
 
     Images/votre_image.png
 
@@ -45,10 +45,12 @@ Le dossier doit avoir le même nom que l'application et être mis à la racine d
 ## MYAPP.app {#core-ref:cf584c21-ebee-4444-8046-da3fa3a2db1b}
 
 Ce fichier PHP décrit l'application.
-Il contient au moins trois variables de configuration :
+Il contient au moins une variable de configuration :
 
 `$app_desc` (`array`)
 :   contient les [éléments de présentation de l'application][app_desc].
+
+Il peut également contenir les variables suivantes :
 
 `$action_desc` (`array`)
 :   contient la définition des [actions de l'application][actions].
@@ -56,7 +58,7 @@ Il contient au moins trois variables de configuration :
 `$app_acl` (`array`)
 :   contient la définition des [droits applicatifs (acls)][droits_applicatifs].
 
-Exemple de contenu minimum:
+Exemple de contenu :
 
     [php]
     <?php
@@ -77,16 +79,16 @@ Les différentes clés utilisables dans `$app_desc` sont :
 **name** (obligatoire)
 :   Nom système de l'application.
     
-    c'est le nom qui apparaîtra dans les menus de configuration de Dynacase.
+    C'est le nom qui apparaît dans les menus de configuration de Dynacase.
     
-    Ce nom doit également correspondre exactement au nom du dossier
+    Ce nom doit également correspondre au nom du dossier
     contenant l'application, ainsi qu'à celui des fichiers *.app* et *_init.php*
     (la comparaison est sensible à la casse).
 
 **short_name** (facultatif)
 :   Nom de l'application
     
-    Il apparaîtra dans le menu déroulant de la barre d'application
+    Il apparaît dans le menu déroulant de la barre d'application
     (si l'application est visible). Il n'est pas multiligne.
 
 **description** (facultatif)
@@ -94,20 +96,20 @@ Les différentes clés utilisables dans `$app_desc` sont :
     fourni par le module _dynacase-appswitcher_. Le sous-menu apparaît lors de
     la sélection de l'application dans le menu déroulant de la barre
     d'application (si l'application est visible). Il sert à décrire
-    l'application et peut être multiligne 
+    l'application et peut être multiligne.
 
 **icon** (facultatif)
 :   Nom du fichier image qui sera publié dans `MYAPP/Images/`.
     
     Ce fichier est
-    l'icône qui représentera l'application MYAPP. Il doit se trouver dans le
+    l'icône qui répresente l'application MYAPP. Il doit se trouver dans le
     dossier `Images/` des sources.
 
 **displayable** (facultatif)
-: Un booléen pouvant avoir deux valeurs :
+: Un caractère pouvant avoir deux valeurs :
     
-    *   `Y` : l'application apparaîtra dans le menu déroulant de la barre
-        d'application.
+    *   `Y` : l'application apparaît dans le menu déroulant de la barre
+        d'application du module _dynacase-appswitcher_.
     *   `N` : l'application sera invisible.  (par défaut)
     
     **Remarque** : Une application invisible peut quand même avoir ses actions
@@ -115,16 +117,14 @@ Les différentes clés utilisables dans `$app_desc` sont :
     ses actions sont utilisées par l'application "ONEFAM".
     Ce paramètre est pris en compte par l'application *APP_SWITCHER* pour
     afficher ou non l'application dans les menus.  
-    Cette valeur ne peut pas être changée lors des mises à jours. Elle ne peut
+    Cette valeur ne peut pas être changée lors des mises à jour. Elle ne peut
     être modifiée que via le _centre d'administration_.
 
 **childof** (facultatif)
 :   Indique si cette application [hérite d'une autre][childofapp].
     
     Il est possible de faire dériver une application de n'importe quelle autre
-    application existante (ex: ONEFAM,GENERIC...). Cette technique est
-    principalement utilisée pour créer des applications basées sur ONEFAM pour
-    regrouper les familles par fonctionnalités.
+    application existante (ex: ONEFAM,GENERIC...).
 
    **Limitation** : Un seul niveau d'héritage est pris en compte.
 
@@ -136,18 +136,18 @@ Les différentes clés utilisables dans `$app_desc` sont :
     
     Une application indisponible ne peut exécuter aucune de ses actions.
     Dans le cas d'une requête HTTP, le status "503 Application unavalaible"
-    sera renvoyé.
+    est renvoyé.
     
-    Cette valeur ne peux pas être changée lors des mises à jours. Elle ne peut
+    Cette valeur ne peut pas être changée lors des mises à jour. Elle ne peut
     être modifiée que via le _centre d'administration_.
 
 **tag** (facultatif)
-:   Permet d'indiquer une marque. Les applications de Dynacase Core sont
-    marquées "CORE". Ceci peut être utile pour réaliser des interfaces de haut
-    niveau qui donnent accès à plusieurs applications suivant leur tag. Pour 
+:   Permet d'indiquer un tag. Les applications de Dynacase Core sont
+    marquées "CORE". Ceci peut être utile pour réaliser des interfaces 
+    qui donnent accès à plusieurs applications suivant leur tag. Pour 
     préciser plusieurs tags sur une même application, il faut les séparer par un
     espace. Exemple : Une application avec comme valeur dans tag `"CORE ADMIN"`
-    aura le tag `"CORE"` et le tag `"ADMIN"`.
+    a le tag `"CORE"` et le tag `"ADMIN"`.
 
 Ces clés correspondent aux propriétés de la [classe Application][classapplication]
 

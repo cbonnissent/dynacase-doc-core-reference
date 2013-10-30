@@ -1,10 +1,10 @@
 # Les paramètres applicatifs {#core-ref:c3d9cb18-16d0-435a-b8c2-5fa6ac06c522}
 
 Une application peut requérir différentes variables pour fonctionner.
-Ces variables devront être inscrites en paramètre dans le fichier
+Ces variables doivent être inscrites en paramètre dans le fichier
 `MYAPP_init.php`.
 
-Elles seront ensuite modifiables par l'administrateur via le
+Elles sont ensuite modifiables par l'administrateur via le
 *centre d'administration*.
 
 ## Déclaration des paramètres {#core-ref:8930140d-16f7-4bba-b989-c04add9c9e87}
@@ -38,7 +38,7 @@ suivants :
     (Menu "Gestion des applications"/"Paramètres applicatifs").
 
 **descr** (facultatif)
-:   Permet de noter une description qui sera affichée au même endroit que la
+:   Permet de noter une description qui est affichée au même endroit que la
     valeur.
     
     Cette valeur fait l'objet d'une traduction dans les interfaces du 
@@ -53,8 +53,8 @@ suivants :
     *   `N` : indique que le paramètre n'est pas global (valeur par défaut).
     
     Un paramètre global est accessible depuis toutes applications.
-    Dans ce cas, il sera affiché en gras dans le menu "Paramètres applicatifs"
-    du _centre d'administration_. Dans le cas contraire, le paramètre sera 
+    Dans ce cas, il est affiché en gras dans le menu "Paramètres applicatifs"
+    du _centre d'administration_. Dans le cas contraire, le paramètre est 
     accessible uniquement par l'application qui le déclare et les applications
     qui en sont hérités.
 
@@ -62,42 +62,44 @@ suivants :
 :   Indique si la valeur du paramètre est personnalisable pour chaque
     utilisateur ayant accès à l'application. Il peut prendre deux valeurs :
     
-    *   `Y` : indique que le paramètre pourra être personnalisable pour chaque
-        utilisateur. Dans ce cas, le paramètre apparaîtra aussi dans le menu du
+    *   `Y` : indique que le paramètre est personnalisable pour chaque
+        utilisateur. Dans ce cas, le paramètre apparaît aussi dans le menu du
         *Paramètres utilisateurs* du _centre d'administration_.
-    *   `N` : indique que le paramètre ne pourra pas être personnalisable par
+    *   `N` : indique que le paramètre ne peut pas être personnalisable par
         utilisateur (valeur par défaut).
 
 **kind** (facultatif)
 :   Le type du paramètre. Les valeurs acceptées sont :
     
     **`text`**
-    :   Indique que le paramètre sera une chaîne de caractère.
+    :   Indique que le paramètre est une chaîne de caractère.
         C'est la valeur par défaut.
     
     **`enum`**
-    :   Indique que le paramètre sera un énuméré.
+    :   Indique que le paramètre est un énuméré.
         
         Dans ce cas il faut préciser les valeurs possibles de l'énuméré dans la
         déclaration du **kind**. Exemple: `enum(yes|no)`
     
     **`color`**
-    :   Indique que le paramètre sera une couleur.
+    :   Indique que le paramètre est une couleur.
         
-        Dans ce cas, un color picker sera proposé lors du changement de valeur
+        Dans ce cas, un color picker est proposé lors du changement de valeur
         du paramètre dans le _centre d'administration_.
     
     **`password`**
-    :   Indique que le paramètre sera de type "mot de passe".
+    :   Indique que le paramètre est de type "mot de passe".
         
-        Dans ce cas, la valeur ne sera pas affichée, elle sera remplacée par
-        "*****" pour montrer qu'il y a un mot de passe mais stockée en clair.
+        Dans ce cas, la valeur n'est pas affichée, elle est remplacée par
+        "*****".
+        
+        **Attention** : le mot de passe est stocké en clair en base de données.
     
     **`static`**
     :   Indique que la valeur est non modifiable dans le
-        _centre d'administration_. Dans ce cas, le paramètre ne sera affiché que
+        _centre d'administration_. Dans ce cas, le paramètre n'est affiché que
         lors du clic sur le bouton "Afficher les paramètres non modifiables",
-        et il sera affiché en gris.
+        et il est affiché en gris.
         
         Lors d'une mise à jour de l'application sa valeur est modifiée.
     
@@ -120,7 +122,7 @@ définition du paramètre.
 *   Une valeur d'un paramètre global ne peut pas être redéfinie dans une
     application fille ni dans aucune autre application.
 *   Le nom d'un paramètre global doit être unique pour l'ensemble des
-    applications installées. Sinon aucune erreur ne sera levé et la valeur
+    applications installées. Sinon aucune erreur n'est levée et la valeur
     retournée n'est pas garantie.
 *   Seule la valeur d'un paramètre applicatif (non global) peut être redéfinie
     dans une application fille. Les caractéristiques d'un paramètre ne peuvent
