@@ -26,18 +26,18 @@ attribut n'a été indiqué dans le formatage.
     ( 
         [0] => Array 
             ( 
-                [properties] => Array 
+                ["properties"] => Array 
                     ( 
-                        [id] => 12 
-                        [title] => les profils 
+                        ["id"] => 12
+                        ["title"] => "les profils" 
                     ) 
             ) 
         [1] => Array 
             ( 
-                [properties] => Array 
+                ["properties"] => Array 
                     ( 
-                        [id] => 9 
-                        [title] => Racine 
+                        ["id"] => 9 
+                        ["title"] => "Racine" 
                     ) 
             ) 
     ) 
@@ -79,24 +79,26 @@ Exemple :
 Le résultat est :
 
     [php]
-    [properties] => Array 
+    ["properties"] => Array 
                 ( 
-                    [id] => 67978 
-                    [title] => Nouga 
-                    [state] => statePropertyValue Object 
+                    ["id"] => 67978 
+                    ["title"] => "Nouga" 
+                    ["state"] => statePropertyValue Object 
                         ( 
-                            [reference] => zoo_transmited 
-                            [color] => #A8DF78 
-                            [activity] => Vérification de l'adoption 
-                            [stateLabel] => Transmis 
-                            [displayValue] => Vérification de l'adoption 
+                            ["reference"] => "zoo_transmited" 
+                            ["color"] => "#A8DF78" 
+                            ["activity"] => "Vérification de l'adoption" 
+                            ["stateLabel"] => "Transmis" 
+                            ["displayValue"] => "Vérification de l'adoption" 
                         ) 
                 ) 
                 
 ## Formatage des attributs {#core-ref:683390ec-6b17-4ade-be6e-6085f4893f7f}
 
-Les valeurs des attributs se placent dans le tableau "attributes". Chacun des attribut a un champ "value" qui indique la valeur brute et "displayValue" qui indique la valeur affichable. 
-Pour ajouter les attributs à formater  il faut utiliser la méthode "addAttribute"
+Les valeurs des attributs se placent dans le tableau "attributes". Chacun des
+attribut a un champ "value" qui indique la valeur brute et "displayValue" qui
+indique la valeur affichable.  Pour ajouter les attributs à formater  il faut
+utiliser la méthode "addAttribute".
 
     [php]
     $fl=new FormatCollection();
@@ -109,18 +111,18 @@ Extrait de la partie "attributes"
     [php]
     [attributes] => Array
                 (
-                    [tst_title] => textAttributeValue Object
+                    ["tst_title"] => textAttributeValue Object
                         (
-                            [value] => Test 1
-                            [displayValue] => Test 1
+                            ["value"] => "Test 1"
+                            ["displayValue"] => "Test 1"
                         )
-                    [tst_double] => doubleAttributeValue Object
+                    ["tst_double"] => doubleAttributeValue Object
                         (
-                            [value] => 0
-                            [displayValue] => 0,00
+                            ["value"] => 0
+                            ["displayValue"] => "0,00"
                         )
 
-Si un attribut n'a pas de valeur , le formatage sera "null" quelque soit le type
+Si un attribut n'a pas de valeur, le formatage sera "null" quelque soit le type
 d'attribut. Si un attribut n'existe pas la structure (value, displayValue) sera
 remplie avec la variable identifiée par la méthode "::setNc()".
 
@@ -141,12 +143,12 @@ Exemple avec un attribut "vide" (ba_desc) et un attribut inexistant.
     [php]
     [attributes] => Array 
                     ( 
-                        [tst_title] => unknowAttributeValue Object 
+                        ["tst_title"] => unknowAttributeValue Object 
                             ( 
-                                [value] => nc 
-                                [displayValue] => nc 
+                                ["value"] => "nc" 
+                                ["displayValue"] => "nc" 
                             ) 
-                        [ba_desc] => 
+                        ["ba_desc"] => null
                     ) 
 
 Si l'option "showempty" est indiquée dans l'attribut, le rendu d'une valeur
@@ -158,10 +160,10 @@ nulle sera remplacée par la valeur de l'option.
 ### type `text`
 
     [php]
-    [tst_text] => textAttributeValue Object
+    ["tst_text"] => textAttributeValue Object
                     (
-                        [value] => Testing
-                        [displayValue] => before Testing
+                        ["value"] => "Testing"
+                        ["displayValue"] => "before Testing"
                     )
 
 La valeur formatée tient compte du format mis dans le type 
@@ -173,8 +175,8 @@ dans cet exemple : text("before %s")
     [php]
     [tst_int] => intAttributeValue Object
                         (
-                            [value] => 10
-                            [displayValue] => 0010
+                            ["value"] => 10
+                            ["displayValue"] => "0010"
                         )
                         
 La valeur formatée tient compte du format mis dans le type.
@@ -185,10 +187,9 @@ dans cet exemple : int("%04d"). La valeur est de type "int"
     [php]
     [tst_double] => doubleAttributeValue Object
                         (
-                            [value] => 0
-                            [displayValue] => 0,00
+                            ["value"] => 0
+                            ["displayValue"] => "0,00"
                         )
-
 
 La valeur formatée tient compte du format mis dans le type. dans cet exemple :
 double("%.02f"). Le point est transformé en virgule si la locale est "fr_FR". La
@@ -200,8 +201,8 @@ valeur est de type "double"
     [php]
     [tst_date] => dateAttributeValue Object
                         (
-                            [value] => 2012-06-08
-                            [displayValue] => 08/06/2012
+                            ["value"] => "2012-06-08"
+                            ["displayValue"] => "08/06/2012"
                         )
 
 La valeur formatée tient compte du format mis dans le type. S'il n'y a pas de
@@ -212,27 +213,26 @@ format, cela dépend du format de la locale de l'utilisateur.
     [php]
     [tst_ts] => dateAttributeValue Object
                         (
-                            [value] => 2012-06-13 11:27:00
-                            [displayValue] => 13/06/2012 11:27
+                            ["value"] => "2012-06-13 11:27:00"
+                            ["displayValue"] => "13/06/2012 11:27"
                         )
 
 La valeur formatée tient compte du format mis dans le type. S'il n'y a pas de
 format, cela dépend du format de la locale de l'utilisateur.
-
 
 ### type `file`
 
     [php]
     [tst_file] => fileAttributeValue Object
         (
-            [size] => 5
-            [creationDate] => 2012-06-12 16:06:15
-            [fileName] => Test.txt
-            [url] => file/84412/3380/tst_file/-1he=no&inline=no
-            [mime] => text/plain
-            [icon] => Images/mime-txt.png
-            [value] => text/plain; charset=us-at.txt
-            [displayValue] => Test.txt
+            ["size"] => 5
+            ["creationDate"] => "2012-06-12 16:06:15"
+            ["fileName"] => "Test.txt"
+            ["url"] => "file/84412/3380/tst_file/-1he=no&inline=no"
+            ["mime"] => "text/plain"
+            ["icon"] => "Images/mime-txt.png"
+            ["value"] => "text/plain; charset=us-at.txt"
+            ["displayValue"] => "Test.txt"
         )
 
 La valeur formatée est le titre du fichier. l'url est le lien permettant de
@@ -241,58 +241,61 @@ télécharger le fichier.
 ### type `image`
 
     [php]
-    [tst_img] => imageAttributeValue Object
+    ["tst_img"] => imageAttributeValue Object
     (
-      [thumbnail] => fst_img/-1/add.png?no&inline=yes&width=48
-      [size] => 363
-      [creationDate] => 2012-06-12 16:06:15
-      [fileName] => add.png
-      [url] => file/84412/3381/tst_img/-1o&inline=no
-      [mime] => image/png
-      [icon] => Images/mime-image2.png
-      [value] => image/png; charset=binary|3
-      [displayValue] => add.png
+        ["thumbnail"] => "fst_img/-1/add.png?no&inline=yes&width=48"
+        ["size"] => 363
+        ["creationDate"] => "2012-06-12 16:06:15"
+        ["fileName"] => "add.png"
+        ["url"] => "file/84412/3381/tst_img/-1o&inline=no"
+        ["mime"] => "image/png"
+        ["icon"] => "Images/mime-image2.png"
+        ["value"] => "image/png; charset=binary|3"
+        ["displayValue"] => "add.png"
      )
 
-Idem File. En plus l'attribut 'thumbnail' permet d'avoir un lien permettant d'afficher la miniature de l'image. La largeur de la miniature peut être définie avec l'attribut imageThumbnailSize de la classe FormatCollection. Elle est de 48px par défaut.
+Idem File. En plus l'attribut 'thumbnail' permet d'avoir un lien permettant
+d'afficher la miniature de l'image. La largeur de la miniature peut être définie
+avec l'attribut imageThumbnailSize de la classe FormatCollection. Elle est de
+48px par défaut.
 
 ### type `docid` - `account`
 
     [php]
-    [tst_relation] => docidAttributeValue Object
+    ["tst_relation"] => docidAttributeValue Object
     (
-      [familyRelation] => TST_FMTCOL
-      [url] => ?app=FDL&amp;OPENDOC &amp;mode=view&amp;   
-                  id=84412&amp;latest=Y
-      [icon] => resizeimg.php?img=Images/test.png&size=14
-      [value] => 84412
-      [displayValue] => Test 1
+        ["familyRelation"] => "TST_FMTCOL"
+        ["url"] => "?app=FDL&amp;OPENDOC&amp;mode=view&amp;id=84412&amp;latest=Y"
+        ["icon"] => "resizeimg.php?img=Images/test.png&size=14"
+        ["value"] => 84412
+        ["displayValue"] => "Test 1"
     )
 
-'familyRelation" indique le format du type de relation.
-La valeur formatée indique le titre du document pointé. L'url permet d'accéder à la consultation du document.
-La taille de l'icone du document pointé est par défaut de 14px. Elle peut être modifiée avec l'attribut relationIconSize de la classe FormatCollection.
-
+'familyRelation" indique le format du type de relation. La valeur formatée
+indique le titre du document pointé. L'url permet d'accéder à la consultation du
+document. La taille de l'icone du document pointé est par défaut de 14px. Elle
+peut être modifiée avec l'attribut relationIconSize de la classe
+FormatCollection.
 
 ### type `enum`
 
     [php]
-    [tst_enum] => enumAttributeValue Object
-                        (
-                            [value] => 1
-                            [displayValue] => Un
-                        )
+    ["tst_enum"] => enumAttributeValue Object
+    (
+        ["value"] => 1
+        ["displayValue"] => "Un"
+    )
 
 La valeur formatée donne le libellé de l'énuméré.
 
 ### Autres types
 
     [php]
-    [x_attr] => standardAttributeValue Object
-                          (
-                              [value] => 12:20:00
-                              [displayValue] => 12:20:00
-                          )
+    ["x_attr"] => standardAttributeValue Object
+    (
+        ["value"] => "12:20:00"
+        ["displayValue"] => "12:20:00"
+    )
 
 La valeur et la valeur formatée sont égales.
 
@@ -302,52 +305,52 @@ Les attributs multiples sont rendus dans des tableaux de structure.
 Exemple avec deux valeurs de l'attribut "tst_colors".
 
     [php]
-    [tst_colors] => Array
-                        (
-                            [0] => standardAttributeValue Object
-                                (
-                                    [value] => #80CCFF
-                                    [displayValue] => #80CCFF
-                                )
-                            [1] => standardAttributeValue Object
-                                (
-                                    [value] => #FFD77A
-                                    [displayValue] => #FFD77A
-                                )
-                        )
+    ["tst_colors"] => Array
+    (
+        [0] => standardAttributeValue Object
+            (
+                ["value"] => "#80CCFF"
+                ["displayValue"] => "#80CCFF"
+            )
+        [1] => standardAttributeValue Object
+            (
+                ["value"] => "#FFD77A"
+                ["displayValue"] => "#FFD77A"
+            )
+    )
 
 La même structure à deux niveaux est rendue pour les multiples dans les
 tableaux. Cela est limité à l'attribut docid.
 
     [php]
     [tst_relation_multiple] => Array
+    (
+       [0] => Array
            (
-               [0] => Array
+               [0] => docidAttributeValue Object
                    (
-                       [0] => docidAttributeValue Object
-                           (
-                               [familyRelation] => TST_FMTCOL
-                               [url] => ?app=FDL&amp;action=OPENDOC...
-                               [icon] => 
-                               [value] => 84412
-                               [displayValue] => Test 1
-                           )
+                       ["familyRelation"] => "TST_FMTCOL"
+                       ["url"] => "?app=FDL&amp;action=OPENDOC..."
+                       ["icon"] => 
+                       ["value"] => 84412
+                       ["displayValue"] => "Test 1"
                    )
-               [1] => Array
+           )
+       [1] => Array
+           (
+               [0] => docidAttributeValue Object
                    (
-                       [0] => docidAttributeValue Object
-                           (
-                               [familyRelation] => TST_FMTCOL
-                               [url] => ?app=FDL&amp;action=OPENDOC&amp;
-                               [icon] => 
-                               [value] => 84412
-                               [displayValue] => Test 1
-                           )
-                       [1] => docidAttributeValue Object
-                           (
-                               [familyRelation] => TST_FMTCOL
-                               [url] => ?app=FDL&amp;action=OPENDOC 
-                               [icon] => 
-                               [value] => 86854
-                               [displayValue] => Test 2
-                           )
+                       ["familyRelation"] => "TST_FMTCOL"
+                       ["url"] => ?"app=FDL&amp;action=OPENDOC..."
+                       ["icon"] => 
+                       ["value"] => 84412
+                       ["displayValue"] => "Test 1"
+                   )
+               [1] => docidAttributeValue Object
+                   (
+                       ["familyRelation"] => "TST_FMTCOL"
+                       ["url"] => "?app=FDL&amp;action=OPENDOC..."
+                       ["icon"] => 
+                       ["value"] => 86854
+                       ["displayValue"] => "Test 2"
+                   )
