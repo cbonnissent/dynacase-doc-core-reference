@@ -1411,9 +1411,6 @@ book:
         wip_sub: ""
     - level:   2
       content:  "Advanced/autoloader.md"
-      flags:
-        draft: "draft"
-        new: "new" 
 
 ##
 # Trash

@@ -6,12 +6,14 @@ Le mécanisme d'autoloader de Dynacase parcourt tous les fichiers PHP (extension
 La liste des classes, avec leur fichier source d'inclusion, est alors stockée
 dans le fichier `.autoloader.cache` à la racine du contexte Dynacase.
 
-Le fichier de cache `.autoloader.cache` est automatiquement régénéré lorsqu'il
+Le fichier de cache `.autoloader.cache` est automatiquement re-généré lorsqu'il
 est inexistant (et donc lors du premier appel à l'autoloader faisant suite à la
 suppression de ce fichier) ou qu'une classe demandée n'est pas trouvée dans le
-cache. Suite à cette régénération, si la classe demandée n'est toujours pas
+cache. Suite à cette re-génération, si la classe demandée n'est toujours pas
 présente dans le cache, alors une exception est levée indiquant que la classe
 demandée n'existe pas.
+
+De plus, l'autoloader est mis à jour à chaque déploiement d'une application.
 
 Une même classe PHP (la comparaison est insensible à la casse) ne peut être
 livrée par deux fichiers PHP distincts, et une exception est levée lorsque deux
@@ -31,13 +33,13 @@ première utilisation de cette classe.
 
 Pour déplacer une classe d'un fichier PHP dans un nouveau fichier PHP (en
 conservant le nom de la classe), il faut déplacer la classe dans le nouveau
-fichier et supprimer le fichier de cache `.autoloader.cache` ce qui aura pour
+fichier et supprimer le fichier de cache `.autoloader.cache` ce qui a pour
 effet de régénérer ce dernier lors de la prochaine utilisation d'une classe.
 
 ### Suppression d'une classe {#core-ref:b0ad4ec4-8ce0-4cf2-9269-68e081119af0}
 
 Pour supprimer une classe d'un fichier PHP il faut supprimer la classe de son
-fichier et supprimer le fichier de cache `.autoloader.cache` ce qui aura pour
+fichier et supprimer le fichier de cache `.autoloader.cache` ce qui a pour
 effet de régénérer ce dernier lors de la prochaine utilisation d'une classe.
 
 ### Charger et activer manuellement l'autoloader Dynacase {#core-ref:ac9bb742-5eea-4748-a4b5-93b99fb5bdc8}
@@ -45,8 +47,8 @@ effet de régénérer ce dernier lors de la prochaine utilisation d'une classe.
 Par défaut, l'autoloader est chargé et actif sur tout code PHP exécuté par
 Dynacase ([Action][action], [scripts CLI][scripts_cli], etc.).
 
-Cedendant, dans le cas où vous voulez exécuter un code PHP tiers (non intégré
-comme [Action][action] ou [scripts CLI][scripts_cli]) qui utiliserait des
+Cependant, dans le cas où vous voulez exécuter un code PHP tiers (non intégré
+comme [Action][action] ou [scripts CLI][scripts_cli]) qui utilise des
 classes Dynacase, il faut inclure le fichier `WHAT/autoload.php` afin de charger
 et activer l'autoloader Dynacase :
 
