@@ -1,9 +1,18 @@
-# Internationalisation {#core-ref:8f3ad20a-4630-4e86-937b-da3fa26ba423}
+# Modifier la langue dans un programme
 
-Ce chapitre indique comment utiliser des textes localisés dans vos applications
-et dans toutes les interfaces homme-machine.
+Par défaut, le catalogue correspondant à la locale de l'utilisateur connecté est
+chargé. Il est possible de changer le catalogue en cours d'exécution en
+utilisant la fonction `setLanguage`.
 
+    [php]
+    setLanguage('fr_FR');
+    print ___("Hello", "tstCtx");
+    // => Bonjour à tous
+    setLanguage('en_US');
+    print ___("Hello", "tstCtx");
+    // => Hello everybody
 
+Le paramètre doit être la locale complète sur cinq lettres.
 
 
 <!-- link -->

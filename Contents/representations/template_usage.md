@@ -96,13 +96,16 @@ Donne :
 
     Interdit is false
 
-## Internationalisation  {#core-ref:6a4b3a9b-11b6-47d4-b387-0ff177dd9f82}
+## Internationalisation de texte {#core-ref:6a4b3a9b-11b6-47d4-b387-0ff177dd9f82}
 
 Pour rendre du texte traduisible, il faut utiliser la syntaxe
 `[TEXT:translate me]`. Ce texte sera automatiquement ajouté au catalogue de
 traduction, et sera remplacé par sa traduction lors du rendu du template.
 
+Pour plus de détail, voir le chapitre [Internationalisation][i18n].
+
 
 
 <!-- links -->
 [advancedtemplate]: #core-ref:af9ea76c-069e-49e1-a382-efc8ca35f1eb
+[i18n]: #core-ref:18dc3bda-3d6a-4590-9d9e-4a867a58ca7d "Internationalisation des messages"

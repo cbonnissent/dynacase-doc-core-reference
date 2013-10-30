@@ -1,9 +1,17 @@
-# Internationalisation {#core-ref:8f3ad20a-4630-4e86-937b-da3fa26ba423}
+# Description du principe de traduction {#core-ref:0a03a448-736d-4caa-ac95-72e735aeea6f}
 
-Ce chapitre indique comment utiliser des textes localisés dans vos applications
-et dans toutes les interfaces homme-machine.
+Les traductions utilisent la bibliothèque [getText][wikiGettext] qui est un
+standard pour la gestion des programmes multilingues.
 
+Lors de l'initialisation d'une [action][actions] ou d'un [script][wsh], le
+catalogue correspondant à la langue de l'utilisateur est chargé. La langue de
+l'utilisateur est choisie lors de sa connexion sur l'écran d'identification. Ce
+choix de langue est stockée dans le paramètre applicatif `CORE_LANG`. Ce
+paramètre est modifié à chaque nouvelle connexion de l'utilisateur.
 
+Le catalogue qui est utilisé contient tous les textes traduits de tous les
+modules installés. Il est dont important d'avoir des textes qui ne sont pas déjà
+utilisés par un autre module.
 
 
 <!-- link -->
