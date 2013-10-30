@@ -696,16 +696,10 @@ book:
     - level:   2
       element: "chapter"
       content:  "API/Class_Docfam.md"
-      flags:
-        draft: "draft"
-        new: "new"
       subtoc:   1
     - level:   3
       element: "chapter"
       content:  "API/Class_Docfam/Properties.md"
-      flags:
-        draft: "draft"
-        new: "new"
     - level:   2
       element: "chapter"
       content:  "API/Class_DocumentList.md"
