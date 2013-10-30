@@ -12,7 +12,8 @@ Ajouter du code CSS à un template.
     [php]
     void addCssCode ( string $code )
 
-Permet d'ajouter des instructions CSS (`code`) qui seront insérées dans les éléments `[CSS:CODE]` des templates utilisées lors du rendu d'une vue.
+Permet d'ajouter des instructions CSS (`code`) qui seront insérées dans les
+éléments `[CSS:CODE]` des templates utilisées lors du rendu d'une vue.
 
 ## Avertissements {#core-ref:2bed3980-13be-42b5-9380-a7c6896ef89c}
 
@@ -21,7 +22,7 @@ N/A
 ## Liste des paramètres {#core-ref:0253405e-3d82-4724-ad06-eb0d787dc51d}
 
 (string) `code`
-:   Bloc de code d'instructions CSS.
+:   Bloc d'instructions CSS.
 
 ## Valeur de Retour {#core-ref:0b1eb3a8-638d-44e3-b0d3-60724f862145}
 
@@ -46,14 +47,14 @@ Contrôleur de l'action `MY_ACTION` (`my_action.php`) :
     function my_action(Action &$action) {
         /* Get the Application of the current Action */
         $application = $action->parent;
-
+    
         $cssCode = <<<'CSS'
     .question {
         color: blue;
         voice-family: Bridgekeeper, male;
     }
     CSS;
-
+    
         $application->addCssCode($cssCode);
     }
 

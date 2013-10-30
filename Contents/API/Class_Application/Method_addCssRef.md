@@ -12,7 +12,8 @@ Ajouter un lien vers une feuille de style CSS à un template.
     [php]
     string addCssRef ( string $ref [, bool $needparse = false [, string $packName = '']] )
 
-Permet d'ajouter un lien vers une feuille de style CSS qui sera insérée dans les éléments `[CSS:REF]` des templates utilisées lors du rendu d'une vue.
+Permet d'ajouter un lien vers une feuille de style CSS qui sera insérée dans les
+éléments `[CSS:REF]` des templates utilisées lors du rendu d'une vue.
 
 ## Avertissements {#core-ref:22003acd-a383-4c2c-928a-3ba9f8e53b88}
 
@@ -22,18 +23,30 @@ N/A
 
 (string) `ref`
 :   La référence à la feuille de style CSS.
-    
-    La référence peut être : un chemin d'accès relatif au contexte Dynacase (ex. `MY_APP/Layout/my_css.css`, `my_css.css`), un chemin d'accès relatif au répertoire `Layout` du style actuellement appliqué, un chemin d'accès relatif au répertoire `Layout` de l'application courante ou d'une application particulière (ex. `MY_APP:my_css.css`), une URL (ex. `http://www.example.net/my_css.css`).
+    La référence peut être : un chemin d'accès relatif au contexte Dynacase (ex.
+    `MY_APP/Layout/my_css.css`, `my_css.css`), un chemin d'accès relatif au
+    répertoire `Layout` du style actuellement appliqué, un chemin d'accès
+    relatif au répertoire `Layout` de l'application courante ou d'une
+    application particulière (ex. `MY_APP:my_css.css`), une URL (ex.
+    `http://www.example.net/my_css.css`).
 
 (bool) `needparse`
-:   Permet d'indiquer si le contenu de la feuille de style doit être interprété comme un template.
+:   Permet d'indiquer si le contenu de la feuille de style doit être interprété 
+    comme un template.
 
 (string) `packName`
-:   Les feuilles de style peuvent être concaténées afin de réduire le nombre de fichiers chargés par le client. Dans ce cas, toutes les feuilles de style ajoutées avec un même identifiant `packName` seront concaténées pour ne donner qu'un seul fichier à charger. Des `packName` différents peuvent être utilisés pour faire des groupes de feuilles de style qui seront servis chacun dans un fichier unique et distinct par `packName`.
+:   Les feuilles de style peuvent être concaténées afin de réduire le nombre de 
+    fichiers chargés par le client. Dans ce cas, toutes les feuilles de style
+    ajoutées avec un même identifiant `packName` seront concaténées pour ne
+    donner qu'un seul fichier à charger. Des `packName` différents peuvent être
+    utilisés pour faire des groupes de feuilles de style qui seront servis
+    chacun dans un fichier unique et distinct par `packName`.
 
 ## Valeur de Retour {#core-ref:27dbd4dd-485d-4f2e-abcd-ab0ac66d73c6}
 
-La méthode retourne une chaîne de caractères non vide avec l'emplacement de la feuille de style CSS ajoutée, ou une chaîne de caractères vide si l'emplacement de la feuille de style n'est pas valide.
+La méthode retourne une chaîne de caractères non vide avec l'emplacement de la
+feuille de style CSS ajoutée, ou une chaîne de caractères vide si l'emplacement
+de la feuille de style n'est pas valide.
 
 ## Erreurs / Exceptions {#core-ref:41788c64-aa2b-4f2f-9470-46c6cd24fe04}
 
@@ -70,7 +83,7 @@ Contrôleur de l'action `MY_ACTION` (`my_action.php`) de l'application `MY_APP` 
     function my_action(Action &$action) {
         /* Get the Application of the current Action */
         $application = $action->parent;
-
+        
         $application->addCssRef('MY_APP/Layout/css_1.css', false, 'my_css');
         $application->addCssRef('MY_APP:css_2.css', false, 'my_css');
     }
@@ -110,9 +123,14 @@ Résultat du rendu de la vue de l'action :
 
 ## Notes {#core-ref:72360e3f-5350-4a2f-a6a7-6ebbd2e80125}
 
-- Les feuilles de style ajoutées via cette méthode seront servies avec une directive indiquant au client de mettre en cache le résultat obtenu et minimiser ainsi les requêtes au serveur.
-- L'expiration de la mise en cache est gérée via un argument `wv=<version>` dont le numéro de version est incrémenté à chaque mise à jour d'un module.
-- Les `packName` sont composés par utilisateur et sont mis en cache sur le navigateur de l'utilisateur : ils ne sont donc pas partagés et/ou mis en cache sur le serveur.
+- Les feuilles de style ajoutées via cette méthode seront servies avec une 
+directive indiquant au client de mettre en cache le résultat obtenu et minimiser
+ainsi les requêtes au serveur.
+- L'expiration de la mise en cache est gérée via un argument `wv=<version>` dont
+le numéro de version est incrémenté à chaque mise à jour d'un module.
+- Les `packName` sont composés par utilisateur et sont mis en cache sur le 
+navigateur de l'utilisateur : ils ne sont donc pas partagés et/ou mis en cache 
+sur le serveur.
 
 ## Voir aussi {#core-ref:0f8f1e52-37fb-4c9e-9c71-051b98ffeac2}
 
