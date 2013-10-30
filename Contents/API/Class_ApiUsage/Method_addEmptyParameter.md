@@ -1,7 +1,7 @@
 # ApiUsage::addEmptyParameter() {#core-ref:be7a212d-7e39-4c06-999c-3f76bea3140c}
 
 <div class="short-description">
-Ajoute un paramètre qui ne prend pas de valeur (flag).
+Ajoute un paramètre qui ne prend pas de valeur (autrement nommé flag).
 </div>
 
 ## Description {#core-ref:130e7615-09b2-49b8-8ec1-66aba637d08f}

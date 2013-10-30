@@ -302,56 +302,35 @@ book:
     - level:   2
       element: "chapter"
       content:  "API/Class_ActionUsage.md"
-      flags:
-        need-review: "need review"
       subtoc:   1
     - level:   3
       element: "chapter"
       content:  "API/Class_ActionUsage/Method_getUsage.md"
-      flags:
-        need-review: "need review"
     - level:   2
       element: "chapter"
       content:  "API/Class_ApiUsage.md"
-      flags:
-        need-review: "need review"
-        new: "updated"
       subtoc:   1
     - level:   3
       element: "chapter"
       content:  "API/Class_ApiUsage/Method_addEmptyParameter.md"
-      flags:
-        need-review: "need review"
     - level:   3
       element: "chapter"
       content:  "API/Class_ApiUsage/Method_addHiddenParameter.md"
-      flags:
-        need-review: "need review"
     - level:   3
       element: "chapter"
       content:  "API/Class_ApiUsage/Method_addRequiredParameter.md"
-      flags:
-        need-review: "need review"
     - level:   3
       element: "chapter"
       content:  "API/Class_ApiUsage/Method_addOptionalParameter.md"
-      flags:
-        need-review: "need review"
     - level:   3
       element: "chapter"
       content:  "API/Class_ApiUsage/Method_setDefinitionText.md"
-      flags:
-        need-review: "need review"
     - level:   3
       element: "chapter"
       content:  "API/Class_ApiUsage/Method_setStrictMode.md"
-      flags:
-        need-review: "need review"
     - level:   3
       element: "chapter"
       content:  "API/Class_ApiUsage/Method_verify.md"
-      flags:
-        need-review: "need review"
     - level:   2
       element: "chapter"
       content:  "API/Class_Application.md"

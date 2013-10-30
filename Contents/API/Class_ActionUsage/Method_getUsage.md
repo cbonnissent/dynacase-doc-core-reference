@@ -40,19 +40,19 @@ Aucun.
         
         $usage->setDefinitionText("Sample action");
         $docid = $usage->addRequiredParameter(
-        	"id",
-        	"Document id"
+            "id",
+            "Document id"
         );
         $format = $usage->addOptionalParameter(
-        	"format",
-        	"Paper format",
-        	array(
-    	        "a3",
-    	        "a4",
-    	        "a5"
-    	    ),
-    	    "a4"
-    	);
+            "format",
+            "Paper format",
+            array(
+                "a3",
+                "a4",
+                "a5"
+            ),
+            "a4"
+        );
         $usage->verify();
         ...
     }

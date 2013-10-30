@@ -12,7 +12,7 @@ Ajoute un paramètre optionnel.
                        string[]|callable $restriction = null,
                                   string $default = null )
 
-La présence du paramètre est vérifiée, et sa valeur retournée.
+La présence du paramètre est vérifiée et sa valeur retournée.
 
 ### Avertissements {#core-ref:f4060e83-7f0f-4343-a632-e6b4c83ff420}
 
