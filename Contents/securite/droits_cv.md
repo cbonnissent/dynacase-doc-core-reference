@@ -5,7 +5,7 @@ Les droits d'un contrôle de vue sont ceux d'un document auquel sont ajoutés un
 droit par vue déclarée dans le contrôle de vue.
 
 Les identifiants des droits spécifiques sont les noms des vues (attribut
-`cv_idview`).
+`cv_idview`, `Id vues` dans le tableau ci-dessous).
 
 Les droits classiques sont ceux du contrôle de vue et non ceux du
 document auquel le contrôle de vue est attaché.
@@ -23,7 +23,7 @@ chaque accès au document][cvdoc_choix].
 
 Les contrôles de vues ont la possibilité d'avoir un [profil dynamique][dynprof]
 en indiquant la famille dans l'attribut "dynamique\famille" (`dpdoc_famid`).
-Dans ce cas, ce sont les valeurs des attributs du document associé qui seront
+Dans ce cas, ce sont les valeurs des attributs du document associé qui sont
 utilisées pour vérifier les droits d'accès aux vues.
 
 ## Exemple {#core-ref:859adcf5-5311-49bd-b26f-d2e694bc89a1}
@@ -35,8 +35,11 @@ utilisées pour vérifier les droits d'accès aux vues.
 | VueC    | Avis           | Édition      |           | Masque avis     |       | non        |
 | VueD    | Notations      | Consultation |           | Masque notation |     2 | non        |
 
+Pour plus d'informations sur les différentes caractéristiques des éléments du 
+tableau ci-dessus, veuillez vous référer au chapitre [contrôle de vue][cvdoc].
+
 Ce contrôle de vue déclare quatre vues. Il dispose de quatre droits
-spécifiques :  `VueA`, `VueB`, `VueC` et `VueD`.
+spécifiques : `VueA`, `VueB`, `VueC` et `VueD`.
 
 Avec le profil suivant :
 
@@ -45,11 +48,11 @@ Avec le profil suivant :
 | MY_FIRSTROLE  | <span class="aclgreen">X</span> | <span class="aclgreen">X</span> |                                 |                                 |
 | MY_SECONDROLE |                                 | <span class="aclgreen">X</span> | <span class="aclgreen">X</span> | <span class="aclgreen">X</span> |
 
-*   Les utilisateurs ayant le rôle `MY_FIRSTROLE` auront accès aux vues `VueA`
-    et `VueB`.
-*   Les utilisateurs ayant le rôle `MY_SECONDROLE` auront accès aux vues `VueB`,
-    `VueC` et `VueD`.
-*   Les utilisateurs ayant les deux rôles auront accès à toutes les vues.
+*   les utilisateurs ayant le rôle `MY_FIRSTROLE` auront accès aux vues `VueA`
+    et `VueB`;
+*   les utilisateurs ayant le rôle `MY_SECONDROLE` auront accès aux vues `VueB`,
+    `VueC` et `VueD`;
+*   les utilisateurs ayant les deux rôles auront accès à toutes les vues.
     Cependant ces utilisateurs ne pourront pas accéder à la vue `VueD` par
     l'interface standard car l'ordre de cette dernière est supérieure à l'ordre
     de la `VueA` et elle est non-affichable.
@@ -62,14 +65,12 @@ Synthèse des vues en fonction des rôles :
 | MY_SECONDROLE                 |             VueD            |              VueC              |           VueB          |
 | MY_FIRSTROLE et MY_SECONDROLE |             VueA            |              VueC              |        VueB, VueD       |
 
-Pour l'importation de droits sur un contrôle de vue, les noms des vues sont
+Pour l'importation de droits sur un contrôle de vue, les noms des vues (`Id vues`) sont
 utilisés pour référencer les droits spécifiques :
 
 |            | Identifiant du profil |  /  | Option |       Droit       |              Droit               |       Droit        |       Droit        |
 | ---------- | --------------------- | --- | ------ | ----------------- | -------------------------------- | ------------------ | ------------------ |
 | __PROFIL__ | MY_VIEWCONTROL        |     | RESET  | VueA=MY_FIRSTROLE | VueB=MY_FIRSTROLE, MY_SECONDROLE | VueC=MY_SECONDROLE | VueD=MY_SECONDROLE |
-
-
 
 
 <!-- links -->

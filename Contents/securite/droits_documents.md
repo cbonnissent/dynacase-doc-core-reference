@@ -18,19 +18,19 @@ Exemple de matrice de droits :
 
 Quatre familles de profils sont définies :
 
-*   profil de famille (droit de créer des documents ou de voir la famille)
-*   profil de document (droit de voir, modifier ou supprimer des documents)
-*   profil de dossier (droit de voir le contenu du dossier)
-*   profil de recherche (droit d'exécuter la recherche)
+*   profil de famille (droit de créer des documents ou de voir la famille),
+*   profil de document (droit de voir, modifier ou supprimer des documents),
+*   profil de dossier (droit de voir le contenu du dossier),
+*   profil de recherche (droit d'exécuter la recherche).
 
 Liste des droits définis pour ces quatre familles de profils :
 
 Légende :
 
-*    `D` : Pour les profils de Document
-*    `F` : Pour les profils de Dossier (_Folder_)
-*    `S` : Pour les profils de Recherche (_Search_)
-*    `C` : Pour les profils de Famille (_Class_)
+*    `D` : Pour les profils de Document,
+*    `F` : Pour les profils de Dossier (_Folder_),
+*    `S` : Pour les profils de Recherche (_Search_),
+*    `C` : Pour les profils de Famille (_Class_).
 
 | Nom interne  |        Description         |                                                                                                                                                                                                                  Description longue                                                                                                                                                                                                                | `D` | `F` | `S` | `C` |
 | ------------ | -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --- | --- | --- | --- |
@@ -42,7 +42,7 @@ Légende :
 | modifyacl    | modifier les droits        | Modifier les droits du document.                                                                                                                                                                                                                                                                                                                                                                                                                   | X   | X   | X   |     |
 | confidential | voir document confidentiel | Permet d'utiliser normalement un document qui est confidentiel. (Confidentiel est une propriété de document).                                                                                                                                                                                                                                                                                                                                      | X   | X   | X   |     |
 | send         | envoyer                    | Envoyer par courriel le document.                                                                                                                                                                                                                                                                                                                                                                                                                  | X   |     |     |     |
-| open         | ouvrir                     | Ouvrir le dossier. Permet de voir le contenu du dossier                                                                                                                                                                                                                                                                                                                                                                                            |     | X   |     |     |
+| open         | ouvrir                     | Ouvrir le dossier. Permet de voir le contenu du dossier.                                                                                                                                                                                                                                                                                                                                                                                           |     | X   |     |     |
 | modify       | modifier                   | Modifier le contenu du dossier. Permet d'ajouter ou de supprimer des documents dans le dossier.                                                                                                                                                                                                                                                                                                                                                    |     | X   |     |     |
 | execute      | executer                   | Permet d'exécuter la recherche.                                                                                                                                                                                                                                                                                                                                                                                                                    |     |     | X   |     |
 | create       | créer                      | Autorise la création de document de cette famille.                                                                                                                                                                                                                                                                                                                                                                                                 |     |     |     | X   |
@@ -58,7 +58,8 @@ profils ont également leurs droits mis à jour.
 
 Une famille peut indiquer un [profil par défaut][CPROFID] pour les documents de
 cette famille. Une fois cette propriété de famille enregistrée, tous les
-documents seront liés au même profil lors de leur création.
+documents sont liés au même profil lors de leur création. Les documents déjà existants
+ne sont donc pas affectés.
 
 **Un document sans profil n'est pas protégé.** Il est alors accessible et
 modifiable par tous les utilisateurs.
@@ -76,7 +77,7 @@ l'[exportation de profil][exportprofid].
 ### Affecter les droits d'un profil par importation {#core-ref:2ec1ae6f-4b2a-4bc2-a100-4e5873538bb5}
 
 Un droit peut être posé sur un rôle, un groupe ou un utilisateur. Pour indiquer
-ce compte il faut utiliser le nom logique du document lié à ce compte ou
+ce compte, il faut utiliser le nom logique du document lié à ce compte ou
 l'identifiant système du compte (attribut _us_whatid_ donné sur le document).
 
 Trois options permettent de poser les droits :
@@ -109,7 +110,7 @@ document.
 ## Profil dédié {#core-ref:25c54b68-9cc1-44ea-b203-e289bde65a12}
 
 Un document qui porte son propre profil est déclaré comme _profil dédié_. Cela
-implique que la modification du profil du document n'impactera que lui-même.
+implique que la modification du profil du document n'impacte que lui-même.
 
 Les documents "_profil_" ont tous un profil dédié.
 
@@ -124,12 +125,12 @@ un profil dédié :
 
 Un document _profil_ est _dynamique_ si l'attribut "dynamique/famille"
 (`dpdoc_famid`) est valorisé. Cet attribut doit contenir un identifiant de
-famille. Dans ce cas, ce profil ne pourra être lié qu'à un document de cette
-famille ou derivée de cette famille.
+famille. Dans ce cas, ce profil ne peut être lié qu'à un document de cette
+famille ou dérivé de cette famille.
 
-Cette caractérique permet de rajouter des droits en fonction des attributs
+Cette caractéristique permet de rajouter des droits en fonction des attributs
 _[account][accounttype]_ présents dans le document. Les attributs de type
-_[docid][docidtype]_ avec l'option "isuser=yes" sont aussi utilisables comme
+_[docid][docidtype]_ avec l'option `isuser=yes` sont aussi utilisables comme
 paramètre de droit.
 
 Exemple :
@@ -143,13 +144,12 @@ Exemple :
 | ATTR  | TST_WRITER         | AN_IDENTIFICATION | Rédacteur      | N   | N           | account | 120 | W   |      |     |             |
 | ATTR  | TST_OBSERVERS      | AN_IDENTIFICATION | Observateurs   | N   | N           | account | 130 | W   |      |     | match=group |
 
-
 Dans cette famille, le rédacteur et le groupe d'observateurs peuvent être
 utilisés dans la définition des droits. Il est possible d'avoir les règles
 suivantes :
 
-*   le rédacteur a le droit de voir et de modifier le document
-*   les observateurs ont le droit de voir le document
+*   le rédacteur a le droit de voir et de modifier le document,
+*   les observateurs ont le droit de voir le document.
 
 Si le rédacteur est modifié alors les droits sur le document sont
 automatiquement (et en temps réel) mis à jour en conséquence. De même si un
@@ -165,7 +165,7 @@ comme les profils standards.
 | ---------- | --------------------- | --- | ------ | ------------------------------ | --------------- | ------------- |
 | __PROFIL__ | MY_DYNAMIC_PROFIL     |     | RESET  | view=tst_writer, tst_observers | edit=tst_writer | delete=GADMIN |
 
-Les noms des attributs peuvent être écrits en minuscules ou en majuscules dans
+Les noms des attributs peuvent être écrits sans prendre en compte la casse dans
 le [fichier d'importation][importdoc].
 
 *Note* : Si l'identifiant d'un attribut est le même qu'un nom logique de compte
@@ -184,9 +184,6 @@ courant. Par défaut, le profil privée donne tous les droits à l'utilisateur
 associé et aucun droit aux autres utilisateurs. L'utilisateur peut alors décider
 d'ajouter d'autres groupes ou d'autre utilisateurs à son profil pour accéder à
 ces documents privés.
-
-
-
 
 <!-- links -->
 [authentification]: #core-ref:b482b82b-ebe2-46e4-8051-c6e83d11a2ae

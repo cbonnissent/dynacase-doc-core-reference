@@ -21,12 +21,12 @@ Le contenu du fichier suit la syntaxe suivante :
 1.  `ACCESS` : mot-clef indiquant la pose d'un droit
 1.  Identifiant du compte 
     *   Nom logique d'un document _Rôle_ (`ROLE`), _Groupe_ (`IGROUP`) ou
-        _Utilisateur_ (`IUSER`) 
+        _Utilisateur_ (`IUSER`);
     *   Identifiant système numérique d'un compte. Ceci n'est pas l'identifiant
         du document. C'est le numéro indiqué dans l'attribut `us_whatid` du
-        document correspondant.
-1.  Nom de l'application
-1.  Nom du droit applicatif
+        document correspondant;
+1.  Nom de l'application;
+1.  Nom du droit applicatif;
 1.  Nom d'un autre droit, etc.
 
 Exemple de fichier d'importation de droit applicatifs.
@@ -60,18 +60,15 @@ Exemple :
 
 Si :
 
-*   L'utilisateur *MY_SPECIALUSER* est membre du groupe *MY_BIGGROUP*. 
+*   L'utilisateur *MY_SPECIALUSER* est membre du groupe *MY_BIGGROUP*.
 *   Le rôle *MY_BIGROLE* est associé au groupe  *MY_BIGGROUP*.
 
 Alors :
 
-*   L'utilisateur *MY_SPECIALUSER* aura les droits *MY_FIRSTACL* et
-    *MY_SPECIALACL*
-*   Les membres du groupes *MY_BIGGROUP* (autre que *MY_SPECIALUSER*) auront les
+*   L'utilisateur *MY_SPECIALUSER* a les droits *MY_FIRSTACL* et
+    *MY_SPECIALACL*.
+*   Les membres du groupes *MY_BIGGROUP* (autre que *MY_SPECIALUSER*) ont les
     droits *MY_FIRSTACL* et *MY_EXTRAACL*.
-
-
-
 
 <!-- links -->
 [acls]:             #core-ref:a98b72ea-c063-4907-abc4-e5171ab55e59 "Déclaration de droits applicatifs"

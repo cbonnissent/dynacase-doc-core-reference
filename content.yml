@@ -191,37 +191,21 @@ book:
 ##
     - level:   1
       content:  "securite/introduction.md"
-      flags:
-        need-review: "need review"
       subtoc:   2
     - level:   2
       content:  "securite/regles_securite.md"
-      flags:
-        need-review: "need review"
     - level:   2
       content:  "securite/param_profil.md"
-      flags:
-        need-review: "need review"
     - level:   2
       content:  "securite/droits_applicatifs.md"
-      flags:
-        need-review: "need review"
     - level:   2
       content:  "securite/droit_core.md"
-      flags:
-        need-review: "need review"
     - level:   2
       content:  "securite/droits_documents.md"
-      flags:
-        need-review: "need review"
     - level:   2
       content:  "securite/droits_cv.md"
-      flags:
-        need-review: "need review"
     - level:   2
       content:  "securite/droits_workflow.md"
-      flags:
-        need-review: "need review"
 ##
 # cycles
 ##

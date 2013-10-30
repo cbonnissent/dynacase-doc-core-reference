@@ -1,11 +1,11 @@
 # Paramètres de profilage {#core-ref:fc37efd3-6254-4bc8-8f8d-7f867c852b67}
 
 Les profils indiquent un ensemble de règles permettant de déterminer si un
-utilisateur a le droit requis pour satisfaire sa requête.
+utilisateur a le droit requis pour exécuter une requête.
 
 Un profil comprend un ensemble de droits. Ces droits n'ont pas de hiérarchie,
 l'obtention d'un droit ne nécessite jamais l'obtention d'un autre droit. Chaque
-droit peut être posé sur les [Rôles][roles], les [groupes][groups] et les
+droit peut être posé sur les [rôles][roles], les [groupes][groups] et les
 [utilisateurs][users] du système.
 
 Les vérifications d'accès ne se font que sur les utilisateurs. Les rôles et les
@@ -43,18 +43,17 @@ Règles de propagation :
 
 Description de l'exemple ci-dessus :
 
-*   Le rôle _R1_ a les droits _d1_ et _d2_.
-*   Le rôle _R2_ a les droits _d3_ et _d2_.
-*   Le rôle _R1_ est associé au groupe _G1_.
-*   Le groupe _G1_ a les droits _d4_ et _d5_.
-*   Le groupe _G2_ appartient au groupe _G1_
-*   Le groupe _G2_ a le droit _d8_.
-*   L'utilisateur _U1_ a le droit _d6_.
-*   L'utilisateur _U1_ appartient au groupe _G2_.
-*   L'utilisateur _U2_ n'a pas de droit propre.
-*   L'utilisateur _U2_ appartient au groupe _G1_.
-*   L'utilisateur _U2_ a le rôle _R2_.
-
+*   le rôle _R1_ a les droits _d1_ et _d2_,
+*   le rôle _R2_ a les droits _d3_ et _d2_,
+*   le rôle _R1_ est associé au groupe _G1_,
+*   le groupe _G1_ a les droits _d4_ et _d5_,
+*   le groupe _G2_ appartient au groupe _G1_,
+*   le groupe _G2_ a le droit _d8_,
+*   l'utilisateur _U1_ a le droit _d6_,
+*   l'utilisateur _U1_ appartient au groupe _G2_,
+*   l'utilisateur _U2_ n'a pas de droit propre,
+*   l'utilisateur _U2_ appartient au groupe _G1_,
+*   l'utilisateur _U2_ a le rôle _R2_.
 
 L'exemple ci-dessus, donne les droits suivants :
 
@@ -71,7 +70,6 @@ L'exemple ci-dessus, donne les droits suivants :
     *   _d3_ récupéré de _R2_,
     *   _d4_, _d5_ récupérés de _G1_.
 
-
 À ces règles, s'ajoute la notion de [suppléant][suppleant]. Le suppléant
 récupère les droits du titulaire.
 
@@ -87,9 +85,6 @@ Si l'accès est fait en mode [anonyme][guest], l'utilisateur utilisé pour
 vérifier les droits est *anonymous guest* (login : `anonymous`, nom logique :
 `USER_GUEST`). Sur une installation initiale, cet utilisateur n'appartient à
 aucun groupe et n'a aucun rôle.
-
-
-
 
 <!-- links -->
 [authentification]: #core-ref:b482b82b-ebe2-46e4-8051-c6e83d11a2ae
