@@ -48,11 +48,11 @@ Avec le profil suivant :
 | MY_FIRSTROLE  | <span class="aclgreen">X</span> | <span class="aclgreen">X</span> |                                 |                                 |
 | MY_SECONDROLE |                                 | <span class="aclgreen">X</span> | <span class="aclgreen">X</span> | <span class="aclgreen">X</span> |
 
-*   Les utilisateurs ayant le rôle `MY_FIRSTROLE` auront accès aux vues `VueA`
+*   les utilisateurs ayant le rôle `MY_FIRSTROLE` auront accès aux vues `VueA`
     et `VueB`;
-*   Les utilisateurs ayant le rôle `MY_SECONDROLE` auront accès aux vues `VueB`,
+*   les utilisateurs ayant le rôle `MY_SECONDROLE` auront accès aux vues `VueB`,
     `VueC` et `VueD`;
-*   Les utilisateurs ayant les deux rôles auront accès à toutes les vues.
+*   les utilisateurs ayant les deux rôles auront accès à toutes les vues.
     Cependant ces utilisateurs ne pourront pas accéder à la vue `VueD` par
     l'interface standard car l'ordre de cette dernière est supérieure à l'ordre
     de la `VueA` et elle est non-affichable.

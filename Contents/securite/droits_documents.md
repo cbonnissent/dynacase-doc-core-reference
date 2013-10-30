@@ -18,18 +18,18 @@ Exemple de matrice de droits :
 
 Quatre familles de profils sont définies :
 
-*   profil de famille (droit de créer des documents ou de voir la famille);
-*   profil de document (droit de voir, modifier ou supprimer des documents);
-*   profil de dossier (droit de voir le contenu du dossier);
+*   profil de famille (droit de créer des documents ou de voir la famille),
+*   profil de document (droit de voir, modifier ou supprimer des documents),
+*   profil de dossier (droit de voir le contenu du dossier),
 *   profil de recherche (droit d'exécuter la recherche).
 
 Liste des droits définis pour ces quatre familles de profils :
 
 Légende :
 
-*    `D` : Pour les profils de Document;
-*    `F` : Pour les profils de Dossier (_Folder_);
-*    `S` : Pour les profils de Recherche (_Search_);
+*    `D` : Pour les profils de Document,
+*    `F` : Pour les profils de Dossier (_Folder_),
+*    `S` : Pour les profils de Recherche (_Search_),
 *    `C` : Pour les profils de Famille (_Class_).
 
 | Nom interne  |        Description         |                                                                                                                                                                                                                  Description longue                                                                                                                                                                                                                | `D` | `F` | `S` | `C` |
@@ -148,7 +148,7 @@ Dans cette famille, le rédacteur et le groupe d'observateurs peuvent être
 utilisés dans la définition des droits. Il est possible d'avoir les règles
 suivantes :
 
-*   le rédacteur a le droit de voir et de modifier le document;
+*   le rédacteur a le droit de voir et de modifier le document,
 *   les observateurs ont le droit de voir le document.
 
 Si le rédacteur est modifié alors les droits sur le document sont
@@ -165,7 +165,7 @@ comme les profils standards.
 | ---------- | --------------------- | --- | ------ | ------------------------------ | --------------- | ------------- |
 | __PROFIL__ | MY_DYNAMIC_PROFIL     |     | RESET  | view=tst_writer, tst_observers | edit=tst_writer | delete=GADMIN |
 
-Les noms des attributs n'est pas sensible à la casse dans
+Les noms des attributs peuvent être écrits sans prendre en compte la casse dans
 le [fichier d'importation][importdoc].
 
 *Note* : Si l'identifiant d'un attribut est le même qu'un nom logique de compte

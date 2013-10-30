@@ -43,31 +43,31 @@ Règles de propagation :
 
 Description de l'exemple ci-dessus :
 
-*   Le rôle _R1_ a les droits _d1_ et _d2_;
-*   Le rôle _R2_ a les droits _d3_ et _d2_;
-*   Le rôle _R1_ est associé au groupe _G1_;
-*   Le groupe _G1_ a les droits _d4_ et _d5_;
-*   Le groupe _G2_ appartient au groupe _G1_;
-*   Le groupe _G2_ a le droit _d8_;
-*   L'utilisateur _U1_ a le droit _d6_;
-*   L'utilisateur _U1_ appartient au groupe _G2_;
-*   L'utilisateur _U2_ n'a pas de droit propre;
-*   L'utilisateur _U2_ appartient au groupe _G1_;
-*   L'utilisateur _U2_ a le rôle _R2_.
+*   le rôle _R1_ a les droits _d1_ et _d2_,
+*   le rôle _R2_ a les droits _d3_ et _d2_,
+*   le rôle _R1_ est associé au groupe _G1_,
+*   le groupe _G1_ a les droits _d4_ et _d5_,
+*   le groupe _G2_ appartient au groupe _G1_,
+*   le groupe _G2_ a le droit _d8_,
+*   l'utilisateur _U1_ a le droit _d6_,
+*   l'utilisateur _U1_ appartient au groupe _G2_,
+*   l'utilisateur _U2_ n'a pas de droit propre,
+*   l'utilisateur _U2_ appartient au groupe _G1_,
+*   l'utilisateur _U2_ a le rôle _R2_.
 
 L'exemple ci-dessus, donne les droits suivants :
 
 *   L'utilisateur _U1_ a les droits _d1_, _d2_, _d4_, _d5_, _d6_, _d8_ obtenus
     comme suit :
-    *   _d1_, _d2_ récupérés de _R1_;
-    *   _d4_, _d5_ récupérés de _G1_;
-    *   _d6_ qu'il a en propre;
+    *   _d1_, _d2_ récupérés de _R1_,
+    *   _d4_, _d5_ récupérés de _G1_,
+    *   _d6_ qu'il a en propre,
     *   _d8_ récupéré de _G2_.
 *   L'utilisateur _U2_ a les droits _d1_, _d2_, _d3_, _d4_, _d5_ obtenus comme
     suit :
-    *   _d1_ récupéré de _R1_;
-    *   _d2_ récupéré de _R1_ et _R2_;
-    *   _d3_ récupéré de _R2_;
+    *   _d1_ récupéré de _R1_,
+    *   _d2_ récupéré de _R1_ et _R2_,
+    *   _d3_ récupéré de _R2_,
     *   _d4_, _d5_ récupérés de _G1_.
 
 À ces règles, s'ajoute la notion de [suppléant][suppleant]. Le suppléant
@@ -76,7 +76,7 @@ récupère les droits du titulaire.
 Dans notre cas, si _U2_ est suppléant de _U1_, alors les droits de _U2_ sont :
 
 *   _d1_, _d2_, _d3_, _d4_, _d5_, _d6_, _d8_ obtenus comme suit :
-    *   _d1_, _d2_, _d3_, _d4_, _d5_ qu'il a en propre;
+    *   _d1_, _d2_, _d3_, _d4_, _d5_ qu'il a en propre,
     *   _d6_, _d8_ obtenus par suppléance.
 
 ## Accès anonyme {#core-ref:2030dc59-1e67-4d3b-84e6-54d468f47bc3}
