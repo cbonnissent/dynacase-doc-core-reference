@@ -52,11 +52,11 @@ paramètre, puisque l'utilisateur ne pourra pas avoir de valeur personnalisée.
 
 Un paramètre global (propriété `'global' => 'Y'`)(voir
 [Les paramètres applicatifs][lesParametresApplicatifs]) peut être adressé sans
-son application : il est transverse, et est accessible sans devoir
+son application : il est transverse et est accessible sans devoir
 obligatoirement spécifier l'application qui le déclare.
 
 Un paramètre global peut aussi être un paramètre utilisateur (propriété `'user'
-=> 'Y'`), et dans ce cas pourra être personnalisé pour un utilisateur et sa
+=> 'Y'`), dans ce cas pourra être personnalisé pour un utilisateur et sa
 valeur sera soumise à la mécanique présentée ci-dessus de
 [Paramètre utilisateur : valeur principale et valeur personnalisée][puser].
 
