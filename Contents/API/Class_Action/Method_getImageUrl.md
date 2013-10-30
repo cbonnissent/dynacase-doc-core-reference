@@ -14,7 +14,8 @@ Applicable
     [php]
     string getImageUrl ( string $name [, bool $detectstyle = true [, int $size = null]] )
 
-L'image demandée doit être une image fournie par l'application associée à l'action ou une autre application.
+L'image demandée doit être une image fournie par l'application associée à
+l'action ou une autre application.
 
 ### Avertissements {#core-ref:0013302a-8251-4012-8174-fca6d9d30b10}
 
@@ -30,32 +31,50 @@ N/A
     
     valeur par défaut : **`true`**
    
-    Si la détection de style est activée, l'image sera recherchée dans différents répertoires dans l'ordre suivant :
+    Si la détection de style est activée, l'image sera recherchée dans
+    différents répertoires dans l'ordre suivant :
     
-    1. L'image est recherchée dans le répertoire "*`Images`*" du répertoire du style *société* (nom provenant du paramètre application "*`CORE_SOCSTYLE`*"). 
+    1. L'image est recherchée dans le répertoire "*`Images`*" du répertoire du
+    style *société* (nom provenant du paramètre application
+    "*`CORE_SOCSTYLE`*").
     
-    2. L'image est recherchée dans le répertoire du style utilisateur (paramètre applicatif "*`STYLE`*"). De même, l'image est recherchée dans le sous-répertoire "*`Images`*" du répertoire de style.
+    2. L'image est recherchée dans le répertoire du style utilisateur (paramètre
+    applicatif "*`STYLE`*"). De même, l'image est recherchée dans le sous-
+    répertoire "*`Images`*" du répertoire de style.
     
-    3. L'image est recherchée dans le sous-répertoire "*`Images`*" du répertoire d'installation de l'application associée à l'action instanciée.
+    3. L'image est recherchée dans le sous-répertoire "*`Images`*" du répertoire
+    d'installation de l'application associée à l'action instanciée.
     
-    4. Si l'image n'est pas trouvée, elle est recherchée en dernier recourt dans le répertoire "*`Images`*" général du répertoire d'installation de Dynacase. Ce répertoire contient des liens symboliques vers les images fournies par les applications installées.
+    4. Si l'image n'est pas trouvée, elle est recherchée en dernier recourt dans
+    le répertoire "*`Images`*" général du répertoire d'installation de Dynacase.
+    Ce répertoire contient des liens symboliques vers les images fournies par
+    les applications installées.
     
-    Si la détection de style n'est pas activée, les recherches n°1 et n°2 ne sont pas effectuées.
+    Si la détection de style n'est pas activée, les recherches n°1 et n°2 ne
+    sont pas effectuées.
 
 (int) `size`
 :   indique la largeur de l'image en pixel. 
     
-    valeur par défaut :  **`null`** indique qu'aucun redimensionnement ne sera effectué.
+    valeur par défaut :  **`null`** indique qu'aucun redimensionnement ne sera
+    effectué.
     
-    Si la valeur n'est pas renseignée la taille originale est conservée sinon une conversion d'image sera appliquée afin d'avoir la largeur indiquée.
-    Cette conversion d'image est effectuée sur le serveur lors du premier appel de l'url donnée. Ensuite le résultat de cette conversion d'image est mis en cache (répertoire `var/cache/images`) pour un accès plus rapide lors des prochains appels. Cette conversion retourne toujours une image au format *png*.
+    Si la valeur n'est pas renseignée la taille originale est conservée sinon
+    une conversion d'image sera appliquée afin d'avoir la largeur indiquée.
+    Cette conversion d'image est effectuée sur le serveur lors du premier appel
+    de l'url donnée. Ensuite le résultat de cette conversion d'image est mis en
+    cache (répertoire `var/cache/images`) pour un accès plus rapide lors des
+    prochains appels. Cette conversion retourne toujours une image au format
+    *png*.
 
 ## Valeur de retour {#core-ref:ca0424a7-3135-4f23-830a-da1446203f52}
 
-L'URL **relative** d'accès à l'image, par rapport à la racine du contexte, est retournée. 
+L'URL **relative** d'accès à l'image, par rapport à la racine du contexte, est
+retournée.
 
-Si l'image n'est pas trouvée, c'est l'image définie dans l'attribut "*noimage*" de la classe Application qui est retournée. Cette image est 'CORE/Images/noimage.png' :
-![image non trouvée](images/noimage.png "No image")
+Si l'image n'est pas trouvée, c'est l'image définie dans l'attribut "*noimage*"
+de la classe Application qui est retournée. Cette image est
+'CORE/Images/noimage.png' : ![image non trouvée](images/noimage.png "No image")
 
 ## Erreurs / Exceptions {#core-ref:b9b8aad9-6c82-4f2a-bf39-1a506f6c9f9a}
 
@@ -66,7 +85,10 @@ N/A
 N/A
 
 ## Exemples {#core-ref:f6f2f704-3826-4b65-af1a-f423a8d5b623}
-Le résultat de cette fonction peut être mis dans le layout d'une action qui permet de référence des URL relatives. Pour avoir une url absolue, il faut ajouter le paramètre "*CORE_EXTERNURL*" pour compléter l'URL.
+
+Le résultat de cette fonction peut être mis dans le layout d'une action qui
+permet de référence des URL relatives. Pour avoir une url absolue, il faut
+ajouter le paramètre "*CORE_EXTERNURL*" pour compléter l'URL.
 
     [php]
     // myaction.php
@@ -79,7 +101,9 @@ Le résultat de cette fonction peut être mis dans le layout d'une action qui pe
 
 ## Notes {#core-ref:2384b9ca-7fa8-469e-b04b-06e0ed0d8f56}
 
-Bien que cette méthode soit définie sur la classe `Action`, elle est un raccourci pour accéder à la méthode `Application::getImageUrl()` de l'application dont est issu l'action.
+Bien que cette méthode soit définie sur la classe `Action`, elle est un
+raccourci pour accéder à la méthode `Application::getImageUrl()` de
+l'application dont est issu l'action.
 
 ## Voir aussi {#core-ref:edf5e295-3982-40bb-aa78-b3ce1a2fcf86}
 

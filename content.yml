@@ -261,28 +261,16 @@ book:
     - level:   2
       element: "chapter"
       content:  "API/Class_Action.md"
-      flags:
-        draft: "draft"
-        wip_sub: ""
       subtoc:   1
     - level:   3
       element: "chapter"
       content:  "API/Class_Action/Method_canExecute.md"
-      flags:
-        draft: "draft"
-        wip_sub: ""
     - level:   3
       element: "chapter"
       content:  "API/Class_Action/Method_exitError.md"
-      flags:
-        draft: "draft"
-        wip_sub: ""
     - level:   3
       element: "chapter"
       content:  "API/Class_Action/Method_getImageUrl.md"
-      flags:
-        draft: "draft"
-        wip_sub: ""
     - level:   2
       element: "chapter"
       content:  "API/Class_ActionUsage.md"
