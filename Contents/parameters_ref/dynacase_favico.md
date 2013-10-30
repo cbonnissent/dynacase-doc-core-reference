@@ -2,7 +2,7 @@
 
 ## Description {#core-ref:deecfcf1-2df0-4310-974d-9b8f1cf92cca}
 
-Le paramètre `DYNACASE_FAVICO` permet de spécifier l'icône qui sera présentée
+Le paramètre `DYNACASE_FAVICO` permet de spécifier l'icone qui est présentée
 par les pages HTML de Dynacase.
 
 *   App : `CORE`

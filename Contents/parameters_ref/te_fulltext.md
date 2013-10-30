@@ -18,7 +18,7 @@ La valeur peut être `yes` pour indiquer d'indexer les fichiers des documents, o
 
 ## Notes {#core-ref:c065f533-2c80-4d3f-9f42-1e878185428e}
 
-L'indexation des fichiers ne sear active que si le moteur de transformation est
+L'indexation des fichiers n'est active que si le moteur de transformation est
 disponible (c.f. [`TE_ACTIVATE`][te_activate]).
 
 <!-- links -->

@@ -22,6 +22,6 @@ d'hôte du serveur.
 ## Notes {#core-ref:ad67b7d7-5bae-4df2-8553-1fac7e794d82}
 
 L'URL ne doit pas contenir de requête (partie de la forme `?a=b&c=d`) ou de
-signet (partie finale de la forme `#anchor`).
+hash (partie finale de la forme `#anchor`).
 
 <!-- links -->

@@ -3,7 +3,7 @@
 ## Description {#core-ref:14e76237-5013-4c3e-8f9e-b0a9dd90f2fd}
 
 Le paramètre `SMTP_HOST` permet de spécifier le serveur SMTP utilisé par
-Dynacase pour l'envoi de mails.
+Dynacase pour l'envoi de courriels.
 
 *   App : `FDL`
 *   Portée : Global

@@ -12,7 +12,7 @@ de connexion par défaut.
 
 ## Valeur {#core-ref:a9583f14-0515-4332-8e0e-02a5537d5995}
 
-La valeur est un chemin d'accès à un fichier image qui sera affiché sur la page
+La valeur est un chemin d'accès à un fichier image qui est affiché sur la page
 de connexion par défaut. Le chemin d'accès est relatif à l'URL d'accès à l'index
 de Dynacase (e.g. `CORE/Images/logo-mini.png`).
 

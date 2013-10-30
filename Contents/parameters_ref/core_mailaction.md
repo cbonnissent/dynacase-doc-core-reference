@@ -25,7 +25,7 @@ valeur du paramètre [CORE_URLINDEX][core_urlindex].
 L'URL doit contenir une chaîne de requête qui référence une application et une
 action Dynacase valide (e.g. `?app=MYAPP&action=MYACTION`).
 
-L'URL ne doit pas contenir de signet (partie finale de la forme `#anchor`).
+L'URL ne doit pas contenir de hash (partie finale de la forme `#anchor`).
 
 <!-- links -->
 [core_urlindex]: #core-ref:9081464e-dfc9-4836-8577-cfa59829eaa0

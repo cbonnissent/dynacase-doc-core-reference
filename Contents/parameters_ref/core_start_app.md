@@ -18,6 +18,8 @@ La valeur du paramètre doit être le nom d'une application Dynacase
 
 ## Notes {#core-ref:18210d55-dd07-46d9-b6b4-fa91c9a67b7e}
 
-Aucune.
+Il n'est pas possible de rediriger vers une action particulière d'une
+application. On ne peut re-diriger que vers l'[action][actionDef] `ROOT`.
 
 <!-- links -->
+[actionDef]: #core-ref:e67d8aeb-939c-46e3-9be8-6fc3ba75ebc2
