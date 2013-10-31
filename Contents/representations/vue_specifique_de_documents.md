@@ -3,7 +3,7 @@
 La définition d'une nouvelle vue de document nécessite un _contrôleur de vue_ et
 un _template_.
 
-Le contrôleur de vue peut être omis. dans ce cas, Dynacase fera appel
+Le contrôleur de vue peut être omis. Dans ce cas, Dynacase fera appel
  au [contrôleur de vue par défaut][default_view_controleur].
 
 ## Le contrôleur de vue {#core-ref:5da69221-eb2e-41a7-9f7a-d2c2e27c4184}
@@ -14,10 +14,10 @@ de se prémunir d'une éventuelle exécution arbitraire de code.
 
 Les paramètres reçus par la méthode sont au nombre de 3 :
 
-*   `$target` (string) : nom de la fenêtre graphique qui sera utilisée pour les
-    hyperliens (`"_self"` par défaut) ;
+*   `$target` (string) : nom de la fenêtre graphique qui est utilisée pour les
+    hyperliens (`"_self"` par défaut),
 *   `$ulink` (booléen) : indique s'il faut générer les hyperliens (`true` par
-    défaut) ;
+    défaut),
 *   `$abstract` (booléen) : indique s'il faut générer uniquement les
     attributs de la fiche résumé (`false` par défaut).
 
@@ -64,12 +64,12 @@ Le template associé peut être :
 
 ## Vue spécifique de consultation {#core-ref:284b75f4-7b2c-40ff-9ec8-122e526e5857}
 
-La vue spécifique d'un document doit retourner un fragment HTML qui sera inclus
+La vue spécifique d'un document doit retourner un fragment HTML qui est inclus
 dans le corps de la page HTML.
 
 La vue personnalisée est toujours rendue encapsulée dans `FDL:VIEWCARD`, elle-
 même rendue au sein de `FDL:FDL_CARD`(sauf si l'[option][zone_options_view] `S`
-est utilisée) . Aussi cette vue personnalisée doit générer un fragment qui sera
+est utilisée) . Aussi cette vue personnalisée doit générer un fragment qui est
 inséré dans le `body` de la page HTML.
 
     +-------------------------------------------------+
@@ -106,7 +106,7 @@ Afin de définir une vue personnalisée, il est possible :
 *   d'utiliser un [contrôle de vue][CVDOC],
 *   de spécifier une zone en paramètre HTTP : pour ce faire, il suffit de passer
     l'identifiant de la zone documentaire dans le paramètre `zone` de l'url
-    d'accès au document.
+    d'accès au document,
 *   d'indiquer la zone documentaire dans l'attribut `defaultView` du fichier
    _CLASS_  de la famille pour avoir cette vue par défaut lors de la
     consultation.
@@ -137,9 +137,9 @@ suivantes :
     *   `S_ATTRID` pour chaque attribut : `true` si l'attribut est vide, `false`
         sinon
 *   viewProp va créer :
-    *   `ATTRID` pour chaque attribut : la valeur brute de l'attribut
-    *   `PROPID` pour chaque propriété : la valeur brute de la propriété
-    *   `V_TITLE` une ancre vers le document lui-même avec son titre
+    *   `ATTRID` pour chaque attribut : la valeur brute de l'attribut,
+    *   `PROPID` pour chaque propriété : la valeur brute de la propriété,
+    *   `V_TITLE` une ancre vers le document lui-même avec son titre.
 
 **Note** : Toutes ces clefs sont en majuscules.
 
@@ -149,7 +149,7 @@ de définir d'autres clés en utilisant les différentes méthodes du `Layout`.
 
 **Attention** : toutes ces clés respectent les visibilités : si la visibilité 
 d'un attribut est `H` pour un utilisateur, les clés `L_ATTRID` et `V_ATTRID` 
-seront des chaînes vides. `S_ATTRID`, pour sa part, n'est pas affecté par les
+sont des chaînes vides. `S_ATTRID`, pour sa part, n'est pas affecté par les
 visibilités.
 
 Exemple d'un template sans contrôleur :
@@ -202,7 +202,7 @@ Il est aussi possible d'ajouter des `css` et des `js` spécifique
 
 ### Utilisation des champs de formulaire du document {#core-ref:37dd7910-1c29-461f-9628-5f50c543ed2d}
 
-Pour les vues de modifications de documents le contrôleur par défaut n'est pas
+Pour les vues de modifications de documents, le contrôleur par défaut n'est pas
 adapté car il ne fournit que des valeurs d'attributs et non des champs de saisie
 pour un formulaire.
 
