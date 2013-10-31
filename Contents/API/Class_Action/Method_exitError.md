@@ -16,10 +16,14 @@ Obsolète depuis #.#.#
     [php]
     void exitError ( string $texterr )
 
-Permet de mettre fin à l'exécution de l'action et de remonter un message d'erreur à l'utilisateur.
+Permet de mettre fin à l'exécution de l'action et de remonter un message
+d'erreur à l'utilisateur.
 
-- Si l'action est exécutée en mode Web (variable PHP `$_SERVER['HTTP_HOST']` non vide), alors une page HTML d'erreur est générée avec le message d'erreur donné en argument.
-- Si l'action n'est pas exécutée en mode Web, une exception `Dcp\Core\Exception` est levée avec le message d'erreur donné en argument.
+- Si l'action est exécutée en mode Web (variable PHP `$_SERVER['HTTP_HOST']` non
+ vide), alors une page HTML d'erreur est générée avec le message d'erreur donné
+ en argument.
+- Si l'action n'est pas exécutée en mode Web, une exception `Dcp\Core\Exception`
+est levée avec le message d'erreur donné en argument.
 
 ## Avertissements {#core-ref:ebe69c82-09f3-474a-82a6-32f4e5f10025}
 
