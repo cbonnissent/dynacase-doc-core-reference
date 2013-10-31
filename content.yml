@@ -318,46 +318,25 @@ book:
     - level:   2
       element: "chapter"
       content:  "API/Class_Application.md"
-      flags:
-        draft: "draft"
-        wip_sub: ""
       subtoc:   1
     - level:   3
       element: "chapter"
       content:  "API/Class_Application/Method_addCssCode.md"
-      flags:
-        draft: "draft"
-        wip_sub: ""
     - level:   3
       element: "chapter"
       content:  "API/Class_Application/Method_addCssRef.md"
-      flags:
-        draft: "draft"
-        wip_sub: ""
     - level:   3
       element: "chapter"
       content:  "API/Class_Application/Method_addJsCode.md"
-      flags:
-        draft: "draft"
-        wip_sub: ""
     - level:   3
       element: "chapter"
       content:  "API/Class_Application/Method_addJsRef.md"
-      flags:
-        draft: "draft"
-        wip_sub: ""
     - level:   3
       element: "chapter"
       content:  "API/Class_Application/Method_getCSSLink.md"
-      flags:
-        draft: "draft"
-        wip_sub: ""
     - level:   3
       element: "chapter"
       content:  "API/Class_Application/Method_getJSLink.md"
-      flags:
-        draft: "draft"
-        wip_sub: ""
     - level:   2
       element: "chapter"
       content:  "API/Class_Dir.md"

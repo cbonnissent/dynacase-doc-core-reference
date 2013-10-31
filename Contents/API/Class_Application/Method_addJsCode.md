@@ -1,7 +1,7 @@
 # Application::addJsCode {#core-ref:49a8e28b-f286-45d7-b9e0-cc3591a8efde}
 
 <div class="short-description">
-Ajouter du code Javascript à un template.
+Ajouter du code JavaScript à un template.
 </div>
 
 <!-- <div class="applicability"></div> -->
@@ -12,7 +12,8 @@ Ajouter du code Javascript à un template.
     [php]
     void addJsCode ( string $code )
 
-Permet d'ajouter des instructions JavaScript (`code`) qui seront insérées dans les éléments `[JS:CODE]` des templates utilisées lors du rendu d'une vue.
+Permet d'ajouter des instructions JavaScript (`code`) qui seront insérées dans
+les éléments `[JS:CODE]` des templates utilisées lors du rendu d'une vue.
 
 ## Avertissements {#core-ref:307520c6-c9b7-4089-9716-da6fabed51b3}
 
@@ -46,11 +47,9 @@ Contrôleur de l'action `MY_ACTION` (`my_action.php`) :
     function my_action(Action &$action) {
         /* Get the Application of the current Action */
         $application = $action->parent;
-
         $jsCode = <<<'JS'
     alert('Hello world');
     JS;
-
         $application->addJsCode($jsCode);
     }
 
