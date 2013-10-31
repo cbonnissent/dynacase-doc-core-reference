@@ -1192,6 +1192,39 @@ book:
         wip: "work in progress"
     - level:   2
       content:  "Advanced/Database/introduction.md"
+      subtoc:   2
+      flags:
+        wip: "work in progress"
+    - level:   3
+      content:  "Advanced/Database/dbdoc.md"
+      flags:
+        wip: "work in progress"
+    - level:   3
+      content:  "Advanced/Database/dbdocfam.md"
+      flags:
+        wip: "work in progress"
+    - level:   3
+      content:  "Advanced/Database/dbattr.md"
+      flags:
+        wip: "work in progress"
+    - level:   3
+      content:  "Advanced/Database/dbaccount.md"
+      flags:
+        wip: "work in progress"
+    - level:   3
+      content:  "Advanced/Database/dbsecurity.md"
+      flags:
+        wip: "work in progress"
+    - level:   3
+      content:  "Advanced/Database/dbhistory.md"
+      flags:
+        wip: "work in progress"
+    - level:   3
+      content:  "Advanced/Database/dbapp.md"
+      flags:
+        wip: "work in progress"
+    - level:   3
+      content:  "Advanced/Database/dbparam.md"
       flags:
         wip: "work in progress"
     - level:   2
@@ -1204,42 +1237,12 @@ book:
         wip: "work in progress"
         wip_sub: ""
     - level:   3
-      content:  "Advanced/Persistance/doc.md"
-      flags:
-        wip: "work in progress"
-        wip_sub: ""
-    - level:   3
       content:  "Advanced/Persistance/querydb.md"
       flags:
         wip: "work in progress"
         wip_sub: ""
     - level:   3
-      content:  "Advanced/Persistance/params.md"
-      flags:
-        wip: "work in progress"
-        wip_sub: ""
-    - level:   3
-      content:  "Advanced/Persistance/famille.md"
-      flags:
-        wip: "work in progress"
-        wip_sub: ""
-    - level:   3
       content:  "Advanced/Persistance/user.md"
-      flags:
-        wip: "work in progress"
-        wip_sub: ""
-    - level:   3
-      content:  "Advanced/Persistance/acl.md"
-      flags:
-        wip: "work in progress"
-        wip_sub: ""
-    - level:   3
-      content:  "Advanced/Persistance/application-action.md"
-      flags:
-        wip: "work in progress"
-        wip_sub: ""
-    - level:   3
-      content:  "Advanced/Persistance/permission.md"
       flags:
         wip: "work in progress"
         wip_sub: ""
@@ -1315,6 +1318,42 @@ book:
         wip_sub: ""
     - level:   3
       content:  "Advanced/Template/odt.md"
+      subtoc:   2
+      flags:
+        wip: "work in progress"
+        wip_sub: ""
+    - level:   4
+      content:  "Advanced/Template/odtcontrol.md"
+      flags:
+        wip: "work in progress"
+        wip_sub: ""
+    - level:   4
+      content:  "Advanced/Template/odtcaution.md"
+      flags:
+        wip: "work in progress"
+        wip_sub: ""
+    - level:   4
+      content:  "Advanced/Template/odtrepeat.md"
+      flags:
+        wip: "work in progress"
+        wip_sub: ""
+    - level:   4
+      content:  "Advanced/Template/odtprop.md"
+      flags:
+        wip: "work in progress"
+        wip_sub: ""
+    - level:   4
+      content:  "Advanced/Template/odtlimit.md"
+      flags:
+        wip: "work in progress"
+        wip_sub: ""
+    - level:   4
+      content:  "Advanced/Template/odtmixte.md"
+      flags:
+        wip: "work in progress"
+        wip_sub: ""
+    - level:   4
+      content:  "Advanced/Template/convertpdf.md"
       flags:
         wip: "work in progress"
         wip_sub: ""
