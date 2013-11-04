@@ -1309,24 +1309,13 @@ book:
     - level:   2
       content:  "Advanced/Template/introduction.md"
       subtoc:   1
-      flags:
-        wip: "work in progress"
     - level:   3
       content:  "Advanced/Template/texte.md"
-      flags:
-        wip: "work in progress"
-        wip_sub: ""
     - level:   3
       content:  "Advanced/Template/odt.md"
       subtoc:   2
-      flags:
-        wip: "work in progress"
-        wip_sub: ""
     - level:   4
       content:  "Advanced/Template/odtcontrol.md"
-      flags:
-        wip: "work in progress"
-        wip_sub: ""
     - level:   4
       content:  "Advanced/Template/odtcaution.md"
       flags:
