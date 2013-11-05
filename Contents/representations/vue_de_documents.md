@@ -9,10 +9,7 @@ Une vue de document est composée de :
     Ce contrôleur est une méthode de la famille qui complète le template.
 *   Un masque déterminant les visibilités (facultatif).
 
-
-
 ## Syntaxe d'une zone documentaire {#core-ref:49b96dc9-64e9-4f5a-a167-396282625c1e}
-
 
 Pour référencer une zone documentaire, la syntaxe suivante est utilisée :
 `APP:DOCVIEW:OPTIONS:TRANSFORMATION`, avec les correspondances suivantes :
@@ -98,7 +95,8 @@ Cette page est structurée comme suit :
     |                                                 |
     +-------------------------------------------------+
 
-Pour plus de précisions, se reporter à la liste des <span class="fixme" data-assignedto="MCO">Zones de référence</span>.
+Pour plus de précisions, se reporter à la liste des 
+[Zones de référence][ZONE_REF].
 
 La vue de consultation par défaut est la zone `FDL:VIEWBODYCARD`. Elle utilise 
 donc le template `FDL/Layout/viewbodycard.xml` et le contrôleur 
@@ -113,28 +111,28 @@ Si la famille ne comporte pas de paramétrage spécifique de vue, cette url est
 Les options disponibles en consultation sont les suivantes :
 
 `V`
-:   Pour les squelettes HTML, il signifie que le document sera affiché comme
+:   Pour les squelettes HTML, il signifie que le document est affiché comme
     suit :
     
-    *   inclusion des CSS systèmes dynacase
+    *   inclusion des CSS systèmes Dynacase,
     *   pas de titre, pas d'icônes,
-    *   affichage de la barre de menus
+    *   affichage de la barre de menus.
     
 `T`
-:   Pour les squelettes HTML, il signifie que le document sera affiché comme
+:   Pour les squelettes HTML, il signifie que le document est affiché comme
     suit :
     
-    *   inclusion des CSS systèmes dynacase
+    *   inclusion des CSS systèmes Dynacase,
     *   pas de titre, pas d'icônes,
-    *   pas de barre de menus
+    *   pas de barre de menus.
 
 `U`
-:   Pour les squelettes HTML, il signifie que le document sera affiché comme
+:   Pour les squelettes HTML, il signifie que le document est affiché comme
     suit :
     
-    *   pas d'inclusion des CSS systèmes dynacase
+    *   pas d'inclusion des CSS systèmes Dynacase,
     *   pas de titre, pas d'icônes,
-    *   pas de barre de menus
+    *   pas de barre de menus.
 
 `S`
 :   Signifie que la zone documentaire est autonome, qu'elle ne nécessite pas
@@ -147,7 +145,7 @@ Les options disponibles en consultation sont les suivantes :
 :   Pour les squelettes non HTML binaires.
     Cas notamment des fichiers openDocumentText (`*.odt`).
     Dans ce cas le retour de la vue par la méthode `Doc::viewDoc()`
-    sera le nom d'un fichier temporaire et non le contenu comme pour les zones
+    est le nom d'un fichier temporaire et non le contenu comme pour les zones
     textuelles.
 
 ## Définition de la vue de modification {#core-ref:bfbab9da-385a-45a3-af74-b17b4cca2e24}
@@ -181,7 +179,7 @@ Elle utilise donc le template `FDL/Layout/editbodycard.xml` et le contrôleur
 
 La vue de modification de document est toujours rendue encapsulée dans 
 `FDL:EDITCARD`,elle-même rendue au sein de `GENERIC:GENERIC_EDIT`. Aussi 
-cette vue retourne un fragment de formulaire, qui sera inséré dans 
+cette vue retourne un fragment de formulaire, qui est inséré dans 
 le `form` de la page.
 
 ### Options des vues documentaires en modification {#core-ref:9e341064-ea78-4049-819c-8d0ab765840e}
@@ -216,3 +214,4 @@ Les options disponibles en modification sont les suivantes :
 [zone_options_view]: #core-ref:96d615e5-b6a6-46d3-b42d-4396dbc42b8b
 [zone_options_edit]: #core-ref:9e341064-ea78-4049-819c-8d0ab765840e
 [PHP_urlencode]: http://php.net/manual/fr/function.urlencode.php "fonction urlencode sur php.net"
+[ZONE_REF]:     #core-ref:fed06a0c-3fd6-11e3-9658-88d5dc830245}

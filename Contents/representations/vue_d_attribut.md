@@ -6,16 +6,15 @@ correspond, à l'exception de quelques attributs isolés.
 
 Les vues d'attributs sont déclarées au moyen des options :
 
-*   `viewtemplate` : pour les vues de consultation
-*   `edittemplate` : pour les vues de modification
-
+*   `viewtemplate` : pour les vues de consultation,
+*   `edittemplate` : pour les vues de modification.
 
 Une vue d'attribut est composée de :
 
 *   un fichier de template, définissant la structure,
 *   une méthode (appelée contrôleur de vue) du document à représenter,
     définissant les valeurs.  
-    Cette méthode peut également être omise. dans ce cas, dynacase fera appel
+    Cette méthode peut également être omise. dans ce cas, dynacase fait appel
     au [contrôleur de vue par défaut][default_view_controleur].
 
 Par convention :
@@ -32,12 +31,12 @@ Pour qu'une méthode du document soit utilisable en tant que contrôleur d'une
 vue, il est nécessaire de lui ajouter la phpDoc `@templateController` afin
 de se prémunir d'une éventuelle exécution arbitraire de code.
 
-les paramètres reçus par la méthode sont au nombre de 3 :
+Les paramètres reçus par la méthode sont au nombre de 3 :
 
-*   `$target` (string) : nom de la fenêtre graphique qui sera utilisée pour les
-    hyperliens (`"_self"` par défaut) ;
+*   `$target` (string) : nom de la fenêtre graphique qui est utilisée pour les
+    hyperliens (`"_self"` par défaut) ,
 *   `$ulink` (booléen) : indique s'il faut générer les hyperliens (`true` par
-    défaut) ;
+    défaut) ,
 *   `$abstract` (booléen) : indique s'il faut générer uniquement les attributs
     de la fiche résumé (`false` par défaut).
 
@@ -47,7 +46,7 @@ En l'absence de méthode correspondant à la vue, le contrôleur d'attributs par
 défaut est appelé. Cette méthode dépend de l'option :
 
 *   `viewtemplate` : en consultation, la méthode appelée est
-    `Doc::viewDefaultCard`.
+    `Doc::viewDefaultCard`,
 *   `edittemplate` : en modification, la méthode appelée est `Doc::viewProp`
     suivi de `Doc::editAttr`.
 
@@ -64,8 +63,8 @@ Une zone de vue d'attribut s'exprime sous la forme `APP:DOCVIEW:OPTIONS` :
 `OPTIONS` (facultatif)
 :   Une option de représentation. ces options dépendent du type de vue :
     
-    *   [en édition][zone_options_view]
-    *   [en modification][zone_options_edit]
+    *   [en édition][zone_options_view],
+    *   [en modification][zone_options_edit].
 
 Des paramètres supplémentaires peuvent être fournis en utilisant une syntaxe 
 identique aux paramètres des URL. Les valeurs des paramètres doivent être 
@@ -115,7 +114,7 @@ Extrait d'une consultation de document avec la zone `FDL:VIEWBODYCARD` :
 
 Afin de spécifier la vue d'attribut à utiliser en consultation, il faut utiliser
 l'option `viewtemplate`. Si l'attribut n°2 a une vue d'attribut le document de 
-consultation sera :
+consultation est :
 
     [html]
     <table>
@@ -131,7 +130,7 @@ consultation sera :
         </tr>
     </table>
 
-La vue d'attribut sera présentée dans une cellule de tableau HTML comme
+La vue d'attribut est présentée dans une cellule de tableau HTML comme
 représenté ci-dessous.
 
 |        |     |                                      |
@@ -141,22 +140,22 @@ représenté ci-dessous.
 |        |     |                                      |
 
 
-Si l'option est portée sur un attribut tableau (`array`), la vue remplacera tout
+Si l'option est portée sur un attribut tableau (`array`), la vue remplace tout
 le tableau.
 
-Si l'option est portée sur un attribut cadre (`frame`) la vue remplacera tout le
-contenu du cadre mais le contour avec le libellé sera conservé.
+Si l'option est portée sur un attribut cadre (`frame`) la vue remplace tout le
+contenu du cadre mais le contour avec le libellé est conservé.
 
 ### Options des vues d'attribut en consultation {#core-ref:ffc29ae1-7438-4a5b-aca2-83dc98be4d9d}
 
 Les options disponibles en consultation sont les suivantes :
 
 `S`
-:   signifie que le libellé de l'attribut ne sera pas affiché et le template
-    prendra toute la largeur du document. Cette option n'est pas applicable si 
+:   signifie que le libellé de l'attribut n'est pas affiché et le template
+    prend toute la largeur du document. Cette option n'est pas applicable si 
     l'attribut est de type `frame`.
     
-    Dans ce cas le document de consultation sera :
+    Dans ce cas le document de consultation est :
     
         [html]
         <table>
@@ -170,7 +169,7 @@ Les options disponibles en consultation sont les suivantes :
             </tr>
         </table>
     
-    La vue d'attribut avec l'option `S` sera présentée dans une cellule de
+    La vue d'attribut avec l'option `S` est présentée dans une cellule de
     tableau HTML comme représenté ci-dessous :
     
     <table style="width:auto">
@@ -298,7 +297,7 @@ l'option `edittemplate`.
 
 La vue d'attribut remplace le champ de saisie de l'attribut.
 
-Si l'attribut n°2 a une vue d'attribut le formulaire de saisie sera :
+Si l'attribut n°2 a une vue d'attribut le formulaire de saisie est :
 
     [html]
     <table>
@@ -315,10 +314,10 @@ Si l'attribut n°2 a une vue d'attribut le formulaire de saisie sera :
         </tr>
     </table>
 
-La vue d'attribut sera présentée dans une cellule de tableau HTML comme
+La vue d'attribut est présentée dans une cellule de tableau HTML comme
 représenté ci-dessus. Le template d'un champ doit retourner deux éléments :
 
-*   le champ de saisie
+*   le champ de saisie,
 *   les éventuelle boutons de contrôle.
 
 Ces éléments doivent être séparé par des éléments de cellule `</td><td>`, car au
@@ -329,10 +328,10 @@ final le tableau doit comporter trois colonnes pour avoir un alignement correct.
 Les options disponibles en modification sont les suivantes :
 
 `S`
-:   Signifie que le libellé de l'attribut ne sera pas affiché et le template
-    prendra toute la largeur du document.
+:   Signifie que le libellé de l'attribut ne est pas affiché et le template
+    prend toute la largeur du document.
     
-    L'insertion se fera dans le fragment html suivant :
+    L'insertion se fait dans le fragment html suivant :
     
         [html]
         <table>
@@ -349,7 +348,7 @@ Les options disponibles en modification sont les suivantes :
         </table>
 
 `U`
-:   Signifie que l'input généré par le mot-clef `[V_ATTRNAME]` prendra toute la
+:   Signifie que l'input généré par le mot-clef `[V_ATTRNAME]` prend toute la
     largeur disponible. Elle n'ajoute pas de `</td><td>` supplémentaire.
     Cette option est à utiliser si les mots-clefs `[V_ATTRNAME]` sont présents dans 
     le template. 
@@ -424,7 +423,7 @@ Exemple :
       Nombre à saisir
         [V_MY_NUMBER]
     
-Dans ce cas le résultat sera :
+Dans ce cas le résultat est :
 
     [html]
     <table>

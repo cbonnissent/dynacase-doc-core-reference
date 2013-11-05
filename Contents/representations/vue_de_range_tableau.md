@@ -17,7 +17,7 @@ Par convention :
 
 ## Syntaxe du template de rangée de tableau {#core-ref:d9a89b1e-9792-49c3-b390-d358c2b78999}
 
-un template de vue de rangés de tableau est un fichier XML **valide**.
+Un template de vue de rangés de tableau est un fichier XML **valide**.
 Il doit respecter la `DTD` suivante :
 
     [dtd]
@@ -57,13 +57,13 @@ n'est pas obligatoire) :
         </table-body>
     </table>
 
-*   Le bloc `table-head` définit le `thead` du tableau généré.
-*   Le bloc `table-body` définit une rangée `tr` du `tbody` du tableau généré.
+*   Le bloc `table-head` définit le `thead` du tableau généré,
+*   le bloc `table-body` définit une rangée `tr` du `tbody` du tableau généré.
 *   Chaque balise `cell` définit une cellule et est donc retranscrite sous la
     forme d'une balise `td`.
-    *   Les attributs `style` et `class` de la balise `cell` sont transmis
-        tels-quels à la balise `td` résultante.
-    *   Les autres attributs sont ignorés
+    *   les attributs `style` et `class` de la balise `cell` sont transmis
+        tels-quels à la balise `td` résultante,
+    *   les autres attributs sont ignorés,
     *   le contenu de la balise `td` résultante est exactement le contenu de la
         balise `cell`. ce dernier doit donc être du xhtml valide.  
         **Attention** : puisque le document est interprété en *XML pur*, pour
@@ -99,11 +99,11 @@ Lors de l'utilisation des vues de rangés de tableau, les clés suivantes sont
 instanciées :
 
 *   `L_ATTRID` pour chaque attribut : le libellé (traduit) de l'attribut,
-*   `V_ATTRID` pour chaque attribut : la valeur (au format HTML) de l'attribut
+*   `V_ATTRID` pour chaque attribut : la valeur (au format HTML) de l'attribut.
 
 **Attention** : les clés `V_ATTRID` respectent les visibilités : si la
 [visibilité][visibility] est `H` (caché) ou `I` (invisible) ou 
-`O` (écriture seule), les clés  `V_ATTRID` seront des chaînes vides. Les clés
+`O` (écriture seule), les clés  `V_ATTRID` sont des chaînes vides. Les clés
 `L_ATTRID` ne sont pas affectées par la visibilité.
 
 De plus, il est possible, comme dans tous les templates, d'utiliser :
@@ -132,7 +132,7 @@ Le template suivant :
       </table-body >
     </table>
 
-produira pour l'exemple le code HTML suivant :
+produit pour l'exemple le code HTML suivant :
 
     [html]
     <fieldset ><legend>Nom du tableau</legend>
@@ -202,9 +202,9 @@ instanciées :
 *   `V_ATTRID` pour chaque attribut : le champs de saisie correspondant à l'attribut,
 
 **Attention** : les clés `V_ATTRID` respectent les visibilités : si la
-[visibilité][visibility] est `H` (caché) ou `R` (lecture seule) les clefs seront
+[visibilité][visibility] est `H` (caché) ou `R` (lecture seule) les clefs sont
 des champs cachés `<input type="hidden" />`.
-Si la visibilité est `I` (invisible), les clés `V_ATTRID` seront des chaînes
+Si la visibilité est `I` (invisible), les clés `V_ATTRID` sont des chaînes
 vides. Les clés `L_ATTRID` ne sont pas affectées par la visibilité.
 
 De plus, il est possible, comme dans tous les templates, d'utiliser :
@@ -232,7 +232,7 @@ Le template suivant :
         </table-body >
     </table>
 
-produira pour l'exemple le code HTML suivant :
+produit pour l'exemple le code HTML suivant :
 
 À la différence d'un tableau standard, les champs de saisie d'attribut ne sont
 plus répartis sur deux cellules mais sur une seule cellule (plus de `colspan`)
@@ -268,7 +268,7 @@ dans l'entête de tableau.
     </fieldset>
 
 
-Cet exemple produira la représentation suivante :
+Cet exemple produit la représentation suivante :
 
 <fieldset style="border:solid 1px;padding:5px;"><legend style="margin-left:20px">Nom du tableau</legend>  
     <table>

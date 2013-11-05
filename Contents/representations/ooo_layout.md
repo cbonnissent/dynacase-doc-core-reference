@@ -54,8 +54,8 @@ de se prémunir d'une éventuelle exécution arbitraire de code.
 
 Les paramètres reçus par la méthode sont au nombre de 3 :
 
-*   `$target` (string) : toujours `"ooo"` (ne sert que pour les vues non odt) ;
-*   `$ulink` (booléen) : toujours `false` (ne sert que pour les vues non odt) ;
+*   `$target` (string) : toujours `"ooo"` (ne sert que pour les vues non odt),
+*   `$ulink` (booléen) : toujours `false` (ne sert que pour les vues non odt),
 *   `$abstract` (booléen) : indique s'il faut générer uniquement les
     attributs de la fiche résumé (`false` par défaut).
 
@@ -86,9 +86,9 @@ suivantes :
     *   `S_ATTRID` pour chaque attribut : `true` si l'attribut est vide, `false`
         sinon
 *   viewProp va créer :
-    *   `ATTRID` pour chaque attribut : la valeur brute de l'attribut
-    *   `PROPID` pour chaque propriété : la valeur brute de la propriété
-    *   `V_TITLE` une ancre vers le document lui-même avec son titre
+    *   `ATTRID` pour chaque attribut : la valeur brute de l'attribut,
+    *   `PROPID` pour chaque propriété : la valeur brute de la propriété,
+    *   `V_TITLE` une ancre vers le document lui-même avec son titre.
 
 **Note** : Toutes ces clefs sont en majuscules.
 
@@ -99,7 +99,7 @@ de définir d'autres clés en utilisant les différentes méthodes de la classe
 
 **Attention** : Toutes ces clés respectent les visibilités : si la visibilité 
 d'un attribut est `H` pour un utilisateur, les clés `L_ATTRID` et `V_ATTRID` 
-seront des chaînes vides. `S_ATTRID`, pour sa part, n'est pas affecté par les
+sont des chaînes vides. `S_ATTRID`, pour sa part, n'est pas affecté par les
 visibilités.
 
 ## Spécificités du système de template pour les vues openDocument text {#core-ref:3742b35d-ddc0-440e-a0aa-08ea2faf0e46}
@@ -113,15 +113,15 @@ fait des documents _xml_, et dont la structure doit rester valide.
 
 Parmi ces différences, il y a notamment :
 
-*   Les balises `ZONE` ne sont pas prises en compte.
-*   Les balises `BLOCK` et `ENDBLOCK` ne sont pas prises en compte et la gestion
+*   les balises `ZONE` ne sont pas prises en compte,
+*   les balises `BLOCK` et `ENDBLOCK` ne sont pas prises en compte et la gestion
     des éléments répétables se fait de [manière spécifique][repetables]
     
     En effet, la notion de *répétable* existe au sein des documents *odt* sous
     la forme des
-    *   listes à puce
-    *   tableaux
-*   La gestion des images se fait de [manière spécifique][images]
+    *   listes à puce,
+    *   tableaux.
+*   La gestion des images se fait de [manière spécifique][images].
 
 ### Placer une clé dans le template _odt_ {#core-ref:3caf8ced-fa1c-4969-bd72-7767755e109d}
 
@@ -137,13 +137,13 @@ utilisateur][fields] dont :
 
 L'utilisation de champs plutôt que du texte libre présente plusieurs avantages :
 
-*   Cela simplifie la modification ultérieure par des utilisateurs
-*   Cela permet de recenser l'ensemble des attributs, y compris ceux qui ne sont
-    pas utilisés
-*   Le remplacement étant fait au niveau du xml sous-jacent, si l'on n'utilise
+*   cela simplifie la modification ultérieure par des utilisateurs,
+*   cela permet de recenser l'ensemble des attributs, y compris ceux qui ne sont
+    pas utilisés,
+*   le remplacement étant fait au niveau du xml sous-jacent, si l'on n'utilise
     pas les champs, il est possible que des balises viennent couper la clé. Par
     exemple, `[MA_KEY]` peut en fait avoir été stocké sous la forme
-    `[<span>MA</span>_KEY]` qui ne sera alors pas reconnue par le moteur de
+    `[<span>MA</span>_KEY]` qui n'est alors pas reconnue par le moteur de
     template.
 
 ![ champ utilisateur ](representations/odt_field.png)
@@ -151,12 +151,12 @@ L'utilisation de champs plutôt que du texte libre présente plusieurs avantages
 ### Placer une clé dans les propriétés du template _odt_ {#core-ref:efc93ece-8dc6-4291-b152-c6c5cc3bc4ef}
 
 Il est également possible d'utiliser les clés dans les propriétés du fichier, où
-elles seront aussi remplacées.
+elles sont aussi remplacées.
 
 ### Images {#core-ref:d1625c57-57f6-48eb-ab3e-e3690dddec6c}
 
 Pour incorporer des images issues d'un attribut de type `image`, il faut insérer
-dans le template une image quelconque qui servira de placeholder et qui sera
+dans le template une image quelconque qui sert de placeholder et qui est
 ensuite remplacée par l'image issue de l'attribut du document lors de la
 composition du template.
 
@@ -165,18 +165,18 @@ Pour cela, il faut :
 1.  Insérer une image quelconque dans le fichier, au moyen du menu
     <span class="menu"><span class="menu-item">Insertion</span>
     <span class="menu-item">Image</span>
-    <span class="menu-item">À partir d'un fichier</span></span>.
+    <span class="menu-item">À partir d'un fichier</span></span>,
     
 2.  Cliquer sur le menu contextuel de l'image et choisir
-    <span class="menu"><span class="menu-item">image</span></span>
+    <span class="menu"><span class="menu-item">image</span></span>,
     
 3.  Renseigner les clés (qui référencent la valeur et le label de l'attribut de
 type `image`) dans l'onglet *[Options]*, champ *nom*.
     
     ![ nom de l'image ](representations/odt_insert_image.png)
 
-En ce qui concerne la taille de l'image, la largeur sera conservée.
-La hauteur sera calculée en fonction du ratio de l'image.
+En ce qui concerne la taille de l'image, la largeur est conservée.
+La hauteur est calculée en fonction du ratio de l'image.
 
 **Attention** : chaque image « placeholder » doit être insérée de cette façon,
 et il ne faut surtout pas faire de copier-coller d'une image. En effet, en cas
@@ -195,7 +195,7 @@ le nombre d'éléments nécessaires.
 Le template :
 ![ template ](representations/odt_repetable_source_bullet.png)
 
-pourra donner le fichier :
+peut donner le fichier :
 ![ résultat ](representations/odt_repetable_resultat_bullet.png)
 
 #### Déclarer des éléments répétables dans des tableaux {#core-ref:1f04c69d-1577-41aa-a05d-34191888f322}
@@ -203,7 +203,7 @@ pourra donner le fichier :
 Le template :
 ![ template ](representations/odt_repetable_source_array.png)
 
-pourra donner le fichier :
+peut donner le fichier :
 ![ résultat ](representations/odt_repetable_resultat_array.png)
 
 ### Conditions {#core-ref:5b53867d-7fb2-4aff-b4dc-941b7d0254b4}
@@ -218,7 +218,7 @@ l'extérieur du tableau : le IF et le ENDIF doivent être dans la même cellule 
 tableau. Il est possible de les utiliser dans le même paragraphe ou entre
 plusieurs paragraphes de même niveau.
 
-En cas d'erreur de structure, un message d'erreur apparaîtra lors de la
+En cas d'erreur de structure, un message d'erreur apparaît lors de la
 consultation du document généré :
 ![ Erreur de structure ](representations/odt_structure_error.png)
 
@@ -236,18 +236,18 @@ paragraphe, et ne doit pas contenir de texte autour.
 
 #### Limitation pour les attributs de type Htmltext {#core-ref:989af790-e851-42f2-b18d-cf5384ba1253}
 
-*   Les couleurs, police, taille de police ne sont pas prises en compte.
-*   Pour la mise en forme, seuls les mises en gras, souligné et en italique sont
-    supportées.
-*   Seuls les titres de niveau 1 à 4 sont pris en compte.
-*   Lors de l'utilisation dans une liste, les tableaux ne sont pas interprétés
-    et sont traités comme du texte brut.
-*   Un attribut htmltext ne peut pas être utilisé dans les entêtes et pied de
-    pages.
-*   Un attribut htmltext ne peut pas être utilisé dans les propriétés du
-    document.
-*   Les styles (css) ne sont pas pris en compte.
-*   Les imbrications de paragraphes (exemple :
+*   Les couleurs, police, taille de police ne sont pas prises en compte,
+*   pour la mise en forme, seuls les mises en gras, souligné et en italique sont
+    supportées,
+*   seuls les titres de niveau 1 à 4 sont pris en compte,
+*   lors de l'utilisation dans une liste, les tableaux ne sont pas interprétés
+    et sont traités comme du texte brut,
+*   un attribut htmltext ne peut pas être utilisé dans les entêtes et pied de
+    pages,
+*   un attribut htmltext ne peut pas être utilisé dans les propriétés du
+    document,
+*   les styles (css) ne sont pas pris en compte,
+*   les imbrications de paragraphes (exemple :
     &lt;div>Texte ext 1&lt;div>Texte int&lt;/div>texte ext 2&lt;/div>) ne sont
     pas supportées (l'exemple précédent sera rendu sous la forme
     `"Texte ext 1 texte ext 2"`
@@ -255,10 +255,10 @@ paragraphe, et ne doit pas contenir de texte autour.
 
 #### Limitations pour les répétables {#core-ref:49c08a3f-c112-497b-9272-d5753f292113}
 
-*   Les répétables ne sont pas gérés dans les entêtes et pied de pages.
-*   Les répétables ne sont pas gérés dans les propriétés du document.
-*   Les mots-clefs BLOCK/ENDBLOCK ne sont pas gérés.
-*   Les listes ne peuvent pas avoir plusieurs niveaux d'imbrication.
+*   les répétables ne sont pas gérés dans les entêtes et pied de pages,
+*   les répétables ne sont pas gérés dans les propriétés du document,
+*   les mots-clefs BLOCK/ENDBLOCK ne sont pas gérés,
+*   les listes ne peuvent pas avoir plusieurs niveaux d'imbrication.
 
 #### Limitations pour les relations {#core-ref:d3ca2d74-64dd-4e15-9c84-686515ffc8cb}
 
@@ -267,14 +267,14 @@ paragraphe, et ne doit pas contenir de texte autour.
 
 #### Autres limitations {#core-ref:02b246f0-1c2b-4ef9-8aeb-735ad26ecf3f}
 
-*   Les zones (ZONE) ne sont pas gérés.
-*   Les attributs de type fichier, couleur ne sont pas gérés.
+*   les zones (ZONE) ne sont pas gérés,
+*   les attributs de type fichier, couleur ne sont pas gérés.
 
 ## Utilisation avancée {#core-ref:37462ff7-e03a-4fde-99a8-cafb6cedf721}
 
 L'utilisation d'un contrôleur spécifique ainsi que les manipulations avancées
 sont détaillées dans la [partie avancée sur les vues OpenDocument
-Text][advanced_odt]
+Text][advanced_odt].
 
 <!-- links -->
 [TE]: #FIXME
