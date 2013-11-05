@@ -1,15 +1,101 @@
-# Précautions d'usage
-3.9.5.7
+# Précautions d'usage {#core-ref:2705b0cf-b697-4785-a961-b2ee4d7f42e0}
+
+Les templates ODT sont une mécanique puissante mais fragile. Il faut lors
+de leurs conceptions d'un certain nombres d'éléments sans quoi les fichiers
+générés peuvent être invalides.
+
+La liste des limitations des ODT est [ici][odt_limitation].
+
+### Affectation de variables {#core-ref:728e85c3-e88b-4817-9d77-a95ed103c543}
+
+Les précautions d'usages sont les suivantes :
+
+* lors de l'affectation d'une variable, il ne faut pas que celle-ci corrompe le 
+XML pour ce faire, on peut : 
+    * utiliser la fonction d'affectation dédiée 
+        `$this->lay->eSet("VAR", $var);`, 
+    * encoder par avance la valeur avant de l'insérer 
+        
+            [php]
+            $society = $this->lay->xmlEntities("Bob & Compagnie") ;
+            $this->lay->set("SOCIETY",$society) ;
+    
+    * ou encore si la valeur provient d'un document :
+        
+            [php]
+            $myAnimal = new_Doc("", "MY_ANIMAL");
+            $name = $myAnimal->getValue("animal_name");
+            $name = $myAnimal->getOooValue($myAnimal->getAttribute("the_name"), $name);
+            $this->lay->set("MY_ATTR",$name);
+
+*Note* : Bien évidemment, vous pouvez utiliser la méthode `set` pour insérer du 
+XML dans l'ODT, comme dans l'exemple ci-dessous :
+
+    [php]
+    $society="Bob <text:line-break/> Compagnie" ;
+    $this->lay->set("SOCIETY",$society) ; // insertion d'un retour à la ligne
+
+*Note* : La valeur `null` est considérée comme non-instanciée, comme dans
+l'exemple ci-dessous :
+
+    [php]
+    $this->lay->set("KEY",null) ; // [KEY] non remplacé
+    $this->lay->set("KEY",'') ; // [KEY] effacé
 
 
-### Affectation de variables
+### Affectation des répétables {#core-ref:9c954528-4c99-4423-ace2-0c445bc698ca}
 
-### Différence entre setColumn et setRepeatable
+Les templates ODT peuvent gérer les éléments multiples. Ce [chapitre][odt_repeat]
+donne quelques exemples.
 
-### Utilisation du type Htmltext
-3.9.5.7.3
+L'affectation de valeurs multiples passe par deux méthodes :
 
-Les balises supportées sont :
+* `OOoLayout::setColumn` : Cette méthode prend en entrée une clef et un array.
+Si la clef est déclarée dans une liste ou un tableau alors une entrée est 
+ajoutée par valeur dans le tableau,
+* `OOoLayout::setRepeatable` : Cette méthode prend une matrice en entrée (array
+de array). La méthode rend alors toutes les colonnes du tableau à la même 
+taille que la plus grande des colonnes et ajoute les colonnes ainsi créées 
+grâce à `OOoLayout::setColumn`.
+
+    [php]
+    /**
+    * @templateController
+    */
+    public function viewtest() {
+        $repeatable[] = array( 
+            "V_X1"=>'A',
+            "V_X2"=>'1',
+            "V_X3"=>"La"
+        );
+        $repeatable[] = array( 
+            "V_X1"=>'B',
+            "V_X4"=>'2',
+            "V_X3"=>"Si"
+        );
+        $repeatable[]=array(
+            "V_X1"=>'C',
+            "V_X2"=>'3',
+            "V_X3"=>"Do"
+        );
+        $this->lay->setRepeatable($repeatable);
+        
+        $columnsValue = array('a','b','c','d');
+        $this->lay->setColumn("V_XXX",$columnsValue);
+    }
+
+Le template :
+![ template ](advanced/template/multiple_template.png)
+
+donne le fichier :
+![ résultat ](advanced/template/multiple_generated.png)
+
+
+### Utilisation du type Htmltext {#core-ref:74d95597-be61-4ed5-b768-e4a78b6882a9}
+
+Il n'y a pas de concordances entre les balises HTML et l'openText. Seul un sous
+ensembles des balises HTML est supporté, ci-dessous est présentée la table 
+d'équivalence présentant les balises supportées et leur équivalent ODT.
 
 | balise HTML | balise ODT         | description                                | restriction                                                                                                                                                                                                                                                                                                       |
 | :---------- | :----------------- | :----------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -35,3 +121,7 @@ Les balises supportées sont :
 | `th`        | `table:table-cell` | Insère une cellule entête de               |                                                                                                                                                                                                                                                                                                                   |
 | `td`        | `table:table-cell` | Insère une cellule tableau                 |                                                                                                                                                                                                                                                                                                                   |
 | `img`       | `draw:frame`       | Insère une image                           | L'url de cette image doit être absolue et accessible depuis l'éditeur de texte. Seules les images présente sur les paragraphes de premier niveau sont prises en compte. Pas d'image dans les cellule de tableau. La taille n'est pas configurable. C'est la taille d'origine de l'image qui sera prise en compte. |
+
+<!-- link -->
+[odt_limitation]:   #core-ref:b2f63c3f-9f26-47f6-8172-00c23b6a9948
+[odt_repeat]:       #core-ref:9287cbe8-a6ca-41f9-9547-b7a970ae6584

@@ -1314,55 +1314,46 @@ book:
         wip_sub: ""
     - level:   2
       content:  "Advanced/Template/introduction.md"
-      subtoc:   1
       flags:
-        wip: "work in progress"
+         draft: "draft"
+         new: "new"
+      subtoc:   1
     - level:   3
       content:  "Advanced/Template/texte.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+         draft: "draft"
+         new: "new"
     - level:   3
       content:  "Advanced/Template/odt.md"
-      subtoc:   2
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+         draft: "draft"
+         new: "new"
+      subtoc:   2
     - level:   4
       content:  "Advanced/Template/odtcontrol.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+         draft: "draft"
+         new: "new"
     - level:   4
       content:  "Advanced/Template/odtcaution.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+         draft: "draft"
+         new: "new"
     - level:   4
       content:  "Advanced/Template/odtrepeat.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+         draft: "draft"
+         new: "new"
     - level:   4
       content:  "Advanced/Template/odtprop.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
-    - level:   4
-      content:  "Advanced/Template/odtlimit.md"
-      flags:
-        wip: "work in progress"
-        wip_sub: ""
-    - level:   4
-      content:  "Advanced/Template/odtmixte.md"
-      flags:
-        wip: "work in progress"
-        wip_sub: ""
-    - level:   4
+         draft: "draft"
+         new: "new"
+    - level:   3
       content:  "Advanced/Template/convertpdf.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+         draft: "draft"
+         new: "new"
     - level:   3
       content:  "Advanced/Template/formatcollection.md"
     - level:   2

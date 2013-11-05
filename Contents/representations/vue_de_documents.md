@@ -209,9 +209,6 @@ Les options disponibles en modification sont les suivantes :
     *   l'entête n'est pas affiché,
     *   les boutons *sauver* et *annuler* sont affichés
 
-
-
-
 <!-- links -->
 [default_view_controleur]: #core-ref:1b7cb4c6-df1e-4124-8f5d-deaeac92561b
 [CVDOC]: #core-ref:017f061a-7c12-42f8-aa9b-276cf706e7e0
