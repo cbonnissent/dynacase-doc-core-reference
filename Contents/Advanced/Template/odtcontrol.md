@@ -1,4 +1,4 @@
-# Utilisation d'un contrôleur spécifique pour odt
+# Utilisation d'un contrôleur spécifique pour odt {#core-ref:81d5e5ab-4621-4f84-bfc3-a2e1885c3842}
 
 Il est possible d'utiliser un contrôleur spécifique pour pouvoir mieux contrôler
 ce qui est inclut dans un template, notamment en composant de nouvelles clefs ou

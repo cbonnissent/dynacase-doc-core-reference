@@ -1318,24 +1318,10 @@ book:
       content:  "Advanced/Template/odtcontrol.md"
     - level:   4
       content:  "Advanced/Template/odtcaution.md"
-      flags:
-        wip: "work in progress"
-        wip_sub: ""
     - level:   4
       content:  "Advanced/Template/odtrepeat.md"
-      flags:
-        wip: "work in progress"
-        wip_sub: ""
     - level:   4
       content:  "Advanced/Template/odtprop.md"
-      flags:
-        wip: "work in progress"
-        wip_sub: ""
-    - level:   4
-      content:  "Advanced/Template/odtlimit.md"
-      flags:
-        wip: "work in progress"
-        wip_sub: ""
     - level:   4
       content:  "Advanced/Template/odtmixte.md"
       flags:
