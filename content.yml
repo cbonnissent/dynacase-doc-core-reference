@@ -1343,11 +1343,6 @@ book:
       flags:
          draft: "draft"
          new: "new"
-    - level:   4
-      content:  "Advanced/Template/odtmixte.md"
-      flags:
-        wip: "work in progress"
-        wip_sub: ""
     - level:   3
       content:  "Advanced/Template/convertpdf.md"
       flags:
