@@ -1195,7 +1195,8 @@ book:
     - level:   2
       content:  "Advanced/Cinematique/introduction.md"
       flags:
-        wip: "work in progress"
+        new: "new"
+        draft: "draft"
     - level:   2
       content:  "Advanced/Database/introduction.md"
       subtoc:   2
