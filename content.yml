@@ -1363,12 +1363,14 @@ book:
     - level:   2
       content:  "Advanced/familles/introduction.md"
       flags:
-        wip: "work in progress"
+        draft: "draft"
+        new: "new"
+      subtoc:   3
     - level:   3
       content:  "Advanced/familles/processus.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        draft: "draft"
+        new: "new"
     - level:   2
       content:  "Advanced/autoloader.md"
 
