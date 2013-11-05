@@ -1,6 +1,6 @@
-# Présentation 
+# Présentation {#core-ref:0557a832-8d4a-4df5-a9cb-84cee78c6fb2}
 
-## Dynacase Platform
+## Dynacase Platform {#core-ref:ca8e096e-d724-47ca-b4ff-f80f3768e2a7}
 
 Dynacase est une plate-forme de développement d'applications métier dont l'objectif principal est de fournir un cadre facilitant et accélérant les développements.
 
@@ -13,7 +13,7 @@ Elle s'articule autour des composants suivants :
 
 Ces composants sont proposés et mis en oeuvre par le module principal *Dynacase Core*. 
 
-## Manuel de référence de Dynacase Core
+## Manuel de référence de Dynacase Core {#core-ref:393e71e1-80ea-4617-a973-4219a719ab0f}
 
 Ce manuel est destiné à des développeurs devant créer une application en utilisant Dynacase comme socle applicatif. 
 Il a pour but de présenter une documentation précise et exhaustive de l'ensemble des fonctionnalités de la plate-forme 
@@ -28,7 +28,7 @@ et aux techniques avancées.
 
 _Bon développement..._
 
-## État de la documentation
+## État de la documentation {#core-ref:599c689a-2ef6-430b-ab1a-93a67dc1178d}
 
 Nous marquons les chapitres pour informer le lecteur de l'état d'avancement de leur rédaction et donner une 
 indication sur la fiabilité de leur contenu.
