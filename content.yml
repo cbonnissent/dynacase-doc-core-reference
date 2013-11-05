@@ -1200,39 +1200,48 @@ book:
       content:  "Advanced/Database/introduction.md"
       subtoc:   2
       flags:
-        wip: "work in progress"
+        new: "new"
+        draft : "draft"
     - level:   3
       content:  "Advanced/Database/dbdoc.md"
       flags:
-        wip: "work in progress"
+        new: "new"
+        draft : "draft"
     - level:   3
       content:  "Advanced/Database/dbdocfam.md"
       flags:
-        wip: "work in progress"
+        new: "new"
+        draft : "draft"
     - level:   3
       content:  "Advanced/Database/dbattr.md"
       flags:
-        wip: "work in progress"
+        new: "new"
+        draft : "draft"
     - level:   3
       content:  "Advanced/Database/dbaccount.md"
       flags:
-        wip: "work in progress"
+        new: "new"
+        draft : "draft"
     - level:   3
       content:  "Advanced/Database/dbsecurity.md"
       flags:
-        wip: "work in progress"
+        new: "new"
+        draft : "draft"
     - level:   3
       content:  "Advanced/Database/dbhistory.md"
       flags:
-        wip: "work in progress"
+        new: "new"
+        draft : "draft"
     - level:   3
       content:  "Advanced/Database/dbapp.md"
       flags:
-        wip: "work in progress"
+        new: "new"
+        draft : "draft"
     - level:   3
       content:  "Advanced/Database/dbparam.md"
       flags:
-        wip: "work in progress"
+        new: "new"
+        draft : "draft"
     - level:   2
       content:  "Advanced/Persistance/introduction.md"
       flags:

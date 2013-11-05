@@ -179,7 +179,7 @@ prelid
         si le document est dans un autre dossier, alors celui-ci est sélectionné.
 
 profid
-:   Identifiant du profil de document.
+:   Identifiant du [profil de document][profdoc].
     
     *   Chiffre négatif : Profil non activé ;
     *   0 : pas de profil ;
@@ -238,3 +238,5 @@ wid
 [profil_dynamique]: #core-ref:bc24834a-b380-4681-ae94-08b93076a7e8
 [wsh_cleanContext]: #core-ref:100b123b-da1a-45b4-848b-0622f3e09a40
 [WF_document]:      #core-ref:b541e22f-5ece-4d19-8460-0cb0c5f3ec7a
+[docprof]:          #core-ref:f1575705-10e8-4bf2-83b3-4c0b5bfb77cf
+[docprofdyn]:       #core-ref:bc24834a-b380-4681-ae94-08b93076a7e8
