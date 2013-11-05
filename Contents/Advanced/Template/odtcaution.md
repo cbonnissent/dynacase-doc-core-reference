@@ -122,18 +122,6 @@ d'équivalence présentant les balises supportées et leur équivalent ODT.
 | `td`        | `table:table-cell` | Insère une cellule tableau                 |                                                                                                                                                                                                                                                                                                                   |
 | `img`       | `draw:frame`       | Insère une image                           | L'url de cette image doit être absolue et accessible depuis l'éditeur de texte. Seules les images présente sur les paragraphes de premier niveau sont prises en compte. Pas d'image dans les cellule de tableau. La taille n'est pas configurable. C'est la taille d'origine de l'image qui sera prise en compte. |
 
-## Limitations {#core-ref:48ad568b-5b3c-4c72-b915-d23c55771fba}
-
-Il faut prendre en compte les limitations suivantes :
-
-* les répétables ne sont pas gérés dans les entêtes et pied de pages,
-* les sections « tpl » ne sont pas gérés dans les entêtes et pied de pages,
-* les mots-clefs BLOCK/ENDBLOCK ne sont pas gérés,
-* les zones (ZONE) ne sont pas gérés,
-* les attributs de type fichier, couleur ne sont pas gérés,
-* les liens (hyperliens) vers les relations de document ne sont gérés. Seul le titre du document est affiché,
-* les listes ne peuvent pas avoir plusieurs niveaux d'imbrication.
-
 <!-- link -->
 [odt_limitation]:   #core-ref:b2f63c3f-9f26-47f6-8172-00c23b6a9948
 [odt_repeat]:       #core-ref:9287cbe8-a6ca-41f9-9547-b7a970ae6584
