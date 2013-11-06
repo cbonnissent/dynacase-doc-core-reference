@@ -1250,23 +1250,30 @@ book:
         draft : "draft"
     - level:   2
       content:  "Advanced/Persistance/introduction.md"
+      subtoc:   2
       flags:
-        wip: "work in progress"
+        new: "new"
+        draft : "draft"
     - level:   3
       content:  "Advanced/Persistance/dbobj.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        new: "new"
+        draft : "draft"
     - level:   3
       content:  "Advanced/Persistance/querydb.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        new: "new"
+        draft : "draft"
     - level:   3
+      content:  "Advanced/Persistance/transaction.md"
+      flags:
+        new: "new"
+        draft : "draft"
+    - level:   2
       content:  "Advanced/Persistance/user.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        new: "new"
+        draft : "draft"
     - level:   2
       content:  "Advanced/Applications/introduction.md"
       flags:

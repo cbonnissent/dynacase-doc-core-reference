@@ -15,7 +15,7 @@ Les comptes sont composés de :
     [profilage de document][profilage] et les [accessibilités des actions][ACL].
     
     Cet aspect _système_ sera traité dans le chapitre consacré à la classe
-    [Account][class_account]<span class="fixme" data-assignedto="nobody">Ajouter le lien vers le chapitre de la classe Account</span>
+    [Account][class_account]
 
 *   un **_document_**.
     
@@ -68,4 +68,4 @@ utilisateurs.
 <!-- links -->
 [profilage]: #core-ref:ce576351-dbe6-45d1-8097-f9573502b651
 [ACL]: #core-ref:a98b72ea-c063-4907-abc4-e5171ab55e59
-[class_account]: #FIXME
+[class_account]: #core-ref:68c93fb2-088c-435a-b4ac-e1b94095d0c9 "Manipulation des comptes utilisateur"
