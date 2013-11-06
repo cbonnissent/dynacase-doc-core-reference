@@ -1,6 +1,6 @@
 # Description des tables des définition des applications {#core-ref:97b84670-2cfe-42c4-b237-3bbef354f65d}
 
-Ce chapitre défini les tables qui contiennent les définitions des
+Ce chapitre définit les tables qui contiennent les définitions des
 [applications][appact] enregistrées. 
 
 ## La table `application` {#core-ref:3f46999b-3111-4ee6-8526-7a6e6f42be49}
