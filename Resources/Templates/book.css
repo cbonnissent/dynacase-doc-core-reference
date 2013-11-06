@@ -14,12 +14,12 @@ span.flag {
 }
 
 span.flag.wip {
-    background-color: #E9A7A7;
+    background-color: #CC7272;
     color: white;
 }
 
 span.flag.draft {
-    background-color: #ECBA6F;
+    background-color: #B87B1F;
     color: white;
 }
 
@@ -33,6 +33,10 @@ span.flag.new {
     color: white;
 }
 
+span.flag.next-release {
+    background-color: #0D5EC9;
+    color: white;
+}
 /*
 body.flag-wip {
     background-color: #E9A7A7;
