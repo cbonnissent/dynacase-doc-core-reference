@@ -1234,6 +1234,11 @@ book:
         new: "new"
         draft : "draft"
     - level:   3
+      content:  "Advanced/Database/dbvault.md"
+      flags:
+        new: "new"
+        draft : "draft"
+    - level:   3
       content:  "Advanced/Database/dbapp.md"
       flags:
         new: "new"
