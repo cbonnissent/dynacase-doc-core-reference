@@ -15,51 +15,64 @@ Ces composants sont proposés et mis en oeuvre par le module principal *Dynacase
 
 ## Manuel de référence de Dynacase Core {#core-ref:393e71e1-80ea-4617-a973-4219a719ab0f}
 
-Ce manuel est destiné à des développeurs devant créer une application en utilisant Dynacase comme socle applicatif. 
-Il a pour but de présenter une documentation précise et exhaustive de l'ensemble des fonctionnalités de la plate-forme 
-maintenue par Anakeen.
+Ce manuel est destiné à des développeurs devant créer une application en
+utilisant Dynacase comme socle applicatif.  Il a pour but de présenter une
+documentation précise et exhaustive de l'ensemble des fonctionnalités de la
+plate-forme  maintenue par Anakeen.
 
-Il propose au travers de sa structure une approche logique des concepts et techniques de développement.
+Il propose au travers de sa structure une approche logique des concepts et
+techniques de développement.
 
-Les premiers chapitres présentent les objets et mécanismes Dynacase. Leur compréhension est importante car 
-ils introduisent des concepts qui sont utilisés dans la suite du manuel. 
-Les suivants détaillent des fonctionnements de Dynacase Core, pour arriver au détail de l'API de programmation 
-et aux techniques avancées.
+Les premiers chapitres présentent les objets et mécanismes Dynacase. Leur
+compréhension est importante car  ils introduisent des concepts qui sont
+utilisés dans la suite du manuel.  Les suivants détaillent des fonctionnements
+de Dynacase Core, pour arriver au détail de l'API de programmation  et aux
+techniques avancées.
 
 _Bon développement..._
 
 ## État de la documentation {#core-ref:599c689a-2ef6-430b-ab1a-93a67dc1178d}
 
-Nous marquons les chapitres pour informer le lecteur de l'état d'avancement de leur rédaction et donner une 
-indication sur la fiabilité de leur contenu.
+Nous marquons les chapitres pour informer le lecteur de l'état d'avancement de
+leur rédaction et donner une  indication sur la fiabilité de leur contenu.
 
-L'avancement du cycle de rédaction est le suivant : <span class="flag wip">work in progress</span> > 
-<span class="flag draft">draft</span> > <span class="flag need-review">need review</span> > 
+L'avancement du cycle de rédaction est le suivant : 
+<span class="flag wip">work in progress</span> > 
+<span class="flag draft">draft</span> > 
+<span class="flag need-review">need review</span> > 
 <span class="flag new">new | updated</span>.
 
 <span class="flag wip">work in progress</span> 
     
-Soit la rédaction n'est pas démarrée ou alors le contenu reste une ébauche. 
-Ces chapitres sont présentés pour donner des indications sur la future structure ou le type d'information 
-qui seront proposées.
+Soit la rédaction n'est pas démarrée ou alors le contenu reste une ébauche.  Ces
+chapitres sont présentés pour donner des indications sur la future structure ou
+le type d'information  qui seront proposées.
 
 <span class="flag draft">draft</span>
 
-Une première version a été rédigée sans toutefois avoir suivi les étapes de relecture/correction. 
-Le contenu doit être utilisée avec précaution : il pourrait être repris en terme de structure ou de contenu.
+Une première version a été rédigée sans toutefois avoir suivi les étapes de
+relecture/correction.  Le contenu doit être utilisée avec précaution : il
+pourrait être repris en terme de structure ou de contenu.
 
 <span class="flag need-review">need review</span>
 
 La rédaction est terminée, les relectures et corrections nécessaires effectuées.
-Seule la revue de publication reste à faire. Ces chapitres peuvent donc être 'consommés' sans risque : 
-seules des modifications mineures ou des corrections, principalement sur la forme, peuvent y être apportées.
+Seule la revue de publication reste à faire. Ces chapitres peuvent donc être
+'consommés' sans risque :  seules des modifications mineures ou des corrections,
+principalement sur la forme, peuvent y être apportées.
 
 <span class="flag new">new | updated</span>
 
-Ce marquage met en évidence des parties nouvelles ou mises à jour depuis la précédente édition.
+Ce marquage met en évidence des parties nouvelles ou mises à jour depuis la
+précédente édition.
 
-Si un chapitre est 'marqué' son contenu, incluant ses sous-chapitres, est considéré comme marqué à l'identique 
--sauf marquage particulier-.
+<span class="flag next-release">next release</span>
+
+Ce marquage met en évidence des parties nouvelles qui ne sont opérationnelles que
+dans la prochaine release de dynacase-core.
+
+Si un chapitre est 'marqué' son contenu, incluant ses sous-chapitres, est
+considéré comme marqué à l'identique  -sauf marquage particulier-.
 
 
 

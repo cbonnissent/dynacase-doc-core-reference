@@ -14,12 +14,12 @@ span.flag {
 }
 
 span.flag.wip {
-    background-color: #E9A7A7;
+    background-color: #CC7272;
     color: white;
 }
 
 span.flag.draft {
-    background-color: #ECBA6F;
+    background-color: #B87B1F;
     color: white;
 }
 
@@ -32,6 +32,13 @@ span.flag.new {
     background-color: #008821;
     color: white;
 }
+
+span.flag.next-release {
+    background-color: #0D5EC9;
+    color: white;
+}
+
+
 
 /*
 body.flag-wip {
@@ -83,11 +90,11 @@ body.flag-new {
 }
 
 .flags-banner.flag-wip {
-    background-color: #E9A7A7;
+    background-color: #CC7272;
 }
 
 .flags-banner.flag-draft {
-    background-color: #ECBA6F;
+    background-color: #B87B1F;
 }
 
 .flags-banner.flag-need-review {
@@ -98,7 +105,22 @@ body.flag-new {
     background-color: #008821;
 }
 
+.flags-banner.flag-next-release {
+    background-color: #0D5EC9;
+}
 
+.flags-banner.flag-new.flag-next-release {
+    background: linear-gradient(to right,  #008821, #0D5EC9);
+    color: white;
+}
+.flags-banner.flag-new.flag-draft {
+    background: linear-gradient(to right,  #008821, #B87B1F);
+    color: white;
+}
+.flags-banner.flag-new.flag-need-review {
+    background: linear-gradient(to right,  #008821, #57B1E4);
+    color: white;
+}
 /*
     Gestion des tables
  */

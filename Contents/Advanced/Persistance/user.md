@@ -294,8 +294,8 @@ La méthode `SearchAccount::setObjectReturn()` permet d'indiquer le type de
 résultat obtenu par la méthode `SearchAccount::search()`.  Par défaut cela
 retourne un objet AccountList qui est un itérateur sur des objets Account. Il
 est possible d'indiquer `SearchAccount::returnDocument`, pour que la méthode
-`SearchAccount::search()` retourne un objet `DocumentList` qui donnera les
-documents correspondants
+`SearchAccount::search()` retourne un objet [`DocumentList`][doclist] qui
+donnera les documents correspondants
 
     [php]
     $s = new SearchAccount();
@@ -427,3 +427,4 @@ besoins.
 [users]:        #core-ref:2bd98eec-5b03-4af0-b9d6-1bbf78fe9733 "Utilisateurs, groupes et rôles"
 [dbuser]:       #core-ref:6d5684f4-73e8-431c-8b2b-6224a9e6b074 "Table users"
 [backend]:      #core-ref:5a149c1c-c262-4aa6-b7b8-b66135140c49 "Provider d'authentification"
+[doclist]:      #core-ref:23c71c28-dbce-4d34-819a-50d5bc4a38c3 "Classe DocumentList"
