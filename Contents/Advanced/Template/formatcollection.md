@@ -155,9 +155,9 @@ Si l'option "showempty" est indiquée dans l'attribut, le rendu d'une valeur
 nulle sera remplacée par la valeur de l'option.
 
 
-## Rendu des attributs
+## Rendu des attributs {#core-ref:f62199d8-8388-48a2-b79a-327307b58a86}
 
-### type `text`
+### type `text` {#core-ref:5de7150f-c887-481d-95d4-51a54df7363a}
 
     [php]
     ["tst_text"] => textAttributeValue Object
@@ -170,7 +170,7 @@ La valeur formatée tient compte du format mis dans le type
 dans cet exemple : text("before %s")
 
 
-### type `int`
+### type `int` {#core-ref:4f6dcf5c-f929-429e-8158-94aedec2eaa4}
 
     [php]
     [tst_int] => intAttributeValue Object
@@ -182,7 +182,7 @@ dans cet exemple : text("before %s")
 La valeur formatée tient compte du format mis dans le type.
 dans cet exemple : int("%04d"). La valeur est de type "int"
 
-### type `double`
+### type `double` {#core-ref:84b38e2a-d231-4fc3-9ccc-e78b8b90a949}
 
     [php]
     [tst_double] => doubleAttributeValue Object
@@ -196,7 +196,7 @@ double("%.02f"). Le point est transformé en virgule si la locale est "fr_FR". L
 valeur est de type "double"
 
 
-### type `date`
+### type `date` {#core-ref:3f8e0b89-db33-4be8-b68e-15f709ecd0a8}
 
     [php]
     [tst_date] => dateAttributeValue Object
@@ -208,7 +208,7 @@ valeur est de type "double"
 La valeur formatée tient compte du format mis dans le type. S'il n'y a pas de
 format, cela dépend du format de la locale de l'utilisateur.
 
-### type `timestamp`
+### type `timestamp` {#core-ref:4bdcbdc6-018a-456c-9747-96b3825f6275}
 
     [php]
     [tst_ts] => dateAttributeValue Object
@@ -220,7 +220,7 @@ format, cela dépend du format de la locale de l'utilisateur.
 La valeur formatée tient compte du format mis dans le type. S'il n'y a pas de
 format, cela dépend du format de la locale de l'utilisateur.
 
-### type `file`
+### type `file` {#core-ref:732f5207-8e22-4e21-86d4-f8023fdd2706}
 
     [php]
     [tst_file] => fileAttributeValue Object
@@ -238,7 +238,7 @@ format, cela dépend du format de la locale de l'utilisateur.
 La valeur formatée est le titre du fichier. l'url est le lien permettant de
 télécharger le fichier.
 
-### type `image`
+### type `image` {#core-ref:483885aa-4f79-4dfb-821c-d991f435f956}
 
     [php]
     ["tst_img"] => imageAttributeValue Object
@@ -259,7 +259,7 @@ d'afficher la miniature de l'image. La largeur de la miniature peut être défin
 avec l'attribut imageThumbnailSize de la classe FormatCollection. Elle est de
 48px par défaut.
 
-### type `docid` - `account`
+### type `docid` - `account` {#core-ref:95aee029-f729-41f9-9b18-a6c20813c24d}
 
     [php]
     ["tst_relation"] => docidAttributeValue Object
@@ -277,7 +277,7 @@ document. La taille de l'icone du document pointé est par défaut de 14px. Elle
 peut être modifiée avec l'attribut relationIconSize de la classe
 FormatCollection.
 
-### type `enum`
+### type `enum` {#core-ref:ddcd138f-acbd-46f0-bf82-2227399536dc}
 
     [php]
     ["tst_enum"] => enumAttributeValue Object
@@ -288,7 +288,7 @@ FormatCollection.
 
 La valeur formatée donne le libellé de l'énuméré.
 
-### Autres types
+### Autres types {#core-ref:45f81665-a96a-406b-8722-a161340b15eb}
 
     [php]
     ["x_attr"] => standardAttributeValue Object
@@ -299,7 +299,7 @@ La valeur formatée donne le libellé de l'énuméré.
 
 La valeur et la valeur formatée sont égales.
 
-## Rendu des attributs multiples
+## Rendu des attributs multiples {#core-ref:2256843a-e63f-484b-a00d-c2a85253deea}
 
 Les attributs multiples sont rendus dans des tableaux de structure.
 Exemple avec deux valeurs de l'attribut "tst_colors".

@@ -8,15 +8,15 @@ Dynacase.
 L'édition 4 de la documentation a modifié les points suivants.
 
 
-|                                           Version                                           |                  Modifications                  |                     Chapitre                    |   Date   |
-| :------------------------------------------------------------------------------------------ | :---------------------------------------------- | :---------------------------------------------- | :------- |
-| <span class="flag new">New</span><span class="flag next-release">Next release 3.2.12</span> | Description de la mise en place des traductions | [Internationalisationn][i18n]                   | 30/10/13 |
-| <span class="flag new">New</span><span class="flag draft">Draft</span>                      | Ajout chapitres sur les templates               | [Usage avancée des templates][advtemplate]      | 04/11/13 |
-| <span class="flag new">New</span><span class="flag draft">Draft</span>                      | Ajout graphe d'accès                            | [Cinématique de dynacase][cinematique]          | 05/11/13 |
-| <span class="flag new">New</span><span class="flag draft">Draft</span>                      | Description des principales tables              | [La base de données][database]                  | 05/11/13 |
-| <span class="flag new">New</span><span class="flag draft">Draft</span>                      | Famille processus                               | [Famille processus][processus]                  | 06/11/13 |
-| <span class="flag new">New</span><span class="flag draft">Draft</span>                      | Ajout chapitres Dbobj, QueryDb, Transaction     | [Mécanismes de persistance][histo]              | 06/11/13 |
-| <span class="flag new">New</span><span class="flag draft">Draft</span>                      | Ajout chapitre compte                           | [Manipulation des comptes utilisateur][account] | 06/11/13 |
+|                  Modifications                  |                     Chapitre                    |                                           Version                                           |   Date   |
+| :---------------------------------------------- | :---------------------------------------------- | :------------------------------------------------------------------------------------------ | :------- |
+| Description de la mise en place des traductions | [Internationalisationn][i18n]                   | <span class="flag new">New</span><span class="flag next-release">Next release 3.2.12</span> | 30/10/13 |
+| Ajout chapitres sur les templates               | [Usage avancée des templates][advtemplate]      | <span class="flag new">New</span>                                                           | 04/11/13 |
+| Ajout graphe d'accès                            | [Cinématique de dynacase][cinematique]          | <span class="flag new">New</span><span class="flag draft">Draft</span>                      | 05/11/13 |
+| Description des principales tables              | [La base de données][database]                  | <span class="flag new">New</span><span class="flag draft">Draft</span>                      | 05/11/13 |
+| Famille processus                               | [Famille processus][processus]                  | <span class="flag new">New</span><span class="flag draft">Draft</span>                      | 06/11/13 |
+| Ajout chapitres Dbobj, QueryDb, Transaction     | [Mécanismes de persistance][histo]              | <span class="flag new">New</span><span class="flag draft">Draft</span>                      | 06/11/13 |
+| Ajout chapitre compte                           | [Manipulation des comptes utilisateur][account] | <span class="flag new">New</span><span class="flag draft">Draft</span>                      | 06/11/13 |
 
 <!-- link -->
 [histo]:        #core-ref:e4cf4232-38e7-4673-afd1-5730c1a95c48

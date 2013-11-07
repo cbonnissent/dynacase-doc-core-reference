@@ -7,7 +7,7 @@ portant sur les attributs des documents, ainsi que sur l'état des documents
 soumis à un cycle de vie.
 
 Elle est implémentée au moyen de la famille `DSEARCH`, qui étend la famille
-`SEARCH` et y ajoute les méthodes du fichier `Method.DetailSearch.php`.
+`SEARCH`.
 
 ## Éléments de paramétrage {#core-ref:de8a1440-fb42-4ad0-b041-5c762b5258d9}
 

@@ -1334,44 +1334,36 @@ book:
     - level:   2
       content:  "Advanced/Template/introduction.md"
       flags:
-         draft: "draft"
          new: "new"
       subtoc:   1
     - level:   3
       content:  "Advanced/Template/texte.md"
       flags:
-         draft: "draft"
          new: "new"
     - level:   3
       content:  "Advanced/Template/odt.md"
       flags:
-         draft: "draft"
          new: "new"
       subtoc:   2
     - level:   4
       content:  "Advanced/Template/odtcontrol.md"
       flags:
-         draft: "draft"
          new: "new"
     - level:   4
       content:  "Advanced/Template/odtcaution.md"
       flags:
-         draft: "draft"
          new: "new"
     - level:   4
       content:  "Advanced/Template/odtrepeat.md"
       flags:
-         draft: "draft"
          new: "new"
     - level:   4
       content:  "Advanced/Template/odtprop.md"
       flags:
-         draft: "draft"
          new: "new"
     - level:   3
       content:  "Advanced/Template/convertpdf.md"
       flags:
-         draft: "draft"
          new: "new"
     - level:   3
       content:  "Advanced/Template/formatcollection.md"

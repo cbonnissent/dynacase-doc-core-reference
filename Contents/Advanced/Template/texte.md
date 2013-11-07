@@ -4,14 +4,13 @@ Ce chapitre aborde les techniques avancées des représentations textuelles.
 
 ## Répétable à plusieurs niveaux {#core-ref:f7887006-d4eb-4f4a-a8f6-e8b89be2253c}
 
-Les répétables à multi-niveaux permettent de construire des templates complexes
-et récursifs directement en utilisant la capacité du moteur de template à
-s'appeler de manière récursive.
+Les répétables à multi-niveaux permettent de construire des représentations qui
+nécessitent des listes d'éléments de profondeur variable.
 
-Pour mettre en pratique cette fonctionnalité, nous allons prendre un exemple
-classique qu'est la réalisation d'une table de multiplication.
+Pour mettre en pratique cette fonctionnalité, nous allons prendre un exemple : 
+la réalisation d'une table de multiplication.
 
-On cherche le résultat suivant :
+Le résultat suivant doit être obtenu :
 
     Table de multiplications
     --------------------------------------------
@@ -40,8 +39,10 @@ On cherche le résultat suivant :
 
 
 Le système de template peut être utilisé dans diverses parties de Dynacase
-(document, script, action, fichier php tiers, etc.). 
-L'exemple ci-dessous fonctionne dans une action :
+(document, script, action, fichier php tiers, etc.). Ce système utilise la
+[classe `Layout`][classlayout].
+
+L'exemple ci-dessous fonctionne dans une [action][action] :
 
     [php]
     <?php
@@ -81,7 +82,7 @@ L'exemple ci-dessous fonctionne dans une action :
 Le code ci-dessus met en place les blocs suivants :
 
 * `FIRST_LINE` : un bloc pour la première ligne, celui-ci contient les numéros 
-de 1 au maximum,
+de 1 à `$max` (le maximum),
 * `LINES` : un bloc qui contient la liste des lignes, celui-ci contient la 
 référence à la ligne en cours et le numéro de la ligne,
 * `LINE_$i` : un bloc qui contient le contenu de chaque ligne, celui-ci contient
@@ -100,7 +101,8 @@ Le template ci-dessus contient les éléments suivants :
 
 * une première ligne de présentation qui duplique autant de fois que nécessaire
 le pattern `----`,
-* une seconde ligne qui présente les numéros de 1 au maximum séparés par `|`,
+* une seconde ligne qui présente les numéros de 1 à `$max` (le maximum) séparés 
+par `|`,
 * une troisième ligne de présentation qui duplique autant de fois que nécessaire
 le pattern `====`,
 * un bloc `LINES` qui va dupliquer autant de fois que nécessaire les résultats,
@@ -108,12 +110,12 @@ ce bloc appel un bloc `LINE_[CURRENT_LINE_NUMBER]` qui contient le résultat, il
 produit en outre une ligne de présentation qui duplique autant de fois que 
 nécessaire le pattern `---+`.
 
-Lorsqu'on appel la méthode soit :
+Lorsqu'on appelle l'action soit :
 
 * en http : `?app=[APP_NAME]&action=[ACTION_NAME]&max=10`,
 * en cli :  `./wsh.php --app=[APP_NAME] --action=[ACTION_NAME] --max=10`.
 
-On obtient donc le résultat suivant :
+Le résultat obtenu est le suivant :
 
     Table de multiplications
     --------------------------------------------
@@ -162,9 +164,9 @@ chapitre des [zones documentaires][zone_documentaire] pour plus d'informations
 sur ce point.
 
 L'exemple que l'on va prendre consiste à injecter un entête sur toutes les pages,
-cette entête contient le nom du client et la date du jour.
+cet entête contient le nom du client et la date du jour.
 
-On va donc créer les fichiers suivants :
+Soit les fichiers suivants :
 
 `APP/header.php`
 
@@ -180,12 +182,12 @@ On va donc créer les fichiers suivants :
 
     Cogip ([DATE])
 
-Ensuite dans le template de l'action, on appelle la zone de la manière suivante
-`[ZONE APP:HEADER]`.
+Dans le template de l'action, la zone est appelée de la manière suivante
 
-Si on inclut la zone dans le template précédent :
+    [ZONE APP:HEADER]
 
-    
+La zone est inclue dans le template précédent :
+
     [ZONE APP:HEADER]
     Table de multiplications
     ----[BLOCK FIRST_LINE]----[ENDBLOCK FIRST_LINE]
@@ -195,7 +197,7 @@ Si on inclut la zone dans le template précédent :
     ---+[BLOCK LINE_[CURRENT_LINE_NUMBER]]---+[ENDBLOCK LINE_[CURRENT_LINE_NUMBER]]
     [ENDBLOCK LINES]
 
-On obtient :
+Voici le résultat obtenu :
 
     Cogip (Mon, 04 Nov 2013 12:49:00)
     
@@ -228,4 +230,6 @@ On obtient :
 composer des interfaces complexes.
 
 <!-- link -->
-[zone_documentaire]:     #core-ref:49b96dc9-64e9-4f5a-a167-396282625c1e
+[zone_documentaire]:    #core-ref:49b96dc9-64e9-4f5a-a167-396282625c1e
+[classlayout]:          #core-ref:9f9edc1b-17a5-4f54-86ee-69e33016fe18
+[action]:               #core-ref:e67d8aeb-939c-46e3-9be8-6fc3ba75ebc2
