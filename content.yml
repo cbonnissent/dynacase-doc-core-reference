@@ -1014,11 +1014,6 @@ book:
         draft: "draft"
         new: "new"
     - level : 2
-      content:  "Actions_zones_ref/zones/zone_fdl_edit_application_parameter.md"
-      flags:
-        draft: "draft"
-        new: "new"
-    - level : 2
       content:  "Actions_zones_ref/zones/zone_fdl_view_array.md"
       flags:
         draft: "draft"
@@ -1029,12 +1024,7 @@ book:
         draft: "draft"
         new: "new"
     - level : 2
-      content:  "Actions_zones_ref/zones/zone_fdl_edit_family_parameter.md"
-      flags:
-        draft: "draft"
-        new: "new"
-    - level : 2
-      content:  "Actions_zones_ref/zones/zone_fdl_edit_submit.md"
+      content:  "Actions_zones_ref/zones/zone_edit_parameters.md"
       flags:
         draft: "draft"
         new: "new"
