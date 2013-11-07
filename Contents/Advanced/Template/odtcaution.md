@@ -1,12 +1,17 @@
-# Précautions d'usage {#core-ref:2705b0cf-b697-4785-a961-b2ee4d7f42e0}
+# Utilisation du contrôleur pour template ODT {#core-ref:84399e7b-57a8-4ac9-a675-d50818e294bc}
+## Précautions d'usage {#core-ref:2705b0cf-b697-4785-a961-b2ee4d7f42e0}
 
-Les templates ODT sont une mécanique puissante mais fragile. Il faut lors
-de leurs conceptions d'un certain nombres d'éléments sans quoi les fichiers
-générés peuvent être invalides.
+Les templates ODT manipulent des données XML. La syntaxe des template XML est
+plus rigoureuse que les template HTML. Les fichiers générés peuvent être
+invalides si les données insérées ne sont pas conformes aux contraintes imposées
+par le format XML.
 
-La liste des limitations des ODT est [ici][odt_limitation].
+Voir la liste des [limitations des ODT][odt_limitation].
 
-### Affectation de variables {#core-ref:728e85c3-e88b-4817-9d77-a95ed103c543}
+## Affectation de variables {#core-ref:728e85c3-e88b-4817-9d77-a95ed103c543}
+
+La classe PHP de manipulation de template est la classe `OooLayout` qui dérivé de la
+[classe `Layout`][classlayout].
 
 Les précautions d'usages sont les suivantes :
 
@@ -28,7 +33,7 @@ XML pour ce faire, on peut :
             $name = $myAnimal->getOooValue($myAnimal->getAttribute("the_name"), $name);
             $this->lay->set("MY_ATTR",$name);
 
-*Note* : Bien évidemment, vous pouvez utiliser la méthode `set` pour insérer du 
+*Note* : La méthode `set` permet d'insérer du 
 XML dans l'ODT, comme dans l'exemple ci-dessous :
 
     [php]
@@ -43,10 +48,11 @@ l'exemple ci-dessous :
     $this->lay->set("KEY",'') ; // [KEY] effacé
 
 
-### Affectation des répétables {#core-ref:9c954528-4c99-4423-ace2-0c445bc698ca}
+## Affectation des répétables {#core-ref:9c954528-4c99-4423-ace2-0c445bc698ca}
 
-Les templates ODT peuvent gérer les éléments multiples. Ce [chapitre][odt_repeat]
-donne quelques exemples.
+Les templates ODT peuvent gérer les éléments multiples. Le chapitre [répétables
+des vues ODT][odt_repeat] indique les différentes possibilités d'emplacement des
+répétables.
 
 L'affectation de valeurs multiples passe par deux méthodes :
 
@@ -91,31 +97,31 @@ donne le fichier :
 ![ résultat ](advanced/template/multiple_generated.png)
 
 
-### Utilisation du type Htmltext {#core-ref:74d95597-be61-4ed5-b768-e4a78b6882a9}
+## Utilisation du type Htmltext {#core-ref:74d95597-be61-4ed5-b768-e4a78b6882a9}
 
 Il n'y a pas de concordances entre les balises HTML et l'openText. Seul un sous
-ensembles des balises HTML est supporté, ci-dessous est présentée la table 
+ensemble des balises HTML est supporté, ci-dessous est présentée la table 
 d'équivalence présentant les balises supportées et leur équivalent ODT.
 
-| balise HTML | balise ODT         | description                                | restriction                                                                                                                                                                                                                                                                                                       |
+| balise HTML |     balise ODT     |                description                 |                                                                                                                                                    restriction                                                                                                                                                    |
 | :---------- | :----------------- | :----------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `p`         | `text:p`           | Insère un paragraphe                       | La balise "&lt;p>" doit être au premier niveau.                                                                                                                                                                                                                                                                   |
-| `div`       | `text:p`           | Insère un paragraphe                       | Pour les  "&lt;div>"de premier niveau.                                                                                                                                                                                                                                                                            |
-| `div > div` | `text:span`        | Insère un texte                            | Pour les  "&lt;div>"de niveau inférieur.                                                                                                                                                                                                                                                                          |
-| `br`        | `text:line-break`  | Insère un retour à la ligne                | Doit être dans une balise &lt;p>                                                                                                                                                                                                                                                                                  |
-| `em/i`      | `text:span`        | Insèrent un texte avec le style "italique" | Doit être dans une balise &lt;p>                                                                                                                                                                                                                                                                                  |
-| `strong/b`  | `text:span`        | Insèrent un texte avec le style "gras"     | Doit être dans une balise &lt;p>                                                                                                                                                                                                                                                                                  |
-| `u`         | `text:span`        | Insère un texte avec le style "souligné"   | Doit être dans une balise &lt;p>                                                                                                                                                                                                                                                                                  |
-| `sup`       | `text:span`        | Insère un texte avec le style "exposant"   | Doit être dans une balise &lt;p>                                                                                                                                                                                                                                                                                  |
-| `sub`       | `text:span`        | Insère un texte avec le style "index"      | Doit être dans une balise &lt;p>                                                                                                                                                                                                                                                                                  |
-| `a`         | `text:a`           | Insère un hyperlien                        | Doit être dans une balise &lt;p>                                                                                                                                                                                                                                                                                  |
+| `p`         | `text:p`           | Insère un paragraphe                       | La balise `<p>` doit être au premier niveau.                                                                                                                                                                                                                                                                      |
+| `div`       | `text:p`           | Insère un paragraphe                       | Pour les `<div>` de premier niveau.                                                                                                                                                                                                                                                                               |
+| `div > div` | `text:span`        | Insère un texte                            | Pour les `<div>` de niveau inférieur.                                                                                                                                                                                                                                                                             |
+| `br`        | `text:line-break`  | Insère un retour à la ligne                | Doit être dans une balise `<p>`                                                                                                                                                                                                                                                                                   |
+| `em/i`      | `text:span`        | Insèrent un texte avec le style "italique" | Doit être dans une balise `<p>`                                                                                                                                                                                                                                                                                   |
+| `strong/b`  | `text:span`        | Insèrent un texte avec le style "gras"     | Doit être dans une balise `<p>`                                                                                                                                                                                                                                                                                   |
+| `u`         | `text:span`        | Insère un texte avec le style "souligné"   | Doit être dans une balise `<p>`                                                                                                                                                                                                                                                                                   |
+| `sup`       | `text:span`        | Insère un texte avec le style "exposant"   | Doit être dans une balise `<p>`                                                                                                                                                                                                                                                                                   |
+| `sub`       | `text:span`        | Insère un texte avec le style "index"      | Doit être dans une balise `<p>`                                                                                                                                                                                                                                                                                   |
+| `a`         | `text:a`           | Insère un hyperlien                        | Doit être dans une balise `<p>`                                                                                                                                                                                                                                                                                   |
 | `h1`        | `text:h`           | Insère un titre de niveau 1                | Le style du texte sera celui de "Titre 1"                                                                                                                                                                                                                                                                         |
 | `h2`        | `text:h`           | Insère un titre de niveau 2                | Le style du texte sera celui de "Titre 2"                                                                                                                                                                                                                                                                         |
 | `h3`        | `text:h`           | Insère un titre de niveau 3                | Le style du texte sera celui de "Titre 3"                                                                                                                                                                                                                                                                         |
 | `h4`        | `text:h`           | Insère un titre de niveau 4                | Le style du texte sera celui de "Titre 4"                                                                                                                                                                                                                                                                         |
-| `li`        | `text:list-item`   | Insère un élément de liste                 | Doit être dans une balise &lt;ul>  ou    &lt;ol>                                                                                                                                                                                                                                                                  |
-| `ul`        | `text:list`        | Insère une liste à puces non numérotée     | Doit être dans une balise &lt;p>                                                                                                                                                                                                                                                                                  |
-| `ol`        | `text:list`        | Insère une liste à puces numérotée         | Doit être dans une balise &lt;p>                                                                                                                                                                                                                                                                                  |
+| `li`        | `text:list-item`   | Insère un élément de liste                 | Doit être dans une balise `<ul>` ou `<ol>`                                                                                                                                                                                                                                                                        |
+| `ul`        | `text:list`        | Insère une liste à puces non numérotée     | Doit être dans une balise `<p>`                                                                                                                                                                                                                                                                                   |
+| `ol`        | `text:list`        | Insère une liste à puces numérotée         | Doit être dans une balise `<p>`                                                                                                                                                                                                                                                                                   |
 | `table`     | `table:table`      | Insère un tableau                          |                                                                                                                                                                                                                                                                                                                   |
 | `tr`        | `table:table-row`  | Insère une rangée tableau                  |                                                                                                                                                                                                                                                                                                                   |
 | `th`        | `table:table-cell` | Insère une cellule entête de               |                                                                                                                                                                                                                                                                                                                   |
@@ -123,5 +129,6 @@ d'équivalence présentant les balises supportées et leur équivalent ODT.
 | `img`       | `draw:frame`       | Insère une image                           | L'url de cette image doit être absolue et accessible depuis l'éditeur de texte. Seules les images présente sur les paragraphes de premier niveau sont prises en compte. Pas d'image dans les cellule de tableau. La taille n'est pas configurable. C'est la taille d'origine de l'image qui sera prise en compte. |
 
 <!-- link -->
-[odt_limitation]:   #core-ref:b2f63c3f-9f26-47f6-8172-00c23b6a9948
-[odt_repeat]:       #core-ref:9287cbe8-a6ca-41f9-9547-b7a970ae6584
+[odt_limitation]:       #core-ref:b2f63c3f-9f26-47f6-8172-00c23b6a9948
+[odt_repeat]:           #core-ref:9287cbe8-a6ca-41f9-9547-b7a970ae6584
+[classlayout]:          #core-ref:9f9edc1b-17a5-4f54-86ee-69e33016fe18

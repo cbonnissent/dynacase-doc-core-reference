@@ -7,7 +7,7 @@ Le moteur de template a plusieurs usages avancés que nous allons aborder :
 
 * textuel : répétable à plusieurs niveaux, mutualisation de code avec 
 l'utilisation du système des vues,
-* odt : mise en page complexe.
+* odt (openDocument Text): mise en page complexe.
 
 De plus, nous allons aborder un élément qui n'utilise pas directement le moteur
 de template mais qui permet de mettre en forme une liste ou une collection de

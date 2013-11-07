@@ -277,11 +277,12 @@ sont détaillées dans la [partie avancée sur les vues OpenDocument
 Text][advanced_odt].
 
 <!-- links -->
-[TE]: #FIXME
+[TE]: https://docs.anakeen.com/dynacase/3.2/dynacase-doc-tengine-installation-operating/website/book/index.html "Installation et exploitation
+Tranformation Engine"
 [default_view_controleur]: #core-ref:303fbb4d-a688-4fd7-8329-bbc799251889
 [textual_views_syntax]: #core-ref:5f4a2f4b-9ceb-42db-8ac1-2a7baa621ce2
 [images]: #core-ref:d1625c57-57f6-48eb-ab3e-e3690dddec6c
 [repetables]: #core-ref:9287cbe8-a6ca-41f9-9547-b7a970ae6584
 [advanced_odt]: #core-ref:a8c2d27a-6490-4449-9997-2984613ed219
 [zonedocumentaire]: #core-ref:49b96dc9-64e9-4f5a-a167-396282625c1e
-[fields]: https://help.libreoffice.org/Writer/Variables/fr "champs de type variable sur libreoffice.org"
+[fields]: https://help.libreoffice.org/Writer/Variables/fr "Champs de type variable sur libreoffice.org"
