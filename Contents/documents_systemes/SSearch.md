@@ -7,7 +7,7 @@ construire cette recherche de toutes parts. La famille *recherche spécialisée*
 permet de fournir le code php de la recherche.
 
 Elle est implémentée au moyen de la famille `SSEARCH`, qui étend la famille
-`SEARCH` et y ajoute les méthodes du fichier `Method.SpecialSearch.php`.
+`SEARCH`.
 
 ## Éléments de paramétrage {#core-ref:0abdd1f1-07ea-4ac5-88d5-bac41fa2ddc4}
 

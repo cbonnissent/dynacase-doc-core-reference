@@ -2,9 +2,9 @@
 
 ## Présentation {#core-ref:286e9f9e-4d5e-4f4f-b09d-2a7b4ebaf330}
 
-Dans Dynacase, il est possible de définir des recherches et de les sauvegarder
-pour les réutiliser. Ce qui est sauvegardé au moyen d'une recherche',
-ce sont les critères et non pas les résultats. <span class="fixme" data-assignedto="MCO">mettre un exemple</span>
+Il est possible de définir des recherches et de les sauvegarder
+pour les réutiliser. Ce qui est sauvegardé au moyen d'une recherche,
+ce sont les critères et non pas les résultats. 
 
 Une recherche est donc une *collection dynamique* de documents.
 
@@ -21,11 +21,10 @@ des recherches pré-cablées pour les utilisateurs : ces recherches doivent
     [propriétés des familles][family_properties]
     de la famille concernée).
 
-<span class="fixme" data-assignedto="MCO">mettre un exemple</span>
 
 ### Backend d'approvisionnement pour des interfaces spécifiques {#core-ref:4871bf7b-02b0-408a-b1e1-585ae3554921}
 
-Imaginons que le client demande :
+Soit la demande suivante :
 
 *   une représentation des documents sous forme de grille,
 *   que cette grille puisse représenter
@@ -42,7 +41,7 @@ L'IHM à construire peut se définir ainsi :
     *   dès qu'une recherche est choisie dans la combobox, la grille est
         rechargée avec la recherche sélectionnée comme source de données.
 
-Nous pouvons ensuite créer les recherches correspondant aux demandes du client :
+Nous pouvons ensuite créer les recherches correspondant aux demandes spécifiques :
 
 *   Les documents créés cette semaine,
 *   Les documents créés par l'utilisateur courant.
@@ -51,5 +50,5 @@ Lorsque le client voudra ajouter des modalités de recherche, il lui suffira
 de créer des recherches dans le dossier correspondant.
 
 <!-- links -->
-[ONEFAM]: # "Documentation de Onefam"
+[ONEFAM]: https://docs.anakeen.com/dynacase/3.2/dynacase-doc-onefam-reference/website/book/index.html "Documentation de Onefam"
 [family_properties]: #core-ref:6f013eb8-33c7-11e2-be43-373b9514dea3
