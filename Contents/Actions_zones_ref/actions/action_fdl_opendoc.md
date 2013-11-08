@@ -14,16 +14,17 @@ Cette action appelle une autre action suivant le mode demandé :
 
 id
 :    L'[id][id_document] du document source. Facultatif si `classid` ou `famid` 
-    est déjà fourni.
+    est déjà fourni, obligatoire sinon.
 
 mode
-:   `view`, `edit` ou `new`. Si la valeur est `view` le document est affiché en 
+:   (`view`|`edit`|`new`). Si la valeur est `view` le document est affiché en 
     consultation, si elle est `edit` ou `new` le document est affiché en édition.
+    **obligatoire**.
 
 famid
 :   Nom logique de la famille de document. Cet élément est utilisé pour créer
     un nouveau type de document. Si un `id` est fourni alors ce paramètre est
-    ignoré.
+    ignoré. Obligatoire si `id` n'est pas fourni.
 
 classid
 :   Équivaut à `famid`. Déprécié, si `classid` et `famid` sont fourni tous les 
@@ -48,8 +49,8 @@ state
     en compte.
 
 zone
-:   Nom d'une [zone documentaire][zoneDocumentaire]. Ce paramètre n'est
-    pas pris en compte si le paramètre `vid` est valué.
+:   Nom d'une [zone documentaire][zoneDocumentaire] qui est appliquée au 
+    document. Ce paramètre n'est pas pris en compte si le paramètre `vid` est valué.
 
 vid
 :   Nom d'une vue. Si jamais un [contrôle de vue][cvdoc] est associé à ce document
@@ -70,45 +71,55 @@ unlock
 :   (Y|N) : Si la valeur est à `Y` le document est delocker avant la consultation
     (défaut N).
 
+dochead
+:   (N) : Si la valeur est à `N` l'entête du document n'est pas affiché.
+
 
 ## Paramètres : mode=edit {#core-ref:6f77c5b1-c649-4835-962d-857960880757}
 
 dirid
-:   
+:   `int` : si c'est une création de document (`classid` ou `famid` et pas d'`id`)
+    alors le document est créé dans le [dossier][dir] référencé par le `dirid`.
 
 usefor
-:   
-
-zone
-:   
-
-rzone
-:   
-
-rvid
-:   
-
-rtarget
-:   
-
-updateAttrid
-:   
-
-vid
-:   
+:   (D|Q) : Si usefor est à `D` alors c'est l'édition des valeurs par défaut qui
+    est présentée, si usefor est à `Q` alors c'est l'édition des paramètres qui
+    est présentée. Ce paramètre n'est valide que dans le cas d'une création de 
+    document.
 
 mskid
-:   
+:   Nom logique d'un masque. Si cet élément est valué alors ce masque est appliqué
+    à l'interface d'édition.
+
+zone
+:   Nom d'une [zone documentaire][zoneDocumentaire] qui est appliquée au 
+    document. Ce paramètre n'est pas pris en compte si le paramètre `vid` est valué.
+
+vid
+:   Nom d'une vue. Si jamais un [contrôle de vue][cvdoc] est associé à ce document
+    et que ce contrôle de vue contient une vue ayant ce nom celle-ci est appliquée.
+
+zone
+:   Nom d'une [zone documentaire][zoneDocumentaire] qui est appliquée au 
+    document après son édition. Ce paramètre n'est pas pris en compte si le 
+    paramètre `rvid` est valué.
+
+vid
+:   Nom d'une vue. Si jamais un [contrôle de vue][cvdoc] est associé à ce document
+    et que ce contrôle de vue contient une vue ayant ce nom celle-ci est 
+    appliquée après son édition.
+
+rtarget
+:   S'il est définit le retour de l'édition est dans une autre fenêtre, la 
+    fenêtre en cours est fermée à la fin de l'éditon. (valeur par défaut : `_self`)
 
 autoclose
-:   
-
-recallhelper
-:   
-
+:   (yes). Si autoclose est à `yes` alors la fenêtre est fermée automatiquement
+    après la modification.
 
 ## Limites {#core-ref:96fc7d17-36bc-4dc6-bc90-9054fe380330}
 
+N/A
 
 <!-- link -->
 
@@ -118,3 +129,4 @@ recallhelper
 [cvdoc]:                #core-ref:017f061a-7c12-42f8-aa9b-276cf706e7e0
 [MDNtarget]:            https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a "Descriptif de la balise a"
 [templateB]:            #core-ref:96d615e5-b6a6-46d3-b42d-4396dbc42b8b
+[dir]:                  #core-ref:977910df-1dc1-4def-9e0b-fb938f5d849f
