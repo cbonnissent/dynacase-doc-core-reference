@@ -1288,14 +1288,10 @@ book:
         new: "new"
         draft : "draft"
     - level:   2
-      content:  "Advanced/Applications/introduction.md"
+      content:  "Advanced/Migration/introduction.md"
       flags:
-        wip: "work in progress"
-    - level:   3
-      content:  "Advanced/Applications/migration.md"
-      flags:
-        wip: "work in progress"
-        wip_sub: ""
+        new: "new"
+        draft : "draft"
     - level:   2
       content:  "Advanced/Recherche/introduction.md"
       subtoc:   2
