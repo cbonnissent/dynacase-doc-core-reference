@@ -1,8 +1,7 @@
-# Cinématique de dynacase {#core-ref:24705f94-2dee-4e84-9429-d89dafe83589}
+# Cinématique d'un appel CLI ([WSH][wsh]) {#core-ref:f2428605-0c16-4941-8630-7b8ab8c45f20}
 
-Ce chapitre présente l'enchaînement des principales phases qui sont exécutées
-lors d'une requête au serveur Dynacase.
 
+![Exécution CLI WSH](cinematique_wsh.png)
 
 
 <!-- links -->
