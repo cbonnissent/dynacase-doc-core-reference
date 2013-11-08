@@ -1191,9 +1191,25 @@ book:
         next-release : "next-release 3.2.12"
     - level:   2
       content:  "Advanced/Cinematique/introduction.md"
+      subtoc:   2
       flags:
         new: "new"
-        draft: "draft"
+    - level:   3
+      content:  "Advanced/Cinematique/actionrequest.md"
+      flags:
+        new: "new"
+    - level:   3
+      content:  "Advanced/Cinematique/docrequest.md"
+      flags:
+        new: "new"
+    - level:   3
+      content:  "Advanced/Cinematique/staterequest.md"
+      flags:
+        new: "new"
+    - level:   3
+      content:  "Advanced/Cinematique/wshrequest.md"
+      flags:
+        new: "new"
     - level:   2
       content:  "Advanced/Database/introduction.md"
       subtoc:   2
