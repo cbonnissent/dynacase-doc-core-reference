@@ -126,7 +126,7 @@ applications.
 | group_default  | character(1) | Indique si cette acl est posée par défaut sur le groupe `all`. Valeurs possibles : [Y&#124;N]. |
 
 
-![ Relations entre les tables mise en œuvre pour la vérification des droits d'accès ](dbprofils.png)
+![ Relations entre les tables mise en œuvre pour la vérification des droits d'accès ](advanced/dbprofils.png)
 
 <!-- links -->
 [docprof]:          #core-ref:f1575705-10e8-4bf2-83b3-4c0b5bfb77cf

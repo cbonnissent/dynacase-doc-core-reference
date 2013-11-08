@@ -61,7 +61,7 @@ dans le fichier de description de l'[application][app].
 
 Se reporter au chapitre  [Descriptions des tables des droits][dbacl].
 
-![ Relations entre les tables définissant les applications ](dbapp.png)
+![ Relations entre les tables définissant les applications ](advanced/dbapp.png)
 
 
 

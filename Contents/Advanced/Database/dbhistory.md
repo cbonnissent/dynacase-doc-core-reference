@@ -13,3 +13,6 @@ documents.
 | level   | integer                     | Niveau : Notice `1`, Information `2`, Message `4`, Avertissement `8`, Erreur `16` |
 | code    | text                        | Code de l'entrée. Permet de catégoriser le message                                |
 | comment | text                        | Message de l'entrée                                                               |
+
+
+![ Relation entre dochisto et doc ](advanced/dbdochisto.png)
