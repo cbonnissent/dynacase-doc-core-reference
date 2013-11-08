@@ -1,21 +1,3 @@
 # Actions et zones de référence {#core-ref:fed06a0c-3fd6-11e3-9658-88d5dc830245}
 
-<div class="fixme">créer un fichier par action / zone</div>
-
-[ZONE FDL:HTMLHEAD]
-[ZONE FDL:HTMLFOOT]
-[ZONE FDL:INPUTATTRIBUTE]
-[ZONE FDL:VIEWFRAME]
-[ZONE FDL:EDITFRAME]
-[ZONE FDL:VIEWARRAY]
-[ZONE FDL:EDITARRAY]
-
-Même page voir 3.9.11 (manuel pdf)
-[ZONE FDL:EDITFAMILYPARAMETER]
-[ZONE FDL:EDITAPPLICATIONPARAMETER]
-[ZONE FDL:EDITSUBMIT]
-
-[ACTION FDL:OPENDOC] - citer FDL:FDL_CARD et GENERIC:GENERIC_EDIT pour compatibilité
-[ACTION FDL:IMPCARD]
-[ACTION FDL:EXPORTFILE]
-[ACTION FDL:FDL_METHOD]
+Ce chapitre présente les actions et zones de références.
