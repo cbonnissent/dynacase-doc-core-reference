@@ -1392,7 +1392,6 @@ book:
     - level:   3
       content:  "Advanced/familles/processus.md"
       flags:
-        draft: "draft"
         new: "new"
     - level:   2
       content:  "Advanced/autoloader.md"

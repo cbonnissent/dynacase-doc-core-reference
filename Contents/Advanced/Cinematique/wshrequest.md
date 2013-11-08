@@ -1,7 +1,9 @@
-# Cinématique d'un appel CLI ([WSH][wsh]) {#core-ref:f2428605-0c16-4941-8630-7b8ab8c45f20}
+# Cinématique d'un appel CLI (wsh) {#core-ref:f2428605-0c16-4941-8630-7b8ab8c45f20}
 
+L'appel d'un script [wsh][wsh] est effectué en mode console directement sur le
+serveur sous l'identité du serveur web.
 
-![Exécution CLI WSH](cinematique_wsh.png)
+![Exécution CLI wsh](cinematique_wsh.png)
 
 
 <!-- links -->
