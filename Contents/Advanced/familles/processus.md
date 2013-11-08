@@ -10,29 +10,29 @@ Le traitement est soit :
 
 ## Paramétrage {#core-ref:a269c14f-e5c8-45f1-a874-882221de7c3d}
 
-![ template ](advanced/processus/processus.png)
+![ Formulaire de création de processus ](advanced/processus/processus.png)
 
 Dans cette interface, vous pouvez définir les différentes options de lancement 
-de l'action ou du script, ses références et ses paramètres d’exécutions.
+de l'action ou du script, ses références et ses paramètres d'exécutions.
 
 De plus, il est possible de définir une première date d'exécution et une 
 périodicité.
 
-En outre, il est aussi possible de ne pas indiquer de date d'exécution et d'exécuter
-manuellement la tâche. 
+En outre, il est aussi possible de ne pas indiquer de date d'exécution et
+d'exécuter manuellement la tâche.
 
 **Attention** : Si on exécute manuellement une tâche qui a une date automatique
-d'éxécution alors celle-ci ne s'éxécute plus automatiquement, pour relancer
-l'éxécution automatique il faut éditer et sauvegarder le document processus.
+d'exécution alors celle-ci ne s'exécute plus automatiquement, pour relancer
+l'exécution automatique il faut éditer et sauvegarder le document processus.
 
 ## Limites
 
 Les limites sont les suivantes :
 
 * la périodicité ne peut être inférieure à 5 minutes,
-* le calcul de la périodicité prend en compte la fin de l'éxécution de la tâche.
+* le calcul de la périodicité prend en compte la fin de l'exécution de la tâche.
 Par exemple, si on défini une tâche démarrant le 31/12 à 00h00, ayant une 
-périodicité de 1 jour et durant 2H00. Cette tâche s'éxécute le 31/12 à 00H00, 
+périodicité de 1 jour et durant 2H00. Cette tâche s'exécute le 31/12 à 00H00, 
 le 01/01 à 02h00, le 02/01 à 04h00 car le calcul de la périodicité de 1 jour ne
 commence qu'après la fin de la tâche.
 
