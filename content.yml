@@ -1386,7 +1386,6 @@ book:
     - level:   2
       content:  "Advanced/familles/introduction.md"
       flags:
-        draft: "draft"
         new: "new"
       subtoc:   3
     - level:   3
