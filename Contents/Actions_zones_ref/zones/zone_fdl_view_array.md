@@ -15,7 +15,7 @@ classid
 :   Nom logique de famille. Si `id` est fourni classid n'est pas utilisé.
 
 arrayid
-:   L' [attrid][property] de la frame que l'on souhaite présenter.
+:   L' [attrid][property] de l'array que l'on souhaite présenter.
 
 vid
 :   Si le document est associé à un [contrôle de vue][cdv] et que vid est une 
