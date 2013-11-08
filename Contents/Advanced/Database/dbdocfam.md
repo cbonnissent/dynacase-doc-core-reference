@@ -23,6 +23,7 @@ Colonnes spécifiques de la table docfam :
 | tagable       | text             | Spécifique module [Dynacase tags][tag]                                                      |
 
 
+![ Relation d'héritage entre docfam et doc ](advanced/dbdocfam.png)
 
 <!-- links -->
 [famprop]:          #core-ref:cfc7f53b-7982-431e-a04b-7b54eddf4a75  "Propriétés des familles"

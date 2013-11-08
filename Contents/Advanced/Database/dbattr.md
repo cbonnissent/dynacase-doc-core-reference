@@ -31,6 +31,9 @@ définition des attributs par les classes PHP est faite lors de l'importation de
 familles. Les modifications sur cette table ne seront prise en compte que lors
 de la [regénération des familles][fdladoc].
 
+
+![ Relation entre docattr et docfam ](advanced/dbdocattr.png)
+
 <!-- links -->
 [famimport]:        #core-ref:cfc7f53b-7982-431e-a04b-7b54eddf4a75 "Importation de famille"
 [famprop]:          #core-ref:6f013eb8-33c7-11e2-be43-373b9514dea3 "Propriétés de familles"

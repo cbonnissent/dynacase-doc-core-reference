@@ -80,7 +80,7 @@ document est : `<Type Mime>|<Identifiant Fichier>|<Nom du fichier>`.
 L'_identifiant fichier_ référence la colonne `id_file` de la table
 `vaultdiskstorage`.
 
-![ Relations entre les tables des coffres de fichiers ](dbvault.png)
+![ Relations entre les tables des coffres de fichiers ](advanced/dbvault.png)
 
 
 

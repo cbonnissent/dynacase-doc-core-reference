@@ -61,7 +61,7 @@ création. De même si la famille est [détruite][destroyfam], une nouvelle tabl
 avec un nom différent lui est attribué.
 
 Exemple :
-![ Héritage des tables de documents ](dbinherit.png)
+![ Héritage des tables de documents ](advanced/dbinherit.png)
 
 Les tables de documents sont créées avec le schéma _public_. Pour chacune des
 familles une vue créée avec le nom logique de la famille est crée en même temps

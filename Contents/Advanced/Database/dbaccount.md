@@ -54,7 +54,7 @@ Composition de la table `groups` :
 |         |         |                                                                         |
 
 
-![ Lien entre les tables users et doc ](dbaccount.png)
+![ Lien entre les tables users et doc ](advanced/dbaccount.png)
 
 
 <!-- links -->
