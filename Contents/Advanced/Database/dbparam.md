@@ -14,18 +14,21 @@ Les valeurs des paramètres sont gérés à travers la classe de [Gestion des
 paramètres][parammgr].
 
 
-| Colonne |          Type         |                                    Définition                                    |
-| ------- | --------------------- | -------------------------------------------------------------------------------- |
-| name    | character varying(50) | Nom du paramètre                                                                 |
-| type    | character varying(21) | Type du paramètre : `G` (global), `A` (applicatif), 'U&lt;uid&gt;' (utilisateur) |
-| appid   | integer               | Identifiant de l'application                                                     |
-| val     | text                  | Valeur du paramètre                                                              |
+| Colonne |          Type         |                                    Définition                              |
+| ------- | --------------------- | -------------------------------------------------------------------------- |
+| name    | character varying(50) | Nom du paramètre                                                           |
+| type    | character varying(21) | Type du paramètre : `G` (global), `A` (applicatif), `U<uid>` (utilisateur) |
+| appid   | integer               | Identifiant de l'application                                               |
+| val     | text                  | Valeur du paramètre                                                        |
 
-Un paramètre, s'il est _global_ et non utilisateur, ne peut avoir qu'un seule valeur.
-Si le paramètre est _applicatif_ et non utilisateur, il peut avoir qu'une seule valeur par application.
+Un paramètre, s'il est _global_ et non utilisateur, ne peut avoir qu'un seule
+valeur.
 
-Si le paramètre est utilisateur, il peut avoir une valeur par utilisateur. Dans
-ce cas le type est composé du caractère `U` suivi du l'identifiant de
+Si le paramètre est _applicatif_ et non utilisateur, il ne peut avoir qu'une
+seule valeur par application.
+
+Si le paramètre est utilisateur, il peut avoir une valeur par utilisateur.
+Dans ce cas le type est composé du caractère `U` suivi de l'identifiant de
 l'utilisateur (`id` table `users`).
 
 
@@ -41,14 +44,14 @@ applicatifs][paramapp].
 | name    | text                 | Nom du paramètre                                                                 |
 | isuser  | character varying(1) | Valeurs possibles : `Y` (paramètre utilisateur), `N` (paramètre non utilisateur) |
 | isstyle | character varying(1) | *Obsolète* Non utilisé                                                           |
-| isglob  | character varying(1) | Valeurs possibles : `Y` (paramètre global), `N` (paramètre a`pplicatif)          |
+| isglob  | character varying(1) | Valeurs possibles : `Y` (paramètre global), `N` (paramètre applicatif)           |
 | appid   | integer              | Identifiant de l'application                                                     |
 | descr   | text                 | Description du paramètre                                                         |
-| kind    | text                 | Type `text`, `enum`, `color`, `password` `static`,  `readonly`                   |
+| kind    | text                 | Type `text`, `enum`, `color`, `password`, `static` ou  `readonly`                |
 
 
 
-![ Relations entre les tables définissant les paramètres ](dbparam.png)
+![ Relations entre les tables définissant les paramètres ](advanced/dbparam.png)
 
 <!-- links -->
 [appact]:           #core-ref:b26f57fe-4d75-4d5f-a50e-129028b379ed "Applications et action"

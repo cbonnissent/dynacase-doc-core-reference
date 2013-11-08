@@ -3,7 +3,7 @@
 La table `docfam` contient les caractéristiques des [familles][famprop]. Cette
 table hérite de la [table `doc`][dbdoc].
 
-Colonnes spécifiques de la table docfam :
+Colonnes spécifiques de la table `docfam` :
 
 |    Colonne    |       Type       |                                          Définition                                         |
 | ------------- | ---------------- | ------------------------------------------------------------------------------------------- |
@@ -15,9 +15,9 @@ Colonnes spécifiques de la table docfam :
 | methods       | text             | Liste des fichiers méthodes (METHOD)                                                        |
 | defval        | text             | Valeurs par défaut                                                                          |
 | schar         | character(1)     | Indique les modalités de révision                                                           |
-| param         | text             | Liste des valeurs de paramètres                                                             |
+| param         | text             | Liste des valeurs des paramètres                                                            |
 | genversion    | double precision | *Non utilisé*                                                                               |
-| maxrev        | integer          | Nombre [maximum de révision][docrevise] pour les documents de cette famille                 |
+| maxrev        | integer          | Nombre [maximum de révisions][docrevise] pour les documents de cette famille                |
 | usedocread    | integer          | *Obsolète - non utilisé*                                                                    |
 | configuration | text             | *Non utilisé*                                                                               |
 | tagable       | text             | Spécifique module [Dynacase tags][tag]                                                      |

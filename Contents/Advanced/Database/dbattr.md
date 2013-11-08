@@ -1,36 +1,36 @@
 # Description de la table des attributs {#core-ref:77177855-c903-44c8-a79a-a297911732dd}
 
-La table `docattr` contient les caractéristiques des attributs de famille. Lors
-de l'[importation de famille][famimport] cette table est mise à jour. Elle sert
-à produire les [classes PHP associées][famprop] aux familles de documents.
+La table `docattr` contient les caractéristiques des attributs des familles.
+Lors de l'[importation de familles][famimport] cette table est mise à jour.
+Elle sert à produire les [classes PHP associées][famprop] aux familles de
+documents.
 
-Composition de la table `docattr`:
+Composition de la table `docattr` :
 
 |    Colonne    |     Type     |                                                   Définition                                                   |
 | ------------- | ------------ | -------------------------------------------------------------------------------------------------------------- |
 | id            | name         | Identifiant de l'attribut                                                                                      |
 | docid         | integer      | Identifiant numérique de la famille                                                                            |
-| frameid       | name         | Identifiant du cadre encadrant (tab, frame, array)                                                             |
+| frameid       | name         | Identifiant de l'attribut encadrant (`tab`, `frame` ou `array`)                                                |
 | labeltext     | text         | Libellé de l'attribut                                                                                          |
 | title         | character(1) | Indicateur appartenance au titre du document: [Y&#124;N]                                                       |
 | abstract      | character(1) | Indicateur appartenance au résumé du document : [Y&#124;N]                                                     |
-| type          | text         | [Type d'attribut][attrtype] (avec format) : frame, array, text, docid("MYFAM") ...                             |
+| type          | text         | [Type d'attribut][attrtype] (avec format) : `frame`, `array`, `text`, `docid("MYFAM")`, etc.                   |
 | ordered       | integer      | Ordre de présentation                                                                                          |
-| visibility    | character(1) | [Visibilité des attributs][attrvis]                                                                            |
+| visibility    | character(1) | [Visibilité de l'attribut][attrvis]                                                                            |
 | needed        | character(1) | Indicateur attribut obligatoire : [Y&#124;N]                                                                   |
 | link          | text         | Définition de l'hyperlien affiché sur la valeur de l'attribut                                                  |
 | phpfile       | text         | Nom du fichier PHP utilisé pour l'aide à la saisie                                                             |
 | phpfunc       | text         | Déclaration de l'appel à l'aide à la saisie ou au calcul de la valeur de l'attribut                            |
 | elink         | text         | Définition de l'hyperlien mis sur le bouton supplémentaire affiché sur l'interface de modification de document |
 | phpconstraint | text         | Déclaration de l'appel à la méthode de contrainte d'enregistrement                                             |
-| usefor        | character(1) | Catégorie d'attribut : `N`: attribut *normal*, `Q`: paramètre de famille                                                                                                               |
+| usefor        | character(1) | Catégorie d'attribut : `N`: attribut *normal*, `Q`: paramètre de famille                                       |
 | options       | text         | Liste des [options d'attributs][attropt]                                                                       |
 
 Cette table n'est pas utilisée par la méthode `Doc::getAttribute()` car la
-définition des attributs par les classes PHP est faite lors de l'importation des
-familles. Les modifications sur cette table ne seront prise en compte que lors
-de la [regénération des familles][fdladoc].
-
+définition des attributs par les classes PHP est faite lors de l'importation
+des familles. Les modifications sur cette table ne seront prise en compte que
+lors de la [régénération des familles][fdladoc].
 
 ![ Relation entre docattr et docfam ](advanced/dbdocattr.png)
 

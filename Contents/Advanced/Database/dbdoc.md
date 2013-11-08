@@ -6,49 +6,49 @@ Toutes les informations des documents sont enregistrées dans les tables hérit�
 de la table `doc`.
 
 La table `doc` définie les [propriétés des documents][docprop] ; c'est à dire
-tout ce qui est commun à tout type de document.
+ tout ce qui est commun à tout type de document.
+ 
 
-
-|   Colonne    |             Type            |                                            Définition                                            |
-| ------------ | --------------------------- | ------------------------------------------------------------------------------------------------ |
-| adate        | timestamp without time zone | Date de dernier accès au document.                                                               |
-| allocated    | integer                     | Identifiant système de l'utilisateur auquel le document est affecté.                             |
-| archiveid    | integer                     | Id de l'archive dans laquelle est contenue ce document.                                          |
-| atags        | text                        | Balises applicatives                                                                             |
-| attrids      | text                        | Liste de l'ensemble des attributs ayant une valeur non nulle (calculé par trigger)               |
-| cdate        | timestamp without time zone | Date de création de la révision.                                                                 |
-| classname    | character varying(64)       | Nom de la classe PHP associée au document (utilisé dans la table `docfam` uniquement)            |
-| comment      | text                        | *Obsolète*                                                                                       |
-| confidential | integer                     | Indique si le document est confidentiel (>0)                                                     |
-| cvid         | integer                     | Identifiant du document [contrôle de vue][CVDoc] associé à ce document                           |
-| doctype      | character(1)                | Type de document.                                                                                |
-| domainid     | text                        | *pour application offline*                                                                       |
-| dprofid      | integer                     | Identifiant du [profil dynamique][docprofdyn] associé à ce document                              |
-| forumid      | integer                     | *Obsolète*                                                                                       |
-| fromid       | integer                     | Id de la famille d'appartenance.                                                                 |
-| fulltext     | tsvector                    | Ensemble des valeurs du document y compris les textes des fichiers indexés                       |
-| id           | integer                     | Identifiant unique du document (issue de la séquence `seq_id_doc`)                               |
-| icon         | character varying(256)      | Référence au fichier d'icone du document                                                         |
-| initid       | integer                     | Id du premier document de la lignée documentaire                                                 |
-| ldapdn       | text                        | *Obsolète*                                                                                       |
-| lmodify      | character(1)                | Tag de modification                                                                              |
-| lockdomainid | integer                     | *Pour application offline*                                                                       |
-| locked       | integer                     | Indique l'identifiant système de l'utilisateur qui a verrouillé le document                      |
-| name         | text                        | Nom logique du document.                                                                         |
-| owner        | integer                     | Identifiant système de l'utilisateur ayant créé le document                                      |
-| postitid     | text                        | Identifiant du document post-it associé                                                          |
-| prelid       | integer                     | Identifiant du document (dossier) de relation primaire                                           |
-| profid       | integer                     | Identifiant du [profil de document][docprof]                                                     |
-| revdate      | integer                     | Date de révision.                                                                                |
-| revision     | integer                     | Numéro d'ordre du document dans sa lignée documentaire                                           |
-| state        | character varying(64)       | Étape du document                                                                                |
-| svalues      | text                        | Liste des valeurs d'[attributs recherchables][attropt] y compris les textes des fichiers indexés |
-| title        | character varying(256)      | Titre du document.                                                                               |
-| usefor       | text                        | Type d'utilisation du document                                                                   |
-| values       | text                        | Liste de l'ensemble des valeurs non nulles en corrélation avec _attrids_                         |
-| version      | text                        | Libellé de la version : il est vide par défaut                                                   |
-| views        | integer[]                   | Liste des [identifiants de compte][dbuser] qui ont accès au document                             |
-| wid          | integer                     | Identifiant du [document *cycle de vie*][WF_document] associé à ce document.                     |
+|   Colonne    |             Type            |                                            Définition                                             |
+| ------------ | --------------------------- | ------------------------------------------------------------------------------------------------- |
+| adate        | timestamp without time zone | Date de dernier accès au document.                                                                |
+| allocated    | integer                     | Identifiant système de l'utilisateur auquel le document est affecté.                              |
+| archiveid    | integer                     | Id de l'archive dans laquelle est contenu ce document.                                            |
+| atags        | text                        | Balises applicatives.                                                                             |
+| attrids      | text                        | Liste de l'ensemble des attributs ayant une valeur non nulle (calculé par trigger).               |
+| cdate        | timestamp without time zone | Date de création de la révision.                                                                  |
+| classname    | character varying(64)       | Nom de la classe PHP associée au document (utilisé dans la table `docfam` uniquement).            |
+| comment      | text                        | *Obsolète*                                                                                        |
+| confidential | integer                     | Indique si le document est confidentiel (>0).                                                     |
+| cvid         | integer                     | Identifiant du document [contrôle de vue][CVDoc] associé à ce document.                           |
+| doctype      | character(1)                | Type de document.                                                                                 |
+| domainid     | text                        | *pour application offline*                                                                        |
+| dprofid      | integer                     | Identifiant du [profil dynamique][docprofdyn] associé à ce document.                              |
+| forumid      | integer                     | *Obsolète*                                                                                        |
+| fromid       | integer                     | Id de la famille d'appartenance.                                                                  |
+| fulltext     | tsvector                    | Ensemble des valeurs du document y compris les textes des fichiers indexés.                       |
+| id           | integer                     | Identifiant unique du document (issue de la séquence `seq_id_doc`).                               |
+| icon         | character varying(256)      | Référence au fichier d'icone du document.                                                         |
+| initid       | integer                     | Id du premier document de la lignée documentaire.                                                 |
+| ldapdn       | text                        | *Obsolète*                                                                                        |
+| lmodify      | character(1)                | Tag de modification.                                                                              |
+| lockdomainid | integer                     | *Pour application offline*                                                                        |
+| locked       | integer                     | Indique l'identifiant système de l'utilisateur qui a verrouillé le document.                      |
+| name         | text                        | Nom logique du document.                                                                          |
+| owner        | integer                     | Identifiant système de l'utilisateur ayant créé le document.                                      |
+| postitid     | text                        | Identifiant du document post-it associé.                                                          |
+| prelid       | integer                     | Identifiant du document (dossier) de relation primaire.                                           |
+| profid       | integer                     | Identifiant du [profil de document][docprof].                                                     |
+| revdate      | integer                     | Date de révision.                                                                                 |
+| revision     | integer                     | Numéro d'ordre du document dans sa lignée documentaire.                                           |
+| state        | character varying(64)       | Étape du document.                                                                                |
+| svalues      | text                        | Liste des valeurs d'[attributs recherchables][attropt] y compris les textes des fichiers indexés. |
+| title        | character varying(256)      | Titre du document.                                                                                |
+| usefor       | text                        | Type d'utilisation du document.                                                                   |
+| values       | text                        | Liste de l'ensemble des valeurs non nulles en corrélation avec _attrids_.                         |
+| version      | text                        | Libellé de la version : il est vide par défaut.                                                   |
+| views        | integer[]                   | Liste des [identifiants de compte][dbuser] qui ont accès au document.                             |
+| wid          | integer                     | Identifiant du [document *cycle de vie*][WF_document] associé à ce document.                      |
 
 
 ## Les tables des documents {#core-ref:0c6cc474-d5e9-4ee0-aeed-1aa00100d7df}
@@ -64,14 +64,14 @@ Exemple :
 ![ Héritage des tables de documents ](advanced/dbinherit.png)
 
 Les tables de documents sont créées avec le schéma _public_. Pour chacune des
-familles une vue créée avec le nom logique de la famille est crée en même temps
+familles, une vue est créée avec le nom logique de la famille en même temps
 que la table réelle. Toutes les vues de documents sont créées sous le schéma
 _family_.
 
     [sql]
-    select * from public.doc1098;
+    SELECT * FROM public.doc1098;
     -- equivalent à
-    select * from family.myfamily;
+    SELECT * FROM family.myfamily;
 
 **Important** : Ces vues ne sont utilisables qu'en lecture seule. À partir de 
 postgresql 9.3, ces vues sont utilisables en mise à jour.
@@ -81,12 +81,12 @@ Note : Les noms des tables en postgresql ne sont pas sensibles à la casse.
 La table `doc` propre ne comprend aucune données.
 
     [sql]
-    db# select count(id) from only doc ;-- aucun document
+    db# SELECT count(id) FROM ONLY doc ; -- aucun document
      count 
     -------
          0
          
-    db=# select count(id) from doc ; -- tout les documents
+    db=# SELECT count(id) FROM doc ; -- tout les documents
      count 
     -------
      15008
@@ -98,27 +98,29 @@ sont les identifiants des attributs. Le type de ces colonnes est fonction du
 [type d'attribut][docattr]. Le type correspondant en base est indiqué dans
 chacun des chapitres décrivant les attributs.
 
+Pour plus de détails sur le mécanisme d'héritage de PostgreSQL :
 
+- [PostgreSQL: Documentation: 9.1: Inheritance][tutorial-inheritance]
 
 ## Table de recherche générale {#core-ref:378a7ed5-2703-4167-a980-c84bc29f8c56}
 
-La table `docread` a les mêmes colonnes que la table `doc` mais elle n'en hérite
-pas. Cette table contient une réplications de l'ensemble des documents qui sont
-disséminés dans l'ensemble des tables `doc<famid>`.
+La table `docread` a les mêmes colonnes que la table `doc` mais elle n'en
+hérite pas. Cette table contient une réplication de l'ensemble des documents
+qui sont disséminés dans l'ensemble des tables `doc<famid>`.
 
-Cette table répliquée a ces propres index globaux qui permets dans le cas d'une
-recherche globale, c'est à dire non liée à une famille particulière, d'être plus
-optimisée pour donner une réponse rapide.
+Cette table répliquée a ses propres index globaux et permet dans le cas d'une
+recherche globale, c'est à dire non liée à une famille particulière, d'être
+plus rapide.
 
     [sql]
-    db=# select id, title from doc where id=1098;
+    db=# SELECT id, title FROM doc WHERE id = 1098;
       id  |           title           
     ------+---------------------------
      1098 | lecteur de Premier espace
     (1 ligne)
     Temps : 24,690 ms
     
-    db=# select id, title from docread where id=1098;
+    db=# SELECT id, title FROM docread WHERE id = 1098;
       id  |           title           
     ------+---------------------------
      1098 | lecteur de Premier espace
@@ -126,14 +128,15 @@ optimisée pour donner une réponse rapide.
     Temps : 1,037 ms
 
 
-Cette table doit être utilisée en lecture seule. Seules les tables `doc<famid>`
-peuvent être utilisée pour la modification.
+Cette table est maintenue synchronisée avec le contenu des tables `doc<famid>`
+par des triggers, et ne doit donc être utilisée qu'en lecture seule. Seules
+les tables `doc<famid>` peuvent être utilisées en modification.
 
 ## Indexation des fichiers {#core-ref:354273d6-7fab-4096-8f22-6dc3e540ee65}
 
-Si le [moteur de transformation][te] est opérationnel, les contenus des fichiers
-peuvent être indexés. Un attribut fichier produit trois colonnes dans la table
-associées à sa famille.
+Si le [moteur de transformation][te] est opérationnel, les contenus des
+fichiers peuvent être indexés. Un attribut fichier produit trois colonnes dans
+la table associée à sa famille.
 
 1.  colonne `<attrid>`
 :   Contient la référence au fichier : `<vaultId>|<mimeType>|<fileName>`.
@@ -156,12 +159,11 @@ contenus des colonnes `_txt` des attributs fichiers. Cette colonne est utilisée
 pour les [recherches générales][globsearch] utilisant des expressions (partie de
 mot).
 
-
 La colonne `fulltext` contient la version vectorisée de `svalues`.
 Cette colonne est utilisée pour les recherches globales de mot entier.
 
 Ces deux colonnes sont calculées par trigger. Toutes modifications
-d'enregistrement sur les tables documentaires déclenchent le recalcul de ces
+d'enregistrements sur les tables documentaires déclenchent le recalcul de ces
 colonnes.
 
 <!-- links -->
@@ -180,3 +182,4 @@ colonnes.
 [te]:               https://docs.anakeen.com/dynacase/3.2/dynacase-doc-tengine-installation-operating/website/book/index.html "Manuel d'installation"
 [globsearch]:       #core-ref:19b9f4b4-c960-46eb-b4e0-805ed76be3a6
 [dbuser]:           #core-ref:6d5684f4-73e8-431c-8b2b-6224a9e6b074 "table users"
+[tutorial-inheritance]: http://www.postgresql.org/docs/9.1/static/tutorial-inheritance.html
