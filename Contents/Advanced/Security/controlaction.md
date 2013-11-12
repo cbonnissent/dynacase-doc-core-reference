@@ -1,4 +1,15 @@
+# Vérification des privilèges pour exécuter une action {#core-ref:05b2e2be-1e43-4529-addd-93dcd89a7c1a}
 
+L'exécution d'une [action][action] est contrôlé par les [acl][actionacl].
+
+L'attribution d'un privilège est fait en fonction des rôles et des groupes
+d'appartenance de l'utilisateur suivant les [règles de propagation][profilrules]
+des droits. 
+
+Le graphique suivant précise la partie vérification des privilèges du chapitre
+[exécution de la requête][execreq].
+
+![Contrôle de l'exécution d'une action](advanced/controlaction.png)
 
 <!-- links -->
 [profilrules]:  #core-ref:fc37efd3-6254-4bc8-8f8d-7f867c852b67 "Propagation de profilage"

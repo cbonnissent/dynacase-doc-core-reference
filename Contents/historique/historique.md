@@ -15,9 +15,10 @@ L'édition 4 de la documentation a modifié les points suivants.
 | Ajout graphe d'accès                            | [Cinématique de dynacase][cinematique]          | <span class="flag new">New</span>                                                           | 05/11/13 |
 | Description des principales tables              | [La base de données][database]                  | <span class="flag new">New</span><span class="flag draft">Draft</span>                      | 05/11/13 |
 | Famille processus                               | [Famille processus][processus]                  | <span class="flag new">New</span>                                                           | 06/11/13 |
-| Ajout chapitres Dbobj, QueryDb, Transaction     | [Mécanismes de persistance][histo]              | <span class="flag new">New</span><span class="flag draft">Draft</span>                      | 06/11/13 |
+| Ajout chapitres Dbobj, QueryDb, Transaction     | [Mécanismes de persistance][histo]              | <span class="flag new">New</span>                                                           | 06/11/13 |
 | Ajout chapitre compte                           | [Manipulation des comptes utilisateur][account] | <span class="flag new">New</span><span class="flag draft">Draft</span>                      | 06/11/13 |
 | Ajout chapitre migration                        | [Migration des applications][migration]         | <span class="flag new">New</span><span class="flag draft">Draft</span>                      | 08/11/13 |
+| Ajout chapitre contrôle d'accès                 | [Contrôle des accès][accesscontrol]             | <span class="flag new">New</span><span class="flag draft">Draft</span>                      | 12/11/13 |
 
 
 <!-- link -->
@@ -30,3 +31,4 @@ L'édition 4 de la documentation a modifié les points suivants.
 [i18n]:         #core-ref:8f3ad20a-4630-4e86-937b-da3fa26ba423
 [processus]:    #core-ref:4a65995d-a61d-4325-89e2-1a9ce15f76e8
 [migration]:    #core-ref:d2bd57f9-7b5a-46b0-8570-6b5b0710d7c3
+[accesscontrol]:    #core-ref:8d73fa24-b721-4a16-a34b-846004e3e9ca

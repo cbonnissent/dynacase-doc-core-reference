@@ -1,4 +1,17 @@
+# Vérification des droits pour télécharger un fichier d'un document {#core-ref:f9316b0e-3404-4521-8850-d9d2a9f85357}
 
+L'accès au téléchargement d'un fichier se fait avec l'action
+[`FDL:EXPORTFILE`][exportfile].
+
+Le [fichier physique enregistré][dbvault] dans le coffre n'est pas accessible
+directement. L'accès aux répertoires des coffres est contrôlé par le serveur web
+qui interdit leur accès (fichier `.htaccess`).
+
+Certains fichiers peuvent être en accès libre. Cela concerne notamment les
+icônes personnalisées des familles, dossiers et recherches.
+
+
+![Contrôle du téléchargement d'un fichier](advanced/controldownloadfile.png)
 
 <!-- links -->
 [profilrules]:  #core-ref:fc37efd3-6254-4bc8-8f8d-7f867c852b67 "Propagation de profilage"

@@ -1,4 +1,17 @@
+# Vérification des droits pour accéder à un document {#core-ref:5f7ae923-fff6-405d-a394-d1ad828ced9e}
 
+La consultation des documents est contrôlée par les [profils de
+documents][acldoc].
+
+Le contrôle d'accès au document est fait par les interfaces de haut-niveau. La
+[classe Doc][classdoc] et notamment la fonction `new_Doc()` ne vérifie pas les
+accès. Ces vérifications doivent être fait par les actions avec la
+méthode [`Doc::control()`][docctrl].
+
+Le schéma suivant décrit les contrôles de l'action [FDL:OPENDOC][opendoc] et
+précise la cinématique de l'[accès à un document][viewdocreq].
+
+![Contrôle de l'affichage d'un document](advanced/controlviewdoc.png)
 
 <!-- links -->
 [profilrules]:  #core-ref:fc37efd3-6254-4bc8-8f8d-7f867c852b67 "Propagation de profilage"
