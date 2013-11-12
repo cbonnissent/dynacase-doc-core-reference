@@ -13,10 +13,10 @@ L'édition 4 de la documentation a modifié les points suivants.
 | Description de la mise en place des traductions | [Internationalisation][i18n]                    | <span class="flag new">New</span><span class="flag next-release">Next release 3.2.12</span> | 30/10/13 |
 | Ajout chapitres sur les templates               | [Usage avancée des templates][advtemplate]      | <span class="flag new">New</span>                                                           | 04/11/13 |
 | Ajout graphe d'accès                            | [Cinématique de dynacase][cinematique]          | <span class="flag new">New</span>                                                           | 05/11/13 |
-| Description des principales tables              | [La base de données][database]                  | <span class="flag new">New</span><span class="flag draft">Draft</span>                      | 05/11/13 |
+| Description des principales tables              | [La base de données][database]                  | <span class="flag new">New</span>                                                           | 05/11/13 |
 | Famille processus                               | [Famille processus][processus]                  | <span class="flag new">New</span>                                                           | 06/11/13 |
 | Ajout chapitres Dbobj, QueryDb, Transaction     | [Mécanismes de persistance][histo]              | <span class="flag new">New</span>                                                           | 06/11/13 |
-| Ajout chapitre compte                           | [Manipulation des comptes utilisateur][account] | <span class="flag new">New</span><span class="flag draft">Draft</span>                      | 06/11/13 |
+| Ajout chapitre compte                           | [Manipulation des comptes utilisateur][account] | <span class="flag new">New</span>                                                           | 06/11/13 |
 | Ajout chapitre migration                        | [Migration des applications][migration]         | <span class="flag new">New</span><span class="flag draft">Draft</span>                      | 08/11/13 |
 | Ajout chapitre contrôle d'accès                 | [Contrôle des accès][accesscontrol]             | <span class="flag new">New</span><span class="flag draft">Draft</span>                      | 12/11/13 |
 
