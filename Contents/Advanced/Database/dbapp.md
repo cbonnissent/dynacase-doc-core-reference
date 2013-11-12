@@ -16,7 +16,7 @@ description de l'[application][app].
 | description | text         | Description longue                                                          |
 | access_free | character(1) | *Obsolète* Non utilisé                                                      |
 | available   | character(1) | Valeurs possibles : `Y` (pour disponible) ou `N` (non disponible)           |
-| icon        | text         | Nom du fichier icone de l'application                                       |
+| icon        | text         | Nom du fichier icône de l'application                                       |
 | displayable | character(1) | Valeurs possibles : `Y` (pour affichable) ou `N` (non affichable)           |
 | with_frame  | character(1) | *Obsolète* Non utilisé                                                      |
 | childof     | text         | Nom de l'application parente - Vide si pas de parent                        |
@@ -49,7 +49,7 @@ dans le fichier de description de l'[application][app].
 | grant_level    | integer      | *Obsolète* Non utilisé                                                                                                          |
 | openaccess     | character(1) | Valeurs possibles : `Y` (pour utilisation possible en [authentification par jetons][openaccess]) ou `N` (dans le cas contraire) |
 | root           | character(1) | Valeurs possibles : `Y` (action principale) ou `N` (action non principale)                                                      |
-| icon           | text         | Icone de l'action                                                                                                               |
+| icon           | text         | Icône de l'action                                                                                                               |
 | toc            | character(1) | *Obsolète* Non utilisé                                                                                                          |
 | father         | integer      | *Obsolète* Non utilisé                                                                                                          |
 | toc_order      | integer      | *Obsolète* Non utilisé                                                                                                          |

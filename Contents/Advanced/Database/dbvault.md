@@ -1,38 +1,44 @@
-# Description des tables du coffre de fichiers
+# Description des tables du coffre de fichiers {#core-ref:7c41b8d8-5ace-489c-886f-a6500c717423}
 
-Ce chapitre définit les tables qui gères l'accès aux fichiers attachés aux
+Ce chapitre définit les tables qui gèrent l'accès aux fichiers attachés aux
 documents.
 
-## Table `vaultdiskfsstorage`
+## Table `vaultdiskfsstorage` {#core-ref:15a90310-631d-4c9f-9b27-a505b24bfe94}
 
 La table `vaultdiskfsstorage` indique les différents coffres enregistrés.
 
 
-|      Colonne       |           Type          |                                 Définition                                |
-| ------------------ | ----------------------- | ------------------------------------------------------------------------- |
-| id_fs              | integer                 | Identifiant de coffre (issue de la séquence `seq_id_vaultdiskfsstorage`)  |
-| fsname             | text                    | Nom du coffre                                                             |
-| max_size           | bigint                  | Taille max de contenu du coffre (en octets)                               |
-| free_size          | bigint                  | Taille restante en octets (calculé en fonction de la taille des fichiers) |
-| subdir_cnt_bydir   | integer                 | *Obsolète* Non utilisé                                                    |
-| subdir_deep        | integer                 | *Obsolète* Non utilisé                                                    |
-| max_entries_by_dir | integer                 | *Obsolète* Non utilisé                                                    |
-| r_path             | character varying(2048) | Chemin absolu d'accès au coffre                                           |
+|      Colonne       |           Type          |                                 Définition                                  |
+| ------------------ | ----------------------- | --------------------------------------------------------------------------- |
+| id_fs              | integer                 | Identifiant de coffre (issue de la séquence `seq_id_vaultdiskfsstorage`)    |
+| fsname             | text                    | Nom du coffre                                                               |
+| max_size           | bigint                  | Capacité maximum du coffre (en octets)                                      |
+| free_size          | bigint                  | Capacité restante en octets (calculé en fonction de la taille des fichiers) |
+| subdir_cnt_bydir   | integer                 | *Obsolète* Non utilisé                                                      |
+| subdir_deep        | integer                 | *Obsolète* Non utilisé                                                      |
+| max_entries_by_dir | integer                 | *Obsolète* Non utilisé                                                      |
+| r_path             | character varying(2048) | Chemin absolu d'accès au coffre                                             |
 
 Le répertoire `r_path` doit être accessible en lecture/écriture à l'utilisateur
 du serveur web.
 
-## Table `vaultdiskdirstorage`
+## Table `vaultdiskdirstorage` {#core-ref:88e4d061-5812-4cec-8e30-cd0b3ea1c8cd}
 
 La table `vaultdiskdirstorage` indique les différents répertoires utilisés par
-les coffres. Un nouveau répertoire est créé automatiquement si tous les
-répertoires sont pleins (`free_size` &lt; _"Taille du fichier à insérer"_).
+les coffres.
 
-Lors de l'ajout d'un répertoire, le nombre de fichiers autorisés est donné par
-`free_entries`. Il est de 1000, ce paramètre n'est pas configurable.
+Chaque répertoire peut contenir jusqu'à 1000 fichiers.
 
-Un répertoire ne peut avoir que 100 sous-répertoires. Si tous les répertoires
-d'un même niveau sont pleins un nouveau répertoire de niveau inférieur est créé.
+À chaque ajout d'un fichier dans un répertoire, son `free_entries` est
+décrémenté de 1.
+
+Lorsque le `free_entries` d'un répertoire arrive à 0, alors un nouveau
+répertoire est créé, et sa capacité nominale (`free_entries`) repart à
+1000.
+
+Chaque répertoire ne peut avoir que 100 sous-répertoires. Lorsque tous les
+répertoires d'un même niveau sont pleins, alors un nouveau répertoire de
+niveau inférieur est créé.
 
 
 |   Colonne    |           Type          |                                    Définition                                   |
@@ -40,16 +46,17 @@ d'un même niveau sont pleins un nouveau répertoire de niveau inférieur est cr
 | id_dir       | integer                 | Identificateur de répertoire (issue de la séquence `seq_id_vaultdiskdirstorage) |
 | id_fs        | integer                 | Identificateur du coffre lié au répertoire                                      |
 | free_entries | integer                 | Nombre d'entrée libre (1000 à l'initialisation)                                 |
-| l_path       | character varying(2048) | Chemin relatif à `r_path` du répertoire                                         |
+| l_path       | character varying(2048) | Chemin du répertoire relatif à `r_path`                                         |
 
 
 
-## Table `vaultdiskstorage`
+## Table `vaultdiskstorage` {#core-ref:4e91a88e-66a3-46e7-824d-d11adb0c39fe}
 
 La table `vaultdiskstorage` stocke les chemins d'accès et les propriétés des
-fichiers du coffres.
+fichiers du coffre.
 
-Les fichiers physiques sont nommés '[id_file].[extension du name]'.
+Les fichiers physiques sont nommés `<id_file>.<extension>`.
+
 Si _id_file=342_ et _name='mon test.pdf'_ alors le nom physique est `342.pdf`.
 
 Le fichier est placé dans le répertoire `r_path/l_path`. `r_path` provient du
@@ -63,8 +70,8 @@ coffre lié (`id_fs`) et `l_path` provient du répertoire lié (`id_dir`).
 | public_access | boolean                     | Si vrai, l'[accès au fichier][expfile] est possible sans contrôle du droit d'accès au document |
 | size          | integer                     | Taille du fichier (en octets)                                                                 |
 | name          | character varying(2048)     | Nom du fichier original (basename)                                                            |
-| mime_t        | text                        | Type mime (humainement lisible)                                                               |
-| mime_s        | text                        | Type mime système                                                                             |
+| mime_t        | text                        | Type mime (humainement lisible, e.g. `PDF document, version 1.4`)                             |
+| mime_s        | text                        | Type mime système (e.g. `application/pdf`)                                                    |
 | cdate         | timestamp without time zone | Date d'insertion dans le coffre                                                               |
 | mdate         | timestamp without time zone | Date de modification dans le coffre                                                           |
 | adate         | timestamp without time zone | Date de dernier accès depuis le coffre                                                        |
@@ -74,7 +81,7 @@ coffre lié (`id_fs`) et `l_path` provient du répertoire lié (`id_dir`).
 | teng_comment  | text                        | Message de conversion                                                                         |
 
 Les attributs de document de type [`file`][attrfile] et [`image`][attrimg]
-référence l'identifiant du fichier. La valeur d'un tel attribut dans un
+référencent l'identifiant du fichier. La valeur d'un tel attribut dans un
 document est : `<Type Mime>|<Identifiant Fichier>|<Nom du fichier>`.
 
 L'_identifiant fichier_ référence la colonne `id_file` de la table

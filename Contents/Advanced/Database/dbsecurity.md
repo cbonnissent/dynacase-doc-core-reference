@@ -48,29 +48,29 @@ Cette table ne permet pas de savoir directement si un utilisateur a tel ou tel
 droit sur un document car il faut aussi corréler le résultat au groupe
 d'appartenance et aux rôles affectés à l'utilisateur.
 
-Pour connaître l'ensemble des document que l'utilisateur 'john.doe' peut voir,
+Pour connaître l'ensemble des documents que l'utilisateur 'john.doe' peut voir,
 il est possible d'utiliser la colonne `views` de la table [`doc`][dbdoc] ou
 [`docread`][docread].
 
     [sql]
     SELECT docread.id, docread.title, users.memberof  
-    from docread, users 
-    where docread.views && (users.memberof || '{0}'::int[] ) 
-      and users.login='john.doe';
+    FROM docread, users 
+    WHERE docread.views && ( users.memberof || '{0}'::int[] ) 
+      AND users.login = 'john.doe';
 
 Note : L'ajout du zéro dans la liste permet à la condition de récupérer aussi
 les documents sans profil. Les documents sans profil ont `{0}` dans la colonne
 `views`.
 
-Pour connaître l'ensemble des document que l'utilisateur 'john.doe' peut
+Pour connaître l'ensemble des documents que l'utilisateur 'john.doe' peut
 modifier, il faut s'appuyer sur le contrôle du droit `edit` (position 2, masque 0x04) et
 utiliser la fonction `hasaprivilege(userMemberOf, Profid, AccessBinaryMask)`.
 
     [sql]
     SELECT docread.id, docread.title, profid  
-    from docread, users 
-    where hasaprivilege(users.memberof, docread.profid, 2<<1) 
-      and users.login='john.doe' ;
+    FROM docread, users 
+    WHERE hasaprivilege(users.memberof, docread.profid, 2<<1) 
+      AND users.login = 'john.doe' ;
 
 
 
@@ -89,7 +89,7 @@ Composition de la table `docpermext` :
 
 | Colonne |   Type  |                                          Définition                                          |
 | ------- | ------- | -------------------------------------------------------------------------------------------- |
-| docid   | integer | Identifiant du profil (document cycle ou contrôle de vue)                                                                       |
+| docid   | integer | Identifiant du profil (document cycle ou contrôle de vue)                                    |
 | userid  | integer | Identifiant du compte (utilisateur, groupe ou rôle) ou attribut de document (table `vgroup`) |
 | acl     | text    | Nom du droit                                                                                 |
 
@@ -106,10 +106,10 @@ Composition de la table `permission` :
 | id_user        | integer | Identifiant du compte (utilisateur, groupe ou rôle) (table `users`) |
 | id_application | integer | Identifiant de l'application (table `application`)                  |
 | id_acl         | integer | Identifiant de l'acl applicative (table `acl`)                      |
-| computed       | boolean | Cache Valeur calculé - vrai si c'est un droit déduit                |
+| computed       | boolean | Cache valeur calculée - vrai si c'est un droit déduit               |
 
-Des droits calculés (`computed=true`) sont enregistrés pour accélérer le calcul
-du droit lors des prochaines requêtes. 
+Des droits calculés (`computed=true`) sont enregistrés pour accélérer le
+calcul du droit lors des prochaines requêtes.
 
 ## Table `acl` {#core-ref:c7caa985-3b34-4abd-8ffa-2e7110718efc}
 
