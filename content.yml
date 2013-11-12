@@ -1276,52 +1276,42 @@ book:
       subtoc:   2
       flags:
         new: "new"
-        draft : "draft"
     - level:   3
       content:  "Advanced/Database/dbdoc.md"
       flags:
         new: "new"
-        draft : "draft"
     - level:   3
       content:  "Advanced/Database/dbdocfam.md"
       flags:
         new: "new"
-        draft : "draft"
     - level:   3
       content:  "Advanced/Database/dbattr.md"
       flags:
         new: "new"
-        draft : "draft"
     - level:   3
       content:  "Advanced/Database/dbaccount.md"
       flags:
         new: "new"
-        draft : "draft"
     - level:   3
       content:  "Advanced/Database/dbsecurity.md"
       flags:
         new: "new"
-        draft : "draft"
     - level:   3
       content:  "Advanced/Database/dbhistory.md"
       flags:
         new: "new"
-        draft : "draft"
     - level:   3
       content:  "Advanced/Database/dbvault.md"
       flags:
         new: "new"
-        draft : "draft"
     - level:   3
       content:  "Advanced/Database/dbapp.md"
       flags:
         new: "new"
-        draft : "draft"
     - level:   3
       content:  "Advanced/Database/dbparam.md"
       flags:
         new: "new"
-        draft : "draft"
     - level:   2
       content:  "Advanced/Persistance/introduction.md"
       subtoc:   2

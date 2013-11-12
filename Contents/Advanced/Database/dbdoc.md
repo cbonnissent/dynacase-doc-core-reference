@@ -86,7 +86,7 @@ La table `doc` propre ne comprend aucune données.
     -------
          0
          
-    db=# SELECT count(id) FROM doc ; -- tout les documents
+    db=# SELECT count(id) FROM doc ; -- tous les documents
      count 
     -------
      15008

@@ -1,10 +1,10 @@
 # Manipulation des comptes utilisateur {#core-ref:68c93fb2-088c-435a-b4ac-e1b94095d0c9}
 
-Ce chapitre a pour but de montrer par l'utilisation des méthodes et fonctions
-les plus courantes pour manipuler les utilisateurs "classique".
+Ce chapitre a pour but de montrer, par l'utilisation des méthodes et fonctions
+les plus courantes, la manipulation des utilisateurs "interne".
 
 Ce chapitre ne décrit pas la manipulation des utilisateurs réseaux disponibles
-avec le module "networkuser".
+avec le module "dynacase-networkuser".
 
 ## Création d'un utilisateur
 
