@@ -11,7 +11,7 @@ spécifiée.
 *   Valeur initiale : (vide)
 *   Utilisateur : Non
 
-## Valeur {#core-ref:571d8190-50eb-403c-a3aa-599e4c75ac70}
+## Valeur {#core-ref:0bc2c6db-7e7f-4c7e-a761-324d73bb9ebb}
 
 La valeur est une adresse mail valide (e.g. `jsmith@example.org`).
 
