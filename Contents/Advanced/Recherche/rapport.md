@@ -68,4 +68,4 @@ documents.
 [searchdoc]:        #core-ref:a5216d5c-4e0f-4e3c-9553-7cbfda6b3255
 [dsearch]:          #core-ref:7c36fc88-d5bc-4e0c-8cbf-092916168575 "Création d'une recherche détaillée"
 [attdocid]:         #core-ref:d461d5f5-b635-47a0-944d-473c227587ab
-[attaccount]:       #core-ref:87230967-8155-421c-8bbe-70a3c1adc3c0}
+[attaccount]:       #core-ref:87230967-8155-421c-8bbe-70a3c1adc3c0

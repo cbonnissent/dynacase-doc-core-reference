@@ -172,4 +172,4 @@ Si la commande est :
 :   supprime les paramètres de l'application ainsi que l'application elle-même.
 
 <!-- links -->
-[migration_scripts]: #core-ref:4ccad856-cc9e-471a-9669-d3d4cc65059f
+[migration_scripts]: #core-ref:d2bd57f9-7b5a-46b0-8570-6b5b0710d7c3
