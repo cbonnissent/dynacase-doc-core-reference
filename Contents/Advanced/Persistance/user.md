@@ -1,6 +1,5 @@
 # Manipulation des comptes utilisateur {#core-ref:68c93fb2-088c-435a-b4ac-e1b94095d0c9}
 
-
 Ce chapitre a pour but de montrer par l'utilisation des méthodes et fonctions
 les plus courantes pour manipuler les utilisateurs "classique".
 
@@ -24,16 +23,16 @@ Code minimaliste pour créer un utilisateur via les documents.
 
     [php]
     include_once("FDL/Class.Doc.php");
-    $du=createDoc("",`IUSER`);
-    if ($du) {
-        $du->setValue("us_login","jean.martin");
-        $du->setValue("us_lname","martin");
-        $du->setValue("us_fname","jean");
-        $du->setValue("us_passwd1","secret");
-        $du->setValue("us_passwd2","secret"); // nécessaire de doubler à cause des contraintes
-        $err=$du->store();
+    $iUser=createDoc("",'IUSER');
+    if ($iUser) {
+        $iUser->setValue("us_login","jean.martin");
+        $iUser->setValue("us_lname","martin");
+        $iUser->setValue("us_fname","jean");
+        $iUser->setValue("us_passwd1","secret");
+        $iUser->setValue("us_passwd2","secret"); // nécessaire de doubler à cause des contraintes
+        $err=$iUser->store();
         if (!$err) {
-          print "nouvel utilisateur n°".$du->getValue("us_whatid"); // affichage de l'identifiant système          
+          print "nouvel utilisateur n°".$iUser->getValue("us_whatid"); // affichage de l'identifiant système
         } else {
           print "\nerreur:$err";
         }
@@ -54,20 +53,20 @@ Si vous ne disposez que de l'identifiant documentaire vous pouvez aussi utiliser
 la méthode setFid de la classe Account:
 
     [php]
-    $u=new Account();
-    $u->setFid($docUserId);
-    if ($u->isAffected()) {
-       print $u->login;
+    $user=new Account();
+    $user->setFid($docUserId);
+    if ($user->isAffected()) {
+       print $user->login;
     }
 
 A l'inverse pour récupérer l'objet documentaire à partir du compte système, vous
 pouvez utiliser l'attribut "fid".
 
     [php]
-    $u=new Account();
-    $u->setLoginName("john.doe");
-    if ($u->isAffected()) {
-      $doc=new_doc("", $u->fid);
+    $user=new Account();
+    $user->setLoginName("john.doe");
+    if ($user->isAffected()) {
+      $doc=new_doc("", $user->fid);
     }
 
 Attributs de correspondance : Compte User &hArr; Document IUSER
@@ -85,16 +84,16 @@ Attributs de correspondance : Compte User &hArr; Document IUSER
 Exemple de création d'utilisateur via la classe `Account`
 
     [php]
-    $u=new Account();
-    $u->login='jean.dupond';
-    $u->firstname='Jean';
-    $u->lastname='Dupond';
-    $u->password_new='secret';
-    $err=$u->add();
+    $user=new Account();
+    $user->login='jean.dupond';
+    $user->firstname='Jean';
+    $user->lastname='Dupond';
+    $user->password_new='secret';
+    $err=$user->add();
     if ($err) {
       error_log($err);
     } else {
-      print "Nouvel utilisateur n°".$u->id;
+      print "Nouvel utilisateur n°".$user->id;
     }
 
 ## Groupe d'utilisateurs 
@@ -129,22 +128,22 @@ Ajout de l'utilisateur n°1009 dans le groupe GDEFAULT :
     [php]
     include_once("FDL/Class.Doc.php");
      
-    $dbaccess=getDbAccess();
+    $dbaccess = getDbAccess();
      
-    $g=new_Doc($dbaccess,"GDEFAULT");
-    $u=new_Doc($dbaccess,1009); // 1009 est la référence documentaire de l'utilisateur
+    $group = new_Doc($dbaccess,"GDEFAULT");
+    $user = new_Doc($dbaccess,1009); // 1009 est la référence documentaire de l'utilisateur
      
     printf("ajout de l'utilisateur %s [%d] au groupe %s [%d]\n",
-           $u->getTitle(),$u->id,$g->getTitle(),$g->id);
+           $user->getTitle(),$user->id,$group->getTitle(),$group->id);
      
     printf("liste des groupes avant\n");
-    print_r($u->getTValue("us_idgroup"));
+    print_r($user->getTValue("us_idgroup"));
      
-    $err=$g->addFile($u->initid);
+    $err=$group->addFile($user->initid);
     print "Error:$err\n";
      
     printf("liste des groupes apres\n");
-    print_r($u->getTValue("us_idgroup"));
+    print_r($user->getTValue("us_idgroup"));
 
 ### Suppression d'utilisateur dans un groupe
 
@@ -155,20 +154,20 @@ Utilisation de `_IGROUP::DelFile()`.
      
     $dbaccess=getDbAccess();
      
-    $g=new_Doc($dbaccess,"GDEFAULT");
-    $u=new_Doc($dbaccess,1009);
+    $group=new_Doc($dbaccess,"GDEFAULT");
+    $user=new_Doc($dbaccess,1009);
      
     printf("suppression de l'utilisateur %s [%d] du groupe %s [%d]\n",
-           $u->getTitle(),$u->id,$g->getTitle(),$g->id);
+           $user->getTitle(),$user->id,$group->getTitle(),$group->id);
     
     printf("liste des groupes avant\n");
-    print_r($u->getTValue("us_idgroup"));
+    print_r($user->getTValue("us_idgroup"));
      
-    $err=$g->delFile($u->initid);
+    $err=$group->delFile($user->initid);
     print "Error:$err\n";
      
     printf("liste des groupes apres\n");
-    print_r($u->getTValue("us_idgroup"));
+    print_r($user->getTValue("us_idgroup"));
 
 ### Récupération des membres d'un groupe
 
@@ -187,9 +186,9 @@ Exemple d'utilisation :
     }
     print "---\n";
     // recherche des documents `IUSER` correspondants
-    $dl=new DocumentList();
-    $dl->addDocumentIdentificators($userDocIdList);
-    foreach ($dl as $docid=>$docIUser) {
+    $documentList=new DocumentList();
+    $documentList->addDocumentIdentificators($userDocIdList);
+    foreach ($documentList as $docid=>$docIUser) {
         printf("%s)%s\n", $docIUser->id,  $docIUser->getTitle());
     }
 
@@ -210,9 +209,9 @@ Exemple d'utilisation :
     }
     print "---\n";
     // recherche des documents `IUSER` correspondants
-    $dl=new DocumentList();
-    $dl->addDocumentIdentificators($userDocIdList);
-    foreach ($dl as $docid=>$docIUser) {
+    $documentList=new DocumentList();
+    $documentList->addDocumentIdentificators($userDocIdList);
+    foreach ($documentList as $docid=>$docIUser) {
       printf("%s)%s\n", $docIUser->id,  $docIUser->getTitle());
     }
 
@@ -223,10 +222,10 @@ Exemple d'utilisation :
 Exemple d'utilisation :
 
     [php]
-    $u=new Account('');
-    $u->setLoginName('john.doe');
-    if ($u->isAffected()) {
-      $roles=$u->getAllRoles();
+    $user=new Account('');
+    $user->setLoginName('john.doe');
+    if ($user->isAffected()) {
+      $roles=$user->getAllRoles();
       foreach ($roles as $aRole) {
         printf("%d)%s\n", $aRole["id"],$aRole["login"]); 
       }
@@ -237,20 +236,20 @@ Exemple d'utilisation :
 Affectation d'un suppléant à un utilisateur et récupérations des titulaires.
 
     [php]
-    $u=new Account(); 
-    $u->setLoginName("j1"); 
-    if ($u->isAffected()) { 
-      $err=$u->setSubstitute("j2"); // J1 est le titulaire de J2 
+    $user=new Account(); 
+    $user->setLoginName("j1"); 
+    if ($user->isAffected()) { 
+      $err=$user->setSubstitute("j2"); // J1 est le titulaire de J2 
                                     //(J2 est suppléant de J1) 
     } 
-    $u->setLoginName("j3"); 
-    if ($u->isAffected()) { 
-      $err=$u->setSubstitute("j2");// J3 est le titulaire de J2 
+    $user->setLoginName("j3"); 
+    if ($user->isAffected()) { 
+      $err=$user->setSubstitute("j2");// J3 est le titulaire de J2 
     } 
-    $u->setLoginName("j2"); 
-    $incumbents=$u->getIncumbents(); // J2 a comme titulaire J1 et J3 
-    foreach ($incumbents as $k=> $aIncumbent) { 
-      printf("%d)%s\n", $k,Account::getDisplayName($aIncumbent)); 
+    $user->setLoginName("j2"); 
+    $incumbents=$user->getIncumbents(); // J2 a comme titulaire J1 et J3 
+    foreach ($incumbents as $key=> $aIncumbent) { 
+      printf("%d)%s\n", $key,Account::getDisplayName($aIncumbent)); 
     }
 
     www-data@luke:~$ ./wsh.php --api=testSubstitute
@@ -266,20 +265,23 @@ des utilisateurs, des groupes ou des rôles.
 
 ### Recherche des utilisateurs par rôle
 
-Pour indiquer le filtre d'un rôle, il faut utiliser, la méthode ::addRoleFilter(). Cette méthode prend en argument la référence du rôle. La référence correspond à l'attribut 'role_login' du document ou à l'attribut login de l'objet Account. Il ne correspond pas au nom logique du document.
+Pour indiquer le filtre d'un rôle, il faut utiliser, la méthode
+`::addRoleFilter()`. Cette méthode prend en argument la référence du rôle. La
+référence correspond à l'attribut 'role_login' du document ou à l'attribut login
+de l'objet Account. Il ne correspond pas au nom logique du document.
 
     [php]
-    $s = new SearchAccount();
-    $s->addRoleFilter('writter');
-    $s->setObjectReturn($s::returnAccount);
+    $searchAccount = new SearchAccount();
+    $searchAccount->addRoleFilter('writter');
+    $searchAccount->setObjectReturn($searchAccount::returnAccount);
     /**
-     * @var \AccountList $al
+     * @var \AccountList $accountList
      */
-    $al = $s->search();
+    $accountList = $searchAccount->search();
     /**
      * @var \Account $account
      */
-    foreach ($al as $account) {
+    foreach ($accountList as $account) {
       $login = $account->login;
       print "$login\n";
     }
@@ -288,7 +290,7 @@ Pour rechercher à partir du nom logique du document rôle, il faut utiliser la
 méthode ::docName2login de correspondance fournie par la classe.
 
     [php]
-    $s->addRoleFilter($s->docName2login('TST_ROLEWRITTER'));
+    $searchAccount->addRoleFilter($searchAccount->docName2login('TST_ROLEWRITTER'));
 
 La méthode `SearchAccount::setObjectReturn()` permet d'indiquer le type de
 résultat obtenu par la méthode `SearchAccount::search()`.  Par défaut cela
@@ -298,17 +300,17 @@ est possible d'indiquer `SearchAccount::returnDocument`, pour que la méthode
 donnera les documents correspondants
 
     [php]
-    $s = new SearchAccount();
-    $s->addRoleFilter($s->docName2login('TST_ROLEWRITTER'));
-    $s->setObjectReturn($s::returnDocument);
+    $searchAccount = new SearchAccount();
+    $searchAccount->addRoleFilter($searchAccount->docName2login('TST_ROLEWRITTER'));
+    $searchAccount->setObjectReturn($searchAccount::returnDocument);
     /**
-     * @var \DocumentList $dl
+     * @var \DocumentList $documentList
      */
-    $dl = $s->search();
+    $documentList = $searchAccount->search();
     /**
      * @var \Doc $doc
      */
-    foreach ($dl as $doc) {
+    foreach ($documentList as $doc) {
       $login = $doc->getValue("us_login");
       print "$login\n";
     }
@@ -317,28 +319,28 @@ Si on précise plusieurs rôles séparés par un espace, cela indiquera une
 disjonction (OU).
 
     [php]
-    $s->addRoleFilter("writter controller");
+    $searchAccount->addRoleFilter("writter controller");
 
 indique que les comptes recherchés ont le rôle "writter" ou "controller". 
 
-Cette écriture est équivalente à 
+Cette écriture est équivalente à :
 
     [php]
-    $s->addRoleFilter("writter");
-    $s->addRoleFilter("controller");
+    $searchAccounts->addRoleFilter("writter");
+    $searchAccount->addRoleFilter("controller");
 
 La condition d'appartenance à plusieurs rôles n'est pas disponible avec cette
 méthode. Ce filtre peut retourner des groupes ou des utilisateurs.
 
 ### Recherche des utilisateurs par groupe
 
-La méthode ::addGroupFilter() est équivalent à ::addRoleFilter(). Elle permet de
+La méthode `::addGroupFilter()` est équivalent à `::addRoleFilter()`. Elle permet de
 rechercher parmi les comptes qui appartiennent à différents groupes. Si cette
-méthode est combinée à la méthode ::addRoleFilter() cela indiquera tous les
+méthode est combinée à la méthode :`:addRoleFilter()` cela indique tous les
 comptes qui appartiennent à un des groupes cités ou à un des rôles cités.
 
     [php]
-    $s->addGroupFilter("all"); // tous les utilisateurs du groupe "all"
+    $searchAccounts->addGroupFilter("all"); // tous les utilisateurs du groupe "all"
 
 La recherche par groupe recherche aussi les comptes dans les sous-groupes. Ce
 filtre peut retourner des groupes ou des utilisateurs.
@@ -357,10 +359,10 @@ des comptes:
 
     [php]
     $mailExpr='test';
-    $s = new SearchAccount();
-    $s->addFilter("mail ~ '%s'", $mailExpr); // filtre les mail qui contiennent test
-    $al = $s->search();
-    foreach ($al as $account) {
+    $searchAccount = new SearchAccount();
+    $searchAccount->addFilter("mail ~ '%s'", $mailExpr); // filtre les mail qui contiennent test
+    $accountList = $searchAccount->search();
+    foreach ($accountList as $account) {
       printf("%s => %s\n ", $account->login, $account->mail);
     }
 
@@ -376,9 +378,9 @@ La méthode `SearchAccount::setTypeReturn()` permet de préciser le type de comp
 à retourner : Utilisateur, Groupe ou Rôle.
 
     [php]
-    $s->setTypeFilter($s::userType) ; // limité aux utilisateurs
-    $s->setTypeFilter($s::userType | $s::groupType ) ;// limité aux utilisateurs et aux groupes
-    $s->setTypeFilter($s::roleType) ; // limité aux rôles
+    $searchAccount->setTypeFilter($searchAccount::userType) ; // limité aux utilisateurs
+    $searchAccount->setTypeFilter($searchAccount::userType | $searchAccount::groupType ) ;// limité aux utilisateurs et aux groupes
+    $searchAccount->setTypeFilter($searchAccount::roleType) ; // limité aux rôles
 
 Le paramètre est une combinaison des 3 constantes userType, groupType et
 roleType.
@@ -389,9 +391,9 @@ courant a le droit de voir il faut rajouter l'appel à la méthode
 `SearchAccount::useViewControl()` avant l'appel à `SearchAccount::search()`.
 
     [php]
-    $s->useViewControl(true);
+    $searchAccount->useViewControl(true);
 
-## Dérivation des documents utilisateurs
+## Spécialisation des documents utilisateurs
 
 Les documents système "utilisateur" (famille `IUSER`) peuvent être dérivés pour
 ajouter des informations fonctionnelles ou pour ajouter des informations
