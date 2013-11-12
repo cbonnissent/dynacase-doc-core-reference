@@ -1327,27 +1327,22 @@ book:
       subtoc:   2
       flags:
         new: "new"
-        draft : "draft"
     - level:   3
       content:  "Advanced/Persistance/dbobj.md"
       flags:
         new: "new"
-        draft : "draft"
     - level:   3
       content:  "Advanced/Persistance/querydb.md"
       flags:
         new: "new"
-        draft : "draft"
     - level:   3
       content:  "Advanced/Persistance/transaction.md"
       flags:
         new: "new"
-        draft : "draft"
     - level:   2
       content:  "Advanced/Persistance/user.md"
       flags:
         new: "new"
-        draft : "draft"
     - level:   2
       content:  "Advanced/Migration/introduction.md"
       flags:
