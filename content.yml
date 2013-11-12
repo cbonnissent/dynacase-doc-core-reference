@@ -1352,7 +1352,6 @@ book:
       content:  "Advanced/Migration/introduction.md"
       flags:
         new: "new"
-        draft : "draft"
     - level:   2
       content:  "Advanced/Recherche/introduction.md"
       subtoc:   2
