@@ -38,26 +38,6 @@ span.flag.next-release {
     color: white;
 }
 
-
-
-/*
-body.flag-wip {
-    background-color: #E9A7A7;
-}
-
-body.flag-draft {
-    background-color: #ECBA6F;
-}
-
-body.flag-need-review {
-    background-color: #57B1E4;
-}
-
-body.flag-new {
-    background-color: #008821;
-}
-*/
-
 .flags-banner {
     position:fixed;
     top: 5em;
@@ -125,7 +105,9 @@ body.flag-new {
     Gestion des tables
  */
 
-div.table{overflow: auto;}
+.table{
+    overflow: auto;
+}
 
 /*
     BlockQuotes
@@ -161,49 +143,40 @@ blockquote cite:before {
     content: "\2014 \2009";
 }
 
-.chunk_nav,
-#copy {
+.chunk_nav, .copy{
     background-color: rgba(80,80,80,0.15);
-    -moz-animation: fadeout 5s; /* Firefox */
-    -webkit-animation: fadeout 5s; /* Safari and Chrome */
-    -o-animation: fadeout 5s; /* Opera */
-    animation: fadeout 5s;
+    transition: all 1s ease-in-out;
 }
-@-moz-keyframes fadeout { /* Firefox */
-    from {
-        background-color: rgba(80,80,80,1);
-    }
-    to {
-        background-color: rgba(80,80,80,0.15);
-    }
+
+.chunk_toc li.title {
+    background-color: rgba(138, 226, 52, 0.5);
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
-@-webkit-keyframes fadeout { /* Safari and Chrome */
-    from {
-        background-color: rgba(80,80,80,1);
-    }
-    to {
-        background-color: rgba(80,80,80,0.15);
-    }
+
+.searchZone li.title {
+    background-color: rgba(250, 173, 57, 0.5);
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
-@-o-keyframes fadeout { /* Opera */
-    from {
-        background-color: rgba(80,80,80,1);
-    }
-    to {
-        background-color: rgba(80,80,80,0.15);
-    }
+
+.chunk_nav_hover, .copy_hover
+ {
+    background-color: rgb(80,80,80);
 }
-@keyframes fadeout {
-    from {
-        background-color: rgba(80,80,80,1);
-    }
-    to {
-        background-color: rgba(80,80,80,0.15);
-    }
+
+.chunk_toc li.title_hover {
+    background-color: rgb(138, 226, 52);
 }
-.chunk_nav:hover,
-#copy:hover {
-    background-color: rgba(80,80,80,1);
+
+.searchZone li.title_hover {
+    background-color: rgb(250, 173, 57);
 }
 
 a code {
@@ -213,11 +186,18 @@ a:hover code {
     color: #ffffff;
     background-color: #8AE234;
 }
-#chunk_toc {
+.chunk_toc {
+    opacity: 0.85;
+}
+.chunk_toc li {
     background-color: #fff;
+    color : black;
+}
+.chunk_toc a {
+    color : black;
 }
 /* Pour les profil */
-span.aclgreen {
+.aclgreen {
     background-color:#90EE90; /*lightgreen*/
     border-radius:5px;
     font-weight: bold;
@@ -225,7 +205,7 @@ span.aclgreen {
     padding-left:0.5em;
     padding-right:0.5em;
 }
-span.aclgrey {
+.aclgrey {
     background-color:#D3D3D3; /*lightgray*/
     border-radius:5px;
     font-weight: bold;
@@ -234,15 +214,27 @@ span.aclgrey {
     padding-right:0.5em;
 }
 
-span.ok {
+.ok {
     background-color:#90EE90; /*lightgreen*/
     border-radius:5px;
     padding-left:0.5em;
     padding-right:0.5em;
 }
-span.ko {
+.ko {
     background-color:#EE9090; /*lightred*/
     border-radius:5px;
     padding-left:0.5em;
     padding-right:0.5em;
+}
+
+@media (max-width: 768px) {
+    .copy {
+        position: static;
+    }
+    .chunk_nav {
+        position: static;
+    }
+    .container {
+        margin :0;
+    }
 }
