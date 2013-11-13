@@ -210,8 +210,8 @@ Les options disponibles en modification sont les suivantes :
 <!-- links -->
 [default_view_controleur]: #core-ref:1b7cb4c6-df1e-4124-8f5d-deaeac92561b
 [CVDOC]: #core-ref:017f061a-7c12-42f8-aa9b-276cf706e7e0
-[TE]: #FIXME
+[TE]: https://docs.anakeen.com/dynacase/3.2/dynacase-doc-tengine-installation-operating/website/book/index.html "TE"
 [zone_options_view]: #core-ref:96d615e5-b6a6-46d3-b42d-4396dbc42b8b
 [zone_options_edit]: #core-ref:9e341064-ea78-4049-819c-8d0ab765840e
 [PHP_urlencode]: http://php.net/manual/fr/function.urlencode.php "fonction urlencode sur php.net"
-[ZONE_REF]:     #core-ref:fed06a0c-3fd6-11e3-9658-88d5dc830245}
+[ZONE_REF]:     #core-ref:fed06a0c-3fd6-11e3-9658-88d5dc830245
