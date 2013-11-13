@@ -11,21 +11,21 @@ id
 :    L'[id][id_document] du document source.
 
 frameid
-:    L' [attrid][property] de la frame que l'on souhaite présenter.
+:    L'[attrid][property] de la frame que l'on souhaite présenter.
 
 abstract
-:    `Y` ou `N` : Voir seulement les [attributs abstraits][property].
+:    `Y` ou `N` : Voir seulement les [attributs résumés][property].
 
 target
 :    Contenu de l'attribut [target][MDNtarget] des liens générés.
 
 ulink
-:    `N` : Si il est à N les liens ne sont pas rendu et ils sont remplacés par du
-    text.
+:    `N` : Si il est à N les liens ne sont pas rendus et ils sont remplacés par du
+    texte sans hyperlien.
 
 vid
 :   Si le document est associé à un [contrôle de vue][cdv] et que vid est une 
-    vue existante de ce contrôle celle-ci est alors appliquée sur le document.
+    vue existante de ce contrôle, alors celle-ci est appliquée sur le document.
 
 
 ## Limites {#core-ref:847f4b57-76d8-42f2-bc7c-c45101036017}
@@ -33,7 +33,7 @@ vid
 Dans le cadre de l'utilisation de cette zone en dehors d'une 
 [zone documentaire][zoneDocumentaire], il faut :
 
-* inclure fichier `JS` généré par l'action `?app=FDL&amp;action=ALLVIEWJS`,
+* inclure le fichier `JS` généré par l'action `?app=FDL&amp;action=ALLVIEWJS`,
 * inclure la référence `[CSS:CUSTOMREF]` ou la zone [`[ZONE FDL:HTMLHEAD]`][head].
 
 ## Exemples {#core-ref:d0c81209-600b-4c68-af9e-72f35bd45005}

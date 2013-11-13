@@ -7,28 +7,28 @@ soit en consultation.
 
 Cette action appelle une autre action suivant le mode demandé :
 
-* `edit` : action GENERIC:GENERIC_EDIT,
+* `edit` ou `new` : action GENERIC:GENERIC_EDIT,
 * `view` : action FDL:FDL_CARD.
 
 ## Paramètres {#core-ref:e8e5c473-54b0-4eb0-8cd7-dc5b1cbc0238}
 
 id
-:    L'[id][id_document] du document source. Facultatif si `classid` ou `famid` 
+:   L'[id][id_document] du document source. Facultatif si `classid` ou `famid` 
     est déjà fourni, obligatoire sinon.
 
 mode
 :   (`view`|`edit`|`new`). Si la valeur est `view` le document est affiché en 
-    consultation, si elle est `edit` ou `new` le document est affiché en édition.
+    consultation. Si elle est `edit` ou `new` le document est affiché en édition.
     **obligatoire**.
 
 famid
 :   Nom logique de la famille de document. Cet élément est utilisé pour créer
-    un nouveau type de document. Si un `id` est fourni alors ce paramètre est
-    ignoré. Obligatoire si `id` n'est pas fourni.
+    un nouveau document. Si un `id` est fourni alors ce paramètre est ignoré.
+    Obligatoire si `id` n'est pas fourni.
 
 classid
-:   Équivaut à `famid`. Déprécié, si `classid` et `famid` sont fourni tous les 
-    deux alors seul `classid` est utilisé.
+:   Déprécié. Équivaut à `famid`. Si `classid` et `famid` sont fourni tous les 
+    deux, alors seul `classid` est utilisé.
 
 ## Paramètres : mode=view {#core-ref:0fb9377e-1117-473c-bd15-ce2519254820}
 
@@ -36,43 +36,46 @@ Dans ce mode l'application appelée est `FDL:FDL_CARD` et le document est affich
 en consultation.
 
 latest
-:   (Y|L|P) : Identique quelle [révision][revise] du document est affiché :
+:   (`Y`|`L`|`P`) : Permet de spécifier quelle [révision][revise] du document
+    est affichée :
     
-    * Y : présente la dernière révision du document,
-    * L : présente l'avant dernière révision du document,
-    * P : présente la révision précédent celle de l'id,
+    * `Y` : présente la dernière révision du document,
+    * `L` : présente l'avant dernière révision du document,
+    * `P` : présente la révision précédent celle de l'id,
     * tout autre valeur : présente la révision correspondant à l'id passé en paramètre.
 
 state
 :   Nom logique d'un état. Présente le dernier document de la lignée documentaire
-    ayant cet état. Si latest et state sont présents alors seul state est pris
-    en compte.
+    ayant cet état. Si `latest` et `state` sont présents, alors seul `state` est
+    pris en compte.
 
 zone
 :   Nom d'une [zone documentaire][zoneDocumentaire] qui est appliquée au 
     document. Ce paramètre n'est pas pris en compte si le paramètre `vid` est valué.
 
 vid
-:   Nom d'une vue. Si jamais un [contrôle de vue][cvdoc] est associé à ce document
-    et que ce contrôle de vue contient une vue ayant ce nom celle-ci est appliquée.
+:   Nom d'une vue. Si un [contrôle de vue][cvdoc] est associé à ce document et
+    que ce contrôle de vue contient une vue ayant ce nom, alors celle-ci est
+    appliquée.
 
 ulink
-:    `N` : Si il est à N les liens ne sont pas rendu et ils sont remplacés par du
-    text.
+:   `N` : Si il est à `N` les liens ne sont pas rendus et ils sont remplacés par du
+    texte sans hyperlien.
 
 target
 :    Contenu de l'attribut [target][MDNtarget] des liens générés.
 
 inline
-:   (Y|N) : Si la zone associée au document a l'option [`:B`][templateB] alors le
-    fichier généré est inline. (valeur par défaut : N)
+:   (`Y`|`N`) : Si la zone associée au document a l'option [`:B`][templateB], alors
+    le fichier généré est envoyé avec un `Content-Disposition: inline`.
+    (valeur par défaut : `N`)
 
 unlock
-:   (Y|N) : Si la valeur est à `Y` le document est delocker avant la consultation
-    (défaut N).
+:   (`Y`|`N`) : Si la valeur est à `Y` le document est déverrouillé avant sa
+    consultation (défaut `N`).
 
 dochead
-:   (N) : Si la valeur est à `N` l'entête du document n'est pas affiché.
+:   (`N`) : Si la valeur est à `N` l'entête du document n'est pas affiché.
 
 
 ## Paramètres : mode=edit {#core-ref:6f77c5b1-c649-4835-962d-857960880757}
@@ -82,9 +85,9 @@ dirid
     alors le document est créé dans le [dossier][dir] référencé par le `dirid`.
 
 usefor
-:   (D|Q) : Si usefor est à `D` alors c'est l'édition des valeurs par défaut qui
-    est présentée, si usefor est à `Q` alors c'est l'édition des paramètres qui
-    est présentée. Ce paramètre n'est valide que dans le cas d'une création de 
+:   (`D`|`Q`) : Si usefor est à `D` alors c'est l'édition des valeurs par défaut
+    qui est présentée. Si usefor est à `Q` alors c'est l'édition des paramètres
+    qui est présentée. Ce paramètre n'est valide que dans le cas d'une création de 
     document.
 
 mskid
@@ -96,22 +99,24 @@ zone
     document. Ce paramètre n'est pas pris en compte si le paramètre `vid` est valué.
 
 vid
-:   Nom d'une vue. Si jamais un [contrôle de vue][cvdoc] est associé à ce document
-    et que ce contrôle de vue contient une vue ayant ce nom celle-ci est appliquée.
+:   Nom d'une vue. Si un [contrôle de vue][cvdoc] est associé à ce document et
+    que ce contrôle de vue contient une vue ayant ce nom, alors celle-ci est
+    appliquée.
 
-zone
-:   Nom d'une [zone documentaire][zoneDocumentaire] qui est appliquée au 
-    document après son édition. Ce paramètre n'est pas pris en compte si le 
-    paramètre `rvid` est valué.
+rzone
+:   Nom d'une [zone documentaire][zoneDocumentaire] qui sera utilisée comme
+    valeur de l'argument `zone` pour la page sur laquelle l'utilisateur est
+    redirigé à la fin de l'édition du document.
 
-vid
-:   Nom d'une vue. Si jamais un [contrôle de vue][cvdoc] est associé à ce document
-    et que ce contrôle de vue contient une vue ayant ce nom celle-ci est 
-    appliquée après son édition.
+rvid
+:   Nom d'une vue qui sera utilisée comme valeur de l'argument `vid` pour la
+    page sur laquelle l'utilisateur est redirigé à la fin de l'édition du
+    document.
 
 rtarget
-:   S'il est définit le retour de l'édition est dans une autre fenêtre, la 
-    fenêtre en cours est fermée à la fin de l'éditon. (valeur par défaut : `_self`)
+:   Nom d'un fenêtre dans laquelle sera affichée la page sur laquelle
+    l'utilisateur est redirigé à la fin de l'édition du document
+    (valeur par défaut : `_self`).
 
 autoclose
 :   (yes). Si autoclose est à `yes` alors la fenêtre est fermée automatiquement
@@ -120,6 +125,11 @@ autoclose
 ## Limites {#core-ref:96fc7d17-36bc-4dc6-bc90-9054fe380330}
 
 N/A
+
+## Notes {#core-ref:053a9043-0dfa-440f-a7fd-b1a684b8de05}
+
+La page sur laquelle l'utilisateur est redirigé à la fin de l'édition du
+document est : `app=FDL&action=FDL_CARD`.
 
 <!-- link -->
 

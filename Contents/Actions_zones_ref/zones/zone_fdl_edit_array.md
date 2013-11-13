@@ -12,19 +12,19 @@ id
     fourni.
 
 classid
-:   Nom logique de famille. Si `id` est fourni classid n'est pas utilisé.
+:   Nom logique de famille. Si `id` est fourni `classid` n'est pas utilisé.
 
 arrayid
 :   L' [attrid][property] de la frame que l'on souhaite présenter.
 
 vid
 :   Si le document est associé à un [contrôle de vue][cdv] et que vid est une 
-    vue existante de ce contrôle celle-ci est alors appliquée sur le document.
+    vue existante de ce contrôle, alors celle-ci est appliquée sur le document.
 
 row
-:   Permet de n'afficher que la nième ligne du tableau. La numérotation commence
-    à 0 et si le numéro de ligne n'existe pas, il n'y a que l'entête du tableau
-    qui est affiché.
+:   Permet de n'afficher que la Nième ligne du tableau. La numérotation commence
+    à 0. Si le numéro de ligne n'existe pas, alors un tableau vide est affiché
+    (seul l'entête du tableau est affiché).
 
 ## Limites {#core-ref:5268606f-aeb3-48d6-a7cb-f35e5058be85}
 
