@@ -686,8 +686,8 @@ Cette caractéristique est ignorée sur les attributs de type *frame* ou *tab*.
 #### Caractéristique `[visibility]` {#core-ref:6e98d2fb-4327-4679-9cfa-5724b9101992}
 
 **Obligatoire**  
-Définit la visibilité par défaut de l'attribut dans les interfaces web de
-consultation et de modification du document.
+Définit la [visibilité][visibility] par défaut de l'attribut dans les interfaces
+web de consultation et de modification du document.
 
 Les valeurs possibles sont :
 
@@ -1088,7 +1088,7 @@ Si la valeur est vide, l'attribut conservera sa valeur héritée.
 
 #### Caractéristique `[visibility]` {#core-ref:4050923d-2fb2-4804-a304-d8fc9a60afc1}
 
-Définit la visibilité par défaut de l'attribut.
+Définit la [visibilité][visibility] par défaut de l'attribut.
 
 Si la valeur est vide, l'attribut conservera sa valeur héritée.
 
@@ -1299,3 +1299,4 @@ Pour plus de détails sur l'API `importDocuments`, se référer à sa
 [importDocuments]: #core-ref:1c97f553-dcba-454e-96a0-8059230065b3
 [phpfile]: {#core-ref:7362e2ff-cfb5-45f0-a81d-e02eab6d0fb6}
 [def_enum]: #core-ref:eef3e3ec-2d50-41bd-98e1-cc978f0a5178
+[visibility]:        #core-ref:3e67d45e-1fed-446d-82b5-ba941addc7e8

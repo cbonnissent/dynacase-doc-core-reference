@@ -15,10 +15,11 @@ L'édition 4 de la documentation a modifié les points suivants.
 | Ajout graphe d'accès                            | [Cinématique de dynacase][cinematique]          | <span class="flag new">New</span>                                                           | 05/11/13 |
 | Description des principales tables              | [La base de données][database]                  | <span class="flag new">New</span>                                                           | 05/11/13 |
 | Famille processus                               | [Famille processus][processus]                  | <span class="flag new">New</span>                                                           | 06/11/13 |
-| Ajout chapitres Dbobj, QueryDb, Transaction     | [Mécanismes de persistance][histo]              | <span class="flag new">New</span>                                                           | 06/11/13 |
+| Ajout chapitres Dbobj, QueryDb, Transaction     | [Mécanismes de persistance][persist]            | <span class="flag new">New</span>                                                           | 06/11/13 |
 | Ajout chapitre compte                           | [Manipulation des comptes utilisateur][account] | <span class="flag new">New</span>                                                           | 06/11/13 |
-| Ajout chapitre migration                        | [Migration des applications][migration]         | <span class="flag new">New</span><span class="flag draft">Draft</span>                      | 08/11/13 |
+| Ajout chapitre migration                        | [Migration des applications][migration]         | <span class="flag new">New</span>                                                           | 08/11/13 |
 | Ajout chapitre contrôle d'accès                 | [Contrôle des accès][accesscontrol]             | <span class="flag new">New</span><span class="flag draft">Draft</span>                      | 12/11/13 |
+| Ajout chapitre zones et actions de référence    | [Zone et actions de référence][zoneref]         | <span class="flag new">New</span><span class="flag draft">Draft</span>                      | 12/11/13 |
 
 
 <!-- link -->
@@ -32,3 +33,4 @@ L'édition 4 de la documentation a modifié les points suivants.
 [processus]:    #core-ref:4a65995d-a61d-4325-89e2-1a9ce15f76e8
 [migration]:    #core-ref:d2bd57f9-7b5a-46b0-8570-6b5b0710d7c3
 [accesscontrol]:    #core-ref:8d73fa24-b721-4a16-a34b-846004e3e9ca
+[zoneref]:      #core-ref:fed06a0c-3fd6-11e3-9658-88d5dc830245

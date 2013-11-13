@@ -227,6 +227,10 @@ a:hover code {
     padding-right:0.5em;
 }
 
+.xml .re1, .xml .re2 {
+    color: #2100D5;
+    font-weight: normal;
+}
 @media (max-width: 768px) {
     .copy {
         position: static;
