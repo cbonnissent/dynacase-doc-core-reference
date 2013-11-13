@@ -37,7 +37,7 @@ Aucun.
     *   `mail` (pour un fragment HTML inséré dans un mail)
         
         Dans ce cas, l'URL de l'ancre est composée à partir de la valeur du
-        [paramètre `CORE_MAILACTIONURL`][CORE_MAILACTIONURL], lui-même composé
+        paramètre `CORE_MAILACTIONURL`, lui-même composé
         à partir du [paramètre `CORE_MAILACTION`][CORE_MAILACTION].
         
         Cela permet d'effectuer des opérations spécifiques lorsqu'un document
@@ -114,4 +114,3 @@ Aucun.
 <!-- links -->
 [docrev]: #core-ref:9bcfd205-fb07-4a71-be06-ba07d4a9cc7c
 [CORE_MAILACTION]: #core-ref:c1d9e009-49a5-47a4-9104-4d044ea24aa3
-[CORE_MAILACTIONURL]: #core-ref:033299c3-fe9a-4833-9dbd-45952bdf63bc
