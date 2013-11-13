@@ -55,7 +55,7 @@ index
 :   `int` : Dans le cas d'un attrid référençant un attribut multiple. L'index 
     permet de n'exporter que le n-ième élément. La numérotation commence à 0.
 
-## Paramètre pour fichier avec conversion PDF
+## Paramètre pour fichier avec conversion PDF {#core-ref:30de106b-5b3e-4104-9ded-6b5e5e8d0f8a}
 
 Ces options ne sont applicables que si l'attribut possède un fichier `pdf`
 calculé par [le moteur de transformation][te]. En standard, le moteur de

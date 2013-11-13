@@ -3,9 +3,9 @@
 ## Description  {#core-ref:63babdf0-3b7e-4d9c-86be-1f38214c6e01}
 
 Cette action permet d'exécuter une méthode de la classe associée au document.
-Une fois la méthode exécutée un [header location][header_location] contenant le
-le [referer][referer] est renvoyé, ce qui dans la majorité des cas équivaut à un
-refresh de la page en cours. Si le referer n'est pas présent alors le header
+Une fois la méthode exécutée un [header location][header_location] contenant
+le [referer][referer] est renvoyé, ce qui dans la majorité des cas équivaut à une
+actualisation de la page en cours. Si le referer n'est pas présent alors le header
 location contient l'url d'accès en consultation du document référencé par l'id.
 Si la méthode exécutée retourne une chaîne de caractère un
 [`AddWarningMsg`][warningMessage] avec cette chaîne est ajouté.
