@@ -2,12 +2,12 @@
 
 ## Description  {#core-ref:e4849564-e3fd-45c5-bf18-894ef9ed1613}
 
-Cette action représente un document en consultation sans menu.
+Cette action représente un document en consultation HTML sans menu.
 
 ## Paramètres {#core-ref:b40054a2-1541-47e6-8e56-2459b8552cfa}
 
 id
-:    L'[id][id_document] du document source. **Obligatoire**.
+:    L'[identificateur][id_document] du document source. **Obligatoire**.
 
 zone
 :   Nom d'une [zone documentaire][zoneDocumentaire] qui est appliquée au 
@@ -18,25 +18,25 @@ vid
     et que ce contrôle de vue contient une vue ayant ce nom celle-ci est appliquée.
 
 latest
-:   (Y|L|P) : Identique quelle [révision][revise] du document est affiché :
+:   (Y|L|P) : Indique quelle [révision][revise] du document est affichée :
     
     * Y : présente la dernière révision du document,
     * L : présente l'avant dernière révision du document,
     * P : présente la révision précédent celle de l'id,
-    * tout autre valeur : présente la révision correspondant à l'id passé en paramètre.
+    * tout autre valeur : présente la révision correspondante à l'id passé en paramètre.
 
 state
 :   Nom logique d'un état. Présente le dernier document de la lignée documentaire
-    ayant cet état. Si latest et state sont présents alors seul state est pris
-    en compte.
+    ayant cet état. Si `latest` et `state` sont présents alors seul `state` est
+    pris en compte.
 
 mime
 :   [Mime type][mime] de la page de retour. Principalement utile dans le cas d'un
     template binaire [`:B`][templateB].
 
 inline
-:   `y`. Si inline est à `y` et le type `mime` a une valeur alors le fichier 
-    retourné est inline.
+:   Si la première lettre est à `y` ou `Y` (valide pour `yes`, `Yes`, `Y`) et le
+    type `mime` a une valeur alors la représentation retournée est inline. 
 
 ext
 :   Extension du fichier retourné si le type `mime` a une valeur et que `inline`

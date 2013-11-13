@@ -2,9 +2,24 @@
 
 ## Description {#core-ref:eaa7c448-f7aa-4ba6-9a90-9c284e071962}
 
-Les attributs de type *menu* se présentent sous la forme de liens en haut du document.
+Les attributs de type *menu* se présentent sous la forme de liens présent dans
+la barre de menu en haut du document.
 
-Ces menus permettent d'accéder à des urls, et ainsi de déclencher des actions, etc.
+Ces menus permettent d'accéder à des urls, et ainsi de déclencher des actions,
+etc.
+
+L'url du menu est indiqué dans la [caractéristique `link`][alink].
+
+Cette caractéristique supporte, en plus des notations standards, la notation :
+
+    ::myMethod()
+
+Cette notation permet d'appeler directement une méthode exposée de la famille.
+L'appel de cette méthode retourne la page de consultation de document mis à jour.
+
+La méthode appelée doit avoit le tag `@apiExpose` dans le commentaire associée
+afin de la rendre exposable. Cette méthode doit assurer elle-même les contrôles 
+nécessaires à la sécurité du document.
 
 ## Représentation {#core-ref:f6520991-b990-4305-af74-80e8a6dd2341}
 
@@ -35,7 +50,8 @@ Cet attribut n'est pas stocké.
 
 ## Options {#core-ref:53f09af0-7ca1-4a3b-b3a1-1fc4455d371d}
 
-En plus des [options communes à tous les types d'attributs](#core-ref:16e19c90-3233-11e2-a58f-6b135c3a2496), ce type d'attribut dispose des options suivantes :
+En plus des [options communes à tous les types d'attributs][commonopt], ce type
+d'attribut dispose des options suivantes :
 
 barmenu
 :   Indique que la popup doit s'ouvrir avec la barre de menus du navigateur.
@@ -48,7 +64,8 @@ barmenu
 global
 :   Indique que l'action effectuée par le menu n'est pas liée à un document en particulier.
     
-    Dans ce cas, le menu apparaît aussi dans le menu 'outils' des applications issues de GENERIC, ainsi que dans le menu contextuel du document famille.
+    Dans ce cas, le menu apparaît aussi dans le menu 'outils' des applications
+    issues de GENERIC, ainsi que dans le menu contextuel du document famille.
     
     Les valeurs possibles sont :
     
@@ -142,3 +159,5 @@ tconfirm
 [JSCOLOR_home]: http://jscolor.com/ "site officiel de JSColor"
 [JSCALENDAR_HOME]: http://www.dynarch.com/projects/calendar/old/ "site officiel de JSCalendar"
 [odt_restrictions]: #core-ref:3742b35d-ddc0-440e-a0aa-08ea2faf0e46
+[alink]:        #core-ref:aaaa5d78-0982-4c3e-a8ed-a125c49572a8
+[commonopt]:    #core-ref:16e19c90-3233-11e2-a58f-6b135c3a2496
