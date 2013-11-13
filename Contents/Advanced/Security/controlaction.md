@@ -23,3 +23,4 @@ Le graphique suivant précise la partie vérification des privilèges du chapitr
 [opendoc]:      #core-ref:f9e68fa7-01b7-4903-9718-744271d63112
 [exportfile]:   #core-ref:0fc93676-888f-497e-b9bc-28cdbead52df
 [dbvault]:      #core-ref:7c41b8d8-5ace-489c-886f-a6500c717423
+[action]:           #core-ref:e67d8aeb-939c-46e3-9be8-6fc3ba75ebc2 "Écrire une action"
