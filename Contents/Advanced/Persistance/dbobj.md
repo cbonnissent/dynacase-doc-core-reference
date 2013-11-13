@@ -70,7 +70,7 @@ existe), il faut utiliser la méthode ::isAffected().
 L'accès à un des attributs de l'objet se fait directement en utilisant le nom de
 l'attribut.
 
-## UPDATE : Mise à jour d'un d'un objet {#core-ref:1a5b341f-840a-4708-907f-a4424a467ffd}
+## UPDATE : Mise à jour d'un d'un objet {#core-ref:fdf04d3a-3970-4899-a4cd-78aeb5341322}
 
 La mise à jour d'un objet se fait à l'aide de la méthode `DbObj::modify()`. 
 Avant d'effectuer cette méthode, il faut vérifier que l'objet récupéré existe
