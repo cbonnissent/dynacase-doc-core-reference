@@ -1,4 +1,4 @@
-# Usage avancée des templates {#core-ref:af9ea76c-069e-49e1-a382-efc8ca35f1eb}
+# Usage avancé des templates {#core-ref:af9ea76c-069e-49e1-a382-efc8ca35f1eb}
 
 Ce chapitre aborde l'usage avancé du moteur de template. Il est d'abord
 conseillé de lire le chapitre sur les [représentations][template].
