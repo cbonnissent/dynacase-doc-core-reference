@@ -36,7 +36,7 @@ Dans le cadre de l'utilisation de cette zone en dehors d'une
 
 * inclure la référence `[CSS:CUSTOMREF]` ou la zone [`[ZONE FDL:HTMLHEAD]`][head].
 
-## Exemples {#core-ref:d0c81209-600b-4c68-af9e-72f35bd45005}
+## Exemples {#core-ref:62503fe8-f071-407a-8ae6-28c373d30298}
 
 Définition de la zone : `[ZONE FDL:VIEWARRAY?id=1216&arrayid=en_t_animaux]`
 
