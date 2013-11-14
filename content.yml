@@ -1380,22 +1380,18 @@ book:
       content:  "Advanced/Security/introduction.md"
       subtoc:   2
       flags:
-         draft: "draft"
          new: "new"
     - level:   3
       content:  "Advanced/Security/controlaction.md"
       flags:
-         draft: "draft"
          new: "new"
     - level:   3
       content:  "Advanced/Security/controldoc.md"
       flags:
-         draft: "draft"
          new: "new"
     - level:   3
       content:  "Advanced/Security/controlfile.md"
       flags:
-         draft: "draft"
          new: "new"
     - level:   2
       content:  "Advanced/Template/introduction.md"
