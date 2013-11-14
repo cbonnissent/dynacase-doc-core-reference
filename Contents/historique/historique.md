@@ -18,8 +18,8 @@ L'édition 4 de la documentation a modifié les points suivants.
 | Ajout chapitres Dbobj, QueryDb, Transaction     | [Mécanismes de persistance][persist]            | <span class="flag new">New</span>                                                           | 06/11/13 |
 | Ajout chapitre compte                           | [Manipulation des comptes utilisateur][account] | <span class="flag new">New</span>                                                           | 06/11/13 |
 | Ajout chapitre migration                        | [Migration des applications][migration]         | <span class="flag new">New</span>                                                           | 08/11/13 |
-| Ajout chapitre contrôle d'accès                 | [Contrôle des accès][accesscontrol]             | <span class="flag new">New</span><span class="flag draft">Draft</span>                      | 12/11/13 |
-| Ajout chapitre zones et actions de référence    | [Zone et actions de référence][zoneref]         | <span class="flag new">New</span><span class="flag draft">Draft</span>                      | 12/11/13 |
+| Ajout chapitre contrôle d'accès                 | [Contrôle des accès][accesscontrol]             | <span class="flag new">New</span>                                                           | 12/11/13 |
+| Ajout chapitre zones et actions de référence    | [Zone et actions de référence][zoneref]         | <span class="flag new">New</span>                                                           | 12/11/13 |
 
 
 <!-- link -->
