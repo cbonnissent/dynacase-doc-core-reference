@@ -66,7 +66,25 @@ via un assistant d'export.
 
 ## Assistant d'export csv {#core-ref:cf6934f9-afe2-48ea-877a-7a1cdc9f770e}
 
-<span class="fixme" data-assignedto="MCO">screenshot</span>
+L'assistant d'export CSV est présent sur les rapports via le menu "export CSV"
+en consultation, il permet d'exporter le rapport en CSV de deux manières :
+
+* **simple** : Dans ce cas un document est une ligne et chaque colonne une 
+    cellule de cette ligne. Lorsque l'attribut est multiple, les valeurs sont séparées
+    par des `\n` pour le premier niveau de multiplicité et des `,` pour le second.
+* **pivot** : Ce mode permet l'export à des fins de traitement dans un tableur
+    avec la [fonctionnalité pivot][tdc]. Les données sont alors dissociées
+    par groupe de multiplicité, c'est à dire que chaque attribut multiple génère un
+    ensemble de colonnes identifiées par le pivot (qui est un attribut ou une
+    propriété du document).
+
+De plus, l'assistant d'export permet de définir différentes propriétés du fichier
+CSV généré (encodage, séparateur, format de date, etc.).
+
+![Export CSV](images/report_export_csv.png "Export CSV")
+
+
 
 <!-- links -->
 [detailed_search_param]: #core-ref:de8a1440-fb42-4ad0-b041-5c762b5258d9
+[tdc]:      https://fr.wikipedia.org/wiki/Tableau_crois%C3%A9_dynamique "Wikipedia : tableau croisé dynamique"

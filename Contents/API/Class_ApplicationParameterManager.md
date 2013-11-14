@@ -48,7 +48,7 @@ Si le paramètre principal est déclaré comme n'étant pas personnalisable, alo
 l'interrogation retournera systématiquement la valeur principale `Px` du
 paramètre, puisque l'utilisateur ne pourra pas avoir de valeur personnalisée.
 
-## Paramètre global
+## Paramètre global {#core-ref:16b2695d-36b7-4be0-9b2d-0e7ca2a045c6}
 
 Un paramètre global (propriété `'global' => 'Y'`)(voir
 [Les paramètres applicatifs][lesParametresApplicatifs]) peut être adressé sans

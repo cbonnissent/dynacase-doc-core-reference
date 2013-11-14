@@ -13,7 +13,7 @@ la fonction `editcard()`.
 
 ![Édition d'un document](cinematique_editcard.png)
 
-## Détail sur le choix du masque
+## Détail sur le choix du masque {#core-ref:50229169-1804-4aa1-a9cb-1caa664d210b}
 
 Le choix du masque à appliquer est fait lors de l'affichage d'un document pour
 consultation ou modification.

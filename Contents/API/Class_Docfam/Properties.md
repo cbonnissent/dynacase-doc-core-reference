@@ -4,7 +4,7 @@
 La classe `DocFam` hérite de la classe `Doc`. Elle dispose, par conséquent, des
 propriétés de la [classe `Doc`][docprop].
 
-## Particularités sur les propriétés héritées
+## Particularités sur les propriétés héritées {#core-ref:b37745dd-06af-4b97-85ab-b5d217057b11}
 
 fromid
 :   Identifiant de la famille parente.
@@ -40,7 +40,7 @@ title
     Le titre localisé est obtenu avec la méthode `DocFam::getTitle()`.
 
 
-## Propriétés spécifiques de famille
+## Propriétés spécifiques de famille {#core-ref:5df8dca8-2f1a-4ae1-a538-e4f40e15e4be}
 
 schar
 :   Indique les modalités de révision des documents de cette famille :
