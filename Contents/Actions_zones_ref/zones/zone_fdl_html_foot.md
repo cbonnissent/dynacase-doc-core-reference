@@ -9,7 +9,10 @@ Elle contient :
 
 ## Paramètres {#core-ref:3895b6da-fba9-4d0e-9f94-9b4f4036419e}
 
+Aucun paramètre.
 
 ## Limites {#core-ref:7147b4a9-76c1-4ae9-baa3-256756b4fca3}
+
+N/A
 
 <!-- link -->

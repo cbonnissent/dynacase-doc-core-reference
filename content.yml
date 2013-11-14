@@ -985,53 +985,43 @@ book:
     - level:   1
       content:  "Actions_zones_ref/introduction.md"
       flags:
-        draft: "draft"
         new: "new"
       subtoc:   1
     - level:   2
       content:  "Actions_zones_ref/zones/zone_fdl_html_head.md"
       flags:
-        draft: "draft"
         new: "new"
     - level:   2
       content:  "Actions_zones_ref/zones/zone_fdl_html_foot.md"
       flags:
-        draft: "draft"
         new: "new"
     - level : 2
       content:  "Actions_zones_ref/zones/zone_fdl_input_attribute.md"
       flags:
-        draft: "draft"
         new: "new"
     - level : 2
       content:  "Actions_zones_ref/zones/zone_fdl_view_frame.md"
       flags:
-        draft: "draft"
         new: "new"
     - level : 2
       content:  "Actions_zones_ref/zones/zone_fdl_edit_frame.md"
       flags:
-        draft: "draft"
         new: "new"
     - level : 2
       content:  "Actions_zones_ref/zones/zone_fdl_view_array.md"
       flags:
-        draft: "draft"
         new: "new"
     - level : 2
       content:  "Actions_zones_ref/zones/zone_fdl_edit_array.md"
       flags:
-        draft: "draft"
         new: "new"
     - level : 2
       content:  "Actions_zones_ref/zones/zone_edit_parameters.md"
       flags:
-        draft: "draft"
         new: "new"
     - level : 2
       content:  "Actions_zones_ref/actions/action_fdl_opendoc.md"
       flags:
-        draft: "draft"
         new: "new"
     - level : 2
       content:  "Actions_zones_ref/actions/action_fdl_impcard.md"

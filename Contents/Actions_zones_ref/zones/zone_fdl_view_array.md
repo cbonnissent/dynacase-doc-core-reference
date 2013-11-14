@@ -12,21 +12,21 @@ id
     fourni.
 
 classid
-:   Nom logique de famille. Si `id` est fourni classid n'est pas utilisé.
+:   Nom logique de famille. Si `id` est fourni `classid` n'est pas utilisé.
 
 arrayid
 :   L' [attrid][property] de l'array que l'on souhaite présenter.
 
 vid
 :   Si le document est associé à un [contrôle de vue][cdv] et que vid est une 
-    vue existante de ce contrôle celle-ci est alors appliquée sur le document.
+    vue existante de ce contrôle, alors celle-ci est appliquée sur le document.
 
 target
 :    Contenu de l'attribut [target][MDNtarget] des liens générés.
 
 ulink
-:    `N` : Si il est à N les liens ne sont pas rendu et ils sont remplacés par du
-    text.
+:    `N` : Si il est à N les liens ne sont pas rendus et ils sont remplacés par du
+    texte sans hyperlien.
 
 
 ## Limites {#core-ref:28b60aa0-1c90-42fe-96c0-fc6c26fc7945}

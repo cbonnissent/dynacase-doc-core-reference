@@ -5,10 +5,9 @@
 Cette zone est l'entête générique des pages générées par Dynacase. 
 Elle contient :
 
-* l'entête de la page : balise html, head et title,
+* l'entête de la page : balise `html`, `head` et `title`,
 * insertion des assets : [CSS][addCssRef], [JS][addJsRef], [CSS inline][addCssCode] et [JS inline][addJsCode],
 * la [favicon][dynacase_favico],
-* la balise title,
 * une balise `body` ouvrante ayant la classe `core`.
 
 ## Paramètres {#core-ref:6a43daec-81fb-4899-894b-0dc102a8ed23}

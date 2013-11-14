@@ -12,14 +12,14 @@ id
     fourni.
 
 classid
-:   Nom logique de famille. Si `id` est fourni classid n'est pas utilisé.
+:   Nom logique de famille. Si `id` est fourni `classid` n'est pas utilisé.
 
 frameid
 :   L' [attrid][property] de la frame que l'on souhaite présenter.
 
 vid
 :   Si le document est associé à un [contrôle de vue][cdv] et que vid est une 
-    vue existante de ce contrôle celle-ci est alors appliquée sur le document.
+    vue existante de ce contrôle, alors celle-ci est appliquée sur le document.
 
 
 ## Limites {#core-ref:fc23e061-fcba-407b-b103-74242fa3a3b3}
