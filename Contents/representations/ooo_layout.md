@@ -247,11 +247,13 @@ paragraphe, et ne doit pas contenir de texte autour.
 *   un attribut htmltext ne peut pas être utilisé dans les propriétés du
     document,
 *   les styles (css) ne sont pas pris en compte,
-*   les imbrications de paragraphes (exemple :
-    &lt;div>Texte ext 1&lt;div>Texte int&lt;/div>texte ext 2&lt;/div>) ne sont
-    pas supportées (l'exemple précédent sera rendu sous la forme
-    `"Texte ext 1 texte ext 2"`
-    <span class="fixme" data-assignedto="EBR">à confirmer</span>).
+*   les imbrications de paragraphes, exemple :
+    
+        [html]
+        <div>Texte ext 1<div>Texte int</div>texte ext 2</div>
+     
+    [ne sont pas supportées][htmlodterr]. L'exemple précédent provoquera une erreur 
+    d'affichage de fichier openDocument.
 
 #### Limitations pour les répétables {#core-ref:49c08a3f-c112-497b-9272-d5753f292113}
 
@@ -277,8 +279,7 @@ sont détaillées dans la [partie avancée sur les vues OpenDocument
 Text][advanced_odt].
 
 <!-- links -->
-[TE]: https://docs.anakeen.com/dynacase/3.2/dynacase-doc-tengine-installation-operating/website/book/index.html "Installation et exploitation
-Tranformation Engine"
+[TE]: https://docs.anakeen.com/dynacase/3.2/dynacase-doc-tengine-installation-operating/website/book/index.html "Installation et exploitation Tranformation Engine"
 [default_view_controleur]: #core-ref:303fbb4d-a688-4fd7-8329-bbc799251889
 [textual_views_syntax]: #core-ref:5f4a2f4b-9ceb-42db-8ac1-2a7baa621ce2
 [images]: #core-ref:d1625c57-57f6-48eb-ab3e-e3690dddec6c
@@ -286,3 +287,4 @@ Tranformation Engine"
 [advanced_odt]: #core-ref:a8c2d27a-6490-4449-9997-2984613ed219
 [zonedocumentaire]: #core-ref:49b96dc9-64e9-4f5a-a167-396282625c1e
 [fields]: https://help.libreoffice.org/Writer/Variables/fr "Champs de type variable sur libreoffice.org"
+[htmlodterr]:  #core-ref:5cc6bc2a-73b7-4923-87ee-5046384c97d9
