@@ -128,6 +128,159 @@ d'équivalence présentant les balises supportées et leur équivalent ODT.
 | `td`        | `table:table-cell` | Insère une cellule tableau                 |                                                                                                                                                                                                                                                                                                                   |
 | `img`       | `draw:frame`       | Insère une image                           | L'url de cette image doit être absolue et accessible depuis l'éditeur de texte. Seules les images présente sur les paragraphes de premier niveau sont prises en compte. Pas d'image dans les cellule de tableau. La taille n'est pas configurable. C'est la taille d'origine de l'image qui sera prise en compte. |
 
+### Exemples {#core-ref:ff8bb396-39be-4d21-b4ca-c7aab1123d34}
+
+#### Exemple 1 - Paragraphe {#core-ref:cdcb4bad-9296-4f70-949f-e4ffdfef9fca}
+
+Le code HTML
+
+    [html]
+    <p>Bonjour</p>
+
+donne le code XML suivant :
+
+    [xml]
+    <text:section text:style-name="Secttxt_text" text:name="Sectiontxt_text" aid="txt_text">
+      <text:p>Bonjour</text:p>
+    </text:section>
+
+
+#### Exemple 2 - Liste à puces {#core-ref:ecf28987-1e1b-400c-8655-97dec99be44e}
+
+Le code HTML
+
+    [html]
+    <ul>
+      <li>élement 1</li>
+      <li>élement 2</li>
+    </ul>
+
+donne le code XML suivant :
+
+    [xml]
+    <text:section text:style-name="Secttxt_text" text:name="Sectiontxt_text" aid="txt_text">
+      <text:list text:style-name="LU">
+        <text:list-item>
+          <text:p text:style-name="L1">élement 1</text:p>
+        </text:list-item>
+        <text:list-item>
+          <text:p text:style-name="L1">élement 2</text:p>
+        </text:list-item>
+      </text:list>
+    </text:section>
+
+
+#### Exemple 3 - Division {#core-ref:f2c3eb19-197b-4b94-bf99-657b8ca3e593}
+
+Le code HTML
+
+    [html]
+    <div>Bonjour</div>
+
+donne le code XML suivant :
+
+    [xml]
+    <text:section text:style-name="Secttxt_text" text:name="Sectiontxt_text" aid="txt_text">
+      <text:p>Bonjour</text:p>
+    </text:section>
+
+
+#### Exemple 4 - Gras et italique {#core-ref:e1f4bd8f-739e-41d6-9977-7a64dac2c4cb}
+
+Le code HTML
+
+    [html]
+    <div>
+      <strong>Bonjour</strong>
+      <br/>
+      <em>le monde</em>
+    </div>
+
+donne le code XML suivant :
+
+    [xml]
+    <text:section text:style-name="Secttxt_text" text:name="Sectiontxt_text" aid="txt_text">
+      <text:p>
+        <text:span text:style-name="Tbold">Bonjour</text:span>
+        <text:line-break/>
+        <text:span text:style-name="Titalics">le monde</text:span>
+      </text:p>
+    </text:section>
+
+
+#### Exemple 5 - Titre de niveau {#core-ref:a0396f8f-8bef-4d50-b9aa-4621e400d289}
+
+Le code HTML
+
+    [html]
+    <h1>Titre 1</h1>
+    <h2>Titre 2</h2>
+    <p>Mon paragraphe</p>
+
+donne le code XML suivant :
+
+    [xml]
+    <text:section text:style-name="Secttxt_text" text:name="Sectiontxt_text" aid="txt_text">
+      <text:h text:outline-level="1">Titre 1</text:h>
+      <text:h text:outline-level="2">Titre 2</text:h>
+      <text:p>Mon paragraphe</text:p>
+    </text:section>
+
+#### Exemple 6 {#core-ref:2f4767c9-0358-40a6-8a7a-1de9fcd090b1}
+
+Le code HTML
+
+    [html]
+    <table>
+      <tr>
+        <td>Cellule un</td>
+        <td>Cellule deux</td>
+      </tr>
+    </table>
+
+donne le code XML suivant :
+
+    [xml]
+    <text:section text:style-name="Secttxt_text" text:name="Sectiontxt_text" aid="txt_text">
+      <table:table table:name="Table1" table:style-name="Table1">
+        <table:table-row>
+          <table:table-cell table:style-name="Table1.A1">
+            <text:p>Cellule un</text:p>
+          </table:table-cell>
+          <table:table-cell table:style-name="Table1.A1">
+            <text:p>Cellule deux</text:p>
+          </table:table-cell>
+        </table:table-row>
+      </table:table>
+    </text:section>
+
+#### Exemple 7 - Cas d'erreur {#core-ref:5cc6bc2a-73b7-4923-87ee-5046384c97d9}
+
+Le code HTML
+
+    [html]
+    <div>
+      <div class="my-class">Bonjour</div>
+      <div>le monde</div>
+    </div>
+
+donne le code XML suivant :
+
+    [xml]
+    <text:section text:style-name="Secttxt_text" text:name="Sectiontxt_text" aid="txt_text">
+      <text:p>
+        <text:p>Bonjour</text:p>
+        <text:p>le monde</text:p>
+      </text:p>
+    </text:section>
+
+Ce code XML n'est pas conforme au schéma d'un document openDocument Text.
+Un paragraphe ne peut pas contenir d'autres paragraphes.
+
+
+
+
+
 <!-- link -->
 [odt_limitation]:       #core-ref:b2f63c3f-9f26-47f6-8172-00c23b6a9948
 [odt_repeat]:           #core-ref:9287cbe8-a6ca-41f9-9547-b7a970ae6584
