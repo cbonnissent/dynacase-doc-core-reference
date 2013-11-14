@@ -254,7 +254,7 @@ CPROFID
     famille qui sont déjà créés au moment de la mise à jour de la famille.
 
 CVID
-:   Indique le *contrôle de vue* qui sera associé aux documents crééx avec cette
+:   Indique le *contrôle de vue* qui sera associé aux documents créés avec cette
     famille. Affecte la valeur de la propriété `cvid` pour les nouveaux
     documents de cette famille.  
     Contient l'identifiant d'un document *contrôle de vue*. 
@@ -476,8 +476,6 @@ METHOD
             class My_photo extends _Method_MY_PHOTO_ {}
         }
     
-    <span class="fixme" data-assignedto="nobody">Description de begin-method-ignore</span>
-    
     À la place de `METHOD`, l'utilisation de la propriété `CLASS` est
     recommandée afin de définir les classes _métier_ de la famille.
 
@@ -515,8 +513,7 @@ TAG
         Cela permet aux documents de cette famille d'être présentés dans la
         liste de destinataires lors des envois de mail.
         
-        La famille doit alors implémenter l'interface `IMailRecipient`.
-        <span class="fixme" data-assignedto="nobody">ajout d'un lien vers l'interface</span>
+        La famille doit alors implémenter l'interface [`IMailRecipient`][phpDocEmailRecipient].
 
 TYPE
 :   Valeur par défaut de la propriété *type*.
@@ -1300,3 +1297,4 @@ Pour plus de détails sur l'API `importDocuments`, se référer à sa
 [phpfile]: {#core-ref:7362e2ff-cfb5-45f0-a81d-e02eab6d0fb6}
 [def_enum]: #core-ref:eef3e3ec-2d50-41bd-98e1-cc978f0a5178
 [visibility]:        #core-ref:3e67d45e-1fed-446d-82b5-ba941addc7e8
+[phpDocEmailRecipient]:     https://docs.anakeen.com/dynacase/3.2/dynacase-core-api-reference/interface_i_mail_recipient.html "PHPDoc : IMailRecipient"

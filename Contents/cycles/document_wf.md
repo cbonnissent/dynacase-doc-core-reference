@@ -171,9 +171,6 @@ cette relation sont détachés du document.
 tous les minuteurs correspondant à cet attribut sont détachées, qu'ils aient été
 attachés par cette étape, ou par tout autre moyen.
 
-<span class="fixme" data-assignedto="MCO">Ne faut-il pas un chapitre pour 
-    indiquer comment changer d'état par programmation / référence à setState ?</span>
-
 <!-- links -->
 [dynprof]: #core-ref:bc24834a-b380-4681-ae94-08b93076a7e8
 [MASK]: #core-ref:327ad491-06df-4e5b-b49a-695c75439fe1

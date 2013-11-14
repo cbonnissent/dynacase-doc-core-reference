@@ -49,8 +49,7 @@ Identifiant système `us_whatid`
     
     Cet identifiant est donné par le système lors de l'enregistrement. Il sert
     d'identifiant pour l'objet système associé au document. Voir
-    [Account][class_account]<span class="fixme" data-assignedto="nobody">Ajouter
-    le lien vers le chapitre de la classe Account</span>.
+    [Account][class_account].
 
 ## Création d'un groupe {#core-ref:6cb78c8d-9563-4abc-9f28-5c4f71da4f44}
 
@@ -104,3 +103,4 @@ la méthode `_IGROUP::insertDocument()`.
 
 <!-- links -->
 [profilage]: #core-ref:ce576351-dbe6-45d1-8097-f9573502b651
+[class_account]:    #core-ref:68c93fb2-088c-435a-b4ac-e1b94095d0c9

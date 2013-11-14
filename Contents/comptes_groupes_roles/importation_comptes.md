@@ -4,8 +4,6 @@ L'importation de groupes, d'utilisateurs et de rôles est effectuée à l'aide d
 fichier d'importation `CSV` (texte séparé par des point-virgules) ou `ODS` comme
 pour les [importations de documents][import_documents] en général.
 
-<span class="fixme" data-assignedto="nobody">à mettre à jour une fois le chapitre [Importation de documents][import_documents] rédigé</span>
-
 ## Importation d'utilisateurs {#core-ref:c2b428cf-5271-4835-947c-3eba235cc579}
 
 La création de compte utilisateur nécessite les 6 informations suivantes :

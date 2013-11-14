@@ -33,8 +33,7 @@ Identifiant système `us_whatid`
     
     Cet identifiant est donné par le système lors de l'enregistrement. Il sert
     d'identifiant pour l'objet système associé au document. Voir
-    [Account][class_account]<span class="fixme" data-assignedto="nobody">Ajouter
-    le lien vers le chapitre de la classe Account</span>.
+    [Account][class_account].
 
 ## Mot de passe {#core-ref:2f070320-45f3-4664-9a80-d86634bb21a3}
 
@@ -178,7 +177,7 @@ Par programmation il suffit de créer un document de la famille `IUSER`.
     }
 
 La méthode _IUSER::getAccount() permet de récupérer l'objet système "Account".
-Voir le paragraphe [Account][class_account]<span class="fixme" data-assignedto="nobody">Ajouter le lien vers le chapitre de la classe Account</span>.
+Voir le paragraphe [Account][class_account].
 
 
 ## Titulaires et suppléants {#core-ref:1591eb1c-aead-4f7b-bde9-5f42e397b22e}
@@ -237,4 +236,4 @@ aussi reprendre ses vues si la famille dérivée nécessite un autre contrôle d
 vue.
 
 <!-- links -->
-[class_account]: #FIXME
+[class_account]:  #core-ref:68c93fb2-088c-435a-b4ac-e1b94095d0c9

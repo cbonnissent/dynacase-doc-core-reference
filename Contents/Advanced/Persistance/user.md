@@ -6,7 +6,7 @@ les plus courantes, la manipulation des utilisateurs "interne".
 Ce chapitre ne décrit pas la manipulation des utilisateurs réseaux disponibles
 avec le module "dynacase-networkuser".
 
-## Création d'un utilisateur
+## Création d'un utilisateur {#core-ref:5c7928ef-d778-4530-968d-4084b3f70c16}
 
 La création d'un utilisateur peut être fait à l'aide de la [famille
 `IUSER`][users].
@@ -39,7 +39,7 @@ Code minimaliste pour créer un utilisateur via les documents.
     }
 
 
-## Correspondance entre compte User et document IUSER
+## Correspondance entre compte User et document IUSER {#core-ref:4842d6c2-f88d-41d9-aa30-04437ffdb67e}
 
 Pour récupérer le compte système à partir du document `IUSER` :
 
@@ -96,7 +96,7 @@ Exemple de création d'utilisateur via la classe `Account`
       print "Nouvel utilisateur n°".$user->id;
     }
 
-## Groupe d'utilisateurs 
+## Groupe d'utilisateurs  {#core-ref:6afad021-29c2-400b-87f2-3a83551e3e95}
 
 La famille `IGROUP` permet de rajouter des utilisateurs dans des groupes.
 
@@ -106,7 +106,7 @@ identifier les groupes "système".
 Comme la famille IUSER, la famille `IGROUP` dispose de la méthode
 `IGROUP::getAccount()` pour récupérer l'objet `Account` correspondant
 
-### Correspondance Compte User &hArr; Document IGROUP
+### Correspondance Compte User &hArr; Document IGROUP {#core-ref:70bec060-4ebe-48d5-a8d5-a8d7f500662a}
 
 
 | Compte Group | Document `IGROUP` |
@@ -119,7 +119,7 @@ Comme la famille IUSER, la famille `IGROUP` dispose de la méthode
 
 Le compte "Account" d'un groupe a toujours son attribut "accounttype" à "G".
 
-### Ajout d'un utilisateur à un groupe
+### Ajout d'un utilisateur à un groupe {#core-ref:dc529ed1-63eb-4628-aa62-3e3e213a09e4}
 
 Utilisation de `_IGROUP::AddFile()`.
 
@@ -145,7 +145,7 @@ Ajout de l'utilisateur n°1009 dans le groupe GDEFAULT :
     printf("liste des groupes apres\n");
     print_r($user->getTValue("us_idgroup"));
 
-### Suppression d'utilisateur dans un groupe
+### Suppression d'utilisateur dans un groupe {#core-ref:c6c94659-4e24-49f8-9644-cd240a68f85c}
 
 Utilisation de `_IGROUP::DelFile()`.
 
@@ -169,7 +169,7 @@ Utilisation de `_IGROUP::DelFile()`.
     printf("liste des groupes apres\n");
     print_r($user->getTValue("us_idgroup"));
 
-### Récupération des membres d'un groupe
+### Récupération des membres d'un groupe {#core-ref:81cf3f6f-d7fd-439c-808e-c74bd17ad429}
 
 À partir de l'objet "Account" d'un groupe : `Account::getAllMembers()`.
 
@@ -192,7 +192,7 @@ Exemple d'utilisation :
         printf("%s)%s\n", $docIUser->id,  $docIUser->getTitle());
     }
 
-## Récupération des utilisateurs associés à un rôle
+## Récupération des utilisateurs associés à un rôle {#core-ref:30ae82d0-6ac6-4d50-8d23-af1d3c64d969}
 
 Comme pour les groupes, à partir de l'objet "Account" d'un rôle :
 `Account::getAllMember()`.
@@ -215,7 +215,7 @@ Exemple d'utilisation :
       printf("%s)%s\n", $docIUser->id,  $docIUser->getTitle());
     }
 
-## Récupération des rôles d'un utilisateur
+## Récupération des rôles d'un utilisateur {#core-ref:d012d0f0-79fb-4c09-97aa-2aa9da750e62}
 
 À partir de l'objet "Account" , méthode `Account::getAllRoles()`
 
@@ -231,7 +231,7 @@ Exemple d'utilisation :
       }
     }
 
-## Suppléants et titulaires
+## Suppléants et titulaires {#core-ref:8bda02a2-0368-4f0d-aee6-68be7a2c604d}
 
 Affectation d'un suppléant à un utilisateur et récupérations des titulaires.
 
@@ -256,14 +256,14 @@ Affectation d'un suppléant à un utilisateur et récupérations des titulaires.
     0)j1 Doe 
     1)j3 Doe 
 
-## Recherche de comptes
+## Recherche de comptes {#core-ref:77224212-a4f3-4159-8a8a-c11c6f430f61}
 
 Il est possible de rechercher les comptes suivant leurs critères d'appartenance
 à des rôles ou des groupes. La classe `SearchAccount` permet de réaliser
 facilement la recherche de compte. Le résultat de cette recherche peut retourner
 des utilisateurs, des groupes ou des rôles. 
 
-### Recherche des utilisateurs par rôle
+### Recherche des utilisateurs par rôle {#core-ref:b48372db-c2a9-481a-a502-174f972484a3}
 
 Pour indiquer le filtre d'un rôle, il faut utiliser, la méthode
 `::addRoleFilter()`. Cette méthode prend en argument la référence du rôle. La
@@ -332,7 +332,7 @@ Cette écriture est équivalente à :
 La condition d'appartenance à plusieurs rôles n'est pas disponible avec cette
 méthode. Ce filtre peut retourner des groupes ou des utilisateurs.
 
-### Recherche des utilisateurs par groupe
+### Recherche des utilisateurs par groupe {#core-ref:bb14d2a0-abf6-470e-b226-186f15bc7784}
 
 La méthode `::addGroupFilter()` est équivalent à `::addRoleFilter()`. Elle permet de
 rechercher parmi les comptes qui appartiennent à différents groupes. Si cette
@@ -345,7 +345,7 @@ comptes qui appartiennent à un des groupes cités ou à un des rôles cités.
 La recherche par groupe recherche aussi les comptes dans les sous-groupes. Ce
 filtre peut retourner des groupes ou des utilisateurs.
 
-### Recherche sur des critères de compte
+### Recherche sur des critères de compte {#core-ref:2bc3eab4-9779-4603-8a0a-b298a905f46b}
 
 La méthode ::addFilter() permet d'ajouter des filtres sur les caractéristiques
 des comptes:
@@ -393,7 +393,7 @@ courant a le droit de voir il faut rajouter l'appel à la méthode
     [php]
     $searchAccount->useViewControl(true);
 
-## Spécialisation des documents utilisateurs
+## Spécialisation des documents utilisateurs {#core-ref:6ec2016f-4410-4c34-8b87-36a62859577e}
 
 Les documents système "utilisateur" (famille `IUSER`) peuvent être dérivés pour
 ajouter des informations fonctionnelles ou pour ajouter des informations
