@@ -289,7 +289,7 @@ L'ordre des colonnes est  :
 Le nom de l'image doit référencer un fichier présent dans le répertoire
 `./Images` à la racine du répertoire d'installation sur le serveur.
 
-## Précautions d'utilisation
+## Précautions d'utilisation {#core-ref:a3f0e390-b967-4de4-8bf8-85bedb173085}
 
 Lors de l'import de documents quelques précautions d'usage sont à prendre en compte :
 

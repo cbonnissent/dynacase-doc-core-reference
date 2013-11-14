@@ -164,7 +164,6 @@ cwidth
     *   une largeur relative en pourcentage (par exemple `30%`)
     *   **`auto` (comportement par défaut)**
 
-#
 <!-- links -->
 [MDN_css_color_value]: https://developer.mozilla.org/en-US/docs/CSS/color_value "description du type css color sur MDN"
 [MDN_css_length_value]: https://developer.mozilla.org/en-US/docs/CSS/length "description du type css length sur MDN"
