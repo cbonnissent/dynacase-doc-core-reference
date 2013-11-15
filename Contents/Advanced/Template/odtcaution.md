@@ -128,9 +128,8 @@ d'équivalence présentant les balises supportées et leur équivalent ODT.
 | `td`        | `table:table-cell` | Insère une cellule tableau                 |                                                                                                                                                                                                                                                                                                                   |
 | `img`       | `draw:frame`       | Insère une image                           | L'url de cette image doit être absolue et accessible depuis l'éditeur de texte. Seules les images présente sur les paragraphes de premier niveau sont prises en compte. Pas d'image dans les cellule de tableau. La taille n'est pas configurable. C'est la taille d'origine de l'image qui sera prise en compte. |
 
-### Exemples {#core-ref:ff8bb396-39be-4d21-b4ca-c7aab1123d34}
 
-#### Exemple 1 - Paragraphe {#core-ref:cdcb4bad-9296-4f70-949f-e4ffdfef9fca}
+### Exemple 1 - Paragraphe {#core-ref:cdcb4bad-9296-4f70-949f-e4ffdfef9fca}
 
 Le code HTML
 
@@ -145,7 +144,7 @@ donne le code XML suivant :
     </text:section>
 
 
-#### Exemple 2 - Liste à puces {#core-ref:ecf28987-1e1b-400c-8655-97dec99be44e}
+### Exemple 2 - Liste à puces {#core-ref:ecf28987-1e1b-400c-8655-97dec99be44e}
 
 Le code HTML
 
@@ -170,7 +169,7 @@ donne le code XML suivant :
     </text:section>
 
 
-#### Exemple 3 - Division {#core-ref:f2c3eb19-197b-4b94-bf99-657b8ca3e593}
+### Exemple 3 - Division {#core-ref:f2c3eb19-197b-4b94-bf99-657b8ca3e593}
 
 Le code HTML
 
@@ -185,7 +184,7 @@ donne le code XML suivant :
     </text:section>
 
 
-#### Exemple 4 - Gras et italique {#core-ref:e1f4bd8f-739e-41d6-9977-7a64dac2c4cb}
+### Exemple 4 - Gras et italique {#core-ref:e1f4bd8f-739e-41d6-9977-7a64dac2c4cb}
 
 Le code HTML
 
@@ -208,7 +207,7 @@ donne le code XML suivant :
     </text:section>
 
 
-#### Exemple 5 - Titre de niveau {#core-ref:a0396f8f-8bef-4d50-b9aa-4621e400d289}
+### Exemple 5 - Titre de niveau {#core-ref:a0396f8f-8bef-4d50-b9aa-4621e400d289}
 
 Le code HTML
 
@@ -226,7 +225,7 @@ donne le code XML suivant :
       <text:p>Mon paragraphe</text:p>
     </text:section>
 
-#### Exemple 6 {#core-ref:2f4767c9-0358-40a6-8a7a-1de9fcd090b1}
+### Exemple 6 {#core-ref:2f4767c9-0358-40a6-8a7a-1de9fcd090b1}
 
 Le code HTML
 
@@ -254,7 +253,7 @@ donne le code XML suivant :
       </table:table>
     </text:section>
 
-#### Exemple 7 - Cas d'erreur {#core-ref:5cc6bc2a-73b7-4923-87ee-5046384c97d9}
+### Exemple 7 - Cas d'erreur {#core-ref:5cc6bc2a-73b7-4923-87ee-5046384c97d9}
 
 Le code HTML
 
