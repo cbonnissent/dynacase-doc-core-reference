@@ -715,25 +715,29 @@ book:
       element: "chapter"
       content:  "API/Class_Layout.md"
       flags:
-        wip: "work in progress"
+        new:   "new"
+        draft: "draft"
         wip_sub: ""
     - level:   3
       element: "chapter"
       content:  "API/Class_Layout/Method_gen.md"
       flags:
-        wip: "work in progress"
+        new:   "new"
+        draft: "draft"
         wip_sub: ""
     - level:   3
       element: "chapter"
       content:  "API/Class_Layout/Method_set.md"
       flags:
-        wip: "work in progress"
+        new:   "new"
+        draft: "draft"
         wip_sub: ""
     - level:   3
       element: "chapter"
       content:  "API/Class_Layout/Method_setBlockData.md"
       flags:
-        wip: "work in progress"
+        new:   "new"
+        draft: "draft"
         wip_sub: ""
     - level:   2
       element: "chapter"
@@ -1403,6 +1407,11 @@ book:
       content:  "Advanced/Template/texte.md"
       flags:
          new: "new"
+    - level:   3
+      content:  "Advanced/Template/tag_list_texte.md"
+      flags:
+         new:   "new"
+         draft: "draft"
     - level:   3
       content:  "Advanced/Template/odt.md"
       flags:
