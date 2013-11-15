@@ -2,7 +2,7 @@
 
 <div class="short-description" markdown="1">  
 
-[Hameçon][hook] (ou hook) utilisé par la méthode [`Doc::Store()`][docstore].
+[Hameçon][hook] (ou hook) utilisé par la méthode [`Doc::store()`][docstore].
 Cette méthode est appelée après l'enregistrement en base de données.
 
 </div>

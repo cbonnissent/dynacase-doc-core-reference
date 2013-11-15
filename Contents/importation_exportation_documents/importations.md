@@ -195,12 +195,12 @@ documents. Le caractère obligatoire des attributs n'est pas vérifié non plus.
 Lors de l'importation d'un document, il est possible d'indiquer des informations
 supplémentaires pour réaliser des traitements conditionnels.
 
-Ces informations sont identifiées par des clés commençant par `extra:` :
-ces valeurs sont passées en paramètre des méthodes `preImport` et `postImport`
-de la famille associée, sous forme d'un tableau associatif de forme
-`clé => valeur`, avec pour clé la chaîne de caractères suivant le `extra:` dans
-la description du nom de l'attribut, et comme valeur, celle correspondante à la
-colonne.
+Ces informations sont identifiées par des clés commençant par `extra:` : ces
+valeurs sont passées en paramètre des méthodes [`preImport`][preimport] et
+[`postImport`][postimport] de la famille associée, sous forme d'un tableau
+associatif de forme `clé => valeur`, avec pour clé la chaîne de caractères
+suivant le `extra:` dans la description du nom de l'attribut, et comme valeur,
+celle correspondante à la colonne.
 
 Exemple :
 
@@ -213,7 +213,7 @@ comme paramètre passé à `preImport` et `postImport` :
 
     [php]
     array(
-        'state' => 'alive',
+        'status' => 'alive',
         'special' => 'protected'
     );
 
@@ -302,9 +302,11 @@ que. Il faut suivre la procédure de ré-import tel que décrite dans ce
 <!-- links -->
 [CSV]: http://fr.wikipedia.org/wiki/Comma-separated_values "Comma-separated values sur wikipedia"
 [ODS]: http://fr.wikipedia.org/wiki/OpenDocument "Open Document sur wikipedia"
-[hooks]: #core-ref:8f3d47de-32b5-4748-8a00-b1569c5423e5
-[order]: #core-ref:e41116ee-a682-4033-a7ab-22dc1b99e56a
-[doc]: #core-ref:3acb8fbe-6e5a-4933-95fa-2cea0eae2fc5
-[setValue]: #core-ref:febc397f-e629-4d47-955d-27cab8f4ed2f
-[keys]: #core-ref:7eefc8e7-16a6-4188-99d5-c2c9d817a1fe
-[importation]: #core-ref:a0cb9a84-6bde-476c-b55c-95c8f12abd3a
+[hooks]:            #core-ref:8f3d47de-32b5-4748-8a00-b1569c5423e5
+[order]:            #core-ref:e41116ee-a682-4033-a7ab-22dc1b99e56a
+[doc]:              #core-ref:3acb8fbe-6e5a-4933-95fa-2cea0eae2fc5
+[setValue]:         #core-ref:febc397f-e629-4d47-955d-27cab8f4ed2f
+[keys]:             #core-ref:7eefc8e7-16a6-4188-99d5-c2c9d817a1fe
+[importation]:      #core-ref:a0cb9a84-6bde-476c-b55c-95c8f12abd3a
+[preimport]:        #core-ref:adb6ba8b-15c4-42d3-97dc-1da16c2112ae
+[postimport]:       #core-ref:9de7e922-150a-416b-b846-b6e195bf0921 

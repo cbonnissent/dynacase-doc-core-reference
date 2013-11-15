@@ -386,233 +386,92 @@ book:
     - level:   2
       element: "chapter"
       content:  "API/Class_Doc.md"
-      subtoc:   1
+      flags:
+        new: "updated"
+      subtoc:   2
     - level:   3
       element: "chapter"
       content:  "API/Class_Doc/Properties.md"
     - level:   3
       element: "chapter"
+      content:  "API/Class_Doc/dochooks.md"
+      subtoc:   1
+      flags:
+        draft: "draft"
+        new: "new"
+    - level:   4
+      element: "chapter"
       content:  "API/Class_Doc/Method_PreCreated.md"
-    - level:   3
+    - level:   4
       element: "chapter"
       content:  "API/Class_Doc/Method_PostCreated.md"
-    - level:   3
+    - level:   4
+      element: "chapter"
+      content:  "API/Class_Doc/Method_preDelete.md"
+      flags:
+        new : "new"
+        draft : "draft"
+    - level:   4
+      element: "chapter"
+      content:  "API/Class_Doc/Method_postDelete.md"
+      flags:
+        new : "new"
+        draft : "draft"
+    - level:   4
       element: "chapter"
       content:  "API/Class_Doc/Method_preStore.md"
-    - level:   3
+    - level:   4
       element: "chapter"
       content:  "API/Class_Doc/Method_postStore.md"
-    - level:   3
-      element: "chapter"
-      content:  "API/Class_Doc/Method_ReallyDelete.md"
-      flags:
-        wip: "work in progress"
-        wip_sub: ""
-    - level:   3
-      element: "chapter"
-      content:  "API/Class_Doc/Method_Refresh.md"
-    - level:   3
+    - level:   4
       element: "chapter"
       content:  "API/Class_Doc/Method_preRefresh.md"
-    - level:   3
+    - level:   4
       element: "chapter"
       content:  "API/Class_Doc/Method_postRefresh.md"
-    - level:   3
-      element: "chapter"
-      content:  "API/Class_Doc/Method__array2val.md"
-      flags:
-        wip: "work in progress"
-        wip_sub: ""
-    - level:   3
-      element: "chapter"
-      content:  "API/Class_Doc/Method__val2array.md"
-      flags:
-        wip: "work in progress"
-        wip_sub: ""
-    - level:   3
-      element: "chapter"
-      content:  "API/Class_Doc/Method_addArrayRow.md"
-      flags:
-        wip: "work in progress"
-        wip_sub: ""
-    - level:   3
-      element: "chapter"
-      content:  "API/Class_Doc/Method_addHistoryEntry.md"
-    - level:   3
-      element: "chapter"
-      content:  "API/Class_Doc/Method_revise.md"
-    - level:   3
-      element: "chapter"
-      content:  "API/Class_Doc/Method_control.md"
-      flags:
-        wip: "work in progress"
-        wip_sub: ""
-    - level:   3
-      element: "chapter"
-      content:  "API/Class_Doc/Method_copy.md"
-      flags:
-        wip: "work in progress"
-        wip_sub: ""
-    - level:   3
-      element: "chapter"
-      content:  "API/Class_Doc/Method_delete.md"
-      flags:
-        wip: "work in progress"
-        wip_sub: ""
-    - level:   3
-      element: "chapter"
-      content:  "API/Class_Doc/Method_deleteArray.md"
-      flags:
-        wip: "work in progress"
-        wip_sub: ""
-    - level:   3
-      element: "chapter"
-      content:  "API/Class_Doc/Method_clearValue.md"
-      flags:
-        wip: "work in progress"
-        wip_sub: ""
-    - level:   3
-      element: "chapter"
-      content:  "API/Class_Doc/Method_disableEditControl.md"
-      flags:
-        wip: "work in progress"
-        wip_sub: ""
-    - level:   3
-      element: "chapter"
-      content:  "API/Class_Doc/Method_editattr.md"
-      flags:
-        wip: "work in progress"
-        wip_sub: ""
-    - level:   3
-      element: "chapter"
-      content:  "API/Class_Doc/Method_enableEditControl.md"
-      flags:
-        wip: "work in progress"
-        wip_sub: ""
-    - level:   3
-      element: "chapter"
-      content:  "API/Class_Doc/Method_getAValues.md"
-      flags:
-        wip: "work in progress"
-        wip_sub: ""
-    - level:   3
-      element: "chapter"
-      content:  "API/Class_Doc/Method_getAttribute.md"
-      flags:
-        wip: "work in progress"
-        wip_sub: ""
-    - level:   3
-      element: "chapter"
-      content:  "API/Class_Doc/Method_getDate.md"
-      flags:
-        wip: "work in progress"
-        wip_sub: ""
-    - level:   3
-      element: "chapter"
-      content:  "API/Class_Doc/Method_getDocAnchor.md"
-    - level:   3
-      element: "chapter"
-      content:  "API/Class_Doc/Method_getFamDoc.md"
-      flags:
-        wip: "work in progress"
-        wip_sub: ""
-    - level:   3
-      element: "chapter"
-      content:  "API/Class_Doc/Method_getOldRawValue.md"
-    - level:   3
-      element: "chapter"
-      content:  "API/Class_Doc/Method_getOldRawValues.md"
-    - level:   3
-      element: "chapter"
-      content:  "API/Class_Doc/Method_getParamValue.md"
-      flags:
-        wip: "work in progress"
-        wip_sub: ""
-    - level:   3
-      element: "chapter"
-      content:  "API/Class_Doc/Method_getProperty.md"
-      flags:
-        wip: "work in progress"
-        wip_sub: ""
-    - level:   3
-      element: "chapter"
-      content:  "API/Class_Doc/Method_getSpecTitle.md"
-      flags:
-        wip: "work in progress"
-        wip_sub: ""
-    - level:   3
-      element: "chapter"
-      content:  "API/Class_Doc/Method_getState.md"
-      flags:
-        wip: "work in progress"
-        wip_sub: ""
-    - level:   3
-      element: "chapter"
-      content:  "API/Class_Doc/Method_getTValue.md"
-      flags:
-        wip: "work in progress"
-        wip_sub: ""
-    - level:   3
-      element: "chapter"
-      content:  "API/Class_Doc/Method_getTitle.md"
-      flags:
-        wip: "work in progress"
-        wip_sub: ""
-    - level:   3
-      element: "chapter"
-      content:  "API/Class_Doc/Method_getRawValue.md"
-    - level:   3
-      element: "chapter"
-      content:  "API/Class_Doc/Method_getAttributeValue.md"
-    - level:   3
-      element: "chapter"
-      content:  "API/Class_Doc/Method_isAlive.md"
-      flags:
-        wip: "work in progress"
-        wip_sub: ""
-    - level:   3
-      element: "chapter"
-      content:  "API/Class_Doc/Method_isChanged.md"
-      flags:
-        wip: "work in progress"
-        wip_sub: ""
-    - level:   3
-      element: "chapter"
-      content:  "API/Class_Doc/Method_latestId.md"
-      flags:
-        wip: "work in progress"
-        wip_sub: ""
-    - level:   3
-      element: "chapter"
-      content:  "API/Class_Doc/Method_postCopy.md"
-      flags:
-        wip: "work in progress"
-        wip_sub: ""
-    - level:   3
-      element: "chapter"
-      content:  "API/Class_Doc/Method_postImport.md"
-      flags:
-        wip: "work in progress"
-        wip_sub: ""
-    - level:   3
-      element: "chapter"
-      content:  "API/Class_Doc/Method_postRevive.md"
-      flags:
-        wip: "work in progress"
-        wip_sub: ""
-    - level:   3
-      element: "chapter"
-      content:  "API/Class_Doc/Method_preConsultation.md"
-      flags:
-        wip: "work in progress"
-        wip_sub: ""
-    - level:   3
+    - level:   4
       element: "chapter"
       content:  "API/Class_Doc/Method_preCopy.md"
       flags:
         wip: "work in progress"
         wip_sub: ""
-    - level:   3
+    - level:   4
+      element: "chapter"
+      content:  "API/Class_Doc/Method_postCopy.md"
+      flags:
+        wip: "work in progress"
+        wip_sub: ""
+    - level:   4
+      element: "chapter"
+      content:  "API/Class_Doc/Method_preImport.md"
+      flags:
+        new : "new"
+        draft: "draft"
+    - level:   4
+      element: "chapter"
+      content:  "API/Class_Doc/Method_postImport.md"
+      flags:
+        new : "new"
+        draft : "draft"
+    - level:   4
+      element: "chapter"
+      content:  "API/Class_Doc/Method_preUndelete.md"
+      flags:
+        new : "new"
+        draft : "draft"
+    - level:   4
+      element: "chapter"
+      content:  "API/Class_Doc/Method_postUndelete.md"
+      flags:
+        new : "new"
+        draft : "draft"
+    - level:   4
+      element: "chapter"
+      content:  "API/Class_Doc/Method_preConsultation.md"
+      flags:
+        wip: "work in progress"
+        wip_sub: ""
+    - level:   4
       element: "chapter"
       content:  "API/Class_Doc/Method_preEdition.md"
       flags:
@@ -620,44 +479,207 @@ book:
         wip_sub: ""
     - level:   3
       element: "chapter"
-      content:  "API/Class_Doc/Method_preImport.md"
+      content:  "API/Class_Doc/docmethods.md"
+      subtoc:   1
       flags:
-        wip: "work in progress"
-        wip_sub: ""
-    - level:   3
+        draft: "draft"
+        new: "new"
+    - level:   4
       element: "chapter"
-      content:  "API/Class_Doc/Method_preRevive.md"
+      content:  "API/Class_Doc/Method__array2val.md"
       flags:
         wip: "work in progress"
         wip_sub: ""
-    - level:   3
+    - level:   4
+      element: "chapter"
+      content:  "API/Class_Doc/Method__val2array.md"
+      flags:
+        wip: "work in progress"
+        wip_sub: ""
+    - level:   4
+      element: "chapter"
+      content:  "API/Class_Doc/Method_addArrayRow.md"
+      flags:
+        wip: "work in progress"
+        wip_sub: ""
+    - level:   4
+      element: "chapter"
+      content:  "API/Class_Doc/Method_addHistoryEntry.md"
+    - level:   4
+      element: "chapter"
+      content:  "API/Class_Doc/Method_revise.md"
+    - level:   4
+      element: "chapter"
+      content:  "API/Class_Doc/Method_control.md"
+      flags:
+        wip: "work in progress"
+        wip_sub: ""
+    - level:   4
+      element: "chapter"
+      content:  "API/Class_Doc/Method_copy.md"
+      flags:
+        wip: "work in progress"
+        wip_sub: ""
+    - level:   4
+      element: "chapter"
+      content:  "API/Class_Doc/Method_delete.md"
+      flags:
+        new : "new"
+        draft : "draft"
+    - level:   4
+      element: "chapter"
+      content:  "API/Class_Doc/Method_deleteArray.md"
+      flags:
+        wip: "work in progress"
+        wip_sub: ""
+    - level:   4
+      element: "chapter"
+      content:  "API/Class_Doc/Method_clearValue.md"
+      flags:
+        wip: "work in progress"
+        wip_sub: ""
+    - level:   4
+      element: "chapter"
+      content:  "API/Class_Doc/Method_disableEditControl.md"
+      flags:
+        wip: "work in progress"
+        wip_sub: ""
+    - level:   4
+      element: "chapter"
+      content:  "API/Class_Doc/Method_editattr.md"
+      flags:
+        wip: "work in progress"
+        wip_sub: ""
+    - level:   4
+      element: "chapter"
+      content:  "API/Class_Doc/Method_enableEditControl.md"
+      flags:
+        wip: "work in progress"
+        wip_sub: ""
+    - level:   4
+      element: "chapter"
+      content:  "API/Class_Doc/Method_getAValues.md"
+      flags:
+        wip: "work in progress"
+        wip_sub: ""
+    - level:   4
+      element: "chapter"
+      content:  "API/Class_Doc/Method_getAttribute.md"
+      flags:
+        wip: "work in progress"
+        wip_sub: ""
+    - level:   4
+      element: "chapter"
+      content:  "API/Class_Doc/Method_getDate.md"
+      flags:
+        wip: "work in progress"
+        wip_sub: ""
+    - level:   4
+      element: "chapter"
+      content:  "API/Class_Doc/Method_getDocAnchor.md"
+    - level:   4
+      element: "chapter"
+      content:  "API/Class_Doc/Method_getFamDoc.md"
+      flags:
+        wip: "work in progress"
+        wip_sub: ""
+    - level:   4
+      element: "chapter"
+      content:  "API/Class_Doc/Method_getOldRawValue.md"
+    - level:   4
+      element: "chapter"
+      content:  "API/Class_Doc/Method_getOldRawValues.md"
+    - level:   4
+      element: "chapter"
+      content:  "API/Class_Doc/Method_getParamValue.md"
+      flags:
+        wip: "work in progress"
+        wip_sub: ""
+    - level:   4
+      element: "chapter"
+      content:  "API/Class_Doc/Method_getProperty.md"
+      flags:
+        wip: "work in progress"
+        wip_sub: ""
+    - level:   4
+      element: "chapter"
+      content:  "API/Class_Doc/Method_getSpecTitle.md"
+      flags:
+        wip: "work in progress"
+        wip_sub: ""
+    - level:   4
+      element: "chapter"
+      content:  "API/Class_Doc/Method_getState.md"
+      flags:
+        wip: "work in progress"
+        wip_sub: ""
+    - level:   4
+      element: "chapter"
+      content:  "API/Class_Doc/Method_getTValue.md"
+      flags:
+        wip: "work in progress"
+        wip_sub: ""
+    - level:   4
+      element: "chapter"
+      content:  "API/Class_Doc/Method_getTitle.md"
+      flags:
+        wip: "work in progress"
+        wip_sub: ""
+    - level:   4
+      element: "chapter"
+      content:  "API/Class_Doc/Method_getRawValue.md"
+    - level:   4
+      element: "chapter"
+      content:  "API/Class_Doc/Method_getAttributeValue.md"
+    - level:   4
+      element: "chapter"
+      content:  "API/Class_Doc/Method_isAlive.md"
+      flags:
+        wip: "work in progress"
+        wip_sub: ""
+    - level:   4
+      element: "chapter"
+      content:  "API/Class_Doc/Method_isChanged.md"
+      flags:
+        wip: "work in progress"
+        wip_sub: ""
+    - level:   4
+      element: "chapter"
+      content:  "API/Class_Doc/Method_latestId.md"
+      flags:
+        wip: "work in progress"
+        wip_sub: ""
+    - level:   4
       element: "chapter"
       content:  "API/Class_Doc/Method_removeArrayRow.md"
       flags:
         wip: "work in progress"
         wip_sub: ""
-    - level:   3
+    - level:   4
       element: "chapter"
-      content:  "API/Class_Doc/Method_revive.md"
-      flags:
-        wip: "work in progress"
-        wip_sub: ""
-    - level:   3
+      content:  "API/Class_Doc/Method_Refresh.md"
+    - level:   4
       element: "chapter"
       content:  "API/Class_Doc/Method_setState.md"
       flags:
         wip: "work in progress"
         wip_sub: ""
-    - level:   3
+    - level:   4
       element: "chapter"
       content:  "API/Class_Doc/Method_setValue.md"
-    - level:   3
+    - level:   4
       element: "chapter"
       content:  "API/Class_Doc/Method_setAttributeValue.md"
-    - level:   3
+    - level:   4
       element: "chapter"
       content:  "API/Class_Doc/Method_store.md"
-    - level:   3
+    - level:   4
+      element: "chapter"
+      content:  "API/Class_Doc/Method_undelete.md"
+      flags:
+        new : "new"
+        draft : "draft"
+    - level:   4
       element: "chapter"
       content:  "API/Class_Doc/Method_viewattr.md"
       flags:

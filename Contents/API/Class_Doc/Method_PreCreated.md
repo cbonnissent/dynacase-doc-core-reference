@@ -37,8 +37,7 @@ en faisant :
     namespace My;
     use \Dcp\AttributeIdentifiers\MyFamily as MyAttributes;
     
-    class MyFamily extends \
-    Dcp\Family\Document
+    class MyFamily extends Dcp\Family\Document
     {
         public function preCreated()
         {
