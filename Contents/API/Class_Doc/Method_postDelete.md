@@ -11,18 +11,22 @@ Cette méthode est appelée **après** la suppression du document.
     [php]
     string postDelete (  )
 
-<span class="fixme template">long description</span>
+Cette méthode permet de réaliser un post-traitement après suppression du
+document.
 
 ### Avertissements  {#core-ref:81f4fce5-067b-4d64-bf3a-9bb4b2e842ae}
 
-Cette méthode est appelée après les contrôles de profils pour suppression du
-document.
+Le document est déjà supprimé lors de l'appel. Dans le cas d'une suppression
+physique, il n'est plus en base de données.
 
 ## Liste des paramètres  {#core-ref:fcd1e2c5-2f8f-44cd-a93f-031e2c67ad39}
+
 Aucun.
 
 ## Valeur de retour  {#core-ref:507fcfd4-5309-40a5-a6d9-1540f69deda0}
-<span class="fixme template">Valeur de retour</span>
+
+Message d'information.  Ce message est enregistré dans
+l'historique du document.
 
 ## Erreurs / Exceptions  {#core-ref:5a1de851-4460-49ac-bae0-3bdd4a9aa574}
 
@@ -30,23 +34,25 @@ Aucune.
 
 ## Historique  {#core-ref:6441bfb8-077c-4416-b164-79e68226b77e}
 
-Anciennement `preRevive()`.
+Aucun.
 
 ## Exemples  {#core-ref:1b68b88e-7ddb-417e-b9c4-753d676d6a14}
 
-Cet exemple, interdit la suppression si l'attribut `sp_protectionlevel` vaut
-"top secret".
+Cet exemple supprime un document lié.
 
-   [php]
+    [php]
     namespace My;
     use \Dcp\AttributeIdentifiers\MyFamily as MyAttributes;
     
     class MyFamily extends Dcp\Family\Document
     {
         public function postDelete() {
-            
-            if ($this->getAttributeValue(MyAttributes::sp_protectionlevel) == "top secret")) {}
-                return "Protected document"; // blocage de la suppression
+            $linkedId=$this->getAttributeValue(MyAttributes::sp_linkeddoc);
+            if (linkedId != "")) {
+                $linked=new_doc($this->dbaccess, linkedId);
+                if (linked->isAlive()) {
+                    return $linked->delete();
+                }
             }
             return '';
         }
@@ -54,14 +60,13 @@ Cet exemple, interdit la suppression si l'attribut `sp_protectionlevel` vaut
 
 ## Notes  {#core-ref:dc75185f-6dff-4b96-8667-349fe771747f}
 
-Même le compte "admin" ne peut pas outrepasser les conditions de suppression de
-cette méthode.
+Aucune.
 
 ## Voir aussi  {#core-ref:35801bff-af17-4fbc-ab40-c10b55c4cf22}
 
-*   [`Doc::postDelete()][docpostDelete].
-*   [`Doc::Delete()][Delete].
-*   [`Doc::undelete()][undelete].
+*   [`Doc::postDelete()`][docpostDelete].
+*   [`Doc::Delete()`][Delete].
+*   [`Doc::undelete()`][undelete].
 
 <!-- links -->
 [docstore]:         #core-ref:b8540d13-ece6-4e9e-9b72-6a56bca9da12

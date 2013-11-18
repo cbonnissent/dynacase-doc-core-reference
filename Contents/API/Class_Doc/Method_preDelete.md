@@ -11,7 +11,8 @@ Cette méthode est appelée **avant** la restauration du document.
     [php]
     string preDelete (  )
 
-<span class="fixme template">long description</span>
+Cette méthode permet d'ajouter des conditions spécifiques avant la suppression
+du document.
 
 ### Avertissements  {#core-ref:2484712c-92c6-4bf7-8d73-363b29b97619}
 
@@ -19,6 +20,7 @@ Cette méthode est appelée après les contrôles de profils pour suppression du
 document.
 
 ## Liste des paramètres  {#core-ref:b8b3bc55-1d3e-4c92-bfd6-239cc5e00f6b}
+
 Aucun.
 
 ## Valeur de retour  {#core-ref:9361b852-00c9-483b-b499-d7f622105574}
@@ -32,14 +34,14 @@ Aucune.
 
 ## Historique  {#core-ref:d3534099-83cb-4740-b67c-2b4e3106f3a3}
 
-Anciennement `preRevive()`.
+Aucun.
 
 ## Exemples  {#core-ref:59ad28b2-3de0-4d5e-b429-0e898e6807cc}
 
 Cet exemple, interdit la suppression si l'attribut `sp_protectionlevel` vaut
 "top secret".
 
-   [php]
+    [php]
     namespace My;
     use \Dcp\AttributeIdentifiers\MyFamily as MyAttributes;
     
@@ -61,8 +63,8 @@ cette méthode.
 
 ## Voir aussi  {#core-ref:b023c517-fa58-4f19-ac4e-7c0df4af3e49}
 
-*   [`Doc::postDelete()][docpostDelete].
-*   [`Doc::Delete()][Delete].
+*   [`Doc::postDelete()`][docpostDelete].
+*   [`Doc::Delete()`][Delete].
 
 <!-- links -->
 [docstore]:         #core-ref:b8540d13-ece6-4e9e-9b72-6a56bca9da12

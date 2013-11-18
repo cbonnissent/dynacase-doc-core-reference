@@ -46,7 +46,7 @@ Anciennement `preRevive()`.
 Cet exemple, interdit la suppression si l'attribut `sp_protectionlevel` vaut
 "archived".
 
-   [php]
+    [php]
     namespace My;
     use \Dcp\AttributeIdentifiers\MyFamily as MyAttributes;
     

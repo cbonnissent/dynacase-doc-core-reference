@@ -26,7 +26,7 @@ Aucun.
 
 ## Valeur de retour {#core-ref:714a242c-46ac-4284-a123-705c984b1461}
 
-Message d'information. Ce message est afficher à l'utilisateur lorsqu'il réalise
+Message d'information. Ce message est affiché à l'utilisateur lorsqu'il réalise
 une restauration depuis l'interface web. Ce message est aussi enregistré dans
 l'historique du document.
 
@@ -43,7 +43,7 @@ Anciennement `postRevive()`.
 Cet exemple, mémorise l'auteur de la restauration si l'attribut
 `sp_protectionlevel` vaut "low".
 
-   [php]
+    [php]
     namespace My;
     use \Dcp\AttributeIdentifiers\MyFamily as MyAttributes;
     
@@ -66,8 +66,8 @@ Aucune.
 
 ## Voir aussi {#core-ref:0519c237-6596-486c-aa1e-be4794c97839}
 
-*   [`Doc::preUndelete()][docpreundelete].
-*   [`Doc::undelete()][undelete].
+*   [`Doc::preUndelete()`][docpreundelete].
+*   [`Doc::undelete()`][undelete].
 
 <!-- links -->
 [docstore]:         #core-ref:b8540d13-ece6-4e9e-9b72-6a56bca9da12

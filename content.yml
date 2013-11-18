@@ -419,6 +419,18 @@ book:
         draft : "draft"
     - level:   4
       element: "chapter"
+      content:  "API/Class_Doc/Method_preDuplicate.md"
+      flags:
+        new :  "new"
+        draft: "draft"
+    - level:   4
+      element: "chapter"
+      content:  "API/Class_Doc/Method_postDuplicate.md"
+      flags:
+        new :  "new"
+        draft: "draft"
+    - level:   4
+      element: "chapter"
       content:  "API/Class_Doc/Method_preStore.md"
     - level:   4
       element: "chapter"
@@ -429,18 +441,6 @@ book:
     - level:   4
       element: "chapter"
       content:  "API/Class_Doc/Method_postRefresh.md"
-    - level:   4
-      element: "chapter"
-      content:  "API/Class_Doc/Method_preCopy.md"
-      flags:
-        wip: "work in progress"
-        wip_sub: ""
-    - level:   4
-      element: "chapter"
-      content:  "API/Class_Doc/Method_postCopy.md"
-      flags:
-        wip: "work in progress"
-        wip_sub: ""
     - level:   4
       element: "chapter"
       content:  "API/Class_Doc/Method_preImport.md"
@@ -507,16 +507,13 @@ book:
       content:  "API/Class_Doc/Method_addHistoryEntry.md"
     - level:   4
       element: "chapter"
-      content:  "API/Class_Doc/Method_revise.md"
-    - level:   4
-      element: "chapter"
-      content:  "API/Class_Doc/Method_control.md"
+      content:  "API/Class_Doc/Method_clearValue.md"
       flags:
         wip: "work in progress"
         wip_sub: ""
     - level:   4
       element: "chapter"
-      content:  "API/Class_Doc/Method_copy.md"
+      content:  "API/Class_Doc/Method_control.md"
       flags:
         wip: "work in progress"
         wip_sub: ""
@@ -534,16 +531,16 @@ book:
         wip_sub: ""
     - level:   4
       element: "chapter"
-      content:  "API/Class_Doc/Method_clearValue.md"
+      content:  "API/Class_Doc/Method_disableEditControl.md"
       flags:
         wip: "work in progress"
         wip_sub: ""
     - level:   4
       element: "chapter"
-      content:  "API/Class_Doc/Method_disableEditControl.md"
+      content:  "API/Class_Doc/Method_duplicate.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        new :  "new"
+        draft: "draft"
     - level:   4
       element: "chapter"
       content:  "API/Class_Doc/Method_editattr.md"
@@ -658,6 +655,9 @@ book:
     - level:   4
       element: "chapter"
       content:  "API/Class_Doc/Method_Refresh.md"
+    - level:   4
+      element: "chapter"
+      content:  "API/Class_Doc/Method_revise.md"
     - level:   4
       element: "chapter"
       content:  "API/Class_Doc/Method_setState.md"

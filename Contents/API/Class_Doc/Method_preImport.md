@@ -127,3 +127,4 @@ originelle d'un attribut.
 [importhooks]:        #core-ref:d3b06745-35c5-447c-9b88-01181736c21e
 [extra]:              #core-ref:15088f40-de05-4600-86bb-82422af01dce
 [oldvalue]:           #core-ref:dccf7c64-8f4f-4c4a-8d0d-79b21b924848
+[hook]:             http://fr.wikipedia.org/wiki/Hook_(informatique) "Définition de Hook sur wikipedia"
