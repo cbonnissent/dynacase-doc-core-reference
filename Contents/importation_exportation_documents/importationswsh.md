@@ -1,7 +1,8 @@
 # Importer des documents par ligne de commande {#core-ref:1c97f553-dcba-454e-96a0-8059230065b3}
 
-La commande [_wsh_][wsh] `importDocuments` permet d'importer des documents en
-ligne de commande. Les types suivants sont supportés par le script :
+La commande [_wsh_][wsh] [`importDocuments`][importdoc] permet d'importer des
+documents en ligne de commande. Les types suivants sont supportés par le script
+:
 
 *   [CVS][import_csv]
     *   Encodage : UTF-8,
@@ -82,8 +83,9 @@ Si une seule erreur est détectée sur le fichier d'importation, aucun document 
 fichier d'importation ne sera ajouté ou modifié.
 
 <!-- links -->
-[wsh]: #core-ref:bab8c1c9-fe71-4629-9773-5cd67a8693bf
-[import_csv]: #core-ref:2fb3284a-2424-44b2-93ae-41dc3969e093
-[import_xml]: #core-ref:81ad5a48-4c0f-468b-90ed-fe462fba7b96
+[wsh]:          #core-ref:bab8c1c9-fe71-4629-9773-5cd67a8693bf
+[import_csv]:   #core-ref:2fb3284a-2424-44b2-93ae-41dc3969e093
+[import_xml]:   #core-ref:81ad5a48-4c0f-468b-90ed-fe462fba7b96
 [import_archive]: #core-ref:021b7db1-7baf-48c4-8eb9-4a388355dd86
-[resetfam]: #core-ref:5c661733-772d-42b8-8b3e-b70453ddfd33
+[resetfam]:     #core-ref:5c661733-772d-42b8-8b3e-b70453ddfd33
+[importdoc]:    #core-ref:a14d9475-0431-4aa3-853d-810b61e355a7
