@@ -61,7 +61,7 @@ Une entrée dans l'historique est enregistrée à chaque restauration.
 
 *   [`Doc::postUndelete()][docpostundelete].
 *   [`Doc::preUndelete()][docpreundelete].
-*   [`Doc::delete()`][[delete]].
+*   [`Doc::delete()`][delete].
 
 <!-- links -->
 [docstore]:         #core-ref:b8540d13-ece6-4e9e-9b72-6a56bca9da12

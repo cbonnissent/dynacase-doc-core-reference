@@ -7,9 +7,9 @@ Méthode utilisée pour supprimer un document.
 ## Description {#core-ref:00d0521d-cb59-444c-a423-49f03da968c7}
 
     [php]
-    string delete ( bool $really = false, 
-                   bool $control = true, 
-                    bool $nopost = false )
+    string delete ( bool $really  = false, 
+                    bool $control = true, 
+                    bool $nopost  = false )
 
 Cette méthode mets le statut du document à "supprimé". La propriété `doctype`
 est affectée à `Z` (Zombie) et `locked` est affectée à `-1` dans le cas d'une
