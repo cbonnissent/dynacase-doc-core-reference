@@ -140,7 +140,7 @@ Dans tous ces  cas la valeur de la date stockée sera au format ISO.
     tableau) :
     *   la chaîne `\n` délimite deux valeurs consécutives,
     *   la chaîne `<BR>` correspond à un saut de ligne au sein d'une valeur.
-*   Pour les attributs multivalués à 2 niveau (cas des relations ayant l'option
+*   Pour les attributs multivalués à 2 niveaux (cas des relations ayant l'option
     `multiple=yes` et *contenues dans un tableau*) :
     *   la chaîne `\n` délimite deux valeurs de premier niveau,
     *   la chaîne `<BR>` délimite deux valeurs de second niveau.

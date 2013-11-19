@@ -29,7 +29,7 @@ utilisant la recherche stockée dans l'iterateur.
     $dl=new DocumentList();
     $dl->addDocumentIdentifiers(array(1180, 3852, 3853));
     $dl->getSearchDocument()->addFilter("title ~ 'Doe'");
-    $dl->getSearchDocument()->noViewControl();
+    $dl->getSearchDocument()->overrideViewControl();
 
 Cela ne retournera que les documents dont le titre contient *Doe* parmi les
 trois documents donnés sans tenir compte des droits de visibilités. Il est aussi
