@@ -1389,6 +1389,11 @@ book:
       content:  "Advanced/Security/controlfile.md"
       flags:
          new: "new"
+    - level:   3
+      content:  "Advanced/Security/confidential.md"
+      flags:
+        wip: "work in progress"
+        wip_sub: ""
     - level:   2
       content:  "Advanced/Template/introduction.md"
       flags:
