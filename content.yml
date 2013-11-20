@@ -874,129 +874,113 @@ book:
       element: "chapter"
       content:  "API/Class_SearchDoc.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        draft : "draft"
       subtoc:   1
-    - level:   3
-      element: "chapter"
-      content:  "API/Class_SearchDoc/Method_addFilter.md"
-      flags:
-        wip: "work in progress"
-        wip_sub: ""
-    - level:   3
-      element: "chapter"
-      content:  "API/Class_SearchDoc/Method_addGeneralFilter.md"
-      flags:
-        wip: "work in progress"
-        wip_sub: ""
-    - level:   3
-      element: "chapter"
-      content:  "API/Class_SearchDoc/Method_count.md"
-      flags:
-        wip: "work in progress"
-        wip_sub: ""
-    - level:   3
-      element: "chapter"
-      content:  "API/Class_SearchDoc/Method_excludeConfidential.md"
-      flags:
-        wip: "work in progress"
-        wip_sub: ""
-    - level:   3
-      element: "chapter"
-      content:  "API/Class_SearchDoc/Method_getDocumentList.md"
-      flags:
-        wip: "work in progress"
-        wip_sub: ""
-    - level:   3
-      element: "chapter"
-      content:  "API/Class_SearchDoc/Method_getError.md"
-      flags:
-        wip: "work in progress"
-        wip_sub: ""
-    - level:   3
-      element: "chapter"
-      content:  "API/Class_SearchDoc/Method_getIds.md"
-      flags:
-        wip: "work in progress"
-        wip_sub: ""
-    - level:   3
-      element: "chapter"
-      content:  "API/Class_SearchDoc/Method_getSearchInfo.md"
-      flags:
-        wip: "work in progress"
-        wip_sub: ""
-    - level:   3
-      element: "chapter"
-      content:  "API/Class_SearchDoc/Method_join.md"
-      flags:
-        wip: "work in progress"
-        wip_sub: ""
-    - level:   3
-      element: "chapter"
-      content:  "API/Class_SearchDoc/Method_nextDoc.md"
-      flags:
-        wip: "work in progress"
-        wip_sub: ""
-    - level:   3
-      element: "chapter"
-      content:  "API/Class_SearchDoc/Method_noViewControl.md"
-      flags:
-        wip: "work in progress"
-        wip_sub: ""
-    - level:   3
-      element: "chapter"
-      content:  "API/Class_SearchDoc/Method_onlyCount.md"
-      flags:
-        wip: "work in progress"
-        wip_sub: ""
-    - level:   3
-      element: "chapter"
-      content:  "API/Class_SearchDoc/Method_search.md"
-      flags:
-        wip: "work in progress"
-        wip_sub: ""
     - level:   3
       element: "chapter"
       content:  "API/Class_SearchDoc/Method_setObjectReturn.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        draft : "draft"
     - level:   3
       element: "chapter"
       content:  "API/Class_SearchDoc/Method_setOrder.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        draft : "draft"
     - level:   3
       element: "chapter"
       content:  "API/Class_SearchDoc/Method_setPertinenceOrder.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
-    - level:   3
-      element: "chapter"
-      content:  "API/Class_SearchDoc/Method_setRecursiveSearch.md"
-      flags:
-        wip: "work in progress"
-        wip_sub: ""
+        draft : "draft"
     - level:   3
       element: "chapter"
       content:  "API/Class_SearchDoc/Method_setSlice.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        draft : "draft"
     - level:   3
       element: "chapter"
       content:  "API/Class_SearchDoc/Method_setStart.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        draft : "draft"
+    - level:   3
+      element: "chapter"
+      content:  "API/Class_SearchDoc/Method_setRecursiveSearch.md"
+      flags:
+        draft : "draft"
     - level:   3
       element: "chapter"
       content:  "API/Class_SearchDoc/Method_useCollection.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        draft : "draft"
+    - level:   3
+      element: "chapter"
+      content:  "API/Class_SearchDoc/Method_addFilter.md"
+      flags:
+        draft : "draft"
+    - level:   3
+      element: "chapter"
+      content:  "API/Class_SearchDoc/Method_addGeneralFilter.md"
+      flags:
+        draft : "draft"
+    - level:   3
+      element: "chapter"
+      content:  "API/Class_SearchDoc/Method_onlyCount.md"
+      flags:
+        draft : "draft"
+    - level:   3
+      element: "chapter"
+      content:  "API/Class_SearchDoc/Method_join.md"
+      flags:
+        draft : "draft"
+    - level:   3
+      element: "chapter"
+      content:  "API/Class_SearchDoc/Method_overrideViewControl.md"
+      flags:
+        draft : "draft"
+    - level:   3
+      element: "chapter"
+      content:  "API/Class_SearchDoc/Method_excludeConfidential.md"
+      flags:
+        draft : "draft"
+    - level:   3
+      element: "chapter"
+      content:  "API/Class_SearchDoc/Method_search.md"
+      flags:
+        draft : "draft"
+    - level:   3
+      element: "chapter"
+      content:  "API/Class_SearchDoc/Method_reset.md"
+      flags:
+        draft : "draft"
+    - level:   3
+      element: "chapter"
+      content:  "API/Class_SearchDoc/Method_count.md"
+      flags:
+        draft : "draft"
+    - level:   3
+      element: "chapter"
+      content:  "API/Class_SearchDoc/Method_getDocumentList.md"
+      flags:
+        draft : "draft"
+    - level:   3
+      element: "chapter"
+      content:  "API/Class_SearchDoc/Method_getError.md"
+      flags:
+        draft : "draft"
+    - level:   3
+      element: "chapter"
+      content:  "API/Class_SearchDoc/Method_getIds.md"
+      flags:
+        draft : "draft"
+    - level:   3
+      element: "chapter"
+      content:  "API/Class_SearchDoc/Method_getSearchInfo.md"
+      flags:
+        draft : "draft"
+    - level:   3
+      element: "chapter"
+      content:  "API/Class_SearchDoc/Method_getNextDoc.md"
+      flags:
+        draft : "draft"
 #
 # END of API Content
 #

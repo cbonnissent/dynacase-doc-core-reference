@@ -1,8 +1,10 @@
 # SearchDoc::getDocumentList() {#core-ref:8f0824fa-eed6-4170-b52d-d3dc7c5cb9c1}
 
-<div class="short-description">
-<span class="fixme template">short description for SearchDoc::getDocumentList()</span>
+<div class="short-description"> 
+Cette méthode retourne un objet DocumentList associé à l'objet SearchDoc.
+Cet objet permet d'itérer sur les résultats obtenu par l'objet SearchDoc. 
 </div>
+
 <!--
 <div class="applicability">
 Obsolète depuis #.#.#
@@ -12,44 +14,61 @@ Obsolète depuis #.#.#
 ## Description {#core-ref:591def36-d935-490c-bf2b-d10d2bf323f5}
 
     [php]
-    <return type> getDocumentList ( <parameters> )
-
-<span class="fixme template">long description</span>
+    DocumentList getDocumentList ( )
 
 ### Avertissements {#core-ref:84e81039-9ab9-4cc0-b99d-58cc98ed8b13}
 
-<span class="fixme template">Avertissements</span>
+L'exécution de la méthode [`SearchDoc::search`][search] est inutile avant l'utilisation de
+getDocumentList.
 
 ## Liste des paramètres {#core-ref:ba27435d-dd93-4714-aaa8-7cc58752f4a7}
 
-<span class="fixme template">Liste des paramètres</span>
-
-<div class="fixme template">
-exemple:  
-[out] (array) `info`
-:   Si `info`est fourni, il sera rempli avec les informations de l'image (taille, couleur, etc.).
-</div>
+N/A
 
 ## Valeur de retour {#core-ref:acea8165-0d2c-462f-8ddc-8f02b64aee2d}
 
-<span class="fixme template">Valeur de retour</span>
+Un objet de type [`DocumentList`][DocumentList].
 
 ## Erreurs / Exceptions {#core-ref:d544412c-bb54-473f-b437-39bf41a1dba1}
 
-<span class="fixme template">Erreurs / Exceptions</span>
+N/A
 
 ## Historique {#core-ref:5ff0e894-d663-4a13-8518-d68208771f6b}
 
-<span class="fixme template">Historique</span>
+N/A
 
 ## Exemples {#core-ref:31668f2c-a644-484c-8488-7f65404d62d2}
 
-<span class="fixme template">Exemples</span>
+Récupère la liste des classes des documents :
+
+    [php]
+    function getClass(Action & $action)
+    {
+        header('Content-Type: text/plain');
+        
+        $searchDoc = new SearchDoc();
+        $searchDoc->setObjectReturn(true);
+        
+        $documentList = $searchDoc->getDocumentList();
+        
+        foreach ($documentList as $value) {
+            var_export(get_class($value));
+            print "\n";
+        }
+        
+    }
 
 ## Notes {#core-ref:3625d836-613b-4bb2-834a-e39e02a208af}
 
-<span class="fixme template">Notes</span>
+N/A
 
 ## Voir aussi {#core-ref:f229a5d7-3c10-4b52-8ccb-e489db6ab234}
 
-<span class="fixme template">Voir aussi</span>
+[Recherche avancée][advancedIterator].
+
+<!-- links -->
+
+[SearchDoc]:            #core-ref:a5216d5c-4e0f-4e3c-9553-7cbfda6b3255
+[DocumentList]:         #core-ref:23c71c28-dbce-4d34-819a-50d5bc4a38c3
+[search]:               #core-ref:6f5cc024-66e4-429e-9071-67d4523a8e08
+[advancedIterator]:     #core-ref:2097dfea-e13b-4fb3-be10-f346c2171228
