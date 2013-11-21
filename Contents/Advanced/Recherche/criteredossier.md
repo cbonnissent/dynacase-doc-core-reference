@@ -2,7 +2,7 @@
 
 La classe `SearchDoc` permet de faire des recherches dans une collection
 spécifique (dossier ou recherche) au moyen de la méthode
-`DocSearch::useCollection()`.
+[`SearchDoc::useCollection()`][useCollection].
 
 Cette recherche n'est pas récursive par défaut, c'est à dire qu'elle ne
 recherche que dans la collection indiquée.
@@ -22,17 +22,16 @@ recherche récursivement.
 
     [php]
     $dirid=2345; // identifiant d'un document recherche
-    $s=new SearchDoc();
-    $s->setObjectReturn();
-    $s->useCollection($dirid);
-    $s->search();
-    if ($s->searchError()) {
-        $action->exitError(sprintf("search error : %s",$s->getError()));
+    $searchDoc = new SearchDoc();
+    $searchDoc->setObjectReturn();
+    $searchDoc->useCollection($dirid);
+    $searchDoc->search();
+    if ($searchDoc->searchError()) {
+        $action->exitError(sprintf("search error : %s",$searchDoc->getError()));
     }
 
-
-
 <!-- link -->
+
 [searchdoc]:        #core-ref:a5216d5c-4e0f-4e3c-9553-7cbfda6b3255
 [propdoc]:          #core-ref:9aa8edfa-2f2a-11e2-aaec-838a12b40353 "Liste des propriétés du document"
 [layoutblock]:      #core-ref:587b563e-7371-469f-9d1e-350607056c73
@@ -42,3 +41,4 @@ recherche récursivement.
 [attdocid]:         #core-ref:d461d5f5-b635-47a0-944d-473c227587ab
 [phpiterator]:      http://php.net/manual/fr/class.iterator.php "Interface Iterator"
 [docacl]:           #core-ref:a99dcc5f-f42f-4574-bbfa-d7bb0573c95d "Droits du document"
+[useCollection]:        #core-ref:881c9fcb-81c2-45af-b89f-70be3a7f24b7

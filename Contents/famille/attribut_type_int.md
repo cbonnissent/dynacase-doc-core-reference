@@ -11,7 +11,7 @@ Les attributs de type *int* permettent d'insérer un nombre entier.
     Le nombre, sans formatage.
     
     ![ integer - consultation html ](famille/attributs/integer-consultation.png "integer - Consultation html")
-
+    
     Le formatage spécifique de *int* doit être conforme à celui utilisé dans 
     la fonction [sprintf][PHP_sprintf]. 
     Par exemple `int("%03d")` pour avoir 3 chiffres.
@@ -43,9 +43,7 @@ Si l'attribut est dans un tableau, le type en base donnée sera `text`.
 
 ## Options {#core-ref:d4e4f0d4-8f92-44f2-8240-242ac98c00fe}
 
-En plus des [options communes à tous les types d'attributs](#core-ref:16e19c90-3233-11e2-a58f-6b135c3a2496), ce type d'attribut dispose des options suivantes :
-
-
+N/A
 
 <!-- links -->
 [MDN_css_color_value]: https://developer.mozilla.org/en-US/docs/CSS/color_value "description du type css color sur MDN"

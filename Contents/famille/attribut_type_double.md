@@ -11,9 +11,8 @@ Les attributs de type *double* permettent d'insérer un nombre avec décimales.
     Le nombre, sans formatage
     
     ![ double - consultation html ](famille/attributs/double-consultation.png "double - Consultation html")
-
-    Le formatage spécifique de *double* doit être conforme à celui utilisé dans la 
-    fonction [sprintf][PHP_sprintf]. 
+    
+    Le formatage spécifique de *double* doit être conforme à celui utilisé dans la fonction [sprintf][PHP_sprintf]. 
     Par exemple `double("%.03f")` pour avoir 3 chiffres maximum après la virgule.
 
 *   modification :
