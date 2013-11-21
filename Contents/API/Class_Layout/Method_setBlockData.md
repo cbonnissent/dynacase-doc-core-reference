@@ -1,55 +1,99 @@
 # Layout::setBlockData() {#core-ref:fb8a6d38-0bc7-469b-97d3-7cb8d6d3ea4b}
 
-<div class="short-description">
-<span class="fixme template">short description for Layout::setBlockData()</span>
+<div markdown="1" class="short-description">
+
+La méthode `setBlockData()` permet de spécifier les valeurs des balises
+contenues dans les blocs (e.g. `[BLOCK TAG]...[ENDBLOCK TAG]`) du template.
+
 </div>
-<!--
-<div class="applicability">
-Obsolète depuis #.#.#
-</div>
--->
 
 ## Description {#core-ref:b9c70046-2c16-46ca-8bdc-5fea8287ab61}
 
     [php]
-    <return type> setBlockData ( <parameters> )
-
-<span class="fixme template">long description</span>
+    void setBlockData ( string $blockTag, array $data = NULL )
 
 ### Avertissements {#core-ref:b5aa63d1-e65a-4d4f-883a-c23b2aed719b}
 
-<span class="fixme template">Avertissements</span>
+Aucun.
 
 ## Liste des paramètres {#core-ref:b8de0258-9ed0-461e-adac-263ea02f3807}
 
-<span class="fixme template">Liste des paramètres</span>
+(string) `tag`
+:   Le nom de la balise du bloc à affecter. Le nom de la balise est spécifié
+    sans les crochets ouvrant (`[`) et fermant (`]`).
 
-<div class="fixme template">
-exemple:  
-[out] (array) `info`
-:   Si `info`est fourni, il sera rempli avec les informations de l'image (taille, couleur, etc.).
-</div>
+(array) `data`
+:   La liste des couples (`TAG` => `valeur`) à affecter dans le bloc.
 
 ## Valeur de retour {#core-ref:1007e36d-4502-459f-8205-52879547c173}
 
-<span class="fixme template">Valeur de retour</span>
+Aucune.
 
 ## Erreurs / Exceptions {#core-ref:58666d0a-afe6-4eda-92e9-bad43b6b01ae}
 
-<span class="fixme template">Erreurs / Exceptions</span>
+Aucune.
 
 ## Historique {#core-ref:2fba6b7f-3576-472f-b178-a3a349b8d779}
 
-<span class="fixme template">Historique</span>
+Aucun.
 
 ## Exemples {#core-ref:f3cde6c7-3c78-43f6-be52-d9717d16c455}
 
-<span class="fixme template">Exemples</span>
+- Exemple #1
+
+Fichier de template `MOVIES/Layout/movies.xml` :
+
+    [xml]
+    <ul>
+    [BLOCK MOVIES]
+      <li>
+        <span class="movie_title">[MOVIE_TITLE]</span> (<span class="movie_date">[MOVIE_DATE]</span>)
+      </li>
+    [ENDBLOCK MOVIES]
+    </ul>
+
+Contrôleur :
+
+    [php]
+    $layout = new Layout("MOVIES/Layout/movies.xml");
+    
+    $movies = array(
+    	array(
+    		'MOVIE_TITLE' => htmlspecialchars('Star Wars: A New Hope'),
+    		'MOVIE_DATE'  => '1977'
+    	),
+    	array(
+    		'MOVIE_TITLE' => htmlspecialchars('Star Wars: The Empire Strikes Back'),
+    		'MOVIE_DATE'  => '1980'
+    	),
+    	array(
+    		'MOVIE_TITLE' => htmlspecialchars('Star Wars: Return of the Jedi'),
+    		'MOVIE_DATE'  => '1983'
+    	)
+    );
+        
+    $layout = new Layout("MOVIES/Layout/movies.xml");
+    
+    $layout->setBlockData('MOVIES', $movies);
+    
+    print $layout->gen();
 
 ## Notes {#core-ref:3bcb3717-065c-4eb5-83fd-744310df77ea}
 
-<span class="fixme template">Notes</span>
+Pour se prémunir de toute attaque du type [XSS][XSS] (Cross-site scripting) il
+vous faudra potentiellement échapper les valeurs en fonction du contexte dans
+lesquelles elles seront utilisés.
+
+Par exemple, pour un fragment (ou un document) HTML il vous faudra utiliser la
+fonction PHP [`htmlspecialchars()`][htmlspecialchars] afin d'échapper les
+caractères qui pourraient être utilisés pour injecter du code HTML (ou
+JavaScript) dans le résultat du template.
 
 ## Voir aussi {#core-ref:494cb86d-e4bc-4035-a3c2-b15c6426be3d}
 
-<span class="fixme template">Voir aussi</span>
+- Méthode [`Layout::set()`][set]
+
+<!-- links -->
+[set]: #core-ref:812c30ed-11cb-4b59-84d2-ba10e4ab7e88
+[htmlspecialchars]: http://docs.php.net/manual/en/function.htmlspecialchars.php
+[XSS]: http://en.wikipedia.org/wiki/Cross-site_scripting

@@ -1,55 +1,83 @@
 # Layout::set() {#core-ref:812c30ed-11cb-4b59-84d2-ba10e4ab7e88}
 
-<div class="short-description">
-<span class="fixme template">short description for Layout::set()</span>
+<div markdown="1" class="short-description">
+
+La méthode `set()` permet de spécifier les valeurs des balises (e.g. `[TAG]`)
+du template.
+
 </div>
-<!--
-<div class="applicability">
-Obsolète depuis #.#.#
-</div>
--->
 
 ## Description {#core-ref:bae968e1-6cc1-4a63-b29a-e6a12e88a6af}
 
     [php]
-    <return type> set ( <parameters> )
-
-<span class="fixme template">long description</span>
+    void set ( string $tag, string $val )
 
 ### Avertissements {#core-ref:d14189fa-d430-4772-b38d-f389737993f1}
 
-<span class="fixme template">Avertissements</span>
+Aucun.
 
 ## Liste des paramètres {#core-ref:760dba7d-0669-43e4-999d-cb829bfdb820}
 
-<span class="fixme template">Liste des paramètres</span>
+(string) `tag`
+:   Le nom de la balise à affecter. Le nom de la balise est spécifié sans les
+    crochets ouvrant (`[`) et fermant (`]`).
 
-<div class="fixme template">
-exemple:  
-[out] (array) `info`
-:   Si `info`est fourni, il sera rempli avec les informations de l'image (taille, couleur, etc.).
-</div>
+(string) `val`
+:    La valeur à affecter à la balise.
 
 ## Valeur de retour {#core-ref:98b115b7-4e53-42c8-a914-d2835d3ca452}
 
-<span class="fixme template">Valeur de retour</span>
+Aucune.
 
 ## Erreurs / Exceptions {#core-ref:16c4f1cd-450f-428b-aa18-9d4db9986dbc}
 
-<span class="fixme template">Erreurs / Exceptions</span>
+Aucune.
 
 ## Historique {#core-ref:1c0fcbca-2575-4f3d-b90c-03807cc46880}
 
-<span class="fixme template">Historique</span>
+Aucun.
 
 ## Exemples {#core-ref:0102bf3e-41f8-4219-b73c-bc0bb87692cd}
 
-<span class="fixme template">Exemples</span>
+- Exemple #1
+
+Fichier de template `FOO/Layout/bar.xml` :
+
+    [xml]
+    <div>
+    <p>Bonjour [NOM]&nbsp;[PRENOM]</span>,</p>
+    <p>La température est actuellement de [TEMPC]°C.</p>
+    </div>
+
+Contrôleur :
+
+    [php]
+    $nom    = "Doe";
+    $prenom = "John";
+    $tempC  = "20";
+    
+    $layout->set("NOM",    htmlspecialchars($nom));
+    $layout->set("PRENOM", htmlspecialchars($prenom));
+    $layout->set("TEMPC",  htmlspecialchars($temp));
+    
+    print $layout->gen();
 
 ## Notes {#core-ref:ce7f6410-ff79-4169-b9a5-c09b77468d06}
 
-<span class="fixme template">Notes</span>
+Pour se prémunir de toute attaque du type [XSS][XSS] (Cross-site scripting) il
+vous faudra potentiellement échapper les valeurs en fonction du contexte dans
+lesquelles elles seront utilisés.
+
+Par exemple, pour un fragment (ou un document) HTML il vous faudra utiliser la
+fonction PHP [`htmlspecialchars()`][htmlspecialchars] afin d'échapper les
+caractères qui pourraient être utilisés pour injecter du code HTML (ou
+JavaScript) dans le résultat du template.
 
 ## Voir aussi {#core-ref:a48c9b01-686c-44de-b28f-f81828d1553f}
 
-<span class="fixme template">Voir aussi</span>
+- Méthode [`Layout::setBlockData()`][setBlockData]
+
+<!-- links -->
+[setBlockData]: #core-ref:fb8a6d38-0bc7-469b-97d3-7cb8d6d3ea4b
+[htmlspecialchars]: http://docs.php.net/manual/en/function.htmlspecialchars.php
+[XSS]: http://en.wikipedia.org/wiki/Cross-site_scripting
