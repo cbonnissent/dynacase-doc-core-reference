@@ -5,11 +5,6 @@ Cette méthode retourne un objet DocumentList associé à l'objet SearchDoc.
 Cet objet permet d'itérer sur les résultats obtenu par l'objet SearchDoc. 
 </div>
 
-<!--
-<div class="applicability">
-Obsolète depuis #.#.#
-</div>
--->
 
 ## Description {#core-ref:591def36-d935-490c-bf2b-d10d2bf323f5}
 
@@ -23,7 +18,7 @@ getDocumentList.
 
 ## Liste des paramètres {#core-ref:ba27435d-dd93-4714-aaa8-7cc58752f4a7}
 
-N/A
+Aucun.
 
 ## Valeur de retour {#core-ref:acea8165-0d2c-462f-8ddc-8f02b64aee2d}
 
@@ -31,11 +26,11 @@ Un objet de type [`DocumentList`][DocumentList].
 
 ## Erreurs / Exceptions {#core-ref:d544412c-bb54-473f-b437-39bf41a1dba1}
 
-N/A
+Aucun.
 
 ## Historique {#core-ref:5ff0e894-d663-4a13-8518-d68208771f6b}
 
-N/A
+Aucun.
 
 ## Exemples {#core-ref:31668f2c-a644-484c-8488-7f65404d62d2}
 
@@ -60,7 +55,7 @@ Récupère la liste des classes des documents :
 
 ## Notes {#core-ref:3625d836-613b-4bb2-834a-e39e02a208af}
 
-N/A
+Aucun.
 
 ## Voir aussi {#core-ref:f229a5d7-3c10-4b52-8ccb-e489db6ab234}
 

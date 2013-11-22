@@ -43,7 +43,7 @@ Aucun.
 
 Fichier de template `MOVIES/Layout/movies.xml` :
 
-    [xml]
+    [html]
     <ul>
     [BLOCK MOVIES]
       <li>
@@ -71,10 +71,6 @@ Contrôleur :
     		'MOVIE_DATE'  => '1983'
     	)
     );
-        
-    $layout = new Layout("MOVIES/Layout/movies.xml");
-    
-    $layout->setBlockData('MOVIES', $movies);
     
     print $layout->gen();
 
@@ -85,9 +81,10 @@ vous faudra potentiellement échapper les valeurs en fonction du contexte dans
 lesquelles elles seront utilisés.
 
 Par exemple, pour un fragment (ou un document) HTML il vous faudra utiliser la
-fonction PHP [`htmlspecialchars()`][htmlspecialchars] afin d'échapper les
-caractères qui pourraient être utilisés pour injecter du code HTML (ou
-JavaScript) dans le résultat du template.
+méthode [`eSetBlockData()`][esetblockdata] ou la fonction PHP
+[`htmlspecialchars()`][htmlspecialchars] afin d'échapper les caractères qui
+pourraient être utilisés pour injecter du code HTML (ou JavaScript) dans le
+résultat du template.
 
 ## Voir aussi {#core-ref:494cb86d-e4bc-4035-a3c2-b15c6426be3d}
 
@@ -95,5 +92,6 @@ JavaScript) dans le résultat du template.
 
 <!-- links -->
 [set]: #core-ref:812c30ed-11cb-4b59-84d2-ba10e4ab7e88
-[htmlspecialchars]: http://docs.php.net/manual/en/function.htmlspecialchars.php
-[XSS]: http://en.wikipedia.org/wiki/Cross-site_scripting
+[esetblockdata]: #core-ref:088e711c-ea91-45e7-841d-289ffc53c80b
+[htmlspecialchars]: http://docs.php.net/manual/fr/function.htmlspecialchars.php "Définition sur php.net"
+[XSS]: http://fr.wikipedia.org/wiki/XSS "Définition sur wikipédia"

@@ -69,15 +69,20 @@ vous faudra potentiellement échapper les valeurs en fonction du contexte dans
 lesquelles elles seront utilisés.
 
 Par exemple, pour un fragment (ou un document) HTML il vous faudra utiliser la
-fonction PHP [`htmlspecialchars()`][htmlspecialchars] afin d'échapper les
-caractères qui pourraient être utilisés pour injecter du code HTML (ou
-JavaScript) dans le résultat du template.
+la méthode [`eSet()`][eset] ou la fonction PHP
+[`htmlspecialchars()`][htmlspecialchars] afin d'échapper les caractères qui
+pourraient être utilisés pour injecter du code HTML (ou JavaScript) dans le
+résultat du template.
+
+
 
 ## Voir aussi {#core-ref:a48c9b01-686c-44de-b28f-f81828d1553f}
 
 - Méthode [`Layout::setBlockData()`][setBlockData]
+- Méthode [`Layout::eSet()`][eSet]
 
 <!-- links -->
 [setBlockData]: #core-ref:fb8a6d38-0bc7-469b-97d3-7cb8d6d3ea4b
-[htmlspecialchars]: http://docs.php.net/manual/en/function.htmlspecialchars.php
-[XSS]: http://en.wikipedia.org/wiki/Cross-site_scripting
+[htmlspecialchars]: http://docs.php.net/manual/fr/function.htmlspecialchars.php "Définition sur php.net"
+[XSS]: http://fr.wikipedia.org/wiki/XSS "Définition sur wikipédia"
+[eset]:     #core-ref:2696710a-f491-4887-b953-e08d918ef4fb

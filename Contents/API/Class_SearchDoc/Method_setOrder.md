@@ -10,7 +10,8 @@ triés les résultats.
 ## Description {#core-ref:051c8c96-edad-492e-92a5-4f492ea8fb14}
 
     [php]
-    void setOrder ( string $order, string $orderbyLabel = '' )
+    void setOrder ( string $order, 
+                    string $orderbyLabel = '' )
 
 ### Avertissements {#core-ref:f596b417-1d51-4b8a-9308-2aec7152c27c}
 
@@ -30,37 +31,50 @@ Cette fonction ne produit pas de message d'erreurs si les attributs passés
     l'argument #1 (sans le suffixe de tri 'asc' ou 'desc') et pour laquelle le 
     tri doit être fait non pas sur la valeur de l'attribut, mais sur le label 
     ou le titre. Les attributs actuellement supportés pour l'ordonnancement par 
-    le label ou le titre sont : Les attributs de type 'enum'.  
+    le label ou le titre sont : Les attributs de type [`enum`][attrenum].  
     Les attributs de type 'docid("X")' déclarés avec une option 
-    'doctitle=auto' ou 'doctitle=xxx'.
+    'doctitle=auto' ou 'doctitle=xxx'.  
+    Pour les énumérés, les libellés peuvent être différents suivant la 
+    [locale][i18nenum]. L'ordre est alors différent suivant la langue choisie 
+    lors de la connexion de l'utilisateur.
 
 ## Valeur de retour {#core-ref:d8e71435-38f9-44b5-9615-b8abb5d875f6}
 
-N/A
+Aucune.
 
 ## Erreurs / Exceptions {#core-ref:fa716683-f56e-4535-854c-d30a7f42ef83}
 
-N/A
+Aucune.
 
 ## Historique {#core-ref:c3158295-d9f3-489c-88e6-04ff104b4608}
 
-N/A
+Aucun.
 
 ## Exemples {#core-ref:5bd8f543-e92e-4396-9720-70d6d8587cec}
 
-Exemple de tri en fonction d'un attribut entier ou de la clef d'un énuméré :
+### Exemple de tri en fonction d'un attribut entier :
 
     [php]
     $s=new searchDoc($dbaccess, $famId);
     $s->setOrder("a_integer desc");
     $s->search();
+    
+
+### Exemple de tri en fonction de deux attributs :
+
+    [php]
+    $s=new searchDoc($dbaccess, $famId);
+    $s->setOrder("a_integer desc, b_date asc");
+    $s->search();
+
+### Exemple de tri en fonction de la valeur d'un énuméré :
 
     [php]
     $s=new searchDoc($dbaccess, $famId);
     $s->setOrder("a_enum asc");
     $s->search();
 
-Exemple de tri en fonction du label d'un énuméré :
+### Exemple de tri en fonction du label d'un énuméré :
 
     [php]
     $s=new searchDoc($dbaccess, $famId);
@@ -80,7 +94,9 @@ l'ordre ci-dessous :
 | 4-Clos             | 2-Traité                     |
 
 
-Exemple de tri avec ou sans la fonction de `orderBy` et sans :
+### Exemple de tri avec ou sans la fonction de `orderBy` :
+
+L'énuméré `an_sexe` a comme définition : `M|Masculin,F|Zéminin,H|Hermaphorodite`.
 
     [php]
     function testOfOrderBy(Action & $action)
@@ -172,4 +188,9 @@ Les colonnes de tri sont des noms d'attributs ou de propriétés de documents.
 
 ## Voir aussi {#core-ref:84c817d6-042d-4baf-bde4-4bb5fe81deb9}
 
-N/A
+*   [`SearchDoc::setPertinenceOrder`][pertineceorder]
+
+<!-- links -->
+[i18nenum]:       #core-ref:f5872ef4-4170-11e3-ba58-48f953959281
+[attrenum]:       #core-ref:625303d6-e5d1-40c3-b91d-d1b2e7307f67
+[pertineceorder]: #core-ref:287db32e-abb9-4ea3-a692-3dfded873b48

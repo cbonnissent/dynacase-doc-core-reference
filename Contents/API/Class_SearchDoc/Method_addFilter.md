@@ -10,8 +10,8 @@ ne trouver qu'un sous-ensemble des documents de la famille en cours.
     [php]
     void addFilter( string $filter, string|int|double […])
 
-Cette méthode permet de configurer la requête SQL qui va être générée. Elle prend
-en argument un fragment de SQL et les associe pour créer la requête. 
+Cette méthode permet de configurer la requête SQL qui va être générée. Elle
+prend en argument un fragment de SQL et les associe pour créer la requête.
 
     [php]
     $searchDoc = new SearchDoc("", "IUSER");
@@ -24,7 +24,7 @@ strictement égale à `my user` **et** la propriété `id` est égale à 12.
 
 ### Avertissements {#core-ref:9a5b484e-b2b2-4a48-8b78-75714b962661}
 
-N/A
+Aucun.
 
 ## Liste des paramètres {#core-ref:8596430f-cc20-46d7-9a9f-025dd48b0c51}
 
@@ -53,12 +53,14 @@ N/A
             *   l'attribut a 1 niveau de multiplicité : `(regexp_split_to_array(ATTRNAME, E\'\\n\' ))`
             *   l'attribut a 2 niveaux de multiplicité : `(regexp_split_to_array(replace(ATTRNAME, \'<BR>\', E\'\\n\'), E\'\\n\' ))` 
             
-            Dans les deux cas, il faut remplacer ATTRNAME par le nom de l'attribut. 
-            Le comparaison se fait ensuite à l'aide des [opérateurs propres aux tableaux][postgresArrayOperator].
+            Dans les deux cas, il faut remplacer ATTRNAME par le nom de
+            l'attribut.  Le comparaison se fait ensuite à l'aide des [opérateurs
+            propres aux tableaux][postgresArrayOperator].
             
-            Ce type de recherche est plus coûteux en ressource que le premier type
-            mais permet de faire des recherches plus complexes (a des éléments en
-            commun, est contenu par, etc.) et limite le risque de faux positif.
+            Ce type de recherche est plus coûteux en ressource que le premier
+            type mais permet de faire des recherches plus complexes (a des
+            éléments en commun, est contenu par, etc.) et limite le risque de
+            faux positif.
 
 (string|int|double) `value`
 :   Valeurs qui sont concaténées à la partie filter à l'aide la fonction 
@@ -77,21 +79,23 @@ void
 
 ## Erreurs / Exceptions {#core-ref:c0b1b27b-4c43-45b9-9126-c5f8a03ac9ce}
 
-N/A
+Aucun.
 
 ## Historique {#core-ref:dd9da86c-ae52-4ff8-89ac-d9eebf8222cf}
 
-N/A
+Aucun.
 
 ## Exemples {#core-ref:13efc3fd-5ba6-4c96-a424-fe5d8cb9d771}
 
-Recherche de documents dont l'attribut firstname est égal à George et le lastname à Abitbol:
+Recherche de documents dont l'attribut firstname est égal à George et le
+lastname à Abitbol:
 
     [php]
     $searchDoc = new SearchDoc("", "IUSER");
     $searchDoc->addFilter("firstname = '%s' AND lastname = '%s'", "George", "Abitbol");
 
-Recherche de documents dont l'attribut firstname est égal à George et le lastname à Abitbol:
+Recherche de documents dont l'attribut firstname est égal à George et le
+lastname à Abitbol:
 
     [php]
     $searchDoc = new SearchDoc("", "IUSER");
@@ -106,17 +110,19 @@ Recherche de documents dont la propriété titre commence par "La classe"
 
 *Note* : On utilise ici l'opérateur [`~*`][postgresREGEXP] de postgresql.
 
-Recherche de documents dont une des valeurs de l'attribut multivalué actors contient `John Wayne` :
+Recherche de documents dont une des valeurs de l'attribut multivalué actors
+contient `John Wayne` :
 
     [php]
     $searchDoc = new SearchDoc("", "FILM");
     $searchDoc->addFilter("actors ~* E'\\\\y%s\\\\y'", preg_quote("John Wayne"));
 
-**Attention** : L'expression ci-dessus peut engendrer des faux positifs, par 
-exemple, si acteur contient `John Wayne Junior` il est aussi trouvé car `\y` désigne
-un séparateur de mot et espace est un séparateur de mot.
+**Attention** : L'expression ci-dessus peut engendrer des faux positifs, par
+exemple, si acteur contient `John Wayne Junior` il est aussi trouvé car `\y`
+désigne un séparateur de mot et espace est un séparateur de mot.
 
-Recherche de documents dont l'attribut multivalué actors contient `John Wayne` et `Paul Newnam` :
+Recherche de documents dont l'attribut multivalué actors contient `John Wayne`
+et `Paul Newnam` :
 
     [php]
     $searchDoc = new SearchDoc("", "FILM");
@@ -125,7 +131,8 @@ Recherche de documents dont l'attribut multivalué actors contient `John Wayne` 
 
 **Attention** : L'expression ci-dessus peut engendrer des faux positifs.
 
-Recherche de documents dont l'attribut multivalué actors contient `John Wayne` et `Paul Newnam` :
+Recherche de documents dont l'attribut multivalué actors contient `John Wayne`
+et `Paul Newnam` :
 
     [php]
     $searchDoc = new SearchDoc("", "FILM");
@@ -134,11 +141,11 @@ Recherche de documents dont l'attribut multivalué actors contient `John Wayne` 
 
 ## Notes {#core-ref:9c0906a3-9ee9-461e-ad85-f8294f4799d6}
 
-N/A
+Aucunes.
 
 ## Voir aussi {#core-ref:36e05af7-bfd1-480a-a643-339da40c3e69}
 
-N/A
+Aucun.
 
 
 [wikipediaInjectionSQL]:    https://fr.wikipedia.org/wiki/Injection_SQL "Injection SQL"

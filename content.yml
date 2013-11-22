@@ -714,6 +714,7 @@ book:
     - level:   2
       element: "chapter"
       content:  "API/Class_Layout.md"
+      subtoc:   1
       flags:
         new:   "new"
         draft: "draft"
@@ -724,21 +725,32 @@ book:
       flags:
         new:   "new"
         draft: "draft"
-        wip_sub: ""
     - level:   3
       element: "chapter"
       content:  "API/Class_Layout/Method_set.md"
       flags:
         new:   "new"
         draft: "draft"
-        wip_sub: ""
+    - level:   3
+      element: "chapter"
+      content:  "API/Class_Layout/Method_eSet.md"
+      flags:
+        new:   "new"
+        next-release : "next-release 3.2.12"
+        draft: "draft"
     - level:   3
       element: "chapter"
       content:  "API/Class_Layout/Method_setBlockData.md"
       flags:
         new:   "new"
         draft: "draft"
-        wip_sub: ""
+    - level:   3
+      element: "chapter"
+      content:  "API/Class_Layout/Method_eSetBlockData.md"
+      flags:
+        new:   "new"
+        next-release : "next-release 3.2.12"
+        draft: "draft"
     - level:   2
       element: "chapter"
       content:  "API/Class_Log.md"
@@ -878,23 +890,23 @@ book:
       element: "chapter"
       content:  "API/Class_SearchDoc.md"
       flags:
-        draft : "draft"
+        new : "new"
       subtoc:   1
     - level:   3
       element: "chapter"
       content:  "API/Class_SearchDoc/Method_setObjectReturn.md"
       flags:
-        draft : "draft"
+        new : "new"
     - level:   3
       element: "chapter"
       content:  "API/Class_SearchDoc/Method_setOrder.md"
       flags:
-        draft : "draft"
+        new : "new"
     - level:   3
       element: "chapter"
       content:  "API/Class_SearchDoc/Method_setPertinenceOrder.md"
       flags:
-        draft : "draft"
+        new : "new"
     - level:   3
       element: "chapter"
       content:  "API/Class_SearchDoc/Method_setSlice.md"
@@ -909,7 +921,8 @@ book:
       element: "chapter"
       content:  "API/Class_SearchDoc/Method_setRecursiveSearch.md"
       flags:
-        draft : "draft"
+        new : "new"
+        next-release : "next-release 3.2.12"
     - level:   3
       element: "chapter"
       content:  "API/Class_SearchDoc/Method_useCollection.md"
@@ -924,17 +937,20 @@ book:
       element: "chapter"
       content:  "API/Class_SearchDoc/Method_addGeneralFilter.md"
       flags:
-        draft : "draft"
+        next-release : "next-release 3.2.12"
+        new : "new"
     - level:   3
       element: "chapter"
       content:  "API/Class_SearchDoc/Method_onlyCount.md"
       flags:
-        draft : "draft"
+        new : "new"
+        next-release : "next-release 3.2.12"
     - level:   3
       element: "chapter"
       content:  "API/Class_SearchDoc/Method_join.md"
       flags:
-        draft : "draft"
+        next-release : "next-release 3.2.12"
+        new : "new"
     - level:   3
       element: "chapter"
       content:  "API/Class_SearchDoc/Method_overrideViewControl.md"
@@ -954,12 +970,13 @@ book:
       element: "chapter"
       content:  "API/Class_SearchDoc/Method_reset.md"
       flags:
-        draft : "draft"
+        new : "new"
     - level:   3
       element: "chapter"
       content:  "API/Class_SearchDoc/Method_count.md"
       flags:
-        draft : "draft"
+        next-release : "next-release 3.2.12"
+        new : "new"
     - level:   3
       element: "chapter"
       content:  "API/Class_SearchDoc/Method_getDocumentList.md"
@@ -1407,6 +1424,11 @@ book:
       content:  "Advanced/Template/texte.md"
       flags:
          new: "new"
+    - level:   3
+      content:  "Advanced/Template/encode.md"
+      flags:
+        wip: "work in progress"
+        wip_sub: ""
     - level:   3
       content:  "Advanced/Template/tag_list_texte.md"
       flags:

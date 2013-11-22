@@ -42,7 +42,7 @@ sur la notion de [famille][famintro] et les structures associées ([attributs][a
 :   Identifiant interne ou nom logique d'une collection dans laquelle s'effectue la
     recherche.
 
-(boolean) recursiveSearch (valeur par défaut `false`)
+(bool) recursiveSearch (valeur par défaut `false`)
 :   Uniquement applicable dans le cas d'une recherche avec dirid, si il est passé
     à `true` et que la collection de base contient d'autres collection alors la
     recherche est aussi effectuée dans les autres collections.
@@ -55,44 +55,49 @@ sur la notion de [famille][famintro] et les structures associées ([attributs][a
     A alors A et B sont ouvert à tour de rôle.
 
 (int) slice
-:   Indique le nombre maximum de documents trouvés par la recherche.
+:   Indique le nombre maximum de documents retournés par la recherche.
 
 (int) start
 :   Indique à partir de combien de documents trouvés commence le retour des
     documents.
 
-(boolean) only (valeur par défaut `false`)
-:   Indique si la recherche est faite dans les familles et les sous famille. Si
-    `true` la recherche n'est pas faite dans les sous familles.
+(bool) only (valeur par défaut `false`)
+:   Indique si la recherche est faite dans les familles et les sous-familles.  
+    Si `true` la recherche n'est pas faite dans les sous familles.
 
-(boolean) distinct (valeur par défaut `false`)
+(bool) distinct (valeur par défaut `false`)
 :   Indique si les résultats retournés comprennent toutes les révisions trouvées
     ou pas (`false` indique que tous les résultats sont renvoyés). Cette 
     propriété n'a de sens que si `latest` est à `false`.
 
-(boolean) trash (valeur par défaut `false`)
-:   Indique si la recherche doit chercher aussi dans les documents supprimés (si
-    `true`).
+(string) trash (valeur par défaut `no`)
+:   Indique si la recherche doit chercher aussi dans les documents supprimés.  
+    Valeurs possibles :  
+    
+    *   `no` : Les documents supprimés sont exclus,
+    *   `also` : Les documents supprimés sont inclus,
+    *   `only` : Les documents non supprimés sont exclus, seul les supprimés 
+    sont inclus.
 
-(boolean) latest (valeur par défaut `true`)
-:   Indique si la recherche ne doit retourner que le dernier document de la 
-    lignée documentaire.
+(bool) latest (valeur par défaut `true`)
+:   Indique si la recherche ne doit retourner que la dernière révision des 
+    documents.
 
 (int) userid
-:   Indique l'identifiant système de l'utilisateur avec lequel ce fait la recherche.
+:   Indique l'identifiant système de l'utilisateur avec lequel se fait la 
+    recherche.
 
 ### Avertissement {#core-ref:d264c169-c6fb-4706-8505-b537b16f9c15}
 
 Les objets de la classe SearchDoc fonctionne en deux phases :
 
-* préparation de la requête : lors de cette phase on initialise la requête et on
+* Préparation de la requête : lors de cette phase on initialise la requête et on
 fixe les différents éléments la constituants (filtre, jointure, etc.)
-* exécution de la recherche : lors de cette phase la recherche est exécutée et
+* Exécution de la recherche : lors de cette phase la recherche est exécutée et
 on exploite les résultats.
 
 Le passage de la phase de préparation à la phase d'exécution se fait via la 
-méthode [`SearchDoc::search`][search], de plus on peut revenir en mode 
-préparation en utilisant la méthode [`SearchDoc::reset`][reset].
+méthode [`SearchDoc::search`][search].
 
 ### Exemples {#core-ref:b459e7e1-a283-4ee5-970d-7572872a438a}
 

@@ -73,6 +73,6 @@ Aucune.
 
 <!-- links -->
 [doccopy]:      #core-ref:f7d4f454-0e45-40bd-9f4c-b149ab620295
-[precopy]:      #core-ref:d3a5ed05-5efd-441f-a276-c9423a89d874
+[precopy]:      #core-ref:c8d89bd7-e44c-4d30-b727-36f815a921db
 [postcopy]:     #core-ref:d3a5ed05-5efd-441f-a276-c9423a89d874
 [hook]:             http://fr.wikipedia.org/wiki/Hook_(informatique) "Définition de Hook sur wikipedia"
