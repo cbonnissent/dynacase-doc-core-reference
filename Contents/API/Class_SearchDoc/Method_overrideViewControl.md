@@ -20,35 +20,35 @@ n'ait ou pas le droit de le voir.
 
 ### Avertissements {#core-ref:063ad594-da2a-46c3-82ab-9f64f5ebdace}
 
-N/A
+Aucun.
 
 ## Liste des paramètres {#core-ref:37f60ce1-7dc2-446e-b2ad-4e31941d75ec}
 
-N/A
+Aucun.
 
 ## Valeur de retour {#core-ref:13791579-fa97-4591-84df-c07230a365ca}
 
-N/A
+Aucun.
 
 ## Erreurs / Exceptions {#core-ref:09fbb635-3b94-40cc-8a95-9998537dbad7}
 
-N/A
+Aucun.
 
 ## Historique {#core-ref:593062b2-1ea3-4fcf-aaaa-fa52e56b5669}
 
-N/A
+Aucun.
 
 ## Exemples {#core-ref:3fe82be2-25ad-4f31-b945-cff5423de60d}
 
-N/A
+Aucun.
 
 ## Notes {#core-ref:b2de38af-fa78-4f43-838d-0e4d32b9d9f6}
 
-N/A
+Aucun.
 
 ## Voir aussi {#core-ref:27ad0818-e83d-4e74-a94d-de4c10d38392}
 
-N/A
+Aucun.
 
 <!-- links -->
 

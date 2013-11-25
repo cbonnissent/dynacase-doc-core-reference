@@ -15,15 +15,15 @@ Obsolète depuis #.#.#
     [php]
     Doc|Array|null getNextDoc()
 
-N/A
+Aucun.
 
 ### Avertissements {#core-ref:558aa4c8-0cfb-44b6-8313-ddd9c0e0510b}
 
-N/A
+Aucun.
 
 ## Liste des paramètres {#core-ref:04f7ef01-58cd-46c8-b661-3a46dc02fc80}
 
-N/A
+Aucun.
 
 ## Valeur de retour {#core-ref:5640006d-f5d9-4dba-8295-3d6598df4071}
 
@@ -35,11 +35,11 @@ La valeur de retour peut être :
 
 ## Erreurs / Exceptions {#core-ref:4e599b72-7039-41f7-8160-7b1856040173}
 
-N/A
+Aucun.
 
 ## Historique {#core-ref:4bf1de3b-bc20-4eee-addd-552c9728820a}
 
-N/A
+Aucun.
 
 ## Exemples {#core-ref:48e71bd4-b673-4111-b07f-e8a90c9c6773}
 
@@ -75,7 +75,7 @@ Vous pouvez obtenir le même résultat en utilisant la méthode
 
 ## Voir aussi {#core-ref:683da3d7-b3ac-4694-bd81-d1a5458e2998}
 
-N/A
+Aucun.
 
 <!-- links -->
 

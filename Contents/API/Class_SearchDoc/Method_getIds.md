@@ -21,7 +21,7 @@ Cette méthode ne peut être exécutée uniquement après la méthode [`SearchDo
 
 ## Liste des paramètres {#core-ref:c4f36b75-1acf-4fec-82b6-f5b4427aec4b}
 
-N/A
+Aucun.
 
 ## Valeur de retour {#core-ref:4c3ca1ba-fd66-49bd-8ada-50eee9f6670c}
 
@@ -30,19 +30,19 @@ N/A
 
 ## Erreurs / Exceptions {#core-ref:c632f50d-eebe-4e3d-8c07-937cf43ba43a}
 
-N/A
+Aucun.
 
 ## Historique {#core-ref:30b275ee-d182-4e31-8838-8b2690b2356e}
 
-N/A
+Aucun.
 
 ## Exemples {#core-ref:d9c31498-81b9-4201-92df-e7187ecae104}
 
-N/A
+Aucun.
 
 ## Notes {#core-ref:994821cf-d6a2-42b9-8738-ce85ce7513ea}
 
-N/A
+Aucun.
 
 ## Voir aussi {#core-ref:94065bbd-e261-4088-b74b-dfad9b256418}
 

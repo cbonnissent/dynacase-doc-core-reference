@@ -101,6 +101,11 @@ span.flag.next-release {
     background: linear-gradient(to right,  #008821, #57B1E4);
     color: white;
 }
+
+.flags-banner.flag-new.flag-next-release.flag-draft {
+    background: linear-gradient(to right,  #008821, #0D5EC9, #B87B1F);
+    color: white;
+}
 /*
     Gestion des tables
  */

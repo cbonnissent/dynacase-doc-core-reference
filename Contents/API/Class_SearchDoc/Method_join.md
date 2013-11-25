@@ -1,21 +1,17 @@
 # SearchDoc::join() {#core-ref:c7fe0a1b-e71a-45d4-9182-9e4561558030}
 
-<div class="short-description">
-Cette méthode permet de faire une <a href="https://fr.wikipedia.org/wiki/Jointure_(informatique)" title="wikipedia jointure">jointure</a>.
+<div markdown="1" class="short-description"> 
+    Cette méthode permet de faire une [jointure][jointure]. 
 </div>
-<!--
-<div class="applicability">
-Obsolète depuis #.#.#
-</div>
--->
+
 
 ## Description {#core-ref:2843f343-933e-44a9-8e69-b65957da95d3}
 
     [php]
     void join( string $join )
 
-Cette méthode permet d'ajouter via le mécanisme de jointure des critères provenant
-d'une autre table de manière à établir des filtres complexes.
+Cette méthode permet d'ajouter via le mécanisme de jointure des critères
+provenant d'une autre table de manière à établir des filtres complexes.
 
 ### Avertissements {#core-ref:bc000d20-1021-4367-9918-203468c6359a}
 
@@ -31,7 +27,7 @@ Les restrictions suivantes s'appliquent :
 (string) `join`
 :   La chaîne attendue doit être au format suivant :
     
-<svg width="1160" height="160" viewBox="-8 -86 1160 160 " xmlns="http://www.w3.org/2000/svg" version="1.1">
+<svg width="100%" height="160" viewBox="-8 -86 1160 160 " xmlns="http://www.w3.org/2000/svg" version="1.1">
 <defs><style type="text/css">.terminal_rect{fill:rgb(206,255,206);stroke:black;stroke-width:2;}.terminal_text{fill:black;font-family:Verdana,Sans-serif;text-anchor:middle;font-size:14px;}.symbol_rect{fill:rgb(206,255,206);stroke:black;stroke-width:2;}.symbol_text{fill:black;font-family:Verdana,Sans-serif;font-weight:bold;font-style:italic;text-anchor:middle;font-size:14px;}.path{fill:none;stroke:black;stroke-width:2;}.rule_text{fill:black;font-family:Verdana,Sans-serif;font-weight:bold;font-size:14px;}.rule_path_edge{fill:none;stroke:black;stroke-width:3;}</style></defs>
 <text class="rule_text" x="0" y="-64" >join:</text>
 <rect class="symbol_rect" x="30" y="-14" width="146" height="28" rx="1" />
@@ -122,15 +118,22 @@ void
 
 ## Erreurs / Exceptions {#core-ref:1b54cad4-edc1-4309-bdc5-593ace3a7f2f}
 
-N/A
+<span class="flag next-release">next release 3.2.12</span>
+
+Exception `\Dcp\SearchDoc\Exception` si la jointure est syntaxiquement
+incorrecte.
+
 
 ## Historique {#core-ref:91307533-be72-4656-ae6e-29b70dd88b6e}
 
-N/A
+### Release 3.2.12
+
+La méthode retourne une exception en cas d'erreur de syntaxe. Auparavant
+l'erreur était remontée au niveau de la méthode `SearchDoc::search()`.
 
 ## Exemples {#core-ref:4a8470c2-7c01-4165-ab00-138e1aa453c2}
 
-Recherche de tous les animaux dont le gardien a comme prénom tom :
+Recherche de tous les animaux dont le gardien a comme prénom "tom" :
 
     [php]
     function tomAnimals(Action & $action)
@@ -138,7 +141,7 @@ Recherche de tous les animaux dont le gardien a comme prénom tom :
         header('Content-Type: text/plain');
         
         $searchDoc = new searchDoc("", "ZOO_ANIMAL");
-        $searchDoc->join("an_gardien::int != zoo_gardien(id)");
+        $searchDoc->join("an_gardien::int = zoo_gardien(id)");
         $searchDoc->addFilter("zoo_gardien.firstname = 'tom'");
         $searchDoc->search();
         
@@ -148,18 +151,16 @@ Recherche de tous les animaux dont le gardien a comme prénom tom :
         }
         
         var_export($searchDoc->getSearchInfo());
-    
     }
 
-D'autres exemples sont présents dans [la documentation avancée][exempleJointure].
 
 ## Notes {#core-ref:ae701512-b1fb-438b-ab03-493e18d164bd}
 
-N/A
+Aucune.
 
 ## Voir aussi {#core-ref:5add590f-d72c-48ca-8f59-b9a2ab3cdfd0}
 
-N/A
+Voir [la documentation avancée][exempleJointure].
 
 <!-- links -->
 
@@ -167,3 +168,4 @@ N/A
 [pgtype]:   http://www.postgresql.org/docs/8.4/static/datatype.html "Postgresql : datatype"
 [pgcast]:   http://www.postgresql.org/docs/8.4/static/sql-expressions.html#SQL-SYNTAX-TYPE-CASTS "Postgresql : cast"
 [exempleJointure]:      #core-ref:82d4a6a8-39da-4ad1-a697-8da77c9aff07
+[jointure]:    https://fr.wikipedia.org/wiki/Jointure_(informatique) "Définition sur Wikipédia"

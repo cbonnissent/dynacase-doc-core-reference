@@ -43,7 +43,9 @@ Si l'attribut est dans un tableau, le type en base donnée sera `text`.
 
 ## Options {#core-ref:d4e4f0d4-8f92-44f2-8240-242ac98c00fe}
 
-N/A
+[Options communes à tous les types d'attributs](#core-ref:16e19c90-3233-11e2-a58f-6b135c3a2496). 
+
+Ce type d'attribut ne dispose d'aucune option spécifique.
 
 <!-- links -->
 [MDN_css_color_value]: https://developer.mozilla.org/en-US/docs/CSS/color_value "description du type css color sur MDN"
