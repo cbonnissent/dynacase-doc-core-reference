@@ -2,9 +2,9 @@
 
 La [classe `SearchDoc`][searchdoc] peut aussi être utilisée pour rechercher des
 valeurs sur l'ensemble des attributs des documents. Pour cela il faut utiliser
-la méthode `::addGeneralFilter()`. Cette méthode prend en argument un ou
-plusieurs mots. Ce filtre ne tient pas compte de la casse. Il n'est pas possible
-de filtrer sur un mot en tenant compte de sa casse.
+la méthode [`::addGeneralFilter()`][addGeneralFilter]. Cette méthode prend en
+argument un ou plusieurs mots. Ce filtre ne tient pas compte de la casse. Il
+n'est pas possible de filtrer sur un mot en tenant compte de sa casse.
 
     [php]
     $s=new SearchDoc('',"ANIMAL");
@@ -117,8 +117,8 @@ Les poids des mots sont en fonction de l'endroit où le terme est trouvé.
 
 Si le terme recherché est de poids A, la pertinence sera plus élevée que s'il
 est trouvé avec un poids B. Si on a utilisé une recherche générale sans
-expression ni mot exact, on peut utiliser la méthode ::setPertinenceOrder() sans
-argument :
+expression ni mot exact, on peut utiliser la méthode
+[`::setPertinenceOrder()`][setPertinenceOrder] sans argument :
 
     [php]
     $s=new SearchDoc('',"ANIMAL");
@@ -136,8 +136,9 @@ même ordre  avec un calcul sur la forme lemmatisé de "cheval" (incluant
     $s->addGeneralFilter('"chevaux"'); 
     $s->setPertinenceOrder(); // la pertinence est sur le mot cheval
 
-La pertinence sans argument ne peut pas être utilisée avec une recherche d'expression.
-Si on veut maîtriser plus précisément la pertinence, il est possible d'utiliser ses propres mots. 
+La pertinence sans argument ne peut pas être utilisée avec une recherche
+d'expression. Si on veut maîtriser plus précisément la pertinence, il est
+possible d'utiliser ses propres mots.
 
     [php]
     $s=new SearchDoc('',"ANIMAL");
@@ -152,7 +153,7 @@ documents retournés qui contiennent 'Equus' dans leur description.
 
 ## Mise en évidence des mots trouvés {#core-ref:c4634cc1-0729-49d0-af4c-96d517d2de67}
 
-La méthode `DocSearch::getHighlightText()` permet de retourner la partie où le
+La méthode `SearchDoc::getHighlightText()` permet de retourner la partie où le
 texte recherché a été rencontré. Cette fonctionnalité ne peut être utilisée
 qu'avec une recherche de mots. Cela ne fonctionne pas avec les expressions ni
 avec les mots exacts.
@@ -165,12 +166,14 @@ avec les mots exacts.
     $dl = $s->getDocumentList();
     foreach ($dl as $doc) {
       $ht = $dl->getSearchDocument()->getHighLightText($doc);
-      print "HighLight=$ht\n";
+      printf("%d) %s : %s\n"),$doc->id, $doc->getTitle(), $ht);
     }
 
-Les mots trouvés sont par défaut entourés des balises `&lt;strong&gt;` et
-`&lt;/strong&gt;`. Elles peuvent être modifiées avec les arguments optionnels de
+Les mots trouvés sont par défaut entourés des balises `<strong>` et
+`</strong>;`. Elles peuvent être modifiées avec les arguments optionnels de
 la méthode.
 
 <!-- link -->
-[searchdoc]:        #core-ref:a5216d5c-4e0f-4e3c-9553-7cbfda6b3255
+[searchdoc]:          #core-ref:a5216d5c-4e0f-4e3c-9553-7cbfda6b3255
+[setPertinenceOrder]: #core-ref:287db32e-abb9-4ea3-a692-3dfded873b48
+[addGeneralFilter]:   #core-ref:453cff11-09d9-4607-ab81-7acd36e99750
