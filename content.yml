@@ -163,6 +163,9 @@ book:
       subtoc:   2
     - level:   2
       content:  "importation_exportation_documents/importations.md"
+      flags:
+        new: "updated"
+        next-release : "next-release 3.2.12"
     - level:   2
       content:  "importation_exportation_documents/importationsxml.md"
     - level:   2
@@ -965,7 +968,7 @@ book:
       element: "chapter"
       content:  "API/Class_SearchDoc/Method_search.md"
       flags:
-        draft : "draft"
+        new : "new"
     - level:   3
       element: "chapter"
       content:  "API/Class_SearchDoc/Method_reset.md"
@@ -1174,6 +1177,9 @@ book:
       content:  "wsh_ref/getApplicationParameter.md"
     - level:   2
       content:  "wsh_ref/importDocuments.md"
+      flags:
+        new: "updated"
+        next-release : "next-release 3.2.12"
     - level:   2
       content:  "wsh_ref/refreshDocuments.md"
     - level:   2
