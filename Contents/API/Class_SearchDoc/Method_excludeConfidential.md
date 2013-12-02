@@ -8,7 +8,7 @@ Cette méthode permet d'exclure les documents marqués comme confidentiel.
 ## Description {#core-ref:4798fa87-48ef-4a33-97f7-c7d94c0213a5}
 
     [php]
-    bool excludeConfidential ( $exclude = true )
+    bool excludeConfidential ( bool $exclude = true )
 
 Il est possible de marquer des documents comme confidentiels ceux-ci sont alors
 trouvés dans les recherches mais ne sont pas consultables si l'utilisateur n'en
