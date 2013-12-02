@@ -7,7 +7,7 @@ d'importer des documents.
 
 Voir aussi :
 
-* [Importer des documents par ligne de commande][importer_des_documents_par_ligne_de_commande]
+* [Importer des documents par ligne de commande][wshImportDocuments]
 
 ## Usage {#core-ref:22deded0-83e1-4fd5-89a6-91b3820b8649}
 
@@ -81,12 +81,36 @@ Voir aussi :
     alors une erreur sur un document n'empêchera pas les autres documents
     d'êtres importés.
 
+`csv-separator` (default `;`) <span class="flag next-release">next release 3.2.12</span>
+:   Dans le cas d'importation en fichier [csv][CSV] permet d'indiquer le caractère de
+    séparation des champs. Généralement le caractère est `,` (virgule) ou 
+    `;` (point-virgule).  
+    Si la valeur est `auto`, le caractère de séparation parmi `,` et `;` est 
+    trouvé automatiquement.
+
+`csv-enclosure` (default `vide`) <span class="flag next-release">next release 3.2.12</span>
+:   Dans le cas d'importation en fichier [csv][CSV] permet d'indiquer le caractère de
+    de délimiteur de texte. Généralement le caractère est `"` (double quote) ou 
+    `'` (simple quote)  
+    Si la valeur est `auto`, le caractère de séparation parmi `"` et `'` est 
+    trouvé automatiquement.
+
+
+`csv-linebreak` (default "`\n` - 2 caractères `n` et `n`") <span class="flag next-release">next release 3.2.12</span>
+:   Dans le cas d'importation en fichier [csv][CSV] permet d'indiquer une séquence de 
+    caractère indiquant un retour chariot (CRLF). Si `csv-enclosure` n'est pas 
+    vide, le retour chariot (caractère `"\n"`) est pris en compte quelque soit 
+    la valeur de cet argument. Cet argument permet en plus d'indiquer une 
+    séquence qui sera interprétée comme un retour à la ligne.
+
+
 ## Limite d'usage {#core-ref:ab8856e9-1850-46d9-ae22-20fb54f9c078}
 
-N/A
+Aucunes.
 
 <!-- links -->
-[importer_des_documents_par_ligne_de_commande]: #core-ref:1c97f553-dcba-454e-96a0-8059230065b3
-[importation_archive]: #core-ref:021b7db1-7baf-48c4-8eb9-4a388355dd86
-[KEYS]: #core-ref:7eefc8e7-16a6-4188-99d5-c2c9d817a1fe
-[RESET]: #core-ref:5c661733-772d-42b8-8b3e-b70453ddfd33
+[wshImportDocuments]:   #core-ref:1c97f553-dcba-454e-96a0-8059230065b3
+[importation_archive]:  #core-ref:021b7db1-7baf-48c4-8eb9-4a388355dd86
+[KEYS]:                 #core-ref:7eefc8e7-16a6-4188-99d5-c2c9d817a1fe
+[RESET]:                #core-ref:5c661733-772d-42b8-8b3e-b70453ddfd33
+[CSV]: http://fr.wikipedia.org/wiki/Comma-separated_values "Comma-separated values sur wikipedia"

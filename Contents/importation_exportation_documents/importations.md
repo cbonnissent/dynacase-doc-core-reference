@@ -9,8 +9,8 @@ Le fichier d'importation peut être au format :
 
 *   CSV
     *   Encodage : UTF-8,
-    *   Délimiteur de texte : ` ` (vide),
-    *   séparateur de colonnes : `;`.
+    *   Séparateur de colonnes : `;`(point-virgule par défaut - configurable en <span class="flag next-release">next release 3.2.12</span>).
+    *   Délimiteur de texte : ` ` (vide par défaut - configurable en <span class="flag next-release">next release 3.2.12</span>),
 *   ODS OpenDocument Spreadsheet (tableur OpenOffice.org .ods)
 
 Ce fichier d'importation est *auto-descriptif* ; c'est à dire qu'il
@@ -164,6 +164,11 @@ Par exemple :
     | 1     | • 1236                        |
     | 2     | • 6375<br />• 8755<br />• 564 |
     | 3     | • 567<br />• <br />• 4569     |
+
+**Note** <span class="flag next-release">next release 3.2.12</span> : Si un
+délimiteur de texte est défini, le retour chariot est alors possible sur une
+ligne et est interprété comme la chaîne `\n`.
+
 
 ### Hameçons déclenchés lors de l'importation {#core-ref:d3b06745-35c5-447c-9b88-01181736c21e}
 

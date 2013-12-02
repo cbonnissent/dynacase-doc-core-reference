@@ -46,7 +46,16 @@ La méthode [`SearchDoc::setRecursiveSearch()`][searchdocrecursivesearch] a un
 nouveau paramètre pour indiquer le niveau de profondeur. Ceci évite de mettre à
 jour directement la propriété `SearchDoc::folderRecursiveLevel`.
 
+### Importation CSV
+
+Le script [`importDocument`][wshimportDocuments] a de nouvelles options
+permettant de configurer l'importation des formats [`csv`][CSV].
+
+L'interface d'administration d'importation des documents permet aussi de
+configurer les options d'importation pour les fichiers `csv`.
+
 <!-- link -->
+[wshimportDocuments]: #core-ref:a14d9475-0431-4aa3-853d-810b61e355a7
 [histo]:        #core-ref:e4cf4232-38e7-4673-afd1-5730c1a95c48
 [persist]:      #core-ref:5f09399c-bb49-4033-90d6-c04876948269
 [account]:      #core-ref:68c93fb2-088c-435a-b4ac-e1b94095d0c9
@@ -63,3 +72,4 @@ jour directement la propriété `SearchDoc::folderRecursiveLevel`.
 [searchdocJoin]:              #core-ref:c7fe0a1b-e71a-45d4-9182-9e4561558030
 [searchdocOnlycount]:          #core-ref:2d43be1a-1991-42dd-a25d-5c3bb0b393fa
 [searchdocrecursivesearch]:    #core-ref:b99a6125-5a8b-420b-b1ce-f6a459f11612
+[CSV]: http://fr.wikipedia.org/wiki/Comma-separated_values "Comma-separated values sur wikipedia"

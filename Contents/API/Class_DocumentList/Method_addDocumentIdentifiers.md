@@ -3,11 +3,7 @@
 <div class="short-description">
 <span class="fixme template">short description for DocumentList::addDocumentIdentifiers()</span>
 </div>
-<!--
-<div class="applicability">
-Obsolète depuis #.#.#
-</div>
--->
+
 
 ## Description {#core-ref:53fc40ed-2893-4e49-98f0-92bd0a0861b8}
 
@@ -18,7 +14,7 @@ Obsolète depuis #.#.#
 
 ### Avertissements {#core-ref:fa34b58b-bfb4-4706-a3e9-45119f725f38}
 
-<span class="fixme template">Avertissements</span>
+L'ordre du résultat n'est pas l'ordre des identifiants donnés.
 
 ## Liste des paramètres {#core-ref:bcd5d96b-9684-4ce1-875d-7197673ac8d8}
 
@@ -45,6 +41,21 @@ exemple:
 ## Exemples {#core-ref:15f8b125-ba41-4f5a-a3e0-b0fbcbe50abb}
 
 <span class="fixme template">Exemples</span>
+
+### Avec Initid
+
+### Avec Latest Id
+
+### Pour n'importe quel identifiant
+        $dl = new \DocumentList();
+        $dl->addDocumentIdentifiers($realIds, false);
+        
+        $keys = array();
+        /**
+         * @var \Doc $eval
+         */
+        $s = $dl->getSearchDocument();
+        $s->latest = false; // need because some ids are not latest
 
 ## Notes {#core-ref:a2c98be2-9502-4e00-8d5d-3d537afd3396}
 

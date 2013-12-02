@@ -9,17 +9,16 @@ Cette méthode permet d'exécuter la recherche.
     [php]
     array|null|SearchDoc search (  )
 
-Cette méthode exécute la recherche. Elle construit le `SQL` nécessaire en
-utilisant les paramètres du document et le contenu inséré par les différentes
-méthodes.
+Cette méthode exécute la recherche. Elle construit la requête `SQL` nécessaire
+en utilisant les paramètres de la famille rechechées et les conditions insérées
+par les différentes méthodes.
 
 ### Avertissements {#core-ref:f9475914-b820-462f-a0b1-47c0a98d8836}
 
-Une fois la recherche effectuée, il n'est plus possible de l'effectuer à nouveau
-sans utiliser la méthode [`reset`][reset].
-
 Par défaut [certains types de documents sont exclus des résultats de la
-recherche][advancedExcluded].
+recherche][advancedExcluded]. Ces exclusions sont modifiables par les méthodes 
+[`::excludeConfidential][excludeConfidential], [`::overrideControl()`] et les 
+attributs [`trash`][searchprop] et [`distinct`][searchprop].
 
 ## Liste des paramètres {#core-ref:1182a98e-413d-4fd5-8cf7-bf285852e5a3}
 
@@ -29,10 +28,10 @@ Aucun.
 
 La valeur du retour [dépend du type de recherche][advancedSearch] :
 
-* résultats bruts : le retour est alors un array, si la préparation de la 
-  recherche à échoué alors le résultat est un array vide,
+* résultats bruts : le retour est alors un tableau `array`, si la préparation de la 
+  recherche à échoué alors le résultat est un tableau vide,
 * résultats documents : le retour est alors le document `searchDoc` ou `null` si 
-la préparation de la recherche à échoué.
+la préparation de la recherche a échoué.
 
 **Note** : Le changement du type de recherche se fait uniquement avant que la 
 recherche ne soit déclenchée avec la méthode 
@@ -45,14 +44,27 @@ Si la préparation de la recherche a échoué alors si la recherche :
 * retourne des résultats brut : le retour est un array vide,
 * retourne des documents : le retour est `null`.
 
+Exception : \Dcp\Db\Exception si la requête n'a pas pu être exécutée..
+
 ## Historique {#core-ref:c718b9c4-c3aa-4666-ac81-9af3286235cb}
 
 Aucun.
 
 ## Exemples {#core-ref:382458c1-64ec-4b59-ad90-33ac39265854}
 
-Quelques exemples sont disponibles dans le chapitre 
-[recherche avancée][advancedSearch].
+Recherche de tous les dossiers que l'utilisateur courant peut voir.
+
+    [php]
+    $s=new SearchDoc("","DIR");
+    $s->setObjectReturn(true);
+    $documentList=$s->search()->getDocumentList();
+    foreach ($documentList as $docid=>$doc) {
+      printf("%d) %s (%s)", 
+           $docid,
+           $doc->getTitle(),
+           $doc->getRawValue(\Dcp\AttributeIdentifiers\Dir::ba_title));
+    }
+
 
 ## Notes {#core-ref:c3321a4a-316b-4ccf-a0f9-9b866863f223}
 
@@ -60,7 +72,10 @@ Aucune.
 
 ## Voir aussi {#core-ref:ad16b97f-7fc8-4240-97f0-a36c13084446}
 
-*   Chapitre [Mécanismes de recherche][recherche].
+*   Chapitre [Mécanismes de recherche][recherche],
+*   [Autres exemples][advancedSearch],
+*   [`SearchDoc::setObjectReturn()`][setObjectReturn].
+
 
 <!-- links -->
 
@@ -69,3 +84,6 @@ Aucune.
 [advancedSearch]:       #core-ref:7291dea8-a2db-46be-8194-bc6f100cc467
 [setObjectReturn]:      #core-ref:3a0b4882-81ff-4030-9f60-a0ed0ff1f958
 [recherche]:            #core-ref:bda916b0-e564-40fd-b195-c62bbab7b8be
+[excludeConfidential]:  #core-ref:17be152c-0844-40d5-bfc5-a9aa2f2695fc
+[overrideViewControl]:  #core-ref:18f98a7d-7db0-4270-97b2-0a1759a5b0e6
+[searchprop]:           #core-ref:72ce807f-a392-4579-ab46-d58a3d18c214

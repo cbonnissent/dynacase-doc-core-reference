@@ -6,9 +6,9 @@ documents en ligne de commande. Les types suivants sont supportés par le script
 
 *   [CVS][import_csv]
     *   Encodage : UTF-8,
-    *   Délimiteur de texte : ` ` (vide),
-    *   séparateur de colonnes : `;`.
-*   [ODS][import_csv],
+    *   Séparateur de colonnes : `;`(point-virgule par défaut - configurable en <span class="flag next-release">next release 3.2.12</span>).
+    *   Délimiteur de texte : ` ` (vide par défaut - configurable en <span class="flag next-release">next release 3.2.12</span>),
+    [ODS][import_csv],
 *   [XML][import_xml],
 *   [ZIP][import_archive],
 *   [TGZ][import_archive]
@@ -17,22 +17,25 @@ documents en ligne de commande. Les types suivants sont supportés par le script
     Import documents from description file
     Usage :
         --file=<the description file path>
-       Options:
-        --userid=<user system id or login name to execute function - default is (admin)>, default is '1'
-        --analyze=<analyze only> [yes|no], default is 'no'
-        --archive=<description file is an standard archive (not xml)> [yes|no], default is 'no'
-        --log=<log file output>
-        --policy=<policy import - 
-            [update] to auto update same document (the default), 
-            [add] to always create new document, 
-            [keep] to do nothing if same document already present> [update|add|keep]
-        --htmlmode=<analyze report mode in html> [yes|no], default is 'yes'
-        --reinitattr=<reset attribute before import family update> [yes|no]
-        --reset=<reset options> [default|parameters|attributes|structure|properties|enums]
-        --to=<email address to send report>
-        --dir=<folder where imported documents are put>
-        --strict=<don't import if one error detected> [yes|no], default is 'yes'
-        --help (Show usage) 
+    Options:
+    --userid=<user system id or login name to execute function - default is (admin)>, default is '1'
+    --analyze=<analyze only> [yes|no], default is 'no'
+    --archive=<description file is an standard archive (not xml)> [yes|no], default is 'no'
+    --log=<log file output>
+    --policy=<policy import - 
+        [update] to auto update same document (the default), 
+        [add] to always create new document, 
+        [keep] to do nothing if same document already present> [update|add|keep]
+    --htmlmode=<analyze report mode in html> [yes|no], default is 'yes'
+    --reinitattr=<reset attribute before import family update (deprecated)> [yes|no]
+    --reset=<reset options> [default|parameters|attributes|structure|properties|enums] 
+    --to=<email address to send report>
+    --dir=<folder where imported documents are put>
+    --strict=<don't import if one error detected> [yes|no], default is 'yes'
+    --csv-separator=<character to delimiter fields - generaly a comma> use single character or "auto", default is ';'
+    --csv-enclosure=<character to enclose fields - generaly double-quote> use single character or "auto", default is ''
+    --csv-linebreak=<character sequence to be import like CRLF>, default is '\n'
+    --help (Show usage) 
 
 L'option `--analyze=yes` permet de réaliser une importation *à blanc*. Dans ce
 cas, l'importation est réalisée mais aucune modification n'est enregistrée en
