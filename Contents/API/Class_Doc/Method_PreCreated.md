@@ -26,10 +26,14 @@ méthode afin d'indiquer l'échec.
 
 ### Avertissements {#core-ref:014358b2-bf94-4af3-af27-c5de57751a46}
 
-Le document n'a pas encore d'identifiant lors de la création initiale. S'il
-s'agit d'une révision, le document possède déjà un identifiant mais celui-ci
-est modifié. L'identifiant initial (`initid`) reste inchangé en cas de
-révision.
+Cette méthode est appelée lors la création initiale et lors des révisions du 
+document.  Toutefois, il est possible de différencier la création de la révision
+car :
+
+ * lors d'une création les propriétés `id` et `initid` sont égales à chaîne vide,
+ * lors d'une révisions la propriété `initid` est valuée et `id` est égale
+   à chaîne vide.
+
 On peut donc reconnaître le cas de la révision de celui de la création initiale
 en faisant :
 
@@ -41,13 +45,30 @@ en faisant :
     {
         public function preCreated()
         {
-            if ($this->id) {
-                //Creation
+            error_log('initid '.var_export($this->initid, true));
+            error_log('id '.var_export($this->id, true));
+            if ($this->initid === "") {
+                error_log("I'm in first creation");
             } else {
-                //Revision
+                error_log("I'm in creation of a revision");
             }
         }
     }
+
+Ce qui donne les logs suivants, si l'on créée un document et que l'on révise
+celui-ci juste après :
+
+ * Lors de la création :
+
+    initid ''
+    id ''
+    I'm in first creation
+
+* Lors de la révision :
+
+    initid '1453'
+    id ''
+    I'm in creation of a revision
 
 ## Liste des paramètres {#core-ref:347f3a0c-8520-488c-a42f-10c682a2ea32}
 
