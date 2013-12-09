@@ -96,7 +96,7 @@ Voir aussi :
     trouvé automatiquement.
 
 
-`csv-linebreak` (default "`\n` - 2 caractères `n` et `n`") <span class="flag next-release">next release 3.2.12</span>
+`csv-linebreak` (default "`\n` - 2 caractères `\` et `n`") <span class="flag next-release">next release 3.2.12</span>
 :   Dans le cas d'importation en fichier [csv][CSV] permet d'indiquer une séquence de 
     caractère indiquant un retour chariot (CRLF). Si `csv-enclosure` n'est pas 
     vide, le retour chariot (caractère `"\n"`) est pris en compte quelque soit 

@@ -20,10 +20,15 @@ L'édition 4 de la documentation a modifié les points suivants.
 | Ajout chapitre migration                        | [Migration des applications][migration]         | <span class="flag new">New</span>                                                           | 08/11/13 |
 | Ajout chapitre contrôle d'accès                 | [Contrôle des accès][accesscontrol]             | <span class="flag new">New</span>                                                           | 12/11/13 |
 | Ajout chapitre zones et actions de référence    | [Zone et actions de référence][zoneref]         | <span class="flag new">New</span>                                                           | 12/11/13 |
-| Ajout chapitre SearchDoc    | [Classe SearchDoc][searchdoc]         | <span class="flag new">New</span>                                                           | 12/11/13 |
+| Ajout chapitre SearchDoc                        | [Classe SearchDoc][searchdoc]                   | <span class="flag new">New</span>                                                           | 12/11/13 |
 
 
 ## Modification release 3.2.12
+
+### Internationalisation
+
+Ajout de la possibilité d'utiliser les [contextes][i18nctx] et les [formes
+plurielles][i18nplural] dans les traductions.
 
 ### SearchDoc::addGeneralFilter
 
@@ -66,10 +71,12 @@ configurer les options d'importation pour les fichiers `csv`.
 [processus]:    #core-ref:4a65995d-a61d-4325-89e2-1a9ce15f76e8
 [migration]:    #core-ref:d2bd57f9-7b5a-46b0-8570-6b5b0710d7c3
 [accesscontrol]:    #core-ref:8d73fa24-b721-4a16-a34b-846004e3e9ca
-[zoneref]:      #core-ref:fed06a0c-3fd6-11e3-9658-88d5dc830245
-[searchdoc]:      #core-ref:a5216d5c-4e0f-4e3c-9553-7cbfda6b3255
-[searchdocAddGeneralFilter]:  #core-ref:453cff11-09d9-4607-ab81-7acd36e99750
-[searchdocJoin]:              #core-ref:c7fe0a1b-e71a-45d4-9182-9e4561558030
-[searchdocOnlycount]:          #core-ref:2d43be1a-1991-42dd-a25d-5c3bb0b393fa
-[searchdocrecursivesearch]:    #core-ref:b99a6125-5a8b-420b-b1ce-f6a459f11612
+[zoneref]:          #core-ref:fed06a0c-3fd6-11e3-9658-88d5dc830245
+[searchdoc]:        #core-ref:a5216d5c-4e0f-4e3c-9553-7cbfda6b3255
+[searchdocAddGeneralFilter]:    #core-ref:453cff11-09d9-4607-ab81-7acd36e99750
+[searchdocJoin]:                #core-ref:c7fe0a1b-e71a-45d4-9182-9e4561558030
+[searchdocOnlycount]:           #core-ref:2d43be1a-1991-42dd-a25d-5c3bb0b393fa
+[searchdocrecursivesearch]:     #core-ref:b99a6125-5a8b-420b-b1ce-f6a459f11612
 [CSV]: http://fr.wikipedia.org/wiki/Comma-separated_values "Comma-separated values sur wikipedia"
+[i18nplural]:   #core-ref:3e6b8eee-4171-11e3-9688-cffb8e583c34
+[i18nctx]:      #core-ref:3275febc-4171-11e3-9773-cffb8e583c34
