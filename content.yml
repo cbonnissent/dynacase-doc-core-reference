@@ -337,52 +337,72 @@ book:
       flags:
         wip: "work in progress"
         wip_sub: ""
-      subtoc:   1
+      subtoc:   2
     - level:   3
       element: "chapter"
-      content:  "API/Class_Dir/Method_AddFile.md"
+      content: "API/Class_Dir/methods.md"
+      subtoc:  1
+      flags:
+        wip: "work in progress"
+        wip_sub: ""
+    - level:   4
+      element: "chapter"
+      content:  "API/Class_Dir/Method_insertDocument.md"
+      flags:
+        wip: "work in progress"
+        wip_sub: ""
+    - level:   4
+      element: "chapter"
+      content:  "API/Class_Dir/Method_insertMultipleDocuments.md"
+      flags:
+        wip: "work in progress"
+        wip_sub: ""
+    - level:   4
+      element: "chapter"
+      content:  "API/Class_Dir/Method_removeDocument.md"
       flags:
         wip: "work in progress"
         wip_sub: ""
     - level:   3
       element: "chapter"
-      content:  "API/Class_Dir/Method_DelFile.md"
+      content: "API/Class_Dir/hooks.md"
+      subtoc:  1
       flags:
         wip: "work in progress"
         wip_sub: ""
-    - level:   3
+    - level:   4
       element: "chapter"
-      content:  "API/Class_Dir/Method_postInsertDoc.md"
+      content:  "API/Class_Dir/Method_preInsertDocument.md"
       flags:
         wip: "work in progress"
         wip_sub: ""
-    - level:   3
+    - level:   4
       element: "chapter"
-      content:  "API/Class_Dir/Method_postMInsertDoc.md"
+      content:  "API/Class_Dir/Method_postInsertDocument.md"
       flags:
         wip: "work in progress"
         wip_sub: ""
-    - level:   3
+    - level:   4
       element: "chapter"
-      content:  "API/Class_Dir/Method_postModify.md"
+      content:  "API/Class_Dir/Method_preInsertMultipleDocuments.md"
       flags:
         wip: "work in progress"
         wip_sub: ""
-    - level:   3
+    - level:   4
       element: "chapter"
-      content:  "API/Class_Dir/Method_postUnlinkDoc.md"
+      content:  "API/Class_Dir/Method_postInsertMultipleDocuments.md"
       flags:
         wip: "work in progress"
         wip_sub: ""
-    - level:   3
+    - level:   4
       element: "chapter"
-      content:  "API/Class_Dir/Method_preInsertDoc.md"
+      content:  "API/Class_Dir/Method_preRemoveDocument.md"
       flags:
         wip: "work in progress"
         wip_sub: ""
-    - level:   3
+    - level:   4
       element: "chapter"
-      content:  "API/Class_Dir/Method_preUnlinkDoc.md"
+      content:  "API/Class_Dir/Method_postRemoveDocument.md"
       flags:
         wip: "work in progress"
         wip_sub: ""

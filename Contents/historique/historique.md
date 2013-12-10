@@ -66,6 +66,11 @@ Les méthodes [`Layout::eSet()`][layouteset] et
 [`Layout::eSetBlockData()`][layoutesetblock] ont été ajoutées afin de faciliter
 l'ajout de clefs correctement encodées dans des fichiers XML et HTML.
 
+### Dir::insertMultipleDocuments
+
+La méthode `Dir::insertMultipleDocuments` a été modifiée afin de faire
+remonter le message d'erreur de la méthode hameçon
+`Dir::postInsertMultipleDocuments` dans son retour d'erreur.
 
 <!-- link -->
 [layoutesetblock]:      #core-ref:088e711c-ea91-45e7-841d-289ffc53c80b
@@ -91,3 +96,5 @@ l'ajout de clefs correctement encodées dans des fichiers XML et HTML.
 [i18nplural]:           #core-ref:3e6b8eee-4171-11e3-9688-cffb8e583c34
 [i18nctx]:              #core-ref:3275febc-4171-11e3-9773-cffb8e583c34
 [apichapter]:           #core-ref:0c6d26ba-ab12-4659-aaf9-bcad5a1194ef
+[Dir::insertMultipleDocuments]: #core-ref:098cf44e-568d-4dd2-8dd0-e2f104bc8615
+[Dir::postInsertMultipleDocuments]: #core-ref:e3cd509f-8678-4dec-a0cf-33aa39674cfe
