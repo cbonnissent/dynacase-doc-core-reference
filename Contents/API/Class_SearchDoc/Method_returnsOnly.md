@@ -1,0 +1,288 @@
+# SearchDoc::returnsOnly()  {#core-ref:6429b289-8fec-4c7e-8906-5f367c5bf59d}
+
+<div class="short-description" markdown="1">
+
+Cette méthode permets d'indiquer quel sont les [propriétés][docprop] ou
+[attributs][docattr] que l'on veut récupérer.
+
+</div>
+
+
+## Description  {#core-ref:6fd78d70-b7fd-420d-bb7a-d98312f149ab}
+
+    [php]
+    array returnsOnly (array $returns)
+
+Cette méthode permets d'accélérer le traitement de la requête en indiquant un
+sous-ensemble d'attributs ou de propriétés. Ceci a deux avantages :
+
+1.  Moins de données transférées entre la base de données et le serveur
+2.  Moins de consommation mémoire
+
+L'inconvénient est que les documents retournés ne sont pas complets. Ceci
+implique que **ces documents ne peuvent faire l'objet de modification**.
+
+### Avertissements  {#core-ref:1eeba17b-606c-45e0-8d36-d75593962e1c}
+
+Si le mode est [`retour d'objet documentaire`][setobjectreturn], les documents
+retournés sont marqués *"incomplet"* (`doctype='I'`). Ils ne peuvent pas être
+modifiés par la méthode [`Doc::store()`][docstore].
+
+## Liste des paramètres  {#core-ref:e261638f-9d74-46d3-aea6-b21da41726d0}
+
+(array) `returns` 
+:   Indique une liste de propriétés ou d'attribut à récupérer.
+
+
+## Valeur de retour  {#core-ref:5e181a94-0890-4131-a7b9-68669ac15e9e}
+`array`
+:   
+
+La liste des [attributs][docattr] et [propriétés][docprop] qui sera
+effectivement retourné.
+
+## Erreurs / Exceptions  {#core-ref:05572c2e-3fb8-44c0-bf7d-79ce95feebd4}
+
+Aucune.
+
+
+## Historique  {#core-ref:edf76c63-6b66-4137-93a4-d545c155bb97}
+
+Aucun.
+
+
+## Exemples  {#core-ref:1c4b7489-0f78-41bf-9788-d83f62e88da1}
+
+### Retour normal
+
+    [php]
+    $s=new SearchDoc("","ZOO_ANIMAL");
+    $s->setObjectReturn(true);
+    $s->setOrder('initid');
+    $s->search();
+    
+    printf("Requête : %s\n",print_r($s->getSearchInfo(), true));
+    
+    $documentList=$s->getDocumentList();
+    foreach ($documentList as $docid=>$doc) {
+      printf("%d) %-10s : %s\n", 
+         $docid,
+         $doc->getTitle(),
+         $doc->getRawValue(\Dcp\AttributeIdentifiers\Zoo_Animal::an_espece));
+    }
+
+La partie *"select"* contient toutes les propriétés et attributs de la famille.
+
+Résultat :
+
+    Requête : Array
+    (
+        [count] => 3
+
+    [sql]
+        [query] => select doc1053.id, owner, title, revision, version, initid, fromid, 
+                          doctype, locked, allocated, archiveid, icon, lmodify, profid, 
+                          usefor, cdate, adate, revdate, comment, classname, state, wid, 
+                          postitid, domainid, lockdomainid, cvid, name, dprofid, views, atags,
+                          prelid, confidential, ldapdn, 
+                          an_nom, an_tatouage, an_espece, an_espece_title, an_ordre, 
+                          an_classe, an_sexe, an_photo, an_gardien, an_naissance, 
+                          an_entree, an_enfant, an_pere, an_mere, an_classe_title, 
+                          an_pere_title, an_mere_title, values, attrids  
+                from  doc1053  
+                where   (doc1053.archiveid is null) and (doc1053.doctype != 'T') and (doc1053.locked != -1) 
+                        and (views && '{2,0,11}') 
+                ORDER BY initid LIMIT ALL OFFSET 0;
+
+        [error] => 
+        [delay] => 0.017s
+    )
+
+    1419) Rotor      : 1295
+    1420) Théodor    : 1295
+    1421) Éléonore   : 1295
+
+## Retour minimaliste
+
+Dans cet exemple, seuls les quatre propriétés nécessaires sont retournées.
+
+    [php]
+    $s=new SearchDoc("","ZOO_ANIMAL");
+    $s->setObjectReturn(true);
+    $s->returnsOnly(array());
+    printf("Retour : %s\n",print_r($s->getReturnsFields(), true));
+    $s->setOrder('initid');
+    $s->search();
+    
+    printf("Requête : %s\n",print_r($s->getSearchInfo(), true));
+    
+    $documentList=$s->getDocumentList();
+    foreach ($documentList as $docid=>$doc) {
+      printf("%d) %-10s : %s\n", 
+         $docid,
+         $doc->getTitle(),
+         $doc->getRawValue(\Dcp\AttributeIdentifiers\Zoo_Animal::an_espece));
+    }
+
+Résultat : 
+
+    Retour : Array
+    (
+        [0] => id
+        [1] => title
+        [2] => fromid
+        [3] => doctype
+    )
+
+&nbsp;
+
+    Requête : Array
+    (
+        [count] => 3
+
+    [sql]
+        [query] => select doc1053.id, title, fromid, doctype  
+                from  doc1053  
+                where   (doc1053.archiveid is null) and (doc1053.doctype != 'T') 
+                        and (doc1053.locked != -1) and (views && '{2,0,11}') 
+                ORDER BY initid LIMIT ALL OFFSET 0;
+
+        [error] => 
+        [delay] => 0.003s
+    )
+
+
+**Note** : La valeur de l'attribut `an_espece` n'est pas disponible.
+
+    1419) Rotor      : 
+    1420) Théodor    : 
+    1421) Éléonore   : 
+
+### Retour spécifique
+
+    [php]
+    $s=new SearchDoc("","ZOO_ANIMAL");
+    $s->setObjectReturn(true);
+    $s->returnsOnly(array('locked',
+                  \Dcp\AttributeIdentifiers\Zoo_Animal::an_classe, 
+                  \Dcp\AttributeIdentifiers\Zoo_Animal::an_espece ));
+    printf("Retour : %s\n",print_r($s->getReturnsFields(), true));
+    $s->setOrder('initid');
+    $s->search();
+    
+    printf("Requête : %s\n",print_r($s->getSearchInfo(), true));
+    
+    $documentList=$s->getDocumentList();
+    foreach ($documentList as $docid=>$doc) {
+      printf("%d) %-10s : [lock uid : %d] %d/%d\n", 
+         $docid,
+         $doc->getTitle(),
+         $doc->getProperty('locked'),
+         $doc->getRawValue(\Dcp\AttributeIdentifiers\Zoo_Animal::an_classe),
+         $doc->getRawValue(\Dcp\AttributeIdentifiers\Zoo_Animal::an_espece));
+    }
+
+Résultat :
+
+    Retour : Array
+    (
+        [0] => id
+        [1] => title
+        [2] => fromid
+        [3] => doctype
+        [4] => locked
+        [5] => an_classe
+        [6] => an_espece
+    )
+
+&nbsp;
+
+    Requête : Array
+    (
+        [count] => 3
+
+    [sql]
+        [query] => select doc1053.id, title, fromid, doctype, locked, an_classe, an_espece  
+                from  doc1053  
+                where   (doc1053.archiveid is null) and (doc1053.doctype != 'T') 
+                        and (doc1053.locked != -1) and (views && '{2,0,11}') 
+                ORDER BY initid LIMIT ALL OFFSET 0;
+
+        [error] => 
+        [delay] => 0.003s
+    )
+
+    1419) Rotor      : [lock uid : 0]  1291/1295
+    1420) Théodor    : [lock uid : 11] 1291/1295
+    1421) Éléonore   : [lock uid : 0]  1291/1295
+
+
+Dans ces exemples, le temps 
+
+## Notes  {#core-ref:de48a535-5320-49b9-a2c2-17ce0c97b298}
+
+Les quatre [propriétés][docprop]: suivantes sont toujours retournées :
+
+*   `id`
+*   `initid`
+*   `doctype`
+*   `fromid`
+
+Les champs ([propriétés][docprop] ou [attributs][docattr]) non conforme à la
+famille sont ignorés. Si la recherche ne porte pas sur une famille spécifique,
+seules les [propriétés][docprop] peuvent être indiquées dans le paramètre.
+
+La gain de performance est d'autant plus grand que le nombre d'éléments est
+retourné est important.
+
+Exemple : récupération de tous les documents sur une base de 55084 documents volumineux :
+
+Avec un retour "normal" : **&gt; 6 min**
+
+    Requête : Array
+    (
+        [count] => 55084
+        [query] => select docread.id, owner, title, revision, version, initid, fromid, 
+                        doctype, locked, allocated, archiveid, icon, lmodify, profid, usefor, cdate, 
+                        adate, revdate, comment, classname, state, wid, postitid, domainid, lockdomainid, 
+                        cvid, name, dprofid, atags, prelid, confidential, ldapdn, values, svalues, attrids
+                   from  docread 
+                   where   (docread.archiveid is null) and (docread.doctype != 'Z') and 
+                        (docread.doctype != 'T') and (docread.locked != -1) 
+                    ORDER BY initid LIMIT ALL OFFSET 0;
+        [error] => 
+        [delay] => 367.984s
+    )
+
+
+Avec un retour "minimaliste" : **&lt; 200ms**
+
+    Requête : Array
+    (
+        [count] => 55084
+        [query] => select docread.id, title, fromid, doctype  
+                from  docread  
+                where   (docread.archiveid is null) and (docread.doctype != 'Z') and 
+                    (docread.doctype != 'T') and (docread.locked != -1) 
+                ORDER BY initid LIMIT ALL OFFSET 0;
+        [error] => 
+        [delay] => 0.192s
+    )
+
+
+
+## Voir aussi  {#core-ref:0b823e98-a011-4a1d-8d6d-fbebd06b26e6}
+
+*   [`SearchDoc::search()`][searchdocsearch]
+*   [`FormatCollection`][formatcol]
+
+
+<!-- links -->
+
+[SearchDoc]:        #core-ref:a5216d5c-4e0f-4e3c-9553-7cbfda6b3255
+[setobjectreturn]:  #core-ref:3a0b4882-81ff-4030-9f60-a0ed0ff1f958
+[docstore]:         #core-ref:b8540d13-ece6-4e9e-9b72-6a56bca9da12
+[docprop]:          #core-ref:9aa8edfa-2f2a-11e2-aaec-838a12b40353
+[docattr]:          #core-ref:4e167170-33ed-11e2-8134-a7f43955d6f3
+[searchdocsearch]:  #core-ref:6f5cc024-66e4-429e-9071-67d4523a8e08
+[formatcol]:        #core-ref:74ce9ce4-8e4e-42ee-a0df-415eb6897a81

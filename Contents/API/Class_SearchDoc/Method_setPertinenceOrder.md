@@ -27,7 +27,7 @@ Cette recherche ne fonctionne que pour les textes en langue française.
 
 ## Liste des paramètres {#core-ref:63488058-47ff-4122-aef1-21c8e046a0f8}
 
-(string) $keyword (valeur par défaut `""`)
+(string) `keyword` (valeur par défaut `""`)
 :   Si un [`SearchDoc::addGeneralFilter`][addGeneralFilter] est utilisé, vous
     pouvez juste appeler la fonction sans paramètre alors le choix de la 
     pertinence est celui du filtre. Vous pouvez sinon ajouter une chaîne de 
@@ -48,7 +48,7 @@ Aucun.
 
 ## Exemples {#core-ref:f2eff102-30be-4438-bb51-ef6579de62a1}
 
-### Mot simple
+### Mot simple {#core-ref:7beea7bf-35dd-4708-82d3-0042a64b6a8e}
 
     [php]
     $s=new SearchDoc('',"ANIMAL");
@@ -58,7 +58,7 @@ Aucun.
 
 Dans ce cas, la pertinence est calculé sur les occurences du mot _cheval_.
 
-### Plusieurs mots 
+### Plusieurs mots  {#core-ref:c1365011-1766-4459-80c0-f93edc0c0ce7}
 
     [php]
     $s=new SearchDoc('',"ANIMAL");
@@ -69,7 +69,7 @@ Dans ce cas, la pertinence est calculé sur les occurences du mot _cheval_.
 Dans ce cas, la pertinence est d'autant plus élevé qu'il y les mots "cheval et
 noir" qui sont proches.
 
-### Exemple de résultat
+### Exemple de résultat {#core-ref:6de5692d-ef06-4ba4-84c1-75dbbffca122}
 
 Soit le document suivant :
 
@@ -104,7 +104,7 @@ Soit le document suivant :
 | 10 20                     | 0.19700 |                                                     |
 | harem                     | 0.15198 | Le mot est présent 2 fois                           |
 | himalaya OR harem         | 0.13678 |                                                     |
-| himalaya                  | 0.12158 | Le titre est de poids A                             |
+| himalaya                  | 0.12158 | Texte présent une fois                              |
 | inde                      | 0.12158 | Texte présent une fois                              |
 | sud                       | 0.12158 | Texte présent une fois                              |
 | 5                         | 0.12158 | Nombre présent une fois                             |

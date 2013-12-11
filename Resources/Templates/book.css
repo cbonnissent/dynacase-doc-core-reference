@@ -236,6 +236,10 @@ a:hover code {
     color: #2100D5;
     font-weight: normal;
 }
+
+.figure img {
+    max-width: 100%;
+}
 @media (max-width: 768px) {
     .copy {
         position: static;

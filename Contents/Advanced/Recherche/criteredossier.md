@@ -1,15 +1,16 @@
 # Recherche de document contenu dans une collection {#core-ref:7f084be4-ceb8-464d-81e4-8902da361aff}
 
-La classe `SearchDoc` permet de faire des recherches dans une collection
-spécifique (dossier ou recherche) au moyen de la méthode
+La classe [`SearchDoc`][searchdoc] permet de faire des recherches dans une
+collection spécifique (dossier ou recherche) au moyen de la méthode
 [`SearchDoc::useCollection()`][useCollection].
 
 Cette recherche n'est pas récursive par défaut, c'est à dire qu'elle ne
 recherche que dans la collection indiquée.
 
 Lorsque la collection est un dossier, il est possible de faire des recherches
-récursives à l'aide de la méthode `DocSearch::setRecursiveSearch()`. Le niveau
-de profondeur de la recherche est ensuite défini au moyen de la propriété
+récursives à l'aide de la méthode
+[`DocSearch::setRecursiveSearch()`][setrecursivesearch]. Le niveau de profondeur
+de la recherche est ensuite défini au moyen de la propriété
 `DocSearch::folderRecursiveLevel`, positionné à 2 par défaut.
 
 **Note** : Le `setRecursiveSearch` fait référence au niveau de récursivité. par
@@ -42,3 +43,4 @@ recherche récursivement.
 [phpiterator]:      http://php.net/manual/fr/class.iterator.php "Interface Iterator"
 [docacl]:           #core-ref:a99dcc5f-f42f-4574-bbfa-d7bb0573c95d "Droits du document"
 [useCollection]:        #core-ref:881c9fcb-81c2-45af-b89f-70be3a7f24b7
+[setrecursivesearch]:   #core-ref:b99a6125-5a8b-420b-b1ce-f6a459f11612

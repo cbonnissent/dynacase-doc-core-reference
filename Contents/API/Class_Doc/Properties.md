@@ -68,6 +68,7 @@ doctype
     *   *S* : Recherche (S pour *Search*),
     *   *P* : Profil,
     *   *T* : Temporaire,
+    *   *I* : Incomplet,
     *   *Z* : Document supprimé (Z pour *Zombie*),
     *   *W* : Cycle de vie (W pour *Workflow*),
     *   *C* : Famille (C pour *Class*).

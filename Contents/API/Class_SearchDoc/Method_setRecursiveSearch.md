@@ -26,12 +26,12 @@ Les recherches contenues dans les sous-dossiers ne sont pas inspectées.
 
 ## Liste des paramètres {#core-ref:668be5ce-6f5f-42c9-b6f5-0f2370bb353c}
 
-(bool) $recursiveMode (valeur par défaut : `true`)
+(bool) `recursiveMode` (valeur par défaut : `true`)
 :   Si le paramètre recursiveMode est passé à `true` alors la recherche est
     faite de manière récursive. Un searchDoc est paramétré pour effectuer une
     recherche non-récursive par défaut.
     
-(int) $level (valeur par défaut : `2`)
+(int) `level` (valeur par défaut : `2`)
 :   Niveau de profondeur maximum d'inspection des sous-dossier. S'il est égal
     à zéro, aucun sous-dossier n'est inspecté.
 
@@ -46,7 +46,7 @@ ou égal à zéro.
 
 ## Historique {#core-ref:e95b804b-4186-4382-9a65-942893fcbbd3}
 
-### Release 3.2.12
+### Release 3.2.12 {#core-ref:9704bf16-3d6c-4285-95fa-e505c56354ec}
 
 Ajout du paramètre `$level` pour indiquer le niveau de profondeur. Auparavant,
 il fallait mettre à jour la propriété `folderRecursiveLevel` pour indiquer le
@@ -54,7 +54,7 @@ niveau.
 
 ## Exemples {#core-ref:60bf2e3c-3a51-45fb-bb17-6f80fec8a77d}
 
-Recherche de tous les documents contenu dans le dossier `MY_FOLDER` jusqu'à
+Recherche de tous les documents contenus dans le dossier `MY_FOLDER` jusqu'à
 trois niveaux de profondeur.
 
     [php]
@@ -64,7 +64,7 @@ trois niveaux de profondeur.
     $search->setRecursiveSearch(true, 3);
     $search->search();
 
-Recherche de tous les sous-dossier du dossier `MY_FOLDER` jusqu'à
+Recherche de tous les sous-dossiers du dossier `MY_FOLDER` jusqu'à
 trois niveaux de profondeur dont la description contient _"important"_.
 
     [php]

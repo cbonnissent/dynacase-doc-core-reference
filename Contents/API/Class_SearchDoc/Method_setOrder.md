@@ -52,7 +52,7 @@ Aucun.
 
 ## Exemples {#core-ref:5bd8f543-e92e-4396-9720-70d6d8587cec}
 
-### Exemple de tri en fonction d'un attribut entier :
+### Exemple de tri en fonction d'un attribut entier : {#core-ref:5db9097b-2e41-442d-86f8-a3ffaee5becd}
 
     [php]
     $s=new searchDoc($dbaccess, $famId);
@@ -60,21 +60,21 @@ Aucun.
     $s->search();
     
 
-### Exemple de tri en fonction de deux attributs :
+### Exemple de tri en fonction de deux attributs : {#core-ref:24dd06af-a25c-4620-8273-2f114843c33c}
 
     [php]
     $s=new searchDoc($dbaccess, $famId);
     $s->setOrder("a_integer desc, b_date asc");
     $s->search();
 
-### Exemple de tri en fonction de la valeur d'un énuméré :
+### Exemple de tri en fonction de la valeur d'un énuméré : {#core-ref:41e39a64-7d6a-4dd3-a548-4b63d92cedc2}
 
     [php]
     $s=new searchDoc($dbaccess, $famId);
     $s->setOrder("a_enum asc");
     $s->search();
 
-### Exemple de tri en fonction du label d'un énuméré :
+### Exemple de tri en fonction du label d'un énuméré : {#core-ref:d1884fcf-0bfb-4cfd-8777-dd080c8144cb}
 
     [php]
     $s=new searchDoc($dbaccess, $famId);
@@ -94,7 +94,7 @@ l'ordre ci-dessous :
 | 4-Clos             | 2-Traité                     |
 
 
-### Exemple de tri avec ou sans la fonction de `orderBy` :
+### Exemple de tri avec ou sans la fonction de `orderBy` : {#core-ref:58dc0b8a-2544-4f9b-99e8-d223576421aa}
 
 L'énuméré `an_sexe` a comme définition : `M|Masculin,F|Zéminin,H|Hermaphorodite`.
 

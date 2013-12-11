@@ -13,8 +13,11 @@ Cet objet permet d'itérer sur les résultats obtenu par l'objet SearchDoc.
 
 ### Avertissements {#core-ref:84e81039-9ab9-4cc0-b99d-58cc98ed8b13}
 
-L'exécution de la méthode [`SearchDoc::search`][search] est inutile avant l'utilisation de
-getDocumentList.
+L'exécution de la méthode [`SearchDoc::search`][search] n'est pas nécessaire
+avant l'utilisation de `::getDocumentList()`. Si cette méthode est appelée avant
+l'itération, elle ne sera pas exécutée lors de l'itération. Dans le cas
+contraire, la méthode [`SearchDoc::search`][search] sera appelée dès le début de
+l'itération.
 
 ## Liste des paramètres {#core-ref:ba27435d-dd93-4714-aaa8-7cc58752f4a7}
 
@@ -26,7 +29,7 @@ Un objet de type [`DocumentList`][DocumentList].
 
 ## Erreurs / Exceptions {#core-ref:d544412c-bb54-473f-b437-39bf41a1dba1}
 
-Aucun.
+Aucune.
 
 ## Historique {#core-ref:5ff0e894-d663-4a13-8518-d68208771f6b}
 
@@ -34,24 +37,56 @@ Aucun.
 
 ## Exemples {#core-ref:31668f2c-a644-484c-8488-7f65404d62d2}
 
-Récupère la liste des classes des documents :
+## Retour d'objets documentaires {#core-ref:b32fc6c8-f7a1-43c2-935e-be97e2c13165}
+
+Récupère la liste des documents de la famille "dossiers" :
 
     [php]
-    function getClass(Action & $action)
-    {
-        header('Content-Type: text/plain');
-        
-        $searchDoc = new SearchDoc();
-        $searchDoc->setObjectReturn(true);
-        
-        $documentList = $searchDoc->getDocumentList();
-        
-        foreach ($documentList as $value) {
-            var_export(get_class($value));
-            print "\n";
-        }
-        
+    $s=new SearchDoc("","DIR");
+    $s->setObjectReturn(true);
+    $s->search();
+    
+    $documentList=$s->getDocumentList();
+    
+    foreach ($documentList as $docid=>$doc) {
+        printf("%d) %s (%s)\n", 
+               $docid,
+               $doc->getTitle(),
+               $doc->getRawValue(\Dcp\AttributeIdentifiers\Dir::ba_desc, "Pas de description"));
     }
+
+Résultat :
+
+    3590) mimetypes (Pas de description)
+    1436) Porte-document (porte-documents de Default Master)
+    9) Racine (Pas de description)
+
+
+## Retour de valeurs brutes  {#core-ref:4ebd171c-2d25-4605-8d5a-d93f085871b7}
+
+Récupère la liste des données des "dossiers" :
+
+    [php]
+    $s=new SearchDoc("","DIR");
+    $s->setObjectReturn(false);
+    $s->search();
+    
+    $documentList=$s->getDocumentList();
+    
+    foreach ($documentList as $docid=>$doc) {
+      printf("%d) %s (%s)\n", 
+         $docid,
+         $doc["title"],
+         empty($doc[\Dcp\AttributeIdentifiers\Dir::ba_desc])
+            ?"Pas de description"
+            :($doc[\Dcp\AttributeIdentifiers\Dir::ba_desc]));
+    }
+
+Résultat :
+
+    3590) mimetypes (Pas de description)
+    1436) Porte-document (porte-documents de Default Master)
+    9) Racine (Pas de description)
 
 ## Notes {#core-ref:3625d836-613b-4bb2-834a-e39e02a208af}
 
@@ -59,7 +94,8 @@ Aucun.
 
 ## Voir aussi {#core-ref:f229a5d7-3c10-4b52-8ccb-e489db6ab234}
 
-[Recherche avancée][advancedIterator].
+*   [Classe `DocumentList`][DocumentList],
+*   [Recherche avancée][advancedIterator].
 
 <!-- links -->
 

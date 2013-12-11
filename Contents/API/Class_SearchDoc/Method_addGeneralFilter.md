@@ -9,7 +9,8 @@ search">recherche full text</a> sur un document.
 ## Description {#core-ref:9a461deb-2fa3-4c02-939b-c1d5425e77c1}
 
     [php]
-    void addGeneralFilter ( string $filter, bool $useSpell )
+    void addGeneralFilter ( string $filter, 
+                              bool $useSpell )
 
 ### Avertissements {#core-ref:b951b810-4d27-433c-8fee-6a9d7f99dee3}
 
@@ -42,7 +43,7 @@ envoyée.
 
 ## Historique {#core-ref:74230984-e371-4766-8b0e-15152448f1db}
 
-### Release 3.2.12
+### Release 3.2.12 {#core-ref:b70cbb23-de63-4132-8334-20a80ccc7c76}
 
 Si le filtre indiqué est invalide une exception est retournée que soit l'erreur.
 Auparavant, une exception était retournée que lorsque la vérification de premier

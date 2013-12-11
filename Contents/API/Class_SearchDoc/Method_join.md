@@ -108,9 +108,11 @@ Ce qui donne en [BNF][WP_BNF] :
     type        ::= 'type postgresql'
 
 **Note** : La syntaxe de la chaîne attendue dans join n'est pas du SQL.
-**Note** : Le [type postgresql][pgtype] de l'attribut doit être modifié pour être compatible
-avec le type de l'attribut retourné par la jointure, pour ce faire il faut utiliser
-de la syntaxe [`::`][pgcast] est recommandée.
+
+
+**Note** : Le [type postgreSql][pgtype] de l'attribut doit être modifié pour
+être compatible avec le type de l'attribut retourné par la jointure, la fonction
+[`::`][pgcast] permet de modifier le type d'une valeur postgreSql.
 
 ## Valeur de retour {#core-ref:126a809c-8208-4b8f-82ce-0fb4bedc8373}
 
@@ -126,7 +128,7 @@ incorrecte.
 
 ## Historique {#core-ref:91307533-be72-4656-ae6e-29b70dd88b6e}
 
-### Release 3.2.12
+### Release 3.2.12 {#core-ref:d2196eab-d77d-4ac6-9ae8-4b194548280a}
 
 La méthode retourne une exception en cas d'erreur de syntaxe. Auparavant
 l'erreur était remontée au niveau de la méthode `SearchDoc::search()`.

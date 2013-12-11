@@ -4,7 +4,7 @@
 
 Par défaut, seuls les documents que l'utilisateur a le droit de voir sont
 retournés. Pour retourner tous les documents sans vérifier les droits, il faut
-utiliser la méthode `overrideViewControl()`.
+utiliser la méthode [`overrideViewControl()`][overrideViewControl].
 
     [php]
     $s=new SearchDoc(getDbAccess(), $familyId);
@@ -17,12 +17,13 @@ vérifié.
 
 Les documents confidentiels sont les documents dont la propriété 'confidential'
 est égale à 1.  L'accès à ces documents doit être contrôlé par l'application qui
-décide quelles parties elle veut montrer.  À la différence du droit voir ('view')
-des documents, la recherche retourne les documents confidentiels par défaut. Le
-filtrage est à faire du côté de l'application avec un post-traitement.  
-Cependant, il est possible de rajouter un filtre permettant de ne pas retourner
-les documents confidentiels que l'utilisateur n'a pas le droit de voir (droit :
-'confidential'). Pour cela, il faut appeler la méthode `excludeConfidential()`.
+décide quelles parties elle veut montrer.  À la différence du droit voir
+('view') des documents, la recherche retourne les documents confidentiels par
+défaut. Le filtrage est à faire du côté de l'application avec un post-
+traitement.   Cependant, il est possible de rajouter un filtre permettant de ne
+pas retourner les documents confidentiels que l'utilisateur n'a pas le droit de
+voir (droit : 'confidential'). Pour cela, il faut appeler la méthode
+[`excludeConfidential()`][excludeconfidential].
 
     [php]
     $sd=new SearchDoc($dbaccess, $familyId); 
@@ -39,3 +40,5 @@ les documents confidentiels que l'utilisateur n'a pas le droit de voir (droit :
 [attdocid]:         #core-ref:d461d5f5-b635-47a0-944d-473c227587ab
 [phpiterator]:      http://php.net/manual/fr/class.iterator.php "Interface Iterator"
 [docacl]:           #core-ref:a99dcc5f-f42f-4574-bbfa-d7bb0573c95d "Droits du document"
+[overrideViewControl]: #core-ref:18f98a7d-7db0-4270-97b2-0a1759a5b0e6
+[excludeconfidential]: #core-ref:17be152c-0844-40d5-bfc5-a9aa2f2695fc

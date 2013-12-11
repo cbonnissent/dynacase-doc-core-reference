@@ -43,27 +43,30 @@ Aucun.
 
 ## Exemples {#core-ref:fe4f2f30-1a38-471b-b6ea-0b4f40689a4c}
 
-Retourne la liste des informations
+Recherche des cinq premiers dossiers :
 
     [php]
-    function getSearchInfo(Action & $action)
-    {
-        header('Content-Type: text/plain');
-        
-        $searchDoc = new SearchDoc();
-        $searchDoc->setObjectReturn(true);
-        var_export($searchDoc->getSearchInfo());
-        
-        $searchDoc->search();
-        
-        $err = $searchDoc->getError();
-        if ($err !== "") {
-            throw new Exception("Error Processing Search ".$err, 1);
-        }
-        
-        var_export($searchDoc->getSearchInfo());
+    $s=new SearchDoc("","DIR");
+    $s->setObjectReturn(true);
+    $s->setSlice(5);
+    $s->setOrder('initid');
+    $s->search();
     
-    }
+    print_r($s->getSearchInfo());
+
+
+Résultat :
+
+    Array
+    (
+        [count] => 5
+        [query] => select doc2.id, owner, title, ..., ba_title, ba_desc, ... 
+            from doc2  
+            where (doc2.archiveid is null) and (doc2.doctype != 'T') and (doc2.locked != -1) 
+            ORDER BY initid LIMIT 5 OFFSET 0;
+        [error] => 
+        [delay] => 0.340s
+    )
 
 ## Notes {#core-ref:d3015e40-f3a3-4bb7-a414-d104a8e47cdf}
 

@@ -33,7 +33,7 @@ Exception `\Dcp\Db\Exception` en cas d'erreur de requête sql.
 
 ## Historique {#core-ref:b2d103c2-4aba-46b6-bfd7-1e933aab9a87}
 
-### Release 3.2.12
+### Release 3.2.12 {#core-ref:b9a63af6-43a8-484b-942d-99963e29a8fc}
 
 La méthode `onlyCount()` récupère toujours le résultat en envoyant une requête
 en base de donnée. Auparavant, si la méthode [`search()`][search] ou `onlyCount`
