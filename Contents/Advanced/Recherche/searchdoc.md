@@ -60,8 +60,9 @@ Par défaut les résultats suivants sont exclus :
 
 ### Retour de documents bruts  {#core-ref:4c508940-f5a0-40ee-a942-6372a95d112e}
 
-Si la méthode `::setObjectReturn()` n'est pas utilisée ou utilisée avec l'argument
-`false` la méthode `SearchDoc::search()` retourne un tableau à 2 dimensions. Le
+Si la méthode [`::setObjectReturn()`][setObjectReturn] n'est pas utilisée ou
+utilisée avec l'argument `false` la méthode
+[`SearchDoc::search()`][searchdocsearch] retourne un tableau à 2 dimensions. Le
 tableau de deuxième niveau contient les valeurs brutes des propriétés et des
 attributs du document indexé par leur nom.
 
@@ -93,10 +94,10 @@ spécifiques aux sous-familles si la recherche comporte de tels documents.
 
 Ce programme permet d'écrire tous les titres des documents accessibles de la
 famille "utilisateur". Ici, on n'a utilisé que le critère d'appartenance à une
-famille.  L'appel à la méthode `DocSearch::setObjectReturn()` indique que la
-méthode `DocSearch::Search()` doit retourner des objets documentaires
-(attention, pour des raisons évidentes de performance, ce retour n'est pas un
-tableau).
+famille.  L'appel à la méthode [`DocSearch::setObjectReturn()`][setObjectReturn]
+indique que la méthode `DocSearch::Search()` doit retourner des objets
+documentaires (attention, pour des raisons évidentes de performance, ce retour
+n'est pas un tableau).
 
 Dans ce cas, il est possible d'appliquer les méthodes des objets sur les retours
 (exemple `Doc::getRawValue`).
@@ -145,3 +146,5 @@ résultat dans une boucle classique "foreach".
 [attdocid]:         #core-ref:d461d5f5-b635-47a0-944d-473c227587ab
 [phpiterator]:      http://php.net/manual/fr/class.iterator.php "Interface Iterator"
 [docacl]:           #core-ref:a99dcc5f-f42f-4574-bbfa-d7bb0573c95d "Droits du document"
+[setObjectReturn]:      #core-ref:3a0b4882-81ff-4030-9f60-a0ed0ff1f958
+[searchdocsearch]:  #core-ref:6f5cc024-66e4-429e-9071-67d4523a8e08

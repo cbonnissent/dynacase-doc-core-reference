@@ -122,8 +122,8 @@ modifier le document juste après le changement d'état. C'est le document tel
 qu'il est à la suite de `m2` qui sera soumis aux minuteurs et envoyé par mail.
 
 Puisque `m2` intervient après le changement d'état, cette méthode n'est pas
-bloquante. Aussi, retourner une chaîne d'erreur n'interrompt pas le processus
-(mais le message d'erreur sera bien affiché à l'utilisateur à l'issue de la
+bloquante. Aussi, retourner un message n'interrompt pas le processus
+(mais le message d'information sera bien affiché à l'utilisateur à l'issue de la
 transition).
 
 ### `m3` {#core-ref:39462cd9-7962-4efe-888b-912d7256671a}

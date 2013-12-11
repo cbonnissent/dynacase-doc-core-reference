@@ -914,12 +914,12 @@ book:
       element: "chapter"
       content:  "API/Class_SearchDoc/Method_setSlice.md"
       flags:
-        draft : "draft"
+        new : "new"
     - level:   3
       element: "chapter"
       content:  "API/Class_SearchDoc/Method_setStart.md"
       flags:
-        draft : "draft"
+        new : "new"
     - level:   3
       element: "chapter"
       content:  "API/Class_SearchDoc/Method_setRecursiveSearch.md"
@@ -930,12 +930,12 @@ book:
       element: "chapter"
       content:  "API/Class_SearchDoc/Method_useCollection.md"
       flags:
-        draft : "draft"
+        new : "new"
     - level:   3
       element: "chapter"
       content:  "API/Class_SearchDoc/Method_addFilter.md"
       flags:
-        draft : "draft"
+        new : "new"
     - level:   3
       element: "chapter"
       content:  "API/Class_SearchDoc/Method_addGeneralFilter.md"
@@ -958,12 +958,12 @@ book:
       element: "chapter"
       content:  "API/Class_SearchDoc/Method_overrideViewControl.md"
       flags:
-        draft : "draft"
+        new : "new"
     - level:   3
       element: "chapter"
       content:  "API/Class_SearchDoc/Method_excludeConfidential.md"
       flags:
-        draft : "draft"
+        new : "new"
     - level:   3
       element: "chapter"
       content:  "API/Class_SearchDoc/Method_search.md"
@@ -984,27 +984,32 @@ book:
       element: "chapter"
       content:  "API/Class_SearchDoc/Method_getDocumentList.md"
       flags:
-        draft : "draft"
+        new : "new"
     - level:   3
       element: "chapter"
       content:  "API/Class_SearchDoc/Method_getError.md"
       flags:
-        draft : "draft"
+        new : "new"
     - level:   3
       element: "chapter"
       content:  "API/Class_SearchDoc/Method_getIds.md"
+      flags:
+        new : "new"
+    - level:   3
+      element: "chapter"
+      content:  "API/Class_SearchDoc/Method_returnsOnly.md"
       flags:
         draft : "draft"
     - level:   3
       element: "chapter"
       content:  "API/Class_SearchDoc/Method_getSearchInfo.md"
       flags:
-        draft : "draft"
+        new : "new"
     - level:   3
       element: "chapter"
       content:  "API/Class_SearchDoc/Method_getNextDoc.md"
       flags:
-        draft : "draft"
+        new : "new"
 #
 # END of API Content
 #
@@ -1296,6 +1301,14 @@ book:
       subtoc:   2
       flags:
         new: "new"
+    - level:   2
+      content:  "Advanced/Database/databaseaccess.md"
+      flags:
+        wip: "work in progress"
+    - level:   2
+      content:  "Advanced/Database/simplequery.md"
+      flags:
+        wip: "work in progress"
     - level:   3
       content:  "Advanced/Database/dbdoc.md"
       flags:

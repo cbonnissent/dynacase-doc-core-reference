@@ -10,15 +10,16 @@ Cette méthode permet d'exécuter la recherche.
     array|null|SearchDoc search (  )
 
 Cette méthode exécute la recherche. Elle construit la requête `SQL` nécessaire
-en utilisant les paramètres de la famille rechechées et les conditions insérées
+en utilisant les paramètres de la famille recherchée et les conditions insérées
 par les différentes méthodes.
 
 ### Avertissements {#core-ref:f9475914-b820-462f-a0b1-47c0a98d8836}
 
-Par défaut [certains types de documents sont exclus des résultats de la
-recherche][advancedExcluded]. Ces exclusions sont modifiables par les méthodes 
-[`::excludeConfidential][excludeConfidential], [`::overrideControl()`] et les 
-attributs [`trash`][searchprop] et [`distinct`][searchprop].
+Par défaut certains types de documents sont exclus des [résultats de la
+recherche][advancedExcluded]. Ces exclusions sont modifiables par les méthodes
+[`::excludeConfidential()`][excludeConfidential],
+[`::overrideViewControl()`][overrideViewControl] et les  attributs
+[`trash`][searchprop] et [`distinct`][searchprop].
 
 ## Liste des paramètres {#core-ref:1182a98e-413d-4fd5-8cf7-bf285852e5a3}
 
@@ -28,14 +29,14 @@ Aucun.
 
 La valeur du retour [dépend du type de recherche][advancedSearch] :
 
-* résultats bruts : le retour est alors un tableau `array`, si la préparation de la 
-  recherche à échoué alors le résultat est un tableau vide,
-* résultats documents : le retour est alors le document `searchDoc` ou `null` si 
-la préparation de la recherche a échoué.
+* Résultats bruts : le retour est alors un tableau `array`, si la préparation de
+la recherche à échoué alors le résultat est un tableau vide,
+* Résultats documents : le retour est alors l'objet `searchDoc` lui-même ou
+`null` si la préparation de la recherche a échoué.
 
 **Note** : Le changement du type de recherche se fait uniquement avant que la 
 recherche ne soit déclenchée avec la méthode 
-[`SearchDoc::setObjectReturn`][setObjectReturn].
+[`SearchDoc::setObjectReturn()`][setObjectReturn].
 
 ## Erreurs / Exceptions {#core-ref:15419ed0-38bb-4890-9732-0779e83882dd}
 
@@ -44,13 +45,15 @@ Si la préparation de la recherche a échoué alors si la recherche :
 * retourne des résultats brut : le retour est un array vide,
 * retourne des documents : le retour est `null`.
 
-Exception : \Dcp\Db\Exception si la requête n'a pas pu être exécutée..
+Exception : `\Dcp\Db\Exception` si la requête n'a pas pu être exécutée..
 
 ## Historique {#core-ref:c718b9c4-c3aa-4666-ac81-9af3286235cb}
 
 Aucun.
 
 ## Exemples {#core-ref:382458c1-64ec-4b59-ad90-33ac39265854}
+
+### Recherche simple  {#core-ref:db2507b5-cfc9-4d2b-87da-a29914223194}
 
 Recherche de tous les dossiers que l'utilisateur courant peut voir.
 
@@ -65,6 +68,32 @@ Recherche de tous les dossiers que l'utilisateur courant peut voir.
            $doc->getRawValue(\Dcp\AttributeIdentifiers\Dir::ba_title));
     }
 
+### Recherche avec capture d'erreurs {#core-ref:f860cc7b-8fe4-4f9d-a151-35c65bf3bb4a}
+
+Reprise de l'exemple précédent en ajoutant les tests d'erreurs.
+
+    [php]
+    try {
+        $s=new SearchDoc("","DIR");
+        $s->setObjectReturn(true);
+        $s->search();
+        
+        if ($err=$s->searchError()) {
+          throw new \Dcp\SearchDoc\Exception($err);
+        }
+        $documentList=$s->getDocumentList();
+        
+        foreach ($documentList as $docid=>$doc) {
+          printf("%d) %s (%s)\n", 
+                 $docid,
+                 $doc->getTitle(),
+                 $doc->getRawValue(\Dcp\AttributeIdentifiers\Dir::ba_title));
+        }
+    } catch (\Dcp\Db\Exception $e) {
+        printf("Database Error: [%s]\n", $e->getMessage());
+    } catch (\Dcp\SearchDoc\Exception $e) {
+        printf("Search Error: [%s]\n", $e->getMessage());
+    }
 
 ## Notes {#core-ref:c3321a4a-316b-4ccf-a0f9-9b866863f223}
 

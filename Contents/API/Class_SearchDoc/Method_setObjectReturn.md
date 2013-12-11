@@ -24,7 +24,7 @@ Aucun.
 
 ## Liste des paramètres {#core-ref:83ed35cd-3e3a-403b-ac5f-d0e8e28bc0f6}
 
-(bool) returnObject (valeur par défaut : `true`)
+(bool) `returnObject` (valeur par défaut : `true`)
 :   Si le paramètre est à `true` alors le retour est un objet documentaire,
  sinon c'est un résultat brut.
 
@@ -45,7 +45,7 @@ Aucun.
 
 ## Exemples {#core-ref:22a54e1d-c765-4147-8b19-d72c2c4faff1}
 
-### Retour de document brut
+### Retour de document brut {#core-ref:7b3d6af3-6082-4b43-b302-bbb2e51ff88b}
 
     [php]
     $s=new SearchDoc("","DIR");
@@ -59,7 +59,7 @@ Aucun.
     }
 
 
-### Retour de document objet
+### Retour de document objet {#core-ref:b187e332-49b5-48b6-a49c-56e3c17c83ec}
 
     [php]
     $s=new SearchDoc("","DIR");

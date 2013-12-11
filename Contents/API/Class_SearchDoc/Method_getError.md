@@ -38,30 +38,30 @@ Utilisation de la méthode getError pour renvoyer une exception si jamais la
 recherche a échoué :
 
     [php]
-    function searchAnUnknownFam(Action & $action)
-    {
-        header('Content-Type: text/plain');
-        
-        $searchDoc = new SearchDoc("", "UNKOWN FAMILY");
-        $searchDoc->setObjectReturn(true);
-        
-        $searchDoc->search();
-        
-        $err = $searchDoc->getError();
-        if ($err !== "") {
-            throw new Exception("Error Processing Search ".$err, 1);
-        }
+    $searchDoc = new SearchDoc("", "UNKOWN FAMILY");
+    $searchDoc->setObjectReturn(true);
     
+    $searchDoc->search();
+    
+    $err = $searchDoc->getError();
+    if ($err !== "") {
+        throw new Exception("Error Processing Search ".$err, 1);
     }
 
-**Note** : Si la famille `UNKOWN FAMILY` n'existe pas une exception est
-déclenchée.
+**Note** : Dans l'exemple, si la famille `UNKOWN FAMILY` n'existe pas une
+exception est déclenchée.
 
 
 ## Notes {#core-ref:a36789c7-a746-4bf6-a4cc-5cddce574c6f}
 
-Aucun.
+Aucune.
 
 ## Voir aussi {#core-ref:757fe23c-b6b1-42d4-971c-64aff4f2e3bf}
 
-Aucun.
+*   [Gérer les retours d'erreurs de searchDoc][searcherror].
+*   [Recherche avancée][searchadverr].
+
+
+<!-- links -->
+[searcherror]:  #core-ref:f860cc7b-8fe4-4f9d-a151-35c65bf3bb4a
+[searchadverr]: #core-ref:0aa58477-0cb6-4da6-9e34-fae048d10bd6

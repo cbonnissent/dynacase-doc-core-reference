@@ -1,10 +1,11 @@
 # Traitement des erreurs {#core-ref:0aa58477-0cb6-4da6-9e34-fae048d10bd6}
 
 Si la requête échoue suite à des erreurs SQL (souvent liées à un filtre mal
-formé), une exception de type `\Dcp\Db\Exception` est retournée.
+formé), une exception de type `Dcp\Db\Exception` ou `Dcp\SearchDoc\Exception`
+est retournée. Ces deux types d'erreur hérite de `Dcp\Exception`.
 
 Les autres erreurs de configuration sont accessibles en utilisant la méthode
-`::getError()`.
+[`::getError()`][geterror].
 
     [php]
     try {
@@ -16,7 +17,7 @@ Les autres erreurs de configuration sont accessibles en utilisant la méthode
             // autre erreur de configuration
            printf("search error : %s",$s->getError());
         }
-    } catch (\Dcp\Db\Exception $e) {
+    } catch (\Dcp\Exception $e) {
         print($e->getMessage());
     }
 
@@ -27,7 +28,7 @@ Résultat :
 
 La classe SearchDoc permet de récupérer les informations sur la requête afin de
 débugguer votre recherche. Ces informations sont consultables avec la méthode
-DocSearch::getSearchInfo() après avoir exécuté la recherche.:
+[`DocSearch::getSearchInfo()`][getsearchinfo] après avoir exécuté la recherche.:
 
     [php]
     $s=new SearchDoc("","IUSER");
@@ -40,7 +41,10 @@ Résultat :
     Array
     (
         [count] => 4
-        [query] => select doc128.id, owner, title, ... us_accexpiredate, values, attrids  from  doc128  where   (doc128.archiveid is null) and (doc128.doctype != 'T') and (doc128.locked != -1) and (us_extmail is not null) ORDER BY title LIMIT ALL OFFSET 0;
+        [query] => select doc128.id, owner, title, ... us_accexpiredate, values, attrids  from  doc128  
+            where (doc128.archiveid is null) and (doc128.doctype != 'T') and (doc128.locked != -1) 
+                and (us_extmail is not null) 
+                ORDER BY title LIMIT ALL OFFSET 0;
         [error] => 
         [delay] => 0.008s
     )
@@ -56,3 +60,5 @@ Résultat :
 [attdocid]:         #core-ref:d461d5f5-b635-47a0-944d-473c227587ab
 [phpiterator]:      http://php.net/manual/fr/class.iterator.php "Interface Iterator"
 [docacl]:           #core-ref:a99dcc5f-f42f-4574-bbfa-d7bb0573c95d "Droits du document"
+[geterror]:         #core-ref:e57302ed-319e-4d63-b817-7a22d0ead3f2
+[getsearchinfo]:    #core-ref:5dd38712-3618-42e2-8766-23f439b01d56
