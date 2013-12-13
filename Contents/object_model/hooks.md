@@ -1,0 +1,91 @@
+# Les Hooks {#core-ref:8f3d47de-32b5-4748-8a00-b1569c5423e5}
+
+Le document offre de nombreux [hooks][WP_hooks] permettant de modifier son 
+comportement au cours des étapes telles que la création, modification, 
+suppression, etc. de document.
+
+Ces hooks viennent s'ajouter aux droits de l'utilisateur.
+Par exemple, lors de la création d'un document, Dynacase vérifiera d'abord
+que l'utilisateur a bien le droit de créer un document de la famille concernée,
+puis vérifiera ensuite que le hook [`Doc::preCreated`][doc_precreated] ne bloque pas cette création.
+
+## Création de document {#core-ref:b28f8dcb-c0a3-4df5-b3e5-4f55611d3a4d}
+
+Les méthode surchargeables appelées lors de la création d'un document sont :
+
+*   Lors de la création avec [`Doc::store`][doc_store]
+    *   [`Doc::preStore`][doc_prestore]
+    *   [`Doc::preCreated`][doc_precreated]
+    *   [`Doc::postCreated`][doc_postcreated]
+    *   [`Doc::preRefresh`][doc_prerefresh]
+    *   [`Doc::postRefresh`][doc_postrefresh]
+    *   [`Doc::postRefresh`][doc_poststore]
+*   Lors de la création avec `Doc::add`
+    *   [`Doc::preCreated`][doc_precreated]
+    *   [`Doc::postCreated`][doc_postcreated]
+
+## Modification de document {#core-ref:b09fd0c9-d935-4db2-b942-8a80a4bffaf3}
+
+Les méthode surchargeables appelées lors de la modification d'un document sont :
+
+*   Lors de la modification avec [`Doc::store`][doc_store]
+    *   [`Doc::preStore`][doc_prestore]
+    *   [`Doc::preRefresh`][doc_prerefresh]
+    *   [`Doc::postRefresh`][doc_postrefresh]
+    *   [`Doc::postRefresh`][doc_poststore]
+*   Lors de la modification avec `Doc::modify`
+    *   aucune
+
+## Suppression de document {#core-ref:10c4622a-8834-4b9b-94ba-93f278d9bde0}
+
+Les méthode surchargeables appelées lors de la suppression d'un document 
+avec `Doc::delete` sont :
+
+*   `Doc::preDelete`
+*   `Doc::postDelete`
+
+## Duplication de document {#core-ref:db739471-d1e7-4762-9cfb-1de1a823b06a}
+
+Les méthode surchargeables appelées lors de la duplication d'un document 
+avec `Doc::duplicate`
+
+*   `Doc::preDuplicate`
+*   `Doc::postDuplicate`
+
+## Import de document {#core-ref:a95a3a83-fab4-455c-8cb4-9b278f770f3a}
+
+Les méthode surchargeables appelées lors de l'import d'un document sont :
+
+*   `Doc::preImport`
+*   `Doc::postImport`
+
+## Ajout d'un document dans un dossier {#core-ref:05847fea-7a2f-4b67-8b4e-ef56d225fcec}
+
+Les méthode surchargeables appelées lors de l'ajout d'un document
+dans un dossier sont :
+
+*   Lors de l'insertion avec `Dir::insertDocument`
+    *   `Dir::preInsertDocument`
+    *   `Dir::postInsertDocument`
+*   Lors de l'insertion avec `Dir::insertMultipleDocuments`
+    *   `Dir::preInsertMultipleDocuments`
+    *   `Dir::postInsertMultipleDocuments`
+
+## Retrait d'un document d'un dossier {#core-ref:a0ec9634-095a-4caa-94e5-7a39d141e185}
+
+Les méthode surchargeables appelées lors du retrait d'un document
+dans un dossier avec `Dir::removeDocument` sont :
+
+*   `Dir::preRemoveDocument`
+*   `Dir::postRemoveDocument`
+
+<!-- links -->
+[advanced_dbobj]: #core-ref:7a62bb83-17a0-478d-a853-bc359d0fb8fb
+[WP_hooks]: http://fr.wikipedia.org/wiki/Hook_%28informatique%29 "Définition des hooks sur wikipedia"
+[doc_store]: #core-ref:b8540d13-ece6-4e9e-9b72-6a56bca9da12
+[doc_prestore]: #core-ref:3517da95-82fe-4adb-8bc4-ef49ca55edb0
+[doc_precreated]: #core-ref:e85aa9d4-5e62-4a60-9d1c-f60433301747
+[doc_postcreated]: #core-ref:b8f80e6b-a374-4bf4-bc76-47290cd69c45
+[doc_prerefresh]: #core-ref:580d6be1-6b6a-439b-abd7-34b26cfaf2e5
+[doc_postrefresh]: #core-ref:9352c534-3691-41e3-b293-599db8e9a4fd
+[doc_poststore]: #core-ref:99520a31-0aef-4bc6-b20a-114737059d17

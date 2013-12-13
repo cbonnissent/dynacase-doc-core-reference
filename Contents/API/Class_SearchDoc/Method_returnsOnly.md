@@ -11,7 +11,7 @@ Cette méthode permets d'indiquer quel sont les [propriétés][docprop] ou
 ## Description  {#core-ref:6fd78d70-b7fd-420d-bb7a-d98312f149ab}
 
     [php]
-    array returnsOnly (array $returns)
+    void returnsOnly (array $returns)
 
 Cette méthode permets d'accélérer le traitement de la requête en indiquant un
 sous-ensemble d'attributs ou de propriétés. Ceci a deux avantages :
@@ -35,11 +35,8 @@ modifiés par la méthode [`Doc::store()`][docstore].
 
 
 ## Valeur de retour  {#core-ref:5e181a94-0890-4131-a7b9-68669ac15e9e}
-`array`
-:   
 
-La liste des [attributs][docattr] et [propriétés][docprop] qui sera
-effectivement retourné.
+void
 
 ## Erreurs / Exceptions  {#core-ref:05572c2e-3fb8-44c0-bf7d-79ce95feebd4}
 
