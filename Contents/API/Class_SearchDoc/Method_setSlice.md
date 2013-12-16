@@ -12,7 +12,7 @@ Cette méthode permet de définir le nombre maximal de résultats retournés.
 
 ### Avertissements {#core-ref:adcce95a-8a15-4d35-b3f6-dc331630eb46}
 
-La méthode [`::count()`][searchcount] retourne le nombre de résultats et ne peux
+La méthode [`::count()`][searchcount] retourne le nombre de résultats et ne peut
 pas excéder la valeur du paramètre `$slice`.
 
 Il faut toujours définir un ordre à la recherche afin de garantir une fenêtre de 
