@@ -15,15 +15,22 @@ La méthode `insertDocument` permet d'insérer un document dans le dossier.
     	                      bool $forcerestrict = false,
     	                      bool $nocontrol     = false )
 
+Cette méthode permet d'ajouter une référence au dossier. Une référence
+correspond à un document sans tenir compte de ses [révisions][revision]. La
+référence correspond à l'identifiant initial du document (`initid`).
+
 ### Avertissements {#core-ref:a60c6daf-c65a-4d40-b770-102166a3c45d}
 
-Aucun.
+Si la référence existe déjà dans le dossier, la référence est ignorée.
+
+
 
 ## Liste des paramètres {#core-ref:f4d478ce-8145-4975-801e-d6158cb8b7d2}
 
 (string) `docid`
 :   L'identifiant (identifiant numérique ou nom logique) du document à insérer
-    dans le dossier.
+    dans le dossier. Cet identifiant peut correspondre à n'importe quelle 
+    [révision][revision] du document. 
 
 (string) `mode`
  :  Seule la valeur `latest` (valeur par défaut) est supportée.
@@ -34,27 +41,30 @@ Aucun.
     [`postInsertDocument`][Dir::postInsertDocument] appelées respectivement
     avant et après l'insertion du document dans le dossier.
     
-    Valeur par défaut : `false`.
+    Valeur par défaut : `false` (activation des hameçons).
     
-    Par défaut les hameçons [`preInsertDocument`][Dir::preInsertDocument] et
-    [`postInsertDocument`][Dir::postInsertDocument] sont appelés.
+    Si `false` les hameçons [`preInsertDocument`][Dir::preInsertDocument] et
+    [`postInsertDocument`][Dir::postInsertDocument] sont appelés.  
+    Si `true`, les hameçons ne sont pas appelés.
 
 (bool) `forcerestrict`
 :   `forcerestrict` permet de désactiver le contrôle des
     [restrictions][restrictions] d'insertion.
     
-    Valeur par défaut : `false`.
+    Valeur par défaut : `false` (contrôle des restrictions effectuée).
     
-    Par défaut le contrôle des [restrictions][restrictions] d'insertion est
-    effectué.
+    Si `false` : le contrôle des [restrictions][restrictions] d'insertion est
+    effectué.  
+    Si `true` : le contrôle des restrictions d'insertion n'est pas effectué.
 
 (bool) `nocontrol`
-:   `nocontrol` permet de désactiver le contrôle du droit d'insertion de
-    documents dans le dossier (droit sur le profil de dossier `PDIR`).
+:   `nocontrol` permet de désactiver le [contrôle du droit][pdir] d'insertion de
+    documents dans le dossier.
     
-    Valeur par défaut : `false`.
+    Valeur par défaut : `false` (contrôle de droits effectué).
     
-    Par défaut le contrôle du droit d'insertion est effectué.
+    Si `false` : le contrôle du droit d'insertion est effectué.  
+    Si `true` : le contrôle du droit d'insertion n'est pas effectué.
 
 ## Valeur de retour {#core-ref:38a6159e-800d-4314-92ee-73ba7a07e910}
 
@@ -65,7 +75,9 @@ vide contenant le message d'erreur dans le cas contraire.
 
 Les erreurs peuvent êtres :
 
-* L'utilisateur ne possède pas le droit d'insertion de documents dans le dossier
+* L'utilisateur ne possède pas le droit d'insertion ([droit `modify`][docacl]) 
+  de documents dans le dossier
+* Le dossier est verrouillé par un autre utilisateur.
   (voir paramètre `nocontrol` ci-dessus).
 * Le document inséré n'est pas compatible par rapport aux
   [restrictions][restrictions] appliqués sur le dossier (voir paramètre
@@ -78,15 +90,15 @@ Les erreurs peuvent êtres :
 
 ### Release 3.2.5 {#core-ref:c0d860d4-afdb-4978-a06c-6a598e36180b}
 
-La méthode `insertDocument` remplace la méthode précédemment nommée `AddFile`.
+La méthode `insertDocument` remplace la méthode précédemment nommée `addFile`.
 
-L'utilisation de `AddFile` est obsolète depuis la version 3.2.5 de dynacase-
+L'utilisation de `addFile` est obsolète depuis la version 3.2.5 de dynacase-
 core.
 
 ## Exemples {#core-ref:2ef6f6b5-f383-4c1d-8af6-9ed63c974d37}
 
-La famille _Groupe d'utilisateurs_ (`GROUP`) hérite de `DIR` et permet de gérer
-l'affectation d'utilisateurs dans les groupes.
+La famille _Groupe d'utilisateurs_ (`IGROUP`) hérite de `GROUP` qui hérite de
+`DIR` et permet de gérer l'affectation d'utilisateurs dans les groupes.
 
 L'exemple ci-dessous montre comment insérer l'utilisateur ayant pour nom logique
 `USR_EMMA_PEEL` dans le groupe ayant pour nom logique `GRP_THE_AVENGERS` :
@@ -142,7 +154,6 @@ L'exemple ci-dessous montre comment insérer l'utilisateur ayant pour nom logiqu
     /*
      * Afficher le contenu du groupe
      */
-    
     printf("* Content of DIR '%s':\n", $grpName);
     $s = new SearchDoc();
     $s->useCollection($group->id);
@@ -191,3 +202,6 @@ Ordre d'appel des hameçons :
 [Dir::postInsertMultipleDocuments]: #core-ref:e3cd509f-8678-4dec-a0cf-33aa39674cfe
 [restrictions]: #core-ref:ad55c0a7-fc0f-4c9d-95cb-8286f4057c3f
 [Dir::insertMultipleDocuments]: #core-ref:098cf44e-568d-4dd2-8dd0-e2f104bc8615
+[docacl]:       #core-ref:f1575705-10e8-4bf2-83b3-4c0b5bfb77cf
+[revision]:     #core-ref:6b3d41c4-e94c-41ab-adbc-51069ab7119d
+[pdir]:                     #core-ref:0cd3fe9a-57cf-481f-8fc0-560bc71d6430

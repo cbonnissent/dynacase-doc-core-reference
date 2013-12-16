@@ -15,7 +15,7 @@ le même dossier.
                                       bool $noprepost = false,
                                          & $tinserted = array(),
                                          & $twarning  = array(),
-                                         & $info = array() )
+                                         & $info      = array() )
     )
 
 ### Avertissements {#core-ref:486fcbf1-dbb9-425d-8980-2a978c58d422}
@@ -42,7 +42,7 @@ Aucun.
     
     Valeur par défaut : `false`.
     
-    Par défaut les hameçons
+    Si `false`, les hameçons
     [`preInsertMultipleDocuments`][Dir::preInsertMultipleDocuments],
     [`preInsertDocument`][Dir::preInsertDocument] et
     [`postInsertMultipleDocuments`][Dir::postInsertMultipleDocuments] sont
@@ -51,9 +51,9 @@ Aucun.
 [out] (string[]) `tinserted`
 :   `tinserted` référence un array associatif retourné par la méthode.
     
-    Les clés sont les identifiants des documents insérés dans le dossier et la
-    valeur est un message indiquant que le document a été inséré dans le
-    dossier.
+    Les clés sont les identifiants (`initid`) des documents insérés dans le
+    dossier et la valeur est un message indiquant que le document a été inséré
+    dans le dossier.
     
     Exemple de valeur retournée dans le array référencé :
     
@@ -66,8 +66,8 @@ Aucun.
 [out] (string[]) `twarning`
 :   `twarning` référence un array associatif retourné par la méthode.
     
-    Les clés sont les identifiants des documents qui n'ont pu être insérés dans
-    le dossier et la valeur est le message d'erreur de l'insertion.
+    Les clés sont les identifiants des documents qui n'ont pas pu être insérés
+    dans le dossier et la valeur est le message d'erreur de l'insertion.
 
 [out] (array) `info`
 :   `info` référence un array associatif retourné par la méthode.
@@ -78,6 +78,7 @@ Aucun.
         [php]
         array(
             'error' => "Message d'erreur global de insertMultipleDocuments",
+            'modifyError' => "Erreur lié au droit de modification"
             'preInsertMultipleDocuments' => "Message d'erreur de preInsertMultipleDocuments",
             'preInsertDocument'           => array(
                 "Message d'erreur de preInsertDocument#1",
@@ -102,6 +103,7 @@ vide contenant le message d'erreur.
 Les erreurs peuvent êtres :
 
 * L'utilisateur ne possède pas le droit d'insertion de documents dans le dossier.
+* Le dossier est verrouillé par un autre utilisateur.
 * Le document inséré n'est pas compatible par rapport aux documents
   supportés par le dossier.
 * Les méthodes d'hameçon
@@ -127,9 +129,10 @@ core.
 
 ### Release 3.2.12 {#core-ref:151fed1c-a8fe-4d80-84f6-a3239f9d903b}
 
-La méthode `Dir::insertMultipleDocuments` a été modifiée afin de faire
-remonter le message d'erreur de la méthode hameçon
-`Dir::postInsertMultipleDocuments` dans son retour d'erreur.
+<span class="flag next-release">next release 3.2.12</span> La méthode
+`Dir::insertMultipleDocuments` a été modifiée afin de faire remonter le message
+d'erreur de la méthode hameçon `Dir::postInsertMultipleDocuments` dans son
+retour d'erreur.
 
 La méthode `Dir::insertMultipleDocuments` ajoute un 6ème paramètre optionnel
 [`info`][Dir::insertMultipleDocuments_info] qui permet de récupérer les
@@ -137,16 +140,20 @@ différents messages d'erreurs rencontrés.
 
 ## Exemples {#core-ref:03752194-67ae-4978-9236-e352f0db2d40}
 
-L'exemple suivant va rechercher tous les utilisateur dont l'adresse mail est en
-`@the-avengers.net`, et les insérer dans un nouveau groupe `GRP_THE_AVENGERS` :
+L'exemple suivant va rechercher tous les utilisateurs dont l'adresse mail
+contient  `@the-avengers.net`, et les insérer dans un nouveau groupe
+`GRP_THE_AVENGERS` :
 
     [php]
-    include_once 'FDL/freedom_util.php';
+    include_once "FDL/freedom_util.php";
     
     /*
      * Créer un nouveau groupe GRP_EXAMPLE_NET
      */
-    
+     
+    /**
+     * @var \dcp\Family\Igroup $group
+     */
     $group = createDoc('', 'IGROUP');
     $group->setAttributeValue('us_login', 'grp_the_avengers');
     $group->setAttributeValue('grp_name', 'Groupe @the-avengers.net');
@@ -155,23 +162,22 @@ L'exemple suivant va rechercher tous les utilisateur dont l'adresse mail est en
     /*
      * Affecter un nom logique au groupe
      */
-    
+     
     $group->setLogicalName('GRP_THE_AVENGERS');
     
     /*
      * Rechercher tous les utilisateurs ayant une
      * adresse mail en "@the-avengers.net".
      */
-    
+     
     $s = new SearchDoc('', 'IUSER');
     $s->addFilter("us_extmail LIKE '%@the-avengers.net'");
     $userList = $s->search();
     if (count($userList) > 0) {
-    
         /*
          * Insérer tous ces utilisateurs dans le groupe.
          */
-    
+         
         $insertedList = array();
         $warningList = array();
         $err = $group->insertMultipleDocuments(
@@ -184,23 +190,21 @@ L'exemple suivant va rechercher tous les utilisateur dont l'adresse mail est en
         if ($err != '') {
             printf("* Some documents have not been inserted: %s", $err);
         }
-    
-        printf("* %d insertions :\n", count($insertedList));
-        foreach ($insertedList as $docId => $msg) {
-            printf("\t<%s> %s\n", $docId, $msg);
-        }
-    
-        printf("* %d warnings :\n", count(warningList));
-        foreach ($warningList as $docId => $warningMsg) {
-            printf("\t<%d> %s\n", $docId, $warningMsg);
-        }
+    printf("* %d insertions :\n", count($insertedList));
+    foreach ($insertedList as $docId => $msg) {
+        printf("\t[%s] %s\n", $docId, $msg);
     }
+    printf("* %d warnings :\n", count($warningList));
+    foreach ($warningList as $docId => $warningMsg) {
+        printf("\t[%d] %s\n", $docId, $warningMsg);
+    }
+}
 
 Résultat :
 
     * 2 insertions :
-            <1057> Insertion document Peel Emma 
-            <1058> Insertion document Steed John 
+            [1057] Insertion document Peel Emma 
+            [1058] Insertion document Steed John 
     * 0 warnings :
     
 
@@ -250,3 +254,4 @@ Ordre d'appel des hameçons :
 [SearchDoc_bruts]: #core-ref:4c508940-f5a0-40ee-a942-6372a95d112e
 [SearchDoc]: #core-ref:7291dea8-a2db-46be-8194-bc6f100cc467
 [Dir::insertMultipleDocuments_info]: #core-ref:511b14bf-eb70-4b67-9205-e75cc110696a
+[pdir]:                     #core-ref:0cd3fe9a-57cf-481f-8fc0-560bc71d6430
