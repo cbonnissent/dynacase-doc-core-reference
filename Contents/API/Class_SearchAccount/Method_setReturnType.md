@@ -17,7 +17,7 @@ Obsolète depuis #.#.#
 
 Deux types de retour sont possibles soit :
 
-* un objet [`DocumentList`][documentList] : la documentList est un itérable sur 
+* un objet [`DocumentList`][documentList] : la documentList est un itérable sur
 les documents Dynacase associés aux comptes trouvés,
 * un objet [`AccountList`][accountList] : l'accountList est un itérable sur les 
 objets account.

@@ -881,32 +881,32 @@ book:
       element: "chapter"
       content:  "API/Class_SearchAccount/Method_setOrder.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        new:   "new"
+        draft: "draft"
     - level:   3
       element: "chapter"
       content:  "API/Class_SearchAccount/Method_setSlice.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        new:   "new"
+        draft: "draft"
     - level:   3
       element: "chapter"
       content:  "API/Class_SearchAccount/Method_setStart.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        new:   "new"
+        draft: "draft"
     - level:   3
       element: "chapter"
       content:  "API/Class_SearchAccount/Method_setTypeFilter.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        new:   "new"
+        draft: "draft"
     - level:   3
       element: "chapter"
-      content:  "API/Class_SearchAccount/Method_useViewControl.md"
+      content:  "API/Class_SearchAccount/Method_overrideViewControl.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        new:   "new"
+        draft: "draft"
     - level:   2
       element: "chapter"
       content:  "API/Class_SearchDoc.md"
