@@ -138,7 +138,7 @@ book:
     - level:   2
       content:  "documents_systemes/dossier.md"
       flags:
-        wip : "work in progress"
+        draft : "draft"
     - level:   2
       content:  "documents_systemes/masques.md"
     - level:   2
