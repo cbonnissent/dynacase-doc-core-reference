@@ -81,6 +81,6 @@ Aucun.
 
 <!-- links -->
 
-[phpArray]:     http://us1.php.net/manual/en/book.array.php "PHP Array"
+[phpArray]:     http://www.php.net/manual/fr/book.array.php "PHP Array"
 [SearchDoc]:    #core-ref:6f5cc024-66e4-429e-9071-67d4523a8e08
 [returnsonly]:  #core-ref:6429b289-8fec-4c7e-8906-5f367c5bf59d
