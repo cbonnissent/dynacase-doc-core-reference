@@ -24,35 +24,35 @@ L'édition 4 de la documentation a modifié les points suivants.
 | Mise à jour des chapitres API                   | [Les essentiels de l'API][apichapter]           | <span class="flag new">Updated</span>                                                       | 12/11/13 |
 
 
-## Modification release 3.2.12
+## Modification release 3.2.12 {#core-ref:d402539b-f0dd-4ade-9ea0-03f1d55da1da}
 
-### Internationalisation
+### Internationalisation {#core-ref:ccb46f7b-04f3-4398-b3f4-a09bf9eb508c}
 
 Ajout de la possibilité d'utiliser les [contextes][i18nctx] et les [formes
 plurielles][i18nplural] dans les traductions.
 
-### SearchDoc::addGeneralFilter
+### SearchDoc::addGeneralFilter {#core-ref:95ea5aea-add4-4807-9a5c-c04ac1e87966}
 
 La méthode [`SearchDoc::addGeneralFilter()`][searchdocAddGeneralFilter] retourne
 systématiquement une exception en cas d'erreur.
 
-### SearchDoc::join
+### SearchDoc::join {#core-ref:80bd51a7-7db2-45ad-9556-21dc3b56b311}
 
 La méthode [`SearchDoc::join()`][searchdocJoin] retourne une
 exception en cas d'erreur.
 
-### SearchDoc::onlyCount
+### SearchDoc::onlyCount {#core-ref:f99061ff-3ec1-4a6f-95b3-5841b6fec880}
 
 La méthode [`SearchDoc::onlyCount()`][searchdocOnlycount] effectue
 systématiquement un appel à la base de donnée pour récupérer le résultat.
 
-### SearchDoc::setRecursiveSearch
+### SearchDoc::setRecursiveSearch {#core-ref:de878fe6-b2d5-47f8-9bd5-94d8eb2aeeff}
 
 La méthode [`SearchDoc::setRecursiveSearch()`][searchdocrecursivesearch] a un
 nouveau paramètre pour indiquer le niveau de profondeur. Ceci évite de mettre à
 jour directement la propriété `SearchDoc::folderRecursiveLevel`.
 
-### Importation CSV
+### Importation CSV {#core-ref:a5fa61d8-3a4e-4c9c-9867-8dfae1bdfb29}
 
 Le script [`importDocument`][wshimportDocuments] a de nouvelles options
 permettant de configurer l'importation des formats [`csv`][CSV].
@@ -60,19 +60,22 @@ permettant de configurer l'importation des formats [`csv`][CSV].
 L'interface d'administration d'importation des documents permet aussi de
 configurer les options d'importation pour les fichiers `csv`.
 
-### Layout::eSet, Layout::eSetBlockData
+### Layout::eSet, Layout::eSetBlockData {#core-ref:4d01a2c8-0f6b-4c29-a64c-4b8fbef5b127}
 
 Les méthodes [`Layout::eSet()`][layouteset] et 
 [`Layout::eSetBlockData()`][layoutesetblock] ont été ajoutées afin de faciliter
 l'ajout de clefs correctement encodées dans des fichiers XML et HTML.
 
-### Dir::insertMultipleDocuments
+### Dir::insertMultipleDocuments {#core-ref:b66ef951-c5ee-4ee0-9499-7913ed805042}
 
-La méthode `Dir::insertMultipleDocuments` a été modifiée afin de faire
-remonter le message d'erreur de la méthode hameçon
-`Dir::postInsertMultipleDocuments` dans son retour d'erreur.
+La méthode [`Dir::insertMultipleDocuments`][insertMultipleDocuments] a été
+modifiée afin de faire remonter le message d'erreur de la méthode hameçon
+[`Dir::postInsertMultipleDocuments`][postinsertMultipleDocuments] dans son
+retour d'erreur.
 
 <!-- link -->
+[insertMultipleDocuments]:      #core-ref:098cf44e-568d-4dd2-8dd0-e2f104bc8615
+[postinsertMultipleDocuments]:  #core-ref:e3cd509f-8678-4dec-a0cf-33aa39674cfe
 [layoutesetblock]:      #core-ref:088e711c-ea91-45e7-841d-289ffc53c80b
 [layouteset]:           #core-ref:2696710a-f491-4887-b953-e08d918ef4fb
 [wshimportDocuments]:   #core-ref:a14d9475-0431-4aa3-853d-810b61e355a7

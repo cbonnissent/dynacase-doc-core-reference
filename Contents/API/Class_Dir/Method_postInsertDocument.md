@@ -64,18 +64,22 @@ dynacase-core.
     
     class ArchiveFacture extends \Dcp\Family\Dir {
     
-    	function postInsertDocument($docId, $multiple = false) {
+        public function postInsertDocument($docId, $multiple = false) {
+            $err=parent::postInsertDocument($docId, $multiple);
+            if (empty($err)) {
+                /*
+                 * Appeler la méthode archiverFacture() des
+                 * factures insérées dans le dossier.
+                 */
+                $facture = new_Doc('', $docId, true);// prendre la dernière révision
+                $facture->archiverFacture();
+            }
+            return $err;
+        }
     
-    		/*
-    		 * Appeler la méthode archiverFacture() des
-    		 * factures insérées dans le dossier.
-    		 */
-    
-    		$facture = new_Doc('', $docId);
-    		$facture->archiverFacture();
-    		return '';
-    	}
-    
+        protected function archiverFacture() {
+            // Archivage facturation
+        }
     }
 
 ## Notes {#core-ref:f717e158-598e-46ab-94e1-d7225b8e2e04}

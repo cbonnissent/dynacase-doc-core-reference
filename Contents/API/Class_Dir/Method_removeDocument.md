@@ -13,9 +13,11 @@ La méthode `removeDocument` permet d'enlever un document du dossier.
                               bool $noprepost = false,
                               bool $nocontrol = false )
 
+Cette méthode enlève une reférence de document au dossier.
+
 ### Avertissements {#core-ref:80577b56-a84c-4c00-8409-e57b9a9c6a89}
 
-Aucun.
+Le document n'est pas supprimé. Seule sa référence au dossier est supprimée.
 
 ## Liste des paramètres {#core-ref:02b27db3-0b22-4f21-a78d-c401fe357c2b}
 
@@ -31,16 +33,18 @@ Aucun.
     
     Valeur par défaut : `false`.
     
-    Par défaut les hameçons [`preRemoveDocument`][Dir::preRemoveDocument] et
-    [`postRemoveDocument`][Dir::postRemoveDocument] sont appelés.
+    Si `false`, les hameçons [`preRemoveDocument`][Dir::preRemoveDocument] et
+    [`postRemoveDocument`][Dir::postRemoveDocument] sont appelés.  
+    Si `true`, les hameçons ne sont pas appelés.  
 
 (bool) `nocontrol`
-:   `nocontrol` permet de désactiver le contrôle du droit de modification du
-    dossier (droit sur le profil de dossier `PDIR`).
+:   `nocontrol` permet de désactiver le contrôle du 
+  [droit de modification][pdir] du dossier .
     
     Valeur par défaut : `false`.
     
-    Par défaut le contrôle du droit de modification du dossier est effectué.
+    Si `false`, le contrôle du droit de modification du dossier est effectué.  
+    Si `true`, le contrôle de droit n'est pas effectué.
 
 ## Valeur de retour {#core-ref:91631212-4b6d-433c-a702-c46b98446d29}
 
@@ -57,13 +61,15 @@ Les erreurs peuvent êtres :
   [`postRemoveDocument`][Dir::postRemoveDocument] ont retourné une erreur (voir
   paramètre `noprepost` ci-dessus).
 
+Si le document à enlever n'est pas présent, aucune erreur n'est retournée.
+
 ## Historique {#core-ref:a8e9a225-d3ac-413e-9325-bcf357a16262}
 
 ### Release 3.2.5 {#core-ref:721ccaa9-e7e0-47d8-a166-b881b5597424}
 
-La méthode `removeDocument` remplace la méthode précédemment nommée `DelFile`.
+La méthode `removeDocument` remplace la méthode précédemment nommée `delFile`.
 
-L'utilisation de `DelFile` est obsolète depuis la version 3.2.5 de dynacase-
+L'utilisation de `delFile` est obsolète depuis la version 3.2.5 de dynacase-
 core.
 
 ## Exemples {#core-ref:7b7badcd-3fef-4834-97fd-4461684289ce}
@@ -74,7 +80,6 @@ core.
     /*
      * Rechercher tous les documents référencés dans le dossier
      */
-    
     $s = new SearcDoc('');
     $s->useCollection($dossier->id);
     $docList = $s->search();
@@ -82,9 +87,8 @@ core.
     /*
      * Enlever les documents du dossier
      */
-    
     foreach ($docList as $doc) {
-    	$err = $dossier->removeDocument($doc['id']);
+    	$err = $dossier->removeDocument($doc['initid']);
     	if ($err != '') {
     		printf("Error removing document '%d' from DIR: %s", $doc['id'], $err);
     	}
@@ -110,5 +114,6 @@ Ordre d'appel des hameçons :
 - [`Dir::postRemoveDocument`][Dir::postRemoveDocument]
 
 <!-- links -->
-[Dir::preRemoveDocument]: #core-ref:251b17bf-af38-4fdc-a9cc-01074279ddb5
-[Dir::postRemoveDocument]: #core-ref:efd55fb9-600e-42fa-a7c5-0b3b31ea3cc3
+[Dir::preRemoveDocument]:   #core-ref:251b17bf-af38-4fdc-a9cc-01074279ddb5
+[Dir::postRemoveDocument]:  #core-ref:efd55fb9-600e-42fa-a7c5-0b3b31ea3cc3
+[pdir]:                     #core-ref:0cd3fe9a-57cf-481f-8fc0-560bc71d6430

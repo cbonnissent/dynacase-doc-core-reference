@@ -20,8 +20,8 @@ Aucun.
 ## Liste des paramètres {#core-ref:cf5df222-8edb-44e9-a676-f0e493087158}
 
 (string) `docid`
-:   L'identifiant (identifiant numérique ou nom logique) du document à supprimer
-    dans le dossier.
+:   L'identifiant (identifiant numérique ou nom logique) du document à enlever
+    du dossier.
 
 ## Valeur de retour {#core-ref:e3dc9cc2-3c7a-4701-98bb-45ba2a2b08e5}
 
@@ -52,7 +52,7 @@ dynacase-core.
     class ArchiveFacture extends \Dcp\Family\Dir {
     
         public function preRemoveDocument($docId) {
-            $facture = new_Doc('', $docId, true);
+            $facture = new_Doc('', $docId, true); // prendre la dernière révision
             if (!$facture->isPaid()) {
             	return sprintf(
             		'La facture doit être payée pour pouvoir être enlevée du dossier.'

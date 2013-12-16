@@ -12,7 +12,7 @@ documents dans le Dossier (si
 ## Description {#core-ref:a9b7e63a-4f5a-430e-a348-56efdefd8981}
 
     [php]
-    string preInsertMultipleDocuments ( array(string) $tdocids )
+    string preInsertMultipleDocuments ( string[]|int[] $tdocids )
 
 ### Avertissements {#core-ref:769a48ac-db08-463a-9d2f-a796a13cc769}
 
@@ -20,7 +20,7 @@ Aucun.
 
 ## Liste des paramètres {#core-ref:ccbfa33f-7efe-42ff-a147-8c6723d5ba76}
 
-(array(string) `tdocids`
+(string[]|int[] `tdocids`
 :   Liste d'identifiants (identifiant numérique ou nom logique) des documents
     qui vont être insérés dans le dossier.
 
@@ -47,14 +47,15 @@ Aucun.
     namespace Facturation;
     
     class ArchiveFacture extends \Dcp\Family\Dir {
-    
         public function preInsertMultipleDocument($rawDocList) {
-            if (count($rawDocList) > 10) {
-                return sprintf("Vous ne pouvez insérer que jusqu'à 10 documents à la fois.");
+            $err=parent::preInsertMultipleDocument($rawDocList);
+            if (empty($err)) {
+                if (count($rawDocList) > 10) {
+                    return sprintf("Vous ne pouvez insérer que jusqu'à 10 documents à la fois.");
+                }
             }
-            return '';
+            return $err;
         }
-    
     }
 
 ## Notes {#core-ref:c2242bf9-5f3c-4df9-af00-fe5c2b872d86}

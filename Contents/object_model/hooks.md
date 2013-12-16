@@ -4,80 +4,80 @@ Le document offre de nombreux [hooks][WP_hooks] permettant de modifier son
 comportement au cours des étapes telles que la création, modification, 
 suppression, etc. de document.
 
-Ces hooks viennent s'ajouter aux droits de l'utilisateur.
-Par exemple, lors de la création d'un document, Dynacase vérifiera d'abord
-que l'utilisateur a bien le droit de créer un document de la famille concernée,
-puis vérifiera ensuite que le hook [`Doc::preCreated`][doc_precreated] ne bloque pas cette création.
+Ces hooks viennent s'ajouter aux droits de l'utilisateur. Par exemple, lors de
+la création d'un document, Dynacase vérifiera d'abord que l'utilisateur a bien
+le droit de créer un document de la famille concernée, puis vérifiera ensuite
+que le hook [`Doc::preCreated()`][doc_precreated] ne bloque pas cette création.
 
 ## Création de document {#core-ref:b28f8dcb-c0a3-4df5-b3e5-4f55611d3a4d}
 
 Les méthode surchargeables appelées lors de la création d'un document sont :
 
-*   Lors de la création avec [`Doc::store`][doc_store]
-    *   [`Doc::preStore`][doc_prestore]
-    *   [`Doc::preCreated`][doc_precreated]
-    *   [`Doc::postCreated`][doc_postcreated]
-    *   [`Doc::preRefresh`][doc_prerefresh]
-    *   [`Doc::postRefresh`][doc_postrefresh]
-    *   [`Doc::postRefresh`][doc_poststore]
-*   Lors de la création avec `Doc::add`
-    *   [`Doc::preCreated`][doc_precreated]
-    *   [`Doc::postCreated`][doc_postcreated]
+*   Lors de la création avec [`Doc::store()`][doc_store]
+    *   [`Doc::preStore()`][doc_prestore]
+    *   [`Doc::preCreated()`][doc_precreated]
+    *   [`Doc::postCreated()`][doc_postcreated]
+    *   [`Doc::preRefresh()`][doc_prerefresh]
+    *   [`Doc::postRefresh()`][doc_postrefresh]
+    *   [`Doc::postRefresh()`][doc_poststore]
+*   Lors de la création avec [`Doc::add()`][dbobjadd]
+    *   [`Doc::preCreated()`][doc_precreated]
+    *   [`Doc::postCreated()`][doc_postcreated]
 
 ## Modification de document {#core-ref:b09fd0c9-d935-4db2-b942-8a80a4bffaf3}
 
 Les méthode surchargeables appelées lors de la modification d'un document sont :
 
-*   Lors de la modification avec [`Doc::store`][doc_store]
-    *   [`Doc::preStore`][doc_prestore]
-    *   [`Doc::preRefresh`][doc_prerefresh]
-    *   [`Doc::postRefresh`][doc_postrefresh]
-    *   [`Doc::postRefresh`][doc_poststore]
-*   Lors de la modification avec `Doc::modify`
+*   Lors de la modification avec [`Doc::store()`][doc_store]
+    *   [`Doc::preStore()`][doc_prestore]
+    *   [`Doc::preRefresh()`][doc_prerefresh]
+    *   [`Doc::postRefresh()`][doc_postrefresh]
+    *   [`Doc::postRefresh()`][doc_poststore]
+*   Lors de la modification avec `Doc::modify()`
     *   aucune
 
 ## Suppression de document {#core-ref:10c4622a-8834-4b9b-94ba-93f278d9bde0}
 
 Les méthode surchargeables appelées lors de la suppression d'un document 
-avec `Doc::delete` sont :
+avec [`Doc::delete()`][doc_delete] sont :
 
-*   `Doc::preDelete`
-*   `Doc::postDelete`
+*   `Doc::preDelete()`
+*   `Doc::postDelete()`
 
 ## Duplication de document {#core-ref:db739471-d1e7-4762-9cfb-1de1a823b06a}
 
 Les méthode surchargeables appelées lors de la duplication d'un document 
-avec `Doc::duplicate`
+avec [`Doc::duplicate()`][doc_duplicate]
 
-*   `Doc::preDuplicate`
-*   `Doc::postDuplicate`
+*   `Doc::preDuplicate()`
+*   `Doc::postDuplicate()`
 
 ## Import de document {#core-ref:a95a3a83-fab4-455c-8cb4-9b278f770f3a}
 
 Les méthode surchargeables appelées lors de l'import d'un document sont :
 
-*   `Doc::preImport`
-*   `Doc::postImport`
+*   [`Doc::preImport()`][doc_preimport]
+*   [`Doc::postImport()`][doc_postimport]
 
 ## Ajout d'un document dans un dossier {#core-ref:05847fea-7a2f-4b67-8b4e-ef56d225fcec}
 
 Les méthode surchargeables appelées lors de l'ajout d'un document
 dans un dossier sont :
 
-*   Lors de l'insertion avec `Dir::insertDocument`
-    *   `Dir::preInsertDocument`
-    *   `Dir::postInsertDocument`
-*   Lors de l'insertion avec `Dir::insertMultipleDocuments`
-    *   `Dir::preInsertMultipleDocuments`
-    *   `Dir::postInsertMultipleDocuments`
+*   Lors de l'insertion avec [`Dir::insertDocument()`][dir_insertdocument]
+    *   `Dir::preInsertDocument()`
+    *   `Dir::postInsertDocument()`
+*   Lors de l'insertion avec [`Dir::insertMultipleDocuments()`][dir_insertmultiple]
+    *   `Dir::preInsertMultipleDocuments()`
+    *   `Dir::postInsertMultipleDocuments()`
 
 ## Retrait d'un document d'un dossier {#core-ref:a0ec9634-095a-4caa-94e5-7a39d141e185}
 
 Les méthode surchargeables appelées lors du retrait d'un document
-dans un dossier avec `Dir::removeDocument` sont :
+dans un dossier avec [`Dir::removeDocument()`][dir_removedocument] sont :
 
-*   `Dir::preRemoveDocument`
-*   `Dir::postRemoveDocument`
+*   `Dir::preRemoveDocument()`
+*   `Dir::postRemoveDocument()`
 
 <!-- links -->
 [advanced_dbobj]: #core-ref:7a62bb83-17a0-478d-a853-bc359d0fb8fb
@@ -89,3 +89,11 @@ dans un dossier avec `Dir::removeDocument` sont :
 [doc_prerefresh]: #core-ref:580d6be1-6b6a-439b-abd7-34b26cfaf2e5
 [doc_postrefresh]: #core-ref:9352c534-3691-41e3-b293-599db8e9a4fd
 [doc_poststore]: #core-ref:99520a31-0aef-4bc6-b20a-114737059d17
+[doc_delete]:   #core-ref:c4372b13-c132-4148-9487-de2b7614d497
+[doc_duplicate]:   #core-ref:f7d4f454-0e45-40bd-9f4c-b149ab620295
+[doc_preimport]: #core-ref:adb6ba8b-15c4-42d3-97dc-1da16c2112ae
+[doc_postimport]: #core-ref:9de7e922-150a-416b-b846-b6e195bf0921
+[dir_insertdocument]:  #core-ref:9575ff95-480a-4dfb-9cd0-b89f44c3fad7
+[dir_removedocument]:   #core-ref:d337e186-8066-49e2-92a0-26aa518cbf41
+[dir_insertmultiple]:   #core-ref:098cf44e-568d-4dd2-8dd0-e2f104bc8615
+[dbobjadd]:             #core-ref:28379dfc-7f6d-450f-b994-834d4fba7452

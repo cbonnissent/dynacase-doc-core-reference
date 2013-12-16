@@ -5,8 +5,8 @@
 La méthode `preInsertDocument` est appelée par la méthode
 [`insertDocument`][Dir::insertDocument] ou
 [`insertMultipleDocuments`][Dir::insertMultipleDocuments] avant l'insertion du
-document dans le Dossier (si [`noprepost`][Dir::insertDocument_noprepost] est
-égal à `false`).
+document dans le Dossier (si l'argument
+[`noprepost`][Dir::insertDocument_noprepost] est égal à `false`).
 
 </div>
 
@@ -15,6 +15,8 @@ document dans le Dossier (si [`noprepost`][Dir::insertDocument_noprepost] est
     [php]
     string preInsertDocument ( string $docid,
                                  bool $multiple = false )
+
+
 
 ### Avertissements {#core-ref:dd8b8823-1f92-4e4e-9a52-5420e7dff7be}
 
@@ -30,7 +32,7 @@ Aucun.
 :   `multiple` est positionné par la méthode
     [`insertMultipleDocuments`][Dir::insertMultipleDocuments] pour indiquer que
     `preInsertDoucment` est appelé dans le cadre de l'insertion de plusieurs
-    document.
+    documents.
     
     Valeurs possibles :
     
@@ -66,26 +68,28 @@ dynacase-core.
     namespace Facturation;
     
     class ArchiveFacture extends \Dcp\Family\Dir {
-    
-    	function preInsertDocument($docId, $multiple = false) {
-    		$facture = new_Doc('', $docId);
-    		if ($facture->isAlive()) {
-    
-    			/*
-    			 * Seule les factures payés peuvent
-    			 * être insérée dans ce dossier.
-    			 */
-    
-    		    if ($facture->isPaid()) {
-    		        return sprintf(
-    		        	"La facture '%s' ne peut être archivée car elle n'est pas payée.",
-    		        	$facture->title
-    		        );
-    		    }
-    		}
-    		return '';
-    	}
-    
+        public function preInsertDocument($docId, $multiple = false) {
+            $err=parent::preInsertDocument($docId, $multiple);
+            if (empty($err)) {
+                $facture = new_Doc('', $docId, true); // prendre la dernière révision
+                if ($facture->isAlive()) {
+                    /*
+                     * Seule les factures payés peuvent
+                     * être insérées dans ce dossier.
+                     */
+                    if ($facture->isPaid()) {
+                        return sprintf(
+                            "La facture '%s' ne peut être archivée car elle n'est pas payée.",
+                            $facture->getTitle()
+                        );
+                    }
+                }
+            }
+            return $err;
+        }
+        protected function isPaid() {
+            // Test de facturation
+        }
     }
 
 ## Notes {#core-ref:b9e3945e-1945-4914-9c2c-45a4a63a9384}
