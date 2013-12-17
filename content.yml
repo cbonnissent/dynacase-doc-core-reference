@@ -838,75 +838,75 @@ book:
       element: "chapter"
       content:  "API/Class_SearchAccount.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        new:   "new"
+        draft: "draft"
       subtoc:   1
     - level:   3
       element: "chapter"
       content:  "API/Class_SearchAccount/Method_addFilter.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        new:   "new"
+        draft: "draft"
     - level:   3
       element: "chapter"
       content:  "API/Class_SearchAccount/Method_addGroupFilter.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        new:   "new"
+        draft: "draft"
     - level:   3
       element: "chapter"
       content:  "API/Class_SearchAccount/Method_addRoleFilter.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        new:   "new"
+        draft: "draft"
     - level:   3
       element: "chapter"
-      content:  "API/Class_SearchAccount/Method_docName2login.md"
+      content:  "API/Class_SearchAccount/Method_getLoginFromDocName.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        new:   "new"
+        draft: "draft"
     - level:   3
       element: "chapter"
       content:  "API/Class_SearchAccount/Method_search.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        new:   "new"
+        draft: "draft"
     - level:   3
       element: "chapter"
-      content:  "API/Class_SearchAccount/Method_setObjectReturn.md"
+      content:  "API/Class_SearchAccount/Method_setReturnType.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        new:   "new"
+        draft: "draft"
     - level:   3
       element: "chapter"
       content:  "API/Class_SearchAccount/Method_setOrder.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        new:   "new"
+        draft: "draft"
     - level:   3
       element: "chapter"
       content:  "API/Class_SearchAccount/Method_setSlice.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        new:   "new"
+        draft: "draft"
     - level:   3
       element: "chapter"
       content:  "API/Class_SearchAccount/Method_setStart.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        new:   "new"
+        draft: "draft"
     - level:   3
       element: "chapter"
       content:  "API/Class_SearchAccount/Method_setTypeFilter.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        new:   "new"
+        draft: "draft"
     - level:   3
       element: "chapter"
-      content:  "API/Class_SearchAccount/Method_useViewControl.md"
+      content:  "API/Class_SearchAccount/Method_overrideViewControl.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        new:   "new"
+        draft: "draft"
     - level:   2
       element: "chapter"
       content:  "API/Class_SearchDoc.md"
