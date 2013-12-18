@@ -1,6 +1,8 @@
 # Les dossiers {#core-ref:aa28a2c3-e74d-4b36-ad8f-ae1bb93b6726}
 
-Les dossiers permettent de grouper des documents. 
+Les dossiers permettent de grouper des documents. Un dossier est un type de
+[collection][collection], comme les [recherches][Search] et [rapport][report].
+
 Cette fonction est analogue à la fonction de [répertoires][repertoire]
 présents dans les systèmes de fichiers mais présente de notables différences.
 
@@ -9,10 +11,10 @@ contraire du répertoire qui, dans un système de fichiers, impose que les
 fichiers soient liés *physiquement* à un répertoire. Cela implique les faits
 suivants :
 
-*   La suppression d'un dossier n'entraîne pas la suppression de ses références
-*   L'accès à un dossier ne contraint pas l'accès à une des ses références
-*   Les références entre dossiers peuvent conduire à des boucles dans l'arborescence
-*   Un document ou un dossier peut être référencé dans aucun, un seul ou plusieurs dossiers
+*   la suppression d'un dossier n'entraîne pas la suppression de ses références,
+*   l'accès à un dossier ne contraint pas l'accès à une des ses références,
+*   les références entre dossiers peuvent conduire à des boucles dans l'arborescence,
+*   un document ou un dossier peut être référencé dans aucun, un seul ou plusieurs dossiers.
 
 Par défaut, n'importe quelle famille de document peut être insérée dans un
 dossier. Un dossier peut être paramétré pour ne contenir que certaines familles
@@ -88,21 +90,24 @@ le document dossier tel que son titre et sa description.
 
 ## Profil de contenu {#core-ref:a14f99fc-eb7f-4930-b282-857649690dd1}
 
-En terme de droit, le dossier possède une fonctionnalités spécifique.
+En terme de droit, le dossier possède une fonctionnalité spécifique.
 Il peut modifier les droits des documents qui sont insérés dans le dossier.
 
-L'attribut `fld_pdocid` et `fld_pdirid` permettent d'indiquer le profil que va
-acquérir un document lorsqu'il sera inséré dans le dossier.
+L'attribut `fld_pdocid` et `fld_pdirid` permettent d'indiquer le profil qu'
+acquiert un document lorsqu'il est inséré dans le dossier.
 
 *   `fld_pdocid` : profil utilisé pour les documents "classique"
 *   `fld_pdirid` : profil utilisé pour les documents "dossier"
 
-Le profil d'un document inséré est modifié seulement s'il n'est pas déjà profilé
-(`profid = 0`) et seulement lors d'une [insertion unitaire][insertdocument] et
-non lors d'une [insertion multiple][insertmultiple].
+**Attention** : Le profil d'un document inséré est modifié seulement s'il n'est
+pas déjà profilé (`profid = 0`) et seulement lors d'une 
+[insertion unitaire][insertdocument] et non lors d'une 
+[insertion multiple][insertmultiple].
+
+## Hook (hameçons) propres aux documents dossiers {#core-ref:093147f8-f0a6-4d9a-a016-fe6b77d79787}
 
 La modification d'un profil de document inséré peut être personnalisée en
-utilisant les hameçons [`Dir::postInsertDocument()`][postinsertdoc] et
+utilisant les hameçons (hook) [`Dir::postInsertDocument()`][postinsertdoc] et
 [`postInsertMultipleDocuments()`][postinsertdocs].
 
 ## Voir aussi {#core-ref:19c8e77e-ba1b-4deb-bb6d-f52670284773}
@@ -110,14 +115,18 @@ utilisant les hameçons [`Dir::postInsertDocument()`][postinsertdoc] et
 Voir la classe [`Dir`][dir] qui contient les méthodes spécifiques aux dossiers.
 
 <!-- links -->
-[repertoire]:   http://fr.wikipedia.org/wiki/R%C3%A9pertoire_%28informatique%29 "Répertoire sur Wikipédia"
-[restriction]: #core-ref:ad55c0a7-fc0f-4c9d-95cb-8286f4057c3f
-[fld_allbut]:  #core-ref:9d1e4708-439b-484c-bb1f-a80031e6a20a
-[fld_famids]:  #core-ref:61ece13c-6fbd-4e1b-a7f3-3b1d7bae264c
-[dir]:         #core-ref:dd2077e0-7f3d-4974-bdb0-62a92427754d
-[profil]:       #core-ref:f1575705-10e8-4bf2-83b3-4c0b5bfb77cf
-[insertdocument]: #core-ref:9575ff95-480a-4dfb-9cd0-b89f44c3fad7
-[insertmultiple]: #core-ref:b66ef951-c5ee-4ee0-9499-7913ed805042
-[removedocument]: #core-ref:d337e186-8066-49e2-92a0-26aa518cbf41
-[postinsertdoc]: #core-ref:65ec2b4a-8878-4004-8e42-0de8c359a231
-[postinsertdocs]: #core-ref:e3cd509f-8678-4dec-a0cf-33aa39674cfe
+
+[repertoire]:       http://fr.wikipedia.org/wiki/R%C3%A9pertoire_%28informatique%29 "Répertoire sur Wikipédia"
+[restriction]:      #core-ref:ad55c0a7-fc0f-4c9d-95cb-8286f4057c3f
+[fld_allbut]:       #core-ref:9d1e4708-439b-484c-bb1f-a80031e6a20a
+[fld_famids]:       #core-ref:61ece13c-6fbd-4e1b-a7f3-3b1d7bae264c
+[dir]:              #core-ref:dd2077e0-7f3d-4974-bdb0-62a92427754d
+[profil]:           #core-ref:f1575705-10e8-4bf2-83b3-4c0b5bfb77cf
+[insertdocument]:   #core-ref:9575ff95-480a-4dfb-9cd0-b89f44c3fad7
+[insertmultiple]:   #core-ref:b66ef951-c5ee-4ee0-9499-7913ed805042
+[removedocument]:   #core-ref:d337e186-8066-49e2-92a0-26aa518cbf41
+[postinsertdoc]:    #core-ref:65ec2b4a-8878-4004-8e42-0de8c359a231
+[postinsertdocs]:   #core-ref:e3cd509f-8678-4dec-a0cf-33aa39674cfe
+[Search]:           #core-ref:db2507b5-cfc9-4d2b-87da-a29914223194
+[report]:           #core-ref:4d6429f1-b3ae-46c4-8687-1c8d29f92f37
+[collection]:       #core-ref:a2c4bd53-c31f-4448-82e4-7ec1d2f7f346
