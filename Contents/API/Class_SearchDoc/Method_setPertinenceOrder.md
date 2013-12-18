@@ -32,7 +32,7 @@ Cette recherche ne fonctionne que pour les textes en langue française.
     pouvez juste appeler la fonction sans paramètre alors le choix de la 
     pertinence est celui du filtre. Vous pouvez sinon ajouter une chaîne de 
     caractères pour préciser la recherche la syntaxe est celle de 
-    [postgresql][pgServiceTsQuery].
+    [postgreSQL][pgServiceTsQuery].
 
 ## Valeur de retour {#core-ref:f0a583a4-3e79-4bf0-a8e4-301e0e018465}
 
@@ -51,20 +51,20 @@ Aucun.
 ### Mot simple {#core-ref:7beea7bf-35dd-4708-82d3-0042a64b6a8e}
 
     [php]
-    $s=new SearchDoc('',"ANIMAL");
-    $s->addGeneralFilter('cheval'); 
-    $s->setPertinenceOrder(); // la pertinence est sur le mot cheval
-    $s->search();
+    $searchDoc=new SearchDoc('',"ANIMAL");
+    $searchDoc->addGeneralFilter('cheval'); 
+    $searchDoc->setPertinenceOrder(); // la pertinence est sur le mot cheval
+    $searchDoc->search();
 
 Dans ce cas, la pertinence est calculé sur les occurences du mot _cheval_.
 
 ### Plusieurs mots  {#core-ref:c1365011-1766-4459-80c0-f93edc0c0ce7}
 
     [php]
-    $s=new SearchDoc('',"ANIMAL");
-    $s->addGeneralFilter('cheval OR poulain OR jument'); 
-    $s->setPertinenceOrder('cheval noir'); // la pertinence est sur le mot cheval et noir
-    $s->search();
+    $searchDoc=new SearchDoc('',"ANIMAL");
+    $searchDoc->addGeneralFilter('cheval OR poulain OR jument'); 
+    $searchDoc->setPertinenceOrder('cheval noir'); // la pertinence est sur le mot cheval et noir
+    $searchDoc->search();
 
 Dans ce cas, la pertinence est d'autant plus élevé qu'il y les mots "cheval et
 noir" qui sont proches.

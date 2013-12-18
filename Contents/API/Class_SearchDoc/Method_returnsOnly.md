@@ -75,6 +75,7 @@ Résultat :
     Requête : Array
     (
         [count] => 3
+<!--beware there is no tab here for sql syntax-->
 
     [sql]
         [query] => select doc1053.id, owner, title, revision, version, initid, fromid, 
@@ -90,7 +91,7 @@ Résultat :
                 where   (doc1053.archiveid is null) and (doc1053.doctype != 'T') and (doc1053.locked != -1) 
                         and (views && '{2,0,11}') 
                 ORDER BY initid LIMIT ALL OFFSET 0;
-
+    
         [error] => 
         [delay] => 0.017s
     )
@@ -136,6 +137,7 @@ Résultat :
     Requête : Array
     (
         [count] => 3
+<!--beware there is no tab here for sql syntax-->
 
     [sql]
         [query] => select doc1053.id, title, fromid, doctype  
@@ -196,7 +198,7 @@ Résultat :
 
     Requête : Array
     (
-        [count] => 3
+<!--beware there is no tab here for sql syntax-->
 
     [sql]
         [query] => select doc1053.id, title, fromid, doctype, locked, an_classe, an_espece  
@@ -208,7 +210,7 @@ Résultat :
         [error] => 
         [delay] => 0.003s
     )
-
+    
     1419) Rotor      : [lock uid : 0]  1291/1295
     1420) Théodor    : [lock uid : 11] 1291/1295
     1421) Éléonore   : [lock uid : 0]  1291/1295
@@ -239,6 +241,9 @@ Avec un retour "normal" : **&gt; 6 min**
     Requête : Array
     (
         [count] => 55084
+<!--beware there is no tab here for sql syntax-->
+
+    [sql]
         [query] => select docread.id, owner, title, revision, version, initid, fromid, 
                         doctype, locked, allocated, archiveid, icon, lmodify, profid, usefor, cdate, 
                         adate, revdate, comment, classname, state, wid, postitid, domainid, lockdomainid, 
@@ -247,6 +252,7 @@ Avec un retour "normal" : **&gt; 6 min**
                    where   (docread.archiveid is null) and (docread.doctype != 'Z') and 
                         (docread.doctype != 'T') and (docread.locked != -1) 
                     ORDER BY initid LIMIT ALL OFFSET 0;
+
         [error] => 
         [delay] => 367.984s
     )
@@ -257,11 +263,15 @@ Avec un retour "minimaliste" : **&lt; 200ms**
     Requête : Array
     (
         [count] => 55084
+<!--beware there is no tab here for sql syntax-->
+
+    [sql]
         [query] => select docread.id, title, fromid, doctype  
                 from  docread  
                 where   (docread.archiveid is null) and (docread.doctype != 'Z') and 
                     (docread.doctype != 'T') and (docread.locked != -1) 
                 ORDER BY initid LIMIT ALL OFFSET 0;
+
         [error] => 
         [delay] => 0.192s
     )

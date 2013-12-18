@@ -60,10 +60,14 @@ Résultat :
     Array
     (
         [count] => 5
+<!--beware there is no tab here for sql syntax-->
+
+    [sql]
         [query] => select doc2.id, owner, title, ..., ba_title, ba_desc, ... 
             from doc2  
             where (doc2.archiveid is null) and (doc2.doctype != 'T') and (doc2.locked != -1) 
             ORDER BY initid LIMIT 5 OFFSET 0;
+
         [error] => 
         [delay] => 0.340s
     )

@@ -15,7 +15,7 @@ Cette méthode permet de définir que les documents avant le `$start` sont
 ignorés du résultat de la recherche.
 
 Par exemple en admettant que l'on ait 11 documents et que l'on recherche tous
-les documents en mettant le `$start` à 10 alors on trouve 1 document
+les documents en mettant le `$start` à 10 alors on trouve 1 document.
 
 ### Avertissements {#core-ref:9e08e2a3-2399-420d-83d9-61d4e682a7ca}
 

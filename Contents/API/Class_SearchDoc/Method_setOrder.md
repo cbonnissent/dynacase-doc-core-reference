@@ -15,7 +15,8 @@ triés les résultats.
 
 ### Avertissements {#core-ref:f596b417-1d51-4b8a-9308-2aec7152c27c}
 
-Cette fonction ne produit pas de message d'erreurs si les attributs passés 
+Cette fonction ne produit pas de message d'erreurs si les attributs passés ne 
+sont pas valides.
 
 ## Liste des paramètres {#core-ref:d6cc0c54-2a69-4dce-b1a3-3879ff139e17}
 
@@ -55,31 +56,31 @@ Aucun.
 ### Exemple de tri en fonction d'un attribut entier : {#core-ref:5db9097b-2e41-442d-86f8-a3ffaee5becd}
 
     [php]
-    $s=new searchDoc($dbaccess, $famId);
-    $s->setOrder("a_integer desc");
-    $s->search();
+    $searchDoc=new searchDoc($dbaccess, $famId);
+    $searchDoc->setOrder("a_integer desc");
+    $searchDoc->search();
     
 
 ### Exemple de tri en fonction de deux attributs : {#core-ref:24dd06af-a25c-4620-8273-2f114843c33c}
 
     [php]
-    $s=new searchDoc($dbaccess, $famId);
-    $s->setOrder("a_integer desc, b_date asc");
-    $s->search();
+    $searchDoc=new searchDoc($dbaccess, $famId);
+    $searchDoc->setOrder("a_integer desc, b_date asc");
+    $searchDoc->search();
 
 ### Exemple de tri en fonction de la valeur d'un énuméré : {#core-ref:41e39a64-7d6a-4dd3-a548-4b63d92cedc2}
 
     [php]
-    $s=new searchDoc($dbaccess, $famId);
-    $s->setOrder("a_enum asc");
-    $s->search();
+    $searchDoc=new searchDoc($dbaccess, $famId);
+    $searchDoc->setOrder("a_enum asc");
+    $searchDoc->search();
 
 ### Exemple de tri en fonction du label d'un énuméré : {#core-ref:d1884fcf-0bfb-4cfd-8777-dd080c8144cb}
 
     [php]
-    $s=new searchDoc($dbaccess, $famId);
-    $s->setOrder("a_enum asc", "a_enum");
-    $s->search();
+    $searchDoc=new searchDoc($dbaccess, $famId);
+    $searchDoc->setOrder("a_enum asc", "a_enum");
+    $searchDoc->search();
 
 Dans les exemples ci-dessus, si l'énuméré 'a_enum' est définit avec
 `1|Accepté,2|Traité,3|Rejeté,4|Clos`, alors les documents sont retournés dans

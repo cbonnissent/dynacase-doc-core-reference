@@ -67,6 +67,7 @@ Résultat :
     Array
     (
         [count] => 1631
+<!--beware there is no tab here for sql syntax-->
 
     [sql]
         [query] => select docread.id, owner, title, confidential, ...  from  docread  
@@ -93,10 +94,10 @@ Résultat :
     $searchDoc->excludeConfidential(false);
     $searchDoc->search();
     
-    $s=$searchDoc->getSearchInfo();
-    print_r($s);
-    $dl=searchDoc->getDocumentList();
-    foreach ($dl as $doc) {
+    $searchInfo=$searchDoc->getSearchInfo();
+    print_r($searchInfo);
+    $documentList=searchDoc->getDocumentList();
+    foreach ($documentList as $doc) {
           if ($doc->isConfidential()) {
             printf("Confidential : %d) %s\n", $doc->id, $doc->getTitle());
           }
@@ -107,6 +108,7 @@ Résultat :
     Array
     (
         [count] => 1634
+<!--beware there is no tab here for sql syntax-->
 
     [sql]
         [query] => select docread.id, owner, title, confidential, ...  from  docread  
@@ -135,14 +137,14 @@ Résultat :
     $searchDoc->addFilter("confidential > 0");
     $searchDoc->search();
     
-    $s=$searchDoc->getSearchInfo();
-    print_r($s);
+    print_r($searchDoc->getSearchInfo());
 
 Résultat :
 
     Array
     (
         [count] => 3
+<!--beware there is no tab here for sql syntax-->
 
     [sql]
         [query] => select docread.id, owner, title, confidential, ...  from  docread  

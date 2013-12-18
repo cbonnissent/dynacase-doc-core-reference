@@ -58,9 +58,9 @@ Aucun.
 Recherche de tous les dossiers que l'utilisateur courant peut voir.
 
     [php]
-    $s=new SearchDoc("","DIR");
-    $s->setObjectReturn(true);
-    $documentList=$s->search()->getDocumentList();
+    $searchDoc=new SearchDoc("","DIR");
+    $searchDoc->setObjectReturn(true);
+    $documentList=$searchDoc->search()->getDocumentList();
     foreach ($documentList as $docid=>$doc) {
       printf("%d) %s (%s)", 
            $docid,
@@ -74,14 +74,14 @@ Reprise de l'exemple précédent en ajoutant les tests d'erreurs.
 
     [php]
     try {
-        $s=new SearchDoc("","DIR");
-        $s->setObjectReturn(true);
-        $s->search();
+        $searchDoc=new SearchDoc("","DIR");
+        $searchDoc->setObjectReturn(true);
+        $searchDoc->search();
         
-        if ($err=$s->searchError()) {
+        if ($err=$searchDoc->searchError()) {
           throw new \Dcp\SearchDoc\Exception($err);
         }
-        $documentList=$s->getDocumentList();
+        $documentList=$searchDoc->getDocumentList();
         
         foreach ($documentList as $docid=>$doc) {
           printf("%d) %s (%s)\n", 
