@@ -36,7 +36,7 @@ Aucune.
 
 Aucun.
 
-## Exemples  {#core-ref:59ad28b2-3de0-4d5e-b429-0e898e6807cc}
+## Exemple  {#core-ref:59ad28b2-3de0-4d5e-b429-0e898e6807cc}
 
 Cet exemple, interdit la suppression si l'attribut `sp_protectionlevel` vaut
 "top secret".
@@ -64,7 +64,7 @@ cette méthode.
 ## Voir aussi  {#core-ref:b023c517-fa58-4f19-ac4e-7c0df4af3e49}
 
 *   [`Doc::postDelete()`][docpostDelete].
-*   [`Doc::Delete()`][Delete].
+*   [`Doc::undelete()`][undelete].
 
 <!-- links -->
 [docstore]:         #core-ref:b8540d13-ece6-4e9e-9b72-6a56bca9da12
@@ -78,5 +78,5 @@ cette méthode.
 [docpostimport]:    #core-ref:9de7e922-150a-416b-b846-b6e195bf0921 "Hameçon Doc::postImport()"
 [docpostDelete]:   #core-ref:8db8e5e0-b15e-4cfe-a891-66850df15b1e "Hameçon Doc::postDelete()"
 [docpreDelete]:    #core-ref:dca7b2bd-fc69-4f6f-ab12-fb0de91dce8c "Hameçon Doc::preDelete()"
-[Delete]:         #core-ref:e48b02c7-c684-4f71-a731-ac92064d13ae
+[undelete]:         #core-ref:e48b02c7-c684-4f71-a731-ac92064d13ae
 [hook]:             http://fr.wikipedia.org/wiki/Hook_(informatique) "Définition de Hook sur wikipedia"

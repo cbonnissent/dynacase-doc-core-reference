@@ -39,8 +39,7 @@ Aucune.
 
 Anciennement `Doc::postCopy()`.
 
-
-## Exemples {#core-ref:d0516a42-e87f-4e00-adf8-581ad9e7b661}
+## Exemple {#core-ref:d0516a42-e87f-4e00-adf8-581ad9e7b661}
 
 Cet exemple, mémorise l'auteur de la duplication et ajoute une entrée dans
 l'historique du document originel.
@@ -67,9 +66,8 @@ Aucune.
 
 ## Voir aussi {#core-ref:baac7c2a-0b7a-47bf-aa04-47f05423ce7f}
 
-
-*   [`Doc::preDuplicate()][precopy].
-*   [`Doc::duplicate()][doccopy].
+*   [`Doc::preDuplicate()`][precopy],
+*   [`Doc::duplicate()`][doccopy].
 
 <!-- links -->
 [doccopy]:      #core-ref:f7d4f454-0e45-40bd-9f4c-b149ab620295

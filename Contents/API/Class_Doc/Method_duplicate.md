@@ -51,7 +51,7 @@ Aucun.
 
 ## Valeur de retour {#core-ref:50fcf35d-5731-4ce2-b617-f4f8b0313f36}
 
-En case d'erreur : Message d'erreur. Si la chaîne retournée est non nulle, le
+En cas d'erreur : Message d'erreur. Si la chaîne retournée est non nulle, le
 message indique l'erreur qui a interdit la suppression.
 
 En cas de succès : retourne l'objet `Doc` dupliqué.
@@ -60,8 +60,8 @@ En cas de succès : retourne l'objet `Doc` dupliqué.
 
 Retourne un message d'erreur dans les cas suivants :
 
-*   pas de droit de créer un document de la même famille
-*   retour du [`preDuplicate()`][precopy] non vide
+*   pas de droit de créer un document de la même famille,
+*   retour du [`preDuplicate()`][precopy] non vide,
 *   des attributs sont en [visibilité][attrvis] `I`.
 
 ## Historique {#core-ref:814cfd8e-3541-4062-af7d-56f8add3411d}
@@ -98,7 +98,7 @@ dossier primaire (propriété `prelid`) que l'origine.
 
 ## Voir aussi {#core-ref:7231f782-18b8-405e-8758-755c2d8c2a17}
 
-Les hameçons :
+Les hameçons (hooks) :
 
 *   [`preDuplicate()`][precopy]
 *   [`postDuplicate()`][postcopy]

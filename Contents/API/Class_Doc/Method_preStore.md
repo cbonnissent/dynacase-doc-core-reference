@@ -93,13 +93,13 @@ révision.
 
 ## Voir aussi {#core-ref:4d2d6173-d571-4f45-89e5-aa2f9dea64d9}
 
-*   [Doc::store][docstore]
-*   [Doc::preCreated][docprecreated]
-*   [Doc::postCreated][docpostcreated]
-*   [Doc::preCreated][docprecreated]
-*   [Doc::preStore][docprestore]
+*   [`Doc::store()`][docstore],
+*   [`Doc::preCreated()`][docprecreated],
+*   [`Doc::postCreated()`][docpostcreated],
+*   [`Doc::preStore()`][docprestore].
 
 <!-- links -->
+
 [docstore]:         #core-ref:b8540d13-ece6-4e9e-9b72-6a56bca9da12
 [docpostcreated]:   #core-ref:b8f80e6b-a374-4bf4-bc76-47290cd69c45 "Hameçon Doc::postCreated()"
 [docpoststore]:     #core-ref:99520a31-0aef-4bc6-b20a-114737059d17 "Hameçon Doc::postStore()"

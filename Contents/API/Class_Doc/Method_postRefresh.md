@@ -85,8 +85,8 @@ disposer des mêmes fonctionnalités.
 
 ## Voir aussi {#core-ref:01409847-c705-426c-92f2-e68726f948ba}
 
-*   [Doc::refresh][docrefresh]
-*   [Doc::preRefresh][docprerefresh]
+*   [`Doc::refresh()`][docrefresh],
+*   [`Doc::preRefresh()`][docprerefresh].
 
 <!-- links -->
 [docprerefresh]:    #core-ref:580d6be1-6b6a-439b-abd7-34b26cfaf2e5 "Hameçon Doc::preRefresh()"

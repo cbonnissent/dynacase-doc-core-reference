@@ -136,12 +136,12 @@ Aucunes
 
 ## Voir aussi {#core-ref:7393c922-cf73-43ae-98b6-4f9148b7161f}
 
-*   [Doc::store()][docstore]
-*   [Doc::getOldValue()][docgetoldvalue]
-*   [Doc::setAttributeValue()][docsetattrvalue]
-*   [Doc::addArrayRow()][docaddarrayrow]
-*   [Doc::clearValue()][docclearValue]
-*   [Doc::postStore()][docpoststore]
+*   [`Doc::store()`][docstore],
+*   [`Doc::getOldValue()`][docgetoldvalue],
+*   [`Doc::setAttributeValue()`][docsetattrvalue],
+*   [`Doc::addArrayRow()`][docaddarrayrow],
+*   [`Doc::clearValue()`][docclearValue],
+*   [`Doc::postStore()`][docpoststore].
 
 <!-- links -->
 [docstore]:         #core-ref:b8540d13-ece6-4e9e-9b72-6a56bca9da12

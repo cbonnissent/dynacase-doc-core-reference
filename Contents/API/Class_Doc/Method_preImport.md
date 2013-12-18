@@ -20,7 +20,7 @@ Cette méthode permet d'ajouter une condition spécifique d'importation ou de
 réaliser un pré-traitement avant [l'enregistrement][importhooks].
 
 Au moment de l'appel, le document contient les nouvelles valeurs indiquées dans
-le fichiers d'importation mais elle ne sont pas encore enregistrées en base de
+le fichiers d'importation mais elles ne sont pas encore enregistrées en base de
 données.
 
 
@@ -29,7 +29,7 @@ données.
 Cette méthode est appelée qu'il s'agisse d'une création ou d'une mise à jour.
 Dans le cas d'une création, le document n'a pas encore d'identificateur. 
 
-La méthode [`Doc::store()`][docstore] ne doit pas être appelée depuis cette
+La méthode [`Doc::store()`][docstore] **ne doit pas** être appelée depuis cette
 méthode de manière explicite pour enregistrer les éventuelles modifications.
 Dans le cas d'une création, cela provoquerait une création prématurée en base de
 données.
@@ -104,13 +104,11 @@ Dans le cas d'une modification de document, la méthode
 [`Doc::getOldRawValue()`][oldvalue] peut être utilisée pour avoir la valeur
 originelle d'un attribut.
 
-
-
 ## Voir aussi {#core-ref:e94e29f5-a6a9-4ca2-9b8c-f46f10aa2801}
 
-*   [Doc::store][docstore]
-*   [Doc::preCreated][docprecreated]
-*   [Doc::postImport][docpostimport]
+*   [`Doc::store()`][docstore],
+*   [`Doc::preCreated()`][docprecreated],
+*   [`Doc::postImport()`][docpostimport].
 
 <!-- links -->
 [docstore]:         #core-ref:b8540d13-ece6-4e9e-9b72-6a56bca9da12

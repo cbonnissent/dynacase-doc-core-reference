@@ -55,8 +55,8 @@ Soit la ligne d'importation suivante :
 | ----- | ----------- | ---------- | ----------- | ------------ | ------------ | ------------- |
 | DOC   | ZOO_SPECIES | MY_MAMMUTH | -           | Mammuthus    | disappeared  | protected     |
 
-Dans cette exemple, le document *Mammuthus* de la famille *ZOO_SPECIES* aura
-comme paramètre passé à `postImport`   : 
+Dans cette exemple, le document *Mammuthus* de la famille *ZOO_SPECIES* a
+comme paramètre passé à `postImport` : 
 
     [php]
     array(
@@ -90,9 +90,9 @@ partager des informations entre [`preImport()`][docpreimport] et `postImport()`.
 
 ## Voir aussi {#core-ref:22f46d21-3e04-428a-81af-16149aff60c0}
 
-*   [Doc::store][docstore]
-*   [Doc::preImport][docpreimport]
-*   [Doc::postCreated][docpostcreated]
+*   [`Doc::store()`][docstore],
+*   [`Doc::preImport()`][docpreimport],
+*   [`Doc::postCreated()`][docpostcreated].
 
 <!-- links -->
 [docstore]:         #core-ref:b8540d13-ece6-4e9e-9b72-6a56bca9da12

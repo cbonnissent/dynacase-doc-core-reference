@@ -178,11 +178,11 @@ Dans le cas des attribut multi-valués, il est possible d'utiliser la méthode
 
 ## Voir aussi {#core-ref:cda310f2-33e5-4dea-b2f6-628605685e71}
 
-*   [Doc::store][docstore]
-*   [Doc::preCreated][docprecreated]
-*   [Doc::preStore][docprestore]
-*   [Doc::postCreated][docpostcreated]
-*   [Doc::getOldRawValues][docgetOldValues]
+*   [`Doc::store()`][docstore],
+*   [`Doc::preCreated()`][docprecreated],
+*   [`Doc::preStore()`][docprestore],
+*   [`Doc::postCreated()`][docpostcreated],
+*   [`Doc::getOldRawValues()`][docgetOldValues].
 
 <!-- links -->
 [docstore]:         #core-ref:b8540d13-ece6-4e9e-9b72-6a56bca9da12

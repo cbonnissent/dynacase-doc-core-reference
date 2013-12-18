@@ -42,10 +42,10 @@ abandonnée (la raison est donnée par le message d'erreur).
 
 Les causes d'erreur sont :
 
-*   Document figé.
-*   Problème de droits : la révision nécessite le droit `edit` sur le document
-    et le droit `create` sur la famille du document.
-*   Retour d'erreur de l'hameçon [preRevise()][docprerevise].
+*   document figé,
+*   problème de droits : la révision nécessite le droit `edit` sur le document
+    et le droit `create` sur la famille du document,
+*   retour d'erreur de l'hameçon [preRevise()][docprerevise].
 
 ## Historique {#core-ref:b80227eb-4f01-430a-9882-87b53f2413dc}
 
@@ -95,8 +95,8 @@ d'erreur. Ce message est enregistré dans l'historique du document.
 
 ## Voir aussi {#core-ref:68f970b7-6995-47c4-8d24-bf142e2ace1f}
 
-*   [Doc::store][docstore]
-*   [Doc::addHistoryEntry][docaddhisto]
+*   [`Doc::store()`][docstore],
+*   [`Doc::addHistoryEntry()`][docaddhisto].
 
 <!-- links -->
 [docstore]:         #core-ref:b8540d13-ece6-4e9e-9b72-6a56bca9da12

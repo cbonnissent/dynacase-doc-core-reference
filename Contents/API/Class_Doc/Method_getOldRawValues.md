@@ -118,11 +118,11 @@ Aucunes.
 ## Voir aussi {#core-ref:3cc4e325-c9e0-446c-9daa-919ae542f4c0}
 
 
-*   [Doc::getOldRawValue][docgetOldValue]
-*   [Doc::store][docstore]
-*   [Doc::preCreated][docprecreated]
-*   [Doc::preStore][docprestore]
-*   [Doc::postCreated][docpostcreated]
+*   [`Doc::getOldRawValue()`][docgetOldValue],
+*   [`Doc::store()`][docstore],
+*   [`Doc::preCreated()`][docprecreated],
+*   [`Doc::preStore()`][docprestore],
+*   [`Doc::postCreated()`][docpostcreated].
 
 <!-- links -->
 [docstore]:         #core-ref:b8540d13-ece6-4e9e-9b72-6a56bca9da12

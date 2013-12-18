@@ -159,8 +159,8 @@ Aucunes.
 
 ## Voir aussi {#core-ref:ea3b6c2b-df66-4a38-9dfa-4176f05c8c66}
 
-*   [Doc::setAttributeValue()][docsetattrvalue]
-*   [Doc::getRawValue()][docgetrawvalue]
+*   [`Doc::setAttributeValue()`][docsetattrvalue],
+*   [`Doc::getRawValue()`][docgetrawvalue].
 
 <!-- links -->
 [docgetattrvalue]:  #core-ref:e4a8d6ff-7229-4105-81c4-94773ac24dfd

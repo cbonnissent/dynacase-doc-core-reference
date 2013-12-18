@@ -11,7 +11,7 @@ Méthode utilisée pour supprimer un document.
                     bool $control = true, 
                     bool $nopost  = false )
 
-Cette méthode mets le statut du document à "supprimé". La propriété `doctype`
+Cette méthode met le statut du document à "supprimé". La propriété `doctype`
 est affectée à `Z` (Zombie) et `locked` est affectée à `-1` dans le cas d'une
 suppression logique.
 
@@ -25,19 +25,20 @@ Aucun.
 (bool) `really`
 :   Si `really` est `true`, le document ainsi que toutes ses révisions sont 
     supprimées de la base de données. Cette opération n'est pas annulable.  
-    Si `really` est `false`, le document est supprimé de manière logique.
-
+    Si `really` est `false`, le document est supprimé de manière logique. il
+    est donc toujours présent en base de données mais juste noté comme étant
+    supprimé.
 
 (bool) `control`
 :   Si `control` est `true`, le droit `delete` est vérifié pour l'utilisateur
     courant. Si l'utilisateur n'a pas ce privilège la suppression est abandonnée.  
-    Si `control` est `true`, la vérification des droits n'est pas effectuée.
+    Si `control` est `false`, la vérification des droits n'est pas effectuée.
 
 
 (bool) `nopost`
 :   Si `nopost` est `true`, alors les hameçons [`Doc::preDelete()`][docpreDelete]
     et [`Doc::postDelete()`][docpostDelete] ne sont pas exécutés.  
-    Si `nopost` est `false`, ces deux hamçons sont exécutés.
+    Si `nopost` est `false`, ces deux hameçons (hooks) sont exécutés.
 
 ## Valeur de retour {#core-ref:ceab5069-5cf5-40da-a1a8-978959d45b8b}
 
@@ -48,10 +49,10 @@ l'erreur qui a interdit la suppression.
 
 Une erreur est retournée si :
 
-*   Le document n'existe pas ou plus 
-*   Le document est déjà supprimé
-*   L'utilisateur n'a pas le droit `delete` sur le document
-*   L'hameçon [`preDelete()`][docpredelete] retourne une erreur.
+*   le document n'existe pas ou plus,
+*   le document est déjà supprimé,
+*   l'utilisateur n'a pas le droit `delete` sur le document,
+*   l'hameçon [`preDelete()`][docpredelete] retourne une erreur.
 
 ## Historique {#core-ref:8f52ffbd-5957-4cf9-8354-5145ec21e8d8}
 
@@ -66,7 +67,7 @@ Suppression du document référencé par l'identificateur `$documentId`.
     $doc=new_doc('', $documentId);
     if ($doc->isAlive()) {
         $err=$doc->delete();
-        // maintenant le document est supprimé
+        // maintenant le document est supprime
         if ($err == "") {
             printf("Suppression %s [%d]", $doc->getTitle(), $doc->id);
         }
@@ -76,7 +77,7 @@ Suppression du document référencé par l'identificateur `$documentId`.
 
 Une entrée dans l'historique est enregistrée à chaque suppression.
 
-Les documents supprimées logiquement sont toujours accessibles avec leur
+Les documents supprimés logiquement sont toujours accessibles avec leur
 identifiant. Ils ne peuvent par contre plus être modifiés par l'interface web.
 
 La classe [`SearchDoc`][searchdoc] permet de rechercher les documents supprimés
@@ -84,9 +85,9 @@ en utilisant l'attribut `trash`.
 
 ## Voir aussi {#core-ref:219225dc-7c14-44ed-95fa-3c94b14dd49f}
 
-*   [`Doc::preDelete()`][docpreDelete]
-*   [`Doc::postDelete()`][docpostDelete]
-*   [`Doc::undelete()`][undelete]
+*   [`Doc::preDelete()`][docpreDelete],
+*   [`Doc::postDelete()`][docpostDelete],
+*   [`Doc::undelete()`][undelete].
 
 <!-- links -->
 [docstore]:         #core-ref:b8540d13-ece6-4e9e-9b72-6a56bca9da12

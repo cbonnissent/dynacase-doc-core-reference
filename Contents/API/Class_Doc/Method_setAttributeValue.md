@@ -263,9 +263,9 @@ valeurs sont autorisés.
 
 ## Voir aussi {#core-ref:42b9caf9-a56b-4880-8def-2c3ebd0e20c4}
 
-*   [Doc::setValue()][docsetvalue]
-*   [Doc::getAttributeValue()][docgetattrvalue]
-*   [Doc::postStore()][docpoststore]
+*   [`Doc::setValue()`][docsetvalue],
+*   [`Doc::getAttributeValue()`][docgetattrvalue],
+*   [`Doc::postStore()`][docpoststore].
 
 <!-- links -->
 [docstore]:         #core-ref:b8540d13-ece6-4e9e-9b72-6a56bca9da12
