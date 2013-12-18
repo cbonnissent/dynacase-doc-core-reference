@@ -507,22 +507,10 @@ book:
         new: "new"
     - level:   4
       element: "chapter"
-      content:  "API/Class_Doc/Method__array2val.md"
-      flags:
-        wip: "work in progress"
-        wip_sub: ""
-    - level:   4
-      element: "chapter"
-      content:  "API/Class_Doc/Method__val2array.md"
-      flags:
-        wip: "work in progress"
-        wip_sub: ""
-    - level:   4
-      element: "chapter"
       content:  "API/Class_Doc/Method_addArrayRow.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        new : "new"
+        draft : "draft"
     - level:   4
       element: "chapter"
       content:  "API/Class_Doc/Method_addHistoryEntry.md"
@@ -532,6 +520,12 @@ book:
       flags:
         wip: "work in progress"
         wip_sub: ""
+    - level:   4
+      element: "chapter"
+      content:  "API/Class_Doc/Method_arrayToRawValue.md"
+      flags:
+        new : "new"
+        draft : "draft"
     - level:   4
       element: "chapter"
       content:  "API/Class_Doc/Method_control.md"
@@ -546,10 +540,10 @@ book:
         draft : "draft"
     - level:   4
       element: "chapter"
-      content:  "API/Class_Doc/Method_deleteArray.md"
+      content:  "API/Class_Doc/Method_clearArrayValues.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        new : "new"
+        draft : "draft"
     - level:   4
       element: "chapter"
       content:  "API/Class_Doc/Method_disableEditControl.md"
@@ -669,10 +663,16 @@ book:
         wip_sub: ""
     - level:   4
       element: "chapter"
+      content:  "API/Class_Doc/Method_rawValueToArray.md"
+      flags:
+        new : "new"
+        draft : "draft"
+    - level:   4
+      element: "chapter"
       content:  "API/Class_Doc/Method_removeArrayRow.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        new : "new"
+        draft : "draft"
     - level:   4
       element: "chapter"
       content:  "API/Class_Doc/Method_Refresh.md"
