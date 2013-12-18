@@ -142,9 +142,9 @@ indique la structure à 2 niveaux suivante :
 
 ## Voir aussi {#core-ref:78ce65c8-e7f6-4578-8b6a-3f825db4adbe}
 
-*   [Doc::setValue()][docsetvalue]
-*   [Doc::getAttributeValue()][docgetattrvalue]
-*   [Doc::getOldValue()][docgetoldvalue]
+*   [`Doc::setValue()`][docsetvalue],
+*   [`Doc::getAttributeValue()`][docgetattrvalue],
+*   [`Doc::getOldValue()`][docgetoldvalue].
 
 <!-- links -->
 [docgetattrvalue]:  #core-ref:e4a8d6ff-7229-4105-81c4-94773ac24dfd

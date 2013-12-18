@@ -59,8 +59,8 @@ Une entrée dans l'historique est enregistrée à chaque restauration.
 ## Voir aussi {#core-ref:2a3597d1-75fc-48a8-8a30-ff351bdee10f}
 
 
-*   [`Doc::postUndelete()][docpostundelete].
-*   [`Doc::preUndelete()][docpreundelete].
+*   [`Doc::postUndelete()`][docpostundelete],
+*   [`Doc::preUndelete()`][docpreundelete],
 *   [`Doc::delete()`][delete].
 
 <!-- links -->

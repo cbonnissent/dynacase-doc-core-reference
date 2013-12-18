@@ -71,8 +71,8 @@ message d'erreur.
 
 ## Voir aussi {#core-ref:9eba98be-3c0b-41c8-bdcb-6f22707c190b}
 
-*   [`Doc::postUndelete()][docpostundelete].
-*   [`Doc::undelete()][undelete].
+*   [`Doc::postUndelete()`][docpostundelete].
+*   [`Doc::undelete()`][undelete].
 
 <!-- links -->
 [docstore]:         #core-ref:b8540d13-ece6-4e9e-9b72-6a56bca9da12

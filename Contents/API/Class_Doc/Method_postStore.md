@@ -93,10 +93,10 @@ révision.
 
 ## Voir aussi {#core-ref:ade45758-e063-4c80-8694-6a49f0845270}
 
-*   [Doc::store][docstore]
-*   [Doc::preCreated][docprecreated]
-*   [Doc::preStore][docprestore]
-*   [Doc::postCreated][docpostcreated]
+*   [`Doc::store()`][docstore],
+*   [`Doc::preCreated()`][docprecreated],
+*   [`Doc::preStore()`][docprestore],
+*   [`Doc::postCreated()`][docpostcreated].
 
 <!-- links -->
 [docstore]:         #core-ref:b8540d13-ece6-4e9e-9b72-6a56bca9da12

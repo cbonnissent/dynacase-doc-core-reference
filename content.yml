@@ -418,7 +418,6 @@ book:
       content:  "API/Class_Doc/dochooks.md"
       subtoc:   1
       flags:
-        draft: "draft"
         new: "new"
     - level:   4
       element: "chapter"
@@ -431,25 +430,21 @@ book:
       content:  "API/Class_Doc/Method_preDelete.md"
       flags:
         new : "new"
-        draft : "draft"
     - level:   4
       element: "chapter"
       content:  "API/Class_Doc/Method_postDelete.md"
       flags:
         new : "new"
-        draft : "draft"
     - level:   4
       element: "chapter"
       content:  "API/Class_Doc/Method_preDuplicate.md"
       flags:
         new :  "new"
-        draft: "draft"
     - level:   4
       element: "chapter"
       content:  "API/Class_Doc/Method_postDuplicate.md"
       flags:
         new :  "new"
-        draft: "draft"
     - level:   4
       element: "chapter"
       content:  "API/Class_Doc/Method_preStore.md"
@@ -467,25 +462,21 @@ book:
       content:  "API/Class_Doc/Method_preImport.md"
       flags:
         new : "new"
-        draft: "draft"
     - level:   4
       element: "chapter"
       content:  "API/Class_Doc/Method_postImport.md"
       flags:
         new : "new"
-        draft : "draft"
     - level:   4
       element: "chapter"
       content:  "API/Class_Doc/Method_preUndelete.md"
       flags:
         new : "new"
-        draft : "draft"
     - level:   4
       element: "chapter"
       content:  "API/Class_Doc/Method_postUndelete.md"
       flags:
         new : "new"
-        draft : "draft"
     - level:   4
       element: "chapter"
       content:  "API/Class_Doc/Method_preConsultation.md"
@@ -537,7 +528,6 @@ book:
       content:  "API/Class_Doc/Method_delete.md"
       flags:
         new : "new"
-        draft : "draft"
     - level:   4
       element: "chapter"
       content:  "API/Class_Doc/Method_clearArrayValues.md"
@@ -555,7 +545,6 @@ book:
       content:  "API/Class_Doc/Method_duplicate.md"
       flags:
         new :  "new"
-        draft: "draft"
     - level:   4
       element: "chapter"
       content:  "API/Class_Doc/Method_editattr.md"
@@ -699,7 +688,6 @@ book:
       content:  "API/Class_Doc/Method_undelete.md"
       flags:
         new : "new"
-        draft : "draft"
     - level:   4
       element: "chapter"
       content:  "API/Class_Doc/Method_viewattr.md"

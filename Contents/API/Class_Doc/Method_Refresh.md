@@ -68,8 +68,8 @@ Cette méthode est appelée entre les hameçons
 
 ## Voir aussi {#core-ref:73156d50-77d9-4c1a-a5fc-ba9defb9ad5c}
 
-*   [Doc::preRefresh][docprerefresh]
-*   [Doc::postRefresh][docpostrefresh]
+*   [`Doc::preRefresh()`][docprerefresh],
+*   [`Doc::postRefresh()`][docpostrefresh].
 
 <!-- links -->
 [docprerefresh]:    #core-ref:580d6be1-6b6a-439b-abd7-34b26cfaf2e5 "Hameçon Doc::preRefresh()"

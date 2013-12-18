@@ -72,9 +72,8 @@ message d'erreur.
 
 ## Voir aussi {#core-ref:9ae38ca1-f11f-4696-9935-0174d4ecb39b}
 
-
-*   [`Doc::postDuplicate()][postcopy].
-*   [`Doc::duplicate()][doccopy].
+*   [`Doc::postDuplicate()`][postcopy],
+*   [`Doc::duplicate()`][doccopy].
 
 <!-- links -->
 [doccopy]:      #core-ref:f7d4f454-0e45-40bd-9f4c-b149ab620295

@@ -172,8 +172,8 @@ Lors d'une mise à jour de documents les hameçons suivants sont lancés :
 
 ## Voir aussi {#core-ref:9e1551ac-c4d3-41ab-bc19-4bb641db900f}
 
-*   [Doc::setAttributeValue][docsetattrvalue]
-*   [Doc::setValue][docsetvalue]
+*   [`Doc::setAttributeValue()`][docsetattrvalue],
+*   [`Doc::setValue()`][docsetvalue].
 
 <!-- links -->
 [docstore]:         #core-ref:b8540d13-ece6-4e9e-9b72-6a56bca9da12
