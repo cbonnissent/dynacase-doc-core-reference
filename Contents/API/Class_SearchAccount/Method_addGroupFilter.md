@@ -15,12 +15,12 @@ le login du groupe.
 **Note** : Il est possible de rechercher sur plusieurs groupes en utilisant
 plusieurs fois la méthode.
 
-**Note** : La recherche par groupe prend aussi compte des sous-groupes.
+**Note** : La recherche par groupe prend aussi en compte les sous-groupes du
+groupe  recherché.
 
-**Note** : Si cette méthode est combinée à la méthode 
-[`SearchAccount::addRoleFilter`][addRoleFilter] cela
-indique tous les comptes qui appartiennent à un des groupes cités ou à un des
-rôles cités.
+**Note** : Si cette méthode est combinée à la méthode
+[`SearchAccount::addRoleFilter`][addRoleFilter] cela filtre tous les comptes
+qui appartiennent à un des groupes cités ou à un des rôles cités.
 
 ### Avertissements {#core-ref:4037ce2b-cf74-4868-a619-49d056b91590}
 
@@ -34,7 +34,7 @@ de filtrer le type d'élément recherché à l'aide de
 ## Liste des paramètres {#core-ref:e092e81f-16b8-4224-a620-81e0b1078efa}
 
 (string) `groupName`
-:   Nom du login du groupe de référence.
+:   Nom de l'identifiant (colonne `login`) du groupe de référence.
 
 ## Valeur de retour {#core-ref:9c7e4502-8c41-4707-87a8-07ee8fc701ea}
 
@@ -49,25 +49,19 @@ Si jamais le login de groupe demandé n'existe pas alors une exception de type
 
 Aucun
 
-## Exemples {#core-ref:9d6d6a67-070d-479f-aa7f-dddf2f83c875}
+## Exemple {#core-ref:9d6d6a67-070d-479f-aa7f-dddf2f83c875}
 
 Avoir la liste des utilisateurs et des groupes contenus dans le groupe `all`:
 
     [php]
-    
-    function getAccountOfAllGroup(Action & $action)
-    {
-        header('Content-Type: text/plain');
-        
-        $searchAccount = new SearchAccount();
-        $searchAccount->addGroupFilter("all");
-        $accountList = $searchAccount->search();
-        foreach ($accountList as $account) {
-            printf("%s (type : %s)\n", $account->login, $account->accounttype);
-        }
+    $searchAccount = new SearchAccount();
+    $searchAccount->addGroupFilter("all");
+    $accountList = $searchAccount->search();
+    foreach ($accountList as $account) {
+        printf("%s (type : %s)\n", $account->login, $account->accounttype);
     }
 
-Ce qui donne :
+Résultat :
 
     admin (type : U)
     care (type : G)
@@ -83,12 +77,12 @@ Ce qui donne :
 
 ## Notes {#core-ref:988b99f7-b395-47d5-9cdd-52ea0dcd835e}
 
-Aucunes
+Un rôle ne peut pas être contenu dans un groupe d'utilisateur.
 
 ## Voir aussi {#core-ref:8d86532b-0eb5-4ddf-be87-d1685a196401}
 
-* [`addFilter`][addFilter],
-* [`addRoleFilter`][addRoleFilter],
+* [`SearchAccount::addFilter()`][addFilter],
+* [`SearchAccount::addRoleFilter()`][addRoleFilter],
 * [chapitre sur les groupes][group],
 * [chapitre avancé sur la recherche des utilisateurs][advancedSearch].
 

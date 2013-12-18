@@ -1,4 +1,4 @@
-# Comptes, utilisateurs, groupes et rôles {#core-ref:f6d55bb1-7254-480e-9bfa-61f5e532ccad}
+# Comptes : utilisateurs, groupes et rôles {#core-ref:f6d55bb1-7254-480e-9bfa-61f5e532ccad}
 
 ## Résumé {#core-ref:4073bb7b-254e-4461-9c75-ffcf93d1e798}
 

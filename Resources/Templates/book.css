@@ -240,6 +240,21 @@ a:hover code {
 .figure img {
     max-width: 100%;
 }
+/* add rules for border in consecutive code */
+div.code + div.code {
+    border-top-style :none;
+    border-bottom-style :none;
+}
+div.code + div.code.last-code {
+    border-bottom-style :solid;
+}
+div.code.first-code {
+    border-top-style :solid;
+    border-bottom-style: none;
+} 
+div.code.last-code {
+    border-bottom-style: solid;
+} 
 @media (max-width: 768px) {
     .copy {
         position: static;

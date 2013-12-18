@@ -4,11 +4,7 @@
 Cette méthode permet d'indiquer que les n premiers résultats ne sont pas 
 retournés.
 </div>
-<!--
-<div class="applicability">
-Obsolète depuis #.#.#
-</div>
--->
+
 
 ## Description {#core-ref:fd85c92f-73c4-4518-8dc1-150b6f3131e8}
 
@@ -40,35 +36,30 @@ Si le start n'est pas valide alors une exception `Dcp\Sacc\Exception` est levée
 
 Aucun
 
-## Exemples {#core-ref:75530da4-0e1e-4208-b119-133ccf852802}
+## Exemple {#core-ref:75530da4-0e1e-4208-b119-133ccf852802}
 
 
     [php]
-    function setStart(Action & $action)
-    {
-        header('Content-Type: text/plain');
-        
-        print "Without slice \n";
-        $searchAccount = new SearchAccount();
-        $accountList = $searchAccount->search();
-        $i = 0;
-        foreach ($accountList as $account) {
-            printf("Login : %s \n", $account->login);
-            $i++;
-            if ($i == 3) {
-                break;
-            }
-        }
-        print "\n";
-        print "\n";
-        print "With a start of 2 (get the third element)\n";
-        $searchAccount = new SearchAccount();
-        $searchAccount->setStart(2);
-        $accountList = $searchAccount->search();
-        foreach ($accountList as $account) {
-            printf("Login : %s", $account->login);
+    print "Without slice \n";
+    $searchAccount = new SearchAccount();
+    $accountList = $searchAccount->search();
+    $i = 0;
+    foreach ($accountList as $account) {
+        printf("Login : %s \n", $account->login);
+        $i++;
+        if ($i == 3) {
             break;
         }
+    }
+    print "\n";
+    print "\n";
+    print "With a start of 2 (get the third element)\n";
+    $searchAccount = new SearchAccount();
+    $searchAccount->setStart(2);
+    $accountList = $searchAccount->search();
+    foreach ($accountList as $account) {
+        printf("Login : %s", $account->login);
+        break;
     }
 
 Résultat :
@@ -83,14 +74,14 @@ Résultat :
 
 ## Notes {#core-ref:83aaab7a-54c0-4e1b-90ba-e05daa566d64}
 
-Cette fonction peut-être utilisée avec [setSlice][setSlice] pour faire un 
-tourne page.
+Cette fonction peut-être utilisée avec [`SearchAccount::setSlice()`][setSlice]
+pour faire un  tourne page.
 
 ## Voir aussi {#core-ref:a9e114ab-70c1-458f-ba8b-0dc83430b11a}
 
-* [addFilter][addFilter],
-* [setSlice][setSlice],
-* [setOrder][setOrder].
+* [SearchAccount::addFilter()][addFilter],
+* [SearchAccount::setSlice()][setSlice],
+* [SearchAccount::setOrder()][setOrder].
 
 <!-- links -->
 

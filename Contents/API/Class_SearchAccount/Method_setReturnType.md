@@ -4,11 +4,7 @@
 Permet de choisir le type de retour de l'objet searchAccount. Par défaut, le 
 retour est une [`AccountList`][accountList].
 </div>
-<!--
-<div class="applicability">
-Obsolète depuis #.#.#
-</div>
--->
+
 
 ## Description {#core-ref:4ba97c47-68de-45d2-862e-8738b01783a4}
 
@@ -41,39 +37,33 @@ Aucun
 
 ## Erreurs / Exceptions {#core-ref:b6926633-bedd-4958-bc13-c91e82162934}
 
-Si le type n'est pas une des deux constante de classe alors une exception de 
+Si le type n'est pas une des deux constantes de classe alors une exception de 
 type `Dcp\Sacc\Exception` est levée.
 
 ## Historique {#core-ref:070edaf1-d8f6-4a21-9b6f-8973d0054eda}
 
-Cette fonction remplace la fonction `setObjectReturn`.
+Cette méthode remplace la méthode `::setObjectReturn()`.
 
-## Exemples {#core-ref:87a04fdd-ccb3-41e7-86b6-f15dee351dcb}
+## Exemple {#core-ref:87a04fdd-ccb3-41e7-86b6-f15dee351dcb}
 
     [php]
-    
-    function setReturnType(Action & $action)
-    {
-        header('Content-Type: text/plain');
-        
-        print "Return account \n";
-        $searchAccount = new SearchAccount();
-        $searchAccount->setReturnType(SearchAccount::returnAccount);
-        $accountList = $searchAccount->search();
-        foreach ($accountList as $account) {
-            printf("%s \n", get_class($account));
-        }
-        print "\n";
-        print "Return document \n";
-        $searchAccount = new SearchAccount();
-        $searchAccount->setReturnType(SearchAccount::returnDocument);
-        $documentList = $searchAccount->search();
-        foreach ($documentList as $currentDocument) {
-            printf("%s \n", get_class($currentDocument));
-        }
+    print "Return account \n";
+    $searchAccount = new SearchAccount();
+    $searchAccount->setReturnType(SearchAccount::returnAccount);
+    $accountList = $searchAccount->search();
+    foreach ($accountList as $account) {
+        printf("%s \n", get_class($account));
+    }
+    print "\n";
+    print "Return document \n";
+    $searchAccount = new SearchAccount();
+    $searchAccount->setReturnType(SearchAccount::returnDocument);
+    $documentList = $searchAccount->search();
+    foreach ($documentList as $currentDocument) {
+        printf("%s \n", get_class($currentDocument));
     }
 
-Ce qui retourne :
+Résultat :
 
     Return account 
     Account 
@@ -90,6 +80,7 @@ Ce qui retourne :
     Account 
     Account 
     Account 
+
 
     Return document 
     Dcp\Family\Igroup 
@@ -114,10 +105,10 @@ Aucunes
 
 ## Voir aussi {#core-ref:22ff3ee6-9769-444d-9325-6140e9d2174b}
 
-* [addFilter][addFilter],
-* [setSlice][setSlice],
-* [setStart][setStart],
-* [setOrder][setOrder].
+* [SearchAccount::addFilter()][addFilter],
+* [SearchAccount::setSlice()][setSlice],
+* [SearchAccount::setStart()][setStart],
+* [SearchAccount::setOrder()][setOrder].
 
 <!-- links -->
 

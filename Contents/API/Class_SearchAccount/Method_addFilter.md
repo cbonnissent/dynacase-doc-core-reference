@@ -12,13 +12,15 @@ Cette méthode permet d'ajouter des filtres sur les caractéristiques des compte
                     [string|int|double $args…])
 
 La recherche effectuée avec la classe `SearchAccount` porte sur la 
-[base dbaccount][dataAccount]. Les filtres ajoutés doivent donc porter sur une
-ou plusieurs des colonnes de cette base, soit :
+[table `users`][dataAccount]. Les filtres ajoutés doivent donc porter sur une
+ou plusieurs des colonnes de cette table, soit :
 
 * login,
 * firstname,
 * lastname,
-* mail.
+* mail,
+* accounttype,
+* status.
 
 ### Avertissements {#core-ref:f8c779a3-3864-41d7-a6d1-65832c017401}
 
@@ -30,7 +32,7 @@ Aucun
 :   Partie filtre de la recherche, cette partie doit être soit une chaîne de 
     caractères contenant du SQL, soit une [chaîne formatée][phpSprintf] celle-ci
     est alors complétée avec les valeurs passées dans les arguments suivants.
-    **Attention** : Le points suivant est à prendre en compte :
+    **Attention** : Le point suivant est à prendre en compte :
     
     *   [injections SQL][wikipediaInjectionSQL] : le premier argument de la méthode
         addFilter est ajouté tel quel dans la requête SQL, il est donc possible qu'il 
@@ -38,11 +40,11 @@ Aucun
         échappées (par exemple à l'aide de [pg_escape_string][pgEscape]),
 
 (string|int|double) `value`
-:   Valeurs qui sont concaténées à la partie filter à l'aide la fonction 
+:   Valeurs qui sont insérées à la partie `filter` à l'aide de la fonction 
     [`sprintf`][phpSprintf].  
-    **Note** : Cet argument peut-être répété autant de fois
-    que souhaité.  
-    **Attention** : Les paramètres passés par value sont échappés à l'aide de la
+    **Note** : Cet argument doit être répété autant de fois
+    que nécessaire en fonction du format du filtre.  
+    **Attention** : Les valeurs des paramètres sont échappés à l'aide de la
     fonction [pg_escape_string][pgEscape].  
     **Attention** : Dans le cas de l'utilisation d'un opérateur à base d'expression
     régulière, il faut utiliser la fonction [preg_quote][preg_quote] sans quoi 
@@ -55,36 +57,30 @@ void
 
 ## Erreurs / Exceptions {#core-ref:9947372c-d769-43cb-a5e4-bc8aea0c55d5}
 
-Aucunes
+Aucune
 
 ## Historique {#core-ref:0d74a089-3859-4001-9bcf-3f229639b557}
 
 Aucun
 
-## Exemples {#core-ref:1a31a904-7d91-4f0d-a406-2b3f55bc3f5e}
+## Exemple {#core-ref:1a31a904-7d91-4f0d-a406-2b3f55bc3f5e}
 
 Recherche sur les mails contenant `george` :
 
     [php]
-    function searchGeorge(Action & $action)
-    {
-        header('Content-Type: text/plain');
-        
-        $mailExpr='george';
-        $searchAccount = new SearchAccount();
-        $searchAccount->addFilter("mail ~ '%s'", preg_quote($mailExpr)); // filtre les mail qui contiennent george
-        $accountList = $searchAccount->search();
-        foreach ($accountList as $account) {
-            printf("\t %s => %s\n", $account->login, $account->mail);
-        }
-    
+    $mailExpr='george';
+    $searchAccount = new SearchAccount();
+    $searchAccount->addFilter("mail ~ '%s'", preg_quote($mailExpr)); // filtre les mail qui contiennent george
+    $accountList = $searchAccount->search();
+    foreach ($accountList as $account) {
+        printf("\t %s => %s\n", $account->login, $account->mail);
     }
 
 Résultat :
 
-        george.abitbol => george.abitbol@classe-americaine.com
-        georges.de.hanovre => georges.V.de.hanovre@hanovre.com
-        georgette.agutte => georgette.agutte@paris.com
+    george.abitbol => george.abitbol@classe-americaine.com
+    georges.de.hanovre => georges.V.de.hanovre@hanovre.com
+    georgette.agutte => georgette.agutte@paris.com
 
 
 ## Notes {#core-ref:7756d9a4-c80a-4fac-9a66-7c6c0fcbd682}
@@ -93,8 +89,8 @@ Aucunes
 
 ## Voir aussi {#core-ref:871d553e-0614-41a0-b4bd-2b52acd40cff}
 
-* [`addGroupFilter`][addGroupFilter],
-* [`addRoleFilter`][addRoleFilter],
+* [`SearchAccount::addGroupFilter()`][addGroupFilter],
+* [`SearchAccount::addRoleFilter()`][addRoleFilter],
 * [chapitre sur la recherche des utilisateurs][advancedUserSearch].
 
 <!-- links -->
