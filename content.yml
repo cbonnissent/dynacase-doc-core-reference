@@ -839,74 +839,62 @@ book:
       content:  "API/Class_SearchAccount.md"
       flags:
         new:   "new"
-        draft: "draft"
       subtoc:   1
     - level:   3
       element: "chapter"
       content:  "API/Class_SearchAccount/Method_addFilter.md"
       flags:
         new:   "new"
-        draft: "draft"
     - level:   3
       element: "chapter"
       content:  "API/Class_SearchAccount/Method_addGroupFilter.md"
       flags:
         new:   "new"
-        draft: "draft"
     - level:   3
       element: "chapter"
       content:  "API/Class_SearchAccount/Method_addRoleFilter.md"
       flags:
         new:   "new"
-        draft: "draft"
     - level:   3
       element: "chapter"
       content:  "API/Class_SearchAccount/Method_getLoginFromDocName.md"
       flags:
         new:   "new"
-        draft: "draft"
     - level:   3
       element: "chapter"
       content:  "API/Class_SearchAccount/Method_search.md"
       flags:
         new:   "new"
-        draft: "draft"
     - level:   3
       element: "chapter"
       content:  "API/Class_SearchAccount/Method_setReturnType.md"
       flags:
         new:   "new"
-        draft: "draft"
     - level:   3
       element: "chapter"
       content:  "API/Class_SearchAccount/Method_setOrder.md"
       flags:
         new:   "new"
-        draft: "draft"
     - level:   3
       element: "chapter"
       content:  "API/Class_SearchAccount/Method_setSlice.md"
       flags:
         new:   "new"
-        draft: "draft"
     - level:   3
       element: "chapter"
       content:  "API/Class_SearchAccount/Method_setStart.md"
       flags:
         new:   "new"
-        draft: "draft"
     - level:   3
       element: "chapter"
       content:  "API/Class_SearchAccount/Method_setTypeFilter.md"
       flags:
         new:   "new"
-        draft: "draft"
     - level:   3
       element: "chapter"
       content:  "API/Class_SearchAccount/Method_overrideViewControl.md"
       flags:
         new:   "new"
-        draft: "draft"
     - level:   2
       element: "chapter"
       content:  "API/Class_SearchDoc.md"
@@ -1383,7 +1371,7 @@ book:
     - level:   2
       content:  "Advanced/Persistance/user.md"
       flags:
-        new: "new"
+        new: "updated"
     - level:   2
       content:  "Advanced/Migration/introduction.md"
       flags:

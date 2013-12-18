@@ -1,9 +1,10 @@
 # Classe SearchAccount {#core-ref:dc8236f9-2389-49a6-b582-bc6b332880b1}
 
 La classe `SearchAccount` permet de réaliser facilement la recherche de 
-[comptes][introAccount].  
-Le résultat de cette recherche peut retourner des [utilisateurs][user], [des groupes][group] ou
-[des rôles][role].
+[comptes][introAccount].
+
+Le résultat de cette recherche peut retourner des [utilisateurs][user], [des
+groupes][group] ou [des rôles][role].
 
 ### Constructeur {#core-ref:5405bf7f-da07-4455-a136-10f29c236567}
 
@@ -18,7 +19,7 @@ Aucuns
 
 Aucunes
 
-### Exemples {#core-ref:b459e7e1-a283-4ee5-970d-7572872a438a}
+### Exemple {#core-ref:b459e7e1-a283-4ee5-970d-7572872a438a}
 
     [php]
     $searchAccount = new SearchAccount();
@@ -41,7 +42,7 @@ Aucunes
 * [introduction sur les comptes][introAccount],
 * [chapitre sur les comptes][chapterAccount],
 * [chapitre sur la recherche des utilisateurs][advancedUserSearch],
-* [base de données des accounts][dataAccount].
+* [base de données des comptes][dataAccount].
 
 <!-- links -->
 

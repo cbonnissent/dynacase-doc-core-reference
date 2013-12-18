@@ -33,30 +33,26 @@ Aucun
 
 Aucun
 
-## Exemples {#core-ref:6fde40b1-8f8a-4190-b43e-5b519d41e47b}
+## Exemple {#core-ref:6fde40b1-8f8a-4190-b43e-5b519d41e47b}
 
     [php]
-    
-    function getCashPeople(Action & $action)
-    {
-        header('Content-Type: text/plain');
-        
-        print "Default order \n";
-        $searchAccount = new SearchAccount();
-        $accountList = $searchAccount->search();
-        foreach ($accountList as $account) {
-            printf("%s (type : %s)\n", $account->login, $account->accounttype);
-        }
-        print "Ordered by accounttype\n";
-        $searchAccount = new SearchAccount();
-        $searchAccount->setOrder("accounttype");
-        $accountList = $searchAccount->search();
-        foreach ($accountList as $account) {
-            printf("%s (type : %s)\n", $account->login, $account->accounttype);
-        }
+    print "Default order \n";
+    $searchAccount = new SearchAccount();
+    $accountList = $searchAccount->search();
+    foreach ($accountList as $account) {
+        printf("%s (type : %s)\n", $account->login, $account->accounttype);
+    }
+    print "Ordered by accounttype\n";
+    $searchAccount = new SearchAccount();
+    $searchAccount->setOrder("accounttype");
+    $accountList = $searchAccount->search();
+    foreach ($accountList as $account) {
+        printf("%s (type : %s)\n", $account->login, $account->accounttype);
     }
 
-Ce qui donne :
+Résultat :
+
+Default order 
 
     admin (type : U)
     all (type : G)
@@ -72,7 +68,9 @@ Ce qui donne :
     zoo.cashtwo (type : U)
     zoo.garde (type : U)
     zoo.veto (type : U)
-    
+
+Ordered by accounttype
+
     all (type : G)
     care (type : G)
     gadmin (type : G)
@@ -90,14 +88,14 @@ Ce qui donne :
 
 ## Notes {#core-ref:816a0a09-1995-4a86-b5e7-232ea558257d}
 
-Aucunes
+Par défaut, les résultats sont triés par `login`.
 
 ## Voir aussi {#core-ref:d3215ce0-98c9-44ac-96a9-fbd782a174f1}
 
-* [addFilter][addFilter],
-* [setSlice][setSlice],
-* [setStart][setStart],
-* [setTypeFilter][setTypeFilter].
+* [SearchAccount::addFilter()][addFilter],
+* [SearchAccount::setSlice()][setSlice],
+* [SearchAccount::setStart()][setStart],
+* [SearchAccount::setTypeFilter()][setTypeFilter].
 
 <!-- links -->
 

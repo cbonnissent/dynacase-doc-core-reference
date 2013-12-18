@@ -35,25 +35,21 @@ Si le slice n'est pas valide alors une exception `Dcp\Sacc\Exception` est levée
 
 Aucun
 
-## Exemples {#core-ref:99ac861f-3a0e-4808-a1c1-9781ececd1ca}
+## Exemple {#core-ref:99ac861f-3a0e-4808-a1c1-9781ececd1ca}
 
     [php]
-    function setSlice(Action & $action)
-    {
-        header('Content-Type: text/plain');
-        
-        print "Without slice \n";
-        $searchAccount = new SearchAccount();
-        $accountList = $searchAccount->search();
-        printf("count : %d", count($accountList));
-        print "\n";
-        print "\n";
-        print "With a slice of 2 \n";
-        $searchAccount = new SearchAccount();
-        $searchAccount->setSlice(2);
-        $accountList = $searchAccount->search();
-        printf("count : %d", count($accountList));
-    }
+    print "Without slice \n";
+    $searchAccount = new SearchAccount();
+    $accountList = $searchAccount->search();
+    printf("count : %d", count($accountList));
+    print "\n";
+    print "\n";
+    print "With a slice of 2 \n";
+    $searchAccount = new SearchAccount();
+    $searchAccount->setSlice(2);
+    $accountList = $searchAccount->search();
+    printf("count : %d", count($accountList));
+    
 
 Résultat :
 
@@ -71,9 +67,9 @@ Aucune
 ## Voir aussi {#core-ref:09b1dce2-3db8-4d49-bcad-b435ee6a0e11}
 
 
-* [addFilter][addFilter],
-* [setStart][setStart],
-* [setOrder][setOrder].
+* [SearchAccount::addFilter()][addFilter],
+* [SearchAccount::setStart()][setStart],
+* [SearchAccount::setOrder()][setOrder].
 
 <!-- links -->
 

@@ -103,7 +103,7 @@ non lors d'une [insertion multiple][insertmultiple].
 
 La modification d'un profil de document inséré peut être personnalisée en
 utilisant les hameçons [`Dir::postInsertDocument()`][postinsertdoc] et
-[`postInsertMultipleDocumnts()`][postinsertdocs].
+[`postInsertMultipleDocuments()`][postinsertdocs].
 
 ## Voir aussi {#core-ref:19c8e77e-ba1b-4deb-bb6d-f52670284773}
 

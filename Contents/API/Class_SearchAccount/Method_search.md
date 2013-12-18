@@ -2,7 +2,7 @@
 
 <div markdown="1" class="short-description">
 La méthode permet d'exécuter la recherche paramétrée avec les autres méthodes de
-la classe et d'obtenir une liste de [account][account].
+la classe pour obtenir une liste de [account][account].
 </div>
 
 ## Description {#core-ref:7b82d47a-a3ad-4c6e-a57d-6a24da09d7a4}
@@ -32,30 +32,28 @@ Aucun
 
 [DocumentList|AccountList]
 
+La méthode [`SearchAccount::setReturnType`][setReturnType] définit le type de
+retour. Par défaut, un objet de type `AccountList` est retourné.
+
+
 ## Erreurs / Exceptions {#core-ref:a4545103-0c2c-49c5-bce2-599daa78538a}
 
-Aucune
+Retourne une exception `Dcp\Db\Exception` en cas de filtre incorrect.
 
 ## Historique {#core-ref:d2624481-b4db-42b5-9a11-efca9ceece01}
 
 Aucun
 
-## Exemples {#core-ref:49bdf1f3-b02c-442f-a591-b1d93f15bf18}
+## Exemple {#core-ref:49bdf1f3-b02c-442f-a591-b1d93f15bf18}
 
 Avoir la liste des utilisateurs et des groupes ayant le rôle `cash`:
 
     [php]
-    
-    function getCashPeople(Action & $action)
-    {
-        header('Content-Type: text/plain');
-        
-        $searchAccount = new SearchAccount();
-        $searchAccount->addRoleFilter("cash");
-        $accountList = $searchAccount->search();
-        foreach ($accountList as $account) {
-            printf("%s (type : %s)\n", $account->login, $account->accounttype);
-        }
+    $searchAccount = new SearchAccount();
+    $searchAccount->addRoleFilter("cash");
+    $accountList = $searchAccount->search();
+    foreach ($accountList as $account) {
+        printf("%s (type : %s)\n", $account->login, $account->accounttype);
     }
 
 Ce qui donne :

@@ -11,8 +11,8 @@ avec le module "dynacase-networkuser".
 La création d'un utilisateur peut être fait à l'aide de la [famille
 `IUSER`][users].
 
-Les comptes utilisateurs sont gérés par la classe Account. La famille `IUSER`
-permet de faire le lien entre le compte "système" (classe Account) et le
+Les comptes utilisateurs sont gérés par la classe `Account`. La famille `IUSER`
+permet de faire le lien entre le compte "système" (classe `Account`) et le
 document (famille `IUSER`).
 
 Un utilisateur est identifié par un numéro unique. Ce numéro est renseigné par
@@ -100,28 +100,28 @@ Exemple de création d'utilisateur via la classe `Account`
 
 La famille `IGROUP` permet de rajouter des utilisateurs dans des groupes.
 
-La famille `IGROUP` comme la famille `IUSER` utilise la classe User pour
+La famille `IGROUP` comme la famille `IUSER` utilise la classe `Account` pour
 identifier les groupes "système".
 
-Comme la famille IUSER, la famille `IGROUP` dispose de la méthode
+Comme la famille `IUSER`, la famille `IGROUP` dispose de la méthode
 `IGROUP::getAccount()` pour récupérer l'objet `Account` correspondant
 
-### Correspondance Compte User &hArr; Document IGROUP {#core-ref:70bec060-4ebe-48d5-a8d5-a8d7f500662a}
+### Correspondance Compte Groupe &hArr; Document IGROUP {#core-ref:70bec060-4ebe-48d5-a8d5-a8d7f500662a}
 
 
-| Compte Group | Document `IGROUP` |
-| ------------ | ----------------- |
-| id           | us_whatid         |
-| login        | us_login          |
-| lastname     | grp_name          |
-| fid          | id                |
+| Compte Groupe | Document `IGROUP` |
+| ------------- | ----------------- |
+| id            | us_whatid         |
+| login         | us_login          |
+| lastname      | grp_name          |
+| fid           | id                |
 
 
 Le compte "Account" d'un groupe a toujours son attribut "accounttype" à "G".
 
 ### Ajout d'un utilisateur à un groupe {#core-ref:dc529ed1-63eb-4628-aa62-3e3e213a09e4}
 
-Utilisation de `_IGROUP::AddFile()`.
+Utilisation de `Dcp\Family\IGROUP::insertDocument()`.
 
 Ajout de l'utilisateur n°1009 dans le groupe GDEFAULT :
 
@@ -139,7 +139,7 @@ Ajout de l'utilisateur n°1009 dans le groupe GDEFAULT :
     printf("liste des groupes avant\n");
     print_r($user->getTValue("us_idgroup"));
      
-    $err=$group->addFile($user->initid);
+    $err=$group->insertDocument($user->initid);
     print "Error:$err\n";
      
     printf("liste des groupes apres\n");
@@ -147,7 +147,7 @@ Ajout de l'utilisateur n°1009 dans le groupe GDEFAULT :
 
 ### Suppression d'utilisateur dans un groupe {#core-ref:c6c94659-4e24-49f8-9644-cd240a68f85c}
 
-Utilisation de `_IGROUP::DelFile()`.
+Utilisation de `Dcp\Family\IGROUP::removeDocument()`.
 
     [php]
     include_once("FDL/Class.Doc.php");
@@ -163,7 +163,7 @@ Utilisation de `_IGROUP::DelFile()`.
     printf("liste des groupes avant\n");
     print_r($user->getTValue("us_idgroup"));
      
-    $err=$group->delFile($user->initid);
+    $err=$group->removeDocument($user->initid);
     print "Error:$err\n";
      
     printf("liste des groupes apres\n");
@@ -191,6 +191,26 @@ Exemple d'utilisation :
     foreach ($documentList as $docid=>$docIUser) {
         printf("%s)%s\n", $docIUser->id,  $docIUser->getTitle());
     }
+
+## Rôles
+
+La famille `ROLE` permet d'associer des rôles à des utilisateurs ou à des
+groupes.
+
+La famille `ROLE` comme la famille `IUSER` utilise la classe `Account` pour
+identifier les groupes "système".
+
+Comme la famille `IUSER`, la famille `ROLE` dispose de la méthode
+`ROLE::getAccount()` pour récupérer l'objet `Account` correspondant
+
+### Correspondance Compte Rôle &hArr; Document ROLE 
+
+| Compte Rôle | Document `ROLE` |
+| ----------- | --------------- |
+| id          | us_whatid       |
+| login       | role_login      |
+| lastname    | role_name       |
+| fid         | id              |
 
 ## Récupération des utilisateurs associés à un rôle {#core-ref:30ae82d0-6ac6-4d50-8d23-af1d3c64d969}
 
@@ -252,6 +272,8 @@ Affectation d'un suppléant à un utilisateur et récupérations des titulaires.
       printf("%d)%s\n", $key,Account::getDisplayName($aIncumbent)); 
     }
 
+Résultat :
+
     www-data@luke:~$ ./wsh.php --api=testSubstitute
     0)j1 Doe 
     1)j3 Doe 
@@ -259,9 +281,9 @@ Affectation d'un suppléant à un utilisateur et récupérations des titulaires.
 ## Recherche de comptes {#core-ref:77224212-a4f3-4159-8a8a-c11c6f430f61}
 
 Il est possible de rechercher les comptes suivant leurs critères d'appartenance
-à des rôles ou des groupes. La classe `SearchAccount` permet de réaliser
-facilement la recherche de compte. Le résultat de cette recherche peut retourner
-des utilisateurs, des groupes ou des rôles. 
+à des rôles ou des groupes. La classe [`SearchAccount`][searchaccount] permet de
+réaliser facilement la recherche de compte. Le résultat de cette recherche peut
+retourner des utilisateurs, des groupes ou des rôles.
 
 ### Recherche des utilisateurs par rôle {#core-ref:b48372db-c2a9-481a-a502-174f972484a3}
 
@@ -354,6 +376,8 @@ des comptes:
 *   firstname
 *   lastname
 *   mail
+*   accounttype
+*   status
 
 &nbsp;
 
@@ -430,3 +454,4 @@ besoins.
 [dbuser]:       #core-ref:6d5684f4-73e8-431c-8b2b-6224a9e6b074 "Table users"
 [backend]:      #core-ref:5a149c1c-c262-4aa6-b7b8-b66135140c49 "Provider d'authentification"
 [doclist]:      #core-ref:23c71c28-dbce-4d34-819a-50d5bc4a38c3 "Classe DocumentList"
+[searchaccount]:#core-ref:dc8236f9-2389-49a6-b582-bc6b332880b1
