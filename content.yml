@@ -509,8 +509,8 @@ book:
       element: "chapter"
       content:  "API/Class_Doc/Method_clearValue.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        new:   "new"
+        draf:  "draft"
     - level:   4
       element: "chapter"
       content:  "API/Class_Doc/Method_arrayToRawValue.md"
@@ -559,10 +559,10 @@ book:
         wip_sub: ""
     - level:   4
       element: "chapter"
-      content:  "API/Class_Doc/Method_getAValues.md"
+      content:  "API/Class_Doc/Method_getArrayRawValues.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        new:   "new"
+        draft: "draft"
     - level:   4
       element: "chapter"
       content:  "API/Class_Doc/Method_getAttribute.md"
@@ -584,6 +584,12 @@ book:
       flags:
         wip: "work in progress"
         wip_sub: ""
+    - level:   4
+      element: "chapter"
+      content:  "API/Class_Doc/Method_getMultipleRawValues.md"
+      flags:
+        new:   "new"
+        draft: "draft"
     - level:   4
       element: "chapter"
       content:  "API/Class_Doc/Method_getOldRawValue.md"
@@ -616,16 +622,10 @@ book:
         wip_sub: ""
     - level:   4
       element: "chapter"
-      content:  "API/Class_Doc/Method_getTValue.md"
-      flags:
-        wip: "work in progress"
-        wip_sub: ""
-    - level:   4
-      element: "chapter"
       content:  "API/Class_Doc/Method_getTitle.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        new:   "new"
+        draft: "draft"
     - level:   4
       element: "chapter"
       content:  "API/Class_Doc/Method_getRawValue.md"
