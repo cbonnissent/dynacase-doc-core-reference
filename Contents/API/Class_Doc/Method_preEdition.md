@@ -40,7 +40,7 @@ Aucun.
 
 ## Exemples {#core-ref:d9363eba-cc9a-4060-93fc-7038eb0a540f}
 
-### Ajout d'asset ccs et js
+### Ajout d'asset ccs et js {#core-ref:337df6b3-dd13-47b9-982d-77db0ae75567}
 
 Ajout d'une `css` et d'un fichier `javascript` spécifique si c'est un formulaire de 
 création de document.
@@ -59,7 +59,7 @@ création de document.
 
 Voir [`addjsRef`][addjsref] et [`addCssRef`][addcssref] pour l'ajout d'asset.
 
-### Modification de visibilité et caractère obligatoire
+### Modification de visibilité et caractère obligatoire {#core-ref:838f48af-ece2-467f-9002-eb08612b23de}
 
 Rendre obligatoire l'attribut `my_level` à la création.
 

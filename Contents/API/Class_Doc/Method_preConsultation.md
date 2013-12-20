@@ -47,7 +47,7 @@ Aucun.
 
 ## Exemples {#core-ref:cdf0eead-f907-4d80-8430-35d4e74cd0bd}
 
-### Ajout d'asset ccs et js
+### Ajout d'asset ccs et js {#core-ref:37de88a1-97e9-43b8-b57b-deb1b290f258}
 
 Cas d'une famille `MyFamily` qui possède un niveau d'urgence représenté par
 l'attribut `my_level`.
@@ -76,7 +76,7 @@ message d'avertissement qui sera visible lors de la consultation.
 
 Voir [`addjsRef`][addjsref] et [`addCssRef`][addcssref] pour l'ajout d'asset.
 
-### Modification de visibilité
+### Modification de visibilité {#core-ref:e093d2c3-df25-440f-bdc8-3b390911a183}
 
 Masquage d'un attribut `my_informations` si niveau `my_level` est égal à 0.
 

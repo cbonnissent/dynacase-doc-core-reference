@@ -119,7 +119,7 @@ Afin de définir une vue personnalisée, il est possible :
 #### Définition du contrôleur par défaut {#core-ref:97e54010-0310-4516-bccb-4d38671963e7}
 
 En l'absence de méthode correspondant à la vue, le contrôleur par défaut
-`Doc::viewDefaultCard` est appelé. 
+`Doc::viewDefaultCard()` est appelé. 
 
 Ce contrôleur est fait pour les vues de consultations et n'est pas adapté pour
 les vues de modification.
@@ -127,8 +127,8 @@ les vues de modification.
 #### Utilisation des valeurs du document {#core-ref:a5c38657-4537-404f-b908-c2684d343880}
 
 Le [contrôleur par défaut][default_view_controleur] fait automatiquement appel
-aux méthodes `Doc::viewAttr` et `Doc::viewProp`. Elles initialisent les clés
-suivantes :
+aux méthodes [`Doc::viewAttr()`][viewattr] et `Doc::viewProp()`. Elles
+initialisent les clés suivantes :
 
 *   viewAttr va créer :
     *   `L_ATTRID` pour chaque attribut : le libellé (traduit) de l'attribut,
@@ -207,7 +207,7 @@ adapté car il ne fournit que des valeurs d'attributs et non des champs de saisi
 pour un formulaire.
 
 Pour avoir l'équivalent du contrôleur par défaut en modification il faut 
-utiliser la méthode `Doc::editAttr`. Cette méthode initialise les clés
+utiliser la méthode [`Doc::editAttr`][editattr]. Cette méthode initialise les clés
 suivantes :
 
 *   `L_ATTRID` pour chaque attribut : le libellé (traduit) de l'attribut,
@@ -267,3 +267,5 @@ avec la fonction `getHttpVars()`.
 [advancedtemplate]: #core-ref:af9ea76c-069e-49e1-a382-efc8ca35f1eb
 [zone_options_view]: #core-ref:96d615e5-b6a6-46d3-b42d-4396dbc42b8b
 [zone_options_edit]: #core-ref:9e341064-ea78-4049-819c-8d0ab765840e
+[viewattr]:         #core-ref:71bb6fe5-b094-4811-a72b-35628c5a9391
+[editattr]:         #core-ref:3157f5b6-06d5-4bbb-b951-d72aec3341c9
