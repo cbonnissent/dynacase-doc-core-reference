@@ -481,14 +481,14 @@ book:
       element: "chapter"
       content:  "API/Class_Doc/Method_preConsultation.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        draft: "draft"
+        new : "new"
     - level:   4
       element: "chapter"
       content:  "API/Class_Doc/Method_preEdition.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        draft: "draft"
+        new : "new"
     - level:   3
       element: "chapter"
       content:  "API/Class_Doc/docmethods.md"
@@ -549,8 +549,8 @@ book:
       element: "chapter"
       content:  "API/Class_Doc/Method_editattr.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        new : "new"
+        draft : "draft"
     - level:   4
       element: "chapter"
       content:  "API/Class_Doc/Method_enableEditControl.md"
@@ -692,8 +692,8 @@ book:
       element: "chapter"
       content:  "API/Class_Doc/Method_viewattr.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        new : "new"
+        draft : "draft"
     - level:   2
       element: "chapter"
       content:  "API/Class_Docfam.md"

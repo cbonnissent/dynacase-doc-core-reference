@@ -64,19 +64,19 @@ cette méthode.
 ## Voir aussi  {#core-ref:b023c517-fa58-4f19-ac4e-7c0df4af3e49}
 
 *   [`Doc::postDelete()`][docpostDelete].
-*   [`Doc::undelete()`][undelete].
+*   [`Doc::delete()`][docdelete].
 
 <!-- links -->
 [docstore]:         #core-ref:b8540d13-ece6-4e9e-9b72-6a56bca9da12
-[docpostcreated]:   #core-ref:b8f80e6b-a374-4bf4-bc76-47290cd69c45 "Hameçon Doc::postCreated()"
-[docpoststore]:     #core-ref:99520a31-0aef-4bc6-b20a-114737059d17 "Hameçon Doc::postStore()"
-[docprestore]:      #core-ref:3517da95-82fe-4adb-8bc4-ef49ca55edb0 "Hameçon Doc::preStore()"
-[docprecreated]:    #core-ref:e85aa9d4-5e62-4a60-9d1c-f60433301747 "Hameçon Doc::preCreated()"
-[docprerefresh]:    #core-ref:580d6be1-6b6a-439b-abd7-34b26cfaf2e5 "Hameçon Doc::preRefresh()"
-[docpostrefresh]:   #core-ref:9352c534-3691-41e3-b293-599db8e9a4fd "Hameçon Doc::postRefresh()"
-[docpreimport]:     #core-ref:adb6ba8b-15c4-42d3-97dc-1da16c2112ae "Hameçon Doc::preImport()"
-[docpostimport]:    #core-ref:9de7e922-150a-416b-b846-b6e195bf0921 "Hameçon Doc::postImport()"
-[docpostDelete]:   #core-ref:8db8e5e0-b15e-4cfe-a891-66850df15b1e "Hameçon Doc::postDelete()"
-[docpreDelete]:    #core-ref:dca7b2bd-fc69-4f6f-ab12-fb0de91dce8c "Hameçon Doc::preDelete()"
-[undelete]:         #core-ref:e48b02c7-c684-4f71-a731-ac92064d13ae
+[docpostcreated]:   #core-ref:b8f80e6b-a374-4bf4-bc76-47290cd69c45 
+[docpoststore]:     #core-ref:99520a31-0aef-4bc6-b20a-114737059d17 
+[docprestore]:      #core-ref:3517da95-82fe-4adb-8bc4-ef49ca55edb0 
+[docprecreated]:    #core-ref:e85aa9d4-5e62-4a60-9d1c-f60433301747 
+[docprerefresh]:    #core-ref:580d6be1-6b6a-439b-abd7-34b26cfaf2e5 
+[docpostrefresh]:   #core-ref:9352c534-3691-41e3-b293-599db8e9a4fd 
+[docpreimport]:     #core-ref:adb6ba8b-15c4-42d3-97dc-1da16c2112ae 
+[docpostimport]:    #core-ref:9de7e922-150a-416b-b846-b6e195bf0921 
+[docpostDelete]:    #core-ref:8db8e5e0-b15e-4cfe-a891-66850df15b1e 
+[docpreDelete]:     #core-ref:dca7b2bd-fc69-4f6f-ab12-fb0de91dce8c 
+[docdelete]:        #core-ref:c4372b13-c132-4148-9487-de2b7614d497
 [hook]:             http://fr.wikipedia.org/wiki/Hook_(informatique) "Définition de Hook sur wikipedia"
