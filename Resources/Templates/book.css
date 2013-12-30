@@ -1,3 +1,48 @@
+
+/*
+    Recherche
+ */
+
+.results {
+    position:fixed;
+    top:40px;
+    left:300px;
+    border :1px solid grey;
+    background-color:white;
+    max-width:200px;
+    max-height: 300px;
+    overflow: auto;
+    box-shadow: 10px 10px 5px 0px #656565;
+}
+.results.main-results {
+    position:absolute;    
+    box-shadow: 10px 10px 5px 0px #656565;
+}
+
+.result-title {
+    border-top : solid 1px grey;
+    padding-top: 5px;
+    font-weight: bold;
+}
+.result-content {
+    padding-bottom: 5px;
+    font-style: italic;
+}
+.result-content strong,  .result-title strong{
+    background-color : greenyellow;
+}
+
+a.searchlink {
+    font-size:12px;
+    font-family: sans-serif;
+}
+a.searchlink:hover {
+    color: black;
+    background-color: #e0e0e0;
+}
+a.searchlink:hover .result-title,  a.searchlink:hover .result-content {
+    background-color: inherit;
+}
 /*
     Gestion des flags
  */
