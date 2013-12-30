@@ -726,40 +726,33 @@ book:
       subtoc:   1
       flags:
         new:   "new"
-        draft: "draft"
-        wip_sub: ""
     - level:   3
       element: "chapter"
       content:  "API/Class_Layout/Method_gen.md"
       flags:
         new:   "new"
-        draft: "draft"
     - level:   3
       element: "chapter"
       content:  "API/Class_Layout/Method_set.md"
       flags:
         new:   "new"
-        draft: "draft"
     - level:   3
       element: "chapter"
       content:  "API/Class_Layout/Method_eSet.md"
       flags:
         new:   "new"
         next-release : "next-release 3.2.12"
-        draft: "draft"
     - level:   3
       element: "chapter"
       content:  "API/Class_Layout/Method_setBlockData.md"
       flags:
         new:   "new"
-        draft: "draft"
     - level:   3
       element: "chapter"
       content:  "API/Class_Layout/Method_eSetBlockData.md"
       flags:
         new:   "new"
         next-release : "next-release 3.2.12"
-        draft: "draft"
     - level:   2
       element: "chapter"
       content:  "API/Class_Log.md"

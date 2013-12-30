@@ -12,8 +12,8 @@ syntaxe des templates, et de produire le résultat.
 ### Liste des paramètres {#core-ref:7e440aab-5593-4977-b878-72a8edfdc7a9}
 
 (string) `caneva`:
-:   Chemin d'accès à un fichier de template `.xml`
-    (e.g. `FOO/Layout/bar.xml`). Le contenu du fichier spécifié sert alors de
+:   Chemin d'accès à un fichier de template textuel, c'est-à-dire non binaire
+    (e.g. `FOO/Layout/bar.html`). Le contenu du fichier spécifié sert alors de
     template.
 
 (Action) `action`:
@@ -21,8 +21,9 @@ syntaxe des templates, et de produire le résultat.
     l'action courante (`$action`) est utilisée.
 
 (string) `template`:
-:   Contenu du template. Si `caneva` n'est pas spécifié, alors le contenu du
-    template sera affecté avec cette valeur.
+:   Contenu du template. Si `caneva` n'est pas spécifié, ou n'est pas
+    accessible, alors le contenu du template sera affecté avec cette valeur.
+    Dans le cas contraire, cette valeur est ignorée.
 
 ### Exemples {#core-ref:eeb538d8-f35c-4e8b-9f36-8b7cbe350f85}
 
@@ -39,9 +40,9 @@ Instanciation à partir d'un template contenu dans une chaîne de caractères :
 
     [php]
     $layout = new Layout(
-    	"",
-    	null,
-    	"<p>Bonjour [NOM]&nbsp;[PRENOM]</span>.</p><p>La température est actuellement de [TEMPC]°C.</p>"
+        "",
+        null,
+        "<p>Bonjour [NOM]&nbsp;[PRENOM].</p><p>La température est actuellement de [TEMPC]°C.</p>"
     );
 
 ### Voir aussi {#core-ref:bebe6da9-59d8-459e-9e60-6798800936e4}

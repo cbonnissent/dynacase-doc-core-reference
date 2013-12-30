@@ -61,76 +61,84 @@ Fichier de template `MOVIES/Layout/movies.xml` :
     EOF;
 
 Contrôleur :
-    
+
     [php]
     $layout = new Layout("MOVIES/Layout/movies.xml");
     
-    $layout->setBlockData('MOVIES',
-            array(  
-                    array(  
-                            'MOVIE_TITLE' => htmlspecialchars('Star Wars: A New Hope'),
-                            'MOVIE_DATE'  => '1977',
-                            'CHARACTERS' => 'CHARACTERS_SW_A_NEW_HOPE'
-                    ),
-                    array(  
-                            'MOVIE_TITLE' => htmlspecialchars('Star Wars: The Empire Strikes Back'),
-                            'MOVIE_DATE'  => '1980',
-                            'CHARACTERS' => 'CHARACTERS_SW_THE_EMPIRE_STRIKES_BACK'
-                    ),
-                    array(  
-                            'MOVIE_TITLE' => htmlspecialchars('Star Wars: Return of the Jedi'),
-                            'MOVIE_DATE'  => '1983',
-                            'CHARACTERS' => 'CHARACTERS_SW_RETURN_OF_THE_JEDI'
-                    )
+    $layout->setBlockData(
+        'MOVIES',
+        array(
+            array(
+                'MOVIE_TITLE' => htmlspecialchars('Star Wars: A New Hope'),
+                'MOVIE_DATE'  => '1977',
+                'CHARACTERS' => 'CHARACTERS_SW_A_NEW_HOPE'
+            ),
+            array(
+                'MOVIE_TITLE' => htmlspecialchars('Star Wars: The Empire Strikes Back'),
+                'MOVIE_DATE'  => '1980',
+                'CHARACTERS' => 'CHARACTERS_SW_THE_EMPIRE_STRIKES_BACK'
+            ),
+            array(
+                'MOVIE_TITLE' => htmlspecialchars('Star Wars: Return of the Jedi'),
+                'MOVIE_DATE'  => '1983',
+                'CHARACTERS' => 'CHARACTERS_SW_RETURN_OF_THE_JEDI'
             )
+        )
     );
     
-    $layout->setBlockData('CHARACTERS_SW_A_NEW_HOPE',
+    $layout->setBlockData(
+        'CHARACTERS_SW_A_NEW_HOPE',
+        array(
             array(
-                    array(
-                            'CHARACTER' => 'Chewbacca'
-                    ),
-                    array(
-                            'CHARACTER' => 'Luke Skywalker'
-                    ),
-                    array(
-                            'CHARACTER' => 'Han Solo'
-                    )
+                'CHARACTER' => 'Chewbacca'
+            ),
+            array(
+                'CHARACTER' => 'Luke Skywalker'
+            ),
+            array(
+                'CHARACTER' => 'Han Solo'
             )
+        )
     );
-    $layout->setBlockData('CHARACTERS_SW_THE_EMPIRE_STRIKES_BACK',
+    
+    $layout->setBlockData(
+        'CHARACTERS_SW_THE_EMPIRE_STRIKES_BACK',
+        array(
             array(
-                    array(
-                            'CHARACTER' => 'Yoda'
-                    ),
-                    array(
-                            'CHARACTER' => 'Boba Fett'
-                    )
+                'CHARACTER' => 'Yoda'
+            ),
+            array(
+                'CHARACTER' => 'Boba Fett'
             )
+        )
     );
-    $layout->setBlockData('CHARACTERS_SW_RETURN_OF_THE_JEDI',
+    $layout->setBlockData(
+        'CHARACTERS_SW_RETURN_OF_THE_JEDI',
+        array(
             array(
-                    array(
-                            'CHARACTER' => 'Emperor Palpatine'
-                    ),
-                    array(
-                            'CHARACTER' => 'Wicket'
-                    )
+                'CHARACTER' => 'Emperor Palpatine'
+            ),
+            array(
+                'CHARACTER' => 'Wicket'
             )
+        )
     );
     
     print $layout->gen();
 
 Le premier niveau de blocs `[BLOCK MOVIES]` va dupliquer les chaînes
-`[BLOCK [CHARACTERS]]` pour donner de nouveau blocs `[BLOCK CHARACTERS_SW_A_NEW_HOPE]`,
-`[BLOCK CHARACTERS_SW_THE_EMPIRE_STRIKES_BACK]` et
-`[BLOCK CHARACTERS_SW_RETURN_OF_THE_JEDI`.
+`[BLOCK [CHARACTERS]]` pour donner de nouveau blocs
+
+-   `[BLOCK CHARACTERS_SW_A_NEW_HOPE]`,
+-   `[BLOCK CHARACTERS_SW_THE_EMPIRE_STRIKES_BACK]` et
+-   `[BLOCK CHARACTERS_SW_RETURN_OF_THE_JEDI`.
 
 Ensuite, ces blocs `[BLOCK CHARACTERS_SW_xxx]` sont évalués avec le contenu de
 leur `setBlockData('CHARACTERS_SW_xxx')` respectif.
 
 Résultat :
 
+    [html]
     <ul>
     
     <li>
