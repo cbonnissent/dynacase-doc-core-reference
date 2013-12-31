@@ -519,10 +519,10 @@ book:
         draft : "draft"
     - level:   4
       element: "chapter"
-      content:  "API/Class_Doc/Method_control.md"
+      content:  "API/Class_Doc/Method_hasPermission.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        new : "new"
+        draft : "draft"
     - level:   4
       element: "chapter"
       content:  "API/Class_Doc/Method_delete.md"
@@ -538,8 +538,8 @@ book:
       element: "chapter"
       content:  "API/Class_Doc/Method_disableEditControl.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        new : "new"
+        draft : "draft"
     - level:   4
       element: "chapter"
       content:  "API/Class_Doc/Method_duplicate.md"
@@ -555,8 +555,8 @@ book:
       element: "chapter"
       content:  "API/Class_Doc/Method_enableEditControl.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        new : "new"
+        draft : "draft"
     - level:   4
       element: "chapter"
       content:  "API/Class_Doc/Method_getArrayRawValues.md"
@@ -1413,8 +1413,8 @@ book:
     - level:   3
       content:  "Advanced/Security/confidential.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        new : "new"
+        draft : "draft"
     - level:   2
       content:  "Advanced/Template/introduction.md"
       flags:

@@ -96,7 +96,8 @@ d'erreur. Ce message est enregistré dans l'historique du document.
 ## Voir aussi {#core-ref:68f970b7-6995-47c4-8d24-bf142e2ace1f}
 
 *   [`Doc::store()`][docstore],
-*   [`Doc::addHistoryEntry()`][docaddhisto].
+*   [`Doc::addHistoryEntry()`][docaddhisto],
+*   [`Doc::disableEditControl()`][disableeditcontrol].
 
 <!-- links -->
 [docstore]:         #core-ref:b8540d13-ece6-4e9e-9b72-6a56bca9da12
@@ -111,3 +112,4 @@ d'erreur. Ce message est enregistré dans l'historique du document.
 [contraintes]:      #core-ref:7b41906b-f199-41a4-94df-33b9ad34153b
 [docaddrevision]:   #core-ref:882e3730-0483-4dbc-9b9d-0d0b5cc31d38
 [docaddhisto]:      #core-ref:2f1828bf-b312-4996-9a56-42ac79e7dbf3
+[disableeditcontrol]: #core-ref:b9844f4b-3e5c-4bbe-98ae-e71a4ba17239

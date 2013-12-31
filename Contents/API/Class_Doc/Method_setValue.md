@@ -141,7 +141,8 @@ Aucunes
 *   [`Doc::setAttributeValue()`][docsetattrvalue],
 *   [`Doc::addArrayRow()`][docaddarrayrow],
 *   [`Doc::clearValue()`][docclearValue],
-*   [`Doc::postStore()`][docpoststore].
+*   [`Doc::postStore()`][docpoststore],
+*   [`Doc::disableEditControl()`][disableeditcontrol].
 
 <!-- links -->
 [docstore]:         #core-ref:b8540d13-ece6-4e9e-9b72-6a56bca9da12
@@ -154,3 +155,4 @@ Aucunes
 [docclearValue]:    #core-ref:30b0592f-f0cd-498f-bc5f-301891c297e0
 [docaddarrayrow]:   #core-ref:d75110cb-24f6-4810-9b62-45ce6fd99e70
 [phptrim]:          http://www.php.net/manual/fr/function.trim.php "fonction trim sur le site php.net"
+[disableeditcontrol]: #core-ref:b9844f4b-3e5c-4bbe-98ae-e71a4ba17239

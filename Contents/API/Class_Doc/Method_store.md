@@ -15,7 +15,14 @@ document est mis à jour.
 
 ### Avertissements {#core-ref:fd0141dc-9206-4ce8-8aca-e4908c64a3f4}
 
-Aucun.
+Le document n'est enregistré en base de donnée que si un changement a été
+détecté. Si un attrbut est affecté à sa valeur initiale, aucun changement n'est
+détecté et le document ne sera pas enregistré. La détection de changement est
+réalisée par la méthode [`Doc::setValue()`][docsetvalue] ainsi que les méthodes
+de plus hauts niveaux telles que [`Doc::setAttributeValue()`][docsetattrvalue]
+ou [`Doc::addArrayRow`][addarrayrow]. Si les valeurs d'attributs sont
+directement modifiées dans l'objet la méthode `Doc::store()` ne réalise pas
+l'enregistrement.
 
 ## Liste des paramètres {#core-ref:7b480a74-4e45-41ff-8d0a-c15f503feb61}
 
@@ -173,7 +180,8 @@ Lors d'une mise à jour de documents les hameçons suivants sont lancés :
 ## Voir aussi {#core-ref:9e1551ac-c4d3-41ab-bc19-4bb641db900f}
 
 *   [`Doc::setAttributeValue()`][docsetattrvalue],
-*   [`Doc::setValue()`][docsetvalue].
+*   [`Doc::setValue()`][docsetvalue],
+*   [`Doc::disableEditControl()`][disableeditcontrol].
 
 <!-- links -->
 [docstore]:         #core-ref:b8540d13-ece6-4e9e-9b72-6a56bca9da12
@@ -187,3 +195,5 @@ Lors d'une mise à jour de documents les hameçons suivants sont lancés :
 [docaddrevision]:   #core-ref:882e3730-0483-4dbc-9b9d-0d0b5cc31d38
 [docsetvalue]:      #core-ref:febc397f-e629-4d47-955d-27cab8f4ed2f
 [docsetattrvalue]:  #core-ref:1e766800-b2e1-462b-9793-b0261ede8677
+[disableeditcontrol]: #core-ref:b9844f4b-3e5c-4bbe-98ae-e71a4ba17239
+[addarrayrow]:      #core-ref:d75110cb-24f6-4810-9b62-45ce6fd99e70

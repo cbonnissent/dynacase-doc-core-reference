@@ -1,7 +1,10 @@
 # SearchDoc::excludeConfidential() {#core-ref:17be152c-0844-40d5-bfc5-a9aa2f2695fc}
 
-<div class="short-description">
-Cette méthode permet d'exclure les documents marqués comme confidentiel.
+<div class="short-description" markdown="1">
+
+Cette méthode permet d'exclure les documents marqués comme
+[confidentiel][confidential].
+
 </div>
 
 
@@ -177,3 +180,4 @@ Le chapitre de sécurité avancé sur la [recherche des confidentiels][advancedC
 [docacl]:                       #core-ref:a99dcc5f-f42f-4574-bbfa-d7bb0573c95d
 [search]:                       #core-ref:6f5cc024-66e4-429e-9071-67d4523a8e08
 [gettitle]:                     #core-ref:84011cc8-2aec-4f39-81f0-c7ae803e4913
+[confidential]:                 #core-ref:ba033340-2117-46f4-9efc-19c8609a8f28
