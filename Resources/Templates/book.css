@@ -18,7 +18,9 @@
     position:absolute;    
     box-shadow: 10px 10px 5px 0px #656565;
 }
-
+.results-waiting {
+    background-color: #e0e0e0;
+}
 .result-title {
     border-top : solid 1px grey;
     padding-top: 5px;
