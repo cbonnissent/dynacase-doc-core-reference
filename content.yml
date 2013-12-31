@@ -567,23 +567,35 @@ book:
       element: "chapter"
       content:  "API/Class_Doc/Method_getAttribute.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        new:   "new"
+        draft: "draft"
+    - level:   4
+      element: "chapter"
+      content:  "API/Class_Doc/Method_getCustomTitle.md"
+      flags:
+        new:   "new"
+        draft: "draf"
     - level:   4
       element: "chapter"
       content:  "API/Class_Doc/Method_getDate.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        new:   "new"
+        draft: "draft"
     - level:   4
       element: "chapter"
       content:  "API/Class_Doc/Method_getDocAnchor.md"
     - level:   4
       element: "chapter"
-      content:  "API/Class_Doc/Method_getFamDoc.md"
+      content:  "API/Class_Doc/Method_getFamilyDocument.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        new:   "new"
+        draft: "draft"
+    - level:   4
+      element: "chapter"
+      content:  "API/Class_Doc/Method_getFamilyParameterValue.md"
+      flags:
+        new:   "new"
+        draft: "draft"
     - level:   4
       element: "chapter"
       content:  "API/Class_Doc/Method_getMultipleRawValues.md"
@@ -598,28 +610,16 @@ book:
       content:  "API/Class_Doc/Method_getOldRawValues.md"
     - level:   4
       element: "chapter"
-      content:  "API/Class_Doc/Method_getParamValue.md"
+      content:  "API/Class_Doc/Method_getPropertyValue.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
-    - level:   4
-      element: "chapter"
-      content:  "API/Class_Doc/Method_getProperty.md"
-      flags:
-        wip: "work in progress"
-        wip_sub: ""
-    - level:   4
-      element: "chapter"
-      content:  "API/Class_Doc/Method_getSpecTitle.md"
-      flags:
-        wip: "work in progress"
-        wip_sub: ""
+        new:   "new"
+        draft: "draft"
     - level:   4
       element: "chapter"
       content:  "API/Class_Doc/Method_getState.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        new:   "new"
+        draft: "draft"
     - level:   4
       element: "chapter"
       content:  "API/Class_Doc/Method_getTitle.md"
@@ -636,20 +636,20 @@ book:
       element: "chapter"
       content:  "API/Class_Doc/Method_isAlive.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        new:   "new"
+        draft: "draft"
     - level:   4
       element: "chapter"
       content:  "API/Class_Doc/Method_isChanged.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        new:   "new"
+        draft: "draft"
     - level:   4
       element: "chapter"
-      content:  "API/Class_Doc/Method_latestId.md"
+      content:  "API/Class_Doc/Method_getLatestId.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        new:   "new"
+        draft: "draft"
     - level:   4
       element: "chapter"
       content:  "API/Class_Doc/Method_rawValueToArray.md"
@@ -672,8 +672,8 @@ book:
       element: "chapter"
       content:  "API/Class_Doc/Method_setState.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        new:   "new"
+        draft: "draf"
     - level:   4
       element: "chapter"
       content:  "API/Class_Doc/Method_setValue.md"
