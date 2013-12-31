@@ -705,21 +705,15 @@ book:
       element: "chapter"
       content:  "API/Class_DocumentList.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        new:   "new"
+        draft: "draft"
       subtoc:   1
     - level:   3
       element: "chapter"
       content:  "API/Class_DocumentList/Method_addDocumentIdentifiers.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
-    - level:   3
-      element: "chapter"
-      content:  "API/Class_DocumentList/Method_count.md"
-      flags:
-        wip: "work in progress"
-        wip_sub: ""
+        new:   "new"
+        draft: "draft"
     - level:   2
       element: "chapter"
       content:  "API/Class_Layout.md"
