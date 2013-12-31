@@ -986,7 +986,7 @@ book:
       element: "chapter"
       content:  "API/Class_SearchDoc/Method_returnsOnly.md"
       flags:
-        draft : "draft"
+        new: "new"
     - level:   3
       element: "chapter"
       content:  "API/Class_SearchDoc/Method_getSearchInfo.md"
