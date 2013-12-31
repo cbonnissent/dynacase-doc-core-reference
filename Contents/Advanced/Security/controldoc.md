@@ -6,7 +6,7 @@ documents][acldoc].
 Le contrôle d'accès au document est fait par les interfaces de haut-niveau. La
 [classe Doc][classdoc] et notamment la fonction `new_Doc()` ne vérifie pas les
 accès. Ces vérifications doivent être fait par les actions avec la
-méthode [`Doc::control()`][docctrl].
+méthode [`Doc::hasPermission()`][docctrl].
 
 Le schéma suivant décrit les contrôles de l'action [FDL:OPENDOC][opendoc] et
 précise la cinématique de l'[accès à un document][viewdocreq].
