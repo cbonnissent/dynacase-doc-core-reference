@@ -40,7 +40,7 @@ book:
     - level:   2
       content:  "object_model/revision.md"
       flags:
-        wip: "work in progress"
+        draft: "draft"
 ##
 # famille
 ##
