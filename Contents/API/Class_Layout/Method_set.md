@@ -45,7 +45,7 @@ Fichier de template `FOO/Layout/bar.xml` :
 
     [xml]
     <div>
-    <p>Bonjour [NOM]&nbsp;[PRENOM]</span>,</p>
+    <p>Bonjour [NOM]&nbsp;[PRENOM],</p>
     <p>La température est actuellement de [TEMPC]°C.</p>
     </div>
 

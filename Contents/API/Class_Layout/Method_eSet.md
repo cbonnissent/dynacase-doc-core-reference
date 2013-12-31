@@ -12,8 +12,8 @@ de template HTML ou XML.
     [php]
     void eSet ( string $tag, string $val )
 
-La différence entre cette méthode et la méthode [`set()`][set] et qu'elle encode
-les valeurs lors de l'insertion. L'encodage est réalisée par la 
+La différence entre cette méthode et la méthode [`set()`][set] est qu'elle
+encode les valeurs lors de l'insertion. L'encodage est réalisée par la 
 fonction PHP [`htmlspecialchars()`][htmlspecialchars].
 
 Liste des caractères encodés :
@@ -27,7 +27,8 @@ Liste des caractères encodés :
 
 ### Avertissements  {#core-ref:95d2589c-7077-4b00-b999-43dafa85ce05}
 
-Cette méthode doit être utilisée si le champ est entre quote ou double-quote.
+Cette méthode doit être utilisée si le champ est entre `'` (quote) ou `"`
+(double-quote).
 
 ## Liste des paramètres  {#core-ref:df082e35-f98b-4e8b-b199-34889eb1a71e}
 
@@ -87,8 +88,10 @@ Résultat :
 
 ## Notes  {#core-ref:7aa15b22-105e-4026-9991-1ca9171280b5}
 
-Attention, dans les cas de partie d'url, il faut utiliser [`urlencode`][urlencode] au lieu de
-cette méthode afin de garantir l'intégrité de l'url.
+Attention, dans les cas de parties d'url, il faut utiliser
+[`urlencode`][urlencode] au lieu de [`htmlspecialchars`][htmlspecialchars]
+afin de garantir l'intégrité de l'url. Dans ce cas, il faut utiliser la méthode
+[`Layout::set()`][set] et appeler manuellement `urlencode`.
 
 ## Voir aussi  {#core-ref:a636b518-c3b2-4f6c-9dff-0e50c9337cd1}
 
