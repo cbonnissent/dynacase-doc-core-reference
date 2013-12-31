@@ -1,22 +1,22 @@
-# Accès à la base de données
+# Accès à la base de données {#core-ref:94b8faba-5195-4250-bb85-339f478f7961}
 
-L'accès à la base donnée est définie à l'aide d'un [service
+L'accès à la base donnée est défini à l'aide d'un [service
 Postgresql][pgservice].
 
-Les coordonnées du service sont obtenus avec la fonction `getDbAccess()`.
+Les coordonnées du service sont obtenues avec la fonction `getDbAccess()`.
 
     [php]
-    $dbAccess=getDbAccess();
+    $dbAccess = getDbAccess();
     printf("Database [%s]\n",$dbAccess);
 
 Résultat :
 
     Database [service='developpement']
 
-L'accès peut être réalisée avec la fonction PHP [`pg_connect`][pgconnect].
+L'accès peut être réalisé avec la fonction PHP [`pg_connect`][pgconnect].
 
     [php]
-    $resource= pg_connect($dbAccess);
+    $resource = pg_connect($dbAccess);
     var_dump($resource);
 
 Résultat :
