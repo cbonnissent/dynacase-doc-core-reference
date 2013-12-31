@@ -2,8 +2,8 @@
 
 <div class="short-description" markdown="1">
 
-Cette méthode permets d'indiquer quel sont les [propriétés][docprop] ou
-[attributs][docattr] que l'on veut récupérer.
+Cette méthode permet d'indiquer quels sont les [propriétés][docprop] ou
+[attributs][docattr] que doit retourner la recherche.
 
 </div>
 
@@ -13,8 +13,8 @@ Cette méthode permets d'indiquer quel sont les [propriétés][docprop] ou
     [php]
     void returnsOnly (array $returns)
 
-Cette méthode permets d'accélérer le traitement de la requête en indiquant un
-sous-ensemble d'attributs ou de propriétés. Ceci a deux avantages :
+Cette méthode permet d'accélérer le traitement de la requête en indiquant un
+sous-ensemble d'attributs ou de propriétés. Ceci a deux avantages :
 
 1.  Moins de données transférées entre la base de données et le serveur
 2.  Moins de consommation mémoire
@@ -32,7 +32,14 @@ modifiés par la méthode [`Doc::store()`][docstore].
 
 (array) `returns` 
 :   Indique une liste de propriétés ou d'attribut à récupérer.
-
+    
+    Si `returns` est vide, les 4 propriétés *élémentaires* du document sont
+    retournées :
+    
+    -   id
+    -   title
+    -   fromid
+    -   doctype
 
 ## Valeur de retour  {#core-ref:5e181a94-0890-4131-a7b9-68669ac15e9e}
 
@@ -60,6 +67,7 @@ Aucun.
     
     printf("Requête : %s\n",print_r($s->getSearchInfo(), true));
     
+    print("Résultats :\n");
     $documentList=$s->getDocumentList();
     foreach ($documentList as $docid=>$doc) {
       printf("%d) %-10s : %s\n", 
@@ -68,7 +76,8 @@ Aucun.
          $doc->getRawValue(\Dcp\AttributeIdentifiers\Zoo_Animal::an_espece));
     }
 
-La partie *"select"* contient toutes les propriétés et attributs de la famille.
+La partie *"select"* contient toutes les propriétés et tous les attributs de
+la famille.
 
 Résultat :
 
@@ -78,7 +87,7 @@ Résultat :
 <!--beware there is no tab here for sql syntax-->
 
     [sql]
-        [query] => select doc1053.id, owner, title, revision, version, initid, fromid, 
+        [query] => SELECT doc1053.id, owner, title, revision, version, initid, fromid, 
                           doctype, locked, allocated, archiveid, icon, lmodify, profid, 
                           usefor, cdate, adate, revdate, comment, classname, state, wid, 
                           postitid, domainid, lockdomainid, cvid, name, dprofid, views, atags,
@@ -87,22 +96,22 @@ Résultat :
                           an_classe, an_sexe, an_photo, an_gardien, an_naissance, 
                           an_entree, an_enfant, an_pere, an_mere, an_classe_title, 
                           an_pere_title, an_mere_title, values, attrids  
-                from  doc1053  
-                where   (doc1053.archiveid is null) and (doc1053.doctype != 'T') and (doc1053.locked != -1) 
-                        and (views && '{2,0,11}') 
-                ORDER BY initid LIMIT ALL OFFSET 0;
-    
+                   FROM doc1053  
+                   WHERE (doc1053.archiveid is null) AND (doc1053.doctype != 'T') AND (doc1053.locked != -1) AND (views && '{2,0,11}') 
+                   ORDER BY initid LIMIT ALL OFFSET 0;
+
         [error] => 
         [delay] => 0.017s
     )
 
+    Résultats :
     1419) Rotor      : 1295
     1420) Théodor    : 1295
     1421) Éléonore   : 1295
 
 ## Retour minimaliste
 
-Dans cet exemple, seuls les quatre propriétés nécessaires sont retournées.
+Dans cet exemple, seules les quatre propriétés nécessaires sont retournées.
 
     [php]
     $s=new SearchDoc("","ZOO_ANIMAL");
@@ -114,6 +123,7 @@ Dans cet exemple, seuls les quatre propriétés nécessaires sont retournées.
     
     printf("Requête : %s\n",print_r($s->getSearchInfo(), true));
     
+    print("Résultats :\n");
     $documentList=$s->getDocumentList();
     foreach ($documentList as $docid=>$doc) {
       printf("%d) %-10s : %s\n", 
@@ -122,7 +132,7 @@ Dans cet exemple, seuls les quatre propriétés nécessaires sont retournées.
          $doc->getRawValue(\Dcp\AttributeIdentifiers\Zoo_Animal::an_espece));
     }
 
-Résultat : 
+Résultat :
 
     Retour : Array
     (
@@ -140,37 +150,40 @@ Résultat :
 <!--beware there is no tab here for sql syntax-->
 
     [sql]
-        [query] => select doc1053.id, title, fromid, doctype  
-                from  doc1053  
-                where   (doc1053.archiveid is null) and (doc1053.doctype != 'T') 
-                        and (doc1053.locked != -1) and (views && '{2,0,11}') 
-                ORDER BY initid LIMIT ALL OFFSET 0;
+        [query] => SELECT doc1053.id, title, fromid, doctype  
+                   FROM doc1053  
+                   WHERE (doc1053.archiveid is null) AND (doc1053.doctype != 'T') AND (doc1053.locked != -1) AND (views && '{2,0,11}') 
+                   ORDER BY initid LIMIT ALL OFFSET 0;
 
         [error] => 
         [delay] => 0.003s
     )
 
-
-**Note** : La valeur de l'attribut `an_espece` n'est pas disponible.
-
+    Résultats :
     1419) Rotor      : 
     1420) Théodor    : 
     1421) Éléonore   : 
+
+**Note** : Puisque `an_espece` n'est pas demandé par `returnsOnly`, sa valeur
+n'est pas disponible.
 
 ### Retour spécifique
 
     [php]
     $s=new SearchDoc("","ZOO_ANIMAL");
     $s->setObjectReturn(true);
-    $s->returnsOnly(array('locked',
-                  \Dcp\AttributeIdentifiers\Zoo_Animal::an_classe, 
-                  \Dcp\AttributeIdentifiers\Zoo_Animal::an_espece ));
+    $s->returnsOnly(array(
+        'locked',
+        \Dcp\AttributeIdentifiers\Zoo_Animal::an_classe,
+        \Dcp\AttributeIdentifiers\Zoo_Animal::an_espece
+    ));
     printf("Retour : %s\n",print_r($s->getReturnsFields(), true));
     $s->setOrder('initid');
     $s->search();
     
     printf("Requête : %s\n",print_r($s->getSearchInfo(), true));
     
+    print("Résultats :\n");
     $documentList=$s->getDocumentList();
     foreach ($documentList as $docid=>$doc) {
       printf("%d) %-10s : [lock uid : %d] %d/%d\n", 
@@ -201,16 +214,16 @@ Résultat :
 <!--beware there is no tab here for sql syntax-->
 
     [sql]
-        [query] => select doc1053.id, title, fromid, doctype, locked, an_classe, an_espece  
-                from  doc1053  
-                where   (doc1053.archiveid is null) and (doc1053.doctype != 'T') 
-                        and (doc1053.locked != -1) and (views && '{2,0,11}') 
-                ORDER BY initid LIMIT ALL OFFSET 0;
+        [query] => SELECT doc1053.id, title, fromid, doctype, locked, an_classe, an_espece
+                   FROM doc1053
+                   WHERE (doc1053.archiveid is null) AND (doc1053.doctype != 'T') AND (doc1053.locked != -1) AND (views && '{2,0,11}')
+                   ORDER BY initid LIMIT ALL OFFSET 0;
 
         [error] => 
         [delay] => 0.003s
     )
-    
+
+    Résultats :
     1419) Rotor      : [lock uid : 0]  1291/1295
     1420) Théodor    : [lock uid : 11] 1291/1295
     1421) Éléonore   : [lock uid : 0]  1291/1295
@@ -244,14 +257,13 @@ Avec un retour "normal" : **&gt; 6 min**
 <!--beware there is no tab here for sql syntax-->
 
     [sql]
-        [query] => select docread.id, owner, title, revision, version, initid, fromid, 
+        [query] => SELECT docread.id, owner, title, revision, version, initid, fromid,
                         doctype, locked, allocated, archiveid, icon, lmodify, profid, usefor, cdate, 
                         adate, revdate, comment, classname, state, wid, postitid, domainid, lockdomainid, 
                         cvid, name, dprofid, atags, prelid, confidential, ldapdn, values, svalues, attrids
-                   from  docread 
-                   where   (docread.archiveid is null) and (docread.doctype != 'Z') and 
-                        (docread.doctype != 'T') and (docread.locked != -1) 
-                    ORDER BY initid LIMIT ALL OFFSET 0;
+                   FROM docread
+                   WHERE (docread.archiveid is null) AND (docread.doctype != 'Z') AND (docread.doctype != 'T') AND (docread.locked != -1) 
+                   ORDER BY initid LIMIT ALL OFFSET 0;
 
         [error] => 
         [delay] => 367.984s
@@ -266,11 +278,10 @@ Avec un retour "minimaliste" : **&lt; 200ms**
 <!--beware there is no tab here for sql syntax-->
 
     [sql]
-        [query] => select docread.id, title, fromid, doctype  
-                from  docread  
-                where   (docread.archiveid is null) and (docread.doctype != 'Z') and 
-                    (docread.doctype != 'T') and (docread.locked != -1) 
-                ORDER BY initid LIMIT ALL OFFSET 0;
+        [query] => SELECT docread.id, title, fromid, doctype
+                   FROM docread
+                   WHERE (docread.archiveid is null) AND (docread.doctype != 'Z') AND (docread.doctype != 'T') AND (docread.locked != -1)
+                   ORDER BY initid LIMIT ALL OFFSET 0;
 
         [error] => 
         [delay] => 0.192s
