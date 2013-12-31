@@ -1285,11 +1285,11 @@ book:
     - level:   3
       content:  "Advanced/Database/databaseaccess.md"
       flags:
-        draft : "draft"
+        new : "new"
     - level:   3
       content:  "Advanced/Database/simplequery.md"
       flags:
-        draft : "draft"
+        new : "new"
     - level:   3
       content:  "Advanced/Database/dbdoc.md"
       flags:
