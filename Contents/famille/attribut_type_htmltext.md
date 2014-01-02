@@ -55,7 +55,7 @@ doclink
     
     *   un objet JSON (par exemple `{"famId": "DIR", "docrev" : "fixed"}`), contenant les propriétés suivantes :
         *   `famId` (obligatoire) : nom logique de la famille des documents cible,
-        *   `docrev` (facultatif) : les valeurs possibles sont les mêmes que l'option *docrev* des attributs de type *docid* (latest, fixed, state(keystate)),
+        *   `docrev` (facultatif) : les valeurs possibles sont les mêmes que l'option [*docrev*][docrev] des attributs de type *docid* (*latest*, *fixed*, *state(keystate)*),
         *   `filter` (facultatif) : un filtre SQL qui sera appliqué à la recherche
 
 editheight
@@ -150,3 +150,4 @@ toolbarexpand
 [JSCOLOR_home]: http://jscolor.com/ "site officiel de JSColor"
 [JSCALENDAR_HOME]: http://www.dynarch.com/projects/calendar/old/ "site officiel de JSCalendar"
 [odt_restrictions]: #core-ref:3742b35d-ddc0-440e-a0aa-08ea2faf0e46
+[docrev]: #core-ref:9bcfd205-fb07-4a71-be06-ba07d4a9cc7c
