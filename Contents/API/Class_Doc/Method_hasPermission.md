@@ -29,18 +29,20 @@ Aucun.
 :   Nom du [droit][acldoc] a examiner.
 
 (bool) `strict`
-:   Indique s'il faut tenir compte de la [suppléance][suppleant].  
-    Si `false` (par défaut) : les droits des titulaires sont aussi pris en compte
-    Si `true` : les droits des titulaires ne sont pas pris en compte.
+:   Indique s'il faut tenir compte de la [suppléance][suppleant] :
+    
+    -   Si `false` (par défaut) : les droits des titulaires sont aussi pris en
+        compte
+    -   Si `true` : les droits des titulaires ne sont pas pris en compte.
 
 ## Valeur de retour {#core-ref:1fbcbab4-b29d-4274-8a87-64cf2b683358}
 
-Retourne `true` dans les cas suivants :
+Retourne `true` dans les cas suivants :
 
 *   si l'utilisateur possède le droit demandé,
-*   si l'utilisateur est "admin".
+*   si l'utilisateur est "admin" (même si le droit n'existe pas).
 
-Retourné `false` dans les cas suivants :
+Retourne `false` dans les cas suivants :
 
 *   si l'utilisateur ne possède pas le droit demandé (hors "admin"),
 *   si le droit n'est pas un des droits du document (hors "admin").
@@ -66,18 +68,20 @@ retourne un message vide.
 Le droit de modifier est le droit `edit`.
 
     [php]
-    include_once("FDL/Class.Doc.php");
-    $doc=new_doc("", "1420"); // document n°1420
+    require_once("FDL/Class.Doc.php");
+    $doc = new_doc("", "1420"); // document n°1420
     if ($doc->isAlive()) {
-      if ($doc->hasPermission('edit')) {
-        printf('Utilisateur "%s" a le droit de modifier "%s"'."\n",
-           getCurrentUser()->login,
-           $doc->getTitle());
-      } else {
-        printf('Utilisateur "%s" n\'a pas le droit de modifier "%s"'."\n",
-           getCurrentUser()->login,
-           $doc->getTitle());
-      }
+        if ($doc->hasPermission('edit')) {
+            printf('Utilisateur "%s" a le droit de modifier "%s"'."\n",
+                getCurrentUser()->login,
+                $doc->getTitle()
+            );
+        } else {
+            printf('Utilisateur "%s" n\'a pas le droit de modifier "%s"'."\n",
+                getCurrentUser()->login,
+                $doc->getTitle()
+            );
+        }
     } else {
         printf("Document non trouvé\n");
     }
@@ -91,23 +95,25 @@ modification. Il peut être nécessaire de vérifier aussi le verrou
 La liste des droits du documents est dans la propriété `acls` de l'objet.
 
     [php]
-    include_once("FDL/Class.Doc.php");
-    $doc=new_doc("", "1420");
+    require_once("FDL/Class.Doc.php");
+    $doc = new_doc("", "1420");
     if ($doc->isAlive()) {
-          $acls= $doc->acls;
-          printf('Utilisateur "%s" a les droits suivants pour "%s" :'."\n",
-                 getCurrentUser()->login,
-                 $doc->getTitle());
-          foreach ($acls as $acl) {
-              printf("Droit %-12s : %s\n", 
-                     $acl, 
-                     ($doc->hasPermission($acl))?"Oui":"Non");
-          }
+        $acls = $doc->acls;
+        printf('Utilisateur "%s" a les droits suivants pour "%s" :'."\n",
+            getCurrentUser()->login,
+            $doc->getTitle()
+        );
+        foreach ($acls as $acl) {
+            printf("Droit %-12s : %s\n", 
+                $acl, 
+                ($doc->hasPermission($acl))?"Oui":"Non"
+            );
+        }
     } else {
-      printf("Document non trouvé\n");
+        printf("Document non trouvé\n");
     }
 
-Résultat :
+Résultat :
 
     Utilisateur "zoo.garde" a les droits suivants pour "Théodor" :
     Droit view         : Oui
