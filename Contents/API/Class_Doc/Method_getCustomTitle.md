@@ -15,8 +15,8 @@ La méthode `getCustomTitle` permet de surcharger la méthode de composition du
 titre par défaut des documents, et de définir sa propre méthode de composition
 du titre.
 
-Par défaut, le titre est composé en concaténant la valeur des attributs déclarés
-avec la caractéristique [`in_title`][attr_in_title].
+Par défaut, le titre est composé en concaténant la valeur des attributs
+déclarés avec la caractéristique [`in_title`][attr_in_title].
 
 ### Avertissements {#core-ref:d7c909a8-f2fa-4ddf-954c-00704e9a694d}
 
@@ -28,7 +28,7 @@ Aucun.
 
 ## Valeur de retour {#core-ref:b9a98633-25e6-41c8-8336-bd6a412c59fd}
 
-La méthode retourne une chaîne de caractère qui est le titre du document.
+La méthode retourne une chaîne de caractères qui est le titre du document.
 
 ## Erreurs / Exceptions {#core-ref:337d123b-e146-46be-81a5-e31f266a7f13}
 
@@ -46,25 +46,25 @@ dynacase-core.
 
 ## Exemples {#core-ref:e5ff480e-ce03-40a7-b098-116e03fd6ad0}
 
-- Exemple #1
-
-    [php]
-    namespace Facturation;
+-   Exemple #1
     
-    class ArchiveFacture extends \Dcp\Family\Dir {
-    
-        /*
-         * Compose le titre avec la valeur de l'attribut `ref_client` et
-         * l'`id` du document. Ex. : "ACMECorp-1234"
-         */
-        public function getCustomTitle() {
-            return sprintf(
-                "%s-%s",
-                $this->getAttributeValue(\Dcp\AttributeIdentifiers\ArchiveFacture::ref_client),
-                $this->getPropertyValue('id'),
-             );
+        [php]
+        namespace Facturation;
+        
+        class ArchiveFacture extends \Dcp\Family\Dir {
+        
+            /*
+             * Compose le titre avec la valeur de l'attribut `ref_client` et
+             * l'`id` du document. Ex. : "ACMECorp-1234"
+             */
+            public function getCustomTitle() {
+                return sprintf(
+                    "%s-%s",
+                    $this->getAttributeValue(\Dcp\AttributeIdentifiers\ArchiveFacture::ref_client),
+                    $this->getPropertyValue('id'),
+                );
+            }
         }
-    }
 
 ## Notes {#core-ref:49db0916-cd96-4cc8-972b-706f3d6a4b0d}
 
