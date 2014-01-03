@@ -3,7 +3,7 @@
 <div class="short-description" markdown="1">
 
 Cette méthode permet aux méthodes de modification de ne pas tenir compte du
-[droit][acldoc] de modification. 
+[droit][acldoc] de modification.
 
 </div>
 
@@ -12,7 +12,7 @@ Cette méthode permet aux méthodes de modification de ne pas tenir compte du
     [php]
     void disableEditControl (  )
 
-Les méthodes suivantes ne vérifient plus le droit de modification :
+Les méthodes suivantes ne vérifient plus le droit de modification (`edit`) :
 
 *   [`Doc::setValue()`][setvalue],
 *   [`Doc::store()`][store]
@@ -23,7 +23,19 @@ droit `edit`, mais continue à vérifier les verrous.
 
 ### Avertissements {#core-ref:e95213e6-089a-447f-a76d-a4f171a1ab66}
 
-Aucun.
+Les appels successifs à `disableEditControl` se cumulent. Ainsi, si une méthode
+fait appel à `disableEditControl` et n'appelle pas `enableEditControl`, toutes
+les méthodes qui se déclenchent ensuite outrepasseront les privilèges de
+l'utilisateur. Aussi, à moins de vouloir explicitement ce comportement, tout
+appel à `disableEditControl` doit être suivi d'un appel à `enableEditControl`
+avant que la fonction ne retourne, même en cas de retour anticipé à cause d'une
+erreur. Notamment, le code suivant laisse les contrôles désactivés :
+
+    [php]
+    $doc = new_Doc("", 1000);
+    $doc->disableEditControl();
+    $doc->disableEditControl();
+    $doc->enableEditControl();
 
 ## Liste des paramètres {#core-ref:4e1be90b-157d-4386-9c08-f4194fe3cb4d}
 
@@ -45,67 +57,67 @@ Aucun.
 
 L'utilisateur courant n'a pas le droit `edit` sur le document n°1420.
 
-### Sans suspension de contrôle de droit
+### Sans suspension de contrôle de droit {#core-ref:8bf775f8-c835-4fc6-a8b2-cdb8fdc4e34c}
 
     [php]
-    include_once("FDL/Class.Doc.php");
-    $doc=new_doc("", "1420");
-    if ($doc->isAlive()) 
-      $err1=$doc->setValue(\Dcp\AttributeIdentifiers\Zoo_animal::an_nom,"Gastor");  
-      $err2=$doc->store();
-      printf( "Erreur : [1:%s] - [2:%s]\n", $err1, $err2);
+    require_once("FDL/Class.Doc.php");
+    $doc = new_doc("", "1420");
+    if ($doc->isAlive()){
+        $err1 = $doc->setValue(\Dcp\AttributeIdentifiers\Zoo_animal::an_nom,"Gastor");  
+        $err2 = $doc->store();
+        printf( "Erreur : [1:%s] - [2:%s]\n", $err1, $err2);
     } else {
-      printf("Document non trouvé\n");
+        printf("Document non trouvé\n");
     }
 
-Résultat :
+Résultat :
 
     Erreur : [1:Pas de privilège edit pour le document Théodor [1420]] - [2:]
 
-Attention, la méthode [`Doc::store()`][store] ne retourne pas d'erreur dans ce cas, car
-l'affectation n'a pas eu lieu et comme aucune modification n'a été détectée,
-l'enregistrement en base de données n'a eu lieu.
+Attention, la méthode [`Doc::store()`][store] ne retourne pas d'erreur dans ce
+cas, car l'affectation n'a pas eu lieu et comme aucune modification n'a été
+détectée, l'enregistrement en base de données n'a pas eu lieu.
 
-### Avec suspension de contrôle de droit sur l'affectation
+### Avec suspension de contrôle de droit sur l'affectation {#core-ref:0716b826-b5ed-4bb5-9b96-07fd48a99497}
 
     [php]
-    include_once("FDL/Class.Doc.php");
-    $doc=new_doc("", "1420");
-    if ($doc->isAlive()) 
-      $doc->disableEditControl();
-      $err1=$doc->setValue(\Dcp\AttributeIdentifiers\Zoo_animal::an_nom,"Gastor");  
-      $doc->enableEditControl();
-      $err2=$doc->store();
-      printf( "Erreur : [1:%s] - [2:%s]\n", $err1, $err2);
+    require_once("FDL/Class.Doc.php");
+    $doc = new_doc("", "1420");
+    if ($doc->isAlive()){
+        $doc->disableEditControl();
+        $err1=$doc->setValue(\Dcp\AttributeIdentifiers\Zoo_animal::an_nom,"Gastor");  
+        $doc->enableEditControl();
+        $err2=$doc->store();
+        printf( "Erreur : [1:%s] - [2:%s]\n", $err1, $err2);
     } else {
-      printf("Document non trouvé\n");
+        printf("Document non trouvé\n");
     }
 
-Résultat :
+Résultat :
 
     Erreur : [1:] - [2:Pas de privilège edit pour le document Théodor [1420]]
 
-### Avec suspension complète de contrôle de droit  
+### Avec suspension complète de contrôle de droit {#core-ref:7c6d43a8-fd07-4fc6-9906-8c4a7820dd70}
 
     [php]
-    include_once("FDL/Class.Doc.php");
-    $doc=new_doc("", "1420");
+    require_once("FDL/Class.Doc.php");
+    $doc = new_doc("", "1420");
     if ($doc->isAlive()) 
-      $doc->disableEditControl();
-      $err1=$doc->setValue(\Dcp\AttributeIdentifiers\Zoo_animal::an_nom,"Gastor");  
-      $err2=$doc->store();
-      $doc->enableEditControl();
-      printf( "Erreur : [1:%s] - [2:%s]\n", $err1, $err2);
+        $doc->disableEditControl();
+        $err1=$doc->setValue(\Dcp\AttributeIdentifiers\Zoo_animal::an_nom,"Gastor");  
+        $err2=$doc->store();
+        $doc->enableEditControl();
+        printf( "Erreur : [1:%s] - [2:%s]\n", $err1, $err2);
     } else {
-      printf("Document non trouvé\n");
+        printf("Document non trouvé\n");
     }
 
-Résultat :
+Résultat :
 
     Erreur : [1:] - [2:]
 
 
-L'affectation ainsi que l'enregistrement a bien pu être réalisé.
+L'affectation ainsi que l'enregistrement ont bien pu être réalisés.
 
 ## Notes {#core-ref:c8372033-9534-492e-affb-93ce83b87826}
 
