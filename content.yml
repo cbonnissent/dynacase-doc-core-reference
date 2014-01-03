@@ -501,7 +501,6 @@ book:
       content:  "API/Class_Doc/Method_addArrayRow.md"
       flags:
         new : "new"
-        draft : "draft"
     - level:   4
       element: "chapter"
       content:  "API/Class_Doc/Method_addHistoryEntry.md"
@@ -516,7 +515,6 @@ book:
       content:  "API/Class_Doc/Method_arrayToRawValue.md"
       flags:
         new : "new"
-        draft : "draft"
     - level:   4
       element: "chapter"
       content:  "API/Class_Doc/Method_hasPermission.md"
@@ -533,7 +531,6 @@ book:
       content:  "API/Class_Doc/Method_clearArrayValues.md"
       flags:
         new : "new"
-        draft : "draft"
     - level:   4
       element: "chapter"
       content:  "API/Class_Doc/Method_disableEditControl.md"
@@ -562,7 +559,6 @@ book:
       content:  "API/Class_Doc/Method_getArrayRawValues.md"
       flags:
         new:   "new"
-        draft: "draft"
     - level:   4
       element: "chapter"
       content:  "API/Class_Doc/Method_getAttribute.md"
@@ -601,7 +597,6 @@ book:
       content:  "API/Class_Doc/Method_getMultipleRawValues.md"
       flags:
         new:   "new"
-        draft: "draft"
     - level:   4
       element: "chapter"
       content:  "API/Class_Doc/Method_getOldRawValue.md"
@@ -655,13 +650,11 @@ book:
       content:  "API/Class_Doc/Method_rawValueToArray.md"
       flags:
         new : "new"
-        draft : "draft"
     - level:   4
       element: "chapter"
       content:  "API/Class_Doc/Method_removeArrayRow.md"
       flags:
         new : "new"
-        draft : "draft"
     - level:   4
       element: "chapter"
       content:  "API/Class_Doc/Method_Refresh.md"

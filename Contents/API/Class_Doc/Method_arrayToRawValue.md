@@ -2,8 +2,8 @@
 
 <div class="short-description" markdown="1">
 
-La méthode `arrayToRawValue` permet de sérialiser un ensemble de valeurs pour être
-utilisés dans un attribut faisant partie d'un [array][type_array] ou un
+La méthode `arrayToRawValue` permet de sérialiser un ensemble de valeurs pour
+les utiliser dans un attribut faisant partie d'un [array][type_array] ou un
 attribut [multi-valué][option_multiple].
 
 </div>
@@ -15,13 +15,13 @@ attribut [multi-valué][option_multiple].
                                     string $br = "<BR>" )
 
 La métode `arrayToRawValue` permet de sérialiser un ensemble de valeurs sous la
-forme d'une chaîne de caractères qui peut ensuite être utilisée pour positionner
-la valeur d'un attribut faisant partie d'un [array][type_array], ou d'un
-attribut [multi-valué][option_multiple], avec la méthode
+forme d'une chaîne de caractères qui peut ensuite être utilisée pour
+positionner la valeur d'un attribut faisant partie d'un [array][type_array],
+ou d'un attribut [multi-valué][option_multiple], avec la méthode
 [`Doc::setValue`][Doc::setValue].
 
-Les valeurs sont sérialisés par une concaténation avec le caractère `\n` utilisé
-comme séparateur.
+Les valeurs sont sérialisées par une concaténation avec le caractère `\n`
+utilisé comme séparateur.
 
 ### Avertissements {#core-ref:609111ac-6775-491d-9ef9-ef71b0e28095}
 
@@ -35,19 +35,19 @@ automatiquement ces opérations de sérialisation.
 ## Liste des paramètres {#core-ref:6d085caa-1128-49ad-be08-c72f8109b640}
 
 (array(string)) `v`
-:   Une liste de chaîne de caractères.
+:   Une liste de chaînes de caractères.
 
 (string) `br`
 :   `br` permet de spécifier la chaîne de caractère utilisée pour substituer le
     caractère retour à la ligne `\n` dans les valeurs à sérialiser.
     
-    Par défaut, la chaîne de caractère de substitution est la chaîne
+    Par défaut, la chaîne de caractères de substitution est la chaîne
     `<BR>`.
 
 ## Valeur de retour {#core-ref:e1d2a73e-3def-47dd-bb9e-ce0ff13bdf89}
 
-La méthode `arrayToRawValue` retourne une chaîne de caractère correspondant à
-la sérialisation des valeurs fournis.
+La méthode `arrayToRawValue` retourne une chaîne de caractères correspondant à
+la sérialisation des valeurs fournies.
 
 ## Erreurs / Exceptions {#core-ref:034557e1-fc5d-4f53-a3ab-85107adf86c1}
 
@@ -65,22 +65,22 @@ dynacase-core.
 
 ## Exemples {#core-ref:eabbf614-bc4b-48e1-bf0a-d044126c09ad}
 
-- Exemple #1
-
-L'attribut `PHOTO_KEYWORDS` est un attribut de type texte multi-valué (option
-[multiple][option_multiple]).
-
-    [php]
-    $motsCles = array(
-    	'Tour Eiffel',
-    	'Champ de Mars',
-    	'Paris',
-    	'France'
-    );
-    $photo->setValue(
-        \Dcp\AttributeIdentifiers\MyPhoto:photo_keywords,
-        $doc->arrayToRawValue($motCles)
-    );
+-   Exemple #1
+    
+    L'attribut `PHOTO_KEYWORDS` est un attribut de type texte multi-valué (option
+    [multiple][option_multiple]).
+    
+        [php]
+        $motsCles = array(
+            'Tour Eiffel',
+            'Champ de Mars',
+            'Paris',
+            'France'
+        );
+        $photo->setValue(
+            \Dcp\AttributeIdentifiers\MyPhoto:photo_keywords,
+            $doc->arrayToRawValue($motCles)
+        );
 
 ## Notes {#core-ref:13a1c4ec-26b7-4065-bc82-59e4078b8b0d}
 

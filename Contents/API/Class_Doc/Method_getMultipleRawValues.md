@@ -12,8 +12,8 @@ La méthode `getMultipleRawValues` permet de retourner les valeurs d'un attribut
 
     [php]
     mixed getMultipleRawValues ( string $idAttr,
-    	                         string $def   = "",
-    	                            int $index = - 1 )
+                                 string $def   = "",
+                                    int $index = - 1 )
 
 La méthode `getMultipleRawValues` permet d'obtenir les valeurs d'attributs
 multi-valués.
@@ -41,15 +41,19 @@ Aucun.
 (int) `index`
 :   `index` permet d'obtenir la valeur à un indice (à partir de 0) donné.
     
-    Si `index` est égal à -1, alors toutes les valeurs de l'attribut sont
-    retournés.
+    Si `index` est égal à `-1`, alors toutes les valeurs de l'attribut sont
+    retournées.
+    
     Si `index` est supérieur ou égal au nombre de valeurs, alors la valeur par
     défaut définie par `def` est retournée.
 
 ## Valeur de retour {#core-ref:35e136af-410b-4bfe-b531-f36d73809278}
 
-La méthode retourne la valeur (scalaire) ou les valeurs (array) demandées, ou la
-valeur scalaire par défaut `def` si l'attribut n'est pas valué.
+La méthode retourne
+
+-   la valeur (scalaire) si le paramètres `index` est différent de `-1`,
+-   les valeurs (array) si `index` vaut `-1`,
+-   ou la valeur scalaire par défaut `def` si l'attribut n'est pas valué.
 
 ## Erreurs / Exceptions {#core-ref:b350846e-3ab5-45c8-abf3-8f355a8da577}
 
@@ -67,55 +71,55 @@ dynacase-core.
 
 ## Exemples {#core-ref:218ac78c-8f34-4066-951e-83d1d06021c5}
 
-- Exemple #1
-
-L'attribut `us_groups` est de type [`array`][type_array], avec les colonnes
-`us_idgroup` de type `docid("IUSER")` et `us_group` de type `text`.
-
-    [php]
-    /*
-     * Obtenir l'ensemble des valeurs de la colonne `us_group`
-     */
-    $v = $iuser->getMultipleRawValues(
-    	\Dcp\AttributeIdentifiers\Iuser::us_group
-    );
+-   Exemple #1
     
-    var_dump($v);
-
-Résultat :
-
-    [php]
-    array(3) {
-      [0]=>
-      string(3) "Foo"
-      [1]=>
-      string(3) "Bar"
-      [2]=>
-      string(3) "Baz"
-    }
-
-- Exemple #2
-
-L'attribut `us_groups` est de type [`array`][type_array], avec les colonnes
-`us_idgroup` de type `docid("IUSER")` et `us_group` de type `text`.
-
-    [php]
-    /*
-     * Obtenir la deuxième valeur de la colonne `us_group`
-     * (valeur à l'indice 1)
-     */
-    $v = $iuser->getMultipleRawValues(
-    	\Dcp\AttributeIdentifiers\Iuser::us_group,
-    	"",
-    	1
-    );
+    L'attribut `us_groups` est de type [`array`][type_array], avec les colonnes
+    `us_idgroup` de type `docid("IUSER")` et `us_group` de type `text`.
     
-    var_dump($v);
+        [php]
+        /*
+         * Obtenir l'ensemble des valeurs de la colonne `us_group`
+         */
+        $v = $iuser->getMultipleRawValues(
+            \Dcp\AttributeIdentifiers\Iuser::us_group
+        );
+        
+        var_dump($v);
+    
+    Résultat :
+    
+        [php]
+        array(3) {
+          [0]=>
+          string(3) "Foo"
+          [1]=>
+          string(3) "Bar"
+          [2]=>
+          string(3) "Baz"
+        }
 
-Résultat :
-
-    [php]
-    string(3) "Bar"
+-   Exemple #2
+    
+    L'attribut `us_groups` est de type [`array`][type_array], avec les colonnes
+    `us_idgroup` de type `docid("IUSER")` et `us_group` de type `text`.
+    
+        [php]
+        /*
+         * Obtenir la deuxième valeur de la colonne `us_group`
+         * (valeur à l'indice 1)
+         */
+        $v = $iuser->getMultipleRawValues(
+            \Dcp\AttributeIdentifiers\Iuser::us_group,
+            "",
+            1
+        );
+        
+        var_dump($v);
+    
+    Résultat :
+    
+        [php]
+        string(3) "Bar"
 
 ## Notes {#core-ref:136941c1-6eb9-44ea-adb1-9f896a9c0608}
 

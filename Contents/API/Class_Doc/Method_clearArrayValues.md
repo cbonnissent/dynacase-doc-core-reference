@@ -13,8 +13,8 @@ La méthode `clearArrayValues` permet de vider les valeurs d'un attribut de type
     string clearArrayValues ( string $idAttr )
 
 La méthode `clearArrayValues` permet de vider les valeurs d'un attribut de type
-[`array`][type_array] en vidant le contenu de tous les attributs rattachés à ce
-array.
+[`array`][type_array] en vidant le contenu de tous les attributs rattachés à
+cet array.
 
 ### Avertissements {#core-ref:bc51a703-9b6e-43bf-84e5-6f77a87801cb}
 
@@ -28,7 +28,7 @@ Aucun.
 
 ## Valeur de retour {#core-ref:daa8210a-0705-40bf-b91a-65283f824575}
 
-La méthode retourne une chaîne vide s'il n'y a pas d'erreurs, ou une chaîne
+La méthode retourne une chaîne vide s'il n'y a pas d'erreur, ou une chaîne
 non-vide contenant le message d'erreur dans le cas contraire.
 
 ## Erreurs / Exceptions {#core-ref:1eccec47-d4e3-48a1-9a24-761d412d2626}
@@ -48,22 +48,23 @@ dynacase-core.
 
 ## Exemples {#core-ref:85e67c69-dab9-44ae-a099-92d0e6414af6}
 
-- Exemple #1
-
-L'attribut `photo_list` est un attribut de type [`array`][type_array] contenant les
-attributs `photo_file` de type `file` et `photo_comment` de type `htmltext`.
-
-    [php]
-    $album->deleteArray(\Dcp\AttributeIdentifier\MyAlbum::photo_list);
-
-Le contenu des attributs `photo_file` et `photo_comment` est alors effacé.
-
-De la même manière, le tableau peut être vidé en vidant explicitement chacune
-des colonnes du array :
-
-    [php]
-    $album->clearValue(\Dcp\AttributeIdentifiers\MyAlbum::photo_file);
-    $album->clearValue(\Dcp\AttributeIdentifiers\MyAlbum::photo_comment);
+-   Exemple #1
+    
+    L'attribut `photo_list` est un attribut de type [`array`][type_array]
+    contenant les  attributs `photo_file` de type `file` et `photo_comment` de
+    type `htmltext`.
+    
+        [php]
+        $album->deleteArray(\Dcp\AttributeIdentifier\MyAlbum::photo_list);
+    
+    Le contenu des attributs `photo_file` et `photo_comment` est alors effacé.
+    
+    De la même manière, le tableau peut être vidé en vidant explicitement
+    chacune des colonnes de l'array :
+    
+        [php]
+        $album->clearValue(\Dcp\AttributeIdentifiers\MyAlbum::photo_file);
+        $album->clearValue(\Dcp\AttributeIdentifiers\MyAlbum::photo_comment);
 
 ## Notes {#core-ref:4c6f3f21-dd08-41c7-9457-786095a4be01}
 
