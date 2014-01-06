@@ -648,7 +648,6 @@ book:
       content:  "API/Class_Doc/Method_setState.md"
       flags:
         new:   "new"
-        draft: "draf"
     - level:   4
       element: "chapter"
       content:  "API/Class_Doc/Method_setValue.md"
@@ -668,7 +667,6 @@ book:
       content:  "API/Class_Doc/Method_viewattr.md"
       flags:
         new : "new"
-        draft : "draft"
     - level:   2
       element: "chapter"
       content:  "API/Class_Docfam.md"
