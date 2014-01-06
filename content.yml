@@ -561,7 +561,6 @@ book:
       content:  "API/Class_Doc/Method_getAttribute.md"
       flags:
         new:   "new"
-        draft: "draft"
     - level:   4
       element: "chapter"
       content:  "API/Class_Doc/Method_getCustomTitle.md"
