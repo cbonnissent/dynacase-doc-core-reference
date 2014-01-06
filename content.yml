@@ -567,7 +567,6 @@ book:
       content:  "API/Class_Doc/Method_getCustomTitle.md"
       flags:
         new:   "new"
-        draft: "draf"
     - level:   4
       element: "chapter"
       content:  "API/Class_Doc/Method_getDate.md"
@@ -617,7 +616,6 @@ book:
       content:  "API/Class_Doc/Method_getTitle.md"
       flags:
         new:   "new"
-        draft: "draft"
     - level:   4
       element: "chapter"
       content:  "API/Class_Doc/Method_getRawValue.md"
