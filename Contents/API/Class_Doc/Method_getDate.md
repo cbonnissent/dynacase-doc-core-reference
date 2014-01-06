@@ -10,11 +10,11 @@ La méthode `getDate` permet d'obtenir la date du jour au format texte.
 
     [php]
     string getDate ( int $daydelta  = 0,
-    	          string $dayhour   = "",
-    	          string $daymin    = "",
-    	            bool $getlocale = false )
+                     int $dayhour   = "",
+                     int $daymin    = "",
+                    bool $getlocale = false )
 
-La méthode `getDate` permet d'obtenir une date du jour compensée par un certains
+La méthode `getDate` permet d'obtenir une date du jour compensée par un certain
 nombre de jours, d'heures ou de minutes.
 
 La date retournée est au format texte international ou au format de la locale de
@@ -34,15 +34,15 @@ Aucun.
 :   `daydelta` permet d'appliquer une compensation de la date en nombre de
     jours.
     
-    Si `daydelta` est < 0, alors la date retournée sera la date courante moins
+    Si `daydelta` est < 0, alors la date retournée est la date courante moins
     le nombre de jours demandés.
     
-    Si `daydelta` est > 0, alors la date retournée sera la date courante plus
+    Si `daydelta` est > 0, alors la date retournée est la date courante plus
     le nombre de jours demandés.
     
     Par défaut, `daydelta` est égal à 0 et retourne donc la date courante.
 
-(string) `dayhour`
+(int) `dayhour`
 :   `dayhour` permet d'appliquer une compensation en nombre d'heures.
     
     Si `dayhour` est différent de la chaîne vide, alors une compensation
@@ -50,7 +50,7 @@ Aucun.
     
     Par défaut `dayhour` est égal à la chaîne vide.
 
-(string) `daymin`
+(int) `daymin`
 :   `daymin` permet d'appliquer une compensation en nombre de minutes.
     
     Si `daymin` est différent de la chaîne vide, alors une compensation exprimée
@@ -63,14 +63,14 @@ Aucun.
     fonction de la locale de l'utilisateur courant.
     
     Par défaut `getlocale` est égal à `false` et la date retournée est au
-    format international (`Y-m-d H:i`).
+    format international.
 
 ## Valeur de retour {#core-ref:f40f8393-ae7a-407b-97bd-1c9108a0f0ca}
 
 La date est retournée en texte au format international ou localisé.
 
 Si `getlocale` est égal à `false`, alors la date est retournée au format
-international `Y-m-d H:i`.
+international `Y-m-d` ou `Y-m-d H:i` s'il y a eu ajout d'heures ou de minutes.
 
 Si `getlocale` est égal à `true`, alors la date est retournée au format
 défini par la locale de l'utilisateur courant.
