@@ -21,7 +21,19 @@ restaurer le contrôle.
 
 ### Avertissements {#core-ref:e0f746f6-5609-4e5f-a97a-b7f87230b881}
 
-Aucun.
+Les appels successifs à `disableEditControl` se cumulent. Ainsi, si une méthode
+fait appel à `disableEditControl` et n'appelle pas `enableEditControl`, toutes
+les méthodes qui se déclenchent ensuite outrepasseront les privilèges de
+l'utilisateur. Aussi, à moins de vouloir explicitement ce comportement, tout
+appel à `disableEditControl` doit être suivi d'un appel à `enableEditControl`
+avant que la fonction ne retourne, même en cas de retour anticipé à cause d'une
+erreur. Notamment, le code suivant laisse les contrôles désactivés :
+
+    [php]
+    $doc = new_Doc("", 1000);
+    $doc->disableEditControl();
+    $doc->disableEditControl();
+    $doc->enableEditControl();
 
 ## Liste des paramètres {#core-ref:cf426dcb-8b2d-42fa-b8b7-bc2d3725dd15}
 
@@ -41,52 +53,60 @@ Aucun.
 
 ## Exemples {#core-ref:8f329704-a195-4085-90a0-3d314a037118}
 
-Imbrication des suspensions de contrôle de modification.
+### Imbrication des suspensions de contrôle de modification. {#core-ref:4883120a-3e90-4f2a-9d59-da56dec4282d}
+
 L'utilisateur courant n'a pas le droit `edit` sur le document n°1420.
 
     [php]
     function modifyBirthday(Doc &$doc) {
-      $doc->disableEditControl();
-      print "Suspension du contrôle\n";
-      $err=$doc->setValue(\Dcp\AttributeIdentifiers\Zoo_animal::an_naissance,"2013-01-01");    
-      print "\tAffectation an_naissance\n";
-      $doc->enableEditControl();
-      print "Activation du contrôle\n";
-      return $err;
+        $doc->disableEditControl();
+        print "Suspension du contrôle\n";
+        
+        $err = $doc->setValue(\Dcp\AttributeIdentifiers\Zoo_animal::an_naissance,"2013-01-01");
+        print "\tAffectation an_naissance\n";
+        
+        $doc->enableEditControl();
+        print "Activation du contrôle\n";
+        
+        return $err;
     }
     
     function modifyNameAndBirthday(Doc &$doc) {
-      $doc->disableEditControl();
-      print "Suspension du contrôle\n";
-      $err=$doc->setValue(\Dcp\AttributeIdentifiers\Zoo_animal::an_nom,"Helitor");    
-      print "\tAffectation an_nom\n";
-      if (empty($err)) {
-        $err=modifyBirthday($doc);
+        $doc->disableEditControl();
+        print "Suspension du contrôle\n";
+        
+        $err = $doc->setValue(\Dcp\AttributeIdentifiers\Zoo_animal::an_nom,"Helitor");
+        print "\tAffectation an_nom\n";
+        
         if (empty($err)) {
-          $err=$doc->store();  
-          print "\tEnregistrement\n";
+            $err=modifyBirthday($doc);
+            if (empty($err)) {
+                $err=$doc->store();  
+                print "\tEnregistrement\n";
+            }
         }
-      }
-      $doc->enableEditControl();
-      print "Activation du contrôle\n";
-      return $err;
+        
+        $doc->enableEditControl();
+        print "Activation du contrôle\n";
+        
+        return $err;
     }
     
     $doc=new_doc("", "1420");
     
     if ($doc->isAlive()) {
-      $err=modifyNameAndBirthday($doc);
-      if (empty($err)) {
-        printf("Document \"%s\" a été enregistré\n", $doc->getTitle());
-      } else {
-        printf("Error: %s\n", $err);
-      }
+        $err = modifyNameAndBirthday($doc);
+        if (empty($err)) {
+            printf("Document \"%s\" a été enregistré\n", $doc->getTitle());
+        } else {
+            printf("Error: %s\n", $err);
+        }
     } else {
-      printf("Document non trouvé\n");
+        printf("Document non trouvé\n");
     }
 
 
-Résultat :
+Résultat :
 
     Suspension du contrôle
         Affectation an_nom
@@ -99,7 +119,7 @@ Résultat :
 
 
 La première activation de contrôle n'est pas effective car deux suspensions ont
-été réalisées précédemment. Seule la deuxième activation rétablie le contrôle.
+été réalisées précédemment. Seule la deuxième activation rétablit le contrôle.
 
 ## Notes {#core-ref:231294fa-a345-4107-9e09-c92c6c3f02ec}
 
