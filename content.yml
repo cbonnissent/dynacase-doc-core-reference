@@ -624,7 +624,6 @@ book:
       content:  "API/Class_Doc/Method_isChanged.md"
       flags:
         new:   "new"
-        draft: "draft"
     - level:   4
       element: "chapter"
       content:  "API/Class_Doc/Method_getLatestId.md"
