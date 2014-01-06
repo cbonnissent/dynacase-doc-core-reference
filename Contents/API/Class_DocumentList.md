@@ -1,23 +1,24 @@
 # Classe DocumentList {#core-ref:23c71c28-dbce-4d34-819a-50d5bc4a38c3}
 
-La classe `DocumentList` implémente les interfaces [`Iterator`][php_iterator] et
-[`Countable`][php_countable] pour une liste de documents.
+La classe `DocumentList` représente une abstraction permettant de manipuler une
+liste de documents. Cette classe implémente les interfaces :
 
-Un objet `DocumentList` peut être construit à partir d'un objet
-[`SearchDoc`][SearchDoc] de recherche de documents.
+* [`Iterator`][php_iterator],
+* [`Countable`][php_countable].
 
-Un objet `DocumentList` peut être obtenu par une fonction de recherche de
-document telle que [`SearchDoc::getDocumentList`][SearchDoc::getDocumentList].
+Les objets de cette classe peuvent donc être utilisés via la directive 
+[`foreach()`][php_foreach] et être utilisés par la fonction [`count()`][php_count].
 
-Un objet `DocumentList` peut aussi être initialisé à partir d'une liste
-d'identifiants de documents.
+Dans le cas d'une itération avec [`foreach()`][php_foreach], les clefs sont
+alors les identifiants des documents et les valeurs sont les documents sous la
+forme d'un objet [`Doc`][Doc] ou de [documents bruts][resultatBrut].
 
-L'objet `DocumentList` ainsi obtenu peut être utilisé directement dans une
-directive PHP [`foreach()`][php_foreach] ou la fonction [`count()`][php_count].
+Il existe plusieurs moyens d'obtenir un objet `DocumentList`, par exemple à partir:
 
-Les clefs, accessibles par itération sur l'objet `DocumentList`, sont alors les
-identifiants des documents et les valeurs sont les documents sous la forme d'un
-objet [`Doc`][Doc] ou de [documents bruts][resultatBrut].
+* d'un array d'identifiant de documents,
+* d'un objet [`SearchDoc`][SearchDoc],
+* de la méthode [`SearchDoc::getDocumentList`][SearchDoc::getDocumentList].
+
 
 ## Constructeur {#core-ref:176382e7-c09e-4c5c-a9bd-7a4490b169c3}
 
