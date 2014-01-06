@@ -509,7 +509,6 @@ book:
       content:  "API/Class_Doc/Method_clearValue.md"
       flags:
         new:   "new"
-        draf:  "draft"
     - level:   4
       element: "chapter"
       content:  "API/Class_Doc/Method_arrayToRawValue.md"
