@@ -10,8 +10,8 @@ du document.
 ## Description {#core-ref:8c2fbe72-5d33-4923-b31b-a91f08e89508}
 
     [php]
-    int|bool(false) latestId ( bool $fixed      = false,
-                               bool $forcequery = false )
+    int|bool(false) getLatestId ( bool $fixed      = false,
+                                  bool $forcequery = false )
 
 Si le document est révisable, ou est associé à un cycle de vie, alors la méthode
 `getLatestId` permet d'obtenir l'identifiant de la dernière révision du
@@ -37,6 +37,8 @@ Aucun.
     
     Par défaut `forcequery` vaut `false`, et une nouvelle requête en base de
     données n'est pas exécutée pour la recherche de la dernière révision.
+    Si ce paramètre n'est pas passé à `true` l'`id` retourné est le dernier `id`
+    connu lors de la récupération du document en base.
 
 ## Valeur de retour {#core-ref:e6a28aef-c570-43d5-bcff-d979aa7d4941}
 
@@ -47,7 +49,7 @@ est trouvée, sinon le booléen `false` est retourné en cas d'erreur.
 
 La méthode retourne `false` si :
 
-* La propriété `id` du document est vide.
+* la propriété `id` du document est vide.
 
 ## Historique {#core-ref:05ecfdde-7e9a-4820-b4c4-6de11376c3b9}
 
