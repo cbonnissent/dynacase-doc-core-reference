@@ -54,12 +54,16 @@ Contrôler que la facture est dans l'état Payée (`PAID`) :
 
 ## Notes {#core-ref:52acc84d-c2cf-4051-b4e1-6b9cce9e6bb4}
 
-Aucune.
+Cette fonction est un raccourci vers la propriété `state` du document. 
+Pour avoir la version affichée dans l'interface de l'état, il suffit de traduire
+celui-ci avec la fonction `_`.
 
 ## Voir aussi {#core-ref:11fa7419-c82f-4fa6-a542-fb74d0f3d775}
 
-- [Cycle de vie][cycle_de_vie]
+* [getPropertyValue][getPropertyValue]
+* [Cycle de vie][cycle_de_vie]
 
 <!-- links -->
 [cycle_de_vie]: #core-ref:932119d9-2681-427f-bcf2-2c439784d051
 [wf_cycle]: #core-ref:d5ddda0c-09d2-42b0-9543-0723e242ec09
+[getPropertyValue]: #core-ref:80e3ca49-26ea-4090-9fcd-7b92bf9d5c6d
