@@ -481,13 +481,11 @@ book:
       element: "chapter"
       content:  "API/Class_Doc/Method_preConsultation.md"
       flags:
-        draft: "draft"
         new : "new"
     - level:   4
       element: "chapter"
       content:  "API/Class_Doc/Method_preEdition.md"
       flags:
-        draft: "draft"
         new : "new"
     - level:   3
       element: "chapter"

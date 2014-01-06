@@ -16,8 +16,10 @@ template.
 Cette méthode permet de réaliser des opérations afin d'ajuster l'affichage
 du formulaire de document. Ces opérations peuvent être :
 
-*   Ajout d'un fichier javascript ou css.
-*   Modification des visibilités d'attributs
+*   ajout d'un fichier javascript ou css,
+*   modification des visibilités d'attributs,
+*   modification d'une propriété d'attributs,
+*   etc.
 
 ### Avertissements {#core-ref:7210f200-8e81-4437-9c9f-834b816e0086}
 
@@ -42,7 +44,7 @@ Aucun.
 
 ### Ajout d'asset ccs et js {#core-ref:337df6b3-dd13-47b9-982d-77db0ae75567}
 
-Ajout d'une `css` et d'un fichier `javascript` spécifique si c'est un formulaire de 
+Ajout d'une `css` et d'un fichier `JavaScript` spécifique si c'est un formulaire de 
 création de document.
 
     [php]

@@ -15,8 +15,10 @@
 Cette méthode permet de réaliser des opérations afin d'ajuster l'affichage
 du document. Ces opérations peuvent être :
 
-*   Ajout d'un fichier javascript ou css.
-*   Modification des visibilités d'attributs
+*   ajout d'un fichier javascript ou css,
+*   modification des visibilités d'attributs,
+*   modification d'une propriété d'attributs,
+*   etc.
 
 ### Avertissements {#core-ref:5a9aff6e-78c9-4a24-bcce-5528241b27fe}
 
