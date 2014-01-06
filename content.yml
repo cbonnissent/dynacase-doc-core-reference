@@ -545,7 +545,6 @@ book:
       content:  "API/Class_Doc/Method_editattr.md"
       flags:
         new : "new"
-        draft : "draft"
     - level:   4
       element: "chapter"
       content:  "API/Class_Doc/Method_enableEditControl.md"

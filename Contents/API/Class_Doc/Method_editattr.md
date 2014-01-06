@@ -23,12 +23,11 @@ encadrants :
 
 *   une clef pour le libellé de l'attribut.
 
-
 La clef du champ de saisie est composée du préfixe `V_` suivi de l'identifiant
-de l'attribut en **majuscule**. Le champ de saisie est fournie par la méthode
+de l'attribut en **majuscule**. Le champ de saisie est fourni par la méthode
 `DocFormFormat::getHtmlInput()`.
 
-Si les attributs sont en [visibilité][visibility] `H` ou `R`, le champs de
+Si les attributs sont en [visibilité][visibility] `H` ou `R`, le champ de
 saisie est un champ caché : `<input type="hidden"/>`.
 
 Si l'attribut est en visibilité `I`, la clef pour le champ de saisie est vide.
