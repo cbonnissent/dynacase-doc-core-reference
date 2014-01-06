@@ -21,7 +21,9 @@ descendent alors toutes d'un cran.
 
 ### Avertissements {#core-ref:783dce78-c55f-42d6-b68e-6aff5d78a70c}
 
-Aucun.
+Lors de chaque appel à `removeArrayRow`, un setValue est effectué pour chacune
+des colonnes de l'array. Pour supprimer de nombreuses lignes, il peut être plus
+efficace de gérer manuellement la suppression dans chaque colonne.
 
 ## Liste des paramètres {#core-ref:44fa32fe-fe32-43aa-9232-6f22497ae0b9}
 
@@ -38,7 +40,7 @@ Aucun.
     
 ## Valeur de retour {#core-ref:f9703119-b701-4651-9001-3cbc3394e621}
 
-La méthode retourne une chaîne vide s'il n'y a pas d'erreurs, ou une chaîne
+La méthode retourne une chaîne vide s'il n'y a pas d'erreur, ou une chaîne
 non-vide contenant le message d'erreur dans le cas contraire.
 
 ## Erreurs / Exceptions {#core-ref:7100eae8-8d1d-4cb7-b1d1-572cbe883d55}
@@ -53,45 +55,45 @@ Aucun.
 
 ## Exemples {#core-ref:0f007ecf-6866-4e69-b4e9-301556dc35d1}
 
-- Exemple #1
-
-    [php]
-    /* Soit le tableau `MyPhoto::faces` composé comme suit :
+-   Exemple #1
     
-       +-----------+----------+
-       | Firstname | Lastname |
-       +===========+==========+
-    #0 | Bart      | Simpson  |
-    #1 | Marge     | Simpson  |
-    #2 | Lisa      | Simpson  |
-    #3 | Homer     | Simpson  |
-       +-----------+----------+
-    */
-    
-    $photo->removeArrayRow(\Dcp\AttributeIdentifier\MyPhoto::faces, 0)
-    
-    /* Après la suppression de la première ligne (indice 0) :
-    
-       +-----------+----------+
-       | Firstname | Lastname |
-       +===========+==========+
-    #0 | Marge     | Simpson  |
-    #1 | Lisa      | Simpson  |
-    #2 | Homer     | Simpson  |
-       +-----------+----------+
-    */
-    
-    $photo->removeArrayRow(\Dcp\AttributeIdentifier\MyPhoto::faces, 1)
-    
-    /* Après la suppression de la ligne entre Marge et Homer (indice 1) :
-    
-       +-----------+----------+
-       | Firstname | Lastname |
-       +===========+==========+
-    #0 | Marge     | Simpson  |
-    #1 | Homer     | Simpson  |
-       +-----------+----------+
-    */
+        [php]
+        /* Soit le tableau `MyPhoto::faces` composé comme suit :
+        
+           +-----------+----------+
+           | Firstname | Lastname |
+           +===========+==========+
+        #0 | Bart      | Simpson  |
+        #1 | Marge     | Simpson  |
+        #2 | Lisa      | Simpson  |
+        #3 | Homer     | Simpson  |
+           +-----------+----------+
+        */
+        
+        $photo->removeArrayRow(\Dcp\AttributeIdentifier\MyPhoto::faces, 0)
+        
+        /* Après la suppression de la première ligne (indice 0) :
+        
+           +-----------+----------+
+           | Firstname | Lastname |
+           +===========+==========+
+        #0 | Marge     | Simpson  |
+        #1 | Lisa      | Simpson  |
+        #2 | Homer     | Simpson  |
+           +-----------+----------+
+        */
+        
+        $photo->removeArrayRow(\Dcp\AttributeIdentifier\MyPhoto::faces, 1)
+        
+        /* Après la suppression de la ligne entre Marge et Homer (indice 1) :
+        
+           +-----------+----------+
+           | Firstname | Lastname |
+           +===========+==========+
+        #0 | Marge     | Simpson  |
+        #1 | Homer     | Simpson  |
+           +-----------+----------+
+        */
 
 ## Notes {#core-ref:e1109d54-0ce6-4ca8-bdae-28289cf9d152}
 

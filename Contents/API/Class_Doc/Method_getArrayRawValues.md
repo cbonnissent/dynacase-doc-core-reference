@@ -39,28 +39,36 @@ Aucun.
 
 La méthode retourne le booléen `false` s'il y a une erreur.
 
-S'il n'y a pas d'erreurs, la méthode retourne les lignes sous la forme suivante
-:
+Soit le tableau suivant :
+
+| attr_1 | attr_2 | […] | attr_N |
+|:------:|:------:|:---:|:------:|
+| $L1_C1 | $L1_C2 | […] | $L1_CN |
+| […]    | […]    | […] | […]    |
+| $LM_C1 | $LM_C2 | […] | $LM_CN |
+
+S'il n'y a pas d'erreur, la méthode retourne les lignes sous la forme
+suivante :
 
     [php]
     array(
-    	/* Ligne 1 */
-    	0 => array(
-    		'attr_1' => $L1_C1, /* Colonne 1 */
-    		'attr_2' => $L1_C2, /* Colonne 2 */
-    		[...]
-    		'attr_N' => $L1_CN  /* Colonne N */
-    	),
-    	
-    	[...]
-    	
-    	/* Ligne M */
-    	M => array(
-    		'attr_1' => $LM_C1,
-    		'attr_2' => $LM_C2,
-    		[...]
-    		'attr_N' => $LM_CN
-    	)
+        /* Ligne 1 */
+        0 => array(
+            'attr_1' => $L1_C1, /* Colonne 1 */
+            'attr_2' => $L1_C2, /* Colonne 2 */
+            […]
+            'attr_N' => $L1_CN  /* Colonne N */
+        ),
+        
+        [...]
+        
+        /* Ligne M */
+        M => array(
+            'attr_1' => $LM_C1,
+            'attr_2' => $LM_C2,
+            […]
+            'attr_N' => $LM_CN
+        )
     )
 
 Si une ligne particulière est demandée (utilisation du paramètre `index`), alors
@@ -68,15 +76,15 @@ seule la ligne demandée est retournée :
 
     [php]
     array(
-    	'attr_1' => $L1_C1, /* Colonne 1 */
-    	'attr_2' => $L1_C2, /* Colonne 2 */
-    	[...]
-    	'attr_N' => $L1_CN  /* Colonne N */
+        'attr_1' => $L1_C1, /* Colonne 1 */
+        'attr_2' => $L1_C2, /* Colonne 2 */
+        [...]
+        'attr_N' => $L1_CN  /* Colonne N */
     )
 
 ## Erreurs / Exceptions {#core-ref:b4825b06-9861-4382-bd5e-f719770fff32}
 
-Une erreur est retournée si :
+Une erreur est retournée (`false`) si :
 
 * l'attribut `idAttr` n'est pas de type [`array`][type_array].
 
@@ -92,74 +100,74 @@ dynacase-core.
 
 ## Exemples {#core-ref:a52ecff3-ecfe-4a3a-8595-567d92644ef4}
 
-- Exemple #1 :
-
-L'attribut `us_groups` est de type [`array`][type_array], avec les colonnes
-`us_idgroup` de type `docid("IUSER")` et `us_group` de type `text`.
-
-    [php]
-    /*
-     * Retourner le contenu entier du tableau.
-     */
-    $v = $iuser->getArrayRawValues(
-    	\Dcp\AttributeIdentifiers\Iuser::us_groups
-    );
+-   Exemple #1 :
     
-    var_dump($v);
-
-Résultat :
-
-    [php]
-    array(3) {
-      [0]=>
-      array(2) {
-        ["us_group"]=>
-        string(3) "Foo"
-        ["us_idgroup"]=>
-        string(4) "1058"
-      }
-      [1]=>
-      array(2) {
-        ["us_group"]=>
-        string(3) "Bar"
-        ["us_idgroup"]=>
-        string(4) "1059"
-      }
-      [2]=>
-      array(2) {
-        ["us_group"]=>
-        string(3) "Baz"
-        ["us_idgroup"]=>
-        string(4) "1060"
-      }
-    }
-
-- Exemple #2 :
-
-L'attribut `us_groups` est de type [`array`][type_array], avec les colonnes
-`us_idgroup` de type `docid("IUSER")` et `us_group` de type `text`.
-
-    [php]
-    /*
-     * Retourner seulement les valeur de la deuxième ligne
-     * (ligne à l'indice 1).
-     */
-    $v = $iuser->getArrayRawValues(
-    	\Dcp\AttributeIdentifiers\Iuser::us_groups,
-    	1
-    );
+    L'attribut `us_groups` est de type [`array`][type_array], avec les colonnes
+    `us_idgroup` de type `docid("IUSER")` et `us_group` de type `text`.
     
-    var_dump($v);
+        [php]
+        /*
+         * Retourner le contenu entier du tableau.
+         */
+        $v = $iuser->getArrayRawValues(
+            \Dcp\AttributeIdentifiers\Iuser::us_groups
+        );
+        
+        var_dump($v);
+    
+    Résultat :
+    
+        [php]
+        array(3) {
+          [0]=>
+          array(2) {
+            ["us_group"]=>
+            string(3) "Foo"
+            ["us_idgroup"]=>
+            string(4) "1058"
+          }
+          [1]=>
+          array(2) {
+            ["us_group"]=>
+            string(3) "Bar"
+            ["us_idgroup"]=>
+            string(4) "1059"
+          }
+          [2]=>
+          array(2) {
+            ["us_group"]=>
+            string(3) "Baz"
+            ["us_idgroup"]=>
+            string(4) "1060"
+          }
+        }
 
-Résultat :
-
-    [php]
-    array(2) {
-      ["us_group"]=>
-      string(3) "Bar"
-      ["us_idgroup"]=>
-      string(4) "1059"
-    }
+-   Exemple #2 :
+    
+    L'attribut `us_groups` est de type [`array`][type_array], avec les colonnes
+    `us_idgroup` de type `docid("IUSER")` et `us_group` de type `text`.
+    
+        [php]
+        /*
+         * Retourner seulement les valeur de la deuxième ligne
+         * (ligne à l'indice 1).
+         */
+        $v = $iuser->getArrayRawValues(
+            \Dcp\AttributeIdentifiers\Iuser::us_groups,
+            1
+        );
+        
+        var_dump($v);
+    
+    Résultat :
+    
+        [php]
+        array(2) {
+          ["us_group"]=>
+          string(3) "Bar"
+          ["us_idgroup"]=>
+          string(4) "1059"
+        }
 
 ## Notes {#core-ref:e15ddb50-7018-4ed8-94ab-f81afbedb097}
 

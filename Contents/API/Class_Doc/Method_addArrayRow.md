@@ -22,7 +22,9 @@ alors toutes d'un cran.
 
 ### Avertissements {#core-ref:9a730926-ffb9-4e19-9fcd-4c687d84b374}
 
-Aucun.
+Lors de chaque appel à `addArrayRow`, un setValue est effectué pour chacune des
+colonnes de l'array. Pour ajouter de nombreuses lignes, il peut être plus
+efficace de gérer manuellement l'ajout dans chaque colonne.
 
 ## Liste des paramètres {#core-ref:182f26c7-59bd-4423-8994-b8a416c679b7}
 
@@ -44,16 +46,17 @@ Aucun.
 
 ## Valeur de retour {#core-ref:9ef3c825-5f88-472f-95ed-cb1f5ff9763d}
 
-La méthode retourne une chaîne vide s'il n'y a pas d'erreurs, ou une chaîne
+La méthode retourne une chaîne vide s'il n'y a pas d'erreur, ou une chaîne
 non-vide contenant le message d'erreur dans le cas contraire.
 
 ## Erreurs / Exceptions {#core-ref:552748f0-127f-4522-a1d3-ca47bdee2b54}
 
-Une erreur est retournée si :
+Une erreur est retournée si :
 
-* l'attribut `idAttr` n'est pas de type [`array`][type_array] ;
-* la valeur `tv` n'est pas un array PHP ;
-* une clef de `tv` n'est pas le nom d'un attribut attaché à l'attribut `idAttr`.
+*   l'attribut `idAttr` n'est pas de type [`array`][type_array] ;
+*   la valeur `tv` n'est pas un array PHP ;
+*   une clef de `tv` n'est pas le nom d'un attribut attaché à l'attribut
+    `idAttr`.
 
 ## Historique {#core-ref:c5324307-a994-435c-aebb-2baaa2bd9b49}
 
@@ -64,60 +67,60 @@ Aucun.
 Soit un attribut `faces` de type `array` auquel sont rattachés les attributs
 `face_firstname` et `face_lastname` de type `text`.
 
-- Exemple #1
-
-    [php]
-    /*
-     * Vide le tableau
-     */
-    $photo->clearArrayValues(\Dcp\AttributeIdentifier\MyPhoto::faces);
+-   Exemple #1
     
-    /*
-     * Ajoute une ligne
-     */
-    $row = array(
-        \Dcp\AttributeIdentifiers\MyPhoto::face_firstname => 'Marge',
-        \Dcp\AttributeIdentifiers\MyPhoto::face_lastname  => 'Simpson'
-    );
-    $photo->addArrayRow(\Dcp\AttributeIdentifier\MyPhoto::faces, $row);
+        [php]
+        /*
+         * Vide le tableau
+         */
+        $photo->clearArrayValues(\Dcp\AttributeIdentifier\MyPhoto::faces);
+        
+        /*
+         * Ajoute une ligne
+         */
+        $row = array(
+            \Dcp\AttributeIdentifiers\MyPhoto::face_firstname => 'Marge',
+            \Dcp\AttributeIdentifiers\MyPhoto::face_lastname  => 'Simpson'
+        );
+        $photo->addArrayRow(\Dcp\AttributeIdentifier\MyPhoto::faces, $row);
+        
+        /*
+         * Ajoute une autre ligne
+         */
+        $row = array(
+            \Dcp\AttributeIdentifiers\MyPhoto::face_firstname => 'Homer',
+            \Dcp\AttributeIdentifiers\MyPhoto::face_lastname  => 'Simpson'
+        );
+        $photo->addArrayRow(\Dcp\AttributeIdentifier\MyPhoto::faces, $row);
+        
+        /*
+         * Insère une ligne entre Marge et Homer
+         */
+        $row = array(
+            \Dcp\AttributeIdentifiers\MyPhoto::face_firstname => 'Lisa',
+            \Dcp\AttributeIdentifiers\MyPhoto::face_lastname  => 'Simpson'
+        )
+        $photo->addArrayRow(\Dcp\AttributeIdentifier\MyPhoto::faces, $row, 1);
+        
+        /*
+         * Insère une ligne au début
+         */
+        $row = array(
+            \Dcp\AttributeIdentifiers\MyPhoto::face_firstname => 'Bart',
+            \Dcp\AttributeIdentifiers\MyPhoto::face_lastname  => 'Simpson'
+        )
+        $photo->addArrayRow(\Dcp\AttributeIdentifier\MyPhoto::faces, $row, 0);
     
-    /*
-     * Ajoute une autre ligne
-     */
-    $row = array(
-        \Dcp\AttributeIdentifiers\MyPhoto::face_firstname => 'Homer',
-        \Dcp\AttributeIdentifiers\MyPhoto::face_lastname  => 'Simpson'
-    );
-    $photo->addArrayRow(\Dcp\AttributeIdentifier\MyPhoto::faces, $row);
+    Le tableau `MyPhoto::faces` résultant est alors composé comme suit :
     
-    /*
-     * Insère une ligne entre Marge et Homer
-     */
-    $row = array(
-        \Dcp\AttributeIdentifiers\MyPhoto::face_firstname => 'Lisa',
-        \Dcp\AttributeIdentifiers\MyPhoto::face_lastname  => 'Simpson'
-    )
-    $photo->addArrayRow(\Dcp\AttributeIdentifier\MyPhoto::faces, $row, 1);
-    
-    /*
-     * Insère une ligne au début
-     */
-    $row = array(
-        \Dcp\AttributeIdentifiers\MyPhoto::face_firstname => 'Bart',
-        \Dcp\AttributeIdentifiers\MyPhoto::face_lastname  => 'Simpson'
-    )
-    $photo->addArrayRow(\Dcp\AttributeIdentifier\MyPhoto::faces, $row, 0);
-
-Le tableau `MyPhoto::faces` résultant est alors composé comme suit :
-
-       +-----------+----------+
-       | Firstname | Lastname |
-       +===========+==========+
-    #0 | Bart      | Simpson  |
-    #1 | Marge     | Simpson  |
-    #2 | Lisa      | Simpson  |
-    #3 | Homer     | Simpson  |
-       +-----------+----------+
+           +-----------+----------+
+           | Firstname | Lastname |
+           +===========+==========+
+        #0 | Bart      | Simpson  |
+        #1 | Marge     | Simpson  |
+        #2 | Lisa      | Simpson  |
+        #3 | Homer     | Simpson  |
+           +-----------+----------+
 
 ## Notes {#core-ref:c02e12d4-8bbc-4f5e-bcd4-6b57e252e867}
 

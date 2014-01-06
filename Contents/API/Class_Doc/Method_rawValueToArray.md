@@ -2,7 +2,7 @@
 
 <div class="short-description" markdown="1">
 
-La méthode `rawValueToArray` permet de de-sérialiser la valeur d'un attribut
+La méthode `rawValueToArray` permet de dé-sérialiser la valeur d'un attribut
 faisant partie d'un [array][type_array] ou d'un attribut
 [multi-valué][option_multiple].
 
@@ -13,7 +13,7 @@ faisant partie d'un [array][type_array] ou d'un attribut
     [php]
     array rawValueToArray ( string $v )
 
-La méthode `rawValueToArray` permet de de-sérialiser une valeur sous la forme
+La méthode `rawValueToArray` permet de dé-sérialiser une valeur sous la forme
 d'une chaîne de caractères issue d'un attribut faisant parti d'un
 [array][type_array], ou d'un attribut [multi-valué][option_multiple], obtenue
 via la méthode [`Doc::getRawValue`][Doc::getRawValue].
@@ -25,18 +25,18 @@ utiliser qu'en dernier recours.
 
 Il faut privilégier l'utilisation de la méthode
 [`getAttributeValue`][Doc::getAttributeValue] qui prend en charge
-automatiquement ces opérations de de-sérialisation.
+automatiquement ces opérations de dé-sérialisation.
 
 
 ## Liste des paramètres {#core-ref:2b52bcba-8dd4-4b0f-9854-3eac0a5ffb1b}
 
 (string) `v`
-:   La chaîne de caractère à de-sérialiser.
+:   La chaîne de caractères à dé-sérialiser.
 
 ## Valeur de retour {#core-ref:a536fd4f-33d9-4f7c-a500-8b3772283d3c}
 
 La méthode `rawValueToArray` retourne un array contenant les valeurs issues de
-la chaîne de caractère fourni.
+la chaîne de caractères fournie.
 
 ## Erreurs / Exceptions {#core-ref:d81ca1cf-a46a-40dc-bb30-c82696136b23}
 
@@ -54,28 +54,29 @@ dynacase-core.
 
 ## Exemples {#core-ref:e42d8e3a-6f9d-4d65-92b2-3bd078ebc3aa}
 
-- Exemple #1
-
-L'attribut `PHOTO_KEYWORDS` est un attribut de type texte avec l'option
-[multiple][option_multiple].
-
-    [php]
-    $v = $photo->getRawValue(\Dcp\AttributeIdentifiers\MyPhoto:photo_keywords);
+-   Exemple #1
     
-    var_dump($photo->rawValueToArray($v));
-
-Résultat :
-
-    array(4) {
-      [0]=>
-      string(11) "Tour Eiffel"
-      [1]=>
-      string(13) "Champ de Mars"
-      [2]=>
-      string(5) "Paris"
-      [3]=>
-      string(6) "France"
-    }
+    L'attribut `PHOTO_KEYWORDS` est un attribut de type texte avec l'option
+    [multiple][option_multiple].
+    
+        [php]
+        $v = $photo->getRawValue(\Dcp\AttributeIdentifiers\MyPhoto:photo_keywords);
+        
+        var_dump($photo->rawValueToArray($v));
+    
+    Résultat :
+    
+        [php]
+        array(4) {
+          [0]=>
+          string(11) "Tour Eiffel"
+          [1]=>
+          string(13) "Champ de Mars"
+          [2]=>
+          string(5) "Paris"
+          [3]=>
+          string(6) "France"
+        }
 
 ## Notes {#core-ref:4cd35543-2bc7-43a6-9151-c8b041a55ad5}
 
