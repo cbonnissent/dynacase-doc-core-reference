@@ -2,7 +2,8 @@
 
 <div class="short-description" markdown="1">
 
-La méthode `isAlive` permet de savoir si un document est « vivant ».
+La méthode `isAlive` permet de savoir si un document est *vivant* 
+(s'il existe et n'a pas été supprimé).
 
 </div>
 
@@ -11,9 +12,9 @@ La méthode `isAlive` permet de savoir si un document est « vivant ».
     [php]
     bool isAlive ( void )
 
-La méthode `isAlive` permet de savoir si un document est « vivant ».
+La méthode `isAlive` permet de savoir si un document est *vivant*.
 
-Un document est « vivant » si :
+Un document est *vivant* si :
 
 * le document est stocké en base de données ;
 * la propriété [`doctype`][doc_props] est différente de `Z`.
@@ -28,7 +29,7 @@ Aucune.
 
 ## Valeur de retour {#core-ref:9cfe5dd3-4164-4542-98e9-6eafaed321fe}
 
-La méthode retourne `true` si le document est « vivant » ou `false` dans le
+La méthode retourne `true` si le document est *vivant* ou `false` dans le
 cas contraire.
 
 ## Erreurs / Exceptions {#core-ref:f97afb28-7964-49a0-99f5-be9cfabe0e3d}

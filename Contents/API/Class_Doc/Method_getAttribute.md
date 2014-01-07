@@ -54,7 +54,7 @@ Aucun.
       * Obtenir le type de l'attribut `montant`
       */
     $oa = $doc->getAttribute(\Dcp\AttributeIdentifiers\Facture::montant);
-    printf("L'attribut '%s' estde type '%s'.", $oa->id, $oa->type);
+    printf("L'attribut '%s' est de type '%s'.", $oa->id, $oa->type);
 
 Résultat :
 
@@ -62,11 +62,26 @@ Résultat :
 
 ## Notes {#core-ref:2bf066bd-2677-4921-866f-6932f27349c9}
 
-L'attribut demandé peut-être un attribut attribut déclaré sur la famille du
+L'attribut demandé peut-être un attribut déclaré sur la famille du
 document ou bien un attribut déclaré sur une famille mère. La famille d'origine
 de l'attribut est alors consultable via la propriété `docid` de l'objet de
 attribut qui contient l'identifiant de la famille qui déclare cet attribut.
 
+Cette fonction permet entre autre de modifier les propriétés d'un attributs à la
+volée, ce qui permet de modifier :
+
+* son libellé, s'il n'est pas traduit,
+* sa visibilité,
+* ses propriétés.
+
+Généralement, ces modifications sont faites lors de la [preEdition][preEdition]
+du document.
+
 ## Voir aussi {#core-ref:73673f06-b0c6-4630-817c-b82fb3c64ac8}
 
+* [attribut][attribut]
+
 <!-- links -->
+
+[attribut]: #core-ref:4e167170-33ed-11e2-8134-a7f43955d6f3
+[preEdition]: #core-ref:e7f56480-a7c2-4719-a0a1-22c47f63c59f

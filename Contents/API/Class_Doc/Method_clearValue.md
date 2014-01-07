@@ -2,7 +2,7 @@
 
 <div class="short-description" markdown="1">
 
-La méthode `clearValue` permet d'effacer la valeur d'un attribut non
+La méthode `clearValue` permet d'effacer la valeur d'un attribut de type non
 [`array`][type_array].
 
 </div>
@@ -12,7 +12,7 @@ La méthode `clearValue` permet d'effacer la valeur d'un attribut non
     [php]
     string deleteValue ( string $attrid )
 
-La méthode `clearValue` permet d'effacer la valeur d'un attribut non
+La méthode `clearValue` permet d'effacer la valeur d'un attribut de type non
 [`array`][type_array].
 
 ### Avertissements {#core-ref:1399cad4-4894-48ce-8553-e01a4a5adde7}
@@ -22,7 +22,7 @@ Aucun.
 ## Liste des paramètres {#core-ref:b4e7f1a4-b82a-4ec6-b926-a13541618770}
 
 (string) `attrid`
-:   Le nom de l'attribut (non [`array`][type_array]) à effacer.
+:   Le nom de l'attribut (de type non [`array`][type_array]) à effacer.
 
 ## Valeur de retour {#core-ref:41f2834c-20c9-4f71-a9ca-7f65b71a5f89}
 

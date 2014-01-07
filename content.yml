@@ -40,7 +40,7 @@ book:
     - level:   2
       content:  "object_model/revision.md"
       flags:
-        draft: "draft"
+        new: "new"
 ##
 # famille
 ##
@@ -481,13 +481,11 @@ book:
       element: "chapter"
       content:  "API/Class_Doc/Method_preConsultation.md"
       flags:
-        draft: "draft"
         new : "new"
     - level:   4
       element: "chapter"
       content:  "API/Class_Doc/Method_preEdition.md"
       flags:
-        draft: "draft"
         new : "new"
     - level:   3
       element: "chapter"
@@ -509,7 +507,6 @@ book:
       content:  "API/Class_Doc/Method_clearValue.md"
       flags:
         new:   "new"
-        draf:  "draft"
     - level:   4
       element: "chapter"
       content:  "API/Class_Doc/Method_arrayToRawValue.md"
@@ -545,7 +542,6 @@ book:
       content:  "API/Class_Doc/Method_editattr.md"
       flags:
         new : "new"
-        draft : "draft"
     - level:   4
       element: "chapter"
       content:  "API/Class_Doc/Method_enableEditControl.md"
@@ -561,7 +557,6 @@ book:
       content:  "API/Class_Doc/Method_getAttribute.md"
       flags:
         new:   "new"
-        draft: "draft"
     - level:   4
       element: "chapter"
       content:  "API/Class_Doc/Method_getCustomTitle.md"
@@ -572,7 +567,6 @@ book:
       content:  "API/Class_Doc/Method_getDate.md"
       flags:
         new:   "new"
-        draft: "draft"
     - level:   4
       element: "chapter"
       content:  "API/Class_Doc/Method_getDocAnchor.md"
@@ -581,13 +575,11 @@ book:
       content:  "API/Class_Doc/Method_getFamilyDocument.md"
       flags:
         new:   "new"
-        draft: "draft"
     - level:   4
       element: "chapter"
       content:  "API/Class_Doc/Method_getFamilyParameterValue.md"
       flags:
         new:   "new"
-        draft: "draft"
     - level:   4
       element: "chapter"
       content:  "API/Class_Doc/Method_getMultipleRawValues.md"
@@ -604,13 +596,11 @@ book:
       content:  "API/Class_Doc/Method_getPropertyValue.md"
       flags:
         new:   "new"
-        draft: "draft"
     - level:   4
       element: "chapter"
       content:  "API/Class_Doc/Method_getState.md"
       flags:
         new:   "new"
-        draft: "draft"
     - level:   4
       element: "chapter"
       content:  "API/Class_Doc/Method_getTitle.md"
@@ -627,19 +617,16 @@ book:
       content:  "API/Class_Doc/Method_isAlive.md"
       flags:
         new:   "new"
-        draft: "draft"
     - level:   4
       element: "chapter"
       content:  "API/Class_Doc/Method_isChanged.md"
       flags:
         new:   "new"
-        draft: "draft"
     - level:   4
       element: "chapter"
       content:  "API/Class_Doc/Method_getLatestId.md"
       flags:
         new:   "new"
-        draft: "draft"
     - level:   4
       element: "chapter"
       content:  "API/Class_Doc/Method_rawValueToArray.md"
@@ -661,7 +648,6 @@ book:
       content:  "API/Class_Doc/Method_setState.md"
       flags:
         new:   "new"
-        draft: "draf"
     - level:   4
       element: "chapter"
       content:  "API/Class_Doc/Method_setValue.md"
@@ -681,7 +667,6 @@ book:
       content:  "API/Class_Doc/Method_viewattr.md"
       flags:
         new : "new"
-        draft : "draft"
     - level:   2
       element: "chapter"
       content:  "API/Class_Docfam.md"

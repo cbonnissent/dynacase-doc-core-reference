@@ -36,7 +36,7 @@ Aucun.
 
 (string) `comment`
 :   `comment` permet de spécifier un commentaire facultatif qui est inscrit dans
-l'historique du document suite à son changement d'état.
+    l'historique du document suite à son changement d'état.
     
     Par défaut `comment` est une chaîne vide, et aucun message additionnel n'est
     inscrit dans l'historique du document.

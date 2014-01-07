@@ -11,10 +11,10 @@ La méthode `getFamilyParameterValue` permet d'obtenir la valeur des
 
     [php]
     string getFamilyParameterValue ( string $idp,
-    	                             string $def = "" )
+                                     string $def = "" )
 
 La méthode `getFamilyParameterValue` permet d'obtenir la valeur des
-[paramètres][family_parameters] définis sur la famille du document courant.
+[paramètres][family_parameters] de la famille du document courant.
 
 ### Avertissements {#core-ref:cd1dc4da-86fe-4917-86eb-52fdc2ee4032}
 
@@ -64,7 +64,7 @@ taux de TVA :
      */
     $tva = $facture->getFamilyParameterValue('TAUX_TVA', 0);
     if ($tva <= 0) {
-    	throw new Exception(sprintf("Le taux de TVA doit être > 0 !"));
+        throw new Exception(sprintf("Le taux de TVA doit être > 0 !"));
     }
 
 ## Notes {#core-ref:178ec882-01a8-4f47-8604-1540c01c9297}
@@ -73,5 +73,8 @@ Aucune.
 
 ## Voir aussi {#core-ref:84279092-92f3-4d03-8106-610fbb5259aa}
 
+* Pour trouver la valeur d'un paramètre applicatif [getParameterValue][getParameterValue]
+
 <!-- links -->
 [family_parameters]: #core-ref:4595c8e7-5002-4dbc-b6bb-882b4123efd8
+[getParameterValue]: #core-ref:c5050c0d-e0f1-4fc7-8619-f11a1686173c
