@@ -1428,7 +1428,6 @@ book:
       content:  "Advanced/Template/tag_list_texte.md"
       flags:
          new:   "new"
-         draft: "draft"
     - level:   3
       content:  "Advanced/Template/odt.md"
       flags:
