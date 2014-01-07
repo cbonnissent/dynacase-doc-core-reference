@@ -492,7 +492,6 @@ book:
       content:  "API/Class_Doc/docmethods.md"
       subtoc:   1
       flags:
-        draft: "draft"
         new: "new"
     - level:   4
       element: "chapter"
@@ -1428,7 +1427,6 @@ book:
       content:  "Advanced/Template/tag_list_texte.md"
       flags:
          new:   "new"
-         draft: "draft"
     - level:   3
       content:  "Advanced/Template/odt.md"
       flags:

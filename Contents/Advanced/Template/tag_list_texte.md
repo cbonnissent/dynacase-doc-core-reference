@@ -107,13 +107,13 @@ charger le script `logmsg.js` et les scripts JavaScript ajoutés via la méthode
 Pour `[JS:CODE]`, la valeur est une chaîne de caractère contenant les
 instructions JavaScript ajouté via la méthode [`addJsCode`][addJsCode], et un
 code permettant d'afficher une alerte JavaScript des messages de log retournés
-par l'action. L'élémént HTML `<script type="text/javascript" language="JavaScript"/>`
+par l'action. L’élément HTML `<script type="text/javascript" language="JavaScript"/>`
 n'est pas présent dans la valeur, par conséquent, il faut vous entouriez cet
 élément par les tables HTML `<script>` et `</script>` (e.g.
 `<script ...>[JS:CODE]</script>`).
 
 Pour `[JS:CODENLOG]`, la valeur retournée est identique à `[JS:CODE]` à
-l'exception du code permettant d'afficher l'alerte JavaSCript des messages de
+l'exception du code permettant d'afficher l'alerte JavaScript des messages de
 log retournés par l'action qui n'est pas présent.
 
 ## Règles de style CSS {#core-ref:1e7a8fbb-b34b-432e-821c-e60e73570236}
@@ -125,10 +125,9 @@ Syntaxe :
     [CSS:CUSTOMREF]
     [CSS:CODE]
 
-Pour `[CSS:REF]`, la valeur est un ensemble d'éléments HTML
-`<link rel="stylesheet" ... />` pour charger le fichier CSS
-`css/dcp/system.css` et les fichiers CSS ajoutés via la méthode
-[`addCssRef()`][addCssRef].
+Pour `[CSS:REF]`, la valeur est un ensemble d'éléments HTML `<link
+rel="stylesheet" ... />` pour charger le fichier CSS `css/dcp/system.css` et les
+fichiers CSS ajoutés via la méthode [`addCssRef()`][addCssRef].
 
 Pour `[CSS:CUSTOMREF]`, la valeur est identique à `[CSS:REF]` à l'exception du
 fichier CSS `css/dcp/system.css` qui n'est pas présent.
