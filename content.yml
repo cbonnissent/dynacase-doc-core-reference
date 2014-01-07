@@ -1422,8 +1422,8 @@ book:
     - level:   3
       content:  "Advanced/Template/encode.md"
       flags:
-        wip: "work in progress"
-        wip_sub: ""
+        new : "new"
+        draft : "draft"
     - level:   3
       content:  "Advanced/Template/tag_list_texte.md"
       flags:
