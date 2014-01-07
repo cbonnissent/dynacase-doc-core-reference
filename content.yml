@@ -1385,7 +1385,6 @@ book:
       content:  "Advanced/Security/confidential.md"
       flags:
         new : "new"
-        draft : "draft"
     - level:   2
       content:  "Advanced/Template/introduction.md"
       flags:
