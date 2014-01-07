@@ -492,7 +492,6 @@ book:
       content:  "API/Class_Doc/docmethods.md"
       subtoc:   1
       flags:
-        draft: "draft"
         new: "new"
     - level:   4
       element: "chapter"
