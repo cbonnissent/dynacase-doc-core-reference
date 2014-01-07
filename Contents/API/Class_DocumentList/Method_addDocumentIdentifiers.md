@@ -179,7 +179,7 @@ identifiants demandés.
 
 ## Notes {#core-ref:a2c98be2-9502-4e00-8d5d-3d537afd3396}
 
-Les documents obtenus via `DocumentList` sont ordonnés alphabétiquement pas leur
+Les documents obtenus via `DocumentList` sont ordonnés alphabétiquement par leur
 titre.
 
 ## Voir aussi {#core-ref:87e7a276-295b-433e-a244-11637b149e6c}
