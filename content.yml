@@ -962,6 +962,31 @@ book:
       content:  "API/Class_SearchDoc/Method_getNextDoc.md"
       flags:
         new : "new"
+    - level:   2
+      element: "chapter"
+      content:  "API/Utils_DocManager.md"
+      flags:
+        new : "new"
+        draft : "draft"
+      subtoc:   1
+    - level:   3
+      element: "chapter"
+      content:  "API/Utils_DocManager/Utils_new_Doc.md"
+      flags:
+        new : "new"
+        draft : "draft"
+    - level:   3
+      element: "chapter"
+      content:  "API/Utils_DocManager/Utils_createDoc.md"
+      flags:
+        new : "new"
+        draft : "draft"
+    - level:   3
+      element: "chapter"
+      content:  "API/Utils_DocManager/Utils_createTmpDoc.md"
+      flags:
+        new : "new"
+        draft : "draft"
 #
 # END of API Content
 #

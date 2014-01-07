@@ -22,6 +22,7 @@ L'édition 4 de la documentation a modifié les points suivants.
 | Ajout chapitre zones et actions de référence    | [Zone et actions de référence][zoneref]         | <span class="flag new">New</span>                                                           | 12/11/13 |
 | Ajout chapitre SearchDoc                        | [Classe SearchDoc][searchdoc]                   | <span class="flag new">New</span>                                                           | 12/11/13 |
 | Mise à jour des chapitres API                   | [Les essentiels de l'API][apichapter]           | <span class="flag new">Updated</span>                                                       | 12/11/13 |
+| Ajout chapitre Utilitaire gestion de documents  | [Utilitaire gestion de documents][utilDoc]      | <span class="flag new">New</span>                                                           | 07/01/14 |
 
 
 ## Modification release 3.2.12 {#core-ref:d402539b-f0dd-4ade-9ea0-03f1d55da1da}
@@ -101,3 +102,4 @@ retour d'erreur.
 [apichapter]:           #core-ref:0c6d26ba-ab12-4659-aaf9-bcad5a1194ef
 [Dir::insertMultipleDocuments]: #core-ref:098cf44e-568d-4dd2-8dd0-e2f104bc8615
 [Dir::postInsertMultipleDocuments]: #core-ref:e3cd509f-8678-4dec-a0cf-33aa39674cfe
+[utilDoc]:                          #core-ref:deb7de49-dbfb-4feb-8f35-cc9aedf352a2
