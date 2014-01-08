@@ -1,12 +1,7 @@
 # new_Doc {#core-ref:e978cbd1-5f54-4a06-a6be-f1c079c2d734}
 
 <div markdown="1" class="short-description">
-Cette méthode permet de récupérer un document stocké en base. Elle couvre les 
-points suivants :
-
-* récupération des données et des propriétés du documents,
-* récupération de son profilage,
-* instanciation d'un objet de la classe correspond à la famille du document.
+Cette fonction permet de récupérer un document stocké en base. 
 </div>
 
 ## Description {#core-ref:59e92d4c-dc5d-432e-a74b-375d88e66d4c}
@@ -17,8 +12,14 @@ points suivants :
                                      bool $latest = false )
 
 Cette fonction retourne un objet héritant de la classe `\Dcp\Family\Document`
-en fonction du paramètre `$id` qui désigne soit la [propriété][properties] 
-`id` du document, soit sa propriété `name`.
+en fonction de l'identifiant du document (paramètre `$id`).
+
+Elle réalise les points suivants :
+
+* récupération des données et des propriétés du documents,
+* récupération de son profilage,
+* instanciation d'un objet de la classe correspond à la famille du document.
+
 
 ### Avertissements {#core-ref:133b0170-c3d3-4d0b-a106-23f0693ed8e1}
 
@@ -36,15 +37,16 @@ retour d'erreur.
 
 (int|string) `id`
 :   Identifiant du document que l'on souhaite récupérer. Cet identifiant est
-    soit la [propriété][properties] `id` du document, soit le `name` du document.
+    soit la [propriété][properties] `id` du document, soit la propriété `name` 
+    du document.
 
 (string) `latest` (défaut : `false`)
 :   Dans le cas d'un document [révisé][review] indique si l'on souhaite récupérer
-    la version courante (`true`) ou la version référencée par le paramètre id.
+    la version courante (`true`) ou la version référencée par le paramètre `id`.
 
 ## Valeur de retour {#core-ref:eaf17066-d604-47b6-94f3-7c21f5f7fac4}
 
-Un document héritant de la classe `\Dcp\Family\Document`, la classe exact du 
+Un document héritant de la classe `\Dcp\Family\Document`, la classe exacte du 
 document est fonction de la famille du document.
 
 ## Erreurs / Exceptions {#core-ref:14d36bfc-8388-48c9-845a-94c92452f645}
@@ -58,15 +60,21 @@ le paramètre `$id` n'est pas passé alors un objet de la classe
 retour d'erreur et n'est pas utilisable, pour détecter ce type de retour vous
 pouvez utiliser les fonctions :
 
-* [isAlive][isAlive] : cette fonction vérifie que l'objet existe en base et n'a
-pas été supprimé,
-* isAffected : cette fonction vérifie que l'objet existe en base.
+* [`Doc::isAlive()`][isAlive] : cette méthode vérifie que l'objet existe en
+    base et n'a pas été supprimé,
+
+* `Doc::isAffected()` : cette méthode vérifie que l'objet existe en base.
 
 ## Historique {#core-ref:723bf281-45bd-46ad-bc1d-1917c6d05f79}
 
 Aucun
 
 ## Exemple {#core-ref:a6344de2-7961-4715-b7b7-455a0498bf57}
+
+
+Le document de test de nom logique `FF` a deux révisions avec les identifiants
+1455 et 1460. Il s'agit d'un document de la famille "Demande d'adoption".
+Le document 1461 de la famille "Animal" a été supprimé.
 
     [php]
     
@@ -102,12 +110,13 @@ Résultat :
 ## Notes {#core-ref:1fca9e08-062b-495b-a8a3-7561f57d43af}
 
 Cette fonction ne doit pas être utilisée pour créer un nouveau document.
-La création de document doit passer par [createDoc][createDoc].
+
+La création de document est réalisée par la fonction [createDoc()][createDoc].
 
 ## Voir aussi {#core-ref:f3de1eb0-942f-488b-a9dc-e165a7bf7c9f}
 
-* [createDoc][createDoc],
-* [createTmpDoc][createTmpDoc].
+* [createDoc()][createDoc],
+* [createTmpDoc()][createTmpDoc].
 
 <!-- links -->
 

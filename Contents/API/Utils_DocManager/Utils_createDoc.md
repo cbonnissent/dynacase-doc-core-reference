@@ -1,7 +1,7 @@
 # createDoc {#core-ref:9886581a-243a-4c78-8490-8fda2209fd93}
 
 <div markdown="1" class="short-description">
-Cette méthode permet de créer un nouveau document.
+Cette fonction permet de créer un nouveau document.
 </div>
 
 ## Description {#core-ref:83d5ce37-f73b-4a4a-8e14-8838c39732c3}
@@ -15,7 +15,7 @@ Cette méthode permet de créer un nouveau document.
 
 Cette fonction permet de créer un nouveau document. Elle :
 
-* contrôle que le type document demandé existe,
+* contrôle que la famille de document demandée existe,
 * contrôle que l'utilisateur courant a le droit de créer ce type de document (optionnel),
 * initialise un objet de la classe correspondant à la famille demandée,
 * le paramètre avec les valeurs par défaut (optionnel).
@@ -26,15 +26,16 @@ que de procéder, si besoin est, à cette insertion à l'aide de la méthode [st
 ### Avertissements {#core-ref:ffd97441-2cec-4f71-a201-6f0c1d2f3e3c}
 
 Le document retourné n'est pas inséré en base.
+
 Si le paramètre `fromid` ne correspond pas à un nom logique de famille un objet
 de type `\Dcp\Family\Document` est retourné, cet objet n'est pas utilisable et
 doit être considéré comme un retour d'erreur.
 
 ## Liste des paramètres {#core-ref:7d07e2fd-c2c2-4c69-8299-5b5b22322fa7}
 
-(string) `dbAccess`
+(string) `dbaccess`
 :   Coordonnées de la base de données. Cette élément peut-être trouvé grâce à la
-    méthode `getDbAccess`.
+    fonction `getDbAccess()`.
 
 (string) `fromid`
 :   Nom logique de la famille du document à créer.
@@ -49,7 +50,7 @@ doit être considéré comme un retour d'erreur.
 
 (bool) `temporary` (défaut : false)
 :   Ce paramètre est obsolète et **ne doit pas** être utilisé. Pour créer un document
-    temporaire, il faut utiliser la méthode [createTmpDoc][createTmpDoc].
+    temporaire, il faut utiliser la focntion [createTmpDoc()][createTmpDoc].
 
 ## Valeur de retour {#core-ref:250a7302-7feb-44b6-b545-e66ef65328b6}
 
@@ -73,7 +74,6 @@ Aucun
 ## Exemple {#core-ref:c94038b0-45ac-4ed1-8ff1-a83d32d3dfa2}
 
     [php]
-    
     require_once "FDL/freedom_util.php";
     
     $animal = createDoc(getDbAccess(), "ZOO_ANIMAL");
@@ -103,8 +103,8 @@ Aucune
 ## Voir aussi {#core-ref:5762458e-0672-4dd7-b50a-e2c469f5ff97}
 
 
-* [createTmpDoc][createTmpDoc],
-* [new_Doc][new_Doc].
+* [createTmpDoc()][createTmpDoc],
+* [new_Doc()][new_Doc].
 
 <!-- links -->
 

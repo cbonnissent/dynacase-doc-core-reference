@@ -1,7 +1,7 @@
 # createTmpDoc {#core-ref:6b745549-eb65-46f5-b0c1-5fa80661f1b7}
 
 <div markdown="1" class="short-description">
-Cette méthode permet de créer un nouveau document.
+Cette fonction permet de créer un nouveau document temporaire.
 </div>
 
 ## Description {#core-ref:83d5ce37-f73b-4a4a-8e14-8838c39732c3}
@@ -12,7 +12,7 @@ Cette méthode permet de créer un nouveau document.
                              bool $defaultvalues = true)
 
 Cette fonction permet de créer un nouveau document temporaire. Les documents 
-temporaire stockés en base sont effacés à temps régulier.
+temporaires stockés en base sont effacés par le script [`cleanContext`][cleancontext] .
 
 ### Avertissements {#core-ref:ffd97441-2cec-4f71-a201-6f0c1d2f3e3c}
 
@@ -29,9 +29,9 @@ doit être considéré comme un retour d'erreur.
 
 ## Liste des paramètres {#core-ref:7d07e2fd-c2c2-4c69-8299-5b5b22322fa7}
 
-(string) `dbAccess`
-:   Coordonnées de la base de données. Cette élément peut-être trouvé grâce à la
-    méthode `getDbAccess`.
+(string) `dbaccess`
+:   Coordonnées de la base de données. Cet élément peut-être trouvé grâce à la
+    fonction `getDbAccess`.
 
 (string) `fromid`
 :   Nom logique de la famille du document à créer.
@@ -45,7 +45,8 @@ doit être considéré comme un retour d'erreur.
 Un document de la classe correspondant à la famille demandée.
 
 Le document retourné n'est pas inséré en base, c'est à la charge du développeur
-que de procéder, si besoin est, à cette insertion à l'aide de la méthode [store][store].
+de procéder, si besoin, à cette insertion à l'aide de la méthode
+[Doc::store()][store].
 
 ## Erreurs / Exceptions {#core-ref:a1b1854a-d854-4b33-a776-b3f76419f697}
 
@@ -89,11 +90,13 @@ Aucune
 
 ## Voir aussi {#core-ref:5762458e-0672-4dd7-b50a-e2c469f5ff97}
 
-* [createDoc][createDoc],
-* [new_Doc][new_Doc].
+* [createDoc()][createDoc],
+* [new_Doc()][new_Doc].
 
 <!-- links -->
 
 [store]:            #core-ref:b8540d13-ece6-4e9e-9b72-6a56bca9da12
 [createDoc]:        #core-ref:9886581a-243a-4c78-8490-8fda2209fd93
 [new_Doc]:          #core-ref:e978cbd1-5f54-4a06-a6be-f1c079c2d734
+[wsh]:              #core-ref:bab8c1c9-fe71-4629-9773-5cd67a8693bf
+[cleancontext]:     #core-ref:100b123b-da1a-45b4-848b-0622f3e09a40

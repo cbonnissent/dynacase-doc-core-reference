@@ -9,7 +9,7 @@ La table `doc` définie les [propriétés des documents][docprop] ; c'est à dir
  tout ce qui est commun à tout type de document.
  
 
-|   Colonne    |             Type            |                                            Définition                                             |
+|   Colonne    |             Type            |                                             Définition                                            |
 | ------------ | --------------------------- | ------------------------------------------------------------------------------------------------- |
 | adate        | timestamp without time zone | Date de dernier accès au document.                                                                |
 | allocated    | integer                     | Identifiant système de l'utilisateur auquel le document est affecté.                              |
@@ -17,7 +17,7 @@ La table `doc` définie les [propriétés des documents][docprop] ; c'est à dir
 | atags        | text                        | Balises applicatives.                                                                             |
 | attrids      | text                        | Liste de l'ensemble des attributs ayant une valeur non nulle (calculé par trigger).               |
 | cdate        | timestamp without time zone | Date de création de la révision.                                                                  |
-| classname    | character varying(64)       | Nom de la classe PHP associée au document (utilisé dans la table `docfam` uniquement).            |
+| classname    | text                        | Nom de la classe PHP associée au document (utilisé dans la table `docfam` uniquement).            |
 | comment      | text                        | *Obsolète*                                                                                        |
 | confidential | integer                     | Indique si le document est confidentiel (>0).                                                     |
 | cvid         | integer                     | Identifiant du document [contrôle de vue][CVDoc] associé à ce document.                           |
@@ -28,7 +28,7 @@ La table `doc` définie les [propriétés des documents][docprop] ; c'est à dir
 | fromid       | integer                     | Id de la famille d'appartenance.                                                                  |
 | fulltext     | tsvector                    | Ensemble des valeurs du document y compris les textes des fichiers indexés.                       |
 | id           | integer                     | Identifiant unique du document (issue de la séquence `seq_id_doc`).                               |
-| icon         | character varying(256)      | Référence au fichier d'icone du document.                                                         |
+| icon         | text                        | Référence au fichier d'icone du document.                                                         |
 | initid       | integer                     | Id du premier document de la lignée documentaire.                                                 |
 | ldapdn       | text                        | *Obsolète*                                                                                        |
 | lmodify      | character(1)                | Tag de modification.                                                                              |
@@ -41,7 +41,7 @@ La table `doc` définie les [propriétés des documents][docprop] ; c'est à dir
 | profid       | integer                     | Identifiant du [profil de document][docprof].                                                     |
 | revdate      | integer                     | Date de révision.                                                                                 |
 | revision     | integer                     | Numéro d'ordre du document dans sa lignée documentaire.                                           |
-| state        | character varying(64)       | Étape du document.                                                                                |
+| state        | text                        | Étape du document.                                                                                |
 | svalues      | text                        | Liste des valeurs d'[attributs recherchables][attropt] y compris les textes des fichiers indexés. |
 | title        | character varying(256)      | Titre du document.                                                                                |
 | usefor       | text                        | Type d'utilisation du document.                                                                   |

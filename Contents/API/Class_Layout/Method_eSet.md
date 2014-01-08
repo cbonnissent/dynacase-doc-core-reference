@@ -88,7 +88,7 @@ Résultat :
 
 ## Notes  {#core-ref:7aa15b22-105e-4026-9991-1ca9171280b5}
 
-Attention, dans les cas de parties d'url, il faut utiliser
+Attention, dans les cas de parties d'url, il faut utiliser la fonction 
 [`urlencode`][urlencode] au lieu de [`htmlspecialchars`][htmlspecialchars]
 afin de garantir l'intégrité de l'url. Dans ce cas, il faut utiliser la méthode
 [`Layout::set()`][set] et appeler manuellement `urlencode`.
@@ -96,6 +96,7 @@ afin de garantir l'intégrité de l'url. Dans ce cas, il faut utiliser la métho
 ## Voir aussi  {#core-ref:a636b518-c3b2-4f6c-9dff-0e50c9337cd1}
 
 - Méthode [`Layout::set()`][set]
+- Chapitre [Encodage pour format HTML][encode]
 
 <!-- links -->
 [setBlockData]: #core-ref:fb8a6d38-0bc7-469b-97d3-7cb8d6d3ea4b
@@ -103,3 +104,4 @@ afin de garantir l'intégrité de l'url. Dans ce cas, il faut utiliser la métho
 [urlencode]: http://docs.php.net/manual/fr/function.urlencode.php "Définition sur php.net"
 [XSS]: http://fr.wikipedia.org/wiki/XSS "Définition sur wikipédia"
 [set]:     #core-ref:812c30ed-11cb-4b59-84d2-ba10e4ab7e88
+[encode]:   #core-ref:751e00d9-eec7-41b7-835f-14df8c0b7821
