@@ -2,8 +2,8 @@
  
 Les contrôles de vue permettent de spécifier des représentations alternatives
 pour un document. L'utilisateur pourra choisir parmi ces représentations, en
-fonction de ses droits, ou alors le contrôle de vue pourra déterminer dynamique
-la vue en fonction de l'utilisateur, et toujours de ses droits.
+fonction de ses droits, ou alors le contrôle de vue peut déterminer
+dynamiquement la vue en fonction des droits de l'utilisateur.
 
 Chaque modalité de représentation est appelée une *vue*.
 

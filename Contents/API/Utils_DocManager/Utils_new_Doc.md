@@ -23,10 +23,11 @@ Elle réalise les points suivants :
 
 ### Avertissements {#core-ref:133b0170-c3d3-4d0b-a106-23f0693ed8e1}
 
-Pour des raisons de compatibilité avec les versions précédente de Dynacase, la
-méthode `new_Doc` retourne un objet de la classe `\Dcp\Family\Document` si l'id
-n'existe pas où n'est pas passé.  
-Cet objet n'est pas utilisable en tant que tel et doit être considéré comme un 
+Pour des raisons de compatibilité avec les versions précédentes de Dynacase, la
+fonction `new_Doc()` retourne un objet de la classe `\Dcp\Family\Document` si
+l'identifiant n'existe pas où n'est pas indiqué.
+
+Cet objet n'est pas utilisable en tant que tel et doit être considéré comme un
 retour d'erreur.
 
 ## Liste des paramètres {#core-ref:1f4c5acd-963a-4b13-95c8-8edd3cc783ff}
