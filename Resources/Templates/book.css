@@ -1,3 +1,10 @@
+
+h2, h3, h4 {
+    margin-top:0;
+    padding-top:30px;
+}
+
+
 /*
     Gestion des flags
  */
@@ -148,39 +155,22 @@ blockquote cite:before {
     content: "\2014 \2009";
 }
 
-.chunk_nav, .copy{
+.copy{
     background-color: rgba(80,80,80,0.15);
     transition: all 1s ease-in-out;
 }
 
-.chunk_toc li.title {
-    background-color: rgba(138, 226, 52, 0.5);
-    -webkit-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;
-    -ms-transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out;
-}
 
-.searchZone li.title {
-    background-color: rgba(250, 173, 57, 0.5);
-    -webkit-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;
-    -ms-transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out;
-}
-
-.chunk_nav_hover, .copy_hover
+.chunk_nav, .copy_hover
  {
     background-color: rgb(80,80,80);
 }
 
-.chunk_toc li.title_hover {
+.chunk_toc li.title {
     background-color: rgb(138, 226, 52);
 }
 
-.searchZone li.title_hover {
+.searchZone li.title {
     background-color: rgb(250, 173, 57);
 }
 
