@@ -120,7 +120,7 @@ void
 
 ## Erreurs / Exceptions {#core-ref:1b54cad4-edc1-4309-bdc5-593ace3a7f2f}
 
-<span class="flag next-release">next release 3.2.12</span>
+<span class="flag next-release">3.2.12</span>
 
 Exception `\Dcp\SearchDoc\Exception` si la jointure est syntaxiquement
 incorrecte.

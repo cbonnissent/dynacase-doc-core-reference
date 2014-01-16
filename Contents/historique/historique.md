@@ -8,21 +8,21 @@ Dynacase.
 L'édition 4 de la documentation a modifié les points suivants.
 
 
-|                  Modifications                  |                     Chapitre                    |                                           Version                                           |   Date   |
-| :---------------------------------------------- | :---------------------------------------------- | :------------------------------------------------------------------------------------------ | :------- |
-| Description de la mise en place des traductions | [Internationalisation][i18n]                    | <span class="flag new">New</span><span class="flag next-release">Next release 3.2.12</span> | 30/10/13 |
-| Ajout chapitres sur les templates               | [Usage avancée des templates][advtemplate]      | <span class="flag new">New</span>                                                           | 04/11/13 |
-| Ajout graphe d'accès                            | [Cinématique de dynacase][cinematique]          | <span class="flag new">New</span>                                                           | 05/11/13 |
-| Description des principales tables              | [La base de données][database]                  | <span class="flag new">New</span>                                                           | 05/11/13 |
-| Famille processus                               | [Famille processus][processus]                  | <span class="flag new">New</span>                                                           | 06/11/13 |
-| Ajout chapitres Dbobj, QueryDb, Transaction     | [Mécanismes de persistance][persist]            | <span class="flag new">New</span>                                                           | 06/11/13 |
-| Ajout chapitre compte                           | [Manipulation des comptes utilisateur][account] | <span class="flag new">New</span>                                                           | 06/11/13 |
-| Ajout chapitre migration                        | [Migration des applications][migration]         | <span class="flag new">New</span>                                                           | 08/11/13 |
-| Ajout chapitre contrôle d'accès                 | [Contrôle des accès][accesscontrol]             | <span class="flag new">New</span>                                                           | 12/11/13 |
-| Ajout chapitre zones et actions de référence    | [Zone et actions de référence][zoneref]         | <span class="flag new">New</span>                                                           | 12/11/13 |
-| Ajout chapitre SearchDoc                        | [Classe SearchDoc][searchdoc]                   | <span class="flag new">New</span>                                                           | 12/11/13 |
-| Mise à jour des chapitres API                   | [Les essentiels de l'API][apichapter]           | <span class="flag new">Updated</span>                                                       | 12/11/13 |
-| Ajout chapitre Utilitaire gestion de documents  | [Utilitaire gestion de documents][utilDoc]      | <span class="flag new">New</span>                                                           | 07/01/14 |
+|                  Modifications                  |                     Chapitre                    |                                    Version                                     |   Date   |
+| :---------------------------------------------- | :---------------------------------------------- | :----------------------------------------------------------------------------- | :------- |
+| Description de la mise en place des traductions | [Internationalisation][i18n]                    | <span class="flag new">New</span><span class="flag next-release">3.2.12</span> | 30/10/13 |
+| Ajout chapitres sur les templates               | [Usage avancée des templates][advtemplate]      | <span class="flag new">New</span>                                              | 04/11/13 |
+| Ajout graphe d'accès                            | [Cinématique de dynacase][cinematique]          | <span class="flag new">New</span>                                              | 05/11/13 |
+| Description des principales tables              | [La base de données][database]                  | <span class="flag new">New</span>                                              | 05/11/13 |
+| Famille processus                               | [Famille processus][processus]                  | <span class="flag new">New</span>                                              | 06/11/13 |
+| Ajout chapitres Dbobj, QueryDb, Transaction     | [Mécanismes de persistance][persist]            | <span class="flag new">New</span>                                              | 06/11/13 |
+| Ajout chapitre compte                           | [Manipulation des comptes utilisateur][account] | <span class="flag new">New</span>                                              | 06/11/13 |
+| Ajout chapitre migration                        | [Migration des applications][migration]         | <span class="flag new">New</span>                                              | 08/11/13 |
+| Ajout chapitre contrôle d'accès                 | [Contrôle des accès][accesscontrol]             | <span class="flag new">New</span>                                              | 12/11/13 |
+| Ajout chapitre zones et actions de référence    | [Zone et actions de référence][zoneref]         | <span class="flag new">New</span>                                              | 12/11/13 |
+| Ajout chapitre SearchDoc                        | [Classe SearchDoc][searchdoc]                   | <span class="flag new">New</span>                                              | 12/11/13 |
+| Mise à jour des chapitres API                   | [Les essentiels de l'API][apichapter]           | <span class="flag new">Updated</span>                                          | 12/11/13 |
+| Ajout chapitre Utilitaire gestion de documents  | [Utilitaire gestion de documents][utilDoc]      | <span class="flag new">New</span>                                              | 07/01/14 |
 
 
 ## Modification release 3.2.12 {#core-ref:d402539b-f0dd-4ade-9ea0-03f1d55da1da}

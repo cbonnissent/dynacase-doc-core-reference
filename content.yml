@@ -175,7 +175,7 @@ book:
       content:  "importation_exportation_documents/importations.md"
       flags:
         new: "updated"
-        next-release : "next-release 3.2.12"
+        next-release : "3.2.12"
     - level:   2
       content:  "importation_exportation_documents/importationsxml.md"
     - level:   2
@@ -705,7 +705,7 @@ book:
       content:  "API/Class_Layout/Method_eSet.md"
       flags:
         new:   "new"
-        next-release : "next-release 3.2.12"
+        next-release : "3.2.12"
     - level:   3
       element: "chapter"
       content:  "API/Class_Layout/Method_setBlockData.md"
@@ -716,7 +716,7 @@ book:
       content:  "API/Class_Layout/Method_eSetBlockData.md"
       flags:
         new:   "new"
-        next-release : "next-release 3.2.12"
+        next-release : "3.2.12"
     - level:   2
       element: "chapter"
       content:  "API/Class_Log.md"
@@ -876,7 +876,7 @@ book:
       content:  "API/Class_SearchDoc/Method_setRecursiveSearch.md"
       flags:
         new : "new"
-        next-release : "next-release 3.2.12"
+        next-release : "3.2.12"
     - level:   3
       element: "chapter"
       content:  "API/Class_SearchDoc/Method_useCollection.md"
@@ -891,19 +891,19 @@ book:
       element: "chapter"
       content:  "API/Class_SearchDoc/Method_addGeneralFilter.md"
       flags:
-        next-release : "next-release 3.2.12"
+        next-release : "3.2.12"
         new : "new"
     - level:   3
       element: "chapter"
       content:  "API/Class_SearchDoc/Method_onlyCount.md"
       flags:
         new : "new"
-        next-release : "next-release 3.2.12"
+        next-release : "3.2.12"
     - level:   3
       element: "chapter"
       content:  "API/Class_SearchDoc/Method_join.md"
       flags:
-        next-release : "next-release 3.2.12"
+        next-release : "3.2.12"
         new : "new"
     - level:   3
       element: "chapter"
@@ -929,7 +929,7 @@ book:
       element: "chapter"
       content:  "API/Class_SearchDoc/Method_count.md"
       flags:
-        next-release : "next-release 3.2.12"
+        next-release : "3.2.12"
         new : "new"
     - level:   3
       element: "chapter"
@@ -1156,7 +1156,7 @@ book:
       content:  "wsh_ref/importDocuments.md"
       flags:
         new: "updated"
-        next-release : "next-release 3.2.12"
+        next-release : "3.2.12"
     - level:   2
       content:  "wsh_ref/refreshDocuments.md"
     - level:   2
@@ -1180,73 +1180,73 @@ book:
       content:  "Advanced/Internationalisation/introduction.md"
       flags:
         new: "new"
-        next-release : "next-release 3.2.12"
+        next-release : "3.2.12"
       subtoc:   2
     - level:   3
       content:  "Advanced/Internationalisation/description.md"
       flags:
         new: "new"
-        next-release : "next-release 3.2.12"
+        next-release : "3.2.12"
     - level:   3
       content:  "Advanced/Internationalisation/catalogue.md"
       flags:
         new: "new"
-        next-release : "next-release 3.2.12"
+        next-release : "3.2.12"
     - level:   4
       content:  "Advanced/Internationalisation/localelayout.md"
       flags:
         new: "new"
-        next-release : "next-release 3.2.12"
+        next-release : "3.2.12"
     - level:   4
       content:  "Advanced/Internationalisation/localeworkflow.md"
       flags:
         new: "new"
-        next-release : "next-release 3.2.12"
+        next-release : "3.2.12"
     - level:   3
       content:  "Advanced/Internationalisation/localegenphp.md"
       flags:
         new: "new"
-        next-release : "next-release 3.2.12"
+        next-release : "3.2.12"
     - level:   4
       content:  "Advanced/Internationalisation/localegenfamily.md"
       flags:
         new: "new"
-        next-release : "next-release 3.2.12"
+        next-release : "3.2.12"
     - level:   4
       content:  "Advanced/Internationalisation/localegencv.md"
       flags:
         new: "new"
-        next-release : "next-release 3.2.12"
+        next-release : "3.2.12"
     - level:   4
       content:  "Advanced/Internationalisation/localegenlayout.md"
       flags:
         new: "new"
-        next-release : "next-release 3.2.12"
+        next-release : "3.2.12"
     - level:   3
       content:  "Advanced/Internationalisation/translate.md"
       flags:
         new: "new"
-        next-release : "next-release 3.2.12"
+        next-release : "3.2.12"
     - level:   3
       content:  "Advanced/Internationalisation/publish.md"
       flags:
         new: "new"
-        next-release : "next-release 3.2.12"
+        next-release : "3.2.12"
     - level:   3
       content:  "Advanced/Internationalisation/setlanguage.md"
       flags:
         new: "new"
-        next-release : "next-release 3.2.12"
+        next-release : "3.2.12"
     - level:   3
       content:  "Advanced/Internationalisation/addlanguage.md"
       flags:
         new: "new"
-        next-release : "next-release 3.2.12"
+        next-release : "3.2.12"
     - level:   3
       content:  "Advanced/Internationalisation/javascript.md"
       flags:
         new: "new"
-        next-release : "next-release 3.2.12"
+        next-release : "3.2.12"
     - level:   2
       content:  "Advanced/Cinematique/introduction.md"
       subtoc:   2
