@@ -66,10 +66,10 @@ principalement sur la forme, peuvent y être apportées.
 Ce marquage met en évidence des parties nouvelles ou mises à jour depuis la
 précédente édition.
 
-<span class="flag next-release">next release</span>
+<span class="flag next-release">3.2.x</span>
 
-Ce marquage met en évidence des parties nouvelles qui ne sont opérationnelles que
-dans la prochaine release de dynacase-core.
+Ce marquage met en évidence des parties nouvelles qui sont opérationnelles que
+depuis la release indiquée de *dynacase-core*.
 
 Si un chapitre est 'marqué' son contenu, incluant ses sous-chapitres, est
 considéré comme marqué à l'identique  -sauf marquage particulier-.
