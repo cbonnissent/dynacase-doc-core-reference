@@ -177,9 +177,10 @@ peut conduire à terme à une dégradation des performances.
 
 Pour chaque message envoyé, un message est ajouté à  l'historique du document
 servant à l'envoi. Ce message contient :
-*   le titre du modèle de mail
-*   le sujet du message
-*   les destinataires.
+
+* le titre du modèle de mail
+* le sujet du message
+* les destinataires.
 
 Si une erreur survient lors de l'envoi du message, elle est ajoutée à
 l'historique du document servant à l'envoi, et est retournée à l'utilisateur.
