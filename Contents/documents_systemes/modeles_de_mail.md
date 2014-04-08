@@ -47,9 +47,8 @@ Le sujet
     Les balises sont générées par le document, et peuvent être complétées par le
     second paramètre de la méthode `MailTemplate::sendMail()`.
     
-    **Note**: attention, le sujet d'un mail ne pouvant pas contenir de html, il
-    est déconseillé d'utiliser les balises `[V_TITLE]` ou `[V_ATTRID]` où attrid
-    est une relation.
+    **Note**: attention, le sujet d'un mail ne devant pas contenir de html, il
+    est déconseillé d'utiliser les balises `[V_TITLE]` ou `[V_ATTRID]`.
 
 Le corps
 :   Le corps est un texte html avec mise en forme. Il peut contenir des parties
@@ -143,6 +142,14 @@ L'émetteur ou les destinataires peuvent être choisis parmi :
         texte*, mais est récupéré sur la famille du workflow associé au
         document.
 
+## Sujet et corps du mail {#core-ref:e0fb55dc-dd11-4e95-8e24-18e92fb8fc8c}
+
+Le sujet et le corps du mail sont considérés comme des layouts et les balises [applicables][TemplateBaliseText] sont utilisables à l'exception de la balise `BLOCK` car il n'est pas possible de faire un setBlockData sur un modèle de mail.
+
+De plus, le [contrôleur par défaut][ControleurDefaut] est appelé avant le rendu du template donc toutes les clefs de ce contrôleur sont disponibles dans le sujet et le corps du mail.
+
+<span class="flag inline nota-bene"></span> La balise `[TITLE]` est notamment disponible, elle permet d'intégrer la version textuelle du titre du document associé au template.
+
 ## Hyperliens {#core-ref:0d251885-b91f-4ceb-bf8c-97b4954040af}
 
 ### Calcul des liens {#core-ref:1f7269a5-fedf-40b1-bc92-2d1566e3de7d}
@@ -192,8 +199,11 @@ est envoyé. Aussi, lors de l'envoi d'un message à plusieurs destinataires, tou
 recevront le même message, et il n'est pas possible de personnaliser le message
 par utilisateur.
 
+Le sujet et le corps du mail ne peuvent pas faire appel à l'instruction `BLOCK`.
 
 <!-- links -->
 [emetteur_destinataire]: #core-ref:c73aee80-78d9-460e-ad7e-de13bfb849cd
 [getDocAnchor]: #core-ref:55e9c46c-2a10-4911-8243-7c913416648f
 [CORE_MAILACTION]: #core-ref:c1d9e009-49a5-47a4-9104-4d044ea24aa3
+[TemplateBaliseText]: #core-ref:32dea245-37e6-4a4c-a65e-06c577c0effa
+[ControleurDefaut]: #core-ref:1b7cb4c6-df1e-4124-8f5d-deaeac92561b
