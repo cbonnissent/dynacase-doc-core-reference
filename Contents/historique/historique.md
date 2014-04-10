@@ -3,26 +3,37 @@
 Ce chapitre contient un descriptif des améliorations entre les releases de 
 Dynacase.
 
+## Édition 5
+
+
+
+|              Modifications              |               Chapitre              |                   Version                    |
+| :-------------------------------------- | :---------------------------------- | :------------------------------------------- |
+| Précision pour les rapports             | [Doc::getCustomeTitle][customtitle] | <span class="flag update">Mise à jour</span> |
+| Précision paramètre OPENDOC             | [FDL:OPENDOC][opendoc]              | <span class="flag update">Mise à jour</span> |
+| Précision paramétrage du modèle de mail | [Modèle de mail][mailtpl]           | <span class="flag update">Mise à jour</span> |
+
+
 ## Édition 4 {#core-ref:ee35db85-a173-4840-b6d9-ce26eb93e01b}
 
 L'édition 4 de la documentation a modifié les points suivants.
 
 
-|                  Modifications                  |                     Chapitre                    |                                    Version                                     |   Date   |
-| :---------------------------------------------- | :---------------------------------------------- | :----------------------------------------------------------------------------- | :------- |
-| Description de la mise en place des traductions | [Internationalisation][i18n]                    | <span class="flag new">New</span><span class="flag next-release">3.2.12</span> | 30/10/13 |
-| Ajout chapitres sur les templates               | [Usage avancée des templates][advtemplate]      | <span class="flag new">New</span>                                              | 04/11/13 |
-| Ajout graphe d'accès                            | [Cinématique de dynacase][cinematique]          | <span class="flag new">New</span>                                              | 05/11/13 |
-| Description des principales tables              | [La base de données][database]                  | <span class="flag new">New</span>                                              | 05/11/13 |
-| Famille processus                               | [Famille processus][processus]                  | <span class="flag new">New</span>                                              | 06/11/13 |
-| Ajout chapitres Dbobj, QueryDb, Transaction     | [Mécanismes de persistance][persist]            | <span class="flag new">New</span>                                              | 06/11/13 |
-| Ajout chapitre compte                           | [Manipulation des comptes utilisateur][account] | <span class="flag new">New</span>                                              | 06/11/13 |
-| Ajout chapitre migration                        | [Migration des applications][migration]         | <span class="flag new">New</span>                                              | 08/11/13 |
-| Ajout chapitre contrôle d'accès                 | [Contrôle des accès][accesscontrol]             | <span class="flag new">New</span>                                              | 12/11/13 |
-| Ajout chapitre zones et actions de référence    | [Zone et actions de référence][zoneref]         | <span class="flag new">New</span>                                              | 12/11/13 |
-| Ajout chapitre SearchDoc                        | [Classe SearchDoc][searchdoc]                   | <span class="flag new">New</span>                                              | 12/11/13 |
-| Mise à jour des chapitres API                   | [Les essentiels de l'API][apichapter]           | <span class="flag new">Updated</span>                                          | 12/11/13 |
-| Ajout chapitre Utilitaire gestion de documents  | [Utilitaire gestion de documents][utilDoc]      | <span class="flag new">New</span>                                              | 07/01/14 |
+|                  Modifications                  |                     Chapitre                    |                    Version                     |
+| :---------------------------------------------- | :---------------------------------------------- | :--------------------------------------------- |
+| Description de la mise en place des traductions | [Internationalisation][i18n]                    | <span class="flag new">Nouveau chapitre</span> |
+| Ajout chapitres sur les templates               | [Usage avancée des templates][advtemplate]      | <span class="flag new">Nouveau chapitre</span> |
+| Ajout graphe d'accès                            | [Cinématique de dynacase][cinematique]          | <span class="flag new">Nouveau chapitre</span> |
+| Description des principales tables              | [La base de données][database]                  | <span class="flag new">Nouveau chapitre</span> |
+| Famille processus                               | [Famille processus][processus]                  | <span class="flag new">Nouveau chapitre</span> |
+| Ajout chapitres Dbobj, QueryDb, Transaction     | [Mécanismes de persistance][persist]            | <span class="flag new">Nouveau chapitre</span> |
+| Ajout chapitre compte                           | [Manipulation des comptes utilisateur][account] | <span class="flag new">Nouveau chapitre</span> |
+| Ajout chapitre migration                        | [Migration des applications][migration]         | <span class="flag new">Nouveau chapitre</span> |
+| Ajout chapitre contrôle d'accès                 | [Contrôle des accès][accesscontrol]             | <span class="flag new">Nouveau chapitre</span> |
+| Ajout chapitre zones et actions de référence    | [Zone et actions de référence][zoneref]         | <span class="flag new">Nouveau chapitre</span> |
+| Ajout chapitre SearchDoc                        | [Classe SearchDoc][searchdoc]                   | <span class="flag new">Nouveau chapitre</span> |
+| Mise à jour des chapitres API                   | [Les essentiels de l'API][apichapter]           | <span class="flag new">Mise à jour</span>      |
+| Ajout chapitre Utilitaire gestion de documents  | [Utilitaire gestion de documents][utilDoc]      | <span class="flag new">Nouveau chapitre</span> |
 
 
 ## Modification release 3.2.12 {#core-ref:d402539b-f0dd-4ade-9ea0-03f1d55da1da}
@@ -103,3 +114,6 @@ retour d'erreur.
 [Dir::insertMultipleDocuments]: #core-ref:098cf44e-568d-4dd2-8dd0-e2f104bc8615
 [Dir::postInsertMultipleDocuments]: #core-ref:e3cd509f-8678-4dec-a0cf-33aa39674cfe
 [utilDoc]:                          #core-ref:deb7de49-dbfb-4feb-8f35-cc9aedf352a2
+[customtitle]:              #core-ref:3c5ff78d-c080-48fb-a293-9736ed4e95b8
+[opendoc]:          #core-ref:f9e68fa7-01b7-4903-9718-744271d63112
+[mailtpl]:          #core-ref:8723b1aa-10d3-4316-af6b-071f4d59ceee
