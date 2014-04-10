@@ -120,7 +120,7 @@ void
 
 ## Erreurs / Exceptions {#core-ref:1b54cad4-edc1-4309-bdc5-593ace3a7f2f}
 
-<span class="flag next-release">3.2.12</span>
+<span class="flag from release">3.2.12</span>
 
 Exception `\Dcp\SearchDoc\Exception` si la jointure est syntaxiquement
 incorrecte.
@@ -130,6 +130,7 @@ incorrecte.
 
 ### Release 3.2.12 {#core-ref:d2196eab-d77d-4ac6-9ae8-4b194548280a}
 
+<span class="flag from release">3.2.12</span>
 La méthode retourne une exception en cas d'erreur de syntaxe. Auparavant
 l'erreur était remontée au niveau de la méthode `SearchDoc::search()`.
 

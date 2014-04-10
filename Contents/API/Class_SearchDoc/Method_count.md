@@ -46,6 +46,7 @@ Aucune.
 
 ### Release 3.2.12 {#core-ref:833e2067-f05b-46c3-a4ac-1f433af32797}
 
+<span class="flag from release">3.2.12</span>
 Si `count()` est appelé avant `search()`, le résultat est `-1`. Il était
 auparavant égal à `0`.
 

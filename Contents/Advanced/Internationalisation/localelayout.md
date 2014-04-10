@@ -13,7 +13,7 @@ traduction n'est pas trouvée dans le catalogue, le texte initial est affiché
 (sans le '[TEXT:]').
 
 Comme pour les traductions en PHP, il est possible d'utiliser une clef de
-contexte pour démarquer sa traduction.
+contexte pour démarquer sa traduction.<span class="flag from release">3.2.12</span>
 
     [html]
     <h1>[TEXT(my Context):Welcome to my page]</h1>

@@ -33,7 +33,7 @@ répertoire dédiée au nouveau langage `locale/es/LC_MESSAGES/`.
 Pour éviter toute ambiguïté sur l'entête du catalogue principal, un fichier
 `header.mo` doit être installé dans le répertoire LC_MESSAGE de la nouvelle
 langue. Ce fichier doit contenir l'entête du catalogue qui précise l'encodage
-`UTF-8` et la forme plurielle.
+`UTF-8` et la forme plurielle.<span class="flag from release">3.2.12</span>
 
 Exemple `header.po` :
 

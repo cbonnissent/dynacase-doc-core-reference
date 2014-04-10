@@ -2,7 +2,7 @@
 
 
 Le programme `xgettextLayout` permet d'extraire les clefs de traduction depuis des
-fichier de template texte et openDocument Text.
+fichier de template texte et openDocument Text.<span class="flag from release">3.2.12</span>
 
     ./buildTools/xgettextLayout -o myLayouts.pot file1.html file2.xml file3.js file4.odt ...
 

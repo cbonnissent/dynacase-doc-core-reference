@@ -4,7 +4,7 @@
 
 La méthode `eSetBlockData()` permet de spécifier les valeurs des balises
 contenues dans les blocs (e.g. `[BLOCK TAG]...[ENDBLOCK TAG]`) pour des
-templates HTML ou XML.
+templates HTML ou XML.<span class="flag release from">3.2.12</span>
 
 </div>
 

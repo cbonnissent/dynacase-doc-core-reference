@@ -31,7 +31,7 @@ Les recherches contenues dans les sous-dossiers ne sont pas inspectées.
     faite de manière récursive. Un searchDoc est paramétré pour effectuer une
     recherche non-récursive par défaut.
     
-(int) `level` (valeur par défaut : `2`)
+(int) `level` (valeur par défaut : `2`)<span class="flag from release">3.2.12</span>
 :   Niveau de profondeur maximum d'inspection des sous-dossier. S'il est égal
     à zéro, aucun sous-dossier n'est inspecté.
 
