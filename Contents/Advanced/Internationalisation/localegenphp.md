@@ -24,6 +24,7 @@ servir de base pour réaliser les traductions.
 
 Le programme `xgettextPhp` permet de réaliser la même fonction et récupère en
 plus les libellés des [fonctions de recherche][searchLabel].
+<span class="flag from release">3.2.12</span>
 
     ./buildTools/xgettextPhp --output=myCatalog.pot  myFile1.php myFile2.php
     

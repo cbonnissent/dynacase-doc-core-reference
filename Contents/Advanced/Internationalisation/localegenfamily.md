@@ -14,6 +14,7 @@ Exemple : TestSimple.ods
 
 Le programme `xgettextFamily` permet d'extraire les clefs de traduction depuis un
 ou plusieurs fichiers de description de famille (CSV ou ODS).
+<span class="flag from release">3.2.12</span>
 
     ./buildTools/xgettextFamily -o / TestSimple.ods
     

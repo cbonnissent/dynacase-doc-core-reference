@@ -3,7 +3,7 @@
 <div markdown="1" class="short-description">
 
 La méthode `eSet()` permet de spécifier les valeurs des balises (e.g. `[TAG]`)
-de template HTML ou XML.
+de template HTML ou XML.<span class="flag release from">3.2.12</span>
 
 </div>
 

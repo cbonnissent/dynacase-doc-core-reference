@@ -41,7 +41,7 @@ Deux possibilités permettent de diminuer ce risque de doublon :
         [php]
         print _("MyCatalog:This is a text");
 
-2.  Mettre un contexte :
+2.  Mettre un contexte : <span class="flag from release">3.2.12</span>
     
         [php]
         print ___("This is a text", "MyContext");
@@ -70,6 +70,7 @@ Ces fonctions ne sont pas natives de PHP, elles sont ajoutées par Dynacase.
 
 ### Utiliser une forme plurielle {#core-ref:3e6b8eee-4171-11e3-9688-cffb8e583c34}
 
+<span class="flag from release">3.2.12</span>
 Les traductions des formes plurielles sont prises en compte par la bibliothèque
 _gettext_.
 

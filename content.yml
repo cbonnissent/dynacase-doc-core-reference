@@ -171,7 +171,6 @@ book:
       content:  "importation_exportation_documents/importations.md"
       flags:
         update : "mis à jour"
-        from release : "3.2.12"
     - level:   2
       content:  "importation_exportation_documents/importationsxml.md"
     - level:   2
@@ -294,21 +293,33 @@ book:
       element: "chapter"
       content:  "API/Class_ApiUsage.md"
       subtoc:   1
+      flags:
+        update : "mis à jour"
     - level:   3
       element: "chapter"
       content:  "API/Class_ApiUsage/Method_addEmptyParameter.md"
+      flags:
+        new : "nouveauté"
     - level:   3
       element: "chapter"
       content:  "API/Class_ApiUsage/Method_addHiddenParameter.md"
+      flags:
+        new : "nouveauté"
     - level:   3
       element: "chapter"
       content:  "API/Class_ApiUsage/Method_addRequiredParameter.md"
+      flags:
+        new : "nouveauté"
     - level:   3
       element: "chapter"
       content:  "API/Class_ApiUsage/Method_addOptionalParameter.md"
+      flags:
+        new : "nouveauté"
     - level:   3
       element: "chapter"
       content:  "API/Class_ApiUsage/Method_setDefinitionText.md"
+      flags:
+        new : "nouveauté"
     - level:   3
       element: "chapter"
       content:  "API/Class_ApiUsage/Method_setStrictMode.md"
@@ -649,7 +660,6 @@ book:
       content:  "API/Class_Layout/Method_eSet.md"
       flags:
         new:   "nouveauté"
-        from release : "3.2.12"
     - level:   3
       element: "chapter"
       content:  "API/Class_Layout/Method_setBlockData.md"
@@ -658,7 +668,6 @@ book:
       content:  "API/Class_Layout/Method_eSetBlockData.md"
       flags:
         new:   "nouveauté"
-        from release : "3.2.12"
     - level:   2
       element: "chapter"
       content:  "API/Class_Log.md"
@@ -685,42 +694,68 @@ book:
       element: "chapter"
       content:  "API/Class_ApplicationParameterManager.md"
       subtoc:   1
+      flags:
+        new : "nouveauté"
     - level:   3
       element: "chapter"
       content:  "API/Class_ApplicationParameterManager/Method_getCommonParameterValue.md"
+      flags:
+        new : "nouveauté"
     - level:   3
       element: "chapter"
       content:  "API/Class_ApplicationParameterManager/Method_getParameter.md"
+      flags:
+        new : "nouveauté"
     - level:   3
       element: "chapter"
       content:  "API/Class_ApplicationParameterManager/Method_getParameters.md"
+      flags:
+        new : "nouveauté"
     - level:   3
       element: "chapter"
       content:  "API/Class_ApplicationParameterManager/Method_getParameterValue.md"
+      flags:
+        new : "nouveauté"
     - level:   3
       element: "chapter"
       content:  "API/Class_ApplicationParameterManager/Method_getScopedParameterValue.md"
+      flags:
+        new : "nouveauté"
     - level:   3
       element: "chapter"
       content:  "API/Class_ApplicationParameterManager/Method_getUserParameterDefaultValue.md"
+      flags:
+        new : "nouveauté"
     - level:   3
       element: "chapter"
       content:  "API/Class_ApplicationParameterManager/Method_getUserParameterValue.md"
+      flags:
+        new : "nouveauté"
     - level:   3
       element: "chapter"
       content:  "API/Class_ApplicationParameterManager/Method_resetCache.md"
+      flags:
+        new : "nouveauté"
     - level:   3
       element: "chapter"
       content:  "API/Class_ApplicationParameterManager/Method_setCommonParameterValue.md"
+      flags:
+        new : "nouveauté"
     - level:   3
       element: "chapter"
       content:  "API/Class_ApplicationParameterManager/Method_setParameterValue.md"
+      flags:
+        new : "nouveauté"
     - level:   3
       element: "chapter"
       content:  "API/Class_ApplicationParameterManager/Method_setUserParameterDefaultValue.md"
+      flags:
+        new : "nouveauté"
     - level:   3
       element: "chapter"
       content:  "API/Class_ApplicationParameterManager/Method_setUserParameterValue.md"
+      flags:
+        new : "nouveauté"
     - level:   2
       element: "chapter"
       content:  "API/Class_SearchAccount.md"
@@ -808,7 +843,6 @@ book:
       content:  "API/Class_SearchDoc/Method_setRecursiveSearch.md"
       flags:
         update : "mis à jour"
-        from release : "3.2.12"
     - level:   3
       element: "chapter"
       content:  "API/Class_SearchDoc/Method_useCollection.md"
@@ -819,19 +853,16 @@ book:
       element: "chapter"
       content:  "API/Class_SearchDoc/Method_addGeneralFilter.md"
       flags:
-        from release : "3.2.12"
         new : "nouveauté"
     - level:   3
       element: "chapter"
       content:  "API/Class_SearchDoc/Method_onlyCount.md"
       flags:
         update : "mis à jour"
-        from release : "3.2.12"
     - level:   3
       element: "chapter"
       content:  "API/Class_SearchDoc/Method_join.md"
       flags:
-        from release : "3.2.12"
         update : "mis à jour"
     - level:   3
       element: "chapter"
@@ -851,7 +882,6 @@ book:
       element: "chapter"
       content:  "API/Class_SearchDoc/Method_count.md"
       flags:
-        from release : "3.2.12"
         update : "mis à jour"
     - level:   3
       element: "chapter"
@@ -1038,7 +1068,6 @@ book:
       content:  "wsh_ref/importDocuments.md"
       flags:
         update : "mis à jour"
-        from release : "3.2.12"
     - level:   2
       content:  "wsh_ref/refreshDocuments.md"
     - level:   2
@@ -1068,62 +1097,49 @@ book:
     - level:   3
       content:  "Advanced/Internationalisation/catalogue.md"
       flags:
-        from release : "3.2.12"
+        update: "mis à jour"
     - level:   4
       content:  "Advanced/Internationalisation/localelayout.md"
       flags:
-        new : "nouveauté"
-        from release : "3.2.12"
+        update : "mis à jour"
     - level:   4
       content:  "Advanced/Internationalisation/localeworkflow.md"
-      flags:
-        new : "nouveauté"
-        from release : "3.2.12"
     - level:   3
       content:  "Advanced/Internationalisation/localegenphp.md"
       flags:
-        new : "nouveauté"
-        from release : "3.2.12"
+        update : "mis à jour"
     - level:   4
       content:  "Advanced/Internationalisation/localegenfamily.md"
       flags:
-        new : "nouveauté"
-        from release : "3.2.12"
+        update : "mis à jour"
     - level:   4
       content:  "Advanced/Internationalisation/localegencv.md"
       flags:
         new : "nouveauté"
-        from release : "3.2.12"
     - level:   4
       content:  "Advanced/Internationalisation/localegenlayout.md"
       flags:
         new: "nouveauté"
-        from release : "3.2.12"
     - level:   3
       content:  "Advanced/Internationalisation/translate.md"
       flags:
         update : "mis à jour"
-        from release : "3.2.12"
     - level:   3
       content:  "Advanced/Internationalisation/publish.md"
       flags:
         update : "mis à jour"
-        from release : "3.2.12"
     - level:   3
       content:  "Advanced/Internationalisation/setlanguage.md"
       flags:
         update : "mis à jour"
-        from release : "3.2.12"
     - level:   3
       content:  "Advanced/Internationalisation/addlanguage.md"
       flags:
         update : "mis à jour"
-        from release : "3.2.12"
     - level:   3
       content:  "Advanced/Internationalisation/javascript.md"
       flags:
         update : "mis à jour"
-        from release : "3.2.12"
     - level:   2
       content:  "Advanced/Cinematique/introduction.md"
       subtoc:   2

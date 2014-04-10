@@ -1,7 +1,7 @@
 # Publier et mettre à jour les catalogues {#core-ref:7f5e9754-6db2-4dcb-ac99-e640f8a93c38}
 
 Les catalogues sources (`.po`) doivent être publiés sur le serveur dans le
-répertoire :
+répertoire :<span class="flag from release">3.2.12</span>
 
     locale/<lang>/LC_MESSAGES/src/
 

@@ -3,7 +3,7 @@
 Les libellés des vues des [contrôles de vues][cvdoc] peuvent être traduits.
 
 Le programme `xgettextFamily` permet d'extraire les clefs de traduction depuis un
-fichier de description de contrôle de vue.
+fichier de description de contrôle de vue.<span class="flag from release">3.2.12</span>
 
     ./buildTools/xgettextFamily -o myLocaleDirectory someCVDoc.csv
     

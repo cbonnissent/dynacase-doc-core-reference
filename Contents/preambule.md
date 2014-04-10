@@ -41,7 +41,7 @@ fonctionnelles.
 | -------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
 | <span class="flag new">nouveauté</span>      | Ce marquage indique qu'une nouvelle fonction est disponible dans le version.                                                                       |
 | <span class="flag update">mis à jour</span>  | Ce marquage indique qu'une fonction a évoluée dans le version.                                                                                     |
-| <span class="flag from release">3.2.x</span> | Ce marquage met en évidence des fonctions nouvelles ou des mise à jour qui sont opérationnelles que depuis la release indiquée de *dynacase-core*. |
+| <span class="flag from release">3.2.x</span> | Ce marquage met en évidence des fonctions nouvelles ou des mises à jour qui sont opérationnelles que depuis la release indiquée de *dynacase-core*. |
 
 
 
