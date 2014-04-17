@@ -1104,15 +1104,15 @@ Ajoute un hyperlien sur l'attribut (en consultation uniquement).
 
 Si la valeur est vide, l'attribut conservera sa valeur héritée.
 
-Pour supprimer l'hyperlien, il faut mettre la valeur `-`.
+Pour supprimer la valeur, il faut mettre `-`.
 
 #### Caractéristique `[phpfile]` {#core-ref:880a365f-4407-44cf-bf43-9fbfc1715d70}
 
 Nom du fichier php pour l'[aide à la saisie][aide_saisie].
 
-Si la valeur est vide, l'attribut conservera sa valeur héritée.
+Si la valeur est vide, l'attribut conserve sa valeur héritée.
 
-Pour supprimer l'hyperlien, il faut mettre la valeur `-`.
+Pour supprimer la valeur, il faut mettre `-`.
 
 #### Caractéristique `[phpfunc]` {#core-ref:a847fb60-f96a-4deb-8e35-ac2c7f028455}
 
@@ -1121,33 +1121,33 @@ ou nom et attributs de la méthode de calcul s'il s'agit d'un attribut
 calculé, ou définition des clés-valeurs dans le cas d'un attribut de type
 énuméré.
 
-Si la valeur est vide, l'attribut conservera sa valeur héritée.
+Si la valeur est vide, l'attribut conserve sa valeur héritée.
 
-Pour supprimer l'hyperlien, il faut mettre la valeur `-`.
+Pour supprimer la valeur, il faut mettre `-`.
 
 #### Caractéristique `[elink]` {#core-ref:4e16191a-7686-436b-a31a-65127b48413e}
 
 Extra lien supplémentaire.
 
-Si la valeur est vide, l'attribut conservera sa valeur héritée.
+Si la valeur est vide, l'attribut conserve sa valeur héritée.
 
-Pour supprimer l'hyperlien, il faut mettre la valeur `-`.
+Pour supprimer la valeur, il faut mettre `-`..
 
 #### Caractéristique `[constraint]` {#core-ref:1aa481ee-c90b-4e97-8979-750d30c92408}
 
 Nom et attributs de la méthode de [contrainte][contrainte].
 
-Si la valeur est vide, l'attribut conservera sa valeur héritée.
+Si la valeur est vide, l'attribut conserve sa valeur héritée.
 
-Pour supprimer l'hyperlien, il faut mettre la valeur `-`.
+Pour supprimer la valeur, il faut mettre `-`.
 
 #### Caractéristique `[options]` {#core-ref:c82cd1bc-a5eb-4f19-b0a2-81542ec4c922}
 
 Liste des options à appliquer à l'attribut.
 
-Si la valeur est vide, l'attribut conservera sa valeur héritée.
+Si la valeur est vide, l'attribut conserve sa valeur héritée.
 
-Pour supprimer l'hyperlien, il faut mettre la valeur `-`.
+Pour supprimer la valeur, il faut mettre `-`.
 
 Afin de modifier la valeur d'une seule option, il est nécessaire de toutes
 les reporter, car la valeur `-` va effacer entièrement le contenu de la
