@@ -67,6 +67,17 @@ classname
     
     *   tout nom de classe valide.
 
+displayrowcount
+:   Indique si le nombre de lignes du tableau est affiché dans l'entête de la première colonne.
+    
+    Les valeurs possibles sont un entier _n_ avec :
+    
+    * _n_ <= -1 pour ne jamais afficher le nombre de lignes ;
+    * _n_ = 0 pour toujours afficher le nombre de lignes ;
+    * _n_ > 0 pour afficher le nombre de lignes si celui-ci est > _n_.
+    
+    Par défaut la valeur de `displayrowcount` est `10`.
+
 empty
 :   Indique que le tableau, s'il est vide ne doit pas afficher la première rangée en modification.
     Dans le cas contraire, en modification, le tableau est initialisé avec une rangée vide.
