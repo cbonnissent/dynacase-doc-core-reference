@@ -29,6 +29,9 @@ showempty
     
     *   `` (une chaîne vide) : Dans ce cas, le libellé sera présenté, et aucune valeur ne sera affichée
     *   toute chaîne de caractères : Dans ce cas, le libellé est affiché, et la valeur est remplacée par le texte donné.
+    
+    Remarque : Pour le type [image][attrimage], la valeur doit indiquer le chemin 
+    relatif à un fichier 'image'. L'image sera alors affichée si la valeur est vide.
 
 sortable
 :   Indique les modalités de tri de l'attribut.
@@ -123,3 +126,4 @@ edittemplate
 [elink]: #core-ref:edf84026-7980-442f-bc86-88739e49e3b5
 [viewtemplate]: #core-ref:9cb7b313-7294-424d-bd86-a63155025902 "vue de consultation"
 [edittemplate]: #core-ref:4faa4b17-56fc-4e42-a091-f1a97b7591b8 "vue de modification"
+[attrimage]: #core-ref:4fca7712-59e0-4186-bfd0-6214104a0f60
