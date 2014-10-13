@@ -11,7 +11,9 @@ Dynacase.
 | Précision sur l'option showempty pour les images     | [showempty][commonoptions]                     | <span class="flag update">Mise à jour</span> |
 | Précision sur la composition d'un titre              | [Titre de document][famattrtitle]              | <span class="flag update">Mise à jour</span> |
 | Précision sur le retour d'un paramètre de famille    | [Doc::getFamilyParameter()][returnfamilyparam] | <span class="flag update">Mise à jour</span> |
-| Modification du libellé du droit `modify` de dossier | [Droit `modify`][profildoc]                    |                                              |
+| Modification du libellé du droit `modify` de dossier | [Droit `modify`][profildoc]                    | <span class="flag update">Mise à jour</span> |
+| Précision sur l'inclusion de css                     | [Application::addCssRef()][addcssref]          | <span class="flag update">Mise à jour</span> |
+|                                                      |                                                |                                              |
 
 
 ## Édition 5
@@ -127,6 +129,7 @@ retour d'erreur.
 [opendoc]:          #core-ref:f9e68fa7-01b7-4903-9718-744271d63112
 [mailtpl]:          #core-ref:8723b1aa-10d3-4316-af6b-071f4d59ceee
 [commonoptions]:    #core-ref:16e19c90-3233-11e2-a58f-6b135c3a2496
-[famattrtitle]      #core-ref:b0e414c0-b795-4bbe-b70e-a308b7f1b4ab
+[famattrtitle]:      #core-ref:b0e414c0-b795-4bbe-b70e-a308b7f1b4ab
 [returnfamilyparam]: #core-ref:7cffbb46-353a-4072-9bca-1773599857dc
 [profildoc]:    #core-ref:f1575705-10e8-4bf2-83b3-4c0b5bfb77cf
+[addcssref]: #core-ref:4bba8a6b-8002-4c0a-8ac7-70d75b31b02b

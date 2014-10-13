@@ -23,16 +23,31 @@ N/A
 
 (string) `ref`
 :   La référence à la feuille de style CSS.
-    La référence peut être : un chemin d'accès relatif au contexte Dynacase (ex.
-    `MY_APP/Layout/my_css.css`, `my_css.css`), un chemin d'accès relatif au
-    répertoire `Layout` du style actuellement appliqué, un chemin d'accès
-    relatif au répertoire `Layout` de l'application courante ou d'une
-    application particulière (ex. `MY_APP:my_css.css`), une URL (ex.
-    `http://www.example.net/my_css.css`).
+    La référence peut être : 
+    
+    si `needparse` est faux :
+    
+    *   un chemin d'accès relatif au contexte Dynacase (ex.
+        `MY_APP/Layout/my_css.css`, `lib/my/my_css.css`), 
+    *   un chemin d'accès relatif au
+        répertoire `Layout` du style actuellement appliqué, 
+    *   une URL (ex.
+        `http://www.example.net/my_css.css`).
+    
+    
+    si `needparse` est vrai :
+    
+    *   un chemin d'accès
+         relatif au répertoire `Layout` de l'application courante ou d'une
+         application particulière (ex. `MY_APP:my_css.css`), 
 
 (bool) `needparse`
 :   Permet d'indiquer si le contenu de la feuille de style doit être interprété 
     comme un template.
+    
+    Seuls les fichiers référencés comme template peuvent être parsés. 
+    La notation `APP:file.css` indique que le modèle à parser sera 
+    `APP/Layout/file.css`.
 
 (string) `packName`
 :   Les feuilles de style peuvent être concaténées afin de réduire le nombre de 
@@ -58,7 +73,129 @@ N/A
 
 ## Exemples {#core-ref:70b7105c-4a8d-4c6a-a23e-ecf3b44d285c}
 
-- Exemple #1
+### Exemple simple
+
+Feuille de style CSS `MY_APP/Layout/mycss.css` :
+
+
+    [css]
+    .question {
+        color: blue;
+    }
+
+Contrôleur de l'action `MY_ACTION` (`my_action.php`) de l'application `MY_APP` :
+
+
+    [php]
+    function my_action(Action &$action) {
+        /* Get the Application of the current Action */
+        $application = $action->parent;
+        
+        $application->addCssRef('MY_APP/Layout/my.css');
+    }
+
+Vue de l'action `MY_ACTION` (`Layout/my_action.xml`) :
+
+
+    [html]
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>My Action</title>
+        [CSS:CUSTOMREF]
+      </head>
+      <body>
+        <h1 class="question">What is your favourite colour?</h1>
+      </body>
+    </html>
+
+
+Résultat du rendu de la vue de l'action :
+
+
+    [html]
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>My Action</title>
+        <link rel="stylesheet" type="text/css" href="MY_APP/Layout/my.css?wv=3220">
+      </head>
+      <body>
+        <h1 class="question">What is your favourite colour?</h1>
+      </body>
+    </html>
+
+L'url composée dans le fichier contient une clef identifiant une version du
+système. Le fichier css permet d'être mis en cache par le navigateur jusqu'à que
+cette clef soit modifiée. Cette clef est modifiée à chaque modification de module
+(installation ou  mise à jour).
+
+### Exemple parse
+
+Feuille de style CSS `MY_APP/Layout/myParsecss.css` :
+
+
+    [css]
+    .question {
+        [IF ISIE7]color: [COLOR_A5];[ENDIF ISIE7]
+        [IFNOT ISIE7]color: [COLOR_B5];[ENDIF ISIE7]
+    }
+
+Les clefs entres crochets sont des paramètres globaux de l'application. Elles
+seront remplacées sur le serveur lors de la demande du fichier css.
+
+Contrôleur de l'action `MY_ACTION` (`my_action.php`) de l'application `MY_APP` :
+
+
+    [php]
+    function my_action(Action &$action) {
+        /* Get the Application of the current Action */
+        $application = $action->parent;
+        
+        $application->addCssRef('MY_APP:my.css', true);
+    }
+
+Vue de l'action `MY_ACTION` (`Layout/my_action.xml`) :
+
+
+    [html]
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>My Action</title>
+        [CSS:CUSTOMREF]
+      </head>
+      <body>
+        <h1 class="question">What is your favourite colour?</h1>
+      </body>
+    </html>
+
+
+Résultat du rendu de la vue de l'action :
+
+
+    [html]
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>My Action</title>
+        <link rel="stylesheet" type="text/css" 
+              href="?app=CORE&amp;action=CORE_CSS&amp;ukey=6149df19b262da225264b7e96b0498c2&amp;layout=MY_APP:my.css.css&amp;type=css">
+      </head>
+      <body>
+        <h1 class="question">What is your favourite colour?</h1>
+      </body>
+    </html>
+
+
+L'url composée dans le fichier contient une clef propre à l'utilisateur et à sa
+session. Le fichier css est de nouveau téléchargé à chaque changement de session.
+
+### Exemple Pack
 
 Feuille de style CSS `MY_APP/Layout/css_1.css` :
 
@@ -97,7 +234,7 @@ Vue de l'action `MY_ACTION` (`Layout/my_action.xml`) :
       <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>My Action</title>
-        [CSS:REF]
+        [CSS:CUSTOMREF]
       </head>
       <body>
         <h1 class="question">What is your favourite colour?</h1>
