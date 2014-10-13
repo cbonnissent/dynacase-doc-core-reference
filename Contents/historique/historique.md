@@ -3,15 +3,23 @@
 Ce chapitre contient un descriptif des améliorations entre les releases de 
 Dynacase.
 
+
+## Édition 6
+
+|                   Modifications                   |                    Chapitre                    |                   Version                    |
+| :------------------------------------------------ | :--------------------------------------------- | :------------------------------------------- |
+| Précision sur l'option showempty pour les images  | [showempty][commonoptions]                     | <span class="flag update">Mise à jour</span> |
+| Précision sur la composition d'un titre           | [Titre de document][famattrtitle]              | <span class="flag update">Mise à jour</span> |
+| Précision sur le retour d'un paramètre de famille | [Doc::getFamilyParameter()][returnfamilyparam] | <span class="flag update">Mise à jour</span> |
+
+
 ## Édition 5
 
-
-
-|              Modifications              |               Chapitre              |                   Version                    |
-| :-------------------------------------- | :---------------------------------- | :------------------------------------------- |
-| Précision pour les rapports             | [Doc::getCustomeTitle][customtitle] | <span class="flag update">Mise à jour</span> |
-| Précision paramètre OPENDOC             | [FDL:OPENDOC][opendoc]              | <span class="flag update">Mise à jour</span> |
-| Précision paramétrage du modèle de mail | [Modèle de mail][mailtpl]           | <span class="flag update">Mise à jour</span> |
+|              Modifications              |              Chapitre              |                   Version                    |
+| :-------------------------------------- | :--------------------------------- | :------------------------------------------- |
+| Précision pour les rapports             | [Doc::getCustomTitle][customtitle] | <span class="flag update">Mise à jour</span> |
+| Précision paramètre OPENDOC             | [FDL:OPENDOC][opendoc]             | <span class="flag update">Mise à jour</span> |
+| Précision paramétrage du modèle de mail | [Modèle de mail][mailtpl]          | <span class="flag update">Mise à jour</span> |
 
 
 ## Édition 4 {#core-ref:ee35db85-a173-4840-b6d9-ce26eb93e01b}
@@ -117,3 +125,6 @@ retour d'erreur.
 [customtitle]:              #core-ref:3c5ff78d-c080-48fb-a293-9736ed4e95b8
 [opendoc]:          #core-ref:f9e68fa7-01b7-4903-9718-744271d63112
 [mailtpl]:          #core-ref:8723b1aa-10d3-4316-af6b-071f4d59ceee
+[commonoptions]:    #core-ref:16e19c90-3233-11e2-a58f-6b135c3a2496
+[famattrtitle]      #core-ref:b0e414c0-b795-4bbe-b70e-a308b7f1b4ab
+[returnfamilyparam]: #core-ref:7cffbb46-353a-4072-9bca-1773599857dc
