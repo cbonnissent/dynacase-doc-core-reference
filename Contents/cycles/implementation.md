@@ -1,4 +1,4 @@
-# Aperçu de l'implémentation {#core-ref:91e2017b-d595-47b3-bfc6-3b57c932b989}
+# Définition du cycle de vie {#core-ref:91e2017b-d595-47b3-bfc6-3b57c932b989}
 
 Un cycle de vie est structuré au moyen d'une *famille de workflow* et d'un
 *document de workflow*.
