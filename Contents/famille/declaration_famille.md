@@ -609,9 +609,10 @@ avec [FAMNAME] le nom logique de la famille et
 **Obligatoire** (sauf pour les attributs de type *array*, *frame* ou *tab*)  
 Indique que l'attribut sera utilisé dans la composition du titre du document.
 
-Le titre du document est alors composé en concaténant tous les attributs
-définis comme tels, par ordre croissant de leur *ordre* et en les séparant
-par des espaces.
+Le titre du document est alors composé en concaténant toutes les valeurs
+**brutes** d'attributs définis, par ordre croissant de leur *ordre* et en les
+séparant par des espaces. Les options de formatage des attributs ne sont pas
+pris en compte pour le titre.
 
 Cette caractéristique est ignorée sur les attributs de type 
 *array*, *frame* ou *tab*.
@@ -624,6 +625,17 @@ Les valeurs possibles sont :
 
 *   `Y` pour *yes*
 *   `N` pour *no*
+
+La composition du titre peut aussi être définie par programmation en
+surchargeant la méthode [Doc::getCustomTitle()][getcustomtitle].
+
+Le titre d'un document ne peut excéder **255** caractères. Il est
+automatiquement tronqué si cette limite est atteinte.
+
+La visibilité des attributs n'est pas pris en compte : un attribut en visibilité
+caché mais ayant la colonne titre à Y sera visible dans le titre.
+
+Les valeurs des attributs multiples seront concaténées et séparées par un espace.
 
 #### Caractéristique `[in_abstract]` {#core-ref:39825a45-a204-440b-ab0c-608e765eb88c}
 
@@ -1299,4 +1311,5 @@ Pour plus de détails sur l'API `importDocuments`, se référer à sa
 [phpfile]: {#core-ref:7362e2ff-cfb5-45f0-a81d-e02eab6d0fb6}
 [def_enum]: #core-ref:eef3e3ec-2d50-41bd-98e1-cc978f0a5178
 [visibility]:        #core-ref:3e67d45e-1fed-446d-82b5-ba941addc7e8
+[getcustomtitle]:   #core-ref:3c5ff78d-c080-48fb-a293-9736ed4e95b8
 [phpDocEmailRecipient]:     https://docs.anakeen.com/dynacase/3.2/dynacase-core-api-reference/interface_i_mail_recipient.html "PHPDoc : IMailRecipient"
