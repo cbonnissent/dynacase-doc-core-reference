@@ -6,11 +6,12 @@ Dynacase.
 
 ## Édition 6
 
-|                   Modifications                   |                    Chapitre                    |                   Version                    |
-| :------------------------------------------------ | :--------------------------------------------- | :------------------------------------------- |
-| Précision sur l'option showempty pour les images  | [showempty][commonoptions]                     | <span class="flag update">Mise à jour</span> |
-| Précision sur la composition d'un titre           | [Titre de document][famattrtitle]              | <span class="flag update">Mise à jour</span> |
-| Précision sur le retour d'un paramètre de famille | [Doc::getFamilyParameter()][returnfamilyparam] | <span class="flag update">Mise à jour</span> |
+|                    Modifications                     |                    Chapitre                    |                   Version                    |
+| :--------------------------------------------------- | :--------------------------------------------- | :------------------------------------------- |
+| Précision sur l'option showempty pour les images     | [showempty][commonoptions]                     | <span class="flag update">Mise à jour</span> |
+| Précision sur la composition d'un titre              | [Titre de document][famattrtitle]              | <span class="flag update">Mise à jour</span> |
+| Précision sur le retour d'un paramètre de famille    | [Doc::getFamilyParameter()][returnfamilyparam] | <span class="flag update">Mise à jour</span> |
+| Modification du libellé du droit `modify` de dossier | [Droit `modify`][profildoc]                    |                                              |
 
 
 ## Édition 5
@@ -128,3 +129,4 @@ retour d'erreur.
 [commonoptions]:    #core-ref:16e19c90-3233-11e2-a58f-6b135c3a2496
 [famattrtitle]      #core-ref:b0e414c0-b795-4bbe-b70e-a308b7f1b4ab
 [returnfamilyparam]: #core-ref:7cffbb46-353a-4072-9bca-1773599857dc
+[profildoc]:    #core-ref:f1575705-10e8-4bf2-83b3-4c0b5bfb77cf
