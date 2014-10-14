@@ -6,15 +6,17 @@ Dynacase.
 
 ## Édition 6
 
-|                            Modifications                            |                    Chapitre                    |                   Version                    |
-| :------------------------------------------------------------------ | :--------------------------------------------- | :------------------------------------------- |
-| Précision sur l'option showempty pour les images                    | [showempty][commonoptions]                     | <span class="flag update">Mise à jour</span> |
-| Précision sur la composition d'un titre                             | [Titre de document][famattrtitle]              | <span class="flag update">Mise à jour</span> |
-| Précision sur le retour d'un paramètre de famille                   | [Doc::getFamilyParameter()][returnfamilyparam] | <span class="flag update">Mise à jour</span> |
-| Modification du libellé du droit `modify` de dossier                | [Droit `modify`][profildoc]                    | <span class="flag update">Mise à jour</span> |
-| Précision sur l'inclusion de css                                    | [Application::addCssRef()][addcssref]          | <span class="flag update">Mise à jour</span> |
-| Modification du retour SearchDoc::onlyCount() en cas d'erreur       | [SearchDoc::onlyCount()][searchdocOnlycount]   | <span class="flag update">Mise à jour</span> |
-| Avertissement sur l'utilisation de getCustomTitle dans les rapports | [Doc::getCustomTitle()][customtitlew]          | <span class="flag update">Mise à jour</span> |
+|                                Modifications                                |                     Chapitre                     |                   Version                    |
+| :-------------------------------------------------------------------------- | :----------------------------------------------- | :------------------------------------------- |
+| Précision sur l'option showempty pour les images                            | [showempty][commonoptions]                       | <span class="flag update">Mise à jour</span> |
+| Précision sur la composition d'un titre                                     | [Titre de document][famattrtitle]                | <span class="flag update">Mise à jour</span> |
+| Précision sur le retour d'un paramètre de famille                           | [Doc::getFamilyParameter()][returnfamilyparam]   | <span class="flag update">Mise à jour</span> |
+| Modification du libellé du droit `modify` de dossier                        | [Droit `modify`][profildoc]                      | <span class="flag update">Mise à jour</span> |
+| Précision sur l'inclusion de css                                            | [Application::addCssRef()][addcssref]            | <span class="flag update">Mise à jour</span> |
+| Modification du retour SearchDoc::onlyCount() en cas d'erreur               | [SearchDoc::onlyCount()][searchdocOnlycount]     | <span class="flag update">Mise à jour</span> |
+| Avertissement sur l'utilisation de getCustomTitle dans les rapports         | [Doc::getCustomTitle()][customtitlew]            | <span class="flag update">Mise à jour</span> |
+| Modification visuel des attributs de type `file` et `image` en modification | Attributs [file][attrfile] et [image][attrimage] | <span class="flag update">Mise à jour</span> |
+|                                                                             |                                                  |                                              |
 
 
 ## Édition 5
@@ -135,3 +137,5 @@ retour d'erreur.
 [profildoc]:         #core-ref:f1575705-10e8-4bf2-83b3-4c0b5bfb77cf
 [addcssref]:         #core-ref:4bba8a6b-8002-4c0a-8ac7-70d75b31b02b
 [customtitlew]:      #core-ref:d7c909a8-f2fa-4ddf-954c-00704e9a694d
+[attrfile]:         #core-ref:0e904376-317c-426e-bc6d-e56fd52bad89
+[attrimage]:        #core-ref:4fca7712-59e0-4186-bfd0-6214104a0f60
