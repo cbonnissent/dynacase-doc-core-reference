@@ -14,9 +14,23 @@ Les attributs de type *file* permettent d'insérer un fichier.
 
 *   modification :
     
-    Un `input` de type `file`, avec le lien vers l'ancien fichier au dessus
+    Un `input` de type `text` présentant le nom du fichier, suivi de 3 boutons :
+    
+    *   pour choisir un nouveau fichier,
+    *   restaurer le fichier préalablement enregistré, 
+    *   effacer le fichier.
     
     ![ file - Modification html ](famille/attributs/file-modification.png "file - Modification html")
+    
+    S'il s'agit d'une modification de document et que le fichier est déjà 
+    enregistré alors le clic sur le nom du fichier permet de le télécharger.
+    
+    Des différences de comportement sont présentes en fonction des navigateur.
+    Sur IE < 11, le bouton original "Parcourir" est affiché lorsqu'on clique sur le bouton "...".
+    Le paramètre applicatif "FDL_OLDFILEINPUTCOMPAT" indique si l'attribut doit présenter,
+    de manière systématique, le bouton original "Parcourir"
+    
+    ![ file - Modification html ](famille/attributs/file-old-modification.png "file - Compatibilité Modification html")
 
 *   odt :
     
@@ -26,7 +40,7 @@ Les attributs de type *file* permettent d'insérer un fichier.
 
 ## Comportement {#core-ref:b5195047-394d-496b-a25a-e6fad68fbcee}
 
-Lors de l'upload du fichier, il est enregistré dans le *vault*.
+Lors de l'enregistrement du document, le fichier est stocké dans le *vault*.
 
 ## Format de stockage {#core-ref:2ff4878c-6db2-419f-9dcc-64db69c769d2}
 

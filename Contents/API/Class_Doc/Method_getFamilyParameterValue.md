@@ -36,6 +36,13 @@ Aucun.
 La méthode retourne la valeur du paramètre demandé, ou la valeur par défaut
 `def` si le paramètre demandé n'existe pas.
 
+Dans le cas où le paramètre est défini sur une famille parente et que la valeur
+pour la famille est vide, alors la valeur de la famille parente sera retournée.
+La recherche de la valeur se fait sur toute l'ascendance jusqu'à trouver une
+valeur non vide. Si en définitive, la valeur des parents est aussi vide alors la
+valeur `def` sera retournée.
+
+
 ## Erreurs / Exceptions {#core-ref:8f7e827a-e0ec-4201-8144-1dd97a177222}
 
 Si l'attribut demandé n'existe pas, la valeur par défaut `def` est retournée.

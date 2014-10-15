@@ -1,7 +1,12 @@
 # Visibilité des attributs {#core-ref:3e67d45e-1fed-446d-82b5-ba941addc7e8}
 
-Les attributs sont caractérisés par leur visibilité. Cette visibilité indique
-si l'attribut est présenté, et s'il est modifiable dans les interfaces.
+La visibilité d'un attribut est une **caractéristique de présentation** de
+sa valeur.
+
+Seule la visibilité `I` permet d'ajouter un contrôle d'accès à la valeur. Les
+autres visibilités ne contrôle pas l'accès mais seulement la présentation de la
+valeur.
+
 Les différentes visibilités disponibles sont les suivantes :
 
 `H`
@@ -28,9 +33,26 @@ Les différentes visibilités disponibles sont les suivantes :
 `W`
 :   Attribut visible en *consultation* et en *modification*, et modifiable
 
+
+| Visibilité |     Mode     | Visible sur la page | Présent dans la DOM | Modifiable par requête |
+| ---------- | ------------ | ------------------- | ------------------- | ---------------------- |
+| `H`        | Consultation | Non                 | Non                 |                        |
+| `I`        |              | Non                 | Non                 |                        |
+| `R`        |              | Oui                 | Oui                 |                        |
+| `W`        |              | Oui                 | Oui                 |                        |
+| `O`        |              | Non                 | Non                 |                        |
+| `S`        |              | Oui                 | Oui                 |                        |
+| `H`        | Édition      | Non                 | Oui                 | Oui                    |
+| `I`        |              | Non                 | Non                 | Non                    |
+| `R`        |              | Non                 | Oui                 | Oui                    |
+| `W`        |              | Oui                 | Oui                 | Oui                    |
+| `O`        |              | Oui                 | Oui                 | Oui                    |
+| `S`        |              | Oui                 | Oui                 | Oui                    |
+
+
 Il est important de distinguer la visibilité et les droits :
 **La visibilité n'offre pas de protection contre l'accès à l'information**
-sauf pour la visibilité `I`.
+sauf pour la visibilité `I`. 
 
 
 ## Visibilité des attributs structurants {#core-ref:8349d1e6-ad9b-4c51-957e-b3f63497354c}

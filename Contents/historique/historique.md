@@ -3,15 +3,29 @@
 Ce chapitre contient un descriptif des améliorations entre les releases de 
 Dynacase.
 
+
+## Édition 6
+
+|                                Modifications                                |                     Chapitre                     |                   Version                    |
+| :-------------------------------------------------------------------------- | :----------------------------------------------- | :------------------------------------------- |
+| Précision sur l'option showempty pour les images                            | [showempty][commonoptions]                       | <span class="flag update">Mise à jour</span> |
+| Précision sur la composition d'un titre                                     | [Titre de document][famattrtitle]                | <span class="flag update">Mise à jour</span> |
+| Précision sur le retour d'un paramètre de famille                           | [Doc::getFamilyParameter()][returnfamilyparam]   | <span class="flag update">Mise à jour</span> |
+| Modification du libellé du droit `modify` de dossier                        | [Droit `modify`][profildoc]                      | <span class="flag update">Mise à jour</span> |
+| Précision sur l'inclusion de css                                            | [Application::addCssRef()][addcssref]            | <span class="flag update">Mise à jour</span> |
+| Modification du retour SearchDoc::onlyCount() en cas d'erreur               | [SearchDoc::onlyCount()][searchdocOnlycount]     | <span class="flag update">Mise à jour</span> |
+| Avertissement sur l'utilisation de getCustomTitle dans les rapports         | [Doc::getCustomTitle()][customtitlew]            | <span class="flag update">Mise à jour</span> |
+| Modification visuel des attributs de type `file` et `image` en modification | Attributs [file][attrfile] et [image][attrimage] | <span class="flag update">Mise à jour</span> |
+|                                                                             |                                                  |                                              |
+
+
 ## Édition 5
 
-
-
-|              Modifications              |               Chapitre              |                   Version                    |
-| :-------------------------------------- | :---------------------------------- | :------------------------------------------- |
-| Précision pour les rapports             | [Doc::getCustomeTitle][customtitle] | <span class="flag update">Mise à jour</span> |
-| Précision paramètre OPENDOC             | [FDL:OPENDOC][opendoc]              | <span class="flag update">Mise à jour</span> |
-| Précision paramétrage du modèle de mail | [Modèle de mail][mailtpl]           | <span class="flag update">Mise à jour</span> |
+|              Modifications              |              Chapitre              |                   Version                    |
+| :-------------------------------------- | :--------------------------------- | :------------------------------------------- |
+| Précision pour les rapports             | [Doc::getCustomTitle][customtitle] | <span class="flag update">Mise à jour</span> |
+| Précision paramètre OPENDOC             | [FDL:OPENDOC][opendoc]             | <span class="flag update">Mise à jour</span> |
+| Précision paramétrage du modèle de mail | [Modèle de mail][mailtpl]          | <span class="flag update">Mise à jour</span> |
 
 
 ## Édition 4 {#core-ref:ee35db85-a173-4840-b6d9-ce26eb93e01b}
@@ -117,3 +131,11 @@ retour d'erreur.
 [customtitle]:              #core-ref:3c5ff78d-c080-48fb-a293-9736ed4e95b8
 [opendoc]:          #core-ref:f9e68fa7-01b7-4903-9718-744271d63112
 [mailtpl]:          #core-ref:8723b1aa-10d3-4316-af6b-071f4d59ceee
+[commonoptions]:    #core-ref:16e19c90-3233-11e2-a58f-6b135c3a2496
+[famattrtitle]:      #core-ref:b0e414c0-b795-4bbe-b70e-a308b7f1b4ab
+[returnfamilyparam]: #core-ref:7cffbb46-353a-4072-9bca-1773599857dc
+[profildoc]:         #core-ref:f1575705-10e8-4bf2-83b3-4c0b5bfb77cf
+[addcssref]:         #core-ref:4bba8a6b-8002-4c0a-8ac7-70d75b31b02b
+[customtitlew]:      #core-ref:d7c909a8-f2fa-4ddf-954c-00704e9a694d
+[attrfile]:         #core-ref:0e904376-317c-426e-bc6d-e56fd52bad89
+[attrimage]:        #core-ref:4fca7712-59e0-4186-bfd0-6214104a0f60

@@ -20,7 +20,27 @@ déclarés avec la caractéristique [`in_title`][attr_in_title].
 
 ### Avertissements {#core-ref:d7c909a8-f2fa-4ddf-954c-00704e9a694d}
 
-Aucun.
+Dans les [rapports][prgrapport], la colonne `titre` est recalculée à l'aide de
+cette méthode. La particularité des rapports est que la liste des documents
+utilisée pour afficher son rapport est composée de document *incomplets*.
+
+Un document incomplet ne contient qu'un sous ensemble des données du document.
+Dans le cas du rapport, il ne contient que les données à afficher. Par
+conséquent, si la composition du titre fait appel à des données non présentées,
+il sera affiché de manière partielle.
+
+Il est possible de prendre en compte ce cas particulier en vérifiant le statut
+du document.
+
+    [php]
+    public function getCustomTitle() {
+       if ($this->doctype === 'I') { // incomplete document
+          return $this->title; // Titre original
+       } else {
+          // Doing special title
+          return $this->myComplexDynamicTitle();
+       }
+    } 
 
 ## Liste des paramètres {#core-ref:a3b64962-eab4-4990-a769-ba7914b90fa2}
 
@@ -100,3 +120,4 @@ suivant.
 [attr_in_title]: #core-ref:b0e414c0-b795-4bbe-b70e-a308b7f1b4ab
 [Doc::getTitle]: #core-ref:84011cc8-2aec-4f39-81f0-c7ae803e4913
 [rapport]:       #core-ref:4d6429f1-b3ae-46c4-8687-1c8d29f92f37
+[prgrapport]:    #core-ref:32bc0b13-2b9f-4096-ac83-15f2b40d3b39

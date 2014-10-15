@@ -64,8 +64,13 @@ Pour le cas particulier des attribut de [type `docid`][attdocid] et de [type
 ce sont les identifiants des documents qui sont affichés au lieu des titres des
 documents.
 
+Pour la propriété `title`, des [précautions][customtitlew] doivent être prise en
+cas de surcharge du titre.
+
+
 <!-- link -->
 [searchdoc]:        #core-ref:a5216d5c-4e0f-4e3c-9553-7cbfda6b3255
 [dsearch]:          #core-ref:7c36fc88-d5bc-4e0c-8cbf-092916168575 "Création d'une recherche détaillée"
 [attdocid]:         #core-ref:d461d5f5-b635-47a0-944d-473c227587ab
 [attaccount]:       #core-ref:87230967-8155-421c-8bbe-70a3c1adc3c0
+[customtitlew]:     #core-ref:d7c909a8-f2fa-4ddf-954c-00704e9a694d "Avertissement Doc::getCustomTitle()"

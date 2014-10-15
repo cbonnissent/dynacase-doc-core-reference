@@ -14,9 +14,26 @@ Les attributs de type *image* permettent d'insérer une image.
 
 *   modification :
     
-    un `input` de type `file`, avec le lien vers l'ancienne image au dessus.
+    Un `input` de type `text` présentant une miniature de l'image précédemment
+         enregistrée et le nom du fichier, suivi de 3 boutons :
+    
+    *   pour choisir un nouveau fichier image,
+    *   restaurer le fichier préalablement enregistré, 
+    *   effacer le fichier image.
     
     ![ image - Modification html ](famille/attributs/image-modification.png "image - Modification html")
+    
+    Au survol de la miniature, une version plus grande est affichée.
+    
+    S'il s'agit d'une modification de document et que le fichier est déjà 
+    enregistré alors le clic sur le nom du fichier permet de télécharger l'image.
+    
+    Des différences de comportement sont présentes en fonction des navigateur.
+    Sur IE < 11, le bouton original "Parcourir" est affiché lorsqu'on clique sur le bouton "...".
+    Le paramètre applicatif "FDL_OLDFILEINPUTCOMPAT" indique si l'attribut doit présenter,
+    de manière systématique, le bouton original "Parcourir"
+    
+    ![ image - Modification html ](famille/attributs/image-old-modification.png "image - Compatibilité Modification html")
 
 *   odt :
     

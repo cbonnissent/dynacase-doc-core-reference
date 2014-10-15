@@ -26,12 +26,18 @@ Aucun.
 
 `int`
 :   Le nombre de documents trouvés par le searchDoc.
+    Retourne `-1` en cas d'erreur.
 
 ## Erreurs / Exceptions {#core-ref:14835f07-019e-4fc0-ae07-33510d648027}
 
 Exception `\Dcp\Db\Exception` en cas d'erreur de requête sql.
 
 ## Historique {#core-ref:b2d103c2-4aba-46b6-bfd7-1e933aab9a87}
+
+
+### Release 3.2.17
+
+En cas d'erreur de requête, la méthode retourne maintenant `-1` au lieu de `0`.
 
 ### Release 3.2.12 {#core-ref:b9a63af6-43a8-484b-942d-99963e29a8fc}
 
@@ -41,9 +47,11 @@ en base de donnée. Auparavant, si la méthode [`search()`][search] ou `onlyCoun
 récupéré le dernier compte effectué. Il fallait dans ce cas appeler la méthode
 [`reset()`][reset] pour forcer un recomptage.
 
+
+
 ## Exemples {#core-ref:d5c199d8-e3d2-4a9a-8b5a-0b76f0741155}
 
-Exemple de searchDoc :
+### Exemple de compte :
 
     [php]
     function testOnlyCount(Action & $action)
@@ -121,6 +129,30 @@ Exemple de searchDoc :
       'error' => '',
       'delay' => '0.073s',
     )
+
+
+### Exemple traitement d'erreur
+
+    [php]
+    $s=new SearchDoc("","IUSER");
+    $s->addFilter("myColumn = 3 "); // Ici la colonne n'existe pas dans la famille
+    $c=$s->onlyCount();
+    
+    if ($c === -1) {
+      print_r($s->getSearchInfo());
+    }
+
+Retour :
+
+    Array
+    (
+        [query] => select count(doc128.id) from  doc128  where   (doc128.archiveid is null) and (doc128.doctype != 'T')
+                     and (doc128.locked != -1) and (myColumn = 3 )
+        [error] => ERROR:  column "mycolumn" does not exist
+    LINE 1: ...28.doctype != 'T') and (doc128.locked != -1) and (myColumn =...
+                                                                 ^
+    )
+
 
 ## Notes {#core-ref:ee038431-ef60-41c1-b52f-f958a3923b44}
 
