@@ -1279,4 +1279,7 @@ book:
       content:  "Advanced/familles/processus.md"
     - level:   2
       content:  "Advanced/autoloader.md"
-
+    - level:   2
+      content:  "Advanced/mime.md"
+      flags:
+        new : "nouveauté"
