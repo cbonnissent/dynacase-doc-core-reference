@@ -47,7 +47,14 @@ Si l'attribut est dans un tableau, le type en base donnée sera `text`.
 
 [Options communes à tous les types d'attributs](#core-ref:16e19c90-3233-11e2-a58f-6b135c3a2496). 
 
-Ce type d'attribut ne dispose d'aucune option spécifique.
+
+elabel
+:   En plus du tooltip du label défini par les [options communes][elabel] pour `elabel`,
+    Cette option affecte sa valeur sur l'attribut `title` du l'`input` correspondant.
+    
+    Les valeurs possibles sont :
+    
+    *   Toute chaîne de caractères. Attention, la plupart des navigateurs n'acceptent pas de retour chariot.
 
 
 <!-- links -->
@@ -62,3 +69,4 @@ Ce type d'attribut ne dispose d'aucune option spécifique.
 [JSCOLOR_home]: http://jscolor.com/ "site officiel de JSColor"
 [JSCALENDAR_HOME]: http://www.dynarch.com/projects/calendar/old/ "site officiel de JSCalendar"
 [odt_restrictions]: #core-ref:3742b35d-ddc0-440e-a0aa-08ea2faf0e46
+[elabel]: ./core-ref:16e19c90-3233-11e2-a58f-6b135c3a2496.html#commonELabel "Option commune de elabel"

@@ -16,7 +16,7 @@ Dynacase.
 | Modification du retour SearchDoc::onlyCount() en cas d'erreur               | [SearchDoc::onlyCount()][searchdocOnlycount]     | <span class="flag update">Mise à jour</span> |
 | Avertissement sur l'utilisation de getCustomTitle dans les rapports         | [Doc::getCustomTitle()][customtitlew]            | <span class="flag update">Mise à jour</span> |
 | Modification visuel des attributs de type `file` et `image` en modification | Attributs [file][attrfile] et [image][attrimage] | <span class="flag update">Mise à jour</span> |
-|                                                                             |                                                  |                                              |
+| Option d'attribut `elabel` indiqué comme options communes d'attribut        | [Option elabel][elabel]                          | <span class="flag update">Mise à jour</span> |
 
 
 ## Édition 5
@@ -139,3 +139,4 @@ retour d'erreur.
 [customtitlew]:      #core-ref:d7c909a8-f2fa-4ddf-954c-00704e9a694d
 [attrfile]:         #core-ref:0e904376-317c-426e-bc6d-e56fd52bad89
 [attrimage]:        #core-ref:4fca7712-59e0-4186-bfd0-6214104a0f60
+[elabel]:           ./core-ref:16e19c90-3233-11e2-a58f-6b135c3a2496.html#commonELabel "Option commune de elabel"
