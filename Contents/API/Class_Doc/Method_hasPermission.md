@@ -63,7 +63,7 @@ retourne un message vide.
 
 ## Exemples {#core-ref:374e0a50-fb3b-4845-864a-f80ad6162fcb}
 
-### Vérification du droit de modification
+### Vérification du droit de modification {#core-ref:bc4b174e-aa79-4621-9fd2-22800744779d}
 
 Le droit de modifier est le droit `edit`.
 
@@ -90,7 +90,7 @@ Attention le droit `edit` ne suffit pas forcément pour autoriser la
 modification. Il peut être nécessaire de vérifier aussi le verrou
 ([propriété][docprop] `locked`).
 
-### Vérification de tous les droits
+### Vérification de tous les droits {#core-ref:9d560b5a-0b4d-45ab-8169-d5b4324f713e}
 
 La liste des droits du documents est dans la propriété `acls` de l'objet.
 

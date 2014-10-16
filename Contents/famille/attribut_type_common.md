@@ -78,12 +78,24 @@ vlabel
         *   `up`
         *   `none`
 
+<a class="chapter-reference" name="commonELabel"/>
+elabel 
+:   Texte du tooltip du label de l'attribut pour le document en mode modification.
+    
+    Ne s'applique pas aux attributs de structure (tab, frame, array).
+    
+    Les valeurs possibles sont :
+    
+    *   Toute chaîne de caractères. Attention, la plupart des navigateurs n'acceptent pas de retour chariot.
+
+
+
 ititle
 :   Texte du tooltip du bouton '...' de l'[aide à la saisie][aide_saisie]. 
     Par défaut : « choisissez une valeur »
 
 ltitle
-:   Texte affichable en popup sur l'hyperlien lorsque la souris passe
+:   Texte affichable en tooltip sur l'hyperlien lorsque la souris passe
     dessus
 
 ltarget

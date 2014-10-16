@@ -629,6 +629,32 @@ book:
     - level:   4
       element: "chapter"
       content:  "API/Class_Doc/Method_viewattr.md"
+    - level:   3
+      element: "chapter"
+      content:  "API/Class_Doc/doctimers.md"
+      flags:
+        new : "nouveauté"
+      subtoc:   1
+    - level:   4
+      element: "chapter"
+      content:  "API/Class_Doc/Method_attachTimer.md"
+      flags:
+        new : "nouveauté"
+    - level:   4
+      element: "chapter"
+      content:  "API/Class_Doc/Method_getAttachedTimers.md"
+      flags:
+        new : "nouveauté"
+    - level:   4
+      element: "chapter"
+      content:  "API/Class_Doc/Method_unattachTimer.md"
+      flags:
+        new : "nouveauté"
+    - level:   4
+      element: "chapter"
+      content:  "API/Class_Doc/Method_unattachAllTimers.md"
+      flags:
+        new : "nouveauté"
     - level:   2
       element: "chapter"
       content:  "API/Class_Docfam.md"

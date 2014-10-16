@@ -113,5 +113,12 @@ document auquel est attaché le minuteur.
 Les minuteurs peuvent être administrés depuis le _centre d'administration_.
 (application : DOCADMIN, action : TIMERS_ADMIN).
 
+## Programmation {#core-ref:c261e2cc-4766-41a7-a363-c5b57c4c4544}
+
+Les minuteurs peuvent être gérés par [programmation][doctimers]. Cette
+programmation permet d'attacher ou de détacher les minuteurs associés à un
+document.
+
 <!-- links -->
 [date_de_reference]: #core-ref:386637d4-ab5b-4b3b-bf80-f2e6c226c555
+[doctimers]:   #core-ref:6403d0d7-9e4c-42e9-8a07-a2256a7c43f7

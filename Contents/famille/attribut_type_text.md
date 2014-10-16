@@ -42,7 +42,8 @@ Le type utilisé en base de donnée est `text`.
 En plus des [options communes à tous les types d'attributs](#core-ref:16e19c90-3233-11e2-a58f-6b135c3a2496), ce type d'attribut dispose des options suivantes :
 
 elabel
-:   Valeur de l'attribut `@title` de l'`input` correspondant.
+:   En plus du tooltip du label défini par les [options communes][elabel] pour `elabel`,
+    cette option affecte sa valeur sur l'attribut `title` de l'`input` correspondant.
     
     Les valeurs possibles sont :
     
@@ -56,3 +57,5 @@ esize
     *   Toute valeur entière.
 
 
+<!-- links -->
+[elabel]: ./core-ref:16e19c90-3233-11e2-a58f-6b135c3a2496.html#commonELabel "Option commune de elabel"
