@@ -25,21 +25,21 @@ Aucun
 Le retour est un tableau de valeur indexé. Si le tableau est vide, alors aucun
 minuteur n'est attaché au document.
 
-|      Clef     |                          Description                           |                                    Exemple                                    |
-| ------------- | -------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| timerid       | Identifiant du document *Timer*                                | 13510                                                                         |
-| level         | Niveau atteint par le minuteur                                 | 0                                                                             |
-| originid      | Identifiant du document  *Origine*                             |                                                                               |
-| docid         | Identifiant initial (`initid`) du document portant le minuteur | 1427                                                                          |
-| title         | Titre  du document portant le minuteur                         | Éléonore                                                                      |
-| fromid        | Identifiant de la famille   du document portant le minuteur    | 1059                                                                          |
-| attachdate    | Date d'attachement du minuteur                                 | 2014-10-15 17:24:00                                                           |
-| referencedate | Date de référence du minuteur                                  | 2012-10-01 05:00:00                                                           |
-| tododate      | Date de prochaine échéance                                     | 2012-10-01 05:00:00                                                           |
-| donedate      | Date à laquelle l'action a été exécutée                        |                                                                               |
-| actions       | Actions à faire (chaîne serialisée)                            | a:3:{s:5:"state";s:0:"";s:5:"tmail";s:0:"";s:6:"method";s:12:"::myMethod()";} |
-| result        | Résultat de l'action                                           |                                                                               |
-| id            | Identifiant de l'attachement                                   | 22                                                                            |
+|      Clef     |                                                      Description                                                      |                                    Exemple                                    |
+| ------------- | --------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| timerid       | Identifiant du document *Timer*                                                                                       | 13510                                                                         |
+| level         | Nombre de fois qu'une action a été exécutée depuis l'attachement. Dépend du nombre d'itération et du nombre d'actions | 0                                                                             |
+| originid      | Identifiant du document  *Origine*                                                                                    |                                                                               |
+| docid         | Identifiant initial (`initid`) du document portant le minuteur                                                        | 1427                                                                          |
+| title         | Titre  du document portant le minuteur                                                                                | Éléonore                                                                      |
+| fromid        | Identifiant de la famille   du document portant le minuteur                                                           | 1059                                                                          |
+| attachdate    | Date d'attachement du minuteur                                                                                        | 2014-10-15 17:24:00                                                           |
+| referencedate | Date de référence du minuteur                                                                                         | 2012-10-01 05:00:00                                                           |
+| tododate      | Date de prochaine échéance                                                                                            | 2012-10-01 05:00:00                                                           |
+| donedate      | Date à laquelle l'action a été exécutée                                                                               |                                                                               |
+| actions       | Actions à faire (chaîne serialisée)                                                                                   | a:3:{s:5:"state";s:0:"";s:5:"tmail";s:0:"";s:6:"method";s:12:"::myMethod()";} |
+| result        | Résultat de l'action                                                                                                  |                                                                               |
+| id            | Identifiant de l'attachement                                                                                          | 22                                                                            |
 
 Seuls les attachements actifs sont retournés. Les actions effectuées ne sont pas 
 retournées.
@@ -54,7 +54,7 @@ Aucun.
 
 ## Exemples  {#core-ref:d2c7fadd-1644-45d4-9d5d-0a5c28cb5c78}
 
-Deux minuteurs sont attaché au document n°1427. Le premier minuteur n°13509 est 
+Deux minuteurs sont attachés au document n°1427. Le premier minuteur n°13509 est 
 lié à l'origine n°1090. Le deuxième minuteur n'est pas lié.
 
     [php]

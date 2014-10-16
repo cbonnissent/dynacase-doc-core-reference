@@ -48,7 +48,7 @@ Aucun.
 
 ### Détachement de tous les minuteurs
 
-Deux minuteurs sont attaché au document n°1427. Le premier minuteur n°13509 est 
+Deux minuteurs sont attachés au document n°1427. Le premier minuteur n°13509 est 
 lié à l'origine n°1090. Le deuxième minuteur n'est pas lié.
 
 Le but de cet exemple est de détacher les minuteurs liés à l'origine n°1090.
@@ -121,7 +121,7 @@ Tous les minuteurs ont été détachés.
 
 ### Détachement en fonction de l'origine
 
-Deux minuteurs sont attaché au document n°1427. Le premier minuteur n°13509 est 
+Deux minuteurs sont attachés au document n°1427. Le premier minuteur n°13509 est 
 lié à l'origine n°1090. Le deuxième minuteur n'est pas lié.
 
 Le but de cet exemple est de détacher les minuteurs liés à l'origine n°1090.

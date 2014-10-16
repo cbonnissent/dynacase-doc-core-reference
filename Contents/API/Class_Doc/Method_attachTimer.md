@@ -20,7 +20,7 @@ Le même minuteur ne peut pas être attaché plusieurs fois sur le même documen
 Si le paramètre `$execdate` est non vide, la caractéristique
 [dynamique][dyndate] `tm_dyndate` d'un minuteur est ignorée.
 
-Le minuteur ne peux pas être posé sur une révision précise du document. Les
+Le minuteur ne peut pas être posé sur une révision précise du document. Les
 minuteurs sont attachés sur la dernière révision du document.
 
 
