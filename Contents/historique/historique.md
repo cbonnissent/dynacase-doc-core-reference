@@ -6,17 +6,19 @@ Dynacase.
 
 ## Édition 6
 
-|                                Modifications                                |                     Chapitre                     |                   Version                    |
-| :-------------------------------------------------------------------------- | :----------------------------------------------- | :------------------------------------------- |
-| Précision sur l'option showempty pour les images                            | [showempty][commonoptions]                       | <span class="flag update">Mise à jour</span> |
-| Précision sur la composition d'un titre                                     | [Titre de document][famattrtitle]                | <span class="flag update">Mise à jour</span> |
-| Précision sur le retour d'un paramètre de famille                           | [Doc::getFamilyParameter()][returnfamilyparam]   | <span class="flag update">Mise à jour</span> |
-| Modification du libellé du droit `modify` de dossier                        | [Droit `modify`][profildoc]                      | <span class="flag update">Mise à jour</span> |
-| Précision sur l'inclusion de css                                            | [Application::addCssRef()][addcssref]            | <span class="flag update">Mise à jour</span> |
-| Modification du retour SearchDoc::onlyCount() en cas d'erreur               | [SearchDoc::onlyCount()][searchdocOnlycount]     | <span class="flag update">Mise à jour</span> |
-| Avertissement sur l'utilisation de getCustomTitle dans les rapports         | [Doc::getCustomTitle()][customtitlew]            | <span class="flag update">Mise à jour</span> |
-| Modification visuel des attributs de type `file` et `image` en modification | Attributs [file][attrfile] et [image][attrimage] | <span class="flag update">Mise à jour</span> |
-| Option d'attribut `elabel` indiqué comme options communes d'attribut        | [Option elabel][elabel]                          | <span class="flag update">Mise à jour</span> |
+|                                Modifications                                |                     Chapitre                     |                    Version                     |
+| :-------------------------------------------------------------------------- | :----------------------------------------------- | :--------------------------------------------- |
+| Précision sur l'option showempty pour les images                            | [showempty][commonoptions]                       | <span class="flag update">Mise à jour</span>   |
+| Précision sur la composition d'un titre                                     | [Titre de document][famattrtitle]                | <span class="flag update">Mise à jour</span>   |
+| Précision sur le retour d'un paramètre de famille                           | [Doc::getFamilyParameter()][returnfamilyparam]   | <span class="flag update">Mise à jour</span>   |
+| Modification du libellé du droit `modify` de dossier                        | [Droit `modify`][profildoc]                      | <span class="flag update">Mise à jour</span>   |
+| Précision sur l'inclusion de css                                            | [Application::addCssRef()][addcssref]            | <span class="flag update">Mise à jour</span>   |
+| Modification du retour SearchDoc::onlyCount() en cas d'erreur               | [SearchDoc::onlyCount()][searchdocOnlycount]     | <span class="flag update">Mise à jour</span>   |
+| Avertissement sur l'utilisation de getCustomTitle dans les rapports         | [Doc::getCustomTitle()][customtitlew]            | <span class="flag update">Mise à jour</span>   |
+| Modification visuel des attributs de type `file` et `image` en modification | Attributs [file][attrfile] et [image][attrimage] | <span class="flag update">Mise à jour</span>   |
+| Option d'attribut `elabel` indiqué comme options communes d'attribut        | [Option elabel][elabel]                          | <span class="flag update">Mise à jour</span>   |
+| Gestion des minuteurs                                                       | [Méthode pour les minuteurs][doctimer]           | <span class="flag new">Nouveau chapitre</span> |
+|                                                                             |                                                  |                                                |
 
 
 ## Édition 5
@@ -140,3 +142,4 @@ retour d'erreur.
 [attrfile]:         #core-ref:0e904376-317c-426e-bc6d-e56fd52bad89
 [attrimage]:        #core-ref:4fca7712-59e0-4186-bfd0-6214104a0f60
 [elabel]:           ./core-ref:16e19c90-3233-11e2-a58f-6b135c3a2496.html#commonELabel "Option commune de elabel"
+[doctimer]:          #core-ref:6403d0d7-9e4c-42e9-8a07-a2256a7c43f7

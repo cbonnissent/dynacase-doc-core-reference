@@ -95,7 +95,7 @@ En plus des clés spécifiques au document, le workflow ajoute :
 *   le commentaire fourni à la [confirmation][transition_confirmation] (dans la
     clé `WCOMMENT`)
 
-#### Minuteur {#core-ref:a2748e27-7e51-4946-9a80-d23a010e3506}
+### Minuteur {#core-ref:a2748e27-7e51-4946-9a80-d23a010e3506}
 
 Lorsqu'un document arrive dans cette étape, les [minuteurs][TIMER] identifiés par
 cette relation sont attachés au document.
