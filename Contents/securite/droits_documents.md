@@ -81,14 +81,18 @@ Un droit peut être posé sur un rôle, un groupe ou un utilisateur. Pour indiqu
 ce compte, il faut utiliser le nom logique du document lié à ce compte ou
 l'identifiant système du compte (attribut _us_whatid_ donné sur le document).
 
-Trois options permettent de poser les droits :
+Quatre options permettent de spécifier le comportement d'importation des droits :
 
 *   **`ADD`** : Ajout de droits (option par défaut).  
     Les anciens droits sont conservés, les droits spécifiés seront ajoutés.
 *   DELETE : Suppression de droits.  
     Les droits spécifiés sont retirés.
+*   SET : Synchronisation des droits sans mise à jour systématique des documents.  <span class="flag from release">Release 3.2.17</span>
+    Les droits à importer sont comparés aux droits en base et la mise à jour des documents n'est effectuée uniquement si les 
+    droits à importer sont différents de ceux présents en base.
 *   RESET : Réinitialisation des droits.  
-    Les anciens droits sont retirés, les droits spécifiés sont ajoutés.
+    Les anciens droits sont retirés, les droits spécifiés sont ajoutés et un calcul des droits est lancé sur tous les
+    documents associés à ce profil. **Attention** : Cette opération peut-être consommatrice en temps et en ressources.
 
 Dans le [fichier d'importation][importdoc] chaque droit posé est déclaré après
 la quatrième colonne. Pour chacun des droits, un ou plusieurs identifiant de

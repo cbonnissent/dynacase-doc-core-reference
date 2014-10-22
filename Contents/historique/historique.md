@@ -8,6 +8,8 @@ Dynacase.
 
 |                                Modifications                                |                     Chapitre                     |                    Version                     |
 | :-------------------------------------------------------------------------- | :----------------------------------------------- | :--------------------------------------------- |
+| Ajout de l'option displayrowcount sur les array                             | [Array displayrowcount][display_row_count]       | <span class="flag update">Mise à jour</span>   |
+| Ajout de l'option SET sur l'import des profils                              | [import des profil][import_profil]               | <span class="flag update">Mise à jour</span>   |
 | Précision sur l'option showempty pour les images                            | [showempty][commonoptions]                       | <span class="flag update">Mise à jour</span>   |
 | Précision sur la composition d'un titre                                     | [Titre de document][famattrtitle]                | <span class="flag update">Mise à jour</span>   |
 | Précision sur le retour d'un paramètre de famille                           | [Doc::getFamilyParameter()][returnfamilyparam]   | <span class="flag update">Mise à jour</span>   |
@@ -143,3 +145,5 @@ retour d'erreur.
 [attrimage]:        #core-ref:4fca7712-59e0-4186-bfd0-6214104a0f60
 [elabel]:           ./core-ref:16e19c90-3233-11e2-a58f-6b135c3a2496.html#commonELabel "Option commune de elabel"
 [doctimer]:          #core-ref:6403d0d7-9e4c-42e9-8a07-a2256a7c43f7
+[import_profil]:    #core-ref:2ec1ae6f-4b2a-4bc2-a100-4e5873538bb5
+[display_row_count]: #core-ref:9eb6f53f-158d-497d-a472-2602a195cbce

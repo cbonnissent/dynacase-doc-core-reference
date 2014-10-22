@@ -56,6 +56,8 @@ book:
       content:  "famille/attribut_type_action.md"
     - level:   3
       content:  "famille/attribut_type_array.md"
+      flags:
+        new : "nouveauté"
     - level:   3
       content:  "famille/attribut_type_color.md"
     - level:   3
@@ -183,6 +185,8 @@ book:
       content:  "importation_exportation_documents/exportationsxml.md"
     - level:   2
       content:  "importation_exportation_documents/exportationsprofil.md"
+      flags:
+        update : "mis à jour"
 ##
 # comptes_groupes_roles
 ##
@@ -213,6 +217,8 @@ book:
       content:  "securite/droit_core.md"
     - level:   2
       content:  "securite/droits_documents.md"
+      flags:
+        update : "nouveauté"
     - level:   2
       content:  "securite/droits_cv.md"
     - level:   2

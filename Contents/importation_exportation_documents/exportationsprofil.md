@@ -60,6 +60,10 @@ Les différents notations de profils sont :
 *   [attributeName]=[documentName] // Cas des profils dynamiques
 *   [attributeName]=[accountIdentifier]
 
+**Attention** : Par défaut, l'import des éléments ci-dessus ne fait qu'ajouter les nouveaux droits et ne supprime
+pas les droits supprimés. Il existe différentes [options][options_profil_import] pour l'import des profils permettant de
+ modifier ce comportement.
+
 ## Exportation de profil de famille {#core-ref:8701cd51-0767-4620-8770-57dff9c4460a}
 
 Si le dossier à importer comporte un document _famille_ alors l'exportation du
@@ -114,5 +118,10 @@ cycle pour la famille exportée.
 **Note** : Les documents _"famille"_ (caractéristiques et structures) ne sont
  pas exportables. Seul leur profil est exportable avec cette option.
 
+**Attention** : Par défaut, l'import des éléments ci-dessus ne fait qu'ajouter les nouveaux droits et ne supprime
+pas les droits supprimés. Il existe différentes [options][options_profil_import] pour l'import des profils permettant de
+ modifier ce comportement.
+
 <!-- links -->
 [profilage]: #core-ref:ce576351-dbe6-45d1-8097-f9573502b651
+[options_profil_import]: #core-ref:2ec1ae6f-4b2a-4bc2-a100-4e5873538bb5
