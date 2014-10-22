@@ -77,6 +77,23 @@ Choisir les colonnes
     attributs choisis seront exportés. Le  choix _"Ne pas tenir compte des
     préférences"_ permet d'exporter l'ensemble des attributs.
 
+Format
+:   Voir le [chapitre suivant][format]
+
+Délimiteur de texte  <span class="flag from release">Release 3.2.17</span>
+:   Permet de configurer le format du CSV produit (uniquement dans le cas d'un format non XML)
+    
+    Ce paramètre permet de définir le délimiteur de cellule (enclosure) du CSV produit. Le défaut de 
+    Dynacase est `Aucun délimiteur` (chaîne vide), le standard du CSV est `"`.
+
+Séparateur de cellule  <span class="flag from release">Release 3.2.17</span>
+:   Permet de configurer le format du CSV produit (uniquement dans le cas d'un format non XML)
+    
+    Ce paramètre permet de définir le séparateur de cellule du CSV produit. Le défaut de Dynacase est `;`, le standard
+    CSV est `,`.
+
+**Attention** : A chaque utilisation de l'exportation de documents, le délimiteur de texte et le séparateur de cellule
+utilisés sont sauvés automatiquement pour l'utilisateur en cours et utilisés pour les exportations suivantes.
 
 ## Différents formats d'exportation {#core-ref:e51257aa-3a16-41be-94ed-7ef2206a899b}
   
@@ -164,3 +181,4 @@ XML][exportxml].
 [exportxml]: #core-ref:9cebde3e-d40c-421c-85f6-e3e8282d547f "détail format exportation XML"
 [exportprofil]: #core-ref:602c6331-7cdb-4b24-8a56-ffd11e00502f
 [keys]: #core-ref:7eefc8e7-16a6-4188-99d5-c2c9d817a1fe
+[format]: #core-ref:e51257aa-3a16-41be-94ed-7ef2206a899b

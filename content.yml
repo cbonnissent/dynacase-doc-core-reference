@@ -181,6 +181,8 @@ book:
       content:  "importation_exportation_documents/importationswsh.md"
     - level:   2
       content:  "importation_exportation_documents/exportations.md"
+      flags:
+        new : "nouveauté"
     - level:   2
       content:  "importation_exportation_documents/exportationsxml.md"
     - level:   2
