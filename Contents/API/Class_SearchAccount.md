@@ -6,7 +6,7 @@ La classe `SearchAccount` permet de réaliser facilement la recherche de
 Le résultat de cette recherche peut retourner des [utilisateurs][user], [des
 groupes][group] ou [des rôles][role].
 
-### Constructeur {#core-ref:5405bf7f-da07-4455-a136-10f29c236567}
+## Constructeur {#core-ref:5405bf7f-da07-4455-a136-10f29c236567}
 
     [php]
     new SearchAccount( )

@@ -9,7 +9,7 @@ sur la notion de [famille][famintro] et les structures associées ([attributs][a
 * [résultat brut][resultatBrut],
 * [résultat objet documentaire][resultatDocumentaire].
 
-### Constructeur {#core-ref:631a292f-6012-4881-bd5c-a264d3830846}
+## Constructeur {#core-ref:631a292f-6012-4881-bd5c-a264d3830846}
 
     [php]
     new SearchDoc ( '', "FAM_LOGICAL_NAME" )
