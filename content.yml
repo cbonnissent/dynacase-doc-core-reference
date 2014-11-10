@@ -1321,3 +1321,7 @@ book:
       content:  "Advanced/mime.md"
       flags:
         new : "nouveauté"
+    - level:   2
+      content:  "Advanced/install-update-app-fam.md"
+      flags:
+        new : "nouveauté"
