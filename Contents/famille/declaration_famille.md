@@ -632,8 +632,8 @@ surchargeant la méthode [Doc::getCustomTitle()][getcustomtitle].
 Le titre d'un document ne peut excéder **255** caractères. Il est
 automatiquement tronqué si cette limite est atteinte.
 
-La visibilité des attributs n'est pas pris en compte : un attribut en visibilité
-caché mais ayant la colonne titre à Y sera visible dans le titre.
+La visibilité des attributs n'est pas prise en compte : un attribut en visibilité
+cachée mais ayant la colonne titre à Y est visible dans le titre.
 
 Les valeurs des attributs multiples seront concaténées et séparées par un espace.
 
