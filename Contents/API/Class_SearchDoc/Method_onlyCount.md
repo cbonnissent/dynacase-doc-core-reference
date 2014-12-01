@@ -34,6 +34,15 @@ Exception `\Dcp\Db\Exception` en cas d'erreur de requête sql.
 
 ## Historique {#core-ref:b2d103c2-4aba-46b6-bfd7-1e933aab9a87}
 
+### Release 3.2.18
+
+<span class="flag from release">3.2.18</span>
+
+En cas d'erreur SQL de la requête, la méthode lève une exception de type
+`\Dcp\Db\Exception`.
+
+La valeur `-1` est retournée pour toute autre erreur logique (e.g. la famille
+sur laquelle porte la recherche n'existe pas).
 
 ### Release 3.2.17
 
@@ -88,32 +97,20 @@ récupéré le dernier compte effectué. Il fallait dans ce cas appeler la méth
 
     1493
     array (
-<!--beware there is no tab here for sql syntax-->
-
-    [sql]
       'query' => 'select count(docread.id) from  docread  where   (docread.archiveid is null) and (docread.doctype != \'Z\') and (docread.doctype != \'T\') and (docread.locked != -1)',
-
       'delay' => '0.003s',
     )
     
     0
     array (
-<!--beware there is no tab here for sql syntax-->
-
-    [sql]
       'query' => 'select count(docread.id) from  docread  where   (docread.archiveid is null) and (docread.doctype != \'Z\') and (docread.doctype != \'T\') and (docread.locked != -1) and (title = \'toto\')',
-
       'delay' => '0.001s',
     )
     
     1493
     array (
       'count' => 1493,
-<!--beware there is no tab here for sql syntax-->
-
-    [sql]
       'query' => 'select docread.id, owner, title, revision, version, initid, fromid, doctype, locked, allocated, archiveid, icon, lmodify, profid, usefor, cdate, adate, revdate, comment, classname, state, wid, postitid, domainid, lockdomainid, cvid, name, dprofid, atags, prelid, confidential, ldapdn, values, svalues, attrids  from  docread  where   (docread.archiveid is null) and (docread.doctype != \'Z\') and (docread.doctype != \'T\') and (docread.locked != -1) ORDER BY title LIMIT ALL OFFSET 0;',
-
       'error' => '',
       'delay' => '0.073s',
     )
@@ -121,29 +118,36 @@ récupéré le dernier compte effectué. Il fallait dans ce cas appeler la méth
     1493
     array (
       'count' => 1493,
-<!--beware there is no tab here for sql syntax-->
-
-    [sql]
       'query' => 'select docread.id, owner, title, revision, version, initid, fromid, doctype, locked, allocated, archiveid, icon, lmodify, profid, usefor, cdate, adate, revdate, comment, classname, state, wid, postitid, domainid, lockdomainid, cvid, name, dprofid, atags, prelid, confidential, ldapdn, values, svalues, attrids  from  docread  where   (docread.archiveid is null) and (docread.doctype != \'Z\') and (docread.doctype != \'T\') and (docread.locked != -1) ORDER BY title LIMIT ALL OFFSET 0;',
-
       'error' => '',
       'delay' => '0.073s',
     )
 
-
 ### Exemple traitement d'erreur
 
     [php]
-    $s=new SearchDoc("","IUSER");
+    $s = new SearchDoc("", "IUSER");
     $s->addFilter("myColumn = 3 "); // Ici la colonne n'existe pas dans la famille
-    $c=$s->onlyCount();
-    
-    if ($c === -1) {
-      print_r($s->getSearchInfo());
+    try {
+        $c = $s->onlyCount();
+    } catch (\Dcp\Db\Exception $e) {
+        print "SQL error:\n";
+        print "----------\n";
+        print_r($s->getSearchInfo());
+        return;
     }
+    if ($c === -1) {
+        print "Logical error:\n";
+        print "--------------\n";
+        print_r($s->getSearchInfo());
+        return;
+    }
+    printf("Count = %d\n", $c);
 
 Retour :
 
+    SQL error:
+    ----------
     Array
     (
         [query] => select count(doc128.id) from  doc128  where   (doc128.archiveid is null) and (doc128.doctype != 'T')
@@ -152,7 +156,6 @@ Retour :
     LINE 1: ...28.doctype != 'T') and (doc128.locked != -1) and (myColumn =...
                                                                  ^
     )
-
 
 ## Notes {#core-ref:ee038431-ef60-41c1-b52f-f958a3923b44}
 
