@@ -1228,6 +1228,10 @@ book:
       flags:
         update: "nouveauté"
     - level:   2
+      content:  "Advanced/Migration/organisation-instructions-importation.md"
+      flags:
+        trash:  "Définir où cela doit se trouver"
+    - level:   2
       content:  "Advanced/Recherche/introduction.md"
       subtoc:   2
     - level:   3
