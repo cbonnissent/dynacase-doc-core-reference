@@ -127,6 +127,26 @@ Exemple :
     $ echo $?
     4
 
+<span class="flag inline from release">3.2.17</span> Si le code retourné est `1`, le
+message d'erreur est affiché avec la fonction [`error_log()`][error_log]. Par
+défaut, l'affichage est effectué sur la sortie `stderr`. Ce message est
+accompagné de la *callstack* qui est à l'origine de l'erreur.
+
+Exemple :
+
+    $ ./wsh.php --api=refreshDocuments --famid=389
+        17208> Dynacase got an uncaught exception 'Dcp\Core\Exception' with message '{CORE0001} family 389 not exists' in file /var/www/tmp32/WHAT/Class.Action.php at line 651:
+        17208> #0 /var/www/tmp32/API/refreshDocuments.php(74): Action->exitError('family 389 not ...')
+        17208> #1 /var/www/tmp32/wsh.php(133): include('/var/www/tmp32/...')
+        17208> #2 {main}
+        17208> End Of Exception.
+    $ echo $?
+    1
+
+
+Si le code est `2` ou `4`, le message d'erreur est affiché sur la sortie
+standard (`stdout`).
+
 ## Écrire un script CLI {#core-ref:4df1314f-9fdd-4a7f-af37-a18cc39f3505}
 
 Les scripts exécutables avec wsh doivent être des fichiers php présents dans le
@@ -145,3 +165,4 @@ contrainte spécifique.
 [wsh_api]: #core-ref:c47cdda0-0221-4dfc-ba14-56376e570372
 [classe_action]: #core-ref:29553eba-bcea-4baf-bef8-103c3a3510fa
 [args]: #core-ref:fa9210eb-5bad-4867-a287-e732afc02251
+[error_log]: http://php.net/manual/fr/errorfunc.configuration.php#ini.error-log "Configuration error_log"
