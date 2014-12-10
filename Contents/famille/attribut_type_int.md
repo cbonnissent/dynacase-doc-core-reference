@@ -2,7 +2,7 @@
 
 ## Description {#core-ref:d66e4885-c1d5-41da-ba18-599d2ef37bea}
 
-Les attributs de type *int* permettent d'insérer un nombre entier.
+Les attributs de type *int* permettent d'insérer un nombre entier sur 32 bits signés.
 
 ## Représentation {#core-ref:8342b998-5707-4d2d-9b47-ef2319e80fc7}
 
@@ -32,7 +32,7 @@ Les attributs de type *int* permettent d'insérer un nombre entier.
 
 Lors de la sauvegarde, les vérifications suivantes sont faites :
 
-*   Le nombre est un entier
+*   Le nombre est un entier compris entre -2 147 483 648 et +2 147 483 647
 
 ## Format de stockage {#core-ref:b87a2fa8-a0ef-4835-908d-6ac777a72343}
 
