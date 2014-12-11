@@ -135,7 +135,7 @@ userowadd
 rowviewzone
 :   Indique une [vue spécifique de tableau][viewrow] pour la consultation.
 
-roweditone
+roweditzone
 :   Indique une [vue spécifique de tableau][editrow] pour la modification.
 
 ## Options applicables aux attributs contenus dans un array {#core-ref:2732ecb2-7cc1-414f-8864-7d7e97a6091b}
