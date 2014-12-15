@@ -6,10 +6,11 @@ Dynacase.
 
 ## Édition 7
 
-|                 Modifications                  |          Chapitre         |                   Version                    |
-| :--------------------------------------------- | :------------------------ | :------------------------------------------- |
-| Ajout callstack dans le retour d'erreur de wsh | [Erreur wsh][wsherror]    | <span class="flag update">Mise à jour</span> |
-| Précisions sur les fonctions de transaction    | [Transactions][savepoint] | <span class="flag update">Mise à jour</span> |
+|                  Modifications                   |            Chapitre            |                   Version                    |
+| :----------------------------------------------- | :----------------------------- | :------------------------------------------- |
+| Ajout callstack dans le retour d'erreur de wsh   | [Erreur wsh][wsherror]         | <span class="flag update">Mise à jour</span> |
+| Précisions sur les fonctions de transaction      | [Transactions][savepoint]      | <span class="flag update">Mise à jour</span> |
+| Précisions sur les minuteurs avec date dynamique | [Minuteur dynamique][timerdyn] | <span class="flag update">Mise à jour</span> |
 
 ## Édition 6
 
@@ -158,3 +159,4 @@ retour d'erreur.
 [csv_export]: #core-ref:83ec5f8c-c048-4da9-ab81-edd5d52efc0d
 [wsherror]:         #core-ref:982b9e0c-56ef-40c4-a8f8-0ae0826f07a2
 [savepoint]:        #core-ref:32e0a8cb-0e8b-4f77-a62d-a45da16d39a8
+[timerdyn]:         #core-ref:386637d4-ab5b-4b3b-bf80-f2e6c226c555
