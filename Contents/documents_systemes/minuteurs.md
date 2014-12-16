@@ -58,7 +58,7 @@ Date de référence dynamique
     <span class="flag from release">3.2.18</span> Si la date reliée est vide, le
     minuteur n'est pas activé. Il reste en attente d'activation jusqu'à ce que cette
     date reliée soit valorisée. De même, si la date reliée devient vide, les 
-    actions du minuteur sont inhibés.
+    actions du minuteur sont inhibées.
 
 Décalage de la date de référence
 :   Il est possible d'appliquer un delta à cette date de référence, qu'elle soit
