@@ -39,6 +39,10 @@ Chaque action est définie par un délai, et un nombre d'itérations.
 3.  Une fois toutes les itérations de toutes les actions effectuées, le minuteur
     est détaché du document.
 
+<span class="flag nota-bene"/>Si le date de référence est dynamique, le minuteur
+revient à la première itération à chaque modification de cette date de
+référence. 
+
 ## Date de référence {#core-ref:386637d4-ab5b-4b3b-bf80-f2e6c226c555}
 
 Par défaut, la date de référence d'un minuteur est sa date d'attachement au
@@ -50,10 +54,15 @@ Date de référence dynamique
     
     Dans ce cas, la date de référence est recalculée à chaque mise à jour du
     document.
+    
+    <span class="flag from release">3.2.18</span> Si la date reliée est vide, le
+    minuteur n'est pas activé. Il reste en attente d'activation jusqu'à ce que cette
+    date reliée soit valorisée. De même, si la date reliée devient vide, les 
+    actions du minuteur sont inhibées.
 
 Décalage de la date de référence
-:   il est possible d'appliquer un delta à cette date de référence, qu'elle soit
-    dynamique ou non. ce delta peut servir, par exemple, à effectuer une action,
+:   Il est possible d'appliquer un delta à cette date de référence, qu'elle soit
+    dynamique ou non. Ce delta peut servir, par exemple, à effectuer une action,
     *N jours avant la date cible* : dans ce cas, on appliquera un delta de
     *-N jours*.
     
