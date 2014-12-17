@@ -1185,6 +1185,10 @@ book:
       content:  "Advanced/Cinematique/staterequest.md"
     - level:   3
       content:  "Advanced/Cinematique/wshrequest.md"
+    - level:   3
+      content:  "Advanced/Cinematique/exception.md"
+      flags:
+        new: "nouveauté"
     - level:   2
       content:  "Advanced/Database/introduction.md"
       subtoc:   2

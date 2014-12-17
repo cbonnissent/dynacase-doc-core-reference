@@ -1,12 +1,12 @@
 # MIME {#core-ref:1e9f18f8-e6f3-451e-9d6c-0ad56205464c}
 
-Lors de l'insertion d'un fichier dans le vault, son type MIME est détecté et est
+Lors de l'insertion d'un fichier dans le vault, son type MIME est détecté et
 stocké en base de données aux côtés de son identifiant dans le vault (`vid`).
 
 On distingue deux notions sous le terme de type MIME :
 
 * type MIME textuel (e.g. `OpenDocument Text`) : description du type du fichier
-dans un format "humain".
+dans un format "humain",
 * type MIME système (e.g. `application/vnd.oasis.opendocument.text`) : type MIME
 du fichier au format "machine" (tel que défini par le registre [IANA][iana_mime]
 par exemple).
@@ -27,7 +27,7 @@ Le type MIME textuel est obtenu via l'utilisation de la fonction
     
     Par défaut, le nom est vide.
 
-La détection se base en premier par une détection sur le nom du fichier (voir
+La détection se base en premier sur le nom du fichier (voir
 [Paramétrage de la détection par le nom du fichier][mime_user_param] ci-
 dessous). Si le type MIME ne peut pas être déduit à partir du nom du fichier,
 alors la détection se base sur le contenu du fichier (via la commande système
@@ -47,7 +47,7 @@ Le type MIME système est obtenu via l'utilisation de la fonction
     
     Par défaut, le nom est vide.
 
-La détection se base en premier par une détection sur le nom du fichier (voir
+La détection se base en premier sur le nom du fichier (voir
 [Paramétrage de la détection par le nom du fichier][mime_user_param] ci-
 dessous). Si le type MIME ne peut pas être déduit à partir du nom du fichier,
 alors la détection se base sur le contenu du fichier (via la commande système
@@ -56,7 +56,7 @@ alors la détection se base sur le contenu du fichier (via la commande système
 ## Paramétrage de la détection par le nom du fichier {#core-ref:9daa8254-956e-43eb-88f0-f9c35b505b86}
 
 La détection du [type MIME textuel][mime_t] et du [type MIME système][mime_s]
-est paramétrable via des règles appliqués sur l'extension du nom du fichier.
+est paramétrable via des règles appliquées sur l'extension du nom du fichier.
 
 Ces règles sont décrites au format XML dans le fichier `config/user-mime.conf`.
 
@@ -77,11 +77,11 @@ Chaque règle est décrite à l'aide d'un élément `<mime/>` comportant l'exten
 le type MIME textuel et système correspond qui est retourné (attribut `text` et
 `sys`).
 
-Les règles sont évalués dans l'ordre et s'arrête à la première règle qui
+Les règles sont évaluées dans l'ordre d'écriture dans le fichier XML. La détection s'arrête à la première règle qui
 correspond à l'extension du fichier.
 
-Ces règles `config/user-mime.conf` viennent en complément et sont évalués en
-priorité par rapport au jeu de règles fournit par défaut par Dynacase
+Les règles du fichier `config/user-mime.conf` sont évaluées en
+priorités par rapport au jeu de règles fournit par défaut par Dynacase
 (consultable dans le fichier `config/mime.conf`).
 
 <!-- links -->
