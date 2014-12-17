@@ -34,7 +34,7 @@ Exception `\Dcp\Db\Exception` en cas d'erreur de requête sql.
 
 ## Historique {#core-ref:b2d103c2-4aba-46b6-bfd7-1e933aab9a87}
 
-### Release 3.2.18
+### Release 3.2.18 {#core-ref:c725a3ed-e588-425d-ac43-d9c1cc14031f}
 
 <span class="flag from release">3.2.18</span>
 
@@ -44,7 +44,7 @@ En cas d'erreur SQL de la requête, la méthode lève une exception de type
 La valeur `-1` est retournée pour toute autre erreur logique (e.g. la famille
 sur laquelle porte la recherche n'existe pas).
 
-### Release 3.2.17
+### Release 3.2.17 {#core-ref:9fa7f899-d34e-4a98-ab5e-71f44fdfe1f3}
 
 En cas d'erreur de requête, la méthode retourne maintenant `-1` au lieu de `0`.
 
@@ -60,7 +60,7 @@ récupéré le dernier compte effectué. Il fallait dans ce cas appeler la méth
 
 ## Exemples {#core-ref:d5c199d8-e3d2-4a9a-8b5a-0b76f0741155}
 
-### Exemple de compte :
+### Exemple de compte : {#core-ref:6f6381d2-d5f5-42b6-b828-45495c147a0d}
 
     [php]
     function testOnlyCount(Action & $action)
@@ -123,7 +123,7 @@ récupéré le dernier compte effectué. Il fallait dans ce cas appeler la méth
       'delay' => '0.073s',
     )
 
-### Exemple traitement d'erreur
+### Exemple traitement d'erreur {#core-ref:4c32b482-d946-458b-99bc-6b77a37b877a}
 
     [php]
     $s = new SearchDoc("", "IUSER");

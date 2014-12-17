@@ -192,7 +192,7 @@ Exemple d'utilisation :
         printf("%s)%s\n", $docIUser->id,  $docIUser->getTitle());
     }
 
-## Rôles
+## Rôles {#core-ref:f0abd65e-c453-443e-ab39-bc5ae6ee6f1f}
 
 La famille `ROLE` permet d'associer des rôles à des utilisateurs ou à des
 groupes.
@@ -203,7 +203,7 @@ identifier les groupes "système".
 Comme la famille `IUSER`, la famille `ROLE` dispose de la méthode
 `ROLE::getAccount()` pour récupérer l'objet `Account` correspondant
 
-### Correspondance Compte Rôle &hArr; Document ROLE 
+### Correspondance Compte Rôle &hArr; Document ROLE  {#core-ref:0ba1c676-87c0-4a70-adc0-6f9a4c0939ea}
 
 | Compte Rôle | Document `ROLE` |
 | ----------- | --------------- |

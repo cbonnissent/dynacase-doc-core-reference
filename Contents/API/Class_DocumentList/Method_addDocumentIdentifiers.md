@@ -77,7 +77,7 @@ Soit les documents suivants :
        3977 | 3980 |     -1 |        3 | The Quick Brown Fox
        3977 | 3981 |      0 |        4 | The Quick Brown Fox
 
-### Avec Initid
+### Avec Initid {#core-ref:a143a3c3-7973-4c3a-863f-87cc2f858d51}
 
 Lorsque `useInitId` est à `true` (valeur par défaut), les identifiants fournis
 doivent être des `initid`.
@@ -106,7 +106,7 @@ Résultat :
 Seul document#1 est retourné (car spécifié avec son `initid`) et à sa dernière
 révision (3).
 
-### Avec Latest Id
+### Avec Latest Id {#core-ref:dd4ecd1b-c51a-46c6-881f-2d26a663ea75}
 
 Lorsque `useInitId` est à `false`, les identifiants fournis doivent être des
 identifiants de dernière révision (`latest`).
@@ -136,7 +136,7 @@ Résultat :
 Seul document#2 est retourné (car spécifié avec son `latest` id) et à sa
 dernière révision (4).
 
-### Pour n'importe quel identifiant
+### Pour n'importe quel identifiant {#core-ref:efa1e36e-da64-4504-8c75-0666688279d8}
 
 Si les identifiants fournis ne sont ni `initid` ni `latest`, alors, pour obtenir
 les documents correspondants il faudra modifier la propriété `latest` de l'objet

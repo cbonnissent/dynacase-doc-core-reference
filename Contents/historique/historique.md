@@ -4,7 +4,7 @@ Ce chapitre contient un descriptif des améliorations entre les releases de
 Dynacase.
 
 
-## Édition 7
+## Édition 7 {#core-ref:67c3551d-d99a-43c9-b837-5d93439bff8e}
 
 |                  Modifications                   |            Chapitre            |                    Version                     |
 | :----------------------------------------------- | :----------------------------- | :--------------------------------------------- |
@@ -14,7 +14,7 @@ Dynacase.
 | Précisions sur les mécanismes d'exception        | [Exception][Exception]         | <span class="flag new">Nouveau chapitre</span> |
 | Ajout verrouillage de transaction                | [Transaction][Transaction]     | <span class="flag update">Mise à jour</span>   |
 
-## Édition 6
+## Édition 6 {#core-ref:24bca82b-3ce1-49df-b866-2442d8cfec64}
 
 |                                Modifications                                |                     Chapitre                     |                    Version                     |
 | :-------------------------------------------------------------------------- | :----------------------------------------------- | :--------------------------------------------- |
@@ -34,7 +34,7 @@ Dynacase.
 |                                                                             |                                                  |                                                |
 
 
-## Édition 5
+## Édition 5 {#core-ref:2c9c3f1e-d1b6-4d13-84b2-a3e3cbf0fa53}
 
 |              Modifications              |              Chapitre              |                   Version                    |
 | :-------------------------------------- | :--------------------------------- | :------------------------------------------- |

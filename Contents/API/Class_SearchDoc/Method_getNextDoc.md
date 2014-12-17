@@ -39,7 +39,7 @@ Anciennement nommé `SearchDoc::nextDoc()`.
 
 ## Exemples {#core-ref:48e71bd4-b673-4111-b07f-e8a90c9c6773}
 
-### Itération sur les tous les documents :
+### Itération sur les tous les documents : {#core-ref:c705626f-29cb-4045-8cdc-eedc9c810b9f}
 
     [php]
     
@@ -58,7 +58,7 @@ Anciennement nommé `SearchDoc::nextDoc()`.
     
     var_export($searchDoc->getSearchInfo());
 
-### Récupération du premier dossier
+### Récupération du premier dossier {#core-ref:360f3569-83c9-4932-a76b-ec7c740605d3}
 
 Récupération du premier document "dossier" qui a été créé.
 

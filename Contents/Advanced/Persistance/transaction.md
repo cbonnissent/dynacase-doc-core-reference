@@ -55,16 +55,15 @@ Elle ajoute un point de sauvegarde avec l'identifiant donné en paramètre.
 Elle retourne une erreur si le point de sauvegarde n'a pas pu être posé.
 
 Note : Comme indiqué dans la [documentation de postgresql][savepoint], si le
-même nom est utilisé, l'index du point pour le commit ou le rollback est
-déplacé.
+même nom est utilisé, l'index du point de sauvegarde est déplacé.
 
 
-### Verrouillage de la transaction 
+### Verrouillage de la transaction  {#core-ref:14fd71fa-1944-4016-80ab-6616e3423ce7}
 
 <span class="flag from release inline">3.2.18</span>Les paramètres optionnels
 `exclusiveLock` et `exclusiveLockPrefix` permettent d'indiquer que la
 transaction devient exclusive. Si `exclusiveLock` est différent de zéro, un
-[verrou][pgadlock] est posé sur ce point et un autre processus devra attendre
+[verrou][pgadlock] est posé sur ce point et un autre processus doit attendre
 sur ce même point que les données liées à la transaction soit enregistrées sur
 la base de données. Les paramètres `exclusiveLock` et `exclusiveLockPrefix` sont
 les conditions d'acquisition du verrou. Le paramètre `exclusiveLock` identifie

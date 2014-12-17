@@ -46,7 +46,7 @@ Aucun.
 
 ## Exemples  {#core-ref:0c1cf156-0649-47d4-84e3-788e09e2b57f}
 
-### Détachement de tous les minuteurs
+### Détachement de tous les minuteurs {#core-ref:70b0be83-75df-4e03-ac52-c725e8fd6597}
 
 Deux minuteurs sont attachés au document n°1427. Le premier minuteur n°13509 est 
 lié à l'origine n°1090. Le deuxième minuteur n'est pas lié.
@@ -119,7 +119,7 @@ Résultat :
 
 Tous les minuteurs ont été détachés.
 
-### Détachement en fonction de l'origine
+### Détachement en fonction de l'origine {#core-ref:05ac6a6a-70c2-4e2d-a9aa-2dd33df57d5e}
 
 Deux minuteurs sont attachés au document n°1427. Le premier minuteur n°13509 est 
 lié à l'origine n°1090. Le deuxième minuteur n'est pas lié.
