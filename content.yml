@@ -1112,6 +1112,10 @@ book:
       content:  "wsh_ref/checkVault.md"
     - level:   2
       content:  "wsh_ref/refreshVaultIndex.md"
+    - level:   2
+      content:  "wsh_ref/cleanVaultOrphans.md"
+      flags:
+        new: "nouveauté"
 
 ##
 # Advanced
