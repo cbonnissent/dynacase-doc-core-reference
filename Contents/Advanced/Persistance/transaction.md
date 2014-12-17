@@ -40,18 +40,50 @@ de `DbObj` notamment les classes [Doc][doc] et [Action][action].
 ## savePoint() {#core-ref:ec130ebd-ad78-40ea-9fa3-3b9ec076caa1}
 
 
-    string savePoint(string $point)
+    string savePoint(string $point, 
+                        int $exclusiveLock = 0, 
+                     string $exclusiveLockPrefix = '')
+
 
 Cette méthode ouvre une transaction ([`BEGIN`][begin]) si une transaction n'est
 pas déjà en cours. 
 
 Elle ajoute un point de sauvegarde avec l'identifiant donné en paramètre.
 
+
+
 Elle retourne une erreur si le point de sauvegarde n'a pas pu être posé.
 
 Note : Comme indiqué dans la [documentation de postgresql][savepoint], si le
 même nom est utilisé, l'index du point pour le commit ou le rollback est
 déplacé.
+
+
+### Verrouillage de la transaction 
+
+<span class="flag from release inline">3.2.18</span>Les paramètres optionnels
+`exclusiveLock` et `exclusiveLockPrefix` permettent d'indiquer que la
+transaction devient exclusive. Si `exclusiveLock` est différent de zéro, un
+[verrou][pgadlock] est posé sur ce point et un autre processus devra attendre
+sur ce même point que les données liées à la transaction soit enregistrées sur
+la base de données. Les paramètres `exclusiveLock` et `exclusiveLockPrefix` sont
+les conditions d'acquisition du verrou. Le paramètre `exclusiveLock` identifie
+une ressource (forme numérique) et le paramètre `exclusiveLockPrefix` indique un
+contexte (chaîne limitée à 4 caractères).
+
+Exemple :
+
+    [php]
+    $document=new_doc("", 1234);
+    $document->savePoint("myUpdate", $document->initid, "MyUp");
+    // Un seul processus peut exécuter cette partie pour ce document
+    $document->setValue("my_reference", 234);
+    $document->myRecomputeCriticalRelation();
+    
+    $document->commitPoint("myUpdate");
+    // Le verrou est relaché s'il s'agit du commit du premier save point
+
+
 
 ## commitPoint() {#core-ref:0bc23a2a-0266-4323-8b72-07276f118c3a}
 
@@ -201,3 +233,4 @@ utilisés][hookimport] lors de l'importation sont donc exécutés dans une trans
 [release]:           http://www.postgresql.org/docs/9.3/static/sql-release-savepoint.html "Postgresql : Release savepoint"
 [hookimport]:       #core-ref:d3b06745-35c5-447c-9b88-01181736c21e
 [commit]:           http://www.postgresql.org/docs/9.3/static/sql-commit.html "Postgresql : Commit"
+[pgadlock]:         http://www.postgresql.org/docs/9.1/static/explicit-locking.html#ADVISORY-LOCKS "Postgresql Advisory locks"
