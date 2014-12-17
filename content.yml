@@ -19,6 +19,8 @@ book:
       subtoc:   2
     - level:   2
       content:  "Introduction_dynacase/famille_document_attribut.md"
+      flags:
+        update : "mis à jour"
     - level:   2
       content:  "Introduction_dynacase/cycle_de_vie.md"
     - level:   2

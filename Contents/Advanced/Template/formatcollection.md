@@ -1,22 +1,40 @@
-# Format de liste de documents {#core-ref:74ce9ce4-8e4e-42ee-a0df-415eb6897a81}
+# Mise en forme d'une collection de documents {#core-ref:74ce9ce4-8e4e-42ee-a0df-415eb6897a81}
 
-Le formatage permet de récupérer les éléments des documents qui peuvent être
-utilisés dans un but de présentation de ces données à l'utilisateur (interface
-homme-machine ou exportation). Pour récupérer le formatage il faut utiliser la
-classe `FormatCollection`.
+## Collection de documents {#core-ref:fc3d2418-7471-439e-a6d9-dcd30de9fc83}
+
+Les collections de documents sont, comme évoqués dans le chapitre [d'introduction][intro_collection], des ensembles de 
+documents statiques (répertoires) ou dynamiques (recherches).
+
+## Classe de formatage {#core-ref:26703b3f-46d4-4b84-882b-3520da6b408e}
+
+Dynacase possède une classe permettant de faciliter la mise en forme de ces ensembles de documents pour leur utilisations
+ultérieures (exportation ou interface homme-machine).
+
+## Classe {#core-ref:a26cf6f6-2d28-4dd6-a3ee-09d135592c6b}
+
+Pour mettre en forme une liste de document, il faut utiliser la classe `FormatCollection`.
+
+## Liste des paramètres entrants {#core-ref:3ce00d98-5576-467e-bc08-8e36fe47421b}
+
+Le classe prend en entrée des objets [`DocumentList`][ClassDocumentList]
 
 Exemple pour le formatage des documents 9 et 12.
 
     [php]
-    $dl=new DocumentList();
-    $dl->addDocumentIdentifiers(array(9,12)); // 
+    $documentList=new DocumentList();
+    $documentList->addDocumentIdentifiers(array(9,12)); // 
     
-    $fl=new FormatCollection();
-    $fl->useCollection($dl);
-    $r=$fl->render();
+    $formatCollection =new FormatCollection();
+    $formatCollection->useCollection($documentList);
+    $render=$formatCollection->render();
+
+Nota bene : les objets [`DocumentList`][ClassDocumentList] peuvent être initialisé soit avec des id, soit avec des
+objets [`SearchDoc`][ClassSearchDoc].
+
+## Sortie {#core-ref:da2ae3f0-af0c-4747-92e6-0999f8f05ffe}
 
 Le résultat du "render" donne un tableau avec une entrée par document formaté.
-Par défaut seul le titre et l'identifiant est retourné, aucun attribut n'est
+Par défaut seul le titre et l'identifiant (`id`) est retourné, aucun attribut n'est
 utilisé. Chaque entrée contient un champ "properties" indiquant les propriétés
 et un champ "attributes" contenant les attributs. Ce dernier est vide si aucun
 attribut n'a été indiqué dans le formatage.
@@ -44,36 +62,72 @@ attribut n'a été indiqué dans le formatage.
 
 ## Formatage des propriétés {#core-ref:9ebcbfd6-d094-45ee-a993-9b221fb4d893}
 
-Les valeurs des propriétés sont directement notées dans le tableau "properties"
-sauf l'état. Pour l'état du document les informations suivantes sont disponibles
-:
+Les propriétés accessibles sont les suivantes :
 
-*   `reference`
-: clef de l'étape
+**les propriétés RAW** : ensemble des [propriétés][propriete_doc] d'un document,
 
-*   `color`
-: couleur de l'étape
+**les propriétés formatées** : 
 
-*   `activity` 
-: activité de l'étape (vide si document est figé, - ancienne révision - )
-
-*   `stateLabel` 
-: libellé de l'état de l'étape
-
-*   `displayValue` 
-: libellé de l'étape. Il est égal à l'activité si le document est en dernière révision et si l'activité est déclarée sinon il est égal au libellé de l'état.
+* `url` : URL d'accès en visualisation du document,
+* `family` : informations sur la famille du document, cette structure contient le 
+  * titre (`title`), 
+  * le nom logique (`name`), 
+  * l'id (`id`),
+  * un lien vers l'icone (`icon`),
+* `creationDate` : date de création de la lignée documentaire,
+* `createdBy` : informations sur le créateur de la lignée documentaire, cette structure contient
+  * le titre (`title`), 
+  * le nom logique (`name`), 
+  * l'id (`id`),
+  * un lien vers l'icone (`icon`) du document représentant le créateur,
+* `revisionData` : informations sur la révision du document, cette structure contient : 
+  * un booléen indiquant si le document a été modifié (`isModified`) depuis sa dernière révision, 
+  * son identifiant (`id`), 
+  * son numéro de révision (`number`),
+  * les informations sur le créateur de la révision (`createdBy`), cette structure est similaire à `createdBy`,
+* `viewController` : informations sur la vue en cours d'application, cette structure contient 
+  * l'identifiant du contrôle de vue (`id`),
+  * son titre (`title`),
+* `workflow` : informations sur le cycle de vie associé au document, cette structure contient 
+  * l'identifiant (`id`),
+  * le titre du workflow (`title`),
+* `tags` : tag documentaire associés au document, cette structure est une liste de valeurs,
+* `security` : information liées aux droits du documents, cette structure contient 
+  * le lock (`lock`) : la proriété lock contient : `id` identifiant du lock, `temporary` : indique si le lock est temporaire ou permanent, `lockedBy` : identifiant de l'utilisateur ayant locké le document, 
+  * un booléen indiquant si le document est en lecture seule (`readOnly`), 
+  * un booléen indiquant si le document est figé (`fixed`), 
+  * des informations sur le profil associé au document (`profil`) : son identifiant (`id`), son icone (`icon`), son type (`type`) : linked (lié) ou private (privé), un booléen indiquant s'il est activé (`activated`), son titre (`title`), 
+  * sa confidentialité (`confidentiality`), 
+* `status` : information sur le status du document, trois valeurs sont possibles 
+ * `deleted` : document supprimé,
+ * `fixed` : document figé,
+ * `alive` : document vivant,
+* `note` : liste des post-it associés au document,
+* `type` : type du document, les valeur suivante sont possibles :
+ * `document` : document standard,
+ * `folder` : collection statique de documents,
+ * `search` : collection dynamique de documents,
+ * `family` : définition d'une famille de documents,
+ * `profil` : document de modèle de profil,
+ * `workflow` : document de cycle de vie,
+* `state` : état du document, cette structure contient :
+  *   `reference` : clef de l'étape,   
+  *   `color` : couleur de l'étape,   
+  *   `activity` : activité de l'étape (vide si document est figé, - ancienne révision - ),   
+  *   `stateLabel` : libellé de l'état de l'étape,   
+  *   `displayValue` : libellé de l'étape. Il est égal à l'activité si le document est en dernière révision et si l'activité est déclarée sinon il est égal au libellé de l'état.
 
 Exemple :
 
     [php]
-    $s=new SearchDoc('',"ZOO_TEST");
-    $s->setObjectReturn();
-    $dl=$s->search()->getDocumentList();
+    $searchDoc=new SearchDoc('',"ZOO_TEST");
+    $searchDoc->setObjectReturn();
+    $documentList=$searchDoc->getDocumentList();
     
-    $fl=new FormatCollection();
-    $fl->useCollection($dl);
-    $fl->addProperty($fl::propState);
-    $r=$fl->render();
+    $formatCollection=new FormatCollection();
+    $formatCollection->useCollection($documentList);
+    $formatCollection->addProperty($formatCollection::propState);
+    $r=$formatCollection->render();
     print_r($r);
 
 Le résultat est :
@@ -93,18 +147,109 @@ Le résultat est :
                         ) 
                 ) 
                 
+
+Un exemple de rendu de l'ensemble des propriétés sérialisé en JSON :
+
+    [javascript]
+    {
+        "id": 1289,
+        "title": "2013-05-07",
+        "adate": "2014-12-16 16:51:42",
+        "affected": {
+            "id": 0,
+            "title": ""
+        },
+        "allocated": null,
+        "atags": null,
+        "cdate": "2014-12-16 16:51:42",
+        "confidential": null,
+        "createdBy": {
+            "id": 1008,
+            "title": "Master Default",
+            "icon": "resizeimg.php?img=Images%2Fdynacase-iuser.png&size=24"
+        },
+        "creationDate": "2014-12-16 16:51:42",
+        "cvid": null,
+        "doctype": "F",
+        "dprofid": "0",
+        "family": {
+            "title": "Entrée",
+            "name": "ZOO_ENTREE",
+            "id": 1059,
+            "icon": "resizeimg.php?img=Images%2Fentree.gif&size=24"
+        },
+        "fromid": "1059",
+        "icon": "resizeimg.php?img=Images%2Fentree.gif&size=24",
+        "initid": 1289,
+        "lastAccessDate": "2014-12-16 16:51:42",
+        "lastModificationDate": "2014-12-16 16:52:06",
+        "lmodify": "Y",
+        "locked": 0,
+        "name": null,
+        "note": {
+            "id": 0,
+            "title": ""
+        },
+        "owner": "1",
+        "postitid": null,
+        "prelid": null,
+        "profid": "1084",
+        "revdate": "2014-12-16 16:52:06",
+        "revision": 0,
+        "revisionData": {
+            "isModified": true,
+            "id": 1289,
+            "number": 0,
+            "createdBy": {
+                "id": 1008,
+                "title": "Master Default",
+                "icon": "resizeimg.php?img=Images%2Fdynacase-iuser.png&size=24"
+            }
+        },
+        "security": {
+            "lock": {
+                "id": 0
+            },
+            "readOnly": false,
+            "fixed": false,
+            "profil": {
+                "id": 1084,
+                "icon": "resizeimg.php?img=Images%2Fprofil.gif&size=24",
+                "type": "linked",
+                "activated": true,
+                "title": "Caisse"
+            },
+            "confidentiality": "public"
+        },
+        "status": "alive",
+        "tags": [],
+        "type": "document",
+        "usage": "normal",
+        "usefor": "N",
+        "version": null,
+        "viewController": {
+            "id": 0,
+            "title": ""
+        },
+        "wid": null,
+        "workflow": {
+            "id": 0,
+            "title": ""
+        }
+    }
+
 ## Formatage des attributs {#core-ref:683390ec-6b17-4ade-be6e-6085f4893f7f}
 
 Les valeurs des attributs se placent dans le tableau "attributes". Chacun des
-attribut a un champ "value" qui indique la valeur brute et "displayValue" qui
-indique la valeur affichable.  Pour ajouter les attributs à formater  il faut
+attributs a un champ "value" qui indique la valeur brute et "displayValue" qui
+indique la valeur affichable.  Pour ajouter les attributs à formater, il faut
 utiliser la méthode "addAttribute".
 
     [php]
-    $fl=new FormatCollection();
-    $fl->useCollection($dl);
-    $fl->addAttribute("tst_title")->addAttribute("tst_double");
-    $r=$fl->render();
+    $formatCollection=new FormatCollection();
+    $formatCollection->useCollection($documentList);
+    $formatCollection->addAttribute("tst_title")->addAttribute("tst_double");
+    $r=$formatCollection->render();
 
 Extrait de la partie "attributes"
 
@@ -122,20 +267,21 @@ Extrait de la partie "attributes"
                             ["displayValue"] => "0,00"
                         )
 
-Si un attribut n'a pas de valeur, le formatage sera "null" quelque soit le type
-d'attribut. Si un attribut n'existe pas la structure (value, displayValue) sera
+Nota bene : Si un attribut n'a pas de valeur, le formatage sera "null" quelque soit le type
+d'attribut. 
+Si un attribut n'existe pas la structure (value, displayValue) sera
 remplie avec la variable identifiée par la méthode "::setNc()".
 
     [php]
-    $s=new SearchDoc('',"DIR");
-    $s->setObjectReturn();
-    $dl=$s->search()->getDocumentList();
-    $fl=new FormatCollection();
-    $fl->useCollection($dl);
-    $fl->setNc("nc");
-    $fl->addProperty($fl::propState);
-    $fl->addAttribute("tst_title")->addAttribute("ba_desc");
-    $r=$fl->render();
+    $searchDoc=new SearchDoc('',"DIR");
+    $searchDoc->setObjectReturn();
+    $documentList=$searchDoc->search()->getDocumentList();
+    $formatCollection=new FormatCollection();
+    $formatCollection->useCollection($documentList);
+    $formatCollection->setNc("nc");
+    $formatCollection->addProperty($formatCollection::propState);
+    $formatCollection->addAttribute("tst_title")->addAttribute("ba_desc");
+    $r=$formatCollection->render();
 
 
 Exemple avec un attribut "vide" (ba_desc) et un attribut inexistant.
@@ -153,7 +299,6 @@ Exemple avec un attribut "vide" (ba_desc) et un attribut inexistant.
 
 Si l'option "showempty" est indiquée dans l'attribut, le rendu d'une valeur
 nulle sera remplacée par la valeur de l'option.
-
 
 ## Rendu des attributs {#core-ref:f62199d8-8388-48a2-b79a-327307b58a86}
 
@@ -354,3 +499,88 @@ tableaux. Cela est limité à l'attribut docid.
                        ["value"] => 86854
                        ["displayValue"] => "Test 2"
                    )
+
+## Hook de rendu {#core-ref:d25bfead-3edf-4d35-abff-f4892b0237f2}
+
+Le rendu proposé par la classe n'est pas toujours le rendu attendu par un outil externe, il est possible de modifier
+celui-ci en utilisant les hook de rendu.
+
+### Hook de document {#core-ref:9a0d523c-bbd2-45d4-beb0-7d06d5a7a41f}
+
+Il est possible d'inscrire un hook qui est appliqué après le rendu de chaque document pour modifier le tableau formaté produit. 
+
+Exemple, ajout d'une URI particulière :
+
+    [php]
+    $formatCollection->setDocumentRenderHook(function ($values, \Doc $document) {
+        $values["uri"] = sprintf("masuperurl.com/$s", $document->getPropertyValue("initid");
+        return $values;
+    });
+
+Le hook s'ajoute à l'aide de la fonction `setDocumentRenderHook` celle-ci prend en entrée un callable et l'exécute à
+chaque rendu de document. La fonction reçoit en entrée : 
+
+* values : le tableau de valeur calculé,
+* document : l'objet document en cours.
+
+Elle doit retourner l'objet values modifié.
+
+### Hook d'attribut {#core-ref:731be72d-8d27-4da3-a969-715347db4b7f}
+
+Il est possible d'inscrire un hook qui est appliqué après le rendu de chaque attribut pour modifier le rendu d'attribut produit. 
+
+Exemple, uniformisation des valeurs vides :
+
+    [php]
+    $formatCollection->setAttributeRenderHook(function ($attributeValue, $attribute) {
+         if ($attributeValue === null) {
+             /**
+              * @var \NormalAttribute $attribute
+              */
+             if ($attribute->isMultiple()) {
+                 $attributeValue = array();
+             } else {
+                 $attributeValue = new \StandardAttributeValue($attribute, null);
+             }
+         }
+         return $attributeValue;
+     });
+
+Le hook s'ajoute à l'aide de la fonction `setAttributeRenderHook` celle-ci prend en entrée un callable et l'exécute à
+chaque rendu d'attribut. La fonction reçoit en entrée : 
+
+* attributeValue : la valeur de l'attribut calculé,
+* attribute : l'objet attribut en cours,
+* document : l'objet document en cours.
+
+Elle doit retourner l'objet attributeValue modifié.
+
+### Hook de propriété {#core-ref:ef73ccba-b9f2-48fd-8d37-dcb75a4cc7e2}
+
+Il est possible d'inscrire un hook qui est appliqué après le rendu de chaque propriété pour modifier le rendu de la propriété. 
+
+Exemple, passage à false de la propriété state pour les documents n'ayant pas d'état :
+
+    [php]
+    $formatCollection->setPropertyRenderHook(function ($propertyValue, $propertyId) {
+         if ($propertyId === "state" !$propertyValue->reference) {
+             $propertyValue = false;
+         }
+         return $propertyValue;
+     });
+
+Le hook s'ajoute à l'aide de la fonction `setPropertyRenderHook` celle-ci prend en entrée un callable et l'exécute à
+chaque rendu de propriété. La fonction reçoit en entrée : 
+
+* propertyValue : la valeur de la propriété calculée,
+* propertyId : identifiant de la propriété en cours,
+* document : l'objet document en cours.
+
+Elle doit retourner l'objet propertyValue modifié.
+
+<!-- links -->
+
+[ClassDocumentList]: #core-ref:23c71c28-dbce-4d34-819a-50d5bc4a38c3
+[ClassSearchDoc]: #core-ref:a5216d5c-4e0f-4e3c-9553-7cbfda6b3255
+[intro_collection]: #core-ref:a2c4bd53-c31f-4448-82e4-7ec1d2f7f346
+[propriete_doc]: #core-ref:9aa8edfa-2f2a-11e2-aaec-838a12b40353
