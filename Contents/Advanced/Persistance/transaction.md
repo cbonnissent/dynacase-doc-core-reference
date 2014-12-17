@@ -37,7 +37,7 @@ Les méthodes de point de sauvegarde sont accessibles depuis tout objet héritan
 de `DbObj` notamment les classes [Doc][doc] et [Action][action].
 
 
-## savePoint()
+## savePoint() {#core-ref:ec130ebd-ad78-40ea-9fa3-3b9ec076caa1}
 
 
     string savePoint(string $point)
@@ -53,7 +53,7 @@ Note : Comme indiqué dans la [documentation de postgresql][savepoint], si le
 même nom est utilisé, l'index du point pour le commit ou le rollback est
 déplacé.
 
-## commitPoint()
+## commitPoint() {#core-ref:0bc23a2a-0266-4323-8b72-07276f118c3a}
 
     string commitPoint(string $point)
 
@@ -66,7 +66,7 @@ confirmée ([`COMMIT`][commit]);
 Elle retourne une erreur si le point de sauvegarde n'a pas été posé au préalable.
 
 
-## rollbackPoint()
+## rollbackPoint() {#core-ref:6e33c983-90dd-42e1-8f9a-d249d504225b}
 
 
     string rollbackPoint(string $point)
@@ -80,9 +80,9 @@ abandonnée (`ROLLBACK`);
 Elle retourne une erreur si le point de sauvegarde n'a pas été posé au préalable.
 
 
-## Exemples
+## Exemples {#core-ref:7e7d0d8e-a723-4e19-9cb2-03edca023b93}
 
-### Annulation d'une requête intermédiaire
+### Annulation d'une requête intermédiaire {#core-ref:28da1c12-6066-4019-ae37-d9dfb7329e5e}
 
 
     [php]
@@ -98,10 +98,10 @@ Elle retourne une erreur si le point de sauvegarde n'a pas été posé au préal
     $document->rollbackPoint("Two"); // annulation de toutes les requêtes depuis le point "Two"
     
     $document->commitPoint("One"); // acquittement des requêtes depuis le point "One"
-    // le document en BD a maintenant comme nom "Test One"
+    // le document en BdD a maintenant comme nom "Test One"
     // ATTENTION : le document conserve en mémoire sa dernière valeur "Test two".
 
-### Avec plusieurs documents
+### Avec plusieurs documents {#core-ref:3b5dbe4c-0063-4131-a63f-b5f819b69b52}
 
     [php]
     include_once("FDL/Class.Doc.php");
@@ -123,7 +123,7 @@ Elle retourne une erreur si le point de sauvegarde n'a pas été posé au préal
     $document1->rollbackPoint("Two"); // annulation de toutes les requêtes depuis le point "Two"
     $document1->commitPoint("One"); // acquittement des requêtes depuis le point "One"
     
-    // le document1 en BD a maintenant comme nom "Test One"
+    // le document1 en BdD a maintenant comme nom "Test One"
     // les document2 et document3 n'ont pas été modifiés
 
 Note : Comme indiqué précédemment, ces méthodes ne sont pas liées à l'objet. Le
@@ -155,7 +155,7 @@ ambiguë la portée de cette méthode.
 
 
 
-### Confirmation du point d'entrée initial
+### Confirmation du point d'entrée initial {#core-ref:9ad8e5bf-de48-4019-b68e-fbcac33a0869}
 
 Néanmoins, il n'est pas obligatoire d'appliquer un *commit* ou un *rollback* sur
 tous les points, mais il est obligatoire de le faire au moins sur le premier.
@@ -179,11 +179,11 @@ tous les points, mais il est obligatoire de le faire au moins sur le premier.
 
 le document a maintenant comme nom "Test One" 
 
-## Avertissements
+## Avertissements {#core-ref:827fe5e2-8101-4386-89c7-02d8ae2aadfb}
 
 Ce mécanisme est utilisé lors de l'importation de documents afin d'annuler
-l'ensemble de l'importation lorsqu'une erreur est détectée.  Les [hameçons
-utilisés][hookimport] lors de l'importation sont donc exécutées dans une transaction.
+l'ensemble de l'importation lorsqu'une erreur est détectée.  Les [hameçons|hooks
+utilisés][hookimport] lors de l'importation sont donc exécutés dans une transaction.
 
 
 <!-- links -->
