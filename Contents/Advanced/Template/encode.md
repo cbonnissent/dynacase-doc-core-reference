@@ -1,6 +1,6 @@
 # Encodage pour format HTML et XML {#core-ref:751e00d9-eec7-41b7-835f-14df8c0b7821}
 
-## Introduction
+## Introduction {#core-ref:bf0ba9b1-7c11-4555-80ac-77f85e99980a}
 
 Lors de la génération d'une page HTML ou XML contenant des données externes,
 il est important d'encoder correctement les données externes de tel manière
@@ -18,7 +18,7 @@ comme du texte.
 On peut donc les considérer comme une protection contre les failles de types 
 [XSS][XSS].
 
-## Avertissements
+## Avertissements {#core-ref:cac825a6-f6ca-4852-b144-4969a08620b3}
 
 Les méthodes [Layout::eSet()][eSet], [Layout::eSetBlockData()][eSetBlockData] ne
 doivent être utilisées que dans le cas d'affectation d'une variable dont on
@@ -30,7 +30,7 @@ Dans le cas de la production de XML, il faut penser à [ajouter][inclusion] les
 
 De plus, les `&` dans les URL doivent être encodés en `&amp;`
 
-## Exemple
+## Exemple {#core-ref:4046fa08-19b9-40e2-90e1-22d4edf4787f}
 
 Soit une action permettant de montrer à un utilisateur le titre de son 
 animal préféré, le code est le suivant :

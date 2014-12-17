@@ -73,7 +73,7 @@ N/A
 
 ## Exemples {#core-ref:70b7105c-4a8d-4c6a-a23e-ecf3b44d285c}
 
-### Exemple simple
+### Exemple simple {#core-ref:7876fee5-9d5e-4958-84d8-413ccfb6edc9}
 
 Feuille de style CSS `MY_APP/Layout/mycss.css` :
 
@@ -132,7 +132,7 @@ système. Le fichier css permet d'être mis en cache par le navigateur jusqu'à 
 cette clef soit modifiée. Cette clef est modifiée à chaque modification de module
 (installation ou  mise à jour).
 
-### Exemple parse
+### Exemple parse {#core-ref:fd4751d0-7445-4976-9fa4-d909d13fce08}
 
 Feuille de style CSS `MY_APP/Layout/myParsecss.css` :
 
@@ -195,7 +195,7 @@ Résultat du rendu de la vue de l'action :
 L'url composée dans le fichier contient une clef propre à l'utilisateur et à sa
 session. Le fichier css est de nouveau téléchargé à chaque changement de session.
 
-### Exemple Pack
+### Exemple Pack {#core-ref:5a147f43-d468-4c03-b01f-c665a9ffcd92}
 
 Feuille de style CSS `MY_APP/Layout/css_1.css` :
 

@@ -1227,6 +1227,8 @@ book:
       content:  "Advanced/Persistance/querydb.md"
     - level:   3
       content:  "Advanced/Persistance/transaction.md"
+      flags:
+        update: "mis à jour"
     - level:   2
       content:  "Advanced/Persistance/user.md"
       flags:

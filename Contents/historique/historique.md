@@ -4,16 +4,17 @@ Ce chapitre contient un descriptif des améliorations entre les releases de
 Dynacase.
 
 
-## Édition 7
+## Édition 7 {#core-ref:67c3551d-d99a-43c9-b837-5d93439bff8e}
 
-|                  Modifications                   |            Chapitre            |                   Version                    |
-| :----------------------------------------------- | :----------------------------- | :------------------------------------------- |
-| Ajout callstack dans le retour d'erreur de wsh   | [Erreur wsh][wsherror]         | <span class="flag update">Mise à jour</span> |
-| Précisions sur les fonctions de transaction      | [Transactions][savepoint]      | <span class="flag update">Mise à jour</span> |
-| Précisions sur les minuteurs avec date dynamique | [Minuteur dynamique][timerdyn] | <span class="flag update">Mise à jour</span> |
+|                  Modifications                   |            Chapitre            |                    Version                     |
+| :----------------------------------------------- | :----------------------------- | :--------------------------------------------- |
+| Ajout callstack dans le retour d'erreur de wsh   | [Erreur wsh][wsherror]         | <span class="flag update">Mise à jour</span>   |
+| Précisions sur les fonctions de transaction      | [Transactions][savepoint]      | <span class="flag update">Mise à jour</span>   |
+| Précisions sur les minuteurs avec date dynamique | [Minuteur dynamique][timerdyn] | <span class="flag update">Mise à jour</span>   |
 | Précisions sur les mécanismes d'exception        | [Exception][Exception]         | <span class="flag new">Nouveau chapitre</span> |
+| Ajout verrouillage de transaction                | [Transaction][Transaction]     | <span class="flag update">Mise à jour</span>   |
 
-## Édition 6
+## Édition 6 {#core-ref:24bca82b-3ce1-49df-b866-2442d8cfec64}
 
 |                                Modifications                                |                     Chapitre                     |                    Version                     |
 | :-------------------------------------------------------------------------- | :----------------------------------------------- | :--------------------------------------------- |
@@ -33,7 +34,7 @@ Dynacase.
 |                                                                             |                                                  |                                                |
 
 
-## Édition 5
+## Édition 5 {#core-ref:2c9c3f1e-d1b6-4d13-84b2-a3e3cbf0fa53}
 
 |              Modifications              |              Chapitre              |                   Version                    |
 | :-------------------------------------- | :--------------------------------- | :------------------------------------------- |
@@ -162,3 +163,4 @@ retour d'erreur.
 [savepoint]:        #core-ref:32e0a8cb-0e8b-4f77-a62d-a45da16d39a8
 [timerdyn]:         #core-ref:386637d4-ab5b-4b3b-bf80-f2e6c226c555
 [Exception]:        #core-ref:4bc5157a-5dbc-4d87-b1e5-ece7e104dc20
+[Transaction]:      #core-ref:ec130ebd-ad78-40ea-9fa3-3b9ec076caa1

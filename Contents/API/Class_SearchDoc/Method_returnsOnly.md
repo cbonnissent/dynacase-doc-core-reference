@@ -57,7 +57,7 @@ Aucun.
 
 ## Exemples  {#core-ref:1c4b7489-0f78-41bf-9788-d83f62e88da1}
 
-### Retour normal
+### Retour normal {#core-ref:e5afd69d-359a-49d1-b91d-8fbe7e20256c}
 
     [php]
     $s=new SearchDoc("","ZOO_ANIMAL");
@@ -109,7 +109,7 @@ Résultat :
     1420) Théodor    : 1295
     1421) Éléonore   : 1295
 
-## Retour minimaliste
+## Retour minimaliste {#core-ref:fe7f8aa2-3a23-4f1e-95d2-4fc4eec98fd5}
 
 Dans cet exemple, seules les quatre propriétés nécessaires sont retournées.
 
@@ -167,7 +167,7 @@ Résultat :
 **Note** : Puisque `an_espece` n'est pas demandé par `returnsOnly`, sa valeur
 n'est pas disponible.
 
-### Retour spécifique
+### Retour spécifique {#core-ref:0bc6aae0-c657-42ff-bc2a-bb639d49b9cd}
 
     [php]
     $s=new SearchDoc("","ZOO_ANIMAL");

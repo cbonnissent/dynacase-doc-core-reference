@@ -64,7 +64,7 @@ Aucun.
 
 ## Exemples  {#core-ref:9529f1c5-b423-46d3-b361-a2eadc6d4c4d}
 
-### Attacher un minuteur maintenant
+### Attacher un minuteur maintenant {#core-ref:7956a938-b67f-4726-9b1e-4819a2e40c48}
 
 Soit le minuteur n°13509 suivant :
 
@@ -121,7 +121,7 @@ Résultat :
 La date d'exécution est positionné à la date de l'attachement plus une journée
 et 3 heures (`tm_delay` + `tm_refhourdelta`).
 
-### Attachement avec une date donnée 
+### Attachement avec une date donnée  {#core-ref:4f86ec55-a24d-4a14-a298-9f23d690da76}
 
 Attachement du minuteur n°13509 : 
 
