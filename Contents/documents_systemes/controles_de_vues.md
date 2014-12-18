@@ -40,6 +40,10 @@ un caractère *affichable*
     que par programmation.
     
     Si la vue est affichable, alors elle sera présentée au moyen de son libellé.
+    
+    <span class="flag inline nota-bene"/> Si la vue affichable est la vue d'édition par
+    défaut, celle-ci est affichée à la place du menu "Modifier" avec le nom de la
+    vue. Elle n'est pas affichée ailleurs même si le paramètre "menu" est défini.
 
 un nom de *menu*
 :   si la vue est affichable, indique le libellé du menu sous lequel doit être
