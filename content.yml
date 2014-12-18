@@ -726,6 +726,11 @@ book:
     - level:   3
       element: "chapter"
       content:  "API/Class_Log/Method_warning.md"
+    - level:   3
+      element: "chapter"
+      content:  "API/Class_Log/Method_setLogLevel.md"
+      flags:
+        new:   "nouveauté"
     - level:   2
       element: "chapter"
       content:  "API/Class_ApplicationParameterManager.md"

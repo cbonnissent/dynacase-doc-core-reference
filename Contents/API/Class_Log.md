@@ -6,8 +6,9 @@ La classe `Log` permet d'envoyer des messages dans un journal d'événements
 </div>
 
 Chaque message comporte un niveau de log, et le [paramètre applicatif
-`CORE_LOGLEVEL`][CORE_LOGLEVEL] permet de filtrer quels messages seront
-journalisés par rapport à ce niveau de log.
+`CORE_LOGLEVEL`][CORE_LOGLEVEL] (ou la méthode
+[`Log::setLogLevel()`][Log::setLogLevel]) permet de filtrer quels messages
+seront journalisés par rapport à ce niveau de log.
 
 Table de correspondance entre le niveau de log et le code de niveau de log :
 
@@ -22,12 +23,19 @@ Table de correspondance entre le niveau de log et le code de niveau de log :
 | Log::TRACE       | T                     |
 | Log::WARNING     | W                     |
 
-La valeur par défaut de `CORE_LOGLEVEL` étant `IWE`, seuls les messages émis
-avec les niveaux de log `Log::INFO`, `Log::WARNING` et `Log::ERROR` seront
-journalisés.
+La valeur par défaut du filtre de messages de la classe `Log` est spécifiée par
+le [paramètre applicatif `CORE_LOGLEVEL`][CORE_LOGLEVEL].
 
-Pour journaliser tous les messages, il faut positionner `CORE_LOGLEVEL` à la
-valeur `CDOEFITW` (liste de tous les codes existants).
+La valeur du filtre de messages peut ensuite être modifiée avec la méthode
+[`Log::setLogLevel()`][Log::setLogLevel].
+
+La valeur par défaut du [paramètre applicatif `CORE_LOGLEVEL`][CORE_LOGLEVEL]
+étant `IWE`, seuls les messages émis avec les niveaux de log `Log::INFO`,
+`Log::WARNING` et `Log::ERROR` seront journalisés.
+
+Pour journaliser tous les messages, il faut positionner `CORE_LOGLEVEL` (ou
+faire un appel à [`Log::setLogLevel()`][Log::setLogLevel]) avec la valeur
+`CDOEFITW` (liste de tous les codes existants).
 
 ## Constructeur {#core-ref:e15afe8c-a00b-4a65-9c05-8d3852ee7179}
 
@@ -90,3 +98,4 @@ et dans la documentation des méthodes).
 <!-- links -->
 [syslog]: http://en.wikipedia.org/wiki/Syslog
 [CORE_LOGLEVEL]: #core-ref:c579e530-ebfd-442b-9c25-886f19507931
+[Log::setLogLevel]: #core-ref:c654a501-5cfa-4951-a5b0-8e7be4741fa0
