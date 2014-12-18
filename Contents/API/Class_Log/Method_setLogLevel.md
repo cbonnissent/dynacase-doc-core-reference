@@ -19,7 +19,7 @@ Aucun.
 ## Liste des paramètres {#core-ref:dc7cb451-42ee-4629-8ce3-c3dad9a83421}
 
 (string) `logLevel`
-:   Une chaîne contenant la liste des codes des message à journaliser (voir
+:   Une chaîne contenant la liste des codes des messages à journaliser (voir
     [classe `Log`][log]).
 
 ## Valeur de retour {#core-ref:8c867e10-fd13-44cd-95c9-f4a695b294e3}
@@ -38,8 +38,8 @@ Aucun.
 
     [php]
     $log = new Log();
-    /* Ne logger que les messages de debug */
-    $log->setLogLevel("D");
+    /* Ne logger que les messages de debug et d'erreur*/
+    $log->setLogLevel("DE");
     $log->info("You won't see me!");
     $log->debug("I was here!");
 

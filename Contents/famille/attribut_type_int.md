@@ -2,7 +2,8 @@
 
 ## Description {#core-ref:d66e4885-c1d5-41da-ba18-599d2ef37bea}
 
-Les attributs de type *int* permettent d'insérer un nombre entier sur 32 bits signés.
+Les attributs de type *int* permettent d'insérer un nombre entier sur 32 bits
+signés.
 
 ## Représentation {#core-ref:8342b998-5707-4d2d-9b47-ef2319e80fc7}
 
