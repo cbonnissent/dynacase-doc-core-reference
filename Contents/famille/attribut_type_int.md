@@ -30,6 +30,8 @@ Les attributs de type *int* permettent d'insérer un nombre entier sur 32 bits s
 
 ## Comportement {#core-ref:eda3132e-f8a6-421b-ae07-d36615b705ec}
 
+<span class="flag from release">3.2.18</span>
+
 Lors de la sauvegarde, les vérifications suivantes sont faites :
 
 *   Le nombre est un entier compris entre -2 147 483 648 et +2 147 483 647

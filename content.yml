@@ -84,6 +84,8 @@ book:
       content:  "famille/attribut_type_image.md"
     - level:   3
       content:  "famille/attribut_type_int.md"
+      flags:
+        update : "mis à jour"
     - level:   3
       content:  "famille/attribut_type_longtext.md"
     - level:   3
