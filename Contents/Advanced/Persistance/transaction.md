@@ -70,6 +70,9 @@ les conditions d'acquisition du verrou. Le paramètre `exclusiveLock` identifie
 une ressource (forme numérique) et le paramètre `exclusiveLockPrefix` indique un
 contexte (chaîne limitée à 4 caractères).
 
+Le verrou est enlevé lors de la fin de la transaction, c'est à dire lors du
+commit ou du rollback du premier point.
+
 Exemple :
 
     [php]
