@@ -433,6 +433,15 @@ FormatCollection.
 
 La valeur formatée donne le libellé de l'énuméré.
 
+### type `htmltext` {#core-ref:8564f4bc-d65d-43b4-8908-b510598e2a3c}
+
+Si le flag `stripHtmlTags` (méthode `stripHtmlTags`) est à `true` les balises HTML sont supprimées dans la `displayValue`.
+
+### type `longtext` {#core-ref:0dca5896-2598-4f7c-bb81-1cf4a82c7024}
+
+Si le longtexte est dans un array les séparateurs de cellules sont des saut de lignes `\n`). Vous pouvez les configurer
+à l'aide de la fonction `setLongtextMultipleBrToCr`. 
+
 ### Autres types {#core-ref:45f81665-a96a-406b-8722-a161340b15eb}
 
     [php]
