@@ -19,7 +19,7 @@ Les méthode surchargeables appelées lors de la création d'un document sont :
     *   [`Doc::postCreated()`][doc_postcreated]
     *   [`Doc::preRefresh()`][doc_prerefresh]
     *   [`Doc::postRefresh()`][doc_postrefresh]
-    *   [`Doc::postRefresh()`][doc_poststore]
+    *   [`Doc::postStore()`][doc_poststore]
 *   Lors de la création avec [`Doc::add()`][dbobjadd]
     *   [`Doc::preCreated()`][doc_precreated]
     *   [`Doc::postCreated()`][doc_postcreated]
@@ -32,7 +32,7 @@ Les méthode surchargeables appelées lors de la modification d'un document sont
     *   [`Doc::preStore()`][doc_prestore]
     *   [`Doc::preRefresh()`][doc_prerefresh]
     *   [`Doc::postRefresh()`][doc_postrefresh]
-    *   [`Doc::postRefresh()`][doc_poststore]
+    *   [`Doc::postStore()`][doc_poststore]
 *   Lors de la modification avec `Doc::modify()`
     *   aucune
 
