@@ -17,6 +17,8 @@ Dynacase.
 | Nouveau test d'enregistrement des entiers                                        | [Type int][typeint]                         | <span class="flag new">Nouveauté</span>        |
 | Nouveaux hook dans formatCollection                                              | [Classe FormatCollection][formatcollection] | <span class="flag new">Nouveauté</span>        |
 | Modification du rendu (formatCollection) des longtext présents dans les tableaux | [FormatCollection - longtext][fmtlongtext]  | <span class="flag update">Mise à jour</span>   |
+| Importation d'attribute en visibility I                                          | [Importation][importwsh]                    | <span class="flag update">Mise à jour</span>   |
+
 
 ## Édition 6 {#core-ref:24bca82b-3ce1-49df-b866-2442d8cfec64}
 
@@ -172,3 +174,4 @@ retour d'erreur.
 [typeint]:          #core-ref:eda3132e-f8a6-421b-ae07-d36615b705ec
 [formatcollection]: #core-ref:d25bfead-3edf-4d35-abff-f4892b0237f2
 [fmtlongtext] :     #core-ref:0dca5896-2598-4f7c-bb81-1cf4a82c7024
+[importwsh]:        #core-ref:1c97f553-dcba-454e-96a0-8059230065b3
