@@ -61,6 +61,14 @@ auquel enregistrer le fichier de log :
     IMPORT COUNT KO : 1
     IMPORT END OK : 02/07/2010 17:10:31
 
+
+<span class="flag from release inline">3.2.18</span> Les documents ayant des
+attributs en [visibilité][visibility] "I" sont importés sans tenir compte de
+cette contrainte. De même, depuis le centre d'administration, les documents
+importés ne vérifient pas la contrainte de visibilité. Par contre, en dehors du
+centre d'administration, la contrainte de visibilité est vérifiée.
+
+
 ## Options pour les importations de familles {#core-ref:330f2421-4cc5-458a-8502-c0d715e612a6}
 
 L'option `reset` permet d'influer sur l'interprétation de l'importation en
@@ -92,3 +100,4 @@ fichier d'importation ne sera ajouté ou modifié.
 [import_archive]: #core-ref:021b7db1-7baf-48c4-8eb9-4a388355dd86
 [resetfam]:     #core-ref:5c661733-772d-42b8-8b3e-b70453ddfd33
 [importdoc]:    #core-ref:a14d9475-0431-4aa3-853d-810b61e355a7
+[visibility]:   #core-ref:3e67d45e-1fed-446d-82b5-ba941addc7e8
