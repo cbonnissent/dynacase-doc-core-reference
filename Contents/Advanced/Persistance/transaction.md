@@ -18,7 +18,7 @@ Ces méthodes utilisent, les fonctions [`savepoint`][savepoint],
 
 La méthode `savePoint()` ouvre automatiquement une transaction  (`BEGIN`), si
 celle-ci n'est pas encore ouverte. Les méthodes `rollbackPoint()` et
-`commitPoint()` ferme la transaction si le point de sauvegarde est le premier
+`commitPoint()` ferment la transaction si le point de sauvegarde est le premier
 des points posés.
 
 Les points de sauvegarde ne sont pas liés à un objet mais impactent **toutes les
@@ -28,9 +28,9 @@ utilisant l'api sont impactées ([Doc::store()][docstore],
 [simpleQuery][simplequery], DbObj::modify(), ...).
 
 Lorqu'un premier *savePoint* est déclaré, il faut **obligatoirement** avoir un
-commitPoint ou un rollbackPoint du premier point. Dans le cas contraire toutes
-les modifications sur la base de données, depuis le premier point de sauvegarde,
-sont abandonnées.
+`commitPoint` ou un `rollbackPoint` du premier point. Dans le cas contraire
+toutes les modifications sur la base de données, depuis le premier point de
+sauvegarde, sont abandonnées.
 
 
 Les méthodes de point de sauvegarde sont accessibles depuis tout objet héritant
@@ -40,9 +40,7 @@ de `DbObj` notamment les classes [Doc][doc] et [Action][action].
 ## savePoint() {#core-ref:ec130ebd-ad78-40ea-9fa3-3b9ec076caa1}
 
 
-    string savePoint(string $point, 
-                        int $exclusiveLock = 0, 
-                     string $exclusiveLockPrefix = '')
+    string savePoint(string $point)
 
 
 Cette méthode ouvre une transaction ([`BEGIN`][begin]) si une transaction n'est
@@ -50,25 +48,31 @@ pas déjà en cours.
 
 Elle ajoute un point de sauvegarde avec l'identifiant donné en paramètre.
 
-
-
-Elle retourne une erreur si le point de sauvegarde n'a pas pu être posé.
+Elle retourne une erreur (erreur donnée par postgresSql) si le point de
+sauvegarde n'a pas pu être posé.
 
 Note : Comme indiqué dans la [documentation de postgresql][savepoint], si le
 même nom est utilisé, l'index du point de sauvegarde est déplacé.
 
 
-### Verrouillage de la transaction  {#core-ref:14fd71fa-1944-4016-80ab-6616e3423ce7}
+## lockPoint() Verrouillage de la transaction  {#core-ref:14fd71fa-1944-4016-80ab-6616e3423ce7}
 
-<span class="flag from release inline">3.2.18</span>Les paramètres optionnels
-`exclusiveLock` et `exclusiveLockPrefix` permettent d'indiquer que la
-transaction devient exclusive. Si `exclusiveLock` est différent de zéro, un
-[verrou][pgadlock] est posé sur ce point et un autre processus doit attendre
-sur ce même point que les données liées à la transaction soit enregistrées sur
-la base de données. Les paramètres `exclusiveLock` et `exclusiveLockPrefix` sont
-les conditions d'acquisition du verrou. Le paramètre `exclusiveLock` identifie
-une ressource (forme numérique) et le paramètre `exclusiveLockPrefix` indique un
-contexte (chaîne limitée à 4 caractères).
+
+    string lockPoint(   int $exclusiveLock , 
+                     string $exclusiveLockPrefix = '')
+
+<span class="flag from release inline">3.2.18</span> La méthode `lockPoint`
+indique que la transaction devient exclusive. Un [verrou][pgadlock]
+([pg_advisory_xact_lock][pgxactadlock]) est posé sur ce point et un autre
+processus doit attendre sur ce même point que les données liées à la transaction
+soient enregistrées sur la base de données. Les paramètres `exclusiveLock` et
+`exclusiveLockPrefix` sont les conditions d'acquisition du verrou. Le paramètre
+`exclusiveLock` identifie une ressource (forme numérique) et le paramètre
+`exclusiveLockPrefix` indique un contexte (chaîne limitée à 4 caractères).
+
+L'appel de cette méthode doit obligatoirement être fait dans une transaction
+`savePoint`. Dans la cas contraire, une exception de type `Dcp\Db\Exception` est
+levée.
 
 Le verrou est enlevé lors de la fin de la transaction, c'est à dire lors du
 commit ou du rollback du premier point.
@@ -78,13 +82,13 @@ Exemple :
     [php]
     $document=new_doc("", 1234);
     $document->savePoint("myUpdate", $document->initid, "MyUp");
+    $document->lockPoint($document->initid, "MyUp");
     // Un seul processus peut exécuter cette partie pour ce document
     $document->setValue("my_reference", 234);
     $document->myRecomputeCriticalRelation();
     
     $document->commitPoint("myUpdate");
     // Le verrou est relaché s'il s'agit du commit du premier save point
-
 
 
 ## commitPoint() {#core-ref:0bc23a2a-0266-4323-8b72-07276f118c3a}
@@ -215,9 +219,63 @@ le document a maintenant comme nom "Test One"
 
 ## Avertissements {#core-ref:827fe5e2-8101-4386-89c7-02d8ae2aadfb}
 
+### Importation de documents
+
 Ce mécanisme est utilisé lors de l'importation de documents afin d'annuler
-l'ensemble de l'importation lorsqu'une erreur est détectée.  Les [hameçons|hooks
+l'ensemble de l'importation lorsqu'une erreur est détectée.  Les [hameçons (hooks)
 utilisés][hookimport] lors de l'importation sont donc exécutés dans une transaction.
+
+### Interblocage
+
+L'utilisation des verrous peut engendrer des problèmes d'[interblocage][mutext]
+(deadlock). Il est nécessaire d'être familier avec le système de sémaphores afin
+de minimiser le risque d'interblocage. Si toutefois un interblocage survient, une
+des deux connexions *Postgresql* est tuée par le serveur de base de données.
+
+Exemple minimaliste de 2 programmes lancés en parallèle pouvant aboutir à un
+interblocage.
+
+Programme 1 :
+
+    [php]
+    $document1 = new_doc("",8160); 
+    $document->savePoint("One");
+    $document->lockPoint(32,"my");
+    $document->setValue("my_title","Test one"); // ICI POSSIBLE SECTION INTERBLOQUE
+    $document->store();
+    $document->lockPoint(45,"my"); // Bloqué par processus 2
+    $document->commitPoint("One");
+
+
+Programme 2 :
+
+    [php]
+    $document1 = new_doc("",8162);
+    $document->savePoint("Two");
+    $document->lockPoint(45,"my");
+    $document->setValue("my_title","Test two"); // ICI POSSIBLE SECTION INTERBLOQUE
+    $document->store();
+    $document->lockPoint(32,"my"); // Bloqué par processus 1
+    $document->commitPoint("Two");
+
+
+
+
+## Points de sauvegarde utilisée par le système
+
+Les points de sauvegarde des méthodes ci-dessus sont libérés à la fin de la
+méthode elle-même.
+
+|               Méthode               |                                      Contexte d'utilisation                                     |    Composition de la clef    |  Composition du verrou  |
+| ----------------------------------- | ----------------------------------------------------------------------------------------------- | ---------------------------- | ----------------------- |
+| Doc::convert()                      | Conversion d'un document d'une famille vers une autre famille                                   | `"convert" + Doc::id`        | Pas de verrou           |
+| Doc::revise()                       | Révision de document / Changement d'état                                                        | `"revise" + Doc::id`         | Pas de verrou           |
+| Doc::updateVaultIndex()             | Enregistrement de nouveaux fichiers dans le document                                            | `uniqid("updateVaultIndex")` | `Doc::initid`, `"UPVI"` |
+| DocCtrl::computeDProfil()           | Enregistrement d'un document ayant un profil dynamique                                          | `uniqid("docperm")`          | `Doc::initid`, `"PERM"` |
+| DocRel::initRelations()             | Enregistrement d'un document ayant des relations modifiées                                      | `uniqid("initrelation")`     | `Doc::initid`, `"IREL"` |
+| UpdateAttribute::beginTransaction() | Mise à jour par lot d'attribut de document avec option de transaction                           | `"UPDATEATTR"`               | Pas de verrou           |
+| ImportDocuments::importDocuments    | Importation d'une liste de document en mode strict (annulation si une erreur détectée)          | `"importDocument"`           | Pas de verrou           |
+| DetailSearch::isValidPgRegex        | Vérification des critères de recherche lors de l'enregistrement d'une recherche ou d'un rapport | `"isValidPgRegex"`           | Pas de verrou           |
 
 
 <!-- links -->
@@ -227,12 +285,14 @@ utilisés][hookimport] lors de l'importation sont donc exécutés dans une trans
 [RollbackSQL]:          https://fr.wikipedia.org/wiki/Rollback_(base_de_donn%C3%A9es) "Wikipedia : Rollback"
 [savepoint]:            http://www.postgresql.org/docs/9.3/static/sql-savepoint.html "Postgresql : Savepoint"
 [simplequery]:          #core-ref:db34809e-c566-4a80-8b72-dc185c9de9e2
-[docstore]:           #core-ref:b8540d13-ece6-4e9e-9b72-6a56bca9da12
-[action]:           #core-ref:29553eba-bcea-4baf-bef8-103c3a3510fa
-[doc]:              #core-ref:1d557fb4-4eca-4ab8-a334-974fe563ddd2
+[docstore]:             #core-ref:b8540d13-ece6-4e9e-9b72-6a56bca9da12
+[action]:               #core-ref:29553eba-bcea-4baf-bef8-103c3a3510fa
+[doc]:                  #core-ref:1d557fb4-4eca-4ab8-a334-974fe563ddd2
 [begin]:                http://www.postgresql.org/docs/9.3/static/sql-begin.html "Postgresql : Begin"
-[rollback]:         http://www.postgresql.org/docs/9.3/static/sql-rollback-to.html "Postgresql : Rollback to"
-[release]:           http://www.postgresql.org/docs/9.3/static/sql-release-savepoint.html "Postgresql : Release savepoint"
-[hookimport]:       #core-ref:d3b06745-35c5-447c-9b88-01181736c21e
-[commit]:           http://www.postgresql.org/docs/9.3/static/sql-commit.html "Postgresql : Commit"
-[pgadlock]:         http://www.postgresql.org/docs/9.1/static/explicit-locking.html#ADVISORY-LOCKS "Postgresql Advisory locks"
+[rollback]:             http://www.postgresql.org/docs/9.3/static/sql-rollback-to.html "Postgresql : Rollback to"
+[release]:              http://www.postgresql.org/docs/9.3/static/sql-release-savepoint.html "Postgresql : Release savepoint"
+[hookimport]:           #core-ref:d3b06745-35c5-447c-9b88-01181736c21e
+[commit]:               http://www.postgresql.org/docs/9.3/static/sql-commit.html "Postgresql : Commit"
+[pgadlock]:             http://www.postgresql.org/docs/9.3/static/explicit-locking.html#ADVISORY-LOCKS "Postgresql Advisory locks"
+[pgxactadlock]:         http://www.postgresql.org/docs/9.3/static/functions-admin.html#FUNCTIONS-ADVISORY-LOCKS-TABLE "Postgresql Transaction Advisory locks"
+[mutext]:               http://fr.wikipedia.org/wiki/Exclusion_mutuelle "Wikipédia : Exclusion mutuelle"
