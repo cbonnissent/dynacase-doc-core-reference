@@ -75,7 +75,33 @@ Aucun.
 
 ## Notes {#core-ref:867fcba6-94e7-403e-a523-73e20583a25f}
 
-Aucune.
+Lorsque le retour est de type *objet documentaire*, les documents fournis par
+l'itération sont des références internes et cette référence est réutilisée par
+l'itérateur si le document est de la même famille qu'un document précédent dans
+l'itération.
+
+S'il est nécessaire de mémoriser un certain document durant l'itération, il est
+nécessaire de cloner l'objet sinon la variable sera modifiée lors des itérations
+suivantes.
+
+    [php]
+    $s=new SearchDoc("","DIR");
+    $s->setObjectReturn(true);
+    $documentList=$s->search()->getDocumentList();
+    $memoFolder=null;
+    foreach ($documentList as $docid=>$doc) {
+      if ($doc->name == "MYFOLDER") {
+         $memoFolder=$doc; // INCORRECT 
+      }
+    }
+    if (memoFolder) {
+      // memoFolder n'est pas forcément celui avec le nom "MYFOLDER"
+      printf("%d) %s (%s)", 
+             $memoFolder->id,
+             $memoFolder->getTitle(),
+             $memoFolder->getRawValue(\Dcp\AttributeIdentifiers\Dir::ba_title));
+     }
+
 
 ## Voir aussi {#core-ref:64551b8d-92e9-4814-9640-10f2ba0399b9}
 
