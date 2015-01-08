@@ -6,18 +6,19 @@ Dynacase.
 
 ## Édition 7 {#core-ref:67c3551d-d99a-43c9-b837-5d93439bff8e}
 
-|                                  Modifications                                   |                   Chapitre                  |                    Version                     |
-| :------------------------------------------------------------------------------- | :------------------------------------------ | :--------------------------------------------- |
-| Ajout callstack dans le retour d'erreur de wsh                                   | [Erreur wsh][wsherror]                      | <span class="flag update">Mise à jour</span>   |
-| Précisions sur les fonctions de transaction                                      | [Transactions][savepoint]                   | <span class="flag update">Mise à jour</span>   |
-| Précisions sur les minuteurs avec date dynamique                                 | [Minuteur dynamique][timerdyn]              | <span class="flag update">Mise à jour</span>   |
-| Précisions sur les mécanismes d'exception                                        | [Exception][Exception]                      | <span class="flag new">Nouveau chapitre</span> |
-| Ajout verrouillage de transaction                                                | [Transaction][Transaction]                  | <span class="flag update">Mise à jour</span>   |
-| Niveau de log paramétrable par instance                                          | [Log::setLogLevel][setloglevel]             | <span class="flag new">Nouveauté</span>        |
-| Nouveau test d'enregistrement des entiers                                        | [Type int][typeint]                         | <span class="flag new">Nouveauté</span>        |
-| Nouveaux hook dans formatCollection                                              | [Classe FormatCollection][formatcollection] | <span class="flag new">Nouveauté</span>        |
-| Modification du rendu (formatCollection) des longtext présents dans les tableaux | [FormatCollection - longtext][fmtlongtext]  | <span class="flag update">Mise à jour</span>   |
-| Importation d'attribute en visibility I                                          | [Importation][importwsh]                    | <span class="flag update">Mise à jour</span>   |
+|                                  Modifications                                   |                    Chapitre                   |                    Version                     |
+| :------------------------------------------------------------------------------- | :-------------------------------------------- | :--------------------------------------------- |
+| Ajout callstack dans le retour d'erreur de wsh                                   | [Erreur wsh][wsherror]                        | <span class="flag update">Mise à jour</span>   |
+| Précisions sur les fonctions de transaction                                      | [Transactions][savepoint]                     | <span class="flag update">Mise à jour</span>   |
+| Précisions sur les minuteurs avec date dynamique                                 | [Minuteur dynamique][timerdyn]                | <span class="flag update">Mise à jour</span>   |
+| Précisions sur les mécanismes d'exception                                        | [Exception][Exception]                        | <span class="flag new">Nouveau chapitre</span> |
+| Ajout verrouillage de transaction                                                | [Transaction][Transaction]                    | <span class="flag update">Mise à jour</span>   |
+| Niveau de log paramétrable par instance                                          | [Log::setLogLevel][setloglevel]               | <span class="flag new">Nouveauté</span>        |
+| Nouveau test d'enregistrement des entiers                                        | [Type int][typeint]                           | <span class="flag new">Nouveauté</span>        |
+| Nouveaux hook dans formatCollection                                              | [Classe FormatCollection][formatcollection]   | <span class="flag new">Nouveauté</span>        |
+| Modification du rendu (formatCollection) des longtext présents dans les tableaux | [FormatCollection - longtext][fmtlongtext]    | <span class="flag update">Mise à jour</span>   |
+| Importation d'attribute en visibility I                                          | [Importation][importwsh]                      | <span class="flag update">Mise à jour</span>   |
+| Précision sur l'itération de document avec SearchDoc                             | [SearchDoc::setObjectReturn][setobjectreturn] | <span class="flag update">Mise à jour</span>   |
 
 
 ## Édition 6 {#core-ref:24bca82b-3ce1-49df-b866-2442d8cfec64}
@@ -175,3 +176,4 @@ retour d'erreur.
 [formatcollection]: #core-ref:d25bfead-3edf-4d35-abff-f4892b0237f2
 [fmtlongtext] :     #core-ref:0dca5896-2598-4f7c-bb81-1cf4a82c7024
 [importwsh]:        #core-ref:1c97f553-dcba-454e-96a0-8059230065b3
+[setobjectreturn]:  #core-ref:867fcba6-94e7-403e-a523-73e20583a25f
