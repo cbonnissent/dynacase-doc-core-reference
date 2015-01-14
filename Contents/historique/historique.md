@@ -19,6 +19,7 @@ Dynacase.
 | Modification du rendu (formatCollection) des longtext présents dans les tableaux | [FormatCollection - longtext][fmtlongtext]    | <span class="flag update">Mise à jour</span>   |
 | Importation d'attribute en visibility I                                          | [Importation][importwsh]                      | <span class="flag update">Mise à jour</span>   |
 | Précision sur l'itération de document avec SearchDoc                             | [SearchDoc::setObjectReturn][setobjectreturn] | <span class="flag update">Mise à jour</span>   |
+| L'authentification par jetons n'émet plus de cookies de session                  | [Authentification par jetons][authtype_open]  | <span class="flag update">Mise à jour</span>   |
 
 
 ## Édition 6 {#core-ref:24bca82b-3ce1-49df-b866-2442d8cfec64}
@@ -177,3 +178,4 @@ retour d'erreur.
 [fmtlongtext] :     #core-ref:0dca5896-2598-4f7c-bb81-1cf4a82c7024
 [importwsh]:        #core-ref:1c97f553-dcba-454e-96a0-8059230065b3
 [setobjectreturn]:  #core-ref:867fcba6-94e7-403e-a523-73e20583a25f
+[authtype_open]: #core-ref:9edc8f2e-6929-11e2-8610-0021e9fffec1
