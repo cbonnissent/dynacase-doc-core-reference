@@ -25,5 +25,12 @@ Un jeton peut être paramétré pour n'être utilisable qu'avec une action bien
 définie, et empêcher ainsi qu'il ne soit utilisé pour exécuter une action non
 autorisée.
 
+<span class="flag from release inline">3.2.18</span> L'authentification par
+jeton ne donne plus lieu à l'émission d'un cookie de session
+(l'authentification étant portée par le jeton et non par une session HTTP). Par
+le passé, l'envoi d'une requête avec authentification par jeton déclenchait
+systématiquement l'émission d'un nouveau cookie de session bien que ce dernier
+ne soit pas utilisé.
+
 Pour plus de détails sur la création des jetons : voir la documentation du
 fichier de la classe `Class.UserToken.php`.

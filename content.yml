@@ -1288,6 +1288,8 @@ book:
       content:  "Advanced/Authent/parameters.md"
     - level:   3
       content:  "Advanced/Authent/authtype_open.md"
+      flags:
+        update : "mise à jour"
     - level:   3
       content:  "Advanced/Authent/authtype_basic.md"
       flags:
