@@ -55,42 +55,6 @@ Note : Comme indiqué dans la [documentation de postgresql][savepoint], si le
 même nom est utilisé, l'index du point de sauvegarde est déplacé.
 
 
-## lockPoint() Verrouillage de la transaction  {#core-ref:14fd71fa-1944-4016-80ab-6616e3423ce7}
-
-
-    string lockPoint(   int $exclusiveLock , 
-                     string $exclusiveLockPrefix = '')
-
-<span class="flag from release inline">3.2.18</span> La méthode `lockPoint`
-indique que la transaction devient exclusive. Un [verrou][pgadlock]
-([pg_advisory_xact_lock][pgxactadlock]) est posé sur ce point et un autre
-processus doit attendre sur ce même point que les données liées à la transaction
-soient enregistrées sur la base de données. Les paramètres `exclusiveLock` et
-`exclusiveLockPrefix` sont les conditions d'acquisition du verrou. Le paramètre
-`exclusiveLock` identifie une ressource (forme numérique) et le paramètre
-`exclusiveLockPrefix` indique un contexte (chaîne limitée à 4 caractères).
-
-L'appel de cette méthode doit obligatoirement être fait dans une transaction
-`savePoint`. Dans la cas contraire, une exception de type `Dcp\Db\Exception` est
-levée.
-
-Le verrou est enlevé lors de la fin de la transaction, c'est à dire lors du
-commit ou du rollback du premier point.
-
-Exemple :
-
-    [php]
-    $document=new_doc("", 1234);
-    $document->savePoint("myUpdate", $document->initid, "MyUp");
-    $document->lockPoint($document->initid, "MyUp");
-    // Un seul processus peut exécuter cette partie pour ce document
-    $document->setValue("my_reference", 234);
-    $document->myRecomputeCriticalRelation();
-    
-    $document->commitPoint("myUpdate");
-    // Le verrou est relaché s'il s'agit du commit du premier save point
-
-
 ## commitPoint() {#core-ref:0bc23a2a-0266-4323-8b72-07276f118c3a}
 
     string commitPoint(string $point)
@@ -117,6 +81,80 @@ abandonnée (`ROLLBACK`);
 
 Elle retourne une erreur si le point de sauvegarde n'a pas été posé au préalable.
 
+**Attention** : les documents en mémoires et ceux dans le cache ne sont pas
+affectés par cette méthode. Il est conseillé de les ré-initialiser et de vider
+le cache après utilisation de cette méthode via la  fonction `clearCacheDoc()`.
+
+## lockPoint() Verrouillage de la transaction  {#core-ref:14fd71fa-1944-4016-80ab-6616e3423ce7}
+
+
+    string lockPoint(   int $exclusiveLock , 
+                     string $exclusiveLockPrefix = '')
+
+<span class="flag from release inline">3.2.18</span> La méthode `lockPoint`
+indique que la transaction devient exclusive. Un [verrou][pgadlock]
+([pg_advisory_xact_lock][pgxactadlock]) est posé sur ce point et un autre
+processus doit attendre sur ce même point que les données liées à la transaction
+soient enregistrées sur la base de données. Les paramètres `exclusiveLock` et
+`exclusiveLockPrefix` sont les conditions d'acquisition du verrou. Le paramètre
+`exclusiveLock` identifie une ressource (forme numérique) et le paramètre
+`exclusiveLockPrefix` indique un contexte (chaîne limitée à 4 caractères).
+
+L'appel de cette méthode doit obligatoirement être fait dans une transaction
+`savePoint`. Dans la cas contraire, une exception de type `Dcp\Db\Exception` est
+levée.
+
+Le verrou est enlevé lors de la fin de la transaction, c'est à dire lors du
+commit ou du rollback du premier point.
+
+Ce verrou joue le rôle d'un [sémaphore][semaphore], il bloque l'accès concurrent
+à une même portion de code.
+
+Exemple :
+
+    [php]
+    $document=new_doc("", 1234);
+    $action->savePoint("myUpdate", $document->initid, "MyUp");
+    $action->lockPoint($document->initid, "MyUp");
+    // Un seul processus peut exécuter cette partie pour ce document
+    $document->setValue("my_reference", 234);
+    $document->myRecomputeCriticalRelation();
+    
+    $action->commitPoint("myUpdate");
+    // Le verrou est relaché s'il s'agit du commit du premier save point
+
+
+
+## setMasterLock() {#core-ref:ab9d412c-75fc-4ee3-89a8-9e87ad673eef}
+
+    string setMasterLock($useLock)
+
+<span class="flag from release inline">3.2.18</span> Le but de cette méthode est
+d'éviter un nombre important de verrou applicatif. Chaque verrou consomme
+environ 200 octets de mémoire partagée et la limite
+[`max_locks_per_transaction`][pglockconfig] indiqués par postgresql impose que
+le nombre de verrous soit maîtrisé.
+
+La méthode setMasterLock pose un verrou maître (pg_advisory_lock) et non un
+"pg_advisory_xact_lock" comme pour le `lockPoint`. Ce verrou inhibe la pose des
+verrous activés par l'appel à la méthode `lockPoint` pour le processus ayant
+posé le verrou maître. Tous les verrous posés par la méthode `lockPoint` des
+autres processus sont bloqués (en attente de la libération du verrou maître). Le
+verrou maître doit être débloqué par l'appel à la méthode setMasterLock avec en
+paramètre "false".
+
+Exemple de code possible:
+
+    [php]
+    $action->setMasterLock(true); // Activation du verrou - ou attente s'il est posé par un autre processus
+    for ($i=0;$i<10000;$i++) {
+     $action->lockPoint($i,"TST"); // pas de pose réelle de lock pour le processus ayant acquis le verrou maître
+             // Mais blocage pour les autres processus qui demande un verrou
+    }
+    $action->setMasterLock(false); // Désactivation du verrou
+
+
+Dynacase Core n'utilise pas ce verrou dans son code.
 
 ## Exemples {#core-ref:7e7d0d8e-a723-4e19-9cb2-03edca023b93}
 
@@ -219,13 +257,27 @@ le document a maintenant comme nom "Test One"
 
 ## Avertissements {#core-ref:827fe5e2-8101-4386-89c7-02d8ae2aadfb}
 
-### Importation de documents
+### Importation de documents {#core-ref:966aa1ba-3358-43bb-aad0-35ca449801c9}
 
 Ce mécanisme est utilisé lors de l'importation de documents afin d'annuler
 l'ensemble de l'importation lorsqu'une erreur est détectée.  Les [hameçons (hooks)
 utilisés][hookimport] lors de l'importation sont donc exécutés dans une transaction.
 
-### Interblocage
+### Modification de profil dynamique {#core-ref:857d8b9b-c22f-4f78-a3f4-5cd52aa2c8ae}
+
+Lorqu'un profil dynamique est modifié, tous les documents liés à ce profil ont
+leurs permissions recalculées.
+
+Chacun calcul de permission est effectuée dans une transaction avec un verrou
+afin d'interdire la modification simultanée de permission pour un même document.
+
+Si ce calcul de permission est fait dans une transaction déjà mise en place, la
+table [`docperm`][docperm] est verrouillée et les locks unitaires des
+permissions ne sont pas activés afin d'éviter de dépasser le nombre maximum de
+verrous imposé par postgresql. Dans ce cas précis, toutes les demandes de
+modification de permission sont mises en attente le temps de la transaction.
+
+### Interblocage {#core-ref:2d9e78e6-14a9-4d17-bb48-f22f2c89e9d3}
 
 L'utilisation des verrous peut engendrer des problèmes d'[interblocage][mutext]
 (deadlock). Il est nécessaire d'être familier avec le système de sémaphores afin
@@ -261,21 +313,21 @@ Programme 2 :
 
 
 
-## Points de sauvegarde utilisée par le système
+## Points de sauvegarde utilisée par le système {#core-ref:c9df3e8e-b9f0-4664-a95e-4bef50b98502}
 
 Les points de sauvegarde des méthodes ci-dessus sont libérés à la fin de la
 méthode elle-même.
 
-|               Méthode               |                                      Contexte d'utilisation                                     |    Composition de la clef    |  Composition du verrou  |
-| ----------------------------------- | ----------------------------------------------------------------------------------------------- | ---------------------------- | ----------------------- |
-| Doc::convert()                      | Conversion d'un document d'une famille vers une autre famille                                   | `"convert" + Doc::id`        | Pas de verrou           |
-| Doc::revise()                       | Révision de document / Changement d'état                                                        | `"revise" + Doc::id`         | Pas de verrou           |
-| Doc::updateVaultIndex()             | Enregistrement de nouveaux fichiers dans le document                                            | `uniqid("updateVaultIndex")` | `Doc::initid`, `"UPVI"` |
-| DocCtrl::computeDProfil()           | Enregistrement d'un document ayant un profil dynamique                                          | `uniqid("docperm")`          | `Doc::initid`, `"PERM"` |
-| DocRel::initRelations()             | Enregistrement d'un document ayant des relations modifiées                                      | `uniqid("initrelation")`     | `Doc::initid`, `"IREL"` |
-| UpdateAttribute::beginTransaction() | Mise à jour par lot d'attribut de document avec option de transaction                           | `"UPDATEATTR"`               | Pas de verrou           |
-| ImportDocuments::importDocuments    | Importation d'une liste de document en mode strict (annulation si une erreur détectée)          | `"importDocument"`           | Pas de verrou           |
-| DetailSearch::isValidPgRegex        | Vérification des critères de recherche lors de l'enregistrement d'une recherche ou d'un rapport | `"isValidPgRegex"`           | Pas de verrou           |
+|               Méthode               |                                      Contexte d'utilisation                                     |      Composition de la clef      |  Composition du verrou  |
+| ----------------------------------- | ----------------------------------------------------------------------------------------------- | -------------------------------- | ----------------------- |
+| Doc::convert()                      | Conversion d'un document d'une famille vers une autre famille                                   | `"dcp:convert" + Doc::id`        | Pas de verrou           |
+| Doc::revise()                       | Révision de document / Changement d'état                                                        | `"dcp:revise" + Doc::id`         | Pas de verrou           |
+| Doc::updateVaultIndex()             | Enregistrement de nouveaux fichiers dans le document                                            | `uniqid("dcp:updateVaultIndex")` | `Doc::initid`, `"UPVI"` |
+| DocCtrl::computeDProfil()           | Enregistrement d'un document ayant un profil dynamique                                          | `uniqid("dcp:docperm")`          | `Doc::initid`, `"PERM"` |
+| DocRel::initRelations()             | Enregistrement d'un document ayant des relations modifiées                                      | `uniqid("dcp:initrelation")`     | `Doc::initid`, `"IREL"` |
+| UpdateAttribute::beginTransaction() | Mise à jour par lot d'attribut de document avec option de transaction                           | `"dcp:updateattr"`               | Pas de verrou           |
+| ImportDocuments::importDocuments    | Importation d'une liste de document en mode strict (annulation si une erreur détectée)          | `"dcp:importDocument"`           | Pas de verrou           |
+| DetailSearch::isValidPgRegex        | Vérification des critères de recherche lors de l'enregistrement d'une recherche ou d'un rapport | `"dcp:isValidPgRegex"`           | Pas de verrou           |
 
 
 <!-- links -->
@@ -296,3 +348,6 @@ méthode elle-même.
 [pgadlock]:             http://www.postgresql.org/docs/9.3/static/explicit-locking.html#ADVISORY-LOCKS "Postgresql Advisory locks"
 [pgxactadlock]:         http://www.postgresql.org/docs/9.3/static/functions-admin.html#FUNCTIONS-ADVISORY-LOCKS-TABLE "Postgresql Transaction Advisory locks"
 [mutext]:               http://fr.wikipedia.org/wiki/Exclusion_mutuelle "Wikipédia : Exclusion mutuelle"
+[pglockconfig]:         http://www.postgresql.org/docs/9.3/static/runtime-config-locks.html "Postgresql : Configuration des verrous"
+[docperm]:              #core-ref:5cf15b7a-e8c8-4ec8-a3b8-2e676b6be349
+[semaphore]:            http://fr.wikipedia.org/wiki/S%C3%A9maphore_%28informatique%29 "Wikipédia : Sémaphore"

@@ -171,7 +171,7 @@ retour d'erreur.
 [savepoint]:        #core-ref:32e0a8cb-0e8b-4f77-a62d-a45da16d39a8
 [timerdyn]:         #core-ref:386637d4-ab5b-4b3b-bf80-f2e6c226c555
 [Exception]:        #core-ref:4bc5157a-5dbc-4d87-b1e5-ece7e104dc20
-[Transaction]:      #core-ref:ec130ebd-ad78-40ea-9fa3-3b9ec076caa1
+[Transaction]:      #core-ref:14fd71fa-1944-4016-80ab-6616e3423ce7
 [setloglevel]:      #core-ref:c654a501-5cfa-4951-a5b0-8e7be4741fa0
 [typeint]:          #core-ref:eda3132e-f8a6-421b-ae07-d36615b705ec
 [formatcollection]: #core-ref:d25bfead-3edf-4d35-abff-f4892b0237f2
