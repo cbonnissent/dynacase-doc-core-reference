@@ -103,18 +103,23 @@ levée.
 Le verrou est enlevé lors de la fin de la transaction, c'est à dire lors du
 commit ou du rollback du premier point.
 
+Ce verrou joue le rôle d'un [sémaphore][semaphore], il bloque l'accès concurrent
+à une même portion de code.
+
 Exemple :
 
     [php]
     $document=new_doc("", 1234);
-    $document->savePoint("myUpdate", $document->initid, "MyUp");
-    $document->lockPoint($document->initid, "MyUp");
+    $action->savePoint("myUpdate", $document->initid, "MyUp");
+    $action->lockPoint($document->initid, "MyUp");
     // Un seul processus peut exécuter cette partie pour ce document
     $document->setValue("my_reference", 234);
     $document->myRecomputeCriticalRelation();
     
-    $document->commitPoint("myUpdate");
+    $action->commitPoint("myUpdate");
     // Le verrou est relaché s'il s'agit du commit du premier save point
+
+
 
 ## setMasterLock() {#core-ref:ab9d412c-75fc-4ee3-89a8-9e87ad673eef}
 
@@ -341,3 +346,4 @@ méthode elle-même.
 [mutext]:               http://fr.wikipedia.org/wiki/Exclusion_mutuelle "Wikipédia : Exclusion mutuelle"
 [pglockconfig]:         http://www.postgresql.org/docs/9.3/static/runtime-config-locks.html "Postgresql : Configuration des verrous"
 [docperm]:              #core-ref:5cf15b7a-e8c8-4ec8-a3b8-2e676b6be349
+[semaphore]:            http://fr.wikipedia.org/wiki/S%C3%A9maphore_%28informatique%29 "Wikipédia : Sémaphore"
