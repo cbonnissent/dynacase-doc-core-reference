@@ -81,9 +81,9 @@ abandonnée (`ROLLBACK`);
 
 Elle retourne une erreur si le point de sauvegarde n'a pas été posé au préalable.
 
-**Attention** : les documents en mémoires et ceux dans le cache ne sont pas affectés par cette méthode.
-Il est conseillé de les ré-initialiser et de vider le cache après utilisation de cette méthode via la 
-méthode `clearCacheDoc`.
+**Attention** : les documents en mémoires et ceux dans le cache ne sont pas
+affectés par cette méthode. Il est conseillé de les ré-initialiser et de vider
+le cache après utilisation de cette méthode via la  fonction `clearCacheDoc()`.
 
 ## lockPoint() Verrouillage de la transaction  {#core-ref:14fd71fa-1944-4016-80ab-6616e3423ce7}
 
