@@ -81,6 +81,10 @@ abandonnée (`ROLLBACK`);
 
 Elle retourne une erreur si le point de sauvegarde n'a pas été posé au préalable.
 
+**Attention** : les documents en mémoires et ceux dans le cache ne sont pas affectés par cette méthode.
+Il est conseillé de les ré-initialiser et de vider le cache après utilisation de cette méthode via la 
+méthode `clearCacheDoc`.
+
 ## lockPoint() Verrouillage de la transaction  {#core-ref:14fd71fa-1944-4016-80ab-6616e3423ce7}
 
 
@@ -126,7 +130,7 @@ Exemple :
     string setMasterLock($useLock)
 
 <span class="flag from release inline">3.2.18</span> Le but de cette méthode est
-d'éviter un nombre important de verrou applicatifs. Chaque verrou consomme
+d'éviter un nombre important de verrou applicatif. Chaque verrou consomme
 environ 200 octets de mémoire partagée et la limite
 [`max_locks_per_transaction`][pglockconfig] indiqués par postgresql impose que
 le nombre de verrous soit maîtrisé.
