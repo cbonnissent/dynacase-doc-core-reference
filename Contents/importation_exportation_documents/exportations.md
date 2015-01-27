@@ -10,6 +10,12 @@ depuis la fenêtre d'ouverture de dossier (ou de recherche). L'accès à
 l'exportation est aussi disponible sur le menu contextuel affichable en cliquant
 sur les icônes de dossier ou de recherche présentes dans l'arborescence.
 
+<span class="flag from release inline">3.2.18</span> Les documents ayant des
+attributs en [visibilité][visibility] `I` sont exportés uniquement si cette
+interface est utilisée depuis le centre d'administration. Si l'interface est
+utilisée hors de ce contexte, les valeurs des attributs en visibilité `I` ne
+sont pas exportés.
+
 ## Options d'exportation {#core-ref:83ec5f8c-c048-4da9-ab81-edd5d52efc0d}
 
 L'exportation propose les options suivantes :
@@ -182,3 +188,4 @@ XML][exportxml].
 [exportprofil]: #core-ref:602c6331-7cdb-4b24-8a56-ffd11e00502f
 [keys]: #core-ref:7eefc8e7-16a6-4188-99d5-c2c9d817a1fe
 [format]: #core-ref:e51257aa-3a16-41be-94ed-7ef2206a899b
+[visibility]:   #core-ref:3e67d45e-1fed-446d-82b5-ba941addc7e8

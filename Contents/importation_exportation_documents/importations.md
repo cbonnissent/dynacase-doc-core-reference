@@ -304,6 +304,11 @@ avec les valeurs lors de l'import. Ceci peut créer des incohérences.
 que. Il faut suivre la procédure de ré-import tel que décrite dans ce 
 [chapitre][importation].
 
+<span class="flag from release inline">3.2.18</span> Les documents ayant des
+attributs en [visibilité][visibility] "I" ne sont pas importés depuis
+l'interface d'importation sauf depuis le centre d'administration ou par [ligne
+de commande][wshimport].
+
 <!-- links -->
 [CSV]: http://fr.wikipedia.org/wiki/Comma-separated_values "Comma-separated values sur wikipedia"
 [ODS]: http://fr.wikipedia.org/wiki/OpenDocument "Open Document sur wikipedia"
@@ -315,3 +320,5 @@ que. Il faut suivre la procédure de ré-import tel que décrite dans ce
 [importation]:      #core-ref:a0cb9a84-6bde-476c-b55c-95c8f12abd3a
 [preimport]:        #core-ref:adb6ba8b-15c4-42d3-97dc-1da16c2112ae
 [postimport]:       #core-ref:9de7e922-150a-416b-b846-b6e195bf0921 
+[wshimport]:        #core-ref:1c97f553-dcba-454e-96a0-8059230065b3
+[visibility]:   #core-ref:3e67d45e-1fed-446d-82b5-ba941addc7e8

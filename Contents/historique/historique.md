@@ -6,20 +6,20 @@ Dynacase.
 
 ## Édition 7 {#core-ref:67c3551d-d99a-43c9-b837-5d93439bff8e}
 
-|                                  Modifications                                   |                    Chapitre                   |                    Version                     |
-| :------------------------------------------------------------------------------- | :-------------------------------------------- | :--------------------------------------------- |
-| Ajout callstack dans le retour d'erreur de wsh                                   | [Erreur wsh][wsherror]                        | <span class="flag update">Mise à jour</span>   |
-| Précisions sur les fonctions de transaction                                      | [Transactions][savepoint]                     | <span class="flag update">Mise à jour</span>   |
-| Précisions sur les minuteurs avec date dynamique                                 | [Minuteur dynamique][timerdyn]                | <span class="flag update">Mise à jour</span>   |
-| Précisions sur les mécanismes d'exception                                        | [Exception][Exception]                        | <span class="flag new">Nouveau chapitre</span> |
-| Ajout verrouillage de transaction                                                | [Transaction][Transaction]                    | <span class="flag update">Mise à jour</span>   |
-| Niveau de log paramétrable par instance                                          | [Log::setLogLevel][setloglevel]               | <span class="flag new">Nouveauté</span>        |
-| Nouveau test d'enregistrement des entiers                                        | [Type int][typeint]                           | <span class="flag new">Nouveauté</span>        |
-| Nouveaux hook dans formatCollection                                              | [Classe FormatCollection][formatcollection]   | <span class="flag new">Nouveauté</span>        |
-| Modification du rendu (formatCollection) des longtext présents dans les tableaux | [FormatCollection - longtext][fmtlongtext]    | <span class="flag update">Mise à jour</span>   |
-| Importation d'attribute en visibility I                                          | [Importation][importwsh]                      | <span class="flag update">Mise à jour</span>   |
-| Précision sur l'itération de document avec SearchDoc                             | [SearchDoc::setObjectReturn][setobjectreturn] | <span class="flag update">Mise à jour</span>   |
-| L'authentification par jetons n'émet plus de cookies de session                  | [Authentification par jetons][authtype_open]  | <span class="flag update">Mise à jour</span>   |
+|                                  Modifications                                   |                                                          Chapitre                                                          |                    Version                     |
+| :------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------- | :--------------------------------------------- |
+| Ajout callstack dans le retour d'erreur de wsh                                   | [Erreur wsh][wsherror]                                                                                                     | <span class="flag update">Mise à jour</span>   |
+| Précisions sur les fonctions de transaction                                      | [Transactions][savepoint]                                                                                                  | <span class="flag update">Mise à jour</span>   |
+| Précisions sur les minuteurs avec date dynamique                                 | [Minuteur dynamique][timerdyn]                                                                                             | <span class="flag update">Mise à jour</span>   |
+| Précisions sur les mécanismes d'exception                                        | [Exception][Exception]                                                                                                     | <span class="flag new">Nouveau chapitre</span> |
+| Ajout verrouillage de transaction                                                | [Transaction][Transaction]                                                                                                 | <span class="flag update">Mise à jour</span>   |
+| Niveau de log paramétrable par instance                                          | [Log::setLogLevel][setloglevel]                                                                                            | <span class="flag new">Nouveauté</span>        |
+| Nouveau test d'enregistrement des entiers                                        | [Type int][typeint]                                                                                                        | <span class="flag new">Nouveauté</span>        |
+| Nouveaux hook dans formatCollection                                              | [Classe FormatCollection][formatcollection]                                                                                | <span class="flag new">Nouveauté</span>        |
+| Modification du rendu (formatCollection) des longtext présents dans les tableaux | [FormatCollection - longtext][fmtlongtext]                                                                                 | <span class="flag update">Mise à jour</span>   |
+| Impacts de la visibility I des attributs                                         | [Importation wsh][importwsh], [interface][importcaution], [exportation][exportcaution], [format de collection][fmtcollout] | <span class="flag update">Mise à jour</span>   |
+| Précision sur l'itération de document avec SearchDoc                             | [SearchDoc::setObjectReturn][setobjectreturn]                                                                              | <span class="flag update">Mise à jour</span>   |
+| L'authentification par jetons n'émet plus de cookies de session                  | [Authentification par jetons][authtype_open]                                                                               | <span class="flag update">Mise à jour</span>   |
 
 
 ## Édition 6 {#core-ref:24bca82b-3ce1-49df-b866-2442d8cfec64}
@@ -178,4 +178,7 @@ retour d'erreur.
 [fmtlongtext] :     #core-ref:0dca5896-2598-4f7c-bb81-1cf4a82c7024
 [importwsh]:        #core-ref:1c97f553-dcba-454e-96a0-8059230065b3
 [setobjectreturn]:  #core-ref:867fcba6-94e7-403e-a523-73e20583a25f
-[authtype_open]: #core-ref:9edc8f2e-6929-11e2-8610-0021e9fffec1
+[authtype_open]:    #core-ref:9edc8f2e-6929-11e2-8610-0021e9fffec1
+[importcaution]:    #core-ref:a3f0e390-b967-4de4-8bf8-85bedb173085
+[fmtcollout]:       #core-ref:da2ae3f0-af0c-4747-92e6-0999f8f05ffe
+[exportcaution]:    #core-ref:88fb91b5-51a3-4b33-ac2e-5f20eddd8210

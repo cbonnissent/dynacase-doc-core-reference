@@ -12,10 +12,12 @@ Les différentes visibilités disponibles sont les suivantes :
 `H`
 :   Attribut caché : présent dans la dom, il ne sera pas affiché.
 
-`I`
-:   Attribut invisible : cet attribut n'est accessible ni par l'IHM, ni par le
-    code (pour le modifier par le code, il faut au préalable modifier
-    explicitement sa visibilité).
+`I`  
+:   Attribut invisible : cet attribut n'est accessible ni par l'IHM, ni par
+    le code (pour le modifier par le code, il faut au préalable modifier
+    explicitement sa visibilité). Cette visibilité est utilisée pour les
+    [importations][importation], [exportations][exportation] et le [format de
+    collection][formatcoll] de document.
 
 `O`
 :   Attribut visible en *modification* uniquement, et modifiable.
@@ -109,3 +111,8 @@ en `H`. Voici la table qui récapitule ces cas :
 Les tableaux en visibilité `U` sont *transparents* lors de cette propagation.
 Pour les attributs contenus dans un tableau en visibilité `U`, il faut donc
 regarder l'attribut structurant du-dit tableau.
+
+
+[importation]:  #core-ref:2fb3284a-2424-44b2-93ae-41dc3969e093
+[formatcoll]:  #core-ref:26703b3f-46d4-4b84-882b-3520da6b408e
+[exportation]:  #core-ref:88fb91b5-51a3-4b33-ac2e-5f20eddd8210
