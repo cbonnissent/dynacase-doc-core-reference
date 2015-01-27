@@ -60,6 +60,11 @@ vide si aucun attribut n'a été indiqué dans le formatage.
             ) 
     ) 
 
+<span class="flag from release inline">3.2.18</span> Les documents ayant des
+attributs en [visibilité][visibility] `I` ne sont pas exportés par défaut. La
+méthode `::setVerifyAttributeAccess(false)` permet d'exporter sans tenir compte
+de la visibilité `I`.
+
 ## Formatage des propriétés {#core-ref:9ebcbfd6-d094-45ee-a993-9b221fb4d893}
 
 Les propriétés accessibles sont les suivantes :
@@ -617,3 +622,4 @@ Elle doit retourner l'objet propertyValue modifié.
 [ClassSearchDoc]: #core-ref:a5216d5c-4e0f-4e3c-9553-7cbfda6b3255
 [intro_collection]: #core-ref:a2c4bd53-c31f-4448-82e4-7ec1d2f7f346
 [propriete_doc]: #core-ref:9aa8edfa-2f2a-11e2-aaec-838a12b40353
+[visibility]:   #core-ref:3e67d45e-1fed-446d-82b5-ba941addc7e8

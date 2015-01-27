@@ -63,10 +63,8 @@ auquel enregistrer le fichier de log :
 
 
 <span class="flag from release inline">3.2.18</span> Les documents ayant des
-attributs en [visibilité][visibility] "I" sont importés sans tenir compte de
-cette contrainte. De même, depuis le centre d'administration, les documents
-importés ne vérifient pas la contrainte de visibilité. Par contre, en dehors du
-centre d'administration, la contrainte de visibilité est vérifiée.
+attributs en [visibilité][visibility] `I` sont importés sans tenir compte de
+cette contrainte.
 
 
 ## Options pour les importations de familles {#core-ref:330f2421-4cc5-458a-8502-c0d715e612a6}
