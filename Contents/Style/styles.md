@@ -221,11 +221,11 @@ Par exemple :
 Les règles locales sont définies dans la variable `$sty_rules` du fichier de 
 définition de style.
 
-#### Surcharge de règles {#core-ref:1e6608ed-fd58-4865-8a4c-58f3c4ce60a5}
+#### Surcharge de règles pour un style {#core-ref:1e6608ed-fd58-4865-8a4c-58f3c4ce60a5}
 
 Lors de son déploiement, le style récupère également toutes les règles 
 définies dans les fichiers contenus dans le répertoire `rules.d` 
-placé à la racine du style. Ces fichiers sont chargés par ordre alphabétique,
+placés à la racine du style. Ces fichiers sont chargés par ordre alphabétique,
 et seule leur variable `$sty_rules` est utilisée, afin de surcharger les règles
 locales.
 
@@ -234,11 +234,73 @@ Cela permet notamment
 *   de rajouter des règles à un style déjà déployé,
 *   d'altérer les règles d'un style déjà déployé.
 
+
+#### Surcharge de règles pour plusieurs styles {#core-ref:cc5b14c2-c671-49dd-879f-398bdeb3c9da}
+
+<span class="flag from release">3.2.19</span>
+
+Les styles installée par défaut sont ajoutés dans le répertoire `STYLE` de la
+racine du répertoire d'installation. Chacun des styles dispose de son propre
+répertoire.
+
+    ./STYLE
+           DEFAULT/
+                  DEFAULT.sty
+                  Images/*.png
+           MODERN/
+                  MODERN.sty
+                  Images/*.png
+
+
+Comme indiqué au [paragraphe précédent][rulesd], il est possible d'ajouter des
+surcharges pour des styles déjà définis.
+
+Exemple : 
+
+    ./STYLE
+           DEFAULT/
+                  DEFAULT.sty
+                  Images/*.png
+                  rules.d/
+                          CUSTOM1.sty
+                          CUSTOM2.sty
+           MODERN/
+                  MODERN.sty
+                  Images/*.png
+                  rules.d/
+                          CUSTOM1.sty
+
+Afin d'éviter d'ajouter la même règle sur tous les styles existants, il faut
+déposer le fichier de règles dans le répertoire `global-rules.d` situé au dessus
+des répertoires des styles.
+
+L'exemple précédent peut être redéfini avec l'arborescence suivante : 
+La régle `CUSTOM1.sty` sera ajouté au style courant quel qu'il soit.
+
+    ./STYLE
+           DEFAULT/
+                  DEFAULT.sty
+                  Images/*.png
+                  rules.d/
+                          CUSTOM2.sty
+           MODERN/
+                  MODERN.sty
+                  Images/*.png
+           global-rules.d/
+                  CUSTOM1.sty
+
+
+Cela permet notamment :
+
+*   d'ajouter des règles à tous les styles déployés et à venir
+*   d'altérer les règles pour le style courant sans l'affecter directement
+
+
 ### Parsers {#core-ref:f5f9836a-a596-4a12-afab-ea23de37ab16}
 
-Les parsers sont des classes implémentant l'interface `\Dcp\Style\IParser` et
+Les parsers sont des classes implémentant l'interface `Dcp\Style\IParser` et
 celle correspondant au type de fichier produit (pour les css,
-`\Dcp\Style\ICssParser`).
+`Dcp\Style\ICssParser`).
 
 Ils implémentent donc
 
@@ -248,10 +310,10 @@ Ils implémentent donc
 
 Les parsers fournis par défaut sont :
 
-`\Dcp\Style\dcpCssConcatParser`
+`Dcp\Style\dcpCssConcatParser`
 :   un parser faisant uniquement la concaténation de css
 
-`\Dcp\Style\dcpCssTemplateParser`
+`Dcp\Style\dcpCssTemplateParser`
 :   un parser faisant la concaténation de css, puis les parsant au moyen
     du moteur de template de Dynacase.
     
@@ -259,23 +321,33 @@ Les parsers fournis par défaut sont :
     possible de définir de nouvelles classes de parser, tant qu'elles
     implémentent les interfaces correspondantes.
 
-`\Dcp\Style\dcpCssCopyDirectory`
+`Dcp\Style\dcpCssCopyDirectory`
 :   un parser permettant de copier le contenu d'un répertoire. Ceci est utilisé
     notamment pour copier un ensemble d'images liées à la css.
 
+<span class="flag from release">3.2.19</span>
+Un parser [`less`][wikiless] (`Dcp\Style\dcpLessParser`) est aussi disponible
+en installant le module [`dynacase-less-installer`][lessinstall].
+
+
 ## Créer un nouveau style à partir du style par défaut {#core-ref:5df70d18-c735-48d4-8444-53d0cf6880b2}
 
-Le module "Dynacase-core" livre 3 styles :
+Le module "Dynacase-core" livre 3 styles situé dans le répertoire `STYLE` :
 
 *   `DEFAULT` : Le style de référence
 *   `MODERN` : Le style installé par défaut. Il hérite de `DEFAULT`
 *   `ORIGINAL` : Ancien style gardé pour compatibilité. Il hérite de `DEFAULT`
+
+Il est recommandé d'installer votre répertoire contenant vos règles de styles
+dans le répertoire `STYLE` afin que votre style puisse être surchargé par des
+[règles globales][globald].
 
 ### Définition des règles par défaut {#core-ref:42fbc102-c01a-4a08-98f7-d1610f8441ba}
 
 Les règles par défaut sont celles décrites dans le style `DEFAULT`.
 
 #### Règles interfaces initiales {#core-ref:76671db7-f66c-4a6f-853e-e573be03f213}
+
 Les interfaces standards de dynacase utilisent les _css_ suivantes :
 
 'dcp/main.css'
@@ -642,3 +714,7 @@ régénérer les fichiers composants le style courant.
 [SAFARI]: http://fr.wikipedia.org/wiki/Safari_%28logiciel%29- "Description de Safari sur wikipedia"
 [CHROME]: http://fr.wikipedia.org/wiki/Google_Chrome "Description de Google Chrome sur wikipedia"
 [parsers]: #core-ref:f5f9836a-a596-4a12-afab-ea23de37ab16
+[rulesd]:  #core-ref:1e6608ed-fd58-4865-8a4c-58f3c4ce60a5
+[globald]: #core-ref:cc5b14c2-c671-49dd-879f-398bdeb3c9da
+[lessinstall]:  https://github.com/Anakeen/dynacase-less-installer "Module Dynacase Less Installer"
+[wikiless]:     https://fr.wikipedia.org/wiki/LESS_%28langage%29 "Less sur wikipédia"
