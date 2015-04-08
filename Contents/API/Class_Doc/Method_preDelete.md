@@ -1,8 +1,8 @@
 # Doc::preDelete()  {#core-ref:dca7b2bd-fc69-4f6f-ab12-fb0de91dce8c}
 <div class="short-description" markdown="1">  
 
-[Hameçon][hook] (ou hook) utilisé par la méthode [`Doc::Delete()`][Delete].
-Cette méthode est appelée **avant** la restauration du document.
+[Hameçon][hook] (ou hook) utilisé par la méthode [`Doc::delete()`][docdelete].
+Cette méthode est appelée **avant** la suppression du document.
 
 </div>
 
