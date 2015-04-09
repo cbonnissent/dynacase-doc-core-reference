@@ -1037,6 +1037,8 @@ book:
     - level: 3
       content: "parameters_ref/core_tmpdirmaxage.md"
     - level: 3
+      content: "parameters_ref/freedom_uploaddir.md"
+    - level: 3
       content: "parameters_ref/authent_pwdmindigitlength.md"
     - level: 3
       content: "parameters_ref/authent_pwdminlength.md"

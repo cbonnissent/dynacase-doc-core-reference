@@ -7,11 +7,11 @@ Dynacase.
 
 ## Édition 8 {#core-ref:f10874a8-78c8-42eb-9908-5eaaf04d247f}
 
-|                                                             Modifications                                                             |             Chapitre             |                Version                |
-| :------------------------------------------------------------------------------------------------------------------------------------ | :------------------------------- | :------------------------------------ |
-| Règle globale pour les styles                                                                                                         | [Règles de style][globalstyle]   | <span class="flag new">Nouveau</span> |
-| Ajout explication pour les paramètres CORE_TMPDIR, CORE_TMPDIRMAXAGE, CORE_LOGDURATION, CORE_SESSIONMAXAGE, CORE_SESSIONGCPROBABILITY | [Paramètre système][paramSystem] | <span class="flag new">Nouveau</span> |
-| Description de la table doclog                                                                                                        | [table doclog][doclog]           | <span class="flag new">Nouveau</span> |
+|                                                                      Modifications                                                                       |             Chapitre             |                Version                |
+| :------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------- | :------------------------------------ |
+| Règle globale pour les styles                                                                                                                            | [Règles de style][globalstyle]   | <span class="flag new">Nouveau</span> |
+| Ajout explication pour les paramètres CORE_TMPDIR, CORE_TMPDIRMAXAGE, CORE_LOGDURATION, CORE_SESSIONMAXAGE, CORE_SESSIONGCPROBABILITY, FREEDOM_UPLOADDIR | [Paramètre système][paramSystem] | <span class="flag new">Nouveau</span> |
+| Description de la table doclog                                                                                                                           | [table doclog][doclog]           | <span class="flag new">Nouveau</span> |
 
 
 ## Édition 7 {#core-ref:67c3551d-d99a-43c9-b837-5d93439bff8e}
