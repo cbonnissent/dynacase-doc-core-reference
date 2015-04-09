@@ -2,7 +2,7 @@ book:
   title: "Manuel de référence"
   module: "Core"
   version: "3.2"
-  edition: "7"
+  edition: "8"
   githubsrc: "https://github.com/Anakeen/dynacase-doc-core-reference"
   googleSearchAPI : "008147054905479727235:j5nj6h1_ye4"
   chapters:
@@ -1014,6 +1014,8 @@ book:
       content: "parameters_ref/core_mailaction.md"
     - level: 3
       content: "parameters_ref/core_start_app.md"
+    - level: 3
+      content: "parameters_ref/core_allowguest.md"
 
     - level: 2
       content: "parameters_ref/system.md"
@@ -1021,9 +1023,21 @@ book:
     - level: 3
       content: "parameters_ref/core_loglevel.md"
     - level: 3
+      content: "parameters_ref/core_logduration.md"
+    - level: 3
       content: "parameters_ref/memory_limit.md"
     - level: 3
       content: "parameters_ref/core_sessionttl.md"
+    - level: 3
+      content: "parameters_ref/core_sessionmaxage.md"
+    - level: 3
+      content: "parameters_ref/core_sessiongcprobability.md"
+    - level: 3
+      content: "parameters_ref/core_tmpdir.md"
+    - level: 3
+      content: "parameters_ref/core_tmpdirmaxage.md"
+    - level: 3
+      content: "parameters_ref/freedom_uploaddir.md"
     - level: 3
       content: "parameters_ref/authent_pwdmindigitlength.md"
     - level: 3
@@ -1221,6 +1235,8 @@ book:
       content:  "Advanced/Database/dbsecurity.md"
     - level:   3
       content:  "Advanced/Database/dbhistory.md"
+    - level:   3
+      content:  "Advanced/Database/dbdoclog.md"
     - level:   3
       content:  "Advanced/Database/dbvault.md"
     - level:   3

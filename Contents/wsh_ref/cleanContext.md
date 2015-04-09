@@ -8,9 +8,9 @@ journalières du contexte.
 Opérations principales :
 
 * Suppression des messages de log antérieurs à la durée de rétention paramétrée
-  par `CORE_LOGDURATION`.
+  par [`CORE_LOGDURATION`][core_logduration].
 * Suppression des fichiers temporaires antérieurs à la durée de rétention
-  paramétrée par `CORE_TMPDIR_MAXAGE`.
+  paramétrée par [`CORE_TMPDIR_MAXAGE`][core_tmpdirmaxage].
 * Suppression des documents Dynacase temporaires, et des noms logiques
   temporaires (générés par l'[Exportation des profils][exportation_des_profils]
   par exemple).
@@ -35,3 +35,5 @@ N/A
 
 <!-- link -->
 [exportation_des_profils]: #core-ref:602c6331-7cdb-4b24-8a56-ffd11e00502f
+[core_logduration]: #core-ref:0cebb954-7127-42bb-88df-28767a141f6a
+[core_tmpdirmaxage]: #core-ref:24a36fc9-b3bb-4bab-a06c-ac28c4372d57

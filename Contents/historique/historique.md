@@ -4,6 +4,16 @@ Ce chapitre contient un descriptif des améliorations entre les releases de
 Dynacase.
 
 
+
+## Édition 8 {#core-ref:f10874a8-78c8-42eb-9908-5eaaf04d247f}
+
+|                                                                      Modifications                                                                       |             Chapitre             |                Version                |
+| :------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------- | :------------------------------------ |
+| Règle globale pour les styles                                                                                                                            | [Règles de style][globalstyle]   | <span class="flag new">Nouveau</span> |
+| Ajout explication pour les paramètres CORE_TMPDIR, CORE_TMPDIRMAXAGE, CORE_LOGDURATION, CORE_SESSIONMAXAGE, CORE_SESSIONGCPROBABILITY, FREEDOM_UPLOADDIR | [Paramètre système][paramSystem] | <span class="flag new">Nouveau</span> |
+| Description de la table doclog                                                                                                                           | [table doclog][doclog]           | <span class="flag new">Nouveau</span> |
+
+
 ## Édition 7 {#core-ref:67c3551d-d99a-43c9-b837-5d93439bff8e}
 
 |                                  Modifications                                   |                                                          Chapitre                                                          |                    Version                     |
@@ -182,3 +192,6 @@ retour d'erreur.
 [importcaution]:    #core-ref:a3f0e390-b967-4de4-8bf8-85bedb173085
 [fmtcollout]:       #core-ref:da2ae3f0-af0c-4747-92e6-0999f8f05ffe
 [exportcaution]:    #core-ref:88fb91b5-51a3-4b33-ac2e-5f20eddd8210
+[globalstyle]:      #core-ref:cc5b14c2-c671-49dd-879f-398bdeb3c9da
+[paramSystem]:      #core-ref:a4c9dd9a-201c-40af-8f31-3a70d7b2765b
+[doclog]:           #core-ref:9090c9ee-fb9c-4cca-b9d6-962052ed69a9
