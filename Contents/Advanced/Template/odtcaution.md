@@ -122,10 +122,10 @@ d'équivalence présentant les balises supportées et leur équivalent ODT.
 | `li`        | `text:list-item`   | Insère un élément de liste                 | Doit être dans une balise `<ul>` ou `<ol>`                                                                                         |
 | `ul`        | `text:list`        | Insère une liste à puces non numérotée     | Doit être dans une balise `<p>`                                                                                                    |
 | `ol`        | `text:list`        | Insère une liste à puces numérotée         | Doit être dans une balise `<p>`                                                                                                    |
-| `table`     | `table:table`      | Insère un tableau                          |                                                                                                                                    |
+| `table`     | `table:table`      | Insère un tableau                          | Les tables ne doivent pas contenir de rowspan et colspan, chaque rangée doit avoir le même nombre de cellule.                                                                                                                                   |
 | `tr`        | `table:table-row`  | Insère une rangée tableau                  |                                                                                                                                    |
-| `th`        | `table:table-cell` | Insère une cellule entête de               |                                                                                                                                    |
-| `td`        | `table:table-cell` | Insère une cellule tableau                 |                                                                                                                                    |
+| `th`        | `table:table-cell` | Insère une cellule entête de tableau       | Les cellules de header doivent être dans la première rangée du tableau                                                                                                                                   |
+| `td`        | `table:table-cell` | Insère une cellule tableau                 | Les colspan et rowspan et autre attributs de l'attribut html n'est pas pris en compte.                                                                                                                                   |
 | `img`       | `draw:frame`       | Insère une image                           | Seules les images présentes sur les paragraphes de premier niveau sont prises en compte. Pas d'image dans les cellules de tableau. |
 |             |                    |                                            |                                                                                                                                    |
 
@@ -265,10 +265,12 @@ Le code HTML
 
     [html]
     <table>
-      <tr>
-        <td>Cellule un</td>
-        <td>Cellule deux</td>
-      </tr>
+      <tbody>
+        <tr>
+          <td>Cellule un</td>
+          <td>Cellule deux</td>
+        </tr>
+      </tbody>
     </table>
 
 donne le code XML suivant :
@@ -276,6 +278,7 @@ donne le code XML suivant :
     [xml]
     <text:section text:style-name="Secttxt_text" text:name="Sectiontxt_text" aid="txt_text">
       <table:table table:name="Table1" table:style-name="Table1">
+        <table:table-column table:style-name="Table1.A" table:number-columns-repeated="2"/>
         <table:table-row>
           <table:table-cell table:style-name="Table1.A1">
             <text:p>Cellule un</text:p>
