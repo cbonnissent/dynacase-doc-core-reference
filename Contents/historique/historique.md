@@ -15,7 +15,7 @@ Dynacase.
 | Fichier openDocument Writer : Précisions sur les images insérées dans les attributs "htmltext"                                                           | [Image et htmltext][convooo]     | <span class="flag update">Mis à jour</span> |
 | Précision sur les critères relations dans les recherches détaillées                                                                                      | [Recherche détaillée][relsearch] | <span class="flag update">Mis à jour</span> |
 | Possibilité de déclarer des attributs obligatoires dans les tableaux                                                                                     | [Attribut obligatoire][requires] | <span class="flag new">Nouveau</span>       |
-|                                                                                                                                                          |                                  |                                             |
+| Nouvelle option pour les nombres dans l'exportation CSV pour les rapports                                                                                | [Rapport][exportnumber]          | <span class="flag new">Nouveau</span>       |
 
 
 ## Édition 7 {#core-ref:67c3551d-d99a-43c9-b837-5d93439bff8e}
@@ -201,3 +201,4 @@ retour d'erreur.
 [convooo]:          #core-ref:6ad0e889-a8d8-4245-9051-a7ada2e31c86
 [relsearch]:        #core-ref:1ced6e00-055c-4959-836d-00ed077d14c8
 [requires]:         #core-ref:8c74cf5b-3e03-480f-ba05-1a86ea6ec634
+[exportnumber]:     #core-ref:cf6934f9-afe2-48ea-877a-7a1cdc9f770e
