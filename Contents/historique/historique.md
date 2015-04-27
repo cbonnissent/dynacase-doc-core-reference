@@ -14,6 +14,8 @@ Dynacase.
 | Description de la table doclog                                                                                                                           | [table doclog][doclog]           | <span class="flag new">Nouveau</span>       |
 | Fichier openDocument Writer : Précisions sur les images insérées dans les attributs "htmltext"                                                           | [Image et htmltext][convooo]     | <span class="flag update">Mis à jour</span> |
 | Précision sur les critères relations dans les recherches détaillées                                                                                      | [Recherche détaillée][relsearch] | <span class="flag update">Mis à jour</span> |
+| Possibilité de déclarer des attributs obligatoires dans les tableaux                                                                                     | [Attribut obligatoire][requires] | <span class="flag new">Nouveau</span>       |
+|                                                                                                                                                          |                                  |                                             |
 
 
 ## Édition 7 {#core-ref:67c3551d-d99a-43c9-b837-5d93439bff8e}
@@ -51,7 +53,6 @@ Dynacase.
 | Modification visuel des attributs de type `file` et `image` en modification | Attributs [file][attrfile] et [image][attrimage] | <span class="flag update">Mise à jour</span>   |
 | Option d'attribut `elabel` indiqué comme options communes d'attribut        | [Option elabel][elabel]                          | <span class="flag update">Mise à jour</span>   |
 | Gestion des minuteurs                                                       | [Méthode pour les minuteurs][doctimer]           | <span class="flag new">Nouveau chapitre</span> |
-|                                                                             |                                                  |                                                |
 
 
 ## Édition 5 {#core-ref:2c9c3f1e-d1b6-4d13-84b2-a3e3cbf0fa53}
@@ -199,3 +200,4 @@ retour d'erreur.
 [doclog]:           #core-ref:9090c9ee-fb9c-4cca-b9d6-962052ed69a9
 [convooo]:          #core-ref:6ad0e889-a8d8-4245-9051-a7ada2e31c86
 [relsearch]:        #core-ref:1ced6e00-055c-4959-836d-00ed077d14c8
+[requires]:         #core-ref:8c74cf5b-3e03-480f-ba05-1a86ea6ec634
