@@ -606,7 +606,7 @@ avec [FAMNAME] le nom logique de la famille et
 
 #### Caractéristique `[in_title]` {#core-ref:b0e414c0-b795-4bbe-b70e-a308b7f1b4ab}
 
-**Obligatoire** (sauf pour les attributs de type *array*, *frame* ou *tab*)  
+**Obligatoire** (Non applicable pour les types *array*, *frame* ou *tab*)  
 Indique que l'attribut sera utilisé dans la composition du titre du document.
 
 Le titre du document est alors composé en concaténant toutes les valeurs
@@ -639,8 +639,7 @@ Les valeurs des attributs multiples seront concaténées et séparées par un es
 
 #### Caractéristique `[in_abstract]` {#core-ref:39825a45-a204-440b-ab0c-608e765eb88c}
 
-**Obligatoire** (sauf pour les attributs de type 
-*array*, *frame* ou *tab*)  
+**Obligatoire** (Non applicable pour les types  *menu*, *array*, *frame* ou *tab*)  
 Indique que l'attribut sera utilisé dans le résumé du document.
 
 Le résumé du document est utilisé pour construire la fiche résumé dans
@@ -685,7 +684,7 @@ Cette colonne permet également de définir le formatage de l'attribut :
 
 #### Caractéristique `[ordre]` {#core-ref:0833f7ea-e25d-49d9-8648-4a9c13ab9f2d}
 
-**Obligatoire** (sauf pour les attributs de type *frame* ou *tab*)  
+**Obligatoire** (Non applicable pour les types *frame* ou *tab*)  
 Définit l'ordre de présentation des attributs dans le document.
  L'ordre est un nombre entier.
 
@@ -728,7 +727,8 @@ des [contrôle de vues][control_de_vue].
 
 #### Caractéristique `[required]` {#core-ref:8c74cf5b-3e03-480f-ba05-1a86ea6ec634}
 
-**facultatif**  
+**facultatif**  (Non applicable pour les types "frame", "tab", "array", "menu")
+
 Indique si l'attribut est obligatoire pour la sauvegarde du document 
 depuis l'interface web de modification du document. 
 Cette caractéristique n'est pas prise en compte lors des sauvegardes faite
@@ -737,6 +737,12 @@ Par contre, cette caractéristique est prise en compte lors d'un passage de
 transition (document lié par un cycle de vie -_workflow_-).  
 Cette caractéristique peut être modifiée par les [masques][masque] 
 des [contrôle de vues][control_de_vue].
+
+<span class="flag from release">3.2.19</span> Pour les attributs inclus dans un
+tableau, cette caractéristique indique que la valeur doit être renseignée pour
+chacune des rangées du tableau. Si aucune rangée, n'est indiquée dans le tableau,
+le document pourra être sauvé même si aucune valeur n'est renseignée. Le nombre
+de rangée minimum peut être indiqué à l'aide d'une [contrainte][constraint].
 
 Les valeurs possibles sont :
     
@@ -835,21 +841,21 @@ L'hyperlien peut être :
     
         [php]
         public function myTitleLink(){
-            return sprintf('http://www.test.net/?b=%s',
+            return sprintf('http://www.example.net/?b=%s',
                 rawurlencode($this->getTitle())
             );
         }
 
 #### Caractéristique `[phpfile]` {#core-ref:7362e2ff-cfb5-45f0-a81d-e02eab6d0fb6}
 
-**Facultatif** (Non applicable pour les types "frame", "tab", "array")
+**Facultatif** (Non applicable pour les types "frame", "tab", "array", "menu")
 
 Nom du fichier php pour l'[aide à la saisie][aide_saisie].
 Ce fichier doit être présent dans le répertoire `EXTERNALS`.
 
 #### Caractéristique `[phpfunc]` {#core-ref:1128e658-48f5-440f-9fd1-2d714e99eecd}
 
-**Facultatif** (Non applicable pour les types "frame", "tab", "array")
+**Facultatif** (Non applicable pour les types "frame", "tab", "array", "menu")
 
 Cette caractéristique est utilisée pour trois usages différents :
 
@@ -872,7 +878,7 @@ Ne concerne que le cas des attributs de type `enum`.
 
 #### Caractéristique `[elink]` {#core-ref:edf84026-7980-442f-bc86-88739e49e3b5}
 
-**facultatif** (Non applicable pour les types "frame", "tab", "array")  
+**facultatif** (Non applicable pour les types "frame", "tab", "array", "menu")  
 Extra lien supplémentaire.
 
 Cet extra lien sera présenté dans les interfaces web de modification de
@@ -882,7 +888,7 @@ La syntaxe de l'extra lien est la même que celle de la colonne *link*.
 
 #### Caractéristique `[constraint]` {#core-ref:f0177c62-1774-4724-a337-f090406e2d08}
 
-**facultatif** (Non applicable pour les types "frame", "tab", "array")  
+**facultatif** (Non applicable pour les types "frame", "tab")  
 Nom et attributs de la méthode de [contrainte][contrainte].
 
 #### Caractéristique `[options]` {#core-ref:16f74982-e9f6-4d47-a582-79348fe8ffb7}
@@ -1313,3 +1319,4 @@ Pour plus de détails sur l'API `importDocuments`, se référer à sa
 [visibility]:        #core-ref:3e67d45e-1fed-446d-82b5-ba941addc7e8
 [getcustomtitle]:   #core-ref:3c5ff78d-c080-48fb-a293-9736ed4e95b8
 [phpDocEmailRecipient]:     https://docs.anakeen.com/dynacase/3.2/dynacase-core-api-reference/interface_i_mail_recipient.html "PHPDoc : IMailRecipient"
+[constraint]:       {#core-ref:f0177c62-1774-4724-a337-f090406e2d08}

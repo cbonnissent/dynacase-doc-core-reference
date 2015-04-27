@@ -7,13 +7,13 @@ recherches (au niveau de la base de données, c'est également la construction
 [UNION][psql_union] qui est utilisée).
 
 Elle est implémentée au moyen de la famille `MSEARCH`, qui étend la famille
-`SEARCH` et y ajoute les méthodes du fichier `Method.GroupSearch.php`.
+`SEARCH`.
 
 ## Éléments de paramétrage {#core-ref:e12621a9-0884-425b-9517-71494411ce5c}
 
 Lors de la construction d'une recherche groupée, il suffit de spécifier la liste
-des recherches à utiliser. La recherche groupée est ensuite utilisables de façon
-transparente comme si elle était une recherche simple.
+des recherches à utiliser. La recherche groupée est ensuite utilisable de façon
+identique à la recherche simple.
 
 <!-- links -->
-[psql_union]: http://www.postgresql.org/docs/9.2/static/queries-union.html "Documentation officielle de la construction UNION"
+[psql_union]: http://www.postgresql.org/docs/9.3/static/queries-union.html "Documentation officielle de la construction UNION"

@@ -81,9 +81,26 @@ en consultation, il permet d'exporter le rapport en CSV de deux manières :
 De plus, l'assistant d'export permet de définir différentes propriétés du fichier
 CSV généré (encodage, séparateur, format de date, etc.).
 
-![Export CSV](images/report_export_csv.png "Export CSV")
+![Export CSV](images/report_export_csv.png "Exportation CSV")
 
+Options d'exportation : 
 
+* le caractère de séparation des cellules : valeur par défaut ";"
+* le caractère de séparation de texte : valeur par défaut "
+* le caractère de séparation des valeurs décimal : valeur par défaut ,
+* <span class="flag from release">3.2.19</span> le format des nombre : par défaut 
+  les nombres sont exportés avec leur format 
+  comme par exemple la devise pour le type `money`
+* le jeu de caractère : valeur par défaut "iso 8859-15"
+* le format de la date : 
+   * US : Format AAAA-MM-JJ HH:MM
+   * FR : Format JJ/MM/AAAA HH:MM
+   * ISO : Format AAAA-MM-JJTHH:MM
+* les balises HTML : pour les attribut HTML permet de ne conserver que le texte
+   brut si on enlève les balises
+
+Les options modifiées sont conservées pour chaque utilisateur et sont réutilisées
+à chaque nouvelle exportation.
 
 <!-- links -->
 [detailed_search_param]: #core-ref:de8a1440-fb42-4ad0-b041-5c762b5258d9
