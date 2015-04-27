@@ -13,7 +13,7 @@ Dynacase.
 | Ajout explication pour les paramètres CORE_TMPDIR, CORE_TMPDIRMAXAGE, CORE_LOGDURATION, CORE_SESSIONMAXAGE, CORE_SESSIONGCPROBABILITY, FREEDOM_UPLOADDIR | [Paramètre système][paramSystem] | <span class="flag new">Nouveau</span>       |
 | Description de la table doclog                                                                                                                           | [table doclog][doclog]           | <span class="flag new">Nouveau</span>       |
 | Fichier openDocument Writer : Précisions sur les images insérées dans les attributs "htmltext"                                                           | [Image et htmltext][convooo]     | <span class="flag update">Mis à jour</span> |
-|                                                                                                                                                          |                                  |                                             |
+| Précision sur les critères relations dans les recherches détaillées                                                                                      | [Recherche détaillée][relsearch] | <span class="flag update">Mis à jour</span> |
 
 
 ## Édition 7 {#core-ref:67c3551d-d99a-43c9-b837-5d93439bff8e}
@@ -198,3 +198,4 @@ retour d'erreur.
 [paramSystem]:      #core-ref:a4c9dd9a-201c-40af-8f31-3a70d7b2765b
 [doclog]:           #core-ref:9090c9ee-fb9c-4cca-b9d6-962052ed69a9
 [convooo]:          #core-ref:6ad0e889-a8d8-4245-9051-a7ada2e31c86
+[relsearch]:        #core-ref:1ced6e00-055c-4959-836d-00ed077d14c8

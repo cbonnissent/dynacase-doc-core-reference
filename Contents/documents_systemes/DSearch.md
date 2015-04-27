@@ -11,7 +11,10 @@ Elle est implémentée au moyen de la famille `DSEARCH`, qui étend la famille
 
 ## Éléments de paramétrage {#core-ref:de8a1440-fb42-4ad0-b041-5c762b5258d9}
 
-Cette famille permet de rechercher les documents en spécifiant :
+### Condition de la recherche {#core-ref:0eede03a-c01f-4670-8ccf-4441cdce80cc}
+
+La document "recherche détaillée" permet de rechercher les documents en
+spécifiant :
 
 *   une famille
     *   avec ou sans ses sous-familles
@@ -47,88 +50,115 @@ Cette famille permet de rechercher les documents en spécifiant :
 *   une restriction aux documents
     *   modifiables par l'utilisateur
     *   supprimables par l'utilisateur
-*   un ensemble de critères
-    *   portant sur
-        *   les attributs de la famille sélectionnée,
-            
-            La recherche par attributs se fait au moyen des colonnes
-            
-            attributs
-            :   permet de sélectionner l'attribut qui servira de critère de recherche.
-            
-            fonctions
-            :   permet de sélectionner l'opération de comparaison
-                qui sera appliquée sur l'attribut.
-                Le sélecteur de fonction dépend du type de l'attribut.
-            
-            *mot-clefs*
-            :   permet de spécifier la valeur de référence de la comparaison.
-                Le sélecteur de mot-clefs varie en fonction du type d'attribut 
-                et de la fonction sélectionnée.
-                
-                Par exemple, pour les attributs de type énuméré il présentera 
-                la liste des choix possibles ;
-                alors que pour les attributs de type texte,
-                il présentera un champ libre de saisie de texte.
-            
-            *Opt*
-            :   permet de saisir un mot-clefs qui ne soit pas statique 
-                mais qui résulte de l'évaluation d'une méthode documentaire. 
-                Cela permet par exemple d'exprimer une valeur 
-                qui soit la date courante (avec la méthode "::getDate()").
-        
-        *   les états du workflow associé à la famille sélectionnée
-            
-            Le critère *état* ne concerne que les documents figés.
-            
-            Ce critère *état* n'est pas accessible avec l'option 
-            révision *courante*
-            
-            La recherche par état se fait au moyen des colonnes
-            
-            attributs
-            :   La colonne "attributs" ne peut pas être modifiée,
-                et est positionnée sur "état" pour indiquer que ce critère
-                est un critère sur l'état des documents.
-            
-            fonctions
-            :   présente la liste des opérateurs de comparaison supportés 
-                par les états.
-            
-            mot-clefs
-            :   La colonne "mot-clefs" présente la liste des états possibles 
-                du cycle de vie, et permet de sélectionner l'état de référence 
-                pour la comparaison.
-        
-        *   Les activités du workflow associé à la famille sélectionnée
-            
-            Le critère "activité" ne concerne que les documents en dernière révision.
-            
-            Ce critère n'est accessible qu'avec les options
-            révision *courante* et *toutes les révisions*.
-            
-            La recherche par activité se fait au moyen des colonnes
-            
-            attributs
-            :   La colonne "attributs" ne peut pas être modifiée,
-                et est positionnée sur "activité" pour indiquer que ce critère
-                est un critère sur l'activité des documents.
-            
-            fonctions
-            :   présente la liste des opérateurs de comparaison supportés 
-                par les activités.
-            
-            mot-clefs
-            :   présente la liste des activités possibles du cycle de vie, 
-                et permet de sélectionner l'activité de référence 
-                pour la comparaison.
-                
-                Attention, si le cycle de vie ne décrit pas d'activités 
-                pour une étape, ce sera la libellé de l'état qui sera affiché.
-                Cette notation reste cohérente avec ce qui est écrit 
-                dans les entêtes des documents.
     
-    *   avec parenthésage
-    *   avec possibilité de combiner des opérateurs
-        *   AND
-        *   OR
+
+### Critères de recherche {#core-ref:24b85853-9810-4eba-a40f-55f961ba6cd0}
+
+Les critères permettent d'exprimer les conditions sur les attributs, propriétés
+ou étapes du document.
+
+#### les attributs de la famille sélectionnée, {#core-ref:1ced6e00-055c-4959-836d-00ed077d14c8}
+
+La recherche par attributs se fait au moyen des colonnes
+
+attributs
+:   permet de sélectionner l'attribut ou la propriété qui servira 
+    de critère de recherche.
+
+fonctions
+:   permet de sélectionner l'opération de comparaison
+    qui sera appliquée sur l'attribut.
+    Le sélecteur de fonction dépend du type de l'attribut.
+
+*mot-clefs*
+:   permet de spécifier la valeur de référence de la comparaison.
+    Le sélecteur de mot-clefs varie en fonction du type d'attribut 
+    et de la fonction sélectionnée.
+    
+    Par exemple, pour les attributs de type énuméré il présentera 
+    la liste des choix possibles ;
+    alors que pour les attributs de type texte,
+    il présentera un champ libre de saisie de texte.
+
+*Opt*
+:   permet de saisir un mot-clefs qui ne soit pas statique 
+    mais qui résulte de l'évaluation d'une méthode documentaire. 
+    Cela permet par exemple d'exprimer une valeur 
+    qui soit la date courante (avec la méthode "::getDate()").
+
+La liste des attributs présentés est conditionnée par l'option
+[`searchcriteria`][searchcriteria].
+
+<span class="flag from release">3.2.19</span>Pour les attributs relations  (type
+docid, account), si l'opérateur demandé est "identificateur égal" ou
+"identificateur est différent" alors une aide à la saisie est proposée pour
+faciliter la recherche du document. Cette aide à la saisie n'est pas celle de la
+famille cible mais simplement une aide pour rechercher l'identifiant du document
+en fonction de son type. L'identifiant du document peut aussi être donnée
+directement dans la champ situé à droite de l'aide à la saisie.
+
+#### les étapes du workflow associé à la famille sélectionnée {#core-ref:2497db22-ba4d-4510-a060-82240123d9dd}
+
+Le critère *état* ne concerne que les **documents figés**.
+
+Ce critère *état* n'est pas accessible avec l'option 
+révision *courante*
+
+La recherche par état se fait au moyen des colonnes
+
+attributs
+:   La colonne "attributs" ne peut pas être modifiée,
+    et est positionnée sur "état" pour indiquer que ce critère
+    est un critère sur l'état des documents.
+
+fonctions
+:   présente la liste des opérateurs de comparaison supportés 
+    par les états.
+
+mot-clefs
+:   La colonne "mot-clefs" présente la liste des états possibles 
+    du cycle de vie, et permet de sélectionner l'état de référence 
+    pour la comparaison.
+
+
+
+Le critère "activité" ne concerne que les documents en **dernière révision**.
+
+Ce critère n'est accessible qu'avec les options
+révision *courante* et *toutes les révisions*.
+
+La recherche par activité se fait au moyen des colonnes
+
+attributs
+:   La colonne "attributs" ne peut pas être modifiée,
+    et est positionnée sur "activité" pour indiquer que ce critère
+    est un critère sur l'activité des documents.
+
+fonctions
+:   présente la liste des opérateurs de comparaison supportés 
+    par les activités.
+
+mot-clefs
+:   présente la liste des activités possibles du cycle de vie, 
+    et permet de sélectionner l'activité de référence 
+    pour la comparaison.
+    
+    Attention, si le cycle de vie ne décrit pas d'activités 
+    pour une étape, ce sera la libellé de l'état qui sera affiché.
+    Cette notation reste cohérente avec ce qui est écrit 
+    dans les entêtes des documents.
+
+### Opérateurs logiques {#core-ref:8dcb37d7-21d6-4b28-a19f-b1a6891f2db4}
+
+L'opérateur logique (attribut "condition") peut avoir 3 valeurs :
+
+*  `and` : "satisfait toutes les conditions"
+*  `or` : "satisfait au moins une condition"
+*  `perso` : "personnalisée"
+
+Si la condition est personnalisée, les parenthèses permettent de prioriser les
+différents critères.
+
+
+<!-- links -->
+[searchcriteria] : #core-ref:16e19c90-3233-11e2-a58f-6b135c3a2496
