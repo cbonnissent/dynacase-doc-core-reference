@@ -9,8 +9,8 @@ Le fichier d'importation peut être au format :
 
 *   CSV
     *   Encodage : UTF-8,
-    *   Séparateur de colonnes : `;`(point-virgule par défaut - configurable en <span class="flag from release">3.2.12</span>).
-    *   Délimiteur de texte : ` ` (vide par défaut - configurable en <span class="flag from release">3.2.12</span>),
+    *   Séparateur de colonnes : `;`(point-virgule par défaut - configurable en <span class="flag from release inline">3.2.12</span>).
+    *   Délimiteur de texte : ` ` (vide par défaut - configurable en <span class="flag from release inline">3.2.12</span>),
 *   ODS OpenDocument Spreadsheet (tableur OpenOffice.org .ods)
 
 Ce fichier d'importation est *auto-descriptif* ; c'est à dire qu'il
@@ -47,17 +47,24 @@ Exemple :
 
 | #         | famille        |   |   |                   |                      |                      |
 | --------- | -------------- | - | - | ----------------- | -------------------- | -------------------- |
-| ORDER | ZOO_CLASSE |   |   | cl_latinname  | cl_commonname    | cl_caracteristic |
-| DOC       | ZOO_CLASSE     |   |   | Actinopterygii    | Poissons             | Nage                 |
-| DOC       | ZOO_CLASSE     |   |   | Reptilia          | Reptiles             | Rampe                |
+| ORDER | ZOO\_CLASSE |   |   | cl\_latinname  | cl\_commonname    | cl\_caracteristic |
+| DOC       | ZOO\_CLASSE     |   |   | Actinopterygii    | Poissons             | Nage                 |
+| DOC       | ZOO\_CLASSE     |   |   | Reptilia          | Reptiles             | Rampe                |
 |           |                |   |   |                   |                      |                      |
-| ORDER | ZOO_CLASSE |   |   | cl_commonname | cl_caracteristic | cl_latinname     |
-| DOC       | ZOO_CLASSE     |   |   | Oiseaux           | Vole                 | Aves                 |
-| DOC       | ZOO_CLASSE     |   |   | Mammifères        | Allaite              | Mammalia             |
+| ORDER | ZOO\_CLASSE |   |   | cl\_commonname | cl\_caracteristic | cl\_latinname     |
+| DOC       | ZOO\_CLASSE     |   |   | Oiseaux           | Vole                 | Aves                 |
+| DOC       | ZOO\_CLASSE     |   |   | Mammifères        | Allaite              | Mammalia             |
 
 Dans ce cas, les deux premiers documents utilisent le premier `ORDER`, et les
 documents suivants le deuxième `ORDER` (la deuxième ligne `ORDER` a écrasé les
 directives de la première).
+
+<span class="flag from release inline">3.2.19</span> Lorsque la ligne `ORDER`
+est invalide (e.g. l'attribut déclaré n'existe pas pour la famille), alors
+l'import de documents de cette famille est ignoré et une erreur est remontée.
+
+La liste des codes d'erreur relatifs à la directive `ORDER` est consultable sur
+la documentation PHP de la classe [ErrorCodeORDR][ErrorCodeORDR].
 
 ### Description d'un document {#core-ref:3acb8fbe-6e5a-4933-95fa-2cea0eae2fc5}
 
@@ -109,9 +116,9 @@ Les attributs relations (`docid`, `account`, `thesaurus`) peuvent contenir :
     n'importe quelle instance de Dynacase.
 
 Si le document référencé est un nom logique qui n'existe pas alors la valeur
-sera ignorée (pas d'erreur ni de message). Si la référence est un nombre qui ne
-fait pas référence à un document, ce nombre sera enregistré. Il sera considéré
-comme une référence inconnue.
+sera ignorée (un message de warning est émis avec le nom logique qui n'est pas
+connu). Si la référence est un nombre qui ne fait pas référence à un document,
+ce nombre sera enregistré. Il sera considéré comme une référence inconnue.
 
 #### Énumérés {#core-ref:e919dbd9-e70d-46f0-a91c-2fca281a91ae}
 
@@ -209,9 +216,9 @@ celle correspondante à la colonne.
 
 Exemple :
 
-| ORDER     | ZOO_CLASSE |   |   | cl_latinname   | extra:status | extra:special |
+| ORDER     | ZOO\_CLASSE |   |   | cl\_latinname   | extra:status | extra:special |
 | --------- | ---------- | - | - | ------------   | ------------ | ------------- |
-| DOC       | ZOO_CLASSE |   | - | Actinopterygii | alive        | protected     |
+| DOC       | ZOO\_CLASSE |   | - | Actinopterygii | alive        | protected     |
 
 Dans cette exemple, le document *Actinopterygii* de la famille *ZOO_CLASSE* aura
 comme paramètre passé à `preImport` et `postImport` : 
@@ -258,12 +265,12 @@ Exemple :
 | --------- | -------------- | --- | --- | ---------------- | ----------------- | -------------------- |
 | __ORDER__ | __ZOO_CLASSE__ |     |     | __cl_latinname__ | __cl_commonname__ | __cl_caracteristic__ |
 | __KEYS__  | __ZOO_CLASSE__ |     |     | __cl_latinname__ |                   |                      |
-| DOC       | ZOO_CLASSE     |     | -   | Actinopterygii   | Poissons          |                      |
-| DOC       | ZOO_CLASSE     |     | -   | Reptilia         | Reptiles          | Rampe                |
-| DOC       | ZOO_CLASSE     |     | -   | Actinopterygii   |                   | Nage                 |
+| DOC       | ZOO\_CLASSE     |     | -   | Actinopterygii   | Poissons          |                      |
+| DOC       | ZOO\_CLASSE     |     | -   | Reptilia         | Reptiles          | Rampe                |
+| DOC       | ZOO\_CLASSE     |     | -   | Actinopterygii   |                   | Nage                 |
 
-Dans cette exemple, les documents sont reconnus par leur attribut
-'cl_latinname'. Donc pour le premier document, la clé est
+Dans cet exemple, les documents sont reconnus par leur attribut
+'cl\_latinname'. Donc pour le premier document, la clé est
 'Actinopterygii', et pour le deuxième 'Reptilia'. Dans cet exemple le document 
 _Actinopterygii_ est d'abord créé avec le nom _Poissons_, puis il est mis à jour 
 avec la caractéristique _Nage_.
@@ -271,12 +278,12 @@ avec la caractéristique _Nage_.
 Les lignes `KEYS` sont appliquées dans l'ordre dans
 lesquelles elles ont été écrites.
 
-## Modifier l'icone d'un document {#core-ref:ac8ef5d6-fd4f-403e-bec1-486466f3f5f7}
+## Modifier l'icône d'un document {#core-ref:ac8ef5d6-fd4f-403e-bec1-486466f3f5f7}
 
-Par défaut, l'icone d'un document est l'icone de la famille au moment de la
+Par défaut, l'icône d'un document est l'icône de la famille au moment de la
 création du document.
 
-Il est possible de modifier l'icone d'un document au moyen d'une ligne
+Il est possible de modifier l'icône d'un document au moyen d'une ligne
 `DOCICON`.
 
 L'ordre des colonnes est  :
@@ -288,8 +295,8 @@ L'ordre des colonnes est  :
 |     #     |    famille     |          |     |                  |                   |                      |
 | --------- | -------------- | -------- | --- | ---------------- | ----------------- | -------------------- |
 | __ORDER__ | __ZOO_CLASSE__ |          |     | __cl_latinname__ | __cl_commonname__ | __cl_caracteristic__ |
-| DOC       | ZOO_CLASSE     | CL_ACTI  | -   | Actinopterygii   | Poissons          |                      |
-| DOCICON   | CL_ACTI        | fish.png | -   |                  |                   |                      |
+| DOC       | ZOO\_CLASSE     | CL\_ACTI  | -   | Actinopterygii   | Poissons          |                      |
+| DOCICON   | CL\_ACTI        | fish.png | -   |                  |                   |                      |
 
 Le nom de l'image doit référencer un fichier présent dans le répertoire
 `./Images` à la racine du répertoire d'installation sur le serveur.
@@ -322,3 +329,4 @@ de commande][wshimport].
 [postimport]:       #core-ref:9de7e922-150a-416b-b846-b6e195bf0921 
 [wshimport]:        #core-ref:1c97f553-dcba-454e-96a0-8059230065b3
 [visibility]:   #core-ref:3e67d45e-1fed-446d-82b5-ba941addc7e8
+[ErrorCodeORDR] : http://docs.anakeen.com/dynacase/3.2/dynacase-core-api-reference/class_error_code_o_r_d_r.html
