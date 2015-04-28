@@ -149,9 +149,9 @@ méthodes de la famille de workflow.
 *   les méthodes appelées en `m1`, `m2`, et `m3` peuvent être en visibilité
     `protected` ou `public` mais elles ne peuvent pas être `private`.
 
-#### `m0` {#core-ref:391f603e-b23a-44e8-aa14-47b4ab1fd03b}
+#### Définition méthode `m0` {#core-ref:391f603e-b23a-44e8-aa14-47b4ab1fd03b}
 
-La méthode appelée en `m0` est de la forme :
+La méthode appelée en [`m0`][m0] est de la forme :
 
     m0 ( $nextStep, $currentStep, $confirmationMessage)
 
@@ -167,14 +167,14 @@ le cas contraire, elle doit retourner un message localisé qui indiquera à
 l'utilisateur la raison pour laquelle la transition ne peut pas être effectuée.
 
 *Note* : Cette méthode est aussi appelée lors de l'affichage de la liste des
-états accessibles. Cela permet notamment de signaler à l'utilisateur les
+transitions accessibles. Cela permet notamment de signaler à l'utilisateur les
 transitions qu'il a le droit d'effectuer, mais pour lesquelles il doit faire des
 modifications sur le document. De fait, cette méthode ne **doit pas modifier le
 document**.
 
-#### `m1` {#core-ref:c288fbc9-18d8-4fa9-8f25-e5d8bb741155}
+#### Définition méthode `m1` {#core-ref:c288fbc9-18d8-4fa9-8f25-e5d8bb741155}
 
-La méthode appelée en `m1` est de la forme :
+La méthode appelée en [`m1`][m1] est de la forme :
 
     m1 ( $nextStep, $currentStep, $confirmationMessage)
 
@@ -188,9 +188,9 @@ Si elle retourne une chaîne vide, alors la transition peut être effectuée. da
 le cas contraire, elle doit retourner un message localisé qui indiquera à
 l'utilisateur la raison pour laquelle la transition ne peut pas être effectuée.
 
-#### `m2` {#core-ref:a67a3a77-ad04-468b-9af3-415468444d1a}
+#### Définition méthode `m2` {#core-ref:a67a3a77-ad04-468b-9af3-415468444d1a}
 
-La méthode appelée en `m2` est de la forme :
+La méthode appelée en [`m2`][m2] est de la forme :
 
     m2 ( $currentStep, $previousStep, $confirmationMessage)
 
@@ -204,9 +204,9 @@ Si elle retourne une chaîne non vide, cette chaîne est considérée comme un
 message d'erreur qui sera affiché à l'utilisateur à l'issue de la transition
 (Cette méthode n'est pas bloquante).
 
-#### `m3` {#core-ref:da8dbc68-777a-4573-bc63-b2e313b7f37a}
+#### Définition méthode `m3` {#core-ref:da8dbc68-777a-4573-bc63-b2e313b7f37a}
 
-La méthode appelée en `m3` est de la forme :
+La méthode appelée en [`m3`][m3] est de la forme :
 
     m3 ( $currentStep, $previousStep, $confirmationMessage)
 
@@ -220,13 +220,36 @@ Si elle retourne une chaîne non vide, cette chaîne est considérée comme un
 message d'erreur qui sera affiché à l'utilisateur à l'issue de la transition
 (Cette méthode n'est pas bloquante).
 
-#### Récupération des paramètres de transition {#core-ref:b9f13e07-747f-42e5-ae2a-7a30c801be7d}
+#### Utilisation des paramètres de transition `ask` {#core-ref:b9f13e07-747f-42e5-ae2a-7a30c801be7d}
 
-Dans les méthodes `m1`, `m2`, `m3` (et `m0` lorsqu'elle est appelée en début de
-transition), il est possible de récupérer les valeurs des paramètres de
-transition au moyen de la méthode `WDoc::getValue()` (bien que ces valeurs
-soient utilisées dans des paramètres, ce n'est pas la méthode
-`getParameterValue` qui est utilisée).
+Les [paramètres de transition][ask] sont envoyés lors de la requête de
+transition effectuée par l'interface web.
+
+Les valeurs présentées sur l'interface sont les valeurs des paramètres ou des
+attributs référencés au moment de la demande de transition.
+
+Les valeurs des paramètres de transition utilisées sont enregistrés dans
+l'historique du document.
+
+Si le paramètre référencé est obligatoire, l'interface exigera que le paramètre
+soit complété. Cette contrainte n'est pas testée lorsqu'il s'agit de passer une
+transition par programmation. Elle est prise en compte que par
+l'interface web. De même, les valeurs des paramètres de transition ne sont remplies
+que lors d'une transition effectuée par l'interface.
+
+
+**Attention** : Contrairement aux [paramètres de famille
+ordinaires][family_parameters], les contraintes ne sont pas prises en compte
+dans les paramètres de transition.
+
+Dans les méthodes `m0`, `m1`, `m2`, `m3`, la récupération des valeurs des
+[paramètres de transition][ask] s'effectuent au moyen de la méthode
+`WDoc::getValue()` (bien que ces valeurs soient utilisées dans des paramètres,
+ce n'est pas la méthode `getParameterValue` qui est utilisée).
+
+<span class="flag inline nota-bene"/>  Lors de la recherche des transitions
+accessibles, La méthode `m0` ne peut accèder aux paramètres de transition (ils
+ne sont pas encore demandés).
 
 ### Exemple {#core-ref:39cce5a0-2fae-461b-99e8-fbe91f67a172}
 
@@ -279,6 +302,7 @@ contiendra :
                 "m1" => "",
                 "m2" => "",
                 "m3" => "",
+                "ask" => array(\Dcp\Family\AttributeIdentifiers\MyDemo::wdemo_deadline_date),
                 "nr" => true
             ),
             self::transition_redacted_created    =>array(
@@ -432,3 +456,8 @@ de traduction][translation_catalog].
 [wf_intro]: #core-ref:55a53d99-0c24-48d8-8cb9-1caa171f2e9a
 [internationalisation]: #core-ref:8f3ad20a-4630-4e86-937b-da3fa26ba423
 [translation_catalog]: #core-ref:ca73ff9e-ceb8-456b-bdd4-9b9056f1543d
+[m0]:   #core-ref:c3bcdf20-5756-4880-b067-36f0d62b68c5
+[m1]:   #core-ref:603b0905-6269-4dca-a656-55e1d5524c3a
+[m2]:   #core-ref:ced2bc66-792e-4c55-bd0a-dcca09e9732d
+[m3]:   #core-ref:39462cd9-7962-4efe-888b-912d7256671a
+[ask]:  #core-ref:9e248e52-ad6b-4089-ab83-11a534b307e9

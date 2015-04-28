@@ -70,9 +70,9 @@ Lors de l'utilisation de l'IHM, une transition se déroule en plusieurs transact
         
         ![Processus de transition ](cycle/Sequence_transition.png)
 
-### `m0` {#core-ref:c3bcdf20-5756-4880-b067-36f0d62b68c5}
+### Précondition `m0` {#core-ref:c3bcdf20-5756-4880-b067-36f0d62b68c5}
 
-`m0` fait référence à une méthode de la classe de workflow. Cette méthode sert
+[`m0`][m0] fait référence à une méthode de la classe de workflow. Cette méthode sert
 à déterminer si le document est tel qu'il permet d'envisager la transition.
 
 C'est la toute première méthode appelée lors d'une demande de transition.
@@ -80,23 +80,22 @@ C'est la toute première méthode appelée lors d'une demande de transition.
 En cas d'erreur, la transition est abandonnée, et le message d'erreur est
 retourné à l'utilisateur.
 
-### Paramètres de transition {#core-ref:9e248e52-ad6b-4089-ab83-11a534b307e9}
+### Paramètres de transition `ask` {#core-ref:9e248e52-ad6b-4089-ab83-11a534b307e9}
 
-Les *paramètres de transition* sont des [paramètres][family_parameters] du cycle
-de vie, qui sont demandés à l'utilisateur lors de la transition. Ils doivent
-être définis sur la famille de cycle de vie, et référencés dans la transition au
-moyen de la clé `ask`. Cette clé contient un tableau des identifiants de tous
-les paramètres à utiliser.
+Les [*paramètres de transition*][ask] référencent des
+[paramètres][family_parameters] ou des attributs du cycle de vie, qui sont
+demandés à l'utilisateur lors de la transition. Ils doivent être définis sur la
+famille de cycle de vie, et référencés dans la transition au moyen de la clé
+`ask`. Cette clé contient un tableau des identifiants de tous les paramètres à
+utiliser.
 
 Comme dans un document, l'interface correspondant à ces paramètres sera générée
 par Dynacase ; les paramètres sont demandés par l'intermédiaire d'une fenêtre
 modale.
 
-**Attention** :Contrairement aux [paramètres de famille
-ordinaires][family_parameters], les contraintes ne sont pas prises en compte
-dans les paramètres de transition.
 
-### Confirmation {#core-ref:a808e6bc-67f8-4666-b5ec-e9bc429a0eb5}
+
+### Confirmation `nr` {#core-ref:a808e6bc-67f8-4666-b5ec-e9bc429a0eb5}
 
 si `nr` n'est pas positionné à `true`, alors une confirmation est demandée.
 Cette confirmation demande la raison de la transition. Cette raison est
@@ -105,9 +104,9 @@ facultative.
 Cette raison est affichée dans la même fenêtre que les paramètres de
 transition. Elle est enregistrée dans l'historique du document.
 
-### `m1` {#core-ref:603b0905-6269-4dca-a656-55e1d5524c3a}
+### Condition `m1` {#core-ref:603b0905-6269-4dca-a656-55e1d5524c3a}
 
-`m1` fait référence à une méthode de la classe de workflow. Cette méthode
+[`m1`][m1] fait référence à une méthode de la classe de workflow. Cette méthode
 sert à modifier le document juste avant le changement d'état.
 C'est le document tel qu'il est à l'issue de la méthode `m1` qui sera sauvegardé
 dans l'historique du document.
@@ -115,22 +114,24 @@ dans l'historique du document.
 Puisque `m1` est appelée après la demande des paramètres de transition, elle
 peut servir à valider les valeurs saisies par l'utilisateur.
 
-### `m2` {#core-ref:ced2bc66-792e-4c55-bd0a-dcca09e9732d}
+### Post-traitement `m2` {#core-ref:ced2bc66-792e-4c55-bd0a-dcca09e9732d}
 
-`m2` fait référence à une méthode de la classe de workflow. Cette méthode sert à
-modifier le document juste après le changement d'état. C'est le document tel
-qu'il est à la suite de `m2` qui sera soumis aux minuteurs et envoyé par mail.
+[`m2`][m2] fait référence à une méthode de la classe de workflow. Cette méthode
+sert à modifier le document juste après le changement d'état. C'est le document
+tel qu'il est à la suite de `m2` qui sera soumis aux minuteurs et envoyé par
+mail.
 
 Puisque `m2` intervient après le changement d'état, cette méthode n'est pas
 bloquante. Aussi, retourner un message n'interrompt pas le processus
 (mais le message d'information sera bien affiché à l'utilisateur à l'issue de la
 transition).
 
-### `m3` {#core-ref:39462cd9-7962-4efe-888b-912d7256671a}
+### Traitement final `m3` {#core-ref:39462cd9-7962-4efe-888b-912d7256671a}
 
-`m3` fait référence à une méthode de la classe de workflow. Cette méthode est la
-dernière exécutée au cours de la transition (c'est à dire qu'elle intervient
-après les différents traitements automatiques effectués par Dynacase).
+[`m3`][m3] fait référence à une méthode de la classe de workflow. Cette méthode
+est la dernière exécutée au cours de la transition (c'est à dire qu'elle
+intervient après les différents traitements automatiques effectués par
+Dynacase).
 
 Elle n'est utile que dans de très rares cas, et est en particulier utilisée
 lorsqu'une seconde transition doit être déclenchée automatiquement à l'issue de
@@ -149,3 +150,8 @@ Une fois assemblés, ces triplets définissent un Cycle de vie.
 <!-- links -->
 [family_parameters]: #core-ref:4595c8e7-5002-4dbc-b6bb-882b4123efd8
 [wprofil]:           #core-ref:226eb791-83f5-4f6a-9ea1-bddc74cf9e73
+[m0]:               #core-ref:391f603e-b23a-44e8-aa14-47b4ab1fd03b
+[m1]:               #core-ref:c288fbc9-18d8-4fa9-8f25-e5d8bb741155
+[m2]:               #core-ref:a67a3a77-ad04-468b-9af3-415468444d1a
+[m3]:               #core-ref:da8dbc68-777a-4573-bc63-b2e313b7f37a
+[ask]:              #core-ref:b9f13e07-747f-42e5-ae2a-7a30c801be7d
