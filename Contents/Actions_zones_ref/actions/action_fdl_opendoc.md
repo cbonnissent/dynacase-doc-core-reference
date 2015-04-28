@@ -147,8 +147,8 @@ crochets.
 Cet exemple pré-rempli l'attribut `an_enfant` avec les deux valeurs 1433 et
 1578.
 
-Le pré-remplissage n'est pas pris en compte si l'attribut à une [zone d'édition
-spécifique][editattrview].
+<span class="flag from release">3.2.19</span>Le préremplissage est pris en
+compte si l'attribut à une [zone d'édition spécifique][editattrview].
 
 **Important** : L'utilisation d'url avec des variables HTTP GET est limité en
 longueur (variable suivant les configurations du serveurs). Il est déconseillé
