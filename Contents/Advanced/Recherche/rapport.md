@@ -1,7 +1,7 @@
 # Rapports {#core-ref:32bc0b13-2b9f-4096-ac83-15f2b40d3b39}
 
-Les rapports (famille `REPORT`) héritent de la famille recherche détaillée
-(famille `DSEARCH`).
+Les rapports (famille [`REPORT`][report]) héritent de la famille recherche détaillée
+(famille [`DSEARCH`][dsearch]).
 
 ## Création d'un rapport {#core-ref:dc0f4a5c-272e-4084-b8a8-3fab403c6eb4}
 
@@ -74,3 +74,5 @@ cas de surcharge du titre.
 [attdocid]:         #core-ref:d461d5f5-b635-47a0-944d-473c227587ab
 [attaccount]:       #core-ref:87230967-8155-421c-8bbe-70a3c1adc3c0
 [customtitlew]:     #core-ref:d7c909a8-f2fa-4ddf-954c-00704e9a694d "Avertissement Doc::getCustomTitle()"
+[dsearch]:      #core-ref:30aa8d0d-c80b-426f-b129-b4e99c688bcc
+[report]:       #core-ref:4d6429f1-b3ae-46c4-8687-1c8d29f92f37

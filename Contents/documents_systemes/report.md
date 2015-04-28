@@ -14,7 +14,7 @@ Le résultat est alors affiché sous la forme d'une table,
 qui peut ensuite être exportée au format csv.
 
 Il est implémenté au moyen de la famille `Report`, qui étend la famille
-`DSEARCH` et y ajoute les méthodes du fichier `Method.Report.php`.
+[`DSEARCH`][search].
 
 ## Éléments de paramétrage {#core-ref:2abe6cc5-a45e-4574-86de-44d80fba2406}
 
@@ -102,6 +102,10 @@ Options d'exportation :
 Les options modifiées sont conservées pour chaque utilisateur et sont réutilisées
 à chaque nouvelle exportation.
 
+Voir aussi : [Programmation des rapports][report].
+
 <!-- links -->
 [detailed_search_param]: #core-ref:de8a1440-fb42-4ad0-b041-5c762b5258d9
 [tdc]:      https://fr.wikipedia.org/wiki/Tableau_crois%C3%A9_dynamique "Wikipedia : tableau croisé dynamique"
+[search]:    #core-ref:64c27570-07bf-4eb8-b970-d2b392716b52
+[report]:   #core-ref:32bc0b13-2b9f-4096-ac83-15f2b40d3b39

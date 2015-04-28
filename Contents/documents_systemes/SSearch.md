@@ -7,7 +7,7 @@ construire cette recherche de toutes parts. La famille *recherche spécialisée*
 permet de fournir le code php de la recherche.
 
 Elle est implémentée au moyen de la famille `SSEARCH`, qui étend la famille
-`SEARCH`.
+[`SEARCH`][search].
 
 ## Éléments de paramétrage {#core-ref:0abdd1f1-07ea-4ac5-88d5-bac41fa2ddc4}
 
@@ -79,3 +79,5 @@ Lors de l'édition d'une recherche spécialisée, vous devez renseigner
         return mytagdoc($start, $slice, "TOVIEW", $userid);
     }
 
+<!-- links -->
+[search]:    #core-ref:64c27570-07bf-4eb8-b970-d2b392716b52
