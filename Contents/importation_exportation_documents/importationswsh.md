@@ -91,6 +91,9 @@ L'option `reinitattr` est dépréciée. Cette option est équivalente à
 Si une seule erreur est détectée sur le fichier d'importation, aucun document du
 fichier d'importation ne sera ajouté ou modifié.
 
+La liste des codes d'erreur reportés est consultable dans la documentation de
+l'API PHP : ["Error codes"][api_error_codes].
+
 <!-- links -->
 [wsh]:          #core-ref:bab8c1c9-fe71-4629-9773-5cd67a8693bf
 [import_csv]:   #core-ref:2fb3284a-2424-44b2-93ae-41dc3969e093
@@ -99,3 +102,4 @@ fichier d'importation ne sera ajouté ou modifié.
 [resetfam]:     #core-ref:5c661733-772d-42b8-8b3e-b70453ddfd33
 [importdoc]:    #core-ref:a14d9475-0431-4aa3-853d-810b61e355a7
 [visibility]:   #core-ref:3e67d45e-1fed-446d-82b5-ba941addc7e8
+[api_error_codes]: http://docs.anakeen.com/dynacase/3.2/dynacase-core-api-reference/error_code.html

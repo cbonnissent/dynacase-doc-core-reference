@@ -16,6 +16,7 @@ Dynacase.
 | Précision sur les critères relations dans les recherches détaillées                                                                                      | [Recherche détaillée][relsearch] | <span class="flag update">Mis à jour</span> |
 | Possibilité de déclarer des attributs obligatoires dans les tableaux                                                                                     | [Attribut obligatoire][requires] | <span class="flag new">Nouveau</span>       |
 | Nouvelle option pour les nombres dans l'exportation CSV pour les rapports                                                                                | [Rapport][exportnumber]          | <span class="flag new">Nouveau</span>       |
+| Ajout lien vers les codes d'erreur de l'API PHP pour l'importation de documents                                                                          | [Importer des documents par ligne de commande][importationswsh_error_code] | <span class="flag update">Mis à jour</span> |
 
 
 ## Édition 7 {#core-ref:67c3551d-d99a-43c9-b837-5d93439bff8e}
@@ -202,3 +203,4 @@ retour d'erreur.
 [relsearch]:        #core-ref:1ced6e00-055c-4959-836d-00ed077d14c8
 [requires]:         #core-ref:8c74cf5b-3e03-480f-ba05-1a86ea6ec634
 [exportnumber]:     #core-ref:cf6934f9-afe2-48ea-877a-7a1cdc9f770e
+[importationswsh_error_code]: #core-ref:1ab32c44-3233-4de6-bede-97f0aa58e617

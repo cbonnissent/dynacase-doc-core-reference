@@ -183,6 +183,8 @@ book:
       content:  "importation_exportation_documents/importationsarchive.md"
     - level:   2
       content:  "importation_exportation_documents/importationswsh.md"
+      flags:
+        update: "mis à jour"
     - level:   2
       content:  "importation_exportation_documents/exportations.md"
       flags:
