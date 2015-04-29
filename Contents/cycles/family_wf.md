@@ -166,6 +166,10 @@ Si elle retourne une chaîne vide, alors la transition peut être effectuée. da
 le cas contraire, elle doit retourner un message localisé qui indiquera à
 l'utilisateur la raison pour laquelle la transition ne peut pas être effectuée.
 
+Le message retourné par la méthode est présenté dans un "tooltip" lors du
+survol de l'entrée de l'étape dans le menu `Étapes`, ou dans un "popover" lors
+du clic sur l'entrée de l'étape.
+
 *Note* : Cette méthode est aussi appelée lors de l'affichage de la liste des
 transitions accessibles. Cela permet notamment de signaler à l'utilisateur les
 transitions qu'il a le droit d'effectuer, mais pour lesquelles il doit faire des
