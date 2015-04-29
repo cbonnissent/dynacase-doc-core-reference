@@ -195,6 +195,9 @@ sourceAttributeName
         sur lequel est définie la contrainte est en dehors du tableau
     *   la valeur sur la même ligne  si l'attribut est dans un autre tableau, ce
         qui peut conduire à des comportements surprenants.
+    
+    Lorsque *attributeName* est un attribut structurant (e.g. `array`, `frame`,
+    etc.), alors la valeur passée est une chaîne vide.
 
 familyParametername
 :   Un nom de paramètre existant dans la famille.

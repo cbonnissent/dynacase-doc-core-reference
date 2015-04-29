@@ -19,6 +19,7 @@ Dynacase.
 | Prise en compte de la préaffectation lors de la création de document pour les vues spécifiques                                                           | [Action OPENDOC][opendocnew]     | <span class="flag new">Nouveau</span>       |
 | Ajout lien vers les codes d'erreur de l'API PHP pour l'importation de documents                                                                          | [Importer des documents par ligne de commande][importationswsh_error_code] | <span class="flag update">Mis à jour</span> |
 | Si une ligne `ORDER` est erronée, l'import de documents de cette famille est ignoré                                                                      | [Ordre des attributs][attributes_order] | <span class="flag update">Mis à jour</span> |
+| Comportement de la contrainte lorsque l'attribut passé est de type array                                                                                 | [Syntaxe][constraints_syntax] | <span class="flag update">Mis à jour</span> |
 
 
 ## Édition 7 {#core-ref:67c3551d-d99a-43c9-b837-5d93439bff8e}
@@ -208,3 +209,4 @@ retour d'erreur.
 [opendocnew]:       #core-ref:00345042-c8a2-44a9-a351-43e646b09b0b
 [importationswsh_error_code]: #core-ref:1ab32c44-3233-4de6-bede-97f0aa58e617
 [attributes_order]: #core-ref:e41116ee-a682-4033-a7ab-22dc1b99e56a
+[constraints_syntax]: #core-ref:28bfa7d5-918e-4f47-a28b-44ceefcd0a23
