@@ -205,3 +205,6 @@ retour d'erreur.
 [relsearch]:        #core-ref:1ced6e00-055c-4959-836d-00ed077d14c8
 [requires]:         #core-ref:8c74cf5b-3e03-480f-ba05-1a86ea6ec634
 [exportnumber]:     #core-ref:cf6934f9-afe2-48ea-877a-7a1cdc9f770e
+[opendocnew]:       #core-ref:00345042-c8a2-44a9-a351-43e646b09b0b
+[importationswsh_error_code]: #core-ref:1ab32c44-3233-4de6-bede-97f0aa58e617
+[attributes_order]: #core-ref:e41116ee-a682-4033-a7ab-22dc1b99e56a
