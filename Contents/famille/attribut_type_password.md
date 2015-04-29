@@ -8,13 +8,13 @@ Les attributs de type *password* permettent d'insérer des valeurs sans en dévo
 
 *   consultation :
     
-    La valeur avec les caractères remplacés par des étoiles.
+    <span class="flag from release">3.2.19</span>La valeur du mot de passe est remplacée par 5 étoiles.
     
     ![ password - consultation html ](famille/attributs/password-consultation.png "password - Consultation html")
 
 *   modification :
     
-    Un `input` de type `password`.
+    Un `input` de type `password`. Le mot de passe n'est pas indiqué même s'il est déjà renseigné.
     
     ![ password - Modification html ](famille/attributs/password-modification.png "password - Modification html")
 
@@ -24,7 +24,9 @@ Les attributs de type *password* permettent d'insérer des valeurs sans en dévo
 
 ## Comportement {#core-ref:9208756c-276a-42a3-aec4-eda84fec68e0}
 
-En édition, le champ password est sytématiquement présenté vide. Lors de la sauvegarde, si la valeur est vide, alors l'ancienne valeur est conservée.
+En édition, le champ password est systématiquement présenté vide. Lors de la
+sauvegarde, si la valeur est vide, alors l'ancienne valeur est conservée. Pour
+l'effacer, il faut mettre un seul caractère espace dans le champ.
 
 ## Format de stockage {#core-ref:94e19ad3-ec9e-4d7f-b51e-8e26e08238e6}
 

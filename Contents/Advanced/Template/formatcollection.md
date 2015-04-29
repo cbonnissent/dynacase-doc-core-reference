@@ -388,41 +388,62 @@ format, cela dépend du format de la locale de l'utilisateur.
 ### type `file` {#core-ref:732f5207-8e22-4e21-86d4-f8023fdd2706}
 
     [php]
-    [tst_file] => fileAttributeValue Object
+    ["tst_file"] => fileAttributeValue Object
         (
-            ["size"] => 5
-            ["creationDate"] => "2012-06-12 16:06:15"
-            ["fileName"] => "Test.txt"
-            ["url"] => "file/84412/3380/tst_file/-1he=no&inline=no"
+            ["size"] => 572
+            ["creationDate"] => "2014-10-14 11:44:20"
+            ["fileName"] => "iuserplus.csv"
+            ["url"] => "file/13502/807/fi_ofile/1/iuserplus.csv?cache=no&inline=yes"
             ["mime"] => "text/plain"
-            ["icon"] => "Images/mime-txt.png"
-            ["value"] => "text/plain; charset=us-at.txt"
-            ["displayValue"] => "Test.txt"
+            ["icon"] => "resizeimg.php?img=CORE%2FImages%2Fmime-txt.png&size=14"
+            ["value"] => "text/plain|807|iuserplus.csv"
+            ["displayValue"] => "iuserplus.csv"
         )
 
-La valeur formatée est le titre du fichier. l'url est le lien permettant de
-télécharger le fichier.
+La valeur formatée est le titre du fichier.
+
+Éléments retournés :
+
+*   `size` : taille en octets du fichier
+*   `creationDate` : date d'enregistrement du fichier
+*   `fileName` : nom du fichier
+*   `url` : url de téléchargement du fichier
+*   `mime` : type mime du fichier
+*   `icon` : icone repréentatant le type de fichier
+*   `value` : valeur brute (référence au fichier)
+*   `displayValue` : nom du fichier
 
 ### type `image` {#core-ref:483885aa-4f79-4dfb-821c-d991f435f956}
 
     [php]
     ["tst_img"] => imageAttributeValue Object
     (
-        ["thumbnail"] => "fst_img/-1/add.png?no&inline=yes&width=48"
-        ["size"] => 363
-        ["creationDate"] => "2012-06-12 16:06:15"
-        ["fileName"] => "add.png"
-        ["url"] => "file/84412/3381/tst_img/-1o&inline=no"
-        ["mime"] => "image/png"
-        ["icon"] => "Images/mime-image2.png"
-        ["value"] => "image/png; charset=binary|3"
-        ["displayValue"] => "add.png"
+        ["thumbnail"] => "file/13505/810/img_file/-1/tree.jpg?cache=no&inline=yes&width=48"
+        ["size"] => 584894
+        ["creationDate"] => "2014-10-14 13:59:30"
+        ["fileName"] => "tree.jpg"
+        ["url"] => f"ile/13505/810/img_file/-1/tree.jpg?cache=no&inline=yes"
+        ["mime"] => "image/jpeg"
+        ["icon"] => "resizeimg.php?img=CORE%2FImages%2Fmime-image.png&size=24"
+        ["value"] => "image/jpeg|810|tree.jpg"
+        ["displayValue"] => "tree.jpg"
      )
 
-Idem File. En plus l'attribut 'thumbnail' permet d'avoir un lien permettant
-d'afficher la miniature de l'image. La largeur de la miniature peut être définie
-avec l'attribut imageThumbnailSize de la classe FormatCollection. Elle est de
-48px par défaut.
+
+Éléments retournés :
+
+*   `thumbnail` : url de téléchargement de la miniature de l'image
+*   `size` : taille en octets de l'image
+*   `creationDate` : date d'enregistrement de l'image
+*   `fileName` : nom de l'image
+*   `url` : url de téléchargement de l'image
+*   `mime` : type mime de l'image
+*   `icon` : icone repréentatant le type de l'image
+*   `value` : valeur brute (référence à l'image)
+*   `displayValue` : nom de l'image
+
+Note : La largeur de la miniature peut être définie avec l'attribut
+`imageThumbnailSize` de la classe `FormatCollection`. Elle est de 48px par défaut.
 
 ### type `docid` - `account` {#core-ref:95aee029-f729-41f9-9b18-a6c20813c24d}
 
@@ -432,15 +453,17 @@ avec l'attribut imageThumbnailSize de la classe FormatCollection. Elle est de
         ["familyRelation"] => "TST_FMTCOL"
         ["url"] => "?app=FDL&amp;OPENDOC&amp;mode=view&amp;id=84412&amp;latest=Y"
         ["icon"] => "resizeimg.php?img=Images/test.png&size=14"
-        ["value"] => 84412
+        ["value"] => "84412"
         ["displayValue"] => "Test 1"
     )
 
-'familyRelation" indique le format du type de relation. La valeur formatée
-indique le titre du document pointé. L'url permet d'accéder à la consultation du
-document. La taille de l'icone du document pointé est par défaut de 14px. Elle
-peut être modifiée avec l'attribut relationIconSize de la classe
-FormatCollection.
+* `familyRelation` : indique le format du type de relation.
+* `url` : L'url permet d'accéder à la page de consultation du document. 
+* `icon` : La taille de l'icone du document pointé est par défaut de 14px. Elle
+peut être modifiée avec l'attribut `relationIconSize` de la classe
+`FormatCollection`.
+* `value` : La valeur brute indique l'identifiant numérique du document'. 
+* `displayValue` : La valeur formatée indique le titre du document pointé. 
 
 ### type `enum` {#core-ref:ddcd138f-acbd-46f0-bf82-2227399536dc}
 

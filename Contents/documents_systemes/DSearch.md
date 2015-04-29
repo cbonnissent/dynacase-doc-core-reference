@@ -7,7 +7,7 @@ portant sur les attributs des documents, ainsi que sur l'état des documents
 soumis à un cycle de vie.
 
 Elle est implémentée au moyen de la famille `DSEARCH`, qui étend la famille
-`SEARCH`.
+[`SEARCH`][search].
 
 ## Éléments de paramétrage {#core-ref:de8a1440-fb42-4ad0-b041-5c762b5258d9}
 
@@ -159,6 +159,17 @@ L'opérateur logique (attribut "condition") peut avoir 3 valeurs :
 Si la condition est personnalisée, les parenthèses permettent de prioriser les
 différents critères.
 
+## Erreur de requêtage
+
+Lors de la création de la requête, les erreurs "statique" pouvant être détectées
+(problème de parenthèse, argument incorrect,...) empêche l'enregistrement.
+
+Les autres erreurs de requête, comme par exemple, la référence à une famille qui
+n'existe plus, sont affichés lors de l'exécution de la recherche.
+
+Voir aussi : [Programmation des recherches][dsearch].
 
 <!-- links -->
 [searchcriteria] : #core-ref:16e19c90-3233-11e2-a58f-6b135c3a2496
+[search]:    #core-ref:64c27570-07bf-4eb8-b970-d2b392716b52
+[dsearch]:    #core-ref:b0bc6976-8eb3-4ba0-9999-241ecf7b1682

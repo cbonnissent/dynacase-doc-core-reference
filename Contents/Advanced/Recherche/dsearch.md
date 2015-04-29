@@ -4,10 +4,10 @@
 
 ### Création d'une recherche par famille {#core-ref:7c36fc88-d5bc-4e0c-8cbf-092916168575}
 
-La recherche détaillée (famille `DSEARCH`) a pour but de rechercher des
-documents d'une famille donnée. Elle permet d'être utilisée depuis l'interface
-graphique ou depuis la classe `SearchDoc` pour avoir une liste de document
-suivant des critères pré- établis.
+La recherche détaillée (famille [`DSEARCH`][dsearch]) a pour but de rechercher
+des documents d'une famille donnée. Elle permet d'être utilisée depuis
+l'interface graphique ou depuis la classe [`SearchDoc`][searchdoc] pour avoir
+une liste de document suivant des critères pré- établis.
 
     [php]
     /**
@@ -178,3 +178,5 @@ Exemple de surcharge de `Doc::getSearchMethods` :
 <!-- link -->
 [docblock]:     http://www.phpdoc.org/docs/latest/for-users/anatomy-of-a-docblock.html
 [i18n]:         #core-ref:8f3ad20a-4630-4e86-937b-da3fa26ba423
+[dsearch]:      #core-ref:30aa8d0d-c80b-426f-b129-b4e99c688bcc
+[searchdoc]:    #core-ref:a5216d5c-4e0f-4e3c-9553-7cbfda6b3255
