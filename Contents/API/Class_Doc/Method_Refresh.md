@@ -16,7 +16,9 @@ Cette méthode est appelée depuis la méthode [`Doc::store()`][docstore].
 
 ### Avertissements {#core-ref:9ac95508-ad63-4b73-a757-5e7743a97b3c}
 
-Aucun.
+Les attributs calculés en [visibilité][visibility] "I" ne sont pas mis à jour.
+La visibilité appliquée est celle donnée par le [contrôle de vue][cvdoc] (vue
+par défaut). 
 
 ## Liste des paramètres {#core-ref:c80fba75-e3c2-4da6-9ecd-fa5c55b88bc8}
 
@@ -66,6 +68,10 @@ méthode `specRefreshGen()` qui est générée lors de l'importation de la famil
 Cette méthode est appelée entre les hameçons
 [`Doc::preRefresh()`][docprerefresh] et  [`Doc::postRefresh()`][docpostrefresh].
 
+Les méthodes `Doc::preRefresh()` et `Doc::specRefreshGen()` sont exécutés en
+inhibant le contrôle des droits (utilisation
+[`Doc::disableEditControl()`][disableeditcontrol]).
+
 ## Voir aussi {#core-ref:73156d50-77d9-4c1a-a5fc-ba9defb9ad5c}
 
 *   [`Doc::preRefresh()`][docprerefresh],
@@ -77,3 +83,6 @@ Cette méthode est appelée entre les hameçons
 [docrefresh]:       #core-ref:0bab02de-50e0-46f2-8bdb-81c62dc86c93
 [computeattr]:      #core-ref:4565cab9-73c8-4eee-bfa7-218ffbd4b687 "Attributs calculés"
 [docstore]:         #core-ref:b8540d13-ece6-4e9e-9b72-6a56bca9da12
+[cvdoc]:            #core-ref:017f061a-7c12-42f8-aa9b-276cf706e7e0
+[visibility]:       #core-ref:3e67d45e-1fed-446d-82b5-ba941addc7e8
+[disableeditcontrol]: #core-ref:b9844f4b-3e5c-4bbe-98ae-e71a4ba17239

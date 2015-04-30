@@ -1,35 +1,94 @@
 # Utiliser un catalogue dans les fonctions JavaScript {#core-ref:c5e3821a-4170-11e3-9b2b-b38f13ee44c4}
 
-Le module _dynacase-datajs_ fournit une bibliothèque JavaScript permettant
-d'utiliser des traductions.
+Le catalogue des traductions pour le javascript est fourni par un fichier "JSON".
+Ce fichier est généré dans le répertoire :
+
+    locale/<lang>/js/catalog.js
+
+Par défaut les locales pour le français et l'anglais sont disponibles :
+
+*   locale/fr/js/catalog.js
+*   locale/en/js/catalog.js
+
+Ce fichier JSON est un objet où les clefs de traduction sont les index.
+
+Exemple :
+
+    {
+        "Hello" : "Bonjour",
+        "The world" : "Le monde"
+    }
+
+<span class="flag from release">3.2.19</span> Les traductions avec contexte sont 
+présentes dans le fichiers catalogue sous l'index `_msgctxt_`. Cet index contient
+des sous-index par contexte.
+
+
+Exemple : le code javascript suivant :
 
     [javascript]
-    // Initialisation du contexte
-    var C=new Fdl.Context({url:'http://www.mydomain.server/'});
-    if (! C.isConnected()) {
-        alert('error connect:'+C.getLastErrorMessage());
-    return;
+    var message=_("Hello")+_("World");
+    var other=___("Hello","myFirstContext")+___("Today","myFirstContext");
+    var alternative=___("Hello","mySecondContext")+___("Clear","mySecondContext");
+
+fournira le catalogue suivant : 
+
+    {
+        "Hello" : "Bonjour",
+        "The world" : "Le monde"
+        "_msgctxt_" : {
+            "myFirstContext" : {
+                "Hello" : "Salut"
+                "Today" : "Aujourd'hui"
+            },
+            "mySecondContext" : {
+                "Hello" : "Bienvenue à tous"
+                "Clear" : "Temps clair"
+            }
+        }
     }
-    // Authentification
-    if (! C.isAuthenticated()) {
-        var u=C.setAuthentification({login:'mylogin',password:'secret'});
-        if (!u)  alert('error authent:'+C.getLastErrorMessage());
-    }
-    // C is the context
-    var helloText=C._("my test is ok");
 
-La méthode `Fdl.Context::_()` retourne la traduction comme pour la fonction `_`
-équivalente de PHP.
+Exemple de code javascript permettant d'utiliser le catalogue "JSON".
 
-La langue choisie est celle de l'utilisateur (paramètre applicatif `CORE_LANG`).
+    [html]
+    <html>
+    <script type="text/javascript" src="lib/jquery/jquery.js"></script>
+    <script>
+        $(document).ready(function () {
+            var catalog;
+            $.getJSON("locale/fr/js/catalog.js", function (data) {
+                catalog = data;
+            });
+            
+            $("#translate").on("click", function () {
+                var key = $("[name=key]").val();
+                var ctx = $("[name=ctx]").val();
+                var result;
+                if (!ctx) {
+                    result = catalog[key];
+                } else if (catalog._msgctxt_[ctx]) {
+                    result = catalog._msgctxt_[ctx][key]
+                }
+                if (!result) {
+                    result = "Not found!"
+                }
+                $(".result").text(result);
+            })
+        });
+    </script>
+    <body>
+        <input name="key" placeholder="key"/>
+        <input name="ctx" placeholder="context"/>
+        <button id="translate">Translate</button>
+        <p class="result"> ... </p>
+    </body>
+    </html>
 
-*Note* : La récupération du catalogue est une opération JavaScript qui fait un 
-appel Ajax synchrone au serveur, elle bloque donc l'exécution du JavaScript le 
-temps de la récupération des traductions.
+
 
 ## Génération du catalogue temporaire {#core-ref:54be89bc-4171-11e3-b408-cffb8e583c3}
 
-Le programme `xgettextJs` permet générer le catalogue temporaire.
+Le programme [`xgettextJs`][buildtool] permet générer le catalogue temporaire.
 <span class="flag from release">3.2.12</span>
 
     ./buildTools/xgettextJs --output=myCatalog.pot  myFile1.js myFile2.js
@@ -38,6 +97,17 @@ Le programme `xgettextJs` permet générer le catalogue temporaire.
 
 Ce catalogue temporaire peut ainsi être utilisé pour produire les fichiers
 catalogue de traduction.
+
+La nouvelle version de `xgettextJs` permet aussi d'extraire les 
+formes avec contexte.<span class="flag from release">3.2.19</span>
+
+Exemple :
+
+    [javascript]
+    function hello() {
+        alert(_("Hello"));
+        alert(___("Hello","myContext")); // New in 3.2.19
+    }
 
 ## Publication du catalogue {#core-ref:5bd6f306-4171-11e3-999b-60d7dc830245}
 
@@ -76,3 +146,4 @@ Plus de détails sur le paragraphe [Publication][popublish]
 [famdecl]:          #core-ref:cfc7f53b-7982-431e-a04b-7b54eddf4a75
 [gettextutil]:      http://www.gnu.org/software/gettext/manual/html_node/index.html#Top
 [popublish]:        #core-ref:7f5e9754-6db2-4dcb-ac99-e640f8a93c38 "Publication des catalogues"
+[buildtools]:       https://github.com/Anakeen/dynacase-buildtools  "Source BuildTools"

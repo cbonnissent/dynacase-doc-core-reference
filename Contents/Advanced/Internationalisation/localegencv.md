@@ -2,7 +2,7 @@
 
 Les libellés des vues des [contrôles de vues][cvdoc] peuvent être traduits.
 
-Le programme `xgettextFamily` permet d'extraire les clefs de traduction depuis un
+Le programme [`xgettextFamily`][buildtools] permet d'extraire les clefs de traduction depuis un
 fichier de description de contrôle de vue.<span class="flag from release">3.2.12</span>
 
     ./buildTools/xgettextFamily -o myLocaleDirectory someCVDoc.csv
@@ -76,3 +76,4 @@ Les clefs suivantes sont générées :
 [famdecl]:          #core-ref:cfc7f53b-7982-431e-a04b-7b54eddf4a75
 [gettextutil]:      http://www.gnu.org/software/gettext/manual/html_node/index.html#Top
 [cvdoc]:            #core-ref:017f061a-7c12-42f8-aa9b-276cf706e7e0
+[buildtools]:       https://github.com/Anakeen/dynacase-buildtools   "Source BuildTools"

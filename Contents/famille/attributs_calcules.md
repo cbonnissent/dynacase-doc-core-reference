@@ -32,7 +32,16 @@ Le résultat est mis dans l'attribut sur lequel s'applique le calcul
 (sauf redirection explicite faite lors de la déclaration de l'attribut).
 
 Le calcul est effectué lors du rafraîchissement des documents (voir la méthode
-`Doc::refresh()`).
+[`Doc::refresh()`][refresh]).
+
+Les attributs en visibilité `I` ne sont pas modifiés lors de l'actualisation.
+Pour que ces attributs soit modifiés, il est nécessaire qu'un contrôle de vue
+modifie cette visibilité pour l'utilisateur courant. Si l'attribut est en
+visibilité `I` au moment du calcul, un message d'avertissement sera écrit dans
+les [logs système][warning].
+
+
+
 D'un point de vue utilisateur, un attribut calculé est rafraîchi avant chaque
 consultation de document.
 
@@ -276,3 +285,5 @@ Note: on pourrait aussi utiliser une méthode statique, qui aurait sûrement plu
 <!-- links -->
 [WP_BNF]: http://fr.wikipedia.org/wiki/Backus_Naur_Form "Définition de la Forme de Backus-Naur sur Wikipedia"
 [hooks]: #core-ref:8f3d47de-32b5-4748-8a00-b1569c5423e5
+[refresh]:  #core-ref:0bab02de-50e0-46f2-8bdb-81c62dc86c93
+[warning]:  #core-ref:75225e74-31cd-48cb-9297-a1cc412f1e75

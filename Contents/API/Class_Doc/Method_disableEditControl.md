@@ -37,6 +37,9 @@ erreur. Notamment, le code suivant laisse les contrôles désactivés :
     $doc->disableEditControl();
     $doc->enableEditControl();
 
+Cette inhibition de contrôle des droits ne contrôle pas la contrainte d'accès
+liée à la [visibilité][visibility] `I`.
+
 ## Liste des paramètres {#core-ref:4e1be90b-157d-4386-9c08-f4194fe3cb4d}
 
 Aucun.
@@ -133,3 +136,4 @@ Aucune.
 [store]:        #core-ref:b8540d13-ece6-4e9e-9b72-6a56bca9da12
 [revise]:       #core-ref:882e3730-0483-4dbc-9b9d-0d0b5cc31d38
 [enable]:       #core-ref:3c9aba8e-50a6-41b0-82e9-64f63085e5e5
+[visibility]:   #core-ref:3e67d45e-1fed-446d-82b5-ba941addc7e8

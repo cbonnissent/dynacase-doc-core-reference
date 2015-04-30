@@ -12,7 +12,7 @@ Exemple : TestSimple.ods
 | ATTR  | TST_TITLE   | TST_FR_HTML | Titre          | Y   | N          | text  | 110 | W   | Y    |      |         |                                                     |
 | ATTR  | TST_SIZE    | TST_FR_HTML | Taille         | N   | N          | enum  | 120 | W   |      |      |         | XL&#124; Very large,L &#124; Large,M &#124;Medium,S |
 
-Le programme `xgettextFamily` permet d'extraire les clefs de traduction depuis un
+Le programme [`xgettextFamily`][buildtools] permet d'extraire les clefs de traduction depuis un
 ou plusieurs fichiers de description de famille (CSV ou ODS).
 <span class="flag from release">3.2.12</span>
 
@@ -108,3 +108,4 @@ Les clefs suivantes sont générée :
 [famdecl]:          #core-ref:cfc7f53b-7982-431e-a04b-7b54eddf4a75
 [gettextutil]:      http://www.gnu.org/software/gettext/manual/html_node/index.html#Top
 [optionattr]:       #core-ref:16e19c90-3233-11e2-a58f-6b135c3a2496 "Options d'attribut"
+[buildtools]:       https://github.com/Anakeen/dynacase-buildtools   "Source BuildTools"
