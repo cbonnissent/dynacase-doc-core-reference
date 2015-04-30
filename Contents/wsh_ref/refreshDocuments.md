@@ -72,11 +72,56 @@ d'une famille donnée.
     :   N'appelle aucune autre méthode additionnelle après l'exécution de la
         méthode `method`.
 
+`status-file` <span class="flag from release inline">3.2.19</span>
+:   Permet de spécifier la création d'un fichier de rapport contenant :
+    
+    * le nombre de documents sélectionnés pour traitement (ligne `ALL: `) ;
+    * le nombre de documents traités (ligne `PROCESSED: `) ;
+    * le nombre de documents traités avec erreur (ligne `FAILURE: `) ;
+    * le nombre de documents traités avec succès (ligne `SUCCESS: `) ;
+    
+    Si `-` (tiret) est spécifié, le fichier de rapport est alors écrit sur le
+    flux de sortie standard `STDOUT`.
+    
+    Si le fichier spécifié existe déjà, le fichier est supprimé avant d'être
+    re-créé.
+    
+    Par défaut aucun fichier de rapport n'est créé.
+
+`stop-on-error` <span class="flag from release inline">3.2.19</span>
+:   Permet de stopper le traitement lorsque la méthode `store()` ou `modify()`
+    d'un document retourne une erreur, ou lorsqu'une exception est levée.
+    
+    Par défaut le comportement est de poursuivre le traitement lorsqu'un
+    document retourne une erreur ou lance une exception.
+
 ## Limite d'usage {#core-ref:e8623a7a-c9e1-4150-950d-3769b7177163}
 
 Seul le premier argument de la méthode `method` peut être spécifié avec l'option
 `arg`. Les autres arguments de la méthode ne seront donc pas positionnés (ce qui
 peut restreindre les méthodes utilisable par ce traitement).
+
+## Erreurs {#core-ref:55e66ca7-afe9-47bd-9d45-febb316e51f9}
+
+<span class="flag from release inline">3.2.19</span> Le processus se termine
+avec un exit code `0` s'il n'y a pas d'erreurs, ou un exit code différent de
+`0` lorsque au moins un document a remonté une erreur (erreur de
+`store()`/`modify()` ou exception lancé par le document).
+
+## Changements {#core-ref:063bc2ca-cdf2-426b-8330-044b01a04a8b}
+
+### Version 3.2.19 {#core-ref:1b328bc5-6f91-46d1-92d5-07d0ef6e16f6}
+
+Depuis la version 3.2.19 les exceptions sont attrapés et traitées comme une
+erreur (au même titre qu'une erreur retourné par `store()` ou `modify()`) et ne
+stoppent donc plus l'exécution du traitement.
+
+Dans les versions précédentes les exceptions n'étaient pas attrapées et
+interrompaient l'exécution du traitement.
+
+Pour rétablir un fonctionnement similaire a celui des versions précédentes vous
+pouvez utiliser l'option `--stop-on-error` qui interrompt le traitement au
+premier document qui retourne une erreur ou une exception.
 
 <!-- links -->
 [searchdoc_setstart]: #core-ref:2527bda4-acc9-42ed-99e0-2ecbd6254a8e
