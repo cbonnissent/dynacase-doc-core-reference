@@ -7,20 +7,20 @@ Dynacase.
 
 ## Édition 8 {#core-ref:f10874a8-78c8-42eb-9908-5eaaf04d247f}
 
-|                                                                      Modifications                                                                       |             Chapitre             |                   Version                   |
-| :------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------- | :------------------------------------------ |
-| Règle globale pour les styles                                                                                                                            | [Règles de style][globalstyle]   | <span class="flag new">Nouveau</span>       |
-| Ajout explication pour les paramètres CORE_TMPDIR, CORE_TMPDIRMAXAGE, CORE_LOGDURATION, CORE_SESSIONMAXAGE, CORE_SESSIONGCPROBABILITY, FREEDOM_UPLOADDIR | [Paramètre système][paramSystem] | <span class="flag new">Nouveau</span>       |
-| Description de la table doclog                                                                                                                           | [table doclog][doclog]           | <span class="flag new">Nouveau</span>       |
-| Fichier openDocument Writer : Précisions sur les images insérées dans les attributs "htmltext"                                                           | [Image et htmltext][convooo]     | <span class="flag update">Mis à jour</span> |
-| Précision sur les critères relations dans les recherches détaillées                                                                                      | [Recherche détaillée][relsearch] | <span class="flag update">Mis à jour</span> |
-| Possibilité de déclarer des attributs obligatoires dans les tableaux                                                                                     | [Attribut obligatoire][requires] | <span class="flag new">Nouveau</span>       |
-| Nouvelle option pour les nombres dans l'exportation CSV pour les rapports                                                                                | [Rapport][exportnumber]          | <span class="flag new">Nouveau</span>       |
-| Prise en compte de la préaffectation lors de la création de document pour les vues spécifiques                                                           | [Action OPENDOC][opendocnew]     | <span class="flag new">Nouveau</span>       |
+|                                                                      Modifications                                                                       |                                  Chapitre                                  |                   Version                   |
+| :------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------- | :------------------------------------------ |
+| Règle globale pour les styles                                                                                                                            | [Règles de style][globalstyle]                                             | <span class="flag new">Nouveau</span>       |
+| Ajout explication pour les paramètres CORE_TMPDIR, CORE_TMPDIRMAXAGE, CORE_LOGDURATION, CORE_SESSIONMAXAGE, CORE_SESSIONGCPROBABILITY, FREEDOM_UPLOADDIR | [Paramètre système][paramSystem]                                           | <span class="flag new">Nouveau</span>       |
+| Description de la table doclog                                                                                                                           | [table doclog][doclog]                                                     | <span class="flag new">Nouveau</span>       |
+| Fichier openDocument Writer : Précisions sur les images insérées dans les attributs "htmltext"                                                           | [Image et htmltext][convooo]                                               | <span class="flag update">Mis à jour</span> |
+| Précision sur les critères relations dans les recherches détaillées                                                                                      | [Recherche détaillée][relsearch]                                           | <span class="flag update">Mis à jour</span> |
+| Possibilité de déclarer des attributs obligatoires dans les tableaux                                                                                     | [Attribut obligatoire][requires]                                           | <span class="flag new">Nouveau</span>       |
+| Nouvelle option pour les nombres dans l'exportation CSV pour les rapports                                                                                | [Rapport][exportnumber]                                                    | <span class="flag new">Nouveau</span>       |
+| Prise en compte de la préaffectation lors de la création de document pour les vues spécifiques                                                           | [Action OPENDOC][opendocnew]                                               | <span class="flag new">Nouveau</span>       |
 | Ajout lien vers les codes d'erreur de l'API PHP pour l'importation de documents                                                                          | [Importer des documents par ligne de commande][importationswsh_error_code] | <span class="flag update">Mis à jour</span> |
-| Si une ligne `ORDER` est erronée, l'import de documents de cette famille est ignoré                                                                      | [Ordre des attributs][attributes_order] | <span class="flag update">Mis à jour</span> |
-| Comportement de la contrainte lorsque l'attribut passé est de type array                                                                                 | [Syntaxe][constraints_syntax] | <span class="flag update">Mis à jour</span> |
-
+| Si une ligne `ORDER` est erronée, l'import de documents de cette famille est ignoré                                                                      | [Ordre des attributs][attributes_order]                                    | <span class="flag update">Mis à jour</span> |
+| Précisions sur les options de l'attribut Htmltext                                                                                                        | [Options Htmltext][htmlopt]                                                | <span class="flag update">Mis à jour</span> |
+| Comportement de la contrainte lorsque l'attribut passé est de type array                                                                                 | [Syntaxe des contraintes][constraints_syntax]                              | <span class="flag update">Mis à jour</span> |
 
 ## Édition 7 {#core-ref:67c3551d-d99a-43c9-b837-5d93439bff8e}
 
@@ -46,7 +46,7 @@ Dynacase.
 | :-------------------------------------------------------------------------- | :----------------------------------------------- | :--------------------------------------------- |
 | Ajout des nouvelles options d'export CSV                                    | [CSV exportations][csv_export]                   | <span class="flag update">Mise à jour</span>   |
 | Ajout de l'option displayrowcount sur les array                             | [Array displayrowcount][display_row_count]       | <span class="flag update">Mise à jour</span>   |
-| Ajout de l'option SET sur l'import des profils                              | [import des profil][import_profil]               | <span class="flag update">Mise à jour</span>   |
+| Ajout de l'option SET sur l'importation des profils                         | [importation des profil][import_profil]          | <span class="flag update">Mise à jour</span>   |
 | Précision sur l'option showempty pour les images                            | [showempty][commonoptions]                       | <span class="flag update">Mise à jour</span>   |
 | Précision sur la composition d'un titre                                     | [Titre de document][famattrtitle]                | <span class="flag update">Mise à jour</span>   |
 | Précision sur le retour d'un paramètre de famille                           | [Doc::getFamilyParameter()][returnfamilyparam]   | <span class="flag update">Mise à jour</span>   |
@@ -210,3 +210,4 @@ retour d'erreur.
 [importationswsh_error_code]: #core-ref:1ab32c44-3233-4de6-bede-97f0aa58e617
 [attributes_order]: #core-ref:e41116ee-a682-4033-a7ab-22dc1b99e56a
 [constraints_syntax]: #core-ref:28bfa7d5-918e-4f47-a28b-44ceefcd0a23
+[htmlopt] :         #core-ref:8e182116-8762-4157-a743-9abf43db0960

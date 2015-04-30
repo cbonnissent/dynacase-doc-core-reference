@@ -23,7 +23,7 @@ Voir aussi :
 
 `archive` (default `no`)
 :   Permet d'indiquer si le fichier est une archive (`yes`) ou bien un fichier
-    d'import texte (`no`).
+    d'importation texte (`no`).
     
     Voir [Importation d'archive][importation_archive] pour le format de ces
     archives.
@@ -47,7 +47,7 @@ Voir aussi :
     
     `keep`
     :   Si un document existant est détecté, alors le document existant est
-        conservé en l'état, et l'import ne crée pas un nouveau document.
+        conservé en l'état, et l'importation ne crée pas un nouveau document.
     
     `update`
     :   Si un document existant est détecté, alors le document existant est
@@ -59,7 +59,7 @@ Voir aussi :
 
 `reset[]`
 :   Permet de spécifier les éléments qui doivent être supprimés, ou redéfinis,
-    lors de l'import d'une définition de famille.
+    lors de l'importation d'une définition de famille.
     
     Les valeurs possibles sont celles de l'
     [instruction de `RESET`][RESET].
@@ -76,8 +76,8 @@ Voir aussi :
     insérés les documents importés.
 
 `strict` (default `yes`)
-:   Permet de spécifier (`yes`) si une erreur d'import d'un document invalide
-    l'import de tous les documents. Si le mode strict est désactivé (`no`),
+:   Permet de spécifier (`yes`) si une erreur d'importation d'un document invalide
+    l'importation de tous les documents. Si le mode strict est désactivé (`no`),
     alors une erreur sur un document n'empêchera pas les autres documents
     d'êtres importés.
 
