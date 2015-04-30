@@ -30,9 +30,15 @@ Le langage de mise en forme est le html, et un éditeur WYSIWYG (basé sur [CKEd
 
 ## Comportement {#core-ref:9bad041e-d747-4d9b-9406-5b62d662229b}
 
-Lors de l'enregistrement, le nettoyage suivant est effectué :
+L'éditeur CKeditor nettoit le code HTML inséré. Il ne conserve que les balises
+qui peuvent être insérées avec la barre de menu.
 
-*   Les balises `script` et `noscript` sont remplacées par des balises `pre` ;
+<span class="flag from release">3.2.19</span> Lors de l'enregistrement, 
+le nettoyage suivant est effectué :
+
+*   Suppression de tous les attributs commençant par "on" ou "xmlns"
+*   Suppression du javascript, applet et vbscript (le contenu est conservé sans les balises)
+*   Suppression des éléments avec namespace
 *   Les entités UTF-8 sont décodées ;
 *   Les commentaires sont supprimés.
 
@@ -70,9 +76,9 @@ editheight
 htmlclean
 :   Indique que le serveur nettoiera le contenu en supprimant toutes les balises de style, généralement issues d'un copier/coller :
     
-    *   les attribut des balises `span` et `font` sont supprimés ;
+    *   les attribut des balises `span` (le conetnu est conservé) et `font` sont supprimés ;
     *   les attributs `@class` et `@style` sont supprimés ;
-    *   les balises `style` sont supprimés.
+    *   les balises `style` sont supprimées.
     
     Les valeurs possibles sont :
     
@@ -97,7 +103,7 @@ jsonconf
         Cette commande est alors ajoutée en fin de toolbar.
     
     Exemple de configuration permettant d'activer le plugin docattr et le plugin doclink et avec un menu basique et l'activation du mode resize :
-    `jsonconf={"addPlugins" : ["docattr"], "doclink" :   {"famId" : "DIR"}, "toolbar" : "basic", "resize_enabled" : "true"}`
+    `jsonconf={"addPlugins" : ["docattr"], "doclink" :   {"famId" : "DIR"}, "toolbar" : "basic", "resize_enabled" : true}`
     
     **Attention** : l'utilisation de cette option bas niveau désactive les options suivantes :
     
@@ -108,26 +114,171 @@ jsonconf
     
     Il est par contre possible de construire une option *jsonconf* qui a le même effet que les options précédentes.
 
+
 toolbar
 :   Indique le template à utiliser pour la barre de menu.
+    
+    
+    La barre de menu contraint par défaut la liste des éléments acceptés par 
+    l'éditeur de texte.
+    
+    Pour supprrimer cette contrainte, il faut utiliser l'option [`allowedContent`][CKEDITOR_option]
+    de ckeditor.
+    Exemple pour tout autoriser : `jsonconf={"allowedContent" : true, "toolbar" : "Basic"}`
     
     Les valeurs possibles sont :
     
     *   **`Simple` (comportement par défaut)** :
         
         ![toolbar Simple](famille/attributs/htmltext-toolbar-simple.png)
+        
+        Les balises et attributs autorisés sont : 
+        * "a[_tout attribut_] "
+        * "address"
+        * "br"
+        * "caption[text-align]"
+        * "div[text-align]"
+        * "em"
+        * "h1[text-align]"
+        * "h2[text-align]"
+        * "h3[text-align]"
+        * "h4[text-align]"
+        * "h5[text-align]"
+        * "h6[text-align]"
+        * "img[_tout attribut_] "
+        * "li[text-align]"
+        * "ol"
+        * "p[text-align]"
+        * "pre[text-align]"
+        * "s"
+        * "span[font-size, color, background-color]"
+        * "strong"
+        * "table[width, height]"
+        * "tbody"
+        * "td[width, height, border-color, background-color, white-space, vertical-align, text-align, text-align]"
+        * "tfoot"
+        * "th[width, height, border-color, background-color, white-space, vertical-align, text-align, text-align]"
+        * "thead"
+        * "tr"
+        * "u"
+        * "ul"
     
     *   `Basic` :
         
         ![toolbar Basic](famille/attributs/htmltext-toolbar-basic.png)
+      
+        Les balises et attributs autorisés sont : 
+        * "a[_tout attribut_] "
+        * "br"
+        * "em"
+        * "img[_tout attribut_] "
+        * "li"
+        * "ol"
+        * "p"
+        * "strong"
+        * "td[width, height, border-color, background-color, white-space, vertical-align, text-align]"
+        * "th[width, height, border-color, background-color, white-space, vertical-align, text-align]"
+        * "ul"
     
     *   `Default` :
         
         ![toolbar Default](famille/attributs/htmltext-toolbar-default.png)
+        
+        Les balises et attributs autorisés sont : 
+        * "a[_tout attribut_] "
+        * "address"
+        * "big"
+        * "blockquote"
+        * "br"
+        * "caption[text-align]"
+        * "cite"
+        * "code"
+        * "del"
+        * "div[text-align, padding, background, border]"
+        * "em"
+        * "h1[text-align]"
+        * "h2[text-align, font-style]"
+        * "h3[text-align, color, font-style]"
+        * "h4[text-align]"
+        * "h5[text-align]"
+        * "h6[text-align]"
+        * "hr"
+        * "img[_tout attribut_] "
+        * "ins"
+        * "kbd"
+        * "li[text-align]"
+        * "ol"
+        * "p[text-align]"
+        * "pre[text-align]"
+        * "q"
+        * "s"
+        * "samp"
+        * "small"
+        * "span[font-family, font-size, color, background-color]"
+        * "strong"
+        * "sub"
+        * "sup"
+        * "table[width, height, border-collapse, border-style, background-color]"
+        * "tbody"
+        * "td[width, height, border-color, background-color, white-space, vertical-align, text-align, text-align]"
+        * "tfoot"
+        * "th[width, height, border-color, background-color, white-space, vertical-align, text-align, text-align]"
+        * "thead"
+        * "tr"
+        * "tt"
+        * "u"
+        * "ul[list-style-type]"
+        * "var"
     
     *   `Full` :
         
         ![toolbar Full](famille/attributs/htmltext-toolbar-full.png)
+        
+        Les balises et attributs autorisés sont : 
+        * "a[_tout attribut_] "
+        * "address"
+        * "big"
+        * "blockquote"
+        * "br"
+        * "caption[text-align]"
+        * "cite"
+        * "code"
+        * "del"
+        * "div[text-align, padding, background, border]"
+        * "em"
+        * "h1[text-align]"
+        * "h2[text-align, font-style]"
+        * "h3[text-align, color, font-style]"
+        * "h4[text-align]"
+        * "h5[text-align]"
+        * "h6[text-align]"
+        * "hr"
+        * "img[_tout attribut_] "
+        * "ins"
+        * "kbd"
+        * "li[text-align]"
+        * "ol"
+        * "p[text-align]"
+        * "pre[text-align]"
+        * "q"
+        * "s"
+        * "samp"
+        * "small"
+        * "span[font-family, font-size, color, background-color]"
+        * "strong"
+        * "sub"
+        * "sup"
+        * "table[width, height, border-collapse, border-style, background-color]"
+        * "tbody"
+        * "td[width, height, border-color, background-color, white-space, vertical-align, text-align, text-align]"
+        * "tfoot"
+        * "th[width, height, border-color, background-color, white-space, vertical-align, text-align, text-align]"
+        * "thead"
+        * "tr"
+        * "tt"
+        * "u"
+        * "ul[list-style-type]"
+        * "var"
 
 toolbarexpand
 :   Indique si la barre de menu doit être dépliée lors de l'affichage de l'éditeur.
@@ -145,7 +296,7 @@ toolbarexpand
 [PHP_money_format]: http://php.net/manual/fr/function.money-format.php "documentation de money_format sur php.net"
 [PHP_is_numeric]: php.net/manual/function.is-numeric.php "documentation sur php.net"
 [CKEDITOR_home]: http://ckeditor.com/ "Site officiel de CKEditor"
-[CKEDITOR_option]: http://docs.cksource.com/ckeditor_api/symbols/CKEDITOR.config.html "options de CKEDITOR"
+[CKEDITOR_option]: http://docs.ckeditor.com/#!/api/CKEDITOR.config "options de CKEDITOR"
 [SORTTABLEJS_home]: http://www.kryogenix.org/code/browser/sorttable/ "site officiel de sorttable.js"
 [JSCOLOR_home]: http://jscolor.com/ "site officiel de JSColor"
 [JSCALENDAR_HOME]: http://www.dynarch.com/projects/calendar/old/ "site officiel de JSCalendar"
