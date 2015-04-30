@@ -21,9 +21,10 @@ Dynacase.
 | Si une ligne `ORDER` est erronée, l'import de documents de cette famille est ignoré                                                                      | [Ordre des attributs][attributes_order]                                    | <span class="flag update">Mis à jour</span> |
 | Précisions sur les options de l'attribut Htmltext                                                                                                        | [Options Htmltext][htmlopt]                                                | <span class="flag update">Mis à jour</span> |
 | Comportement de la contrainte lorsque l'attribut passé est de type array                                                                                 | [Syntaxe des contraintes][constraints_syntax]                              | <span class="flag update">Mis à jour</span> |
-| Ajout "Fonction de rappel à l'extinction"                                                                                                                | [Fonction de rappel à l'extinction][shutdown_function]                     | <span class="flag new">Nouveau</span>       |
+| Utilisation du contexte dans les traductions javascript                                                                                                  | [Traduction js][i18nsjs]                                                   | <span class="flag update">Mis à jour</span> |
 | Possibilité de sélectionner un "Document destinataire" ccomme destinataire pour un modèle de mail                                                        | [Spécification de l'émetteur ou du destinataire][document_destinataire]    | <span class="flag new">Nouveau</span>       |
 | Ajout options `--status-file` et `--stop-on-error` au script d'API `refreshDocuments`, et changement du comportement en cas d'erreur                     | [refreshDocuments][api_refreshDocuments]                                   | <span class="flag update">Mis à jour</span> |
+
 
 ## Édition 7 {#core-ref:67c3551d-d99a-43c9-b837-5d93439bff8e}
 
@@ -214,6 +215,7 @@ retour d'erreur.
 [attributes_order]: #core-ref:e41116ee-a682-4033-a7ab-22dc1b99e56a
 [constraints_syntax]: #core-ref:28bfa7d5-918e-4f47-a28b-44ceefcd0a23
 [htmlopt] :         #core-ref:8e182116-8762-4157-a743-9abf43db0960
+[i18nsjs]:          #core-ref:c5e3821a-4170-11e3-9b2b-b38f13ee44c4
 [shutdown_function]: #core-ref:9f3475a2-b6a5-4927-b6b7-97f128cb4cd4
 [document_destinataire]: #core-ref:e717367f-7a29-473d-a65a-ac2c924bd0cb
 [api_refreshDocuments]: #core-ref:d42dccaf-2225-4727-b528-b66df42aa358
