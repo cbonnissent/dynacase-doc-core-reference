@@ -65,6 +65,7 @@ Les principales causes d'erreurs sont :
 *   Insuffisance de privilèges. Nécessite le [droit `edit`][profdoc].
 *   Attribut inexistant.
 *   Contenu de la valeur incohérent par rapport au type d'attribut.
+*   [Visibilité `I`][visibility] sur l'attribut.
 
 ## Historique {#core-ref:35fed792-7f6b-4e44-8e15-c0db55ac1bab}
 
@@ -156,3 +157,4 @@ Aucunes
 [docaddarrayrow]:   #core-ref:d75110cb-24f6-4810-9b62-45ce6fd99e70
 [phptrim]:          http://www.php.net/manual/fr/function.trim.php "fonction trim sur le site php.net"
 [disableeditcontrol]: #core-ref:b9844f4b-3e5c-4bbe-98ae-e71a4ba17239
+[visibility]:       #core-ref:3e67d45e-1fed-446d-82b5-ba941addc7e8
