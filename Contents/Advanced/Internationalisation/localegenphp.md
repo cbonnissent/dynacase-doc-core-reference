@@ -22,7 +22,7 @@ La génération des catalogues est effectuée traditionnellement par le programm
 Cette fonction produit un catalogue de traduction temporaire permettant de
 servir de base pour réaliser les traductions.
 
-Le programme `xgettextPhp` permet de réaliser la même fonction et récupère en
+Le programme [`xgettextPhp`][buildtools] permet de réaliser la même fonction et récupère en
 plus les libellés des [fonctions de recherche][searchLabel].
 <span class="flag from release">3.2.12</span>
 
@@ -38,6 +38,15 @@ Il est possible de déclarer les fichiers d'entrées via le pipe.
 
     find . -name "*php" | ../buildtools/xgettextPhp --output myCatalog.pot -f-
 
+### Alternative  {#core-ref:208450f2-9ea3-43af-bfa7-7e40cebe6d87}
+
+Il est possible de générer les catalogues par la programme [`dynacase-
+devtool.phar`][devtoolphar].
+
+    php dynacase-devtool.phar extractPo -s .
+
+Voir le [`Quick Start`][quickpo] pour plus d'information.
+
 <!-- link -->
 [wikiGettext]:       http://fr.wikipedia.org/wiki/GNU_gettext "Gettext sur Wikipédia"
 [phpGettext]:        http://www.php.net/manual/fr/function.gettext.php "gettext sur php.net"
@@ -51,3 +60,6 @@ Il est possible de déclarer les fichiers d'entrées via le pipe.
 [famdecl]:          #core-ref:cfc7f53b-7982-431e-a04b-7b54eddf4a75
 [gettextutil]:      http://www.gnu.org/software/gettext/manual/html_node/index.html#Top
 [searchLabel]:      #core-ref:b318bafc-adf9-4ebc-802d-0cb1a8f82054 "search Label"
+[buildtools]:       https://github.com/Anakeen/dynacase-buildtools   "Source BuildTools"
+[quickpo]:          https://docs.anakeen.com/dynacase/3.2/dynacase-quick-start/website/book/quickstart:5b0e5ec5-1f8d-49ea-9953-42727cdc1b2b.html#quickstart:bec85337-36e8-4289-a938-f48b361e125e "Générer les catalogues avec devTool"
+[devtoolphar]:      https://github.com/Anakeen/development-tools "Source DevTools"

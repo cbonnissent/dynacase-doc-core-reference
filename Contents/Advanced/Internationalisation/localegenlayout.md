@@ -1,8 +1,9 @@
 # Générer les catalogues pour les templates {#core-ref:0294a176-4171-11e3-b364-cffb8e583c34}
 
 
-Le programme `xgettextLayout` permet d'extraire les clefs de traduction depuis des
-fichier de template texte et openDocument Text.<span class="flag from release">3.2.12</span>
+Le programme [`xgettextLayout`][buildtools] permet d'extraire les clefs de
+traduction depuis des fichier de template texte et openDocument Text.<span
+class="flag from release">3.2.12</span>
 
     ./buildTools/xgettextLayout -o myLayouts.pot file1.html file2.xml file3.js file4.odt ...
 
@@ -31,3 +32,4 @@ Il est possible de déclarer les fichiers d'entrées via le pipe.
 [xgettext]:          http://www.gnu.org/software/gettext/manual/html_node/xgettext-Invocation.htm "xgettext reference"
 [famdecl]:           #core-ref:cfc7f53b-7982-431e-a04b-7b54eddf4a75
 [gettextutil]:       http://www.gnu.org/software/gettext/manual/html_node/index.html#Top
+[buildtools]:       https://github.com/Anakeen/dynacase-buildtools   "Source BuildTools"
