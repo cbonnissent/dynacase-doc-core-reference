@@ -73,74 +73,95 @@ Les pièces jointes
 
 L'émetteur ou les destinataires peuvent être choisis parmi :
 
-*   une *adresse fixe* : le destinataire est alors *statique*. Une aide à la
-    saisie permet de récupérer l'adresse d'un utilisateur existant, mais une
-    fois la valeur saisie, elle ne sera jamais mise à jour.
-    
-    L'adresse indiquée doit être dans une forme acceptable pour le champ
-    *from* d'une requête SMTP (ie. de la forme
-    `"nom expéditeur" <mail@host.net`.
+### Adresse fixe {#core-ref:c214dc69-9311-402f-a0e3-59b8217dbe7f}
 
-*   Une valeur du document lié :
+Le destinataire est alors *statique*. Une aide à la saisie permet de récupérer
+l'adresse d'un utilisateur existant, mais une fois la valeur saisie, elle ne
+sera jamais mise à jour.
     
-    *   un *attribut texte* : le destinataire est alors dynamique, et est
-        rattaché à un attribut textuel du document. Cet attribut doit
-        contenir une adresse email dans une forme acceptable pour le champ
-        *from* d'une requête SMTP (ie. de la forme
-        `"nom expéditeur" <mail@host.net`).
-        
-        Il est possible d'utiliser la notation `:` pour aller chercher des
-        valeurs sur les documents liés (par exemple : `TST_MYID:THE_MAIL`
-        récupère la valeur de l'attribut `THE_MAIL` dans le document référencé
-        par l'attribut relation `TST_MYID`.)
-        
-        La notation `:` peut être utilisée plusieurs fois pour aller de relation
-        en relation (par exemple :
-        `TST_RELATIONONEID:OTHER_RELATIONID:THE_MAIL`).
-    
-    *   un *attribut relation* : le destinataire est alors dynamique, et est
-        rattaché à un attribut de type relation (*account* ou *docid*) du
-        document.
-        
-        Si le document cible implémente une méthode `::getMail()`, alors elle
-        sera utilisée pour renseigner l'émetteur. Sinon, il sera récupéré à
-        partir de l'attribut `US_MAIL` du document cible.
-        
-        **Note** : Pour l'émetteur, les adresses de groupes ne peuvent être
-        utilisés (il est en effet interdit de spécifier un émetteur multiple
-        au niveau de la norme SMTP.
-    
-    *   un *paramètre de famille texte* : le destinataire est alors
-        dynamique, et est rattaché à un paramètre de la famille du document.
-        Ce paramètre doit contenir une adresse email dans une forme
-        acceptable pour le champ*from* d'une requête SMTP (ie. de la forme
-        `"nom expéditeur" <mail@host.net`).
-        
-        **Note** : La notation `:` n'est pas autorisée pour les paramètres.
-    
-    *   un *paramètre de famille relation* : le destinataire est alors
-        dynamique, et est rattaché à un paramètre de famille de type
-        relation (*account* ou *docid*).
-        
-        Si le document cible implémente une méthode `::getMail()`, alors elle
-        sera utilisée pour renseigner l'émetteur. Sinon, il sera récupéré à
-        partir de l'attribut `US_MAIL` du document cible.
-        
-        **Note** : Pour l'émetteur, les adresses de groupes ne peuvent être
-        utilisés (il est en effet interdit de spécifier un émetteur multiple
-        au niveau de la norme SMTP.
+L'adresse indiquée doit être dans une forme acceptable pour le champ *from*
+d'une requête SMTP (ie. de la forme `"nom expéditeur" <mail@host.net`.
 
-*   Une valeur du workflow lié :
+### Valeur du document lié {#core-ref:2763d270-ddf1-4ebf-8b6b-b78e816d442f}
+
+#### Attribut texte {#core-ref:5a8c0e1c-fb19-41b8-bfd9-f3e08ce3d286}
+
+Le destinataire est alors dynamique, et est rattaché à un attribut textuel du
+document. Cet attribut doit contenir une adresse email dans une forme
+acceptable pour le champ *from* d'une requête SMTP (ie. de la forme `"nom
+expéditeur" <mail@host.net`).
+        
+Il est possible d'utiliser la notation `:` pour aller chercher des valeurs sur
+les documents liés (par exemple : `TST_MYID:THE_MAIL` récupère la valeur de
+l'attribut `THE_MAIL` dans le document référencé par l'attribut relation
+`TST_MYID`.)
+        
+La notation `:` peut être utilisée plusieurs fois pour aller de relation en
+relation (par exemple : `TST_RELATIONONEID:OTHER_RELATIONID:THE_MAIL`).
+
+#### Attribut relation {#core-ref:0d300c86-27c5-4f71-8ddc-12c0717d7ef4}
+
+Le destinataire est alors dynamique, et est rattaché à un attribut de type
+relation (*account* ou *docid*) du document.
+        
+Si le document cible implémente une méthode `::getMail()`, alors elle sera
+utilisée pour renseigner l'émetteur. Sinon, il sera récupéré à partir de
+l'attribut `US_MAIL` du document cible.
+        
+**Note** : Pour l'émetteur, les adresses de groupes ne peuvent être utilisés
+(il est en effet interdit de spécifier un émetteur multiple au niveau de la
+norme SMTP.
+
+### Paramètre de famille texte {#core-ref:2e48132b-0bc2-468b-a610-077b0c58955f}
+
+Le destinataire est alors dynamique, et est rattaché à un paramètre de la
+famille du document.  Ce paramètre doit contenir une adresse email dans une
+forme acceptable pour le champ*from* d'une requête SMTP (ie. de la forme `"nom
+expéditeur" <mail@host.net`).
+        
+**Note** : La notation `:` n'est pas autorisée pour les paramètres.
+
+### Paramètre de famille relation {#core-ref:36c48d6a-4a8a-4ef9-b1e4-863f90a14320}
+
+Le destinataire est alors dynamique, et est rattaché à un paramètre de famille
+de type relation (*account* ou *docid*).
+        
+Si le document cible implémente une méthode `::getMail()`, alors elle sera
+utilisée pour renseigner l'émetteur. Sinon, il sera récupéré à partir de
+l'attribut `US_MAIL` du document cible.
+        
+**Note** : Pour l'émetteur, les adresses de groupes ne peuvent être utilisés
+(il est en effet interdit de spécifier un émetteur multiple au niveau de la
+norme SMTP.
+
+### Valeur du workflow lié {#core-ref:1701dddf-665a-4ce4-9bb0-b6f0742bb105}
+
+#### Attribut cycle {#core-ref:fcfdf8bb-718b-47b4-9067-b6ea36820ef7}
     
-    *   un *attribut cycle* : Il se comporte comme un *attribut texte*, mais
-        est récupéré sur le workflow associé au document.
+Il se comporte comme un *[attribut texte][attribut_texte]*, mais est récupéré
+sur le workflow associé au document.
+
+#### Relation cycle {#core-ref:05ee7ed1-c7c2-4d98-a26f-ce600faf562b}
     
-    *   une *relation cycle* : Il se comporte comme un *attribut relation*,
-        mais est récupéré sur le workflow associé au document.
+Il se comporte comme un *[attribut relation][attribut_relation]*, mais est
+récupéré sur le workflow associé au document.
+
+#### Paramètre cycle {#core-ref:8370014c-5d2a-4c8e-b725-59022a906e99}
+
+Il se comporte comme un *[paramètre de famille texte][parametre_famille_texte]*,
+mais est récupéré sur la famille du workflow associé au document.
+
+### Document destinataire {#core-ref:e717367f-7a29-473d-a65a-ac2c924bd0cb}
+
+Le destinataire est obtenu *dynamiquement*, lors de l'envoi du mail, à partir
+d'un document qui implémente l'interface
+*[IMailRecipient][phpdoc_IMailRecipient]*.
     
-    *   un *paramètre cycle* : Il se comporte comme un *paramètre de famille
-        texte*, mais est récupéré sur la famille du workflow associé au
-        document.
+Les documents sélectionnables dans ce champ sont tous les documents dont la
+classe implémente l'interface [`IMailRecipient`][phpdoc_IMailRecipient].
+    
+Le destinataire est obtenu de manière dynamique lors de l'envoi du mail par
+l'appel à la méthode `::getMail()` de ce document.
 
 ## Sujet et corps du mail {#core-ref:e0fb55dc-dd11-4e95-8e24-18e92fb8fc8c}
 
@@ -207,3 +228,7 @@ Le sujet et le corps du mail ne peuvent pas faire appel à l'instruction `BLOCK`
 [CORE_MAILACTION]: #core-ref:c1d9e009-49a5-47a4-9104-4d044ea24aa3
 [TemplateBaliseText]: #core-ref:32dea245-37e6-4a4c-a65e-06c577c0effa
 [ControleurDefaut]: #core-ref:1b7cb4c6-df1e-4124-8f5d-deaeac92561b
+[phpdoc_IMailRecipient]: https://docs.anakeen.com/dynacase/3.2/dynacase-core-api-reference/interface_i_mail_recipient.html
+[attribut_texte]: #core-ref:5a8c0e1c-fb19-41b8-bfd9-f3e08ce3d286
+[attribut_relation]: #core-ref:0d300c86-27c5-4f71-8ddc-12c0717d7ef4
+[parametre_famille_texte]: #core-ref:2e48132b-0bc2-468b-a610-077b0c58955f
