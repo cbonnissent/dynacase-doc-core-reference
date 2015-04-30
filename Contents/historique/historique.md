@@ -24,7 +24,7 @@ Dynacase.
 | Utilisation du contexte dans les traductions javascript                                                                                                  | [Traduction js][i18nsjs]                                                   | <span class="flag update">Mis à jour</span> |
 | Possibilité de sélectionner un "Document destinataire" ccomme destinataire pour un modèle de mail                                                        | [Spécification de l'émetteur ou du destinataire][document_destinataire]    | <span class="flag new">Nouveau</span>       |
 | Ajout options `--status-file` et `--stop-on-error` au script d'API `refreshDocuments`, et changement du comportement en cas d'erreur                     | [refreshDocuments][api_refreshDocuments]                                   | <span class="flag update">Mis à jour</span> |
-
+| Ajout "Fonction de rappel à l'extinction"                                                                                                                | [Fonction de rappel à l'extinction][shutdown_function]                     | <span class="flag new">Nouveau</span>       |
 
 ## Édition 7 {#core-ref:67c3551d-d99a-43c9-b837-5d93439bff8e}
 
