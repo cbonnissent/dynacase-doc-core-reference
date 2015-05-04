@@ -1297,6 +1297,12 @@ L'importation se fait en ligne de commande, avec la commande suivante :
 Pour plus de détails sur l'API `importDocuments`, se référer à sa
 [documentation][importDocuments]
 
+## Erreur d'importation d'attributs
+
+La liste des codes d'erreur possibles lors de l'importation d'attributs est
+consultable dans la documentation de l'API PHP : [ErrorCodeATTR Class
+Reference][ErrorCodeATTR].
+
 <!-- links -->
 [PHP_sprintf]: http://php.net/manual/fr/function.sprintf.php "Documentation de la fonction sprintf sur php.net"
 [PHP_strftime]: http://php.net/manual/fr/function.strftime.php "Documentation de la fonction strftime sur php.net"
@@ -1320,3 +1326,4 @@ Pour plus de détails sur l'API `importDocuments`, se référer à sa
 [getcustomtitle]:   #core-ref:3c5ff78d-c080-48fb-a293-9736ed4e95b8
 [phpDocEmailRecipient]:     https://docs.anakeen.com/dynacase/3.2/dynacase-core-api-reference/interface_i_mail_recipient.html "PHPDoc : IMailRecipient"
 [constraint]:       {#core-ref:f0177c62-1774-4724-a337-f090406e2d08}
+[ErrorCodeATTR]: http://docs.anakeen.com/dynacase/3.2/dynacase-core-api-reference/class_error_code_a_t_t_r.html
