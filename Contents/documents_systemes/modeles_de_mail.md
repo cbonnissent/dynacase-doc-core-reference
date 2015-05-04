@@ -88,9 +88,9 @@ d'une requête SMTP (ie. de la forme `"nom expéditeur" <mail@host.net`.
 
 Le destinataire est alors dynamique, et est rattaché à un attribut textuel du
 document. Cet attribut doit contenir une adresse email dans une forme
-acceptable pour le champ *from* d'une requête SMTP (ie. de la forme `"nom
-expéditeur" <mail@host.net`).
-        
+acceptable pour le champ *from* d'une requête SMTP (ie. de la forme 
+`"nom expéditeur" <mail@host.net`).
+
 Il est possible d'utiliser la notation `:` pour aller chercher des valeurs sur
 les documents liés (par exemple : `TST_MYID:THE_MAIL` récupère la valeur de
 l'attribut `THE_MAIL` dans le document référencé par l'attribut relation
@@ -116,8 +116,8 @@ norme SMTP.
 
 Le destinataire est alors dynamique, et est rattaché à un paramètre de la
 famille du document.  Ce paramètre doit contenir une adresse email dans une
-forme acceptable pour le champ*from* d'une requête SMTP (ie. de la forme `"nom
-expéditeur" <mail@host.net`).
+forme acceptable pour le champ*from* d'une requête SMTP (ie. de la forme 
+`"nom expéditeur" <mail@host.net`).
         
 **Note** : La notation `:` n'est pas autorisée pour les paramètres.
 
@@ -153,9 +153,9 @@ mais est récupéré sur la famille du workflow associé au document.
 
 ### Document destinataire {#core-ref:e717367f-7a29-473d-a65a-ac2c924bd0cb}
 
-Le destinataire est obtenu *dynamiquement*, lors de l'envoi du mail, à partir
-d'un document qui implémente l'interface
-*[IMailRecipient][phpdoc_IMailRecipient]*.
+<span class="flag from release">3.2.19</span> Le destinataire est obtenu 
+*dynamiquement*, lors de l'envoi du mail, à partir d'un document qui implémente
+l'interface *[IMailRecipient][phpdoc_IMailRecipient]*.
     
 Les documents sélectionnables dans ce champ sont tous les documents dont la
 classe implémente l'interface [`IMailRecipient`][phpdoc_IMailRecipient].
