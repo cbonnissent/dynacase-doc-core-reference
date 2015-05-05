@@ -24,7 +24,7 @@ présentes dans le fichiers catalogue sous l'index `_msgctxt_`. Cet index contie
 des sous-index par contexte.
 
 
-Exemple : le code javascript suivant :
+Exemple : l'inspection du code javascript suivant :
 
     [javascript]
     var message=_("Hello")+_("World");
@@ -84,7 +84,9 @@ Exemple de code javascript permettant d'utiliser le catalogue "JSON".
     </body>
     </html>
 
+## Limitation
 
+Les formes plurielles ne sont pas prises en compte.
 
 ## Génération du catalogue temporaire {#core-ref:54be89bc-4171-11e3-b408-cffb8e583c3}
 
@@ -130,7 +132,10 @@ Le répertoire `<lang>` est l'identifiant de la locale sur deux lettres :
 -   `fr` : français
 -   `en` : anglais
 
-Plus de détails sur le paragraphe [Publication][popublish]
+Lors de la publication, ces fichiers `.po` servent d'entrées pour la production
+du catalogue JSON en utilisant le programme `programs/po2js`. 
+Plus de détails sur le paragraphe [Publication][popublish].
+
 
 
 <!-- link -->
