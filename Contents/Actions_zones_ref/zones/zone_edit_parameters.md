@@ -95,11 +95,13 @@ submitLabel
 
 ### Limites {#core-ref:13abb2b7-7c69-48bb-be93-25cf00e45afd}
 
-N/A
+Seuls les attributs de type `text` et `enum` sont présentés.
+Le type est déduit du champ [`kind`][paramdef].
 
 ### Exemple {#core-ref:c8b4de59-48fa-4c37-bffa-749e7815734a}
 
-Définition de la zone : `ZONE FDL:EDITAPPLICATIONPARAMETER?appId=ZOO&parameterId=ONEFAM_DISPLAYMODE&localSubmit=yes&submitOnChange=no`
+Définition de la zone : `ZONE FDL:EDITAPPLICATIONPARAMETER?appId=ZOO&parameterId=ZOO_NAME
+&localSubmit=yes&submitOnChange=no`
 
 ![ Modification de paramètre de famille ](images/zones_actions/zone_application_edit.png)
 
@@ -135,3 +137,4 @@ N/A
 
 [param_app]:        #core-ref:1c9a8c60-f102-4ff3-951b-a6faefcaf99f
 [param_fam]:        #core-ref:4595c8e7-5002-4dbc-b6bb-882b4123efd8
+[paramdef]:         #core-ref:8930140d-16f7-4bba-b989-c04add9c9e87
