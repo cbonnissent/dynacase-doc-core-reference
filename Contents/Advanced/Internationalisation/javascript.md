@@ -90,7 +90,7 @@ Les formes plurielles ne sont pas prises en compte.
 
 ## Génération du catalogue temporaire {#core-ref:54be89bc-4171-11e3-b408-cffb8e583c3}
 
-Le programme [`xgettextJs`][buildtool] permet générer le catalogue temporaire.
+Le programme [`xgettextJs`][buildtools] permet générer le catalogue temporaire.
 <span class="flag from release">3.2.12</span>
 
     ./buildTools/xgettextJs --output=myCatalog.pot  myFile1.js myFile2.js

@@ -78,13 +78,13 @@ Les propriétés accessibles sont les suivantes :
     * titre de la famille (`title`), 
     * le nom logique (`name`), 
     * l'identifiant (numérique) (`id`),
-    * l'adresse de téléchargement de l'icone (`icon`),
+    * l'adresse de téléchargement de l'icône (`icon`),
 * `creationDate` : date de création de la lignée documentaire,
 * `createdBy` : informations sur le créateur de la lignée documentaire, cette structure contient
     * le nom du créateur (`title`), 
     * le nom logique du document lié au compte du créateur (`name`), 
     * l'identifiant (numérique) (`id`),
-    * l'adresse de téléchargement de l'icone (`icon`) du document représentant le créateur,
+    * l'adresse de téléchargement de l'icône (`icon`) du document représentant le créateur,
 * `revisionData` : informations sur la révision du document, cette structure contient : 
     * un booléen indiquant si le document a été modifié (`isModified`) depuis sa dernière révision, 
     * son identifiant (`id`), 
@@ -107,7 +107,7 @@ Les propriétés accessibles sont les suivantes :
     * `fixed` :un booléen indiquant si le document est figé , 
     * `profil` : profil associé au document  : 
          * `id` :  identifiant du profil, 
-         * `icon` :  l'adresse de téléchargement de l'icone du profil , 
+         * `icon` :  l'adresse de téléchargement de l'icône du profil , 
          * `type` : type  : `linked` (lié) ou `private` (privé), 
          * `activated` : un booléen indiquant si le profil est activé , 
          * `title` : titre du profil,
@@ -345,7 +345,7 @@ text("before %s")
                         )
                         
 La valeur formatée tient compte du format mis dans le type.
-dans cet exemple : int("%04d"). La valeur est de type "int"
+Dans cet exemple : int("%04d"). La valeur est de type "int".
 
 ### type `double` {#core-ref:84b38e2a-d231-4fc3-9ccc-e78b8b90a949}
 
@@ -356,9 +356,9 @@ dans cet exemple : int("%04d"). La valeur est de type "int"
                             ["displayValue"] => "0,00"
                         )
 
-La valeur formatée tient compte du format mis dans le type. dans cet exemple :
-double("%.02f"). Le point est transformé en virgule si la locale est "fr_FR". La
-valeur est de type "double"
+La valeur formatée tient compte du format mis dans le type. Dans cet exemple :
+double("%.02f"). Le point est transformé en virgule si la locale est "fr\_FR".
+La valeur est de type "double".
 
 
 ### type `date` {#core-ref:3f8e0b89-db33-4be8-b68e-15f709ecd0a8}
@@ -409,7 +409,7 @@ La valeur formatée est le titre du fichier.
 *   `fileName` : nom du fichier
 *   `url` : url de téléchargement du fichier
 *   `mime` : type mime du fichier
-*   `icon` : icone repréentatant le type de fichier
+*   `icon` : icône représentant le type de fichier
 *   `value` : valeur brute (référence au fichier)
 *   `displayValue` : nom du fichier
 
@@ -422,7 +422,7 @@ La valeur formatée est le titre du fichier.
         ["size"] => 584894
         ["creationDate"] => "2014-10-14 13:59:30"
         ["fileName"] => "tree.jpg"
-        ["url"] => f"ile/13505/810/img_file/-1/tree.jpg?cache=no&inline=yes"
+        ["url"] => "file/13505/810/img_file/-1/tree.jpg?cache=no&inline=yes"
         ["mime"] => "image/jpeg"
         ["icon"] => "resizeimg.php?img=CORE%2FImages%2Fmime-image.png&size=24"
         ["value"] => "image/jpeg|810|tree.jpg"
@@ -438,7 +438,7 @@ La valeur formatée est le titre du fichier.
 *   `fileName` : nom de l'image
 *   `url` : url de téléchargement de l'image
 *   `mime` : type mime de l'image
-*   `icon` : icone repréentatant le type de l'image
+*   `icon` : icône représentant le type de l'image
 *   `value` : valeur brute (référence à l'image)
 *   `displayValue` : nom de l'image
 
@@ -459,7 +459,7 @@ Note : La largeur de la miniature peut être définie avec l'attribut
 
 * `familyRelation` : indique le format du type de relation.
 * `url` : L'url permet d'accéder à la page de consultation du document. 
-* `icon` : La taille de l'icone du document pointé est par défaut de 14px. Elle
+* `icon` : La taille de l'icône du document pointé est par défaut de 14px. Elle
 peut être modifiée avec l'attribut `relationIconSize` de la classe
 `FormatCollection`.
 * `value` : La valeur brute indique l'identifiant numérique du document'. 
@@ -501,7 +501,7 @@ La valeur et la valeur formatée sont égales.
 ## Rendu des attributs multiples {#core-ref:2256843a-e63f-484b-a00d-c2a85253deea}
 
 Les attributs multiples sont rendus dans des tableaux de structure.
-Exemple avec deux valeurs de l'attribut "tst_colors".
+Exemple avec deux valeurs de l'attribut "tst\_colors".
 
     [php]
     ["tst_colors"] => Array
@@ -619,7 +619,8 @@ Elle doit retourner l'objet attributeValue modifié.
 Il est possible d'inscrire un hook qui est appliqué après le rendu de chaque
 propriété pour modifier le rendu de la propriété.
 
-Exemple, passage à false de la propriété state pour les documents n'ayant pas d'état :
+Exemple, passage à `false` de la propriété `state` pour les documents n'ayant
+pas d'état :
 
     [php]
     $formatCollection->setPropertyRenderHook(function ($propertyValue, $propertyId) {
