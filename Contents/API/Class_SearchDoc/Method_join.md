@@ -1,8 +1,6 @@
 # SearchDoc::join() {#core-ref:c7fe0a1b-e71a-45d4-9182-9e4561558030}
 
-<div markdown="1" class="short-description"> 
-    Cette méthode permet de faire une [jointure][jointure]. 
-</div>
+Cette méthode permet de faire une [jointure][jointure]. 
 
 
 ## Description {#core-ref:2843f343-933e-44a9-8e69-b65957da95d3}
